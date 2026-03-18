@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EV Push to Start Interface</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- BEGIN: Custom Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            evDark: '#05070a',
+            evBlue: '#00d2ff',
+            evSilver: '#c0c0c0',
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'spin-slow': 'spin 10s linear infinite',
+          }
+        }
+      }
+    }
+  </script>
+<!-- END: Custom Configuration -->
+<!-- BEGIN: Component Styles -->
+<style data-purpose="layout-and-glow">
+    body {
+      background-color: #05070a;
+      overflow: hidden;
+    }
+
+    /* Radial glow behind the button */
+    .glow-bg {
+      background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    }
+
+    /* Intense glow when active */
+    .power-active-glow {
+      box-shadow: 0 0 50px rgba(0, 210, 255, 0.6), inset 0 0 20px rgba(0, 210, 255, 0.4);
+    }
+
+    /* Metallic texture for the button */
+    .metallic-surface {
+      background: linear-gradient(145deg, #1e2024, #0a0b0d);
+      border: 1px solid rgba(192, 192, 192, 0.2);
+    }
+
+    /* Typography accent */
+    .font-futuristic {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      letter-spacing: 0.15em;
+    }
+  </style>
+<style data-purpose="animations">
+    @keyframes startup-ring {
+      from { stroke-dashoffset: 600; transform: rotate(0deg); }
+      to { stroke-dashoffset: 0; transform: rotate(360deg); }
+    }
+
+    .animate-startup {
+      stroke-dasharray: 600;
+      animation: startup-ring 1.5s ease-out forwards;
+    }
+
+    .hidden-state {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .visible-state {
+      opacity: 1;
+    }
+  </style>
+<!-- END: Component Styles -->
+</head>
+<body class="flex items-center justify-center min-h-screen">
+<!-- BEGIN: Main Interface Container -->
+<main class="relative w-full h-screen flex flex-col items-center justify-center p-6 bg-evDark text-white select-none" data-purpose="interface-container">
+<!-- Background Glow Decoration -->
+<div class="glow-bg absolute inset-0 pointer-events-none"></div>
+<!-- BEGIN: Top Status Bar -->
+<header class="absolute top-12 left-0 w-full px-10 flex justify-between items-center opacity-60">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold tracking-widest text-evSilver">System Status</span>
+<span class="text-xs font-futuristic" id="system-label">READY TO START</span>
+</div>
+<div class="text-right">
+<span class="text-[10px] uppercase font-bold tracking-widest text-evSilver">Battery</span>
+<span class="text-xs font-futuristic">84%</span>
+</div>
+</header>
+<!-- END: Top Status Bar -->
+<!-- BEGIN: Power Button Section -->
+<section class="relative flex flex-col items-center" data-purpose="button-wrapper">
+<!-- Startup Animation Ring (SVG) -->
+<div class="absolute inset-[-40px] pointer-events-none">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 200 200">
+<circle cx="100" cy="100" fill="none" r="90" stroke="rgba(0, 210, 255, 0.1)" stroke-width="1"></circle>
+<circle class="hidden-state" cx="100" cy="100" fill="none" id="loading-ring" r="90" stroke="url(#blue-grad)" stroke-linecap="round" stroke-width="3"></circle>
+<defs>
+<lineargradient id="blue-grad" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" style="stop-color:#00d2ff;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#0080ff;stop-opacity:1"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<!-- The Main Power Button -->
+<button class="relative w-48 h-48 rounded-full metallic-surface flex flex-col items-center justify-center transition-all duration-700 active:scale-95 group animate-pulse-slow" data-purpose="main-activation-button" id="power-btn">
+<!-- Inner ring glow -->
+<div class="absolute inset-2 border border-evBlue/20 rounded-full"></div>
+<!-- Power Icon -->
+<svg class="w-16 h-16 text-evBlue transition-all duration-500 drop-shadow-[0_0_8px_rgba(0,210,255,0.5)]" fill="none" id="power-icon" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+<!-- Label -->
+<span class="mt-4 text-xs font-futuristic font-bold text-evSilver group-hover:text-white transition-colors">POWER</span>
+</button>
+<!-- Bottom Status Indicators -->
+<div class="mt-20 flex space-x-12">
+<div class="flex flex-col items-center opacity-30 transition-opacity duration-300" id="brake-indicator">
+<div class="w-2 h-2 rounded-full bg-evSilver mb-2"></div>
+<span class="text-[9px] font-futuristic tracking-tighter">BRAKE ENGAGED</span>
+</div>
+<div class="flex flex-col items-center opacity-100">
+<div class="w-2 h-2 rounded-full bg-evBlue shadow-[0_0_5px_#00d2ff] mb-2"></div>
+<span class="text-[9px] font-futuristic tracking-tighter text-evBlue">STANDBY</span>
+</div>
+</div>
+</section>
+<!-- END: Power Button Section -->
+<!-- BEGIN: Footer -->
+<footer class="absolute bottom-12 w-full text-center">
+<p class="text-[10px] uppercase tracking-[0.3em] text-evSilver/40 font-futuristic">Advanced Drive OS v4.0</p>
+</footer>
+<!-- END: Footer -->
+</main>
+<!-- END: Main Interface Container -->
+<!-- BEGIN: Interactivity Script -->
+<script data-purpose="button-interaction-logic">
+    const btn = document.getElementById('power-btn');
+    const ring = document.getElementById('loading-ring');
+    const label = document.getElementById('system-label');
+    const icon = document.getElementById('power-icon');
+    const brakeIndicator = document.getElementById('brake-indicator');
+    
+    let isStarted = false;
+
+    btn.addEventListener('click', () => {
+      if (!isStarted) {
+        // Start Sequence
+        isStarted = true;
+        
+        // Update Button Visuals
+        btn.classList.remove('animate-pulse-slow');
+        btn.classList.add('power-active-glow', 'scale-105');
+        
+        // Activate Ring Animation
+        ring.classList.remove('hidden-state');
+        ring.classList.add('visible-state', 'animate-startup');
+        
+        // Update Icons & Text
+        icon.classList.add('text-white', 'scale-110');
+        label.innerText = 'INITIATING SYSTEMS...';
+        label.classList.add('text-evBlue');
+        
+        // Fake startup delay
+        setTimeout(() => {
+          label.innerText = 'DRIVE ENGAGED';
+          brakeIndicator.classList.add('opacity-100');
+          // Add secondary pulse to button once active
+          btn.style.boxShadow = '0 0 70px rgba(0, 210, 255, 0.8), inset 0 0 30px rgba(0, 210, 255, 0.5)';
+        }, 1500);
+
+      } else {
+        // Reset Sequence (Off)
+        isStarted = false;
+        
+        // Revert Visuals
+        btn.classList.add('animate-pulse-slow');
+        btn.classList.remove('power-active-glow', 'scale-105');
+        btn.style.boxShadow = '';
+        
+        ring.classList.remove('visible-state', 'animate-startup');
+        ring.classList.add('hidden-state');
+        
+        icon.classList.remove('text-white', 'scale-110');
+        label.innerText = 'READY TO START';
+        label.classList.remove('text-evBlue');
+        brakeIndicator.classList.remove('opacity-100');
+      }
+    });
+
+    // Simple haptic feedback simulation (for mobile)
+    btn.addEventListener('touchstart', () => {
+      if (window.navigator.vibrate) {
+        window.navigator.vibrate(20);
+      }
+    });
+  </script>
+<!-- END: Interactivity Script -->
+</body></html>

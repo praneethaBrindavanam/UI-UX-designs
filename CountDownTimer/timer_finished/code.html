@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Timer Finished - Kitchen App</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- BEGIN: Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'ring-bell': 'ring 2s ease-in-out infinite',
+            'steam': 'steam 3s ease-in-out infinite',
+          },
+          keyframes: {
+            ring: {
+              '0%, 100%': { transform: 'rotate(0deg)' },
+              '10%, 30%, 50%, 70%': { transform: 'rotate(10deg)' },
+              '20%, 40%, 60%, 80%': { transform: 'rotate(-10deg)' },
+            },
+            steam: {
+              '0%': { transform: 'translateY(0) scale(1)', opacity: '0' },
+              '50%': { opacity: '0.8' },
+              '100%': { transform: 'translateY(-20px) scale(1.5)', opacity: '0' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- END: Tailwind Configuration -->
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="animations">
+    /* Custom animation for steam particles */
+    .steam-particle {
+      animation: steam 2.5s ease-in-out infinite;
+    }
+    .steam-delay-1 { animation-delay: 0.5s; }
+    .steam-delay-2 { animation-delay: 1.2s; }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="bg-orange-50 h-screen flex flex-col items-center justify-center overflow-hidden font-sans">
+<!-- BEGIN: MainAlertContainer -->
+<main class="w-full max-w-md px-6 py-12 flex flex-col items-center justify-between h-full bg-gradient-to-b from-orange-100 to-white" data-purpose="timer-finished-screen">
+<!-- BEGIN: VisualFeedbackSection -->
+<section class="flex flex-col items-center justify-center flex-grow space-y-8" data-purpose="visual-feedback">
+<!-- Icon Container with Steam and Bell -->
+<div class="relative w-48 h-48 flex items-center justify-center bg-orange-500 rounded-full shadow-2xl shadow-orange-200" data-purpose="status-icon-container">
+<!-- Steam Icons -->
+<div class="absolute -top-12 flex space-x-4">
+<svg class="w-8 h-8 text-orange-300 steam-particle" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12,1.5C10.6,1.5,9.5,2.6,9.5,4s1.1,2.5,2.5,2.5s2.5-1.1,2.5-2.5S13.4,1.5,12,1.5z M12,9.5c-1.4,0-2.5,1.1-2.5,2.5s1.1,2.5,2.5,2.5s2.5-1.1,2.5-2.5S13.4,9.5,12,9.5z M12,17.5c-1.4,0-2.5,1.1-2.5,2.5s1.1,2.5,2.5,2.5s2.5-1.1,2.5-2.5S13.4,17.5,12,17.5z"></path>
+</svg>
+<svg class="w-8 h-8 text-orange-300 steam-particle steam-delay-1" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12,1.5C10.6,1.5,9.5,2.6,9.5,4s1.1,2.5,2.5,2.5s2.5-1.1,2.5-2.5S13.4,1.5,12,1.5z M12,9.5c-1.4,0-2.5,1.1-2.5,2.5s1.1,2.5,2.5,2.5s2.5-1.1,2.5-2.5S13.4,9.5,12,9.5z M12,17.5c-1.4,0-2.5,1.1-2.5,2.5s1.1,2.5,2.5,2.5s2.5-1.1,2.5-2.5S13.4,17.5,12,17.5z"></path>
+</svg>
+<svg class="w-8 h-8 text-orange-300 steam-particle steam-delay-2" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12,1.5C10.6,1.5,9.5,2.6,9.5,4s1.1,2.5,2.5,2.5s2.5-1.1,2.5-2.5S13.4,1.5,12,1.5z M12,9.5c-1.4,0-2.5,1.1-2.5,2.5s1.1,2.5,2.5,2.5s2.5-1.1,2.5-2.5S13.4,9.5,12,9.5z M12,17.5c-1.4,0-2.5,1.1-2.5,2.5s1.1,2.5,2.5,2.5s2.5-1.1,2.5-2.5S13.4,17.5,12,17.5z"></path>
+</svg>
+</div>
+<!-- Ringing Bell Icon -->
+<svg class="w-24 h-24 text-white animate-ring-bell" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<!-- Time Display -->
+<div class="text-center" data-purpose="timer-status">
+<h1 class="text-7xl font-black text-red-600 animate-pulse-fast tracking-tighter" id="timer-display">
+          00:00
+        </h1>
+<p class="mt-4 text-xl font-semibold text-orange-800 uppercase tracking-widest">
+          Time's Up!
+        </p>
+<p class="text-orange-600 font-medium">Pasta is ready</p>
+</div>
+</section>
+<!-- END: VisualFeedbackSection -->
+<!-- BEGIN: ControlSection -->
+<section class="w-full flex flex-col items-center space-y-6 pb-8" data-purpose="timer-controls">
+<!-- Stop Button - High Priority -->
+<button class="w-full max-w-xs py-5 bg-red-600 hover:bg-red-700 active:scale-95 transition-transform text-white text-2xl font-bold rounded-2xl shadow-xl shadow-red-200 focus:outline-none focus:ring-4 focus:ring-red-400" data-purpose="stop-timer-button" id="stop-btn">
+        STOP
+      </button>
+<!-- Repeat Button - Lower Priority -->
+<button class="flex items-center space-x-2 text-orange-700 font-bold hover:text-orange-900 transition-colors p-4" data-purpose="repeat-timer-button" id="repeat-btn">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-lg uppercase">Repeat (10:00)</span>
+</button>
+</section>
+<!-- END: ControlSection -->
+</main>
+<!-- END: MainAlertContainer -->
+<!-- BEGIN: InteractiveHandlers -->
+<script data-purpose="event-handlers">
+    document.getElementById('stop-btn').addEventListener('click', () => {
+      // Logic to stop sound and vibration would go here
+      console.log('Timer stopped');
+      document.getElementById('timer-display').classList.remove('animate-pulse-fast');
+    });
+
+    document.getElementById('repeat-btn').addEventListener('click', () => {
+      // Logic to restart timer
+      console.log('Timer repeated');
+    });
+  </script>
+<!-- END: InteractiveHandlers -->
+</body></html>

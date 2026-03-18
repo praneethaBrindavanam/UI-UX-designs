@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kitchen Timer - Active</title>
+<!-- BEGIN: External Resources -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&amp;family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- END: External Resources -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            kitchen: {
+              warm: '#FFF9F0',
+              accent: '#F97316', // Warm Orange
+              deep: '#431407',   // Rich Chocolate/Roasted color
+              secondary: '#FFEDD5',
+              cancel: '#DC2626',
+              pause: '#D97706',
+            }
+          },
+          fontFamily: {
+            sans: ['Quicksand', 'sans-serif'],
+            timer: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'pulse-glow': 'pulse-glow 4s ease-in-out infinite',
+            'spin-slow': 'spin 20s linear infinite',
+          },
+          keyframes: {
+            'pulse-glow': {
+              '0%, 100%': { transform: 'scale(1)', opacity: '0.4', filter: 'blur(20px)' },
+              '50%': { transform: 'scale(1.2)', opacity: '0.6', filter: 'blur(40px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layout">
+    body {
+      background: radial-gradient(circle at 50% 30%, #FFFBF5 0%, #FDE6D2 100%);
+      min-height: 100vh;
+      -webkit-tap-highlight-color: transparent;
+      overflow: hidden;
+    }
+    
+    .timer-ring {
+      background: conic-gradient(from 0deg, #F97316 0%, #FDBA74 75%, transparent 75%);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .digit-shadow {
+      filter: drop-shadow(0 4px 8px rgba(67, 20, 7, 0.1));
+    }
+
+    .btn-tactile {
+      box-shadow: 
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05),
+        inset 0 2px 4px 0 rgba(255, 255, 255, 0.8);
+    }
+    
+    .btn-tactile-accent {
+      box-shadow: 
+        0 20px 25px -5px rgba(249, 115, 22, 0.3),
+        inset 0 2px 4px 0 rgba(255, 255, 255, 0.4);
+    }
+  </style>
+</head>
+<body class="flex flex-col items-center justify-between p-6 text-kitchen-deep">
+<!-- BEGIN: Header Navigation -->
+<header class="w-full flex justify-between items-center z-20" data-purpose="app-header">
+<button aria-label="Go back" class="p-3 rounded-2xl bg-white/50 hover:bg-white transition-all active:scale-90 border border-orange-100">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="m15 18-6-6 6-6"></path></svg>
+</button>
+<div class="text-center">
+<h1 class="text-lg font-bold tracking-tight text-kitchen-deep/80">Roasting Chicken</h1>
+<div class="flex items-center justify-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-kitchen-accent animate-pulse"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-kitchen-accent/80">In Progress</span>
+</div>
+</div>
+<button aria-label="Settings" class="p-3 rounded-2xl bg-white/50 hover:bg-white transition-all active:scale-90 border border-orange-100">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+</button>
+</header>
+<!-- END: Header Navigation -->
+<!-- BEGIN: Main Timer Section -->
+<main class="flex-1 flex flex-col items-center justify-center w-full relative" data-purpose="timer-display-container">
+<!-- Sophisticated Glow Effect -->
+<div class="absolute w-80 h-80 rounded-full bg-kitchen-accent/20 blur-[60px] animate-pulse-glow" data-purpose="visual-indicator"></div>
+<!-- Outer Decorative Ring -->
+<div class="absolute w-[340px] h-[340px] rounded-full border border-orange-200/40"></div>
+<!-- Interactive Ring -->
+<div class="relative w-80 h-80 flex items-center justify-center">
+<!-- Background Circle -->
+<div class="absolute inset-0 rounded-full border-[12px] border-orange-100 shadow-inner"></div>
+<!-- Progress Ring (Simulated with SVG for precision) -->
+<svg class="absolute inset-0 -rotate-90" viewbox="0 0 100 100">
+<circle class="transition-all duration-1000" cx="50" cy="50" fill="none" r="44" stroke="url(#gradient)" stroke-dasharray="276" stroke-dashoffset="60" stroke-linecap="round" stroke-width="6"></circle>
+<defs>
+<lineargradient id="gradient" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#F97316"></stop>
+<stop offset="100%" stop-color="#FB923C"></stop>
+</lineargradient>
+</defs>
+</svg>
+<!-- Timer Content -->
+<div class="relative z-10 text-center flex flex-col items-center justify-center" data-purpose="timer-countdown">
+<div class="font-timer text-8xl font-black tracking-tighter text-kitchen-deep digit-shadow leading-none" id="countdown-display">
+          04:52
+        </div>
+<p class="mt-4 text-kitchen-deep/40 font-bold uppercase tracking-[0.3em] text-[10px]">Minutes Remaining</p>
+</div>
+</div>
+</main>
+<!-- END: Main Timer Section -->
+<!-- BEGIN: Control Panel -->
+<footer class="w-full max-w-md pb-12 space-y-6 z-20" data-purpose="timer-controls">
+<!-- Top Row Controls -->
+<div class="grid grid-cols-2 gap-5 px-2">
+<!-- Pause Button -->
+<button class="glass-card flex flex-col items-center justify-center p-6 rounded-[32px] btn-tactile active:scale-95 transition-all group" data-purpose="pause-action" id="pause-btn">
+<div class="w-14 h-14 bg-kitchen-pause/10 text-kitchen-pause rounded-2xl flex items-center justify-center mb-3 group-hover:bg-kitchen-pause group-hover:text-white transition-colors shadow-sm">
+<svg fill="currentColor" height="28" stroke="none" viewbox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg"><rect height="16" width="4" x="6" y="4"></rect><rect height="16" width="4" x="14" y="4"></rect></svg>
+</div>
+<span class="font-bold text-kitchen-deep tracking-wide">Pause</span>
+</button>
+<!-- Cancel Button -->
+<button class="glass-card flex flex-col items-center justify-center p-6 rounded-[32px] btn-tactile active:scale-95 transition-all group" data-purpose="cancel-action" id="cancel-btn">
+<div class="w-14 h-14 bg-kitchen-cancel/10 text-kitchen-cancel rounded-2xl flex items-center justify-center mb-3 group-hover:bg-kitchen-cancel group-hover:text-white transition-colors shadow-sm">
+<svg fill="none" height="28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+</div>
+<span class="font-bold text-kitchen-deep tracking-wide">Cancel</span>
+</button>
+</div>
+<!-- Bottom Row Quick Action -->
+<div class="px-2">
+<button class="w-full py-6 bg-kitchen-accent text-white rounded-[32px] btn-tactile-accent text-xl font-black flex items-center justify-center space-x-3 active:scale-[0.97] transition-all hover:brightness-110" data-purpose="add-minute-action" id="add-time-btn">
+<svg fill="none" height="26" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5" viewbox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M5 12h14"></path></svg>
+<span class="tracking-tight">Add 1 Minute</span>
+</button>
+</div>
+</footer>
+<!-- END: Control Panel -->
+<script data-purpose="timer-interactivity">
+    // Visual feedback for interactions
+    document.getElementById('add-time-btn').addEventListener('click', function() {
+      const display = document.getElementById('countdown-display');
+      display.classList.add('text-orange-500', 'scale-105');
+      setTimeout(() => display.classList.remove('text-orange-500', 'scale-105'), 300);
+    });
+
+    document.getElementById('pause-btn').addEventListener('click', function() {
+      const text = this.querySelector('span');
+      const icon = this.querySelector('div');
+      
+      if (text.innerText === 'Pause') {
+        text.innerText = 'Resume';
+        icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="m7 4 12 8-12 8V4z"/></svg>';
+        icon.classList.replace('text-kitchen-pause', 'text-green-600');
+        icon.classList.replace('bg-kitchen-pause/10', 'bg-green-50');
+      } else {
+        text.innerText = 'Pause';
+        icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
+        icon.classList.replace('text-green-600', 'text-kitchen-pause');
+        icon.classList.replace('bg-green-50', 'bg-kitchen-pause/10');
+      }
+    });
+  </script>
+</body></html>

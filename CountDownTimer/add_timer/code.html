@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Add Timer - Kitchen App</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration for custom kitchen theme -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            kitchen: {
+              warm: '#FDF8F3',
+              clay: '#D97706',
+              stone: '#4B5563',
+              accent: '#F59E0B'
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layout">
+    /* Custom styles for the scrollable time picker feel */
+    .time-picker-column {
+      mask-image: linear-gradient(to bottom, transparent, black 40%, black 60%, transparent);
+      -webkit-mask-image: linear-gradient(to bottom, transparent, black 40%, black 60%, transparent);
+    }
+    /* Simple hide scrollbar for the picker effect */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-kitchen-warm text-kitchen-stone antialiased h-screen flex flex-col overflow-hidden">
+<!-- BEGIN: MainHeader -->
+<header class="p-6 flex items-center justify-between">
+<button class="p-2 -ml-2 text-kitchen-stone hover:opacity-70" data-purpose="back-button">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<h1 class="text-xl font-semibold tracking-tight">Add Timer</h1>
+<div class="w-10"></div> <!-- Spacer for center alignment -->
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: ContentArea -->
+<main class="flex-1 flex flex-col px-6 overflow-y-auto pb-8">
+<!-- BEGIN: TimePickerSection -->
+<section class="flex flex-col items-center justify-center py-12" data-purpose="time-picker-container">
+<div class="flex items-center space-x-4 text-4xl font-light text-kitchen-stone/80">
+<!-- Hours -->
+<div class="flex flex-col items-center">
+<span class="text-[4rem] font-medium text-kitchen-stone">00</span>
+<span class="text-xs uppercase tracking-widest mt-1 opacity-50">Hours</span>
+</div>
+<span class="text-4xl mb-6">:</span>
+<!-- Minutes -->
+<div class="flex flex-col items-center">
+<span class="text-[4rem] font-medium text-kitchen-stone">45</span>
+<span class="text-xs uppercase tracking-widest mt-1 opacity-50">Minutes</span>
+</div>
+<span class="text-4xl mb-6">:</span>
+<!-- Seconds -->
+<div class="flex flex-col items-center">
+<span class="text-[4rem] font-medium text-kitchen-stone">00</span>
+<span class="text-xs uppercase tracking-widest mt-1 opacity-50">Seconds</span>
+</div>
+</div>
+<!-- Visual indicator for scroll interaction -->
+<div class="mt-8 flex space-x-2">
+<div class="h-1 w-8 bg-amber-200 rounded-full"></div>
+<div class="h-1 w-12 bg-amber-500 rounded-full"></div>
+<div class="h-1 w-8 bg-amber-200 rounded-full"></div>
+</div>
+</section>
+<!-- END: TimePickerSection -->
+<!-- BEGIN: QuickPresets -->
+<section class="mb-10" data-purpose="shortcut-buttons">
+<div class="flex justify-between items-center space-x-3">
+<button class="flex-1 py-3 px-4 bg-white border border-orange-100 rounded-2xl shadow-sm text-sm font-medium hover:bg-orange-50 transition-colors">+1m</button>
+<button class="flex-1 py-3 px-4 bg-white border border-orange-100 rounded-2xl shadow-sm text-sm font-medium hover:bg-orange-50 transition-colors">+5m</button>
+<button class="flex-1 py-3 px-4 bg-white border border-orange-100 rounded-2xl shadow-sm text-sm font-medium hover:bg-orange-50 transition-colors">+10m</button>
+</div>
+</section>
+<!-- END: QuickPresets -->
+<!-- BEGIN: TimerNaming -->
+<section class="mb-8" data-purpose="timer-naming-input">
+<label class="block text-xs font-semibold text-kitchen-stone/60 uppercase tracking-widest mb-3" for="timer-name">Timer Name</label>
+<input class="w-full bg-white border-none rounded-2xl px-5 py-4 text-lg shadow-sm focus:ring-2 focus:ring-amber-500 transition-all placeholder:text-stone-300" id="timer-name" placeholder="e.g. Sourdough Bread" type="text"/>
+</section>
+<!-- END: TimerNaming -->
+</main>
+<!-- END: ContentArea -->
+<!-- BEGIN: BottomAction -->
+<footer class="px-6 pb-10 pt-4 bg-gradient-to-t from-kitchen-warm via-kitchen-warm to-transparent">
+<button class="w-full bg-kitchen-clay text-white py-5 rounded-2xl text-lg font-semibold shadow-lg shadow-amber-900/20 active:scale-[0.98] transition-all" data-purpose="start-timer-button">
+      Start Timer
+    </button>
+</footer>
+<!-- END: BottomAction -->
+</body></html>

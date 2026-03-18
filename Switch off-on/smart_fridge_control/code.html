@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart Refrigerator Control Panel</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style data-purpose="custom-background">/* Subtle blurred kitchen background overlay */
+.bg-kitchen-overlay {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(https://lh3.googleusercontent.com/aida-public/AB6AXuDylfKxbmmVHt7XzSjD2rGz-HVbhxFMdUgXi-J0vODBAIdMy6LW_SfR1tt6K3fmO2YwRr8sNq_3VoT1MDD9f_s5g1od6u2pdVrXEq--8C8ayfMs_dtZdmNlEkHF2EPd0bbnhwcq5DgUzmFGa3GK2poos9qPiBB9oVWTUgNid_5zANSl-KGVF6e8tFmY0DFl_uwtZbwaHo5Dpm6eTho3IbQ-Fhe6MHSJ2tKFn-T0Rx8-ZZsSQ0-xwAgE7H-kG7xDlXyVxbqWemL7);
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(8px)
+    }
+/* Neumorphic shadow effects */
+.neumorphic-card {
+    background: #f0f0f0;
+    box-shadow: 10px 10px 20px #d1d1d1, -10px -10px 20px #fff;
+    border-radius: 2rem
+    }
+.neumorphic-inset {
+    box-shadow: inset 6px 6px 12px #d1d1d1, inset -6px -6px 12px #fff
+    }</style>
+<style data-purpose="toggle-styles">
+    /* Custom Toggle Switch Logic */
+    .toggle-checkbox:checked + .toggle-label {
+      background-color: #10B981; /* soft green-500 */
+    }
+    
+    .toggle-checkbox:checked + .toggle-label .toggle-dot {
+      transform: translateX(100%);
+    }
+
+    .toggle-label {
+      transition: background-color 0.3s ease;
+      background-color: #EF4444; /* muted red-500 */
+    }
+
+    .toggle-dot {
+      transition: transform 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4 bg-kitchen-overlay">
+<!-- BEGIN: MainInterfaceContainer -->
+<main class="w-full max-w-md mx-auto" data-purpose="refrigerator-control-panel">
+<!-- BEGIN: HeaderSection -->
+<header class="text-center mb-12">
+<h1 class="text-2xl font-semibold text-gray-800 tracking-tight">SmartFridge Pro</h1>
+<p class="text-gray-500 text-sm mt-1">Kitchen Ecosystem v4.2</p>
+</header>
+<!-- END: HeaderSection -->
+<!-- BEGIN: MainControlCard -->
+<section class="neumorphic-card p-10 flex flex-col items-center">
+<!-- Icon and Label -->
+<div class="mb-8 text-center" data-purpose="status-indicator">
+<div class="w-16 h-16 mx-auto mb-4 bg-gray-50 rounded-full flex items-center justify-center neumorphic-inset">
+<svg class="h-8 w-8 text-gray-600" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h2 class="text-xl font-medium text-gray-700">Appliance Power</h2>
+</div>
+<!-- BEGIN: PowerToggle -->
+<div class="flex items-center justify-center w-full" data-purpose="power-toggle-container">
+<label class="flex items-center cursor-pointer select-none" for="power-toggle">
+<div class="relative">
+<!-- Hidden Checkbox -->
+<input checked="" class="sr-only toggle-checkbox" id="power-toggle" type="checkbox"/>
+<!-- Toggle Track -->
+<div class="toggle-label block w-48 h-20 rounded-full shadow-inner neumorphic-inset flex items-center px-2">
+<!-- Off State Label -->
+<span class="absolute left-6 text-white font-bold text-lg pointer-events-none">OFF</span>
+<!-- On State Label -->
+<span class="absolute right-6 text-white font-bold text-lg pointer-events-none">ON</span>
+<!-- Toggle Handle -->
+<div class="toggle-dot w-20 h-16 bg-white rounded-full shadow-md flex items-center justify-center transition-transform">
+<div class="w-1 h-8 bg-gray-200 rounded-full mx-1"></div>
+<div class="w-1 h-8 bg-gray-200 rounded-full mx-1"></div>
+</div>
+</div>
+</div>
+</label>
+</div>
+<!-- END: PowerToggle -->
+<!-- Footer Info -->
+<div class="mt-12 w-full grid grid-cols-2 gap-4 text-center">
+<div class="p-4 rounded-2xl neumorphic-inset">
+<span class="block text-xs uppercase text-gray-400 font-bold mb-1">Temp</span>
+<span class="text-lg font-semibold text-gray-700">3°C</span>
+</div>
+<div class="p-4 rounded-2xl neumorphic-inset">
+<span class="block text-xs uppercase text-gray-400 font-bold mb-1">Humidity</span>
+<span class="text-lg font-semibold text-gray-700">42%</span>
+</div>
+</div>
+</section>
+<!-- END: MainControlCard -->
+<!-- BEGIN: QuickActions -->
+<nav class="mt-10 flex justify-around px-4" data-purpose="navigation-menu">
+<button class="p-4 rounded-2xl neumorphic-card text-gray-600 active:shadow-inner">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<button class="p-4 rounded-2xl neumorphic-card text-gray-600 active:shadow-inner">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<button class="p-4 rounded-2xl neumorphic-card text-gray-600 active:shadow-inner">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</nav>
+<!-- END: QuickActions -->
+</main>
+<!-- END: MainInterfaceContainer -->
+<script data-purpose="toggle-handler">
+    // Script to handle console feedback for the power toggle
+    const toggle = document.getElementById('power-toggle');
+    toggle.addEventListener('change', (e) => {
+      if (e.target.checked) {
+        console.log('Appliance Power: ON');
+      } else {
+        console.log('Appliance Power: OFF');
+      }
+    });
+  </script>
+</body></html>
