@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Receipt - Premium Ledger</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary": "#4d626c",
+                        "error-dim": "#4f0116",
+                        "on-surface-variant": "#5a6061",
+                        "on-primary-container": "#3f48a1",
+                        "background": "#f9f9f9",
+                        "primary-dim": "#4049a2",
+                        "on-tertiary": "#f9f8ff",
+                        "surface-container-low": "#f2f4f4",
+                        "secondary-fixed": "#cfe6f2",
+                        "primary-fixed": "#e0e0ff",
+                        "on-secondary": "#f2faff",
+                        "on-primary-fixed": "#2c358e",
+                        "on-tertiary-container": "#455068",
+                        "surface-container": "#ebeeef",
+                        "tertiary": "#545f78",
+                        "surface-container-highest": "#dde4e5",
+                        "primary-fixed-dim": "#ced1ff",
+                        "surface-container-high": "#e4e9ea",
+                        "inverse-on-surface": "#9c9d9d",
+                        "outline-variant": "#adb3b4",
+                        "secondary-fixed-dim": "#c1d8e4",
+                        "on-surface": "#2d3435",
+                        "primary-container": "#e0e0ff",
+                        "on-background": "#2d3435",
+                        "on-tertiary-fixed": "#333d55",
+                        "primary": "#4c56af",
+                        "on-secondary-fixed-variant": "#495f69",
+                        "surface-tint": "#4c56af",
+                        "tertiary-dim": "#49536b",
+                        "on-secondary-container": "#40555f",
+                        "inverse-surface": "#0c0f0f",
+                        "tertiary-fixed-dim": "#c7d1ee",
+                        "secondary-container": "#cfe6f2",
+                        "tertiary-container": "#d5dffd",
+                        "surface-dim": "#d4dbdd",
+                        "surface-variant": "#dde4e5",
+                        "surface-bright": "#f9f9f9",
+                        "secondary-dim": "#415660",
+                        "tertiary-fixed": "#d5dffd",
+                        "on-primary": "#f9f6ff",
+                        "on-primary-fixed-variant": "#4953ac",
+                        "inverse-primary": "#929bfa",
+                        "on-error": "#fff7f7",
+                        "outline": "#757c7d",
+                        "error-container": "#ff8b9a",
+                        "on-secondary-fixed": "#2d424c",
+                        "on-error-container": "#782232",
+                        "on-tertiary-fixed-variant": "#4f5a72",
+                        "error": "#9e3f4e",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f9f9f9"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+        }
+        .font-newsreader { font-family: 'Newsreader', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface bg-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-[0_24px_24px_0_rgba(45,52,53,0.04)]">
+<div class="flex items-center justify-between px-6 py-4 w-full">
+<button class="text-indigo-700 dark:text-indigo-400 hover:opacity-80 transition-opacity scale-95 active:duration-150">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-newsreader text-2xl font-semibold tracking-tight text-on-surface">Receipt</h1>
+<button class="text-indigo-700 dark:text-indigo-400 hover:opacity-80 transition-opacity scale-95 active:duration-150">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</header>
+<main class="pt-24 px-4 max-w-lg mx-auto space-y-6">
+<!-- Promotional Banner -->
+<div class="bg-primary text-on-primary p-4 rounded-xl flex items-center justify-between shadow-lg overflow-hidden relative">
+<div class="z-10">
+<p class="font-inter text-[10px] uppercase tracking-widest opacity-80 mb-1">Upcoming Event</p>
+<h3 class="font-newsreader text-xl italic leading-tight">Private Collection Launch</h3>
+<p class="font-inter text-xs mt-1">Get 15% off your next curation with code <span class="font-bold">CURATE15</span></p>
+</div>
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
+<span class="material-symbols-outlined text-4xl opacity-20 z-0">auto_awesome</span>
+</div>
+<!-- Main Receipt Body -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.02)]">
+<!-- Vendor Info & Status -->
+<div class="p-8 pb-4">
+<div class="flex justify-between items-start mb-6">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<div class="w-10 h-10 bg-surface-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<h2 class="font-newsreader text-2xl font-semibold tracking-tight">Verified Ledger</h2>
+</div>
+<div class="space-y-0.5 text-on-surface-variant font-inter text-xs">
+<p>122 High Street, Kensington</p>
+<p>London, W8 5SF</p>
+<p>+44 20 7946 0123</p>
+<a class="text-primary hover:underline" href="#">www.verifiedledger.co</a>
+</div>
+</div>
+<div class="bg-primary-container text-on-primary-container px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Paid
+                    </div>
+</div>
+<!-- Order Summary -->
+<div class="bg-surface-container-low rounded-xl p-4 grid grid-cols-2 gap-4">
+<div>
+<p class="text-[9px] uppercase tracking-widest text-on-surface-variant mb-1">Date</p>
+<p class="font-inter text-sm font-semibold">Oct 24, 2023</p>
+</div>
+<div>
+<p class="text-[9px] uppercase tracking-widest text-on-surface-variant mb-1">Receipt #</p>
+<p class="font-inter text-sm font-semibold">VL-882910</p>
+</div>
+<div class="col-span-2">
+<p class="text-[9px] uppercase tracking-widest text-on-surface-variant mb-1">Tracking Number</p>
+<div class="flex justify-between items-center">
+<p class="font-inter text-sm font-semibold">GB-7721-X90-001</p>
+<span class="material-symbols-outlined text-primary text-sm">content_copy</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Itemized List -->
+<div class="px-8 py-4 space-y-6">
+<h4 class="font-inter text-[11px] font-bold uppercase tracking-[0.1em] text-on-surface-variant border-b border-surface-container-high pb-2">Order Details</h4>
+<div class="space-y-6">
+<!-- Item 1 -->
+<div class="flex items-center gap-4">
+<img alt="Premium watch" class="w-16 h-16 object-cover rounded-xl bg-surface-container" data-alt="Minimalist luxury wristwatch on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCohBBUNffzW-M6xw8K7UJNfvjw7Sf88p0z-pyss8L-JvneCZRJ89UuxsjYh4n7t-TzXx-8xaih1zyKa3_AFkUqz6KDMuVx7wmfbrRzcpPKwySnOa9NdEaWmMQI4CDnY1Ooj7H5weRAj1mrisV2HHb8UhilBp27Sc8NtrUkrtefXaAq7C2JjdGfPj6rufQqB17D0Sq0InPg6uN8scMyeJFpddwPPPHDy08yuDamUr1j0Cz8ldX3wiKyrfUaV8HM3Otm4tWVu3AtMoQ"/>
+<div class="flex-1">
+<h5 class="font-inter text-sm font-medium text-on-surface">Nomos Tangente Neomatik</h5>
+<p class="text-xs text-on-surface-variant">Qty: 1</p>
+</div>
+<p class="font-newsreader text-lg">£2,150.00</p>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-4">
+<img alt="Luxury notebook" class="w-16 h-16 object-cover rounded-xl bg-surface-container" data-alt="Premium leather bound notebook with silver edges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK7B_kNoeE44AA9Hmtlcs7ZsyH8ZiwGgv1t3rMPoHvzSDOVlXUPIH5rVkFIwV1J-Q-JQdxPkRpRsDCNbM1xvwaa2Y-GUz_bpI4dZy4kU9-tDpBkdvsH2wbOTc7WyoyVjhKb78WYv87c6pqdTb5GS3He3yovMU1lHBKAc4QhLJkw5TZGiWLVjJWw5sRrqLOJG6zZLdy2rS2wN6SZHTfq7aD_FPdvlxPqDrFcuIZb92oqIob0TCUPuuJZWJ5t6MFQjkLalfI_EqJ4c0"/>
+<div class="flex-1">
+<h5 class="font-inter text-sm font-medium text-on-surface">Full-Grain Leather Folio</h5>
+<p class="text-xs text-on-surface-variant">Qty: 1</p>
+</div>
+<p class="font-newsreader text-lg">£185.00</p>
+</div>
+</div>
+</div>
+<!-- Financial Breakdown -->
+<div class="mt-4 bg-surface-container-low p-8 space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant font-inter">Subtotal</span>
+<span class="font-inter">£2,335.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant font-inter">VAT (20%)</span>
+<span class="font-inter">£467.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant font-inter">Express Shipping</span>
+<span class="font-inter">£15.00</span>
+</div>
+<div class="pt-4 mt-2 border-t-2 border-dashed border-surface-container-highest flex justify-between items-baseline">
+<span class="font-inter font-bold text-xs uppercase tracking-widest">Total Amount</span>
+<span class="font-newsreader text-4xl font-semibold text-primary">£2,817.00</span>
+</div>
+</div>
+</div>
+<!-- Support Section -->
+<div class="bg-surface-container-high rounded-2xl p-6 flex items-start gap-4">
+<div class="bg-surface-container-lowest p-3 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-primary">contact_support</span>
+</div>
+<div>
+<h4 class="font-inter text-sm font-bold mb-1">Need assistance?</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed mb-3">Our concierge team is available 24/7 for order inquiries and returns.</p>
+<div class="flex gap-4">
+<a class="text-xs font-bold text-primary flex items-center gap-1" href="mailto:concierge@ledger.com">
+<span class="material-symbols-outlined text-sm">mail</span>
+                        Email Us
+                    </a>
+<a class="text-xs font-bold text-primary flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-sm">help_center</span>
+                        Help Center
+                    </a>
+</div>
+</div>
+</div>
+<!-- Footer / Social / QR -->
+<div class="py-10 text-center space-y-6">
+<div class="flex justify-center gap-8">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer">share_reviews</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer">public</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer">alternate_email</span>
+</div>
+<div class="inline-block p-4 bg-white rounded-2xl shadow-sm">
+<div class="w-32 h-32 bg-surface-container flex items-center justify-center relative rounded-xl border-4 border-surface-container-low overflow-hidden">
+<!-- Fake QR Code Pattern -->
+<div class="absolute inset-0 opacity-10 flex flex-wrap p-2">
+<div class="w-full h-full bg-indigo-900" style="clip-path: polygon(0% 0%, 20% 0%, 20% 20%, 0% 20%, 0% 0%, 40% 0%, 40% 40%, 60% 40%, 60% 60%, 80% 60%, 80% 80%, 100% 80%, 100% 100%, 0% 100%);"></div>
+</div>
+<span class="material-symbols-outlined text-4xl text-primary z-10">qr_code_2</span>
+</div>
+<p class="font-inter text-[10px] font-bold uppercase tracking-widest mt-3 text-on-surface-variant">Follow Our Journey</p>
+</div>
+<p class="font-newsreader italic text-sm text-on-surface-variant px-12">Thank you for choosing quality. Your trust is our ultimate ledger.</p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md rounded-t-2xl shadow-[0_-4px_24px_0_rgba(45,52,53,0.04)] z-50">
+<a class="flex flex-col items-center justify-center bg-indigo-50 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-200 rounded-full py-1 px-4 scale-110 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-inter text-[11px] font-medium tracking-wide uppercase">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 py-1 px-4 hover:text-indigo-600 dark:hover:text-indigo-300" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-inter text-[11px] font-medium tracking-wide uppercase">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 py-1 px-4 hover:text-indigo-600 dark:hover:text-indigo-300" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="font-inter text-[11px] font-medium tracking-wide uppercase">Support</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 py-1 px-4 hover:text-indigo-600 dark:hover:text-indigo-300" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-inter text-[11px] font-medium tracking-wide uppercase">Account</span>
+</a>
+</nav>
+</body></html>
