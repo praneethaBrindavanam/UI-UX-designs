@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Analytics Dashboard - Precision Curator</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#93f2f2",
+              "primary": "#00478d",
+              "on-secondary-fixed": "#002020",
+              "surface-variant": "#e1e3e4",
+              "inverse-on-surface": "#f0f1f2",
+              "on-background": "#191c1d",
+              "surface-tint": "#005db6",
+              "secondary": "#006a6a",
+              "secondary-fixed-dim": "#76d6d5",
+              "inverse-surface": "#2e3132",
+              "outline": "#727783",
+              "surface-bright": "#f8f9fa",
+              "on-primary-container": "#c8daff",
+              "on-error": "#ffffff",
+              "on-primary-fixed": "#001b3d",
+              "on-error-container": "#93000a",
+              "on-surface-variant": "#424752",
+              "on-surface": "#191c1d",
+              "on-primary-fixed-variant": "#00468c",
+              "primary-container": "#005eb8",
+              "surface-container-highest": "#e1e3e4",
+              "outline-variant": "#c2c6d4",
+              "tertiary-fixed": "#ffdad8",
+              "on-tertiary-container": "#ffcecc",
+              "on-secondary-container": "#006e6e",
+              "surface-dim": "#d9dadb",
+              "background": "#f8f9fa",
+              "primary-fixed": "#d6e3ff",
+              "surface-container-low": "#f3f4f5",
+              "on-tertiary-fixed": "#410006",
+              "surface-container-lowest": "#ffffff",
+              "secondary-container": "#90efef",
+              "error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#ffb3b0",
+              "error": "#ba1a1a",
+              "on-secondary-fixed-variant": "#004f4f",
+              "surface-container": "#edeeef",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-fixed-variant": "#8c1520",
+              "tertiary": "#8d1620",
+              "tertiary-container": "#af3035",
+              "surface-container-high": "#e7e8e9",
+              "surface": "#f8f9fa",
+              "primary-fixed-dim": "#a9c7ff",
+              "on-primary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "inverse-primary": "#a9c7ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/85 dark:bg-slate-900/85 backdrop-blur-md shadow-sm dark:shadow-none flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface hover:bg-slate-100/50 rounded-full p-2 transition-colors active:scale-95 duration-200" data-icon="menu">menu</button>
+<h1 class="font-['Manrope'] font-bold text-lg tracking-tight text-blue-900 dark:text-blue-100">Analytics</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center gap-8 mr-8">
+<span class="text-blue-700 dark:text-blue-400 font-bold cursor-pointer">Sales</span>
+<span class="text-slate-500 dark:text-slate-400 hover:text-blue-600 cursor-pointer transition-colors">Inventory</span>
+<span class="text-slate-500 dark:text-slate-400 hover:text-blue-600 cursor-pointer transition-colors">Reports</span>
+</div>
+<button class="material-symbols-outlined text-blue-700 dark:text-blue-400 hover:bg-slate-100/50 rounded-full p-2 transition-colors active:scale-95 duration-200" data-icon="account_circle">account_circle</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Hero Metrics Row (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<!-- Total Revenue -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.02)] transition-transform hover:scale-[1.01] duration-300">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label text-xs font-semibold uppercase tracking-wider text-on-surface-variant">Total Revenue</span>
+<span class="text-secondary font-semibold text-xs bg-secondary-container px-2 py-0.5 rounded-full">+12.5%</span>
+</div>
+<div class="font-headline text-4xl font-extrabold text-on-surface tracking-tight mb-1">$128,430</div>
+<div class="text-on-surface-variant text-sm font-body">vs. $114,160 last month</div>
+</div>
+<!-- Orders -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.02)] transition-transform hover:scale-[1.01] duration-300 border-l-4 border-primary">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label text-xs font-semibold uppercase tracking-wider text-on-surface-variant">Orders</span>
+<span class="text-secondary font-semibold text-xs bg-secondary-container px-2 py-0.5 rounded-full">+8.2%</span>
+</div>
+<div class="font-headline text-4xl font-extrabold text-on-surface tracking-tight mb-1">1,240</div>
+<div class="text-on-surface-variant text-sm font-body">Daily avg: 41.3 orders</div>
+</div>
+<!-- Conversion Rate -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.02)] transition-transform hover:scale-[1.01] duration-300">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label text-xs font-semibold uppercase tracking-wider text-on-surface-variant">Conversion Rate</span>
+<span class="text-tertiary font-semibold text-xs bg-error-container px-2 py-0.5 rounded-full">-0.4%</span>
+</div>
+<div class="font-headline text-4xl font-extrabold text-on-surface tracking-tight mb-1">3.82%</div>
+<div class="text-on-surface-variant text-sm font-body">Market avg: 2.1%</div>
+</div>
+</section>
+<!-- Main Chart Section -->
+<section class="bg-surface-container-lowest rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.04)] p-8 mb-12">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
+<div>
+<h2 class="font-headline text-2xl font-bold text-on-surface mb-1">Daily Revenue Flow</h2>
+<p class="text-on-surface-variant text-sm">Real-time performance metrics across all channels.</p>
+</div>
+<!-- Segmented Control Toggles -->
+<div class="bg-surface-container p-1 rounded-full flex gap-1">
+<button class="px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors">1D</button>
+<button class="px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors">1W</button>
+<button class="bg-surface-container-lowest shadow-sm px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-primary">1M</button>
+<button class="px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors">1Y</button>
+</div>
+</div>
+<!-- Chart Visualization Placeholder -->
+<div class="relative w-full h-[400px] flex items-end justify-between px-4 pb-8 group">
+<!-- Vertical Grid Lines (Horizontal only per design system) -->
+<div class="absolute inset-0 flex flex-col justify-between">
+<div class="border-b border-outline-variant/10 w-full h-px"></div>
+<div class="border-b border-outline-variant/10 w-full h-px"></div>
+<div class="border-b border-outline-variant/10 w-full h-px"></div>
+<div class="border-b border-outline-variant/10 w-full h-px"></div>
+<div class="border-b border-outline-variant/10 w-full h-px"></div>
+</div>
+<!-- Abstract Chart Bars/Path (Visual Representation) -->
+<div class="relative w-full h-full flex items-end gap-1 md:gap-3">
+<div class="w-full bg-primary/20 hover:bg-primary/40 rounded-t-lg transition-all duration-300" style="height: 45%;"></div>
+<div class="w-full bg-primary/20 hover:bg-primary/40 rounded-t-lg transition-all duration-300" style="height: 60%;"></div>
+<div class="w-full bg-primary/20 hover:bg-primary/40 rounded-t-lg transition-all duration-300" style="height: 55%;"></div>
+<div class="w-full bg-primary/20 hover:bg-primary/40 rounded-t-lg transition-all duration-300" style="height: 80%;"></div>
+<div class="w-full bg-primary/20 hover:bg-primary/40 rounded-t-lg transition-all duration-300" style="height: 65%;"></div>
+<div class="w-full bg-primary/80 rounded-t-lg transition-all duration-300 relative shadow-[0_-8px_16px_rgba(0,71,141,0.2)]" style="height: 95%;">
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 bg-on-background text-surface-container-lowest text-[10px] py-1 px-2 rounded-md font-bold whitespace-nowrap">PEAK: $8,420</div>
+</div>
+<div class="w-full bg-primary/20 hover:bg-primary/40 rounded-t-lg transition-all duration-300" style="height: 70%;"></div>
+<div class="w-full bg-primary/20 hover:bg-primary/40 rounded-t-lg transition-all duration-300" style="height: 50%;"></div>
+<div class="w-full bg-primary/20 hover:bg-primary/40 rounded-t-lg transition-all duration-300" style="height: 40%;"></div>
+<div class="w-full bg-primary/20 hover:bg-primary/40 rounded-t-lg transition-all duration-300" style="height: 55%;"></div>
+<div class="w-full bg-primary/20 hover:bg-primary/40 rounded-t-lg transition-all duration-300" style="height: 65%;"></div>
+<div class="w-full bg-primary/20 hover:bg-primary/40 rounded-t-lg transition-all duration-300" style="height: 85%;"></div>
+</div>
+</div>
+<!-- Chart Labels -->
+<div class="flex justify-between mt-4 px-4 text-[10px] font-semibold text-on-surface-variant uppercase tracking-widest">
+<span>01 Oct</span>
+<span>08 Oct</span>
+<span>15 Oct</span>
+<span>22 Oct</span>
+<span>29 Oct</span>
+</div>
+</section>
+<!-- Secondary Insights & Top Products Asymmetric Layout -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Top Products (8 Columns) -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-headline text-xl font-bold text-on-surface">Top Products</h3>
+<button class="text-primary text-xs font-bold uppercase tracking-widest hover:underline">View All Inventory</button>
+</div>
+<div class="space-y-6">
+<!-- Product Item 1 -->
+<div class="flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-5">
+<div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center overflow-hidden">
+<img alt="Product" class="w-full h-full object-cover mix-blend-multiply" data-alt="Red high performance running shoe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPUFTzA0uGvH4dLY9Xlp3dpOAaQkp1nbtrJIF32RlgHFFhpjkIkQgIFwDjPD97fK4ArLvRRoqQuUMLS9GBkY1E-YjGx-n4yS0U0AHotRiSNkBo3Vi59sW__mJWV4SlJ8CMr-62TydhKzk1IRptoNy3cc24qwuKRrRmCHO2SH7Gsif8gRm_cyfgDoNdGBmTGR-Nfy94_D1VNcqEFN7Az3SceZp2i0fkN7XpSHHwpX_-J0I18plkxS7TuJaSnQBCOtUXlezfoFOqlzQ"/>
+</div>
+<div>
+<h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">Velocity Pro Sneakers</h4>
+<p class="text-on-surface-variant text-xs font-medium">Category: Footwear</p>
+</div>
+</div>
+<div class="text-right">
+<div class="font-bold text-on-surface">428 sales</div>
+<div class="text-secondary text-xs font-bold">$29,532.00</div>
+</div>
+</div>
+<!-- Product Item 2 -->
+<div class="flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-5">
+<div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center overflow-hidden">
+<img alt="Product" class="w-full h-full object-cover mix-blend-multiply" data-alt="Modern white minimalist analog wristwatch" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFMZHTZxOitwnIXLLT3Dhr1y81jQdNBemBGG62VocbNAQYGbZ4dhjqlD0Id28uiznnMJV0f75YvX-U6Jo8u8YwS1vy-7ZMCieJhw4jYWyP9srdIynM57uQ83ApLRRdCOqic9PFmSgSmHZSFwpkxQh-0xx4wpz0ThI9F4eVul6PAcLPMEcrO8ld9phBS3JEzHij_3hx00GfsWd1heQOICYQ9Yl0c0lkUwBafjto_Ux_P7GLQzeP7SzzytA3V47HBBLo0mhUDlm4i-o"/>
+</div>
+<div>
+<h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">Lumina Smart Watch</h4>
+<p class="text-on-surface-variant text-xs font-medium">Category: Electronics</p>
+</div>
+</div>
+<div class="text-right">
+<div class="font-bold text-on-surface">315 sales</div>
+<div class="text-secondary text-xs font-bold">$47,250.00</div>
+</div>
+</div>
+<!-- Product Item 3 -->
+<div class="flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-5">
+<div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center overflow-hidden">
+<img alt="Product" class="w-full h-full object-cover mix-blend-multiply" data-alt="Gold premium noise cancelling headphones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjyY8fGw4MlxYsraKiMQeFPTlyEK0sQ_KApcFbhMi9O9Xd4o5bxP0y2xt_hew43f083SuOiFNGQ-7JnOt3cQdV_oUiWzKxMwd3BO0M7QaOjsxWCmin69QHNjsxCrGUjfAd0KDcdBaaY5NzjGuPQLjEjQsKo3nNjf0oQ7WlOot9gNGv3Xo5ac0VMwhtnLm2km3VeIAA3DwChsquf2l6Wjrx9wwBKM5OTg_FJ8xGuzhq2l3y_14KJlq11eQ-gMZ018i5cH-UeRYlHL4"/>
+</div>
+<div>
+<h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">Aura Noise Cancelling</h4>
+<p class="text-on-surface-variant text-xs font-medium">Category: Audio</p>
+</div>
+</div>
+<div class="text-right">
+<div class="font-bold text-on-surface">282 sales</div>
+<div class="text-secondary text-xs font-bold">$19,740.00</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Insights / Stocks (4 Columns) -->
+<div class="lg:col-span-4 space-y-6">
+<!-- Stock Status Widget -->
+<div class="bg-surface-container-low p-8 rounded-xl">
+<h3 class="font-headline text-lg font-bold text-on-surface mb-6">Inventory Health</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-medium">Optimal Stock</span>
+<span class="text-secondary font-bold">82%</span>
+</div>
+<div class="w-full bg-outline-variant/20 h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 82%"></div>
+</div>
+<div class="flex justify-between items-center text-sm pt-4">
+<span class="text-on-surface-variant font-medium">Low Stock Alerts</span>
+<span class="text-tertiary font-bold">12 items</span>
+</div>
+<div class="w-full bg-outline-variant/20 h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full" style="width: 25%"></div>
+</div>
+</div>
+<button class="w-full mt-8 bg-primary text-white font-bold py-3 rounded-xl active:scale-95 duration-200 transition-all text-xs uppercase tracking-widest">
+                        Run Stock Audit
+                    </button>
+</div>
+<!-- Mini Promotion Card -->
+<div class="bg-primary-container p-8 rounded-xl relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="font-headline text-lg font-bold text-on-primary-fixed mb-2">Automated Insights</h4>
+<p class="text-on-primary-fixed/80 text-sm mb-4 leading-relaxed">Conversion rates are 15% higher between 6 PM - 9 PM EST. Consider increasing ad spend.</p>
+<button class="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest">
+                            Apply Strategy <span class="material-symbols-outlined text-[16px]" data-icon="trending_up">trending_up</span>
+</button>
+</div>
+<!-- Abstract decoration -->
+<div class="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-white/85 dark:bg-slate-900/85 backdrop-blur-md rounded-t-xl border-t border-slate-100 dark:border-slate-800/50 shadow-[0_-4px_12px_rgba(0,0,0,0.03)] z-50 md:hidden">
+<a class="flex flex-col items-center justify-center text-blue-700 dark:text-blue-400 bg-blue-50/50 dark:bg-blue-900/20 rounded-xl px-4 py-1 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-['Inter'] text-[10px] font-semibold tracking-wide uppercase mt-1">Sales</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 hover:text-blue-600 dark:hover:text-blue-300 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-['Inter'] text-[10px] font-semibold tracking-wide uppercase mt-1">Health</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 hover:text-blue-600 dark:hover:text-blue-300 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="font-['Inter'] text-[10px] font-semibold tracking-wide uppercase mt-1">Stocks</span>
+</a>
+</nav>
+<!-- FAB (Suppressed on analytics detail, but could be used for specific actions) -->
+<button class="fixed right-6 bottom-24 md:bottom-8 bg-primary text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:scale-110 active:scale-90 transition-all z-40">
+<span class="material-symbols-outlined" data-icon="add" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</body></html>
