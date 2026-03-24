@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart Home OS - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#281300",
+              "on-primary-fixed": "#000000",
+              "tertiary-fixed": "#ff9817",
+              "inverse-on-surface": "#555557",
+              "on-primary-fixed-variant": "#002a60",
+              "surface-container-high": "#1f1f22",
+              "primary-dim": "#0070ea",
+              "inverse-surface": "#fcf8fb",
+              "tertiary-container": "#fe9400",
+              "secondary": "#6ffb85",
+              "on-secondary-fixed-variant": "#006826",
+              "secondary-dim": "#60ec79",
+              "surface-bright": "#2c2c2f",
+              "on-background": "#fefbfe",
+              "on-tertiary": "#562f00",
+              "secondary-container": "#006e28",
+              "on-error": "#490006",
+              "surface": "#0e0e10",
+              "primary-container": "#6c9fff",
+              "inverse-primary": "#005bc1",
+              "background": "#0e0e10",
+              "on-tertiary-container": "#482600",
+              "on-primary": "#002d64",
+              "on-surface": "#fefbfe",
+              "primary": "#84adff",
+              "primary-fixed": "#6c9fff",
+              "tertiary": "#ffa84f",
+              "error-container": "#9f0519",
+              "surface-tint": "#84adff",
+              "error-dim": "#d7383b",
+              "surface-variant": "#252528",
+              "outline-variant": "#48474a",
+              "surface-dim": "#0e0e10",
+              "surface-container": "#19191c",
+              "outline": "#767577",
+              "on-error-container": "#ffa8a3",
+              "secondary-fixed-dim": "#60ec79",
+              "tertiary-fixed-dim": "#ee8b00",
+              "on-secondary": "#005d21",
+              "surface-container-highest": "#252528",
+              "surface-container-low": "#131315",
+              "on-secondary-container": "#e5ffe0",
+              "primary-fixed-dim": "#5091ff",
+              "secondary-fixed": "#6ffb85",
+              "tertiary-dim": "#ea8900",
+              "surface-container-lowest": "#000000",
+              "error": "#ff716c",
+              "on-surface-variant": "#acaaad",
+              "on-primary-container": "#00214e",
+              "on-tertiary-fixed-variant": "#573000",
+              "on-secondary-fixed": "#004818"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(37, 37, 40, 0.6);
+        backdrop-filter: blur(40px);
+        -webkit-backdrop-filter: blur(40px);
+      }
+      body {
+        background-color: #0e0e10;
+        color: #fefbfe;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-primary/30 min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-950/60 backdrop-blur-xl bg-gradient-to-b from-slate-900/20 to-transparent shadow-2xl shadow-blue-900/5 flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container">
+<img alt="Alex profile" class="w-full h-full object-cover" data-alt="Close up portrait of a young man with a friendly expression in soft cinematic studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8TtgYJuhSXsHNxEOwDgpS3TtfwFkCZAIHgGY94-7UTPy_IJjvaV_zOIZ_et3tPkzVJjDd8vNJAIdIPPT-hOsOpBYQckW8lCQnLYra7xjsDi5qOCoJHCVtJyEJpJVDd4gOvSIfPSTDa7cpYiWUsNEYmD85oQ5fck2Jf5NK6AM-g9X5Wzjm_dZRnemZV9yaglfBm0yeI30k6KiApESoDNJFH8OxIDTJsAjlXplBYC4JGcxL7d9Xd0hmJi6WFioj-99D8J_G1DcCFtI"/>
+</div>
+<h1 class="font-headline font-bold text-lg tracking-tight text-slate-100">Welcome back, Alex</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5 transition-colors text-blue-400 active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-7xl mx-auto space-y-10">
+<!-- Hero Section: Greetings & Weather -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h2 class="font-headline font-extrabold text-5xl tracking-tight text-on-background mb-2">Good Evening, Alex</h2>
+<p class="text-on-surface-variant font-medium">All home systems are operating within optimal parameters.</p>
+</div>
+<!-- Weather Widget -->
+<div class="glass-card p-6 rounded-[32px] flex items-center gap-6 self-start md:self-auto">
+<div class="flex flex-col">
+<span class="font-headline font-extrabold text-4xl text-on-surface">72°F</span>
+<span class="text-on-surface-variant font-medium">Clear Sky</span>
+</div>
+<div class="w-12 h-12 bg-tertiary/20 rounded-full flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-3xl" data-icon="light_mode">light_mode</span>
+</div>
+</div>
+</section>
+<!-- Main Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Security Badge (Central) -->
+<div class="md:col-span-8 glass-card rounded-[40px] p-8 flex flex-col items-center justify-center text-center relative overflow-hidden min-h-[320px]">
+<div class="absolute inset-0 opacity-10 bg-gradient-to-tr from-primary to-transparent"></div>
+<div class="relative z-10">
+<div class="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+<div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center animate-pulse">
+<span class="material-symbols-outlined text-5xl text-primary" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+</div>
+<h3 class="font-headline font-bold text-3xl text-on-surface mb-2">All Systems Normal</h3>
+<p class="text-on-surface-variant max-w-md mx-auto">Security perimeter is active. 8 sensors monitored. No unusual activity detected in the last 24 hours.</p>
+</div>
+</div>
+<!-- Energy Card -->
+<div class="md:col-span-4 glass-card rounded-[40px] p-8 flex flex-col justify-between overflow-hidden relative">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 blur-3xl rounded-full -mr-16 -mt-16"></div>
+<div>
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+</div>
+<span class="font-headline font-bold text-lg text-on-surface">Energy Savings</span>
+</div>
+<div class="space-y-1">
+<h4 class="font-headline font-extrabold text-5xl text-secondary">7.4 <span class="text-2xl font-bold opacity-70">kW</span></h4>
+<p class="text-on-surface-variant text-sm font-medium">Generated today via Solar</p>
+</div>
+</div>
+<div class="mt-8">
+<div class="h-1.5 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-3/4 rounded-full"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
+<span>Usage: 2.1 kW</span>
+<span>Grid: 0.0 kW</span>
+</div>
+</div>
+</div>
+<!-- Quick Toggle Tiles -->
+<div class="md:col-span-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
+<!-- Toggle: Living Room Lights -->
+<button class="glass-card p-6 rounded-[32px] flex items-center gap-5 hover:bg-surface-bright transition-all group active:scale-95">
+<div class="w-14 h-14 bg-primary/10 rounded-[22px] flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-2xl" data-icon="lightbulb">lightbulb</span>
+</div>
+<div class="text-left">
+<span class="block font-headline font-bold text-on-surface">Living Room</span>
+<span class="block text-primary text-sm font-semibold">On • 80% Bright</span>
+</div>
+</button>
+<!-- Toggle: Main Lock -->
+<button class="glass-card p-6 rounded-[32px] flex items-center gap-5 hover:bg-surface-bright transition-all group active:scale-95">
+<div class="w-14 h-14 bg-surface-variant rounded-[22px] flex items-center justify-center text-on-surface-variant group-hover:bg-on-surface group-hover:text-surface transition-colors">
+<span class="material-symbols-outlined text-2xl" data-icon="lock">lock</span>
+</div>
+<div class="text-left">
+<span class="block font-headline font-bold text-on-surface">Main Lock</span>
+<span class="block text-on-surface-variant text-sm font-semibold">Secured</span>
+</div>
+</button>
+<!-- Toggle: Garage -->
+<button class="glass-card p-6 rounded-[32px] flex items-center gap-5 hover:bg-surface-bright transition-all group active:scale-95">
+<div class="w-14 h-14 bg-surface-variant rounded-[22px] flex items-center justify-center text-on-surface-variant group-hover:bg-on-surface group-hover:text-surface transition-colors">
+<span class="material-symbols-outlined text-2xl" data-icon="garage">garage</span>
+</div>
+<div class="text-left">
+<span class="block font-headline font-bold text-on-surface">Garage</span>
+<span class="block text-on-surface-variant text-sm font-semibold">Closed</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Room Scene Section -->
+<section class="space-y-6">
+<h3 class="font-headline font-bold text-2xl px-2">Active Scenes</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="relative h-64 rounded-[40px] overflow-hidden group">
+<img alt="Modern Living Room" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Interior of a luxury modern living room with soft ambient blue lighting and minimalist furniture at dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxwbieB4cQC2Srf_iUis_L8y7lLzXf9EqfEuS6oALoKX6txd_CuV1jG5KZODGfc-hhdh3XCuVRXJfDxG83R5iC7T7mLvvoOzUaT1HRMu8pW3szDY4rHQiWogUyb38YbyIAryTu2RP6WD4KLh1IEtmt6FzCLqWVxmQIXH6nLh-NAb1DPEVEbwB8A-xvMyZgvry0vsYKAG-Vq5ED3GmuB00uLWuoP8-KVGjE5to-3RSAihGvMwQ1FdyEGscEjB57iHeRdkGuwyGeO0I"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8">
+<span class="text-primary font-bold tracking-widest uppercase text-[10px] mb-1">Current Ambience</span>
+<h4 class="font-headline font-bold text-2xl text-white">Movie Night</h4>
+</div>
+</div>
+<div class="relative h-64 rounded-[40px] overflow-hidden group">
+<img alt="Kitchen Scene" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Modern high-tech kitchen with clean surfaces and subtle under-cabinet warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc5LQzBgPkP0JSUsz_TTipEcWPHY0uvImuRjEuP_99tfTM7g5sy4pWV4k5azSnshfdy2-QlqQpQJiGIUduERvVEKoWNLjNA1tgIVIfzfZVCxJoLDk2pNtEH9lxx_yjS-yaH5qnODo8j-RMz0TPSE7cOtkflFr65JLAuBcUm2mIKmQbmxFt-cWlB6AG0UoH-72LCtgSD9hLXlQcyVAzLhN99WQkeGgfminjdwXscsZJoQac6hzhlNr8EwzXdO_qWlh6v_TtMMNXjnA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8">
+<span class="text-secondary font-bold tracking-widest uppercase text-[10px] mb-1">Scheduled for 8:00 PM</span>
+<h4 class="font-headline font-bold text-2xl text-white">Dinner Prep</h4>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-6 pb-8 pt-4 bg-slate-900/80 backdrop-blur-2xl rounded-t-[32px] z-50 border-t border-white/10 shadow-[0_-8px_30px_rgb(0,0,0,0.5)]">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center text-blue-400 bg-blue-500/10 rounded-full px-4 py-1 hover:text-blue-300 transition-all active:scale-90 cubic-bezier(0.34,1.56,0.64,1)" href="#">
+<span class="material-symbols-outlined" data-icon="home_app_fill" style="font-variation-settings: 'FILL' 1;">home_filled</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Home</span>
+</a>
+<!-- Climate -->
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-blue-300 transition-all active:scale-90 cubic-bezier(0.34,1.56,0.64,1)" href="#">
+<span class="material-symbols-outlined" data-icon="thermostat">thermostat</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Climate</span>
+</a>
+<!-- Security -->
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-blue-300 transition-all active:scale-90 cubic-bezier(0.34,1.56,0.64,1)" href="#">
+<span class="material-symbols-outlined" data-icon="videocam">videocam</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Security</span>
+</a>
+<!-- Energy -->
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-blue-300 transition-all active:scale-90 cubic-bezier(0.34,1.56,0.64,1)" href="#">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Energy</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#281300",
+              "on-primary-fixed": "#000000",
+              "tertiary-fixed": "#ff9817",
+              "inverse-on-surface": "#555557",
+              "on-primary-fixed-variant": "#002a60",
+              "surface-container-high": "#1f1f22",
+              "primary-dim": "#0070ea",
+              "inverse-surface": "#fcf8fb",
+              "tertiary-container": "#fe9400",
+              "secondary": "#6ffb85",
+              "on-secondary-fixed-variant": "#006826",
+              "secondary-dim": "#60ec79",
+              "surface-bright": "#2c2c2f",
+              "on-background": "#fefbfe",
+              "on-tertiary": "#562f00",
+              "secondary-container": "#006e28",
+              "on-error": "#490006",
+              "surface": "#0e0e10",
+              "primary-container": "#6c9fff",
+              "inverse-primary": "#005bc1",
+              "background": "#0e0e10",
+              "on-tertiary-container": "#482600",
+              "on-primary": "#002d64",
+              "on-surface": "#fefbfe",
+              "primary": "#84adff",
+              "primary-fixed": "#6c9fff",
+              "tertiary": "#ffa84f",
+              "error-container": "#9f0519",
+              "surface-tint": "#84adff",
+              "error-dim": "#d7383b",
+              "surface-variant": "#252528",
+              "outline-variant": "#48474a",
+              "surface-dim": "#0e0e10",
+              "surface-container": "#19191c",
+              "outline": "#767577",
+              "on-error-container": "#ffa8a3",
+              "secondary-fixed-dim": "#60ec79",
+              "tertiary-fixed-dim": "#ee8b00",
+              "on-secondary": "#005d21",
+              "surface-container-highest": "#252528",
+              "surface-container-low": "#131315",
+              "on-secondary-container": "#e5ffe0",
+              "primary-fixed-dim": "#5091ff",
+              "secondary-fixed": "#6ffb85",
+              "tertiary-dim": "#ea8900",
+              "surface-container-lowest": "#000000",
+              "error": "#ff716c",
+              "on-surface-variant": "#acaaad",
+              "on-primary-container": "#00214e",
+              "on-tertiary-fixed-variant": "#573000",
+              "on-secondary-fixed": "#004818"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(25, 25, 28, 0.6);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+        }
+        .dial-gradient {
+            background: conic-gradient(from 180deg at 50% 50%, #ffa84f 0deg, #19191c 120deg, #19191c 240deg, #84adff 360deg);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-950/60 backdrop-blur-xl bg-gradient-to-b from-slate-900/20 to-transparent shadow-2xl shadow-blue-900/5 flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="close-up portrait of a professional man with a kind expression, soft studio lighting, high resolution photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1Vx0MLnhZ1mb3HVzcg5pMeKYaO9aBf23ZeA4mrLvYq3NMdzHy28xDXV6A0_rwinhHC8BTC2XybOHuDpZejjf6cCkEI8Juf4_TJS-W-YBbU2VsvyC96dSk1NbjAUbmfYdQmO5ImnkBTk6VrsVo6KseKriIOBGdh-5sZu8vTP2XjWgnLsyfHmLAKmRQgIXjtvS83zpnVuc1XaLCgjhKIRR9Sl05mkKQNIHLiM8yyyogW9n1tD3nHmZ8XDuoInUkoyDZbbkEweUOJ5I"/>
+</div>
+<h1 class="font-['Manrope'] font-bold text-lg tracking-tight text-slate-100">Welcome back, Alex</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-blue-400 hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="pt-24 px-6 max-w-5xl mx-auto space-y-10">
+<!-- Hero: Main Living Room Dial -->
+<section class="relative">
+<div class="glass-panel rounded-[48px] p-8 md:p-12 shadow-2xl flex flex-col items-center">
+<div class="w-full flex justify-between items-start mb-8">
+<div>
+<span class="font-label text-on-surface-variant text-xs uppercase tracking-[0.2em]">Active Zone</span>
+<h2 class="font-headline text-3xl font-extrabold tracking-tight mt-1">Living Room</h2>
+</div>
+<div class="flex items-center gap-2 bg-tertiary/10 px-4 py-2 rounded-full text-tertiary">
+<span class="material-symbols-outlined text-sm" data-icon="heat_pump" data-weight="fill" style="font-variation-settings: 'FILL' 1;">heat_pump</span>
+<span class="font-label text-xs font-bold uppercase">Heating</span>
+</div>
+</div>
+<!-- Circular Dial Interface -->
+<div class="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
+<!-- Progress Ring Track -->
+<div class="absolute inset-0 rounded-full border-[12px] border-surface-container-high opacity-40"></div>
+<!-- Active Gradient Track (Decorative) -->
+<div class="absolute inset-0 rounded-full border-[12px] border-transparent dial-gradient opacity-30 blur-sm"></div>
+<!-- Center Temperature Display -->
+<div class="text-center z-10">
+<div class="font-headline text-7xl md:text-8xl font-extrabold tracking-tighter flex items-start justify-center">
+                            72<span class="text-3xl md:text-4xl mt-2 font-bold text-tertiary">°</span>
+</div>
+<p class="font-label text-on-surface-variant text-sm mt-2 font-medium tracking-wide">Target Temperature</p>
+</div>
+<!-- Interactive Handle (Visual Only) -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1 w-6 h-6 bg-tertiary rounded-full shadow-[0_0_20px_rgba(255,168,79,0.6)] border-4 border-surface ring-2 ring-tertiary/20"></div>
+</div>
+<!-- Quick Controls Row -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full mt-12">
+<div class="bg-surface-container-high rounded-3xl p-4 flex flex-col items-center gap-3 transition-colors hover:bg-surface-bright cursor-pointer">
+<span class="font-label text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">Mode</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary" data-icon="wb_sunny" data-weight="fill" style="font-variation-settings: 'FILL' 1;">wb_sunny</span>
+<span class="font-headline font-bold">Heat</span>
+</div>
+</div>
+<div class="bg-surface-container-high rounded-3xl p-4 flex flex-col items-center gap-3 transition-colors hover:bg-surface-bright cursor-pointer">
+<span class="font-label text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">Fan</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="cyclone">cyclone</span>
+<span class="font-headline font-bold">Auto</span>
+</div>
+</div>
+<div class="bg-surface-container-high rounded-3xl p-4 flex flex-col items-center gap-3 transition-colors hover:bg-surface-bright cursor-pointer">
+<span class="font-label text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">Humidity</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-400" data-icon="humidity_percentage">humidity_percentage</span>
+<span class="font-headline font-bold">42%</span>
+</div>
+</div>
+<div class="bg-surface-container-high rounded-3xl p-4 flex flex-col items-center gap-3 transition-colors hover:bg-surface-bright cursor-pointer">
+<span class="font-label text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">Schedule</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="calendar_today">calendar_today</span>
+<span class="font-headline font-bold">Eco</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Secondary Rooms & Trend Section -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Other Rooms Bento -->
+<div class="md:col-span-5 space-y-6">
+<h3 class="font-headline text-xl font-bold px-2">Other Rooms</h3>
+<!-- Bedroom Card -->
+<div class="glass-panel rounded-3xl p-6 flex items-center justify-between group hover:bg-surface-bright transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="bed">bed</span>
+</div>
+<div>
+<p class="font-headline font-bold text-lg">Bedroom</p>
+<p class="font-label text-xs text-on-surface-variant">Cooling Active</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline text-2xl font-extrabold text-primary">68°F</p>
+</div>
+</div>
+<!-- Office Card -->
+<div class="glass-panel rounded-3xl p-6 flex items-center justify-between group hover:bg-surface-bright transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-2xl bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="work">work</span>
+</div>
+<div>
+<p class="font-headline font-bold text-lg">Office</p>
+<p class="font-label text-xs text-on-surface-variant">Idle State</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline text-2xl font-extrabold text-on-surface-variant">70°F</p>
+</div>
+</div>
+</div>
+<!-- Temperature Trends -->
+<div class="md:col-span-7 glass-panel rounded-[32px] p-8">
+<div class="flex justify-between items-center mb-10">
+<h3 class="font-headline text-xl font-bold">24h Usage Trend</h3>
+<div class="flex gap-2">
+<span class="w-3 h-3 rounded-full bg-tertiary"></span>
+<span class="w-3 h-3 rounded-full bg-primary/30"></span>
+</div>
+</div>
+<!-- Stylized Trend Chart (Visual Simulation) -->
+<div class="relative h-40 flex items-end justify-between gap-1">
+<!-- Graph Columns -->
+<div class="flex-1 bg-surface-container-high rounded-t-lg h-1/2"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg h-2/3"></div>
+<div class="flex-1 bg-tertiary/20 rounded-t-lg h-3/4 border-t-2 border-tertiary"></div>
+<div class="flex-1 bg-tertiary/40 rounded-t-lg h-full border-t-2 border-tertiary"></div>
+<div class="flex-1 bg-tertiary/30 rounded-t-lg h-5/6 border-t-2 border-tertiary"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg h-3/4"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg h-2/3"></div>
+<div class="flex-1 bg-primary/20 rounded-t-lg h-1/3 border-t-2 border-primary"></div>
+<div class="flex-1 bg-primary/40 rounded-t-lg h-2/5 border-t-2 border-primary"></div>
+<div class="flex-1 bg-primary/30 rounded-t-lg h-1/4 border-t-2 border-primary"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg h-1/2"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg h-2/3"></div>
+</div>
+<div class="flex justify-between mt-4 font-label text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">
+<span>Morning</span>
+<span>Noon</span>
+<span>Evening</span>
+<span>Night</span>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant/20 grid grid-cols-2 gap-4">
+<div>
+<p class="font-label text-[10px] text-on-surface-variant uppercase mb-1">Peak Heat</p>
+<p class="font-headline text-xl font-bold">74°F <span class="text-xs text-tertiary font-medium">at 2 PM</span></p>
+</div>
+<div>
+<p class="font-label text-[10px] text-on-surface-variant uppercase mb-1">Energy Saved</p>
+<p class="font-headline text-xl font-bold text-secondary">12.4%</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Mode Selection FAB Contextual Replacement -->
+<div class="grid grid-cols-3 gap-4">
+<button class="flex flex-col items-center justify-center p-6 rounded-[32px] glass-panel border border-primary/20 group hover:bg-primary/5 transition-all">
+<span class="material-symbols-outlined text-primary mb-2 text-3xl" data-icon="ac_unit">ac_unit</span>
+<span class="font-headline font-bold">Cool</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 rounded-[32px] bg-tertiary/10 border border-tertiary/40 group shadow-[0_0_30px_rgba(255,168,79,0.1)] transition-all">
+<span class="material-symbols-outlined text-tertiary mb-2 text-3xl" data-icon="heat_pump" data-weight="fill" style="font-variation-settings: 'FILL' 1;">heat_pump</span>
+<span class="font-headline font-bold text-tertiary">Heat</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 rounded-[32px] glass-panel border border-outline-variant/20 group hover:bg-surface-bright transition-all">
+<span class="material-symbols-outlined text-on-surface-variant mb-2 text-3xl" data-icon="auto_mode">auto_mode</span>
+<span class="font-headline font-bold">Auto</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-6 pb-8 pt-4 bg-slate-900/80 backdrop-blur-2xl rounded-t-[32px] z-50 border-t border-white/10 shadow-[0_-8px_30px_rgb(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-blue-300 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home_app_fill">home_filled</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-400 bg-blue-500/10 rounded-full px-4 py-1 hover:text-blue-300 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="thermostat" data-weight="fill" style="font-variation-settings: 'FILL' 1;">thermostat</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Climate</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-blue-300 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="videocam">videocam</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Security</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-blue-300 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Energy</span>
+</a>
+</nav>
+</body></html>

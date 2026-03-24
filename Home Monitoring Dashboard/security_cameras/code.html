@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Security &amp; Cameras | Smart Home OS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#281300",
+              "on-primary-fixed": "#000000",
+              "tertiary-fixed": "#ff9817",
+              "inverse-on-surface": "#555557",
+              "on-primary-fixed-variant": "#002a60",
+              "surface-container-high": "#1f1f22",
+              "primary-dim": "#0070ea",
+              "inverse-surface": "#fcf8fb",
+              "tertiary-container": "#fe9400",
+              "secondary": "#6ffb85",
+              "on-secondary-fixed-variant": "#006826",
+              "secondary-dim": "#60ec79",
+              "surface-bright": "#2c2c2f",
+              "on-background": "#fefbfe",
+              "on-tertiary": "#562f00",
+              "secondary-container": "#006e28",
+              "on-error": "#490006",
+              "surface": "#0e0e10",
+              "primary-container": "#6c9fff",
+              "inverse-primary": "#005bc1",
+              "background": "#0e0e10",
+              "on-tertiary-container": "#482600",
+              "on-primary": "#002d64",
+              "on-surface": "#fefbfe",
+              "primary": "#84adff",
+              "primary-fixed": "#6c9fff",
+              "tertiary": "#ffa84f",
+              "error-container": "#9f0519",
+              "surface-tint": "#84adff",
+              "error-dim": "#d7383b",
+              "surface-variant": "#252528",
+              "outline-variant": "#48474a",
+              "surface-dim": "#0e0e10",
+              "surface-container": "#19191c",
+              "outline": "#767577",
+              "on-error-container": "#ffa8a3",
+              "secondary-fixed-dim": "#60ec79",
+              "tertiary-fixed-dim": "#ee8b00",
+              "on-secondary": "#005d21",
+              "surface-container-highest": "#252528",
+              "surface-container-low": "#131315",
+              "on-secondary-container": "#e5ffe0",
+              "primary-fixed-dim": "#5091ff",
+              "secondary-fixed": "#6ffb85",
+              "tertiary-dim": "#ea8900",
+              "surface-container-lowest": "#000000",
+              "error": "#ff716c",
+              "on-surface-variant": "#acaaad",
+              "on-primary-container": "#00214e",
+              "on-tertiary-fixed-variant": "#573000",
+              "on-secondary-fixed": "#004818"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(37, 37, 40, 0.6);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-950/60 backdrop-blur-xl flex justify-between items-center px-6 py-4 w-full shadow-2xl shadow-blue-900/5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-white/10">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a professional man with a friendly expression in soft studio lighting against a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP_P70hu6rvonJzre9VoG6tCd9X0YM4yRrhttBI37QvkX0-tzOluKFAa_PyokV_KAysHpL_Epbzm26PFDVUxDqRtcGcBswEYEyvoX_7pkhkRqoK0NmLLX2UqcyP-MM3CV7eTSaaxt-y2JooGvxErCSn--Qc0zwv-z-X41zhAy2t9QyieJcIPEWvn_WFU6vhoMVNbeWl9s2ZHmdXw_Ly1sH7XIvuTZ87wAqDpCmxwUmW4uDSzsvn8BfGTPBiTqSlwh2FnlgwkCm4kc"/>
+</div>
+<span class="font-headline font-bold text-lg tracking-tight text-slate-100">Welcome back, Alex</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-blue-400 p-2 hover:bg-white/5 transition-colors rounded-full">notifications</button>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-7xl mx-auto space-y-10">
+<!-- Alarm Status Banner -->
+<section class="relative overflow-hidden rounded-[2rem] p-8 glass-panel shadow-2xl">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] -z-10"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+</div>
+<div>
+<h2 class="font-headline font-extrabold text-3xl text-primary tracking-tight">System Armed - Home Mode</h2>
+<p class="text-on-surface-variant font-medium mt-1">All perimeter sensors active. Internal motion suppressed.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-8 py-4 bg-surface-bright text-on-surface font-bold rounded-full border border-white/5 hover:bg-white/10 transition-all active:scale-95">
+                        Disarm System
+                    </button>
+<button class="px-8 py-4 bg-primary text-on-primary font-bold rounded-full hover:opacity-90 transition-all active:scale-95 shadow-lg shadow-primary/20">
+                        Emergency SOS
+                    </button>
+</div>
+</div>
+</section>
+<!-- Live Feeds Grid -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="font-headline font-bold text-xl flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+                    Live Feeds
+                </h3>
+<span class="text-on-surface-variant font-medium text-sm">4 Cameras Active</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Camera 1: Front Door -->
+<div class="group relative aspect-video rounded-[2rem] overflow-hidden bg-surface-container-low shadow-lg">
+<img alt="Front Door Camera" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="High angle security camera view of a modern house entrance with a wooden door and stone walkway in daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgRM5E0bxt8Zy5BbH0x3r08UTN0a-KfkDMHdZ8bGMzedQAPf3U4Ihxo6hbiIm1pUnD_Tufh_b6dq5h5tScof0N85t-2CUuTsae7y5onwhGZrIAuc-RWDD4C6FS28FX5qtCQpUEGxCKQi2yNl67MP9cuMACCC5t8QYgKXgEyn1RCxUeUr-NWdAoeEKmLHtnearlp6V__5JclSVUN0rZ3K4N2BPu_NcJe9tBAn3JskEytp77I5Ow0G89FaLLUuPu18rWq7sx5xFzZrI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 p-6 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="px-3 py-1 rounded-full bg-black/40 backdrop-blur-md text-[10px] font-bold uppercase tracking-widest text-white border border-white/10">Live • 4K</span>
+<button class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined text-lg">fullscreen</span>
+</button>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<p class="font-headline font-bold text-lg text-white">Front Door</p>
+<p class="text-white/60 text-xs font-medium">Last motion 2m ago</p>
+</div>
+<div class="flex gap-2">
+<button class="w-12 h-12 rounded-full bg-primary/20 backdrop-blur-md flex items-center justify-center text-primary border border-primary/30">
+<span class="material-symbols-outlined">mic</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Camera 2: Backyard -->
+<div class="group relative aspect-video rounded-[2rem] overflow-hidden bg-surface-container-low shadow-lg">
+<img alt="Backyard Camera" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Surveillance view of a lush backyard with a swimming pool and patio furniture during late afternoon with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqGFtXLDrcnCWTtwhRHbZjfCCvV-yLr8UNIQf0laNuuml8mGAEWDZLm89uBVHOdUrROq-zWTAEYT__XadfN-JkESBrWzsOmGIro8YkiYR4h3jTYm0FlSYHdimlSnLZF8ZtW_o4tiCq9bfyZLdTxpduh0qhrcuP6ATPED0QtFWugS3A4SbhuwWagY5tVSHszJb9zsBKOBnTHeGnzYhWqR5aq5xaupZliHvcf9ZqAewqkzGoXEFldb8p6cwtP2G9aMQhJL-Tsr0PBfg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 p-6 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="px-3 py-1 rounded-full bg-black/40 backdrop-blur-md text-[10px] font-bold uppercase tracking-widest text-white border border-white/10">Live • 4K</span>
+<button class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined text-lg">fullscreen</span>
+</button>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<p class="font-headline font-bold text-lg text-white">Backyard</p>
+<p class="text-white/60 text-xs font-medium">Clear visibility</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Camera 3: Garage -->
+<div class="group relative aspect-video rounded-[2rem] overflow-hidden bg-surface-container-low shadow-lg">
+<img alt="Garage Camera" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Interior wide angle view of a clean modern garage with a concrete floor and overhead lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsBgJ1X1aoKZMcEPspEhvf0Exp8Z8W5DbeltArw8cthZ4e86uuXjypLj3NSyAXonLVLdUqTORXJkIfI4JnmUyAXZcSqYMiUQqQvJCEtc03teq1H2YHGcu9SfFtdDInFz7GDGm68pnQSYk2hE2k8c5Tz6kqPYV_oS0mTv-2k31XIedoCVaHCg9gP-Aj592MKMHIpdAxY7zelH1VpfMWIhHG2QH58UhJuClffnILVtY_QdyVX64k3dgC3omrdhsWZaRefKKXSwCMmQ8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 p-6 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="px-3 py-1 rounded-full bg-black/40 backdrop-blur-md text-[10px] font-bold uppercase tracking-widest text-white border border-white/10">Live • 1080p</span>
+<button class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined text-lg">fullscreen</span>
+</button>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<p class="font-headline font-bold text-lg text-white">Garage</p>
+<p class="text-white/60 text-xs font-medium">Door closed</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Camera 4: Nursery -->
+<div class="group relative aspect-video rounded-[2rem] overflow-hidden bg-surface-container-low shadow-lg">
+<img alt="Nursery Camera" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Soft focused interior view of a calm baby nursery with a crib and warm night light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8U08QzhkglA4X41jXM0zy2L-cTpYekSUhtRnuw9YUVnOTjR3iwHIoekFfSZvQyt9zv-bJhBSuKzz82jcDMtogYnVNEjKIaJ4fbCulk06bgj0a6cRNQL61Bdyqv4tqoOIRgpkigiSjh-of59k8PDeTuZldOt2Y6PTEN6_HQaH16iaas7Ta2R91rOjVlEPTCv-QpP92upEfeCoLI1HJFWcKLpZhIcnWb3eHCr165Sh2ih8okx8lyPhYGHRQiMjH86_ApcCtUal79Z4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 p-6 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="px-3 py-1 rounded-full bg-black/40 backdrop-blur-md text-[10px] font-bold uppercase tracking-widest text-white border border-white/10">Live • 1080p</span>
+<button class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined text-lg">fullscreen</span>
+</button>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<p class="font-headline font-bold text-lg text-white">Nursery</p>
+<p class="text-white/60 text-xs font-medium">Quiet detected</p>
+</div>
+<div class="flex gap-2">
+<button class="w-12 h-12 rounded-full bg-tertiary/20 backdrop-blur-md flex items-center justify-center text-tertiary border border-tertiary/30">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">nightlight</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Events Log -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="font-headline font-bold text-xl">Events Log</h3>
+<button class="text-primary font-bold text-sm hover:underline">View History</button>
+</div>
+<div class="space-y-4">
+<!-- Log Item 1 -->
+<div class="glass-panel p-6 rounded-[1.5rem] flex items-center justify-between group cursor-pointer hover:bg-surface-bright transition-all">
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">person_search</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Person detected at Front Door</p>
+<p class="text-sm text-on-surface-variant">Today, 11:42 AM</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-16 h-10 rounded-lg overflow-hidden border border-white/5">
+<img alt="Person Event" class="w-full h-full object-cover" data-alt="Blurred snapshot of a person in a brown jacket approaching a doorstep from a security camera perspective" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo3iMFUvqAfvxxskk7bc66elztnJaBQTGA0QK7aXQHCcUA-MFtac3GGi8o0P7lF2M2rGJOgHyEHoMqTreMTbGP17aEjzNhaXwT4MZwVwcPcGgk5py4uGxVr9p0EjkqnqXj4NWe4Yvaeb_CnYzrFax9JRMF5HZgJvDUqQ3tiRpQE6Kf8lC2BEsRMtMN9ykKgUW5W3gD8CUO5nrNiQ2m55UlHP-nfQeGOhbQ8kllDTjPDziWw6b0nHJj2XDpTz5gMl0GKaRlsHol64E"/>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+</div>
+<!-- Log Item 2 -->
+<div class="glass-panel p-6 rounded-[1.5rem] flex items-center justify-between group cursor-pointer hover:bg-surface-bright transition-all">
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">garage_home</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Garage Door opened</p>
+<p class="text-sm text-on-surface-variant">Today, 08:15 AM</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-[10px] font-bold tracking-wider uppercase">Auto-Action</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+</div>
+<!-- Log Item 3 -->
+<div class="glass-panel p-6 rounded-[1.5rem] flex items-center justify-between group cursor-pointer hover:bg-surface-bright transition-all">
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline">lock_open</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Smart Lock: Backend unlocked by User Alex</p>
+<p class="text-sm text-on-surface-variant">Yesterday, 10:30 PM</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-6 pb-8 pt-4 bg-slate-900/80 backdrop-blur-2xl rounded-t-[32px] z-50 border-t border-white/10 shadow-[0_-8px_30px_rgb(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-blue-300 transition-all" href="#">
+<span class="material-symbols-outlined">home_filled</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-blue-300 transition-all" href="#">
+<span class="material-symbols-outlined">thermostat</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Climate</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-400 bg-blue-500/10 rounded-full px-4 py-1 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">videocam</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Security</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-blue-300 transition-all" href="#">
+<span class="material-symbols-outlined">bolt</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Energy</span>
+</a>
+</nav>
+</body></html>
