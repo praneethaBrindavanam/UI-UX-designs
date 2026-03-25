@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Curated Stays - Map Explorer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error-container": "#ffdad6",
+              "inverse-on-surface": "#eff0fd",
+              "on-primary-fixed-variant": "#003fa4",
+              "on-background": "#191b24",
+              "surface-container-low": "#f2f3ff",
+              "on-error-container": "#93000a",
+              "inverse-primary": "#b3c5ff",
+              "on-secondary-fixed": "#001849",
+              "surface-tint": "#0054d6",
+              "surface-container-high": "#e6e7f4",
+              "on-surface": "#191b24",
+              "on-tertiary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed": "#ffdbd0",
+              "surface-bright": "#faf8ff",
+              "primary-fixed": "#dae1ff",
+              "primary-fixed-dim": "#b3c5ff",
+              "on-primary": "#ffffff",
+              "on-secondary-container": "#294487",
+              "secondary-container": "#9bb4fe",
+              "surface-container-highest": "#e1e2ee",
+              "on-secondary-fixed-variant": "#284386",
+              "outline-variant": "#c2c6d8",
+              "on-surface-variant": "#424656",
+              "inverse-surface": "#2e303a",
+              "on-error": "#ffffff",
+              "tertiary": "#a33200",
+              "tertiary-fixed-dim": "#ffb59d",
+              "secondary-fixed": "#dae1ff",
+              "on-tertiary-fixed": "#390c00",
+              "on-tertiary-fixed-variant": "#832600",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed-dim": "#b3c5ff",
+              "surface-container": "#ecedfa",
+              "on-tertiary-container": "#fff6f4",
+              "surface-variant": "#e1e2ee",
+              "on-primary-container": "#f8f7ff",
+              "outline": "#727687",
+              "on-primary-fixed": "#001849",
+              "tertiary-container": "#cc4204",
+              "primary-container": "#0066ff",
+              "surface": "#faf8ff",
+              "background": "#faf8ff",
+              "surface-dim": "#d8d9e6",
+              "primary": "#0050cb",
+              "error": "#ba1a1a",
+              "secondary": "#425ca0"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed">
+<!-- Shared TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-6 py-4 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">menu</span>
+</button>
+<h1 class="font-plus-jakarta-sans font-bold text-lg tracking-tight text-blue-700 dark:text-blue-500">Explore</h1>
+</div>
+<div class="flex items-center gap-3">
+<div class="hidden md:flex items-center gap-6 px-4">
+<a class="text-blue-600 dark:text-blue-400 font-semibold text-sm" href="#">Explore</a>
+<a class="text-slate-500 dark:text-slate-400 font-semibold text-sm hover:text-blue-500" href="#">Search</a>
+<a class="text-slate-500 dark:text-slate-400 font-semibold text-sm hover:text-blue-500" href="#">Saved</a>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden ring-2 ring-primary-fixed p-0.5">
+<img alt="User profile photo" class="w-full h-full object-cover rounded-full" data-alt="professional portrait of a person with friendly expression in soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFxdI9N4VNw0U6_y0SBWON4zkJAKeApfWEckSjJoO3d2pGlnOnjUZRvEjAzNVLosCicfAGns3MOplPSZr7UWEWc-tTv3EORB6cof8lJxABzQHbTO7n1W0mEojHrn45VM2VQfYD6v3Jq_FK6I-MkopoHgcSY41enBWqFP5Waw84EiD4jZuFgBELVMcqjWuATU5dmwdvvY19mdwyESVCvmWUJI4WgyeT9Oe--wAbz5TxYEYTrMLTMdypS-ONSVtPvyxwvbeisCgA7h4"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Canvas: Map View -->
+<main class="relative h-screen w-full overflow-hidden pt-16">
+<!-- Interactive Map Background -->
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-surface-container-low" data-location="Santorini, Greece" style="">
+<!-- Fallback Map Visual -->
+<img alt="Interactive map of a Mediterranean coastal destination" class="w-full h-full object-cover opacity-60 grayscale-[0.2]" data-alt="high angle topographic map aesthetic of a coastal city with winding streets and blue water nearby" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzo4_Cjx__nrosd0YrG56rjvSv2d0lDSIHNEIYA6QrEUR5Oc8wRPj06PKiqefqu1-kFT-RZ83X-w8rGyQpmqWZnXJK-vJEAydgrzmcwabcVN1mIrCsxFUGzIRIWVIxexDjIh1D-MjiXIJh5jQDt41NXsNS9YAbVMCFCysTYTYAuK2dNPYjvMk8cli0VEbitCN-SSaEIRGfS2dy3yD4bpUxhYTprdfWoLDxg3Lez1-wc5CwVlRhOtYA0W_C7WxKpMP3KG8r4fnMYIk"/>
+</div>
+<!-- Custom Map Price Markers -->
+<div class="absolute top-[25%] left-[30%] z-10">
+<button class="bg-surface-container-lowest text-primary font-bold px-3 py-1.5 rounded-full shadow-lg border-2 border-primary-container transition-transform hover:scale-110 active:scale-90">
+                    $450
+                </button>
+</div>
+<div class="absolute top-[40%] left-[55%] z-10">
+<button class="bg-primary text-on-primary font-bold px-3 py-1.5 rounded-full shadow-lg scale-125 ring-4 ring-primary-fixed transition-transform">
+                    $890
+                </button>
+</div>
+<div class="absolute top-[60%] left-[20%] z-10">
+<button class="bg-surface-container-lowest text-primary font-bold px-3 py-1.5 rounded-full shadow-lg border-2 border-primary-container transition-transform hover:scale-110">
+                    $320
+                </button>
+</div>
+<div class="absolute top-[55%] left-[75%] z-10">
+<button class="bg-surface-container-lowest text-primary font-bold px-3 py-1.5 rounded-full shadow-lg border-2 border-primary-container transition-transform hover:scale-110">
+                    $610
+                </button>
+</div>
+</div>
+<!-- Floating Search Interface -->
+<div class="absolute top-24 left-1/2 -translate-x-1/2 w-[90%] max-w-xl z-20">
+<div class="bg-white/80 backdrop-blur-xl rounded-3xl p-2 shadow-2xl flex items-center gap-2">
+<div class="flex-1 flex items-center gap-3 px-4">
+<span class="material-symbols-outlined text-primary">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface font-medium w-full placeholder:text-outline-variant" placeholder="Where to next?" type="text"/>
+</div>
+<button class="bg-primary-container text-on-primary-container p-3 rounded-2xl flex items-center justify-center transition-transform active:scale-95">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+<!-- Category Chips -->
+<div class="flex gap-2 mt-4 overflow-x-auto hide-scrollbar pb-2 px-1">
+<button class="whitespace-nowrap bg-primary text-on-primary px-5 py-2 rounded-full text-sm font-semibold shadow-md">All Stays</button>
+<button class="whitespace-nowrap bg-white/90 backdrop-blur-md text-on-surface px-5 py-2 rounded-full text-sm font-semibold shadow-sm hover:bg-white transition-colors">Coastal</button>
+<button class="whitespace-nowrap bg-white/90 backdrop-blur-md text-on-surface px-5 py-2 rounded-full text-sm font-semibold shadow-sm hover:bg-white transition-colors">Villas</button>
+<button class="whitespace-nowrap bg-white/90 backdrop-blur-md text-on-surface px-5 py-2 rounded-full text-sm font-semibold shadow-sm hover:bg-white transition-colors">Boutique</button>
+</div>
+</div>
+<!-- Hotel Cards Carousel -->
+<div class="absolute bottom-28 left-0 w-full z-20">
+<div class="flex gap-4 overflow-x-auto hide-scrollbar px-6 snap-x snap-mandatory">
+<!-- Card 1 (Active) -->
+<div class="snap-center min-w-[280px] md:min-w-[400px] bg-surface-container-lowest rounded-3xl p-3 shadow-xl flex gap-4 border border-outline-variant/10">
+<div class="relative w-32 md:w-44 h-full shrink-0">
+<img alt="Luxury Hotel Exterior" class="w-full h-full object-cover rounded-2xl" data-alt="minimalist luxury boutique hotel with white architecture and deep blue infinity pool overlooking the ocean" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD55KYWpS8USPd1hlKSSXAKOCqCyzmgRK7x1cTgGoDWWWc2-qjHw44YGCkYaMuOPFFCkYV8ROcW5x-kePF0oopXzz7GsUPJtPErSjlK2wt7jEGfEh5Qmr_7kFCF2aMsbiLW7QTyCUHbckpaWIwSyEWjkseOEByK87HoVub7bcjprLoLOvrWM2TJfLvjiHMtjdXLrDxwww2OgCMADwwRH3Tm0ZqPn3vP07dQO1LxYTPK9vIAcsOC3Pqtwicj0SrukaAy187As_mOsEM"/>
+<div class="absolute top-2 left-2 bg-white/90 backdrop-blur-md px-2 py-1 rounded-lg">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[12px] font-bold text-on-surface">4.9</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col justify-between py-2 pr-2 flex-1">
+<div>
+<span class="text-tertiary font-bold text-[10px] uppercase tracking-wider">Premium Selection</span>
+<h3 class="font-headline font-bold text-lg leading-tight mt-1">Azure Sands Resort</h3>
+<p class="text-outline text-sm flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                Santorini, Greece
+                            </p>
+</div>
+<div class="flex items-end justify-between mt-4">
+<div>
+<span class="text-primary font-extrabold text-xl">$890</span>
+<span class="text-outline text-xs">/night</span>
+</div>
+<button class="bg-primary text-on-primary w-10 h-10 rounded-xl flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="snap-center min-w-[280px] md:min-w-[400px] bg-surface-container-lowest/90 backdrop-blur-md rounded-3xl p-3 shadow-lg flex gap-4 border border-outline-variant/10">
+<div class="relative w-32 md:w-44 h-full shrink-0">
+<img alt="Minimalist Villa Interior" class="w-full h-full object-cover rounded-2xl" data-alt="interior of a modern minimalist villa with light wood accents and panoramic views of the sea" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUaWwXu_OzKTmJWNQ8s8b9D56vd29op6i532YunFnvhm5InGFm9vuI5awT1iYhS8WbwDkbXsVNLDEdaOjeSGIhQ4_n3t2RpCLBxD9UOyoG6RJ89UGT_uMxyGKkJRFrv8KL0HhVRRw2pP8OMcCxPOgzVrlXXyXYlpGisR2ZVxny6WvgXAv6lze6GXs_9FLf_LBi3jtnTfUKw51fVE2Z3HzRB65LYa-WE4yzYY9AJ8Xb7_rMeOLvtfvSLJ3oleqrX3Nt4LgggVtsQW8"/>
+<div class="absolute top-2 left-2 bg-white/90 backdrop-blur-md px-2 py-1 rounded-lg">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[12px] font-bold text-on-surface">4.7</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col justify-between py-2 pr-2 flex-1">
+<div>
+<span class="text-secondary font-bold text-[10px] uppercase tracking-wider">Editor's Pick</span>
+<h3 class="font-headline font-bold text-lg leading-tight mt-1">Cave Hollow Villas</h3>
+<p class="text-outline text-sm flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                Oia, Greece
+                            </p>
+</div>
+<div class="flex items-end justify-between mt-4">
+<div>
+<span class="text-primary font-extrabold text-xl">$450</span>
+<span class="text-outline text-xs">/night</span>
+</div>
+<button class="bg-surface-container-high text-on-surface w-10 h-10 rounded-xl flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="snap-center min-w-[280px] md:min-w-[400px] bg-surface-container-lowest/90 backdrop-blur-md rounded-3xl p-3 shadow-lg flex gap-4 border border-outline-variant/10">
+<div class="relative w-32 md:w-44 h-full shrink-0">
+<img alt="Boutique Hotel Lobby" class="w-full h-full object-cover rounded-2xl" data-alt="elegant boutique hotel lobby with high-end furniture and soft morning sunlight streaming through large windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdRkktKWte9nRuNz5MQFXJAchD_aW4_c8aH40yuEB2durwywTMafo5THXO3j416VExUeK9mpKhCJcma4hy7oORP5FS7uoz51FnafB7QJbRpk0nWUlYGPQK--6PvqUEqHPoddJrWL4RdEgdMMmhZsNLed_QXUNeo7E96UghgtKW3aAGuxfUWa_eIQdRqJLP9FC_9ZgkkZhqdwxgD_eQ_MsJTldT4xN8hWVF345IacnyWKsruF81wFR1fkWXtjDrMDPoKndeoegaPtQ"/>
+<div class="absolute top-2 left-2 bg-white/90 backdrop-blur-md px-2 py-1 rounded-lg">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[12px] font-bold text-on-surface">4.8</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col justify-between py-2 pr-2 flex-1">
+<div>
+<span class="text-tertiary font-bold text-[10px] uppercase tracking-wider">Top Rated</span>
+<h3 class="font-headline font-bold text-lg leading-tight mt-1">The White Pearl</h3>
+<p class="text-outline text-sm flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                Imerovigli, Greece
+                            </p>
+</div>
+<div class="flex items-end justify-between mt-4">
+<div>
+<span class="text-primary font-extrabold text-xl">$610</span>
+<span class="text-outline text-xs">/night</span>
+</div>
+<button class="bg-surface-container-high text-on-surface w-10 h-10 rounded-xl flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Action Button for Map Toggle (Contextual FAB) -->
+<button class="fixed right-6 bottom-32 bg-tertiary text-on-tertiary w-14 h-14 rounded-full shadow-2xl flex items-center justify-center z-30 active:scale-90 transition-transform ring-4 ring-tertiary-fixed">
+<span class="material-symbols-outlined">list</span>
+</button>
+</main>
+<!-- Shared BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl z-50 shadow-[0_-4px_20px_rgba(25,27,36,0.04)] rounded-t-3xl">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-blue-500 dark:hover:text-blue-300 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-inter text-[10px] font-semibold tracking-wide mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/40 rounded-2xl px-5 py-2 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-inter text-[10px] font-semibold tracking-wide mt-1">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-blue-500 dark:hover:text-blue-300 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-inter text-[10px] font-semibold tracking-wide mt-1">Saved</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-blue-500 dark:hover:text-blue-300 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-inter text-[10px] font-semibold tracking-wide mt-1">Profile</span>
+</a>
+</nav>
+</body></html>
