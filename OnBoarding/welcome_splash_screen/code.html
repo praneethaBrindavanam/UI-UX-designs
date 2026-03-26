@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Welcome - The Fluid Concierge</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#f5eeff",
+              "tertiary-fixed-dim": "#ee7ebc",
+              "tertiary-fixed": "#fd8bca",
+              "surface-container-lowest": "#ffffff",
+              "primary-container": "#9795ff",
+              "on-error": "#ffefef",
+              "surface-container": "#ede4ff",
+              "primary": "#4a40e0",
+              "background": "#faf4ff",
+              "on-primary-fixed": "#000000",
+              "on-primary-fixed-variant": "#1a0099",
+              "on-primary": "#f4f1ff",
+              "secondary-fixed-dim": "#cbbaff",
+              "tertiary": "#983772",
+              "surface-container-highest": "#e2d7ff",
+              "surface": "#faf4ff",
+              "secondary-dim": "#563ca5",
+              "inverse-surface": "#10062d",
+              "on-tertiary-fixed": "#360024",
+              "on-secondary": "#f7f0ff",
+              "on-background": "#32294f",
+              "primary-fixed": "#9795ff",
+              "error": "#b41340",
+              "on-tertiary-fixed-variant": "#6d104e",
+              "on-secondary-container": "#4e339c",
+              "outline": "#7b719c",
+              "inverse-primary": "#8582ff",
+              "on-tertiary": "#ffeff4",
+              "surface-tint": "#4a40e0",
+              "surface-bright": "#faf4ff",
+              "surface-dim": "#dacdff",
+              "on-tertiary-container": "#610244",
+              "on-surface": "#32294f",
+              "outline-variant": "#b2a6d5",
+              "tertiary-dim": "#892a65",
+              "on-primary-container": "#14007e",
+              "primary-dim": "#3d30d4",
+              "on-secondary-fixed-variant": "#573da6",
+              "error-dim": "#a70138",
+              "inverse-on-surface": "#a296c4",
+              "on-secondary-fixed": "#3a1b88",
+              "surface-variant": "#e2d7ff",
+              "secondary-container": "#d8caff",
+              "error-container": "#f74b6d",
+              "on-surface-variant": "#5f557f",
+              "secondary": "#6249b2",
+              "secondary-fixed": "#d8caff",
+              "tertiary-container": "#fd8bca",
+              "on-error-container": "#510017",
+              "primary-fixed-dim": "#8885ff",
+              "surface-container-high": "#e8deff"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .splash-gradient {
+            background: linear-gradient(135deg, #4a40e0 0%, #3d30d4 100%);
+        }
+        .glass-effect {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-background selection:bg-primary-container/30">
+<!-- Splash Screen Container -->
+<main class="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden splash-gradient">
+<!-- Abstract Background Elements (Tonal Depth) -->
+<div class="absolute top-[-10%] right-[-10%] w-[80vw] h-[80vw] rounded-full bg-primary-fixed/20 blur-[100px]"></div>
+<div class="absolute bottom-[-5%] left-[-5%] w-[60vw] h-[60vw] rounded-full bg-secondary-dim/30 blur-[80px]"></div>
+<!-- Central Identity Cluster -->
+<div class="relative z-10 flex flex-col items-center gap-12 px-8">
+<!-- Logo Treatment -->
+<div class="relative group">
+<!-- Outer Glow -->
+<div class="absolute inset-0 bg-white/20 blur-2xl rounded-full scale-110 opacity-50 group-hover:opacity-75 transition-opacity"></div>
+<!-- Main Logo Container -->
+<div class="relative w-32 h-32 flex items-center justify-center bg-surface-container-lowest rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
+<span class="material-symbols-outlined text-6xl text-primary" style="font-variation-settings: 'FILL' 1;">doorbell</span>
+</div>
+</div>
+<!-- Typography Hook -->
+<div class="text-center space-y-4">
+<h1 class="font-headline font-extrabold text-4xl md:text-5xl text-on-primary tracking-tight">
+                    The Fluid Concierge
+                </h1>
+<p class="font-body text-lg md:text-xl text-on-primary/80 font-medium max-w-xs mx-auto leading-relaxed">
+                    Your journey starts here
+                </p>
+</div>
+</div>
+<!-- Minimal Loading / Progress Indicator -->
+<div class="absolute bottom-20 flex gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-tertiary"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-on-primary/30"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-on-primary/30"></div>
+</div>
+<!-- Subtle Textural Detail -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDj9O1qJZoqf_8gHJmRdpF-chwdBuCM2c-gaf_T3V-KRAETXVb_zjUORW-Gekm5pLHXLIBBnmCGOv0EgTlmLSs6DhEesrunjcCSqSCBzIN3G5TZKGFWgfy927xkju3UI_62o6hC-B5O0AFNxXYuU7VPqfqxvraefIo4wBBsLPO7u02jmEEJQl8HpyssHlzXccRDCbe9cyKLx8c_1MZsTGHZXQVG_JUL8rdW65bLl0RUvHFLjDUDee-1BXHfI6TL6D7G91yp2woXWexs');">
+</div>
+</main>
+<!-- Decorative Top Bar (Static/Uninteractive for Splash) -->
+<header class="fixed top-0 left-0 w-full px-6 py-4 flex justify-between items-center z-50 pointer-events-none">
+<div class="text-on-primary/40 font-headline font-bold tracking-tighter text-sm uppercase">
+            EST 2024
+        </div>
+<div class="glass-effect px-4 py-1.5 rounded-full border border-white/10 text-on-primary/60 text-xs font-semibold">
+            V 1.0.4
+        </div>
+</header>
+</body></html>

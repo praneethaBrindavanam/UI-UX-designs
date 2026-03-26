@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#f5eeff",
+                        "tertiary-fixed-dim": "#ee7ebc",
+                        "tertiary-fixed": "#fd8bca",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#9795ff",
+                        "on-error": "#ffefef",
+                        "surface-container": "#ede4ff",
+                        "primary": "#4a40e0",
+                        "background": "#faf4ff",
+                        "on-primary-fixed": "#000000",
+                        "on-primary-fixed-variant": "#1a0099",
+                        "on-primary": "#f4f1ff",
+                        "secondary-fixed-dim": "#cbbaff",
+                        "tertiary": "#983772",
+                        "surface-container-highest": "#e2d7ff",
+                        "surface": "#faf4ff",
+                        "secondary-dim": "#563ca5",
+                        "inverse-surface": "#10062d",
+                        "on-tertiary-fixed": "#360024",
+                        "on-secondary": "#f7f0ff",
+                        "on-background": "#32294f",
+                        "primary-fixed": "#9795ff",
+                        "error": "#b41340",
+                        "on-tertiary-fixed-variant": "#6d104e",
+                        "on-secondary-container": "#4e339c",
+                        "outline": "#7b719c",
+                        "inverse-primary": "#8582ff",
+                        "on-tertiary": "#ffeff4",
+                        "surface-tint": "#4a40e0",
+                        "surface-bright": "#faf4ff",
+                        "surface-dim": "#dacdff",
+                        "on-tertiary-container": "#610244",
+                        "on-surface": "#32294f",
+                        "outline-variant": "#b2a6d5",
+                        "tertiary-dim": "#892a65",
+                        "on-primary-container": "#14007e",
+                        "primary-dim": "#3d30d4",
+                        "on-secondary-fixed-variant": "#573da6",
+                        "error-dim": "#a70138",
+                        "inverse-on-surface": "#a296c4",
+                        "on-secondary-fixed": "#3a1b88",
+                        "surface-variant": "#e2d7ff",
+                        "secondary-container": "#d8caff",
+                        "error-container": "#f74b6d",
+                        "on-surface-variant": "#5f557f",
+                        "secondary": "#6249b2",
+                        "secondary-fixed": "#d8caff",
+                        "tertiary-container": "#fd8bca",
+                        "on-error-container": "#510017",
+                        "primary-fixed-dim": "#8885ff",
+                        "surface-container-high": "#e8deff"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #faf4ff;
+        }
+        .editorial-shadow {
+            box-shadow: 0 8px 24px rgba(74, 64, 224, 0.08);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-[#faf4ff] dark:bg-slate-950 flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50">
+<div class="text-lg font-extrabold text-[#32294f] dark:text-indigo-200 font-headline tracking-tight">
+            Concierge
+        </div>
+<button class="text-[#4a40e0] dark:text-indigo-400 font-['Plus_Jakarta_Sans'] font-bold tracking-tight hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200">
+            Skip
+        </button>
+</header>
+<main class="flex-grow flex flex-col pt-24 pb-32 px-6 max-w-xl mx-auto w-full">
+<!-- Content Hook -->
+<div class="mb-12">
+<h1 class="font-headline text-4xl font-extrabold text-on-background tracking-tight leading-tight mb-4">
+                Get Started
+            </h1>
+<p class="font-body text-lg text-on-surface-variant max-w-[85%]">
+                Create your account to unlock personalized recommendations and exclusive access.
+            </p>
+</div>
+<!-- Form Section with Tonal Layering (No Borders) -->
+<div class="space-y-10">
+<div class="space-y-6">
+<!-- Full Name -->
+<div class="group">
+<label class="block font-label text-sm font-bold text-on-surface-variant mb-2 ml-1">Full Name</label>
+<div class="relative bg-surface-container-low rounded-xl transition-all duration-300 focus-within:bg-surface-container-lowest focus-within:ring-2 focus-within:ring-primary/20">
+<input class="w-full bg-transparent border-none py-4 px-5 text-on-surface placeholder:text-outline-variant focus:ring-0 font-body" placeholder="Alex Morgan" type="text"/>
+</div>
+</div>
+<!-- Email -->
+<div class="group">
+<label class="block font-label text-sm font-bold text-on-surface-variant mb-2 ml-1">Email</label>
+<div class="relative bg-surface-container-low rounded-xl transition-all duration-300 focus-within:bg-surface-container-lowest focus-within:ring-2 focus-within:ring-primary/20">
+<input class="w-full bg-transparent border-none py-4 px-5 text-on-surface placeholder:text-outline-variant focus:ring-0 font-body" placeholder="alex@example.com" type="email"/>
+</div>
+</div>
+<!-- Password -->
+<div class="group">
+<label class="block font-label text-sm font-bold text-on-surface-variant mb-2 ml-1">Password</label>
+<div class="relative bg-surface-container-low rounded-xl transition-all duration-300 focus-within:bg-surface-container-lowest focus-within:ring-2 focus-within:ring-primary/20">
+<input class="w-full bg-transparent border-none py-4 px-5 text-on-surface placeholder:text-outline-variant focus:ring-0 font-body" placeholder="••••••••" type="password"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant cursor-pointer">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="pt-4 flex flex-col items-center gap-6">
+<button class="w-full bg-gradient-to-br from-primary to-primary-dim text-on-primary font-headline font-bold py-5 rounded-full editorial-shadow transition-all hover:brightness-110 active:scale-[0.98] duration-200">
+                    Create Account
+                </button>
+<button class="text-primary font-bold font-body transition-opacity hover:opacity-80 active:scale-95 duration-150">
+                    Already have an account? Log In
+                </button>
+</div>
+</div>
+<!-- Asymmetric Decorative Element -->
+<div class="mt-16 relative h-48 rounded-3xl overflow-hidden bg-surface-container-highest">
+<div class="absolute inset-0 flex items-center justify-between p-8">
+<div class="z-10 max-w-[60%]">
+<p class="font-headline font-bold text-on-secondary-container text-lg">Your data is safe with us.</p>
+<p class="font-body text-sm text-on-surface-variant mt-1">We use industry-standard encryption to protect your identity.</p>
+</div>
+<div class="absolute -right-8 -bottom-8 w-40 h-40 bg-primary-container/30 rounded-full blur-3xl"></div>
+<span class="material-symbols-outlined text-primary text-6xl opacity-20 transform -rotate-12" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-8 pb-10 pt-6 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_-8px_24px_rgba(74,64,224,0.08)] rounded-t-[2rem]">
+<!-- Back Item -->
+<button class="flex items-center justify-center text-[#5f557f] dark:text-slate-400 px-6 py-3 hover:brightness-110 transition-all active:scale-[0.98] duration-150 group">
+<span class="material-symbols-outlined mr-2 group-hover:-translate-x-1 transition-transform">arrow_back</span>
+<span class="font-['Manrope'] font-semibold text-sm">Back</span>
+</button>
+<!-- Next Item (Active State Highlighted as "Create Account" implies progress) -->
+<button class="flex items-center justify-center bg-gradient-to-br from-[#4a40e0] to-[#3d30d4] text-white rounded-full px-8 py-3 hover:brightness-110 transition-all active:scale-[0.98] duration-150 group">
+<span class="font-['Manrope'] font-semibold text-sm">Next</span>
+<span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</nav>
+<!-- Decorative Grain Overlay -->
+<div class="fixed inset-0 pointer-events-none opacity-[0.03] mix-blend-multiply bg-[url('https://www.transparenttextures.com/patterns/p6.png')]"></div>
+</body></html>

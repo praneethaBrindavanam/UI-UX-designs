@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#f5eeff",
+              "tertiary-fixed-dim": "#ee7ebc",
+              "tertiary-fixed": "#fd8bca",
+              "surface-container-lowest": "#ffffff",
+              "primary-container": "#9795ff",
+              "on-error": "#ffefef",
+              "surface-container": "#ede4ff",
+              "primary": "#4a40e0",
+              "background": "#faf4ff",
+              "on-primary-fixed": "#000000",
+              "on-primary-fixed-variant": "#1a0099",
+              "on-primary": "#f4f1ff",
+              "secondary-fixed-dim": "#cbbaff",
+              "tertiary": "#983772",
+              "surface-container-highest": "#e2d7ff",
+              "surface": "#faf4ff",
+              "secondary-dim": "#563ca5",
+              "inverse-surface": "#10062d",
+              "on-tertiary-fixed": "#360024",
+              "on-secondary": "#f7f0ff",
+              "on-background": "#32294f",
+              "primary-fixed": "#9795ff",
+              "error": "#b41340",
+              "on-tertiary-fixed-variant": "#6d104e",
+              "on-secondary-container": "#4e339c",
+              "outline": "#7b719c",
+              "inverse-primary": "#8582ff",
+              "on-tertiary": "#ffeff4",
+              "surface-tint": "#4a40e0",
+              "surface-bright": "#faf4ff",
+              "surface-dim": "#dacdff",
+              "on-tertiary-container": "#610244",
+              "on-surface": "#32294f",
+              "outline-variant": "#b2a6d5",
+              "tertiary-dim": "#892a65",
+              "on-primary-container": "#14007e",
+              "primary-dim": "#3d30d4",
+              "on-secondary-fixed-variant": "#573da6",
+              "error-dim": "#a70138",
+              "inverse-on-surface": "#a296c4",
+              "on-secondary-fixed": "#3a1b88",
+              "surface-variant": "#e2d7ff",
+              "secondary-container": "#d8caff",
+              "error-container": "#f74b6d",
+              "on-surface-variant": "#5f557f",
+              "secondary": "#6249b2",
+              "secondary-fixed": "#d8caff",
+              "tertiary-container": "#fd8bca",
+              "on-error-container": "#510017",
+              "primary-fixed-dim": "#8885ff",
+              "surface-container-high": "#e8deff"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      .rotate-y-12 {
+        transform: rotateY(-12deg) rotateX(4deg);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-[#faf4ff] dark:bg-slate-950 flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-primary rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-sm">auto_awesome</span>
+</div>
+<span class="text-lg font-extrabold text-[#32294f] dark:text-indigo-200 font-headline tracking-tight">Concierge</span>
+</div>
+<button class="font-['Plus_Jakarta_Sans'] font-bold tracking-tight text-[#4a40e0] dark:text-indigo-400 hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200">
+            Skip
+        </button>
+</header>
+<main class="flex-1 flex flex-col pt-24 pb-32 px-8 overflow-hidden">
+<!-- Hero Illustration Section with Asymmetric Layout -->
+<div class="relative w-full aspect-[4/3] mb-12 perspective-1000">
+<!-- Background Blob -->
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-surface-container rounded-full blur-3xl opacity-60"></div>
+<!-- Main Content Card (Floating Asymmetry) -->
+<div class="relative w-full h-full bg-surface-container-lowest rounded-[2.5rem] p-6 shadow-[0_20px_50px_rgba(74,64,224,0.05)] rotate-y-12 border border-outline-variant/10 overflow-hidden">
+<img alt="Productivity Visualization" class="w-full h-full object-cover rounded-[1.5rem]" data-alt="Modern desk setup with elegant task lists, premium stationery, and soft morning light filtering through a minimalist window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv9JzF2rRsCtOS82yhQBJJFIcv1JUZ3OictCVEuHNB1BOf68LVQMVqpFzUW9yP3EzC9njGi1FYblXWb-KB7pQ3Hm-1ugbEB1w2Zy79BPNJ0HnmFTg8G3cjY4LDfQOh70mcTTPVNtg2aFeJLJBPse-AqZ1vTYDO4zFsQvMeT2bLD_fHqSFV-nLPXBpk87KXN3ztjLBfvTJA5K8TIIIgOdrfSJnLNdFLDDGwQdEpgfrpGoJxn-3SBbqp0Te8ihUvYnaaLdvHCkJY2C-o"/>
+<!-- Overlay Elements for Depth -->
+<div class="absolute bottom-10 left-10 bg-white/80 backdrop-blur-xl p-4 rounded-2xl shadow-lg border border-white/20">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-container">check_circle</span>
+</div>
+<div>
+<div class="h-2 w-20 bg-surface-container-highest rounded-full mb-2"></div>
+<div class="h-2 w-12 bg-surface-container rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Editorial Content Section -->
+<div class="max-w-md">
+<h1 class="font-headline text-4xl font-extrabold text-on-surface tracking-tight leading-[1.1] mb-6">
+                Organize Your <br/>
+<span class="text-primary italic">Daily Flow</span>
+</h1>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-10 ml-2">
+                Experience a fluid way to manage productivity. We help you compose your schedule like a masterpiece, ensuring every task finds its perfect rhythm.
+            </p>
+<!-- Progress Indicator (Step 1 of 3) -->
+<div class="flex items-center gap-6 ml-2">
+<div class="flex gap-2">
+<!-- Step 1 (Active) -->
+<div class="h-1.5 w-8 bg-tertiary rounded-full"></div>
+<!-- Step 2 -->
+<div class="h-1.5 w-1.5 bg-surface-container-highest rounded-full"></div>
+<!-- Step 3 -->
+<div class="h-1.5 w-1.5 bg-surface-container-highest rounded-full"></div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant tracking-widest uppercase">Step 1 of 3</span>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-8 pb-10 pt-6 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_-8px_24px_rgba(74,64,224,0.08)] rounded-t-[2rem]">
+<!-- Back Action (Inactive Style) -->
+<button class="flex items-center justify-center text-[#5f557f] dark:text-slate-400 px-6 py-3 font-['Manrope'] font-semibold text-sm hover:brightness-110 transition-all active:scale-[0.98] duration-150 gap-2">
+<span class="material-symbols-outlined text-lg">arrow_back</span>
+            Back
+        </button>
+<!-- Next Action (Active Style) -->
+<button class="flex items-center justify-center bg-gradient-to-br from-[#4a40e0] to-[#3d30d4] text-white rounded-full px-8 py-3 font-['Manrope'] font-semibold text-sm hover:brightness-110 transition-all active:scale-[0.98] duration-150 gap-2 shadow-lg shadow-primary/20">
+            Next
+            <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</nav>
+</body></html>
