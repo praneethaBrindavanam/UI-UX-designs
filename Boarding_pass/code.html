@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aero Modern - Boarding Pass</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#224489",
+                        "on-tertiary-container": "#949a9e",
+                        "background": "#faf8ff",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "on-primary-container": "#7a97e2",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#001e2d",
+                        "outline-variant": "#c4c6d2",
+                        "on-tertiary-fixed": "#171c20",
+                        "on-tertiary-fixed-variant": "#42474c",
+                        "on-secondary-container": "#004b69",
+                        "secondary-fixed": "#c6e7ff",
+                        "on-surface-variant": "#444651",
+                        "surface-tint": "#3d5ca2",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#2f3035",
+                        "surface-dim": "#dad9e0",
+                        "tertiary-fixed-dim": "#c2c7cc",
+                        "on-secondary-fixed-variant": "#004c6b",
+                        "surface-bright": "#faf8ff",
+                        "surface-container-low": "#f4f3f9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#1a1b20",
+                        "secondary": "#00658d",
+                        "tertiary": "#171d21",
+                        "secondary-fixed-dim": "#81cfff",
+                        "tertiary-fixed": "#dee3e8",
+                        "primary-container": "#002d72",
+                        "tertiary-container": "#2c3236",
+                        "surface": "#faf8ff",
+                        "surface-variant": "#e3e2e8",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1a1b20",
+                        "inverse-primary": "#b1c5ff",
+                        "surface-container-high": "#e8e7ee",
+                        "surface-container": "#eeedf4",
+                        "primary-fixed": "#dae2ff",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e3e2e8",
+                        "inverse-on-surface": "#f1f0f7",
+                        "on-primary-fixed": "#001946",
+                        "secondary-container": "#41befd",
+                        "outline": "#747782",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary": "#001a48"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-[#faf8ff] dark:bg-slate-900 flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#001a48] dark:text-blue-400 text-2xl" data-icon="flight_takeoff">flight_takeoff</span>
+<span class="text-xl font-black text-[#001a48] dark:text-blue-300 font-headline uppercase tracking-tighter">Aero Modern</span>
+</div>
+<h1 class="text-[#001a48] dark:text-blue-400 font-headline font-bold tracking-tight">Boarding Pass</h1>
+</header>
+<main class="max-w-md mx-auto px-4 pt-6 space-y-8">
+<!-- Main Boarding Pass Card -->
+<div class="relative group">
+<!-- Subtle Ambient Shadow -->
+<div class="absolute inset-0 bg-on-surface opacity-[0.03] blur-[40px] rounded-[2rem] translate-y-4"></div>
+<div class="relative bg-surface-container-lowest rounded-[2rem] overflow-hidden">
+<!-- Flight Path Header -->
+<div class="p-8 pb-4">
+<div class="flex justify-between items-end mb-6">
+<div class="space-y-1">
+<span class="text-[64px] font-headline font-extrabold text-primary leading-none tracking-tighter">SFO</span>
+<p class="text-on-surface-variant font-medium text-sm">San Francisco</p>
+</div>
+<div class="flex flex-col items-center justify-center flex-1 px-4 mb-4">
+<div class="w-full flex items-center gap-2 mb-2">
+<div class="h-[1px] flex-1 bg-secondary-container opacity-40"></div>
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="flight">flight</span>
+<div class="h-[1px] flex-1 bg-secondary-container opacity-40"></div>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-secondary">AM204</span>
+</div>
+<div class="space-y-1 text-right">
+<span class="text-[64px] font-headline font-extrabold text-primary leading-none tracking-tighter">LHR</span>
+<p class="text-on-surface-variant font-medium text-sm">London Heathrow</p>
+</div>
+</div>
+<!-- Journey Details Grid -->
+<div class="grid grid-cols-3 gap-4 pt-4">
+<div class="space-y-1">
+<p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60">Gate</p>
+<p class="text-2xl font-headline font-bold text-primary">G12</p>
+</div>
+<div class="space-y-1 text-center">
+<p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60">Boarding</p>
+<p class="text-2xl font-headline font-bold text-primary">21:30</p>
+</div>
+<div class="space-y-1 text-right">
+<p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60">Seat</p>
+<p class="text-4xl font-headline font-black text-primary -mt-1">14A</p>
+</div>
+</div>
+</div>
+<!-- Tonal Tear-off Section -->
+<div class="bg-surface-container-low p-8 pt-10 relative">
+<!-- Geometric Punch-out details -->
+<div class="absolute -top-4 -left-4 w-8 h-8 rounded-full bg-background"></div>
+<div class="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-background"></div>
+<div class="absolute top-0 left-8 right-8 h-[1px] border-t border-dashed border-outline-variant/30"></div>
+<div class="flex flex-col items-center space-y-6">
+<!-- Technical Data -->
+<div class="w-full flex justify-between items-center text-on-surface-variant">
+<div class="flex flex-col">
+<span class="text-[10px] font-bold uppercase tracking-widest">Passenger</span>
+<span class="font-headline font-bold text-primary">ELARA VANCE</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="text-[10px] font-bold uppercase tracking-widest">Class</span>
+<span class="font-headline font-bold text-primary">BUSINESS</span>
+</div>
+</div>
+<!-- Scannable Area -->
+<div class="w-full bg-surface-container-highest p-6 rounded-3xl flex flex-col items-center justify-center">
+<div class="w-48 h-48 bg-white p-4 rounded-xl shadow-sm mb-4">
+<img alt="Boarding QR Code" class="w-full h-full mix-blend-multiply" data-alt="precise black and white QR code for digital boarding pass scanning on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR-c2nEM9dlhi7m1B-fe6ymjacx_wFPMNtBP0dRz5L8s5Y2oO_imVT3_n9YJd_fnWdVWdmthNsNSsC5tT1vi6lTY1SyVDNWU1Mkz2HRVeS0nT9WvibSa28NQ8DgvPU55BF1VaNjp-K7Lf83g-KoXsya4k-R_moEyj8s9Dp01Rn3hFNjoj-CFnOJofZkz9r1Tu5TTkKThfm8WuXMiFu3nEz0j3dJH-wu1nn6Ydn_Xc_SUFQ7YZD59sqnncNBL9FeCgcKXm0WaN6Kkoe"/>
+</div>
+<p class="text-[10px] font-mono tracking-[0.4em] text-on-surface-variant opacity-60">11029384756620</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Aero Rewards Promotion Banner -->
+<section class="relative h-48 rounded-[2rem] overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="luxury tropical resort swimming pool at sunrise with turquoise water and palm trees in soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC20b2e_dV4WiPWTj6dT732U9Nqyby62QrX9STlPzsBAmr08glwl7lQc1XojS8Td_4LHqCZsJTX5Xp1awdXmS5pIgtKy8gFllf_KVOPbLNROOQZVVsmRzsr4joH5tqsduwbedKItP2CrKeQaKzDQjIWZBidrvTzNqBwjxKUeBX92NVM49hVuyFwsCU4slk-YJzMoclvplNRjcj9DX-EZXIvw9Xek2dWbCcR6biHqfNIbwS2tcJ1MLRWuz69LZY83V_K3XTw4R8EjedU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end">
+<div class="flex justify-between items-end">
+<div class="space-y-1">
+<div class="inline-flex items-center gap-2 px-2 py-0.5 rounded-full bg-secondary-container/90 glass-effect">
+<span class="material-symbols-outlined text-[12px] text-primary" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-primary">Aero Rewards</span>
+</div>
+<h3 class="text-white font-headline font-bold text-xl leading-tight">Elevate Your Stay.<br/><span class="text-secondary-fixed">Free Night Included.</span></h3>
+</div>
+<button class="bg-secondary text-white p-3 rounded-full hover:scale-105 active:scale-95 transition-all shadow-lg">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#faf8ff]/80 dark:bg-slate-950/80 backdrop-blur-xl border-t border-[#444651]/15 shadow-[0_-4px_40px_rgba(0,0,0,0.06)] z-50">
+<div class="flex flex-col items-center justify-center text-[#444651] dark:text-slate-400 p-3 hover:text-[#002D72] transition-transform active:scale-90">
+<span class="material-symbols-outlined mb-1" data-icon="confirmation_number">confirmation_number</span>
+<span class="font-label text-[11px] font-semibold uppercase tracking-wider">Trips</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#444651] dark:text-slate-400 p-3 hover:text-[#002D72] transition-transform active:scale-90">
+<span class="material-symbols-outlined mb-1" data-icon="explore">explore</span>
+<span class="font-label text-[11px] font-semibold uppercase tracking-wider">Explore</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#001a48] text-white rounded-2xl p-3 transition-transform active:scale-90 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined mb-1" data-icon="style" style="font-variation-settings: 'FILL' 1;">style</span>
+<span class="font-label text-[11px] font-semibold uppercase tracking-wider">Passes</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#444651] dark:text-slate-400 p-3 hover:text-[#002D72] transition-transform active:scale-90">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label text-[11px] font-semibold uppercase tracking-wider">Profile</span>
+</div>
+</nav>
+</body></html>
