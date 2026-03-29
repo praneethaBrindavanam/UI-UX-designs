@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#2c2c2d",
+              "on-primary": "#005762",
+              "error-container": "#9f0519",
+              "secondary-dim": "#00c6ee",
+              "on-tertiary-container": "#001d3f",
+              "on-primary-container": "#004d57",
+              "on-secondary-fixed": "#003a47",
+              "surface": "#0e0e0f",
+              "primary-container": "#00e3fd",
+              "on-primary-fixed": "#003840",
+              "inverse-primary": "#006976",
+              "secondary-fixed": "#78dfff",
+              "error-dim": "#d7383b",
+              "on-secondary": "#004554",
+              "tertiary-container": "#599cf9",
+              "outline": "#767576",
+              "on-tertiary-fixed": "#001835",
+              "on-error-container": "#ffa8a3",
+              "surface-container": "#1a191b",
+              "tertiary-fixed": "#80b2ff",
+              "on-tertiary": "#002a55",
+              "surface-container-lowest": "#000000",
+              "tertiary-dim": "#5c9ffc",
+              "primary-fixed-dim": "#00d4ec",
+              "surface-container-low": "#131314",
+              "on-secondary-container": "#edfaff",
+              "primary-dim": "#00d4ec",
+              "primary-fixed": "#00e3fd",
+              "secondary": "#10d5ff",
+              "on-surface-variant": "#adaaab",
+              "on-surface": "#ffffff",
+              "primary": "#81ecff",
+              "error": "#ff716c",
+              "tertiary": "#70aaff",
+              "surface-container-high": "#201f21",
+              "inverse-surface": "#fcf8f9",
+              "on-error": "#490006",
+              "secondary-fixed-dim": "#10d5ff",
+              "surface-tint": "#81ecff",
+              "background": "#0e0e0f",
+              "surface-container-highest": "#262627",
+              "secondary-container": "#00677d",
+              "inverse-on-surface": "#565556",
+              "on-primary-fixed-variant": "#005762",
+              "on-tertiary-fixed-variant": "#003971",
+              "on-secondary-fixed-variant": "#00586b",
+              "surface-variant": "#262627",
+              "tertiary-fixed-dim": "#65a4ff",
+              "outline-variant": "#484849",
+              "surface-dim": "#0e0e0f",
+              "on-background": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass-card {
+            background: rgba(38, 38, 39, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30 min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0e0e0f]/80 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant/20">
+<img alt="User profile photo" data-alt="Portrait of a young man with a friendly expression, professional studio lighting, blurred dark background, high resolution" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6RhnXsmUViorwSOZ1rXvIdGgvNH8nBsBS9TFsqicvaMatog9e9jGqyF9Qos-pwSD32LMqj4YJIAXZD_Rc4by8uaI065q6_s_aUeAwz8HOkn_VjwcqAKv2tMK4M9wfzg-cMNva7AtLHhh2dY95ojEysow_X-J3o8KkG04EkiOZwrfBGTyD59gy1K3XCxIDnmhftU3RKXtW7lmTK9i8_X-36xrpJVVX1fDGOCMmYaTsFGtH6HQZBYQ8wexWVMTZA6DB_A7cTlZu3y3L"/>
+</div>
+<h1 class="text-xl font-bold tracking-tighter text-white font-headline">Cinematic</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-[#00E5FF] hover:bg-white/10 transition-colors rounded-full active:scale-95 active:duration-150">
+<span class="material-symbols-outlined" data-icon="tv_connected">connected_tv</span>
+</button>
+</div>
+</header>
+<main class="pt-20 px-6 space-y-10">
+<!-- Hero: Continue Watching -->
+<section>
+<div class="flex justify-between items-end mb-6">
+<h2 class="text-2xl font-bold font-headline tracking-tight text-on-surface">Continue Watching</h2>
+<button class="text-sm font-bold text-primary hover:text-primary-container transition-colors font-body uppercase tracking-wider">See All</button>
+</div>
+<div class="flex gap-5 overflow-x-auto no-scrollbar pb-4 -mx-6 px-6">
+<!-- Large Featured Card -->
+<div class="flex-none w-[320px] aspect-[16/10] relative rounded-xl overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Cinematic still from a sci-fi movie featuring a futuristic neon city at night with flying vehicles and rain, glowing cyan highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLa6zPpHkD-rUMn21hjIHNp6CVfIcv-yDa9sW9gKMFXLQlEX9IbFbbR3yuxYZ5Gguj7b6xScjT1kZVn2ueusqiN_ekdEc4PpCUFxbbLo7SrVcqjlUvI8CHkpoMxu45b48fMmm5G6EXMs8AJQXSkv6sUEjPAYxcc0aMus-aUzozMrxff8r05l-4tPH1nTtGhaGXmGBowFo01NLkjaR9QOzPpGNjLycxzgF2AcKn3LOiM9E9cYwQRMaJKqJ_uVfVmndVxbbWOiVqvMmE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-4 space-y-3">
+<div>
+<p class="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-1">Sci-Fi Epic</p>
+<h3 class="text-lg font-bold font-headline leading-tight">Neon Horizon</h3>
+<p class="text-xs text-on-surface-variant">S2 : E4 • 12m remaining</p>
+</div>
+<div class="h-1 w-full bg-white/20 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container w-[70%]"></div>
+</div>
+</div>
+<div class="absolute top-4 right-4 glass-card p-2 rounded-full">
+<span class="material-symbols-outlined text-white text-lg" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<!-- Second Featured Card -->
+<div class="flex-none w-[320px] aspect-[16/10] relative rounded-xl overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Dramatic mountain landscape at dusk with a solitary figure standing on a peak, deep blue and orange sky, cinematic atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCECrzqYcDi60e4E4duJbOIJ0KTMXTzLJLg4m6kgOC-n5VMhzT3a3M_OCvVNn7x6QT0tV3kTKdqR1chrBhkDK4aD6gNiW7l9WkKbXGMeQZQ7bXPS9RqiRXrQHzkp6rM69dUkYqj5jSpiB-85TbDau80jv0F9BVTeYe0sqhAKRDmzS4sJDsO-lL_u_yFsBxapAKeI9iF7Nzjd5XAgG2dBHaxizj1ujWBqLf3k4AXPmJRoRGHjtkgKLT16T4zra4KnL8GAMzlRxH0N1lr"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-4 space-y-3">
+<div>
+<p class="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-1">Documentary</p>
+<h3 class="text-lg font-bold font-headline leading-tight">The Peak Within</h3>
+<p class="text-xs text-on-surface-variant">45m remaining</p>
+</div>
+<div class="h-1 w-full bg-white/20 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container w-[40%]"></div>
+</div>
+</div>
+<div class="absolute top-4 right-4 glass-card p-2 rounded-full">
+<span class="material-symbols-outlined text-white text-lg" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Recommended For You -->
+<section>
+<h2 class="text-xl font-bold font-headline tracking-tight text-on-surface mb-5">Recommended for You</h2>
+<div class="flex gap-4 overflow-x-auto no-scrollbar -mx-6 px-6">
+<!-- Poster 1 -->
+<div class="flex-none w-36 space-y-3">
+<div class="aspect-[2/3] rounded-lg overflow-hidden relative shadow-2xl bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Movie poster style shot of a mysterious woman in a vintage coat walking through fog, noir aesthetic, high contrast black and white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuhFf07HTrjJzmV_9-abdgPWGHHH8ULNB1TTs8M0Hg_6Ddv5ZD9l-dqWbqtMG96mDfCrW9V5C1USGyu_Oa0uk-uzFKg2G_MUoXQ0HVsWvFC202zxJ1TAkHGoKqChJTQc8eMoF5gMp0qIcT15Qn6FdQVlHu7xrUnE1BYdG5mfw8BHMBEEONG_RQb4B_i3pmaZOMuH2QaR3u6fH1nrHuQ8JqR1jAJBY4NWcYCw7wjtUPQBFcVg3ejU2X1CU0NVGEVaEcF4MjcV7au2VG"/>
+<div class="absolute top-2 right-2 glass-card px-2 py-0.5 rounded text-[10px] font-bold text-white">4K</div>
+</div>
+<div>
+<h4 class="text-sm font-bold truncate">Silent Echoes</h4>
+<p class="text-[11px] text-on-surface-variant">Mystery • 2024</p>
+</div>
+</div>
+<!-- Poster 2 -->
+<div class="flex-none w-36 space-y-3">
+<div class="aspect-[2/3] rounded-lg overflow-hidden relative bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Cinematic close-up of an old film projector lens with light beams cutting through dust particles in a dark room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDccoMaKddejvq-dNaZk-FCpXDlfMhoQXfzej226--smWHL_BLBCdMR8e0xiRVGl-NGMvzAo8H4-I2DChKBb44E29IhqInUSwdjJ2UJrS2nJT4xHuBVt6Bu3DiJdcF2AOEkgql6dav4o8lVSX5RIT9tSIqCRoX-fpEs45BdyM86mNf3EERu_jDMop9rt2OHWYkfVsu414LSoEoWRdDjN_f6BEe6L1P3K-c5glFeXjYWWP8VWge1xpAsBtduzsn2UR0ulemazsFfgYmw"/>
+</div>
+<div>
+<h4 class="text-sm font-bold truncate">The Projector</h4>
+<p class="text-[11px] text-on-surface-variant">Drama • 2023</p>
+</div>
+</div>
+<!-- Poster 3 -->
+<div class="flex-none w-36 space-y-3">
+<div class="aspect-[2/3] rounded-lg overflow-hidden relative bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Intense action scene featuring a high-speed car chase through a neon-lit tunnel, motion blur, vibrant colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaOQ2zaQA76d-4Lsvz1pLsWzzD_Ry7LGvO4ymyX6SmP_B_6431NxViHjz0zlZCPQWKeTfjR9PxiSTucrcckD2fUl3M0TvChzQ1XZzfJiunA5UHGJArEwA147j5aKPWrbS25JaR2farpR7YCgJLD2IcVZNBFfIwS3sdDs_OIm0Jz40pYR6hqOHWlWDuSVQRiahFz3PcMxMXp_ia3Cj-j-dAVkD2IuALFIqiZJliUdeAKRq9ykl9ElDkshJWzW_YTin5P6fX0jxHDavs"/>
+</div>
+<div>
+<h4 class="text-sm font-bold truncate">Velocity</h4>
+<p class="text-[11px] text-on-surface-variant">Action • 2024</p>
+</div>
+</div>
+<!-- Poster 4 -->
+<div class="flex-none w-36 space-y-3">
+<div class="aspect-[2/3] rounded-lg overflow-hidden relative bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Whimsical animated world with giant floating islands and colorful exotic birds, vibrant fantasy illustration style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0tg5yPXqsKt0CP0SlXlVnO0ygPPUxNnRN3Xb1rKI8vbQOTaNCFpkt19MIhmt3zISXQxF6V4BVLOes0c0oxYB-EcobVg9jdD5Djz8RGNAggjXmd5LLGMwuRot2FLTuKOuK2_pi9p6HPG2i2NNY4TSPX3FAoktyPgkOSi8DCURfiQGJkvaui32il54vB5uCtPhuHklDLm4rGPiEKSX-0HZbNk8KRmwMcy1gxwXmA9ZUY4U-2zSqPUoaFbxHzKOKZz7VsgjaqLgHh8dn"/>
+</div>
+<div>
+<h4 class="text-sm font-bold truncate">Skyward</h4>
+<p class="text-[11px] text-on-surface-variant">Animation • 2023</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Most Viewed (Bento Style Hybrid) -->
+<section>
+<h2 class="text-xl font-bold font-headline tracking-tight text-on-surface mb-5">Most Viewed</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-2 relative h-48 rounded-xl overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A crowded retro cinema interior with people watching a film, warm orange and teal lighting, nostalgic cinematic feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0bknrOwOekf3pkETlSKorwvz1TQY-1DMdqvI1jyOlK1tyR7AKJlNWrRrPiWT-ME1GVVjYbrwbKtBMyVB7-bLm2ZRD4hkcFJwjp6XRGJ5BqBlTCchaJ_cvh3_z9ZHnOjr7PVIRXD-melb1VcOfLDjWWPDqmimNZDhGUyNG8Ia2Yz-MPvjGsqVbwGg5zgwR_RYYEpAStJg6yXO-PQQVI-O-1pY7D4aHlZLMT5TXnKU33D4fiDts-kb7AzTIdzCFqk6OgDUjdF5HqDFf"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent"></div>
+<div class="absolute inset-0 p-6 flex flex-col justify-center max-w-[60%]">
+<span class="text-[10px] font-extrabold text-primary-fixed uppercase tracking-widest mb-2">#1 This Week</span>
+<h3 class="text-2xl font-black font-headline leading-none mb-3">Cinema Paradiso</h3>
+<button class="bg-primary text-on-primary-fixed font-bold py-2 px-4 rounded-full text-xs w-max hover:brightness-110 active:scale-95 transition-all">Watch Now</button>
+</div>
+</div>
+<div class="glass-card p-4 rounded-xl flex flex-col justify-between h-32">
+<div class="flex justify-between">
+<span class="material-symbols-outlined text-primary-fixed">trending_up</span>
+<span class="text-xs font-bold text-on-surface-variant">+240%</span>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider">New Hit</p>
+<h4 class="text-sm font-bold leading-tight">Cyber City 2077</h4>
+</div>
+</div>
+<div class="glass-card p-4 rounded-xl flex flex-col justify-between h-32">
+<div class="flex justify-between">
+<span class="material-symbols-outlined text-primary-fixed">star</span>
+<span class="text-xs font-bold text-on-surface-variant">9.8/10</span>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider">Top Rated</p>
+<h4 class="text-sm font-bold leading-tight">The Last Stand</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Recently Added -->
+<section class="pb-10">
+<h2 class="text-xl font-bold font-headline tracking-tight text-on-surface mb-5">Recently Added</h2>
+<div class="flex gap-4 overflow-x-auto no-scrollbar -mx-6 px-6">
+<!-- Small Card 1 -->
+<div class="flex-none w-64 bg-surface-container-low rounded-xl overflow-hidden flex items-center p-3 gap-4">
+<div class="w-20 h-28 flex-none rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Poster of a dark forest with eerie green light emanating from between the trees, psychological horror aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqrWHHgndXc9kq7BntcjBqNHxDQ9F9HIVYPVKf2Zln6cQ4gMFpqFPcpU-WswU59Owkw0GuYUykTYeC2qAD6cS7iRSuidgtL74gxwngOISPEq0f4y5gsGh3VKDIgcC6h0TGGtvJ_95MHlLO-wLi3SxQ7xIgEY42X331iRcRjO_wMvrJyMFst5bRmLDSYo4LJAGkUEncPsYlSDq0UVQnFkhNyTVAqyJmM-Ci74C2ukTSkmSH3-7xTYzVtAiJ8QZaS9CDV5ZR7R8uNlKb"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold truncate">Lost in Pines</h4>
+<p class="text-[11px] text-on-surface-variant mb-3">Series • 10 Episodes</p>
+<button class="text-[10px] font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">add</span> ADD TO LIST
+                        </button>
+</div>
+</div>
+<!-- Small Card 2 -->
+<div class="flex-none w-64 bg-surface-container-low rounded-xl overflow-hidden flex items-center p-3 gap-4">
+<div class="w-20 h-28 flex-none rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Conceptual image of deep space with a nebula in shades of purple and gold, distant stars and galaxies" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaWsMzHBDl2yFkhebTVHWBSZjWtv-mF3MI4uMWXk0PnmnMmfYw7wL2m1RlJFpRggZ-hcsKRFr5UQZVqGKIbMriav5jHZHWKcEMBgJBd6tYx2NCDEtdbBsGJbkEZr0HodC5T7EfVnpm5cDRrtn_T3wr5NeXdXjpJLz2NIVGMGD6gKUkgma72wNQIxT5w1Tr3IR_gT1s8SZBeLbt90inRlMHQwD6hSEG2c1IlziQEPGwAwOBu9liqougY88fqX-RVp7INv_GTR7hLD_E"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold truncate">Beyond Mars</h4>
+<p class="text-[11px] text-on-surface-variant mb-3">Documentary • 2024</p>
+<button class="text-[10px] font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">add</span> ADD TO LIST
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Remote Control FAB (Suppressed on Home according to logic, but since it's a TV companion app, often a Remote is needed. However, following system prompt's FAB rule, I'll only show the BottomNavBar) -->
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-[#1a191b]/80 backdrop-blur-2xl z-50 rounded-t-3xl shadow-[0_-12px_40px_rgba(0,229,255,0.08)]">
+<a class="flex flex-col items-center justify-center bg-[#00E5FF]/10 text-[#00E5FF] rounded-xl py-1 px-3 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide uppercase mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 py-1 px-3 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings_remote">settings_remote</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide uppercase mt-1">Remote</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 py-1 px-3 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide uppercase mt-1">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 py-1 px-3 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide uppercase mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

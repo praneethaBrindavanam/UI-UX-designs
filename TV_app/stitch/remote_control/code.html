@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cinematic Remote Control</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#2c2c2d",
+                        "on-primary": "#005762",
+                        "error-container": "#9f0519",
+                        "secondary-dim": "#00c6ee",
+                        "on-tertiary-container": "#001d3f",
+                        "on-primary-container": "#004d57",
+                        "on-secondary-fixed": "#003a47",
+                        "surface": "#0e0e0f",
+                        "primary-container": "#00e3fd",
+                        "on-primary-fixed": "#003840",
+                        "inverse-primary": "#006976",
+                        "secondary-fixed": "#78dfff",
+                        "error-dim": "#d7383b",
+                        "on-secondary": "#004554",
+                        "tertiary-container": "#599cf9",
+                        "outline": "#767576",
+                        "on-tertiary-fixed": "#001835",
+                        "on-error-container": "#ffa8a3",
+                        "surface-container": "#1a191b",
+                        "tertiary-fixed": "#80b2ff",
+                        "on-tertiary": "#002a55",
+                        "surface-container-lowest": "#000000",
+                        "tertiary-dim": "#5c9ffc",
+                        "primary-fixed-dim": "#00d4ec",
+                        "surface-container-low": "#131314",
+                        "on-secondary-container": "#edfaff",
+                        "primary-dim": "#00d4ec",
+                        "primary-fixed": "#00e3fd",
+                        "secondary": "#10d5ff",
+                        "on-surface-variant": "#adaaab",
+                        "on-surface": "#ffffff",
+                        "primary": "#81ecff",
+                        "error": "#ff716c",
+                        "tertiary": "#70aaff",
+                        "surface-container-high": "#201f21",
+                        "inverse-surface": "#fcf8f9",
+                        "on-error": "#490006",
+                        "secondary-fixed-dim": "#10d5ff",
+                        "surface-tint": "#81ecff",
+                        "background": "#0e0e0f",
+                        "surface-container-highest": "#262627",
+                        "secondary-container": "#00677d",
+                        "inverse-on-surface": "#565556",
+                        "on-primary-fixed-variant": "#005762",
+                        "on-tertiary-fixed-variant": "#003971",
+                        "on-secondary-fixed-variant": "#00586b",
+                        "surface-variant": "#262627",
+                        "tertiary-fixed-dim": "#65a4ff",
+                        "outline-variant": "#484849",
+                        "surface-dim": "#0e0e0f",
+                        "on-background": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(26, 25, 27, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .dpad-mask {
+            clip-path: circle(50% at 50% 50%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0e0e0f]/80 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="User" data-alt="Close up portrait of a young man with glasses smiling softly in a dimly lit cinematic room with blue ambient light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWczQ-_oKwLcFFMgEETMhJvqFul0A12DdcIANgABj_gqYyWBT51EDXclbvMY-Ovz4kIOaDaqNTdwG4El1-Bni9FbfHRAJ4QTaY56WGvBEz8W16rksloe7mwBJThSDxkNrsgoQ24-V6RRXECH8u-RdIpwKibZ_ozlPh_I0ffQtORqqmghpenmudOTx9PMWoicCs8hkB2vfR_9gDIJ1bkOfdE8qhAdAIA79LcZIcffaZkqnd8rgL7G6mayMWnzF4xdHJjuuVaHlBScKq"/>
+</div>
+<span class="text-xl font-bold tracking-tighter text-white font-headline">Cinematic</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#00E5FF] hover:bg-white/10 transition-colors p-2 rounded-full active:scale-95 active:duration-150">
+<span class="material-symbols-outlined" data-icon="tv_connected">connected_tv</span>
+</button>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-md mx-auto space-y-8">
+<!-- Now Playing Header -->
+<div class="relative overflow-hidden rounded-3xl h-48 surface-container-low group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60" data-alt="Cinematic wide shot of a futuristic cyberpunk city street at night with glowing neon signs and rain puddles reflecting blue and pink light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBb3soltNLX5AB3fnzxjLPMgrIFJCQm1E2O9vApQ8E1SR2fkeAxHo3eYdZC6nxsZK64TSrfMznaFH7u14hZUoHrSbaAoZKe0ahrcP0wWfui1oYdpnn98KyhBMiAXgRrGrZZitmEJ9gBdijMqlAHfBqNtMMZbyzbiE201dY2Rr0CukYwZeaCKMJ9Oe_e_BrNwmADBFJT9harN9IoOGwlkW1bkBOJiMVCQOdAfCzDMOrtT0Id_BMhipJgUT-03wuDNFAT1VcQAdIBM9A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+<div class="absolute bottom-4 left-6">
+<p class="text-[10px] font-bold tracking-widest uppercase text-primary mb-1">Now Playing</p>
+<h2 class="text-2xl font-headline font-extrabold tracking-tight">Neon Drifter</h2>
+<div class="flex items-center gap-3 mt-2">
+<span class="text-xs text-on-surface-variant font-medium">S1:E4 • 42m left</span>
+<div class="h-1 w-24 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/3"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Remote Control Module -->
+<section class="glass-panel rounded-[2.5rem] p-8 shadow-[0_-12px_40px_rgba(0,229,255,0.08)]">
+<!-- Contextual Controls -->
+<div class="flex justify-between items-center mb-10">
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-highest hover:bg-white/10 text-on-surface transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<button class="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed shadow-[0_0_20px_rgba(129,236,255,0.3)] active:scale-90 transition-all">
+<span class="material-symbols-outlined text-3xl" data-icon="mic" style="font-variation-settings: 'FILL' 1;">mic</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-highest hover:bg-white/10 text-on-surface transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+</button>
+</div>
+<!-- D-Pad Navigation -->
+<div class="relative w-64 h-64 mx-auto mb-10">
+<div class="absolute inset-0 rounded-full border border-outline-variant/20"></div>
+<!-- D-Pad Buttons -->
+<button class="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-12 flex items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined text-3xl" data-icon="keyboard_arrow_up">keyboard_arrow_up</span>
+</button>
+<button class="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-12 flex items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined text-3xl" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+<button class="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-16 flex items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined text-3xl" data-icon="keyboard_arrow_left">keyboard_arrow_left</span>
+</button>
+<button class="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-16 flex items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined text-3xl" data-icon="keyboard_arrow_right">keyboard_arrow_right</span>
+</button>
+<!-- Select Center -->
+<button class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-surface-container-high border-4 border-surface shadow-inner flex items-center justify-center text-xl font-headline font-extrabold text-white active:scale-95 transition-all">
+                    OK
+                </button>
+</div>
+<!-- Volume and Channel Toggles -->
+<div class="grid grid-cols-2 gap-8 mb-10">
+<div class="bg-surface-container-low rounded-3xl p-1 flex flex-col items-center">
+<button class="w-full py-4 flex justify-center text-on-surface hover:text-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+<div class="py-1 text-[10px] font-bold text-on-surface-variant tracking-widest uppercase">VOL</div>
+<button class="w-full py-4 flex justify-center text-on-surface hover:text-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+</div>
+<div class="bg-surface-container-low rounded-3xl p-1 flex flex-col items-center">
+<button class="w-full py-4 flex justify-center text-on-surface hover:text-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="keyboard_arrow_up">keyboard_arrow_up</span>
+</button>
+<div class="py-1 text-[10px] font-bold text-on-surface-variant tracking-widest uppercase">CH</div>
+<button class="w-full py-4 flex justify-center text-on-surface hover:text-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+<!-- App Shortcuts -->
+<div class="grid grid-cols-3 gap-3">
+<button class="h-12 rounded-xl bg-[#E50914]/10 border border-[#E50914]/20 flex items-center justify-center hover:bg-[#E50914]/20 transition-all active:scale-95">
+<img alt="Netflix" class="h-4" data-alt="Netflix logo icon on a transparent background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeez_3-h057VtSAZYMh_MqAwtYd4ntJs4Ixd9IFMW8HBJkYOJGNuSFszkc1Ie7dggOIvvyZxegRXgAmIS69Kta4d3QtK5nDj7g5mtVexnG2m7y1LbRWDJm7veFkar0-1H5zmP09w5n1uWdrmqLF0azA-vyp9ESA-iXfWmMq_k9_OvAmUxHISx-ahXBM_OI-dBhZXqO4zzIf9hJ6m-9qcPvnNtHitMiV5Y_x-BWzUN_cAj7F3xpV13LB5zTgob-_zQf0-9E1xOi3ULH"/>
+</button>
+<button class="h-12 rounded-xl bg-[#00A8E1]/10 border border-[#00A8E1]/20 flex items-center justify-center hover:bg-[#00A8E1]/20 transition-all active:scale-95">
+<img alt="Prime Video" class="h-4" data-alt="Amazon Prime Video logo icon on a transparent background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpj80UlJFJN5_Cf44bXsPTAHC3gJ_gXCfMrp4NM5bqa31LIEUXwvbAQ9nf2Opx48WFfe4Mnd-2xbS_yCxOTvKYcFv9h32M_dWK9ZZ2_AfG48XGkZ6kKoEmFxuYnxYPyOXqL5VPHlTAvVVOea2ZeK9MeQ1nHnl6Edpf8UHyEteZx91A8cMOmhIieCAegDYPLf4XEArW2I9XOKFtsvvA4gENJdwQQbXJEN1XB6VWd-i1WltzY6D2YGvI5Y_uFAPsVi0zpl_ZgzkptAtN"/>
+</button>
+<button class="h-12 rounded-xl bg-[#006E99]/10 border border-[#006E99]/20 flex items-center justify-center hover:bg-[#006E99]/20 transition-all active:scale-95">
+<img alt="Disney+" class="h-4" data-alt="Disney Plus logo icon on a transparent background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNNUPLyhRTuEId0KH4C3tZspTZpmraXqt5sT_cgwLM5MrLG2zOzZzZRzXGoCyjnsbUH3AJI6fj4Q8LqXuTHxXoMJbGZtTG-9JGraHwh7o56V9h5PTN25B4pDbPiv6ngrLjTQ2czNApYGubiARAb7Rou7NMASAY8dwJbyEOZeClcU0kmR1Ze3-pFyK1Mrpv8ZDLb6U12s_BsnmUUxjUZ2_E8-mbhD5dbUjx4hL71QAXG0mbBql89Suhz7uRS6nXV5DLUogSYbx4Wjq-"/>
+</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full bg-[#1a191b]/80 backdrop-blur-2xl flex justify-around items-center px-4 pb-6 pt-3 z-50 rounded-t-3xl shadow-[0_-12px_40px_rgba(0,229,255,0.08)]">
+<a class="flex flex-col items-center justify-center text-gray-500 py-1 px-3 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide uppercase mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#00E5FF]/10 text-[#00E5FF] rounded-xl py-1 px-3 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings_remote" style="font-variation-settings: 'FILL' 1;">settings_remote</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide uppercase mt-1">Remote</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 py-1 px-3 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide uppercase mt-1">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 py-1 px-3 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide uppercase mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

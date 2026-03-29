@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#2c2c2d",
+              "on-primary": "#005762",
+              "error-container": "#9f0519",
+              "secondary-dim": "#00c6ee",
+              "on-tertiary-container": "#001d3f",
+              "on-primary-container": "#004d57",
+              "on-secondary-fixed": "#003a47",
+              "surface": "#0e0e0f",
+              "primary-container": "#00e3fd",
+              "on-primary-fixed": "#003840",
+              "inverse-primary": "#006976",
+              "secondary-fixed": "#78dfff",
+              "error-dim": "#d7383b",
+              "on-secondary": "#004554",
+              "tertiary-container": "#599cf9",
+              "outline": "#767576",
+              "on-tertiary-fixed": "#001835",
+              "on-error-container": "#ffa8a3",
+              "surface-container": "#1a191b",
+              "tertiary-fixed": "#80b2ff",
+              "on-tertiary": "#002a55",
+              "surface-container-lowest": "#000000",
+              "tertiary-dim": "#5c9ffc",
+              "primary-fixed-dim": "#00d4ec",
+              "surface-container-low": "#131314",
+              "on-secondary-container": "#edfaff",
+              "primary-dim": "#00d4ec",
+              "primary-fixed": "#00e3fd",
+              "secondary": "#10d5ff",
+              "on-surface-variant": "#adaaab",
+              "on-surface": "#ffffff",
+              "primary": "#81ecff",
+              "error": "#ff716c",
+              "tertiary": "#70aaff",
+              "surface-container-high": "#201f21",
+              "inverse-surface": "#fcf8f9",
+              "on-error": "#490006",
+              "secondary-fixed-dim": "#10d5ff",
+              "surface-tint": "#81ecff",
+              "background": "#0e0e0f",
+              "surface-container-highest": "#262627",
+              "secondary-container": "#00677d",
+              "inverse-on-surface": "#565556",
+              "on-primary-fixed-variant": "#005762",
+              "on-tertiary-fixed-variant": "#003971",
+              "on-secondary-fixed-variant": "#00586b",
+              "surface-variant": "#262627",
+              "tertiary-fixed-dim": "#65a4ff",
+              "outline-variant": "#484849",
+              "surface-dim": "#0e0e0f",
+              "on-background": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0e0e0f]/80 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/20">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a smiling young man with professional lighting against a clean neutral studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANJjtbrx5z_CRQKkFAjr_XztX_hG0RuW-7QF-rin1eo7Yg7xktlZvijfoE7LZzno3KO-s3Ccr2bSYKxcHEePgxLFfeR8PrqpgP1QNqlst3FRRpzH-FbUU7XbZVPxOjsFptvrB740jozKb5UYYpHH3D2iEMxC0Ve8yAtAkgkM8SfzSvAXGnd_E_pDdQpKoj5TUV_7Tk7axawAJesCjjiRd3vxadRPxmhEqIKKRrVha7xMdFN5s_gXalPmVVbIV3iryuYRbYH3syn4SU"/>
+</div>
+<h1 class="text-xl font-headline font-bold tracking-tighter text-white">Cinematic</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-gray-400 hover:bg-white/10 transition-colors p-2 rounded-full active:duration-150 scale-95">
+<span class="material-symbols-outlined" data-icon="tv_connected">connected_tv</span>
+</button>
+</div>
+</header>
+<main class="pb-32">
+<!-- Hero Section -->
+<section class="relative h-[574px] w-full overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-transparent z-10"></div>
+<img alt="Movie Poster" class="w-full h-full object-cover" data-alt="Dramatic cinematic shot of a futuristic cyberpunk city at night with neon blue and magenta lighting reflecting on wet streets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwkUt11d4WGGs8LyxYKz3V_25F5essOzEcdR8-BwlQ3wGL18_vm92v1kWHSDKgbCanloeyCisg1x-0XJSRBGEGhiZ9MYwTCFIZOtcyCwb3zlKp_9K6NKLftX6LiIWF5Kcj8523L8cJDWZ2_9dUwBXfLF4TZdcaaANVg18S43Gmq5p4Gn8jSFiEs_LFOlWZKs-8C-bcJaQEtg4fPYv3Uvo6_ONa8DlaMepKUWtX3GK2n-zNiIPfu7JCQcaTROLvHic7DXnZ9CVgfo8j"/>
+<div class="absolute bottom-0 left-0 w-full p-6 z-20">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-primary-container text-on-primary-container text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider">4K Ultra HD</span>
+<span class="bg-surface-variant/60 backdrop-blur-md text-on-surface text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider">Dolby Atmos</span>
+</div>
+<h2 class="text-5xl font-headline font-extrabold tracking-tighter text-white leading-none">NEON RECOVERY</h2>
+<div class="flex items-center gap-4 mt-2 text-sm text-on-surface-variant font-medium">
+<span class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+                            8.5
+                        </span>
+<span>2024</span>
+<span>2h 14m</span>
+<span class="border border-outline-variant/30 px-1.5 py-0.5 rounded text-[10px]">PG-13</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Content Details -->
+<section class="px-6 py-8 flex flex-col gap-8">
+<!-- Genre Chips -->
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-1.5 rounded-md bg-secondary-container text-on-secondary-container text-xs font-bold tracking-wide">Sci-Fi</span>
+<span class="px-4 py-1.5 rounded-md bg-secondary-container text-on-secondary-container text-xs font-bold tracking-wide">Thriller</span>
+<span class="px-4 py-1.5 rounded-md bg-secondary-container text-on-secondary-container text-xs font-bold tracking-wide">Cyberpunk</span>
+</div>
+<!-- Synopsis -->
+<div class="flex flex-col gap-3">
+<h3 class="text-on-surface-variant text-xs font-bold uppercase tracking-widest">The Story</h3>
+<p class="text-on-surface leading-relaxed font-body text-sm opacity-90">
+                    In a world where memories are traded like currency, a disgraced detective must hunt down a phantom data-thief who has stolen the collective consciousness of a tech-mogul. As the digital fabric of the city begins to unravel, he discovers a conspiracy that reaches the highest levels of the cloud.
+                </p>
+</div>
+<!-- Primary Actions -->
+<div class="flex flex-col gap-3">
+<button class="w-full py-4 rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed font-bold flex items-center justify-center gap-3 shadow-[0_12px_40px_rgba(129,236,255,0.15)] active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                    Play on Living Room TV
+                </button>
+<div class="grid grid-cols-2 gap-3">
+<button class="py-3.5 rounded-full bg-surface-variant/40 backdrop-blur-md text-on-surface text-sm font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-xl">favorite</span>
+                        Add to List
+                    </button>
+<button class="py-3.5 rounded-full bg-surface-variant/40 backdrop-blur-md text-on-surface text-sm font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-xl">translate</span>
+                        Languages
+                    </button>
+</div>
+</div>
+<!-- Cast List -->
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-end">
+<h3 class="text-on-surface-variant text-xs font-bold uppercase tracking-widest">Leading Cast</h3>
+<button class="text-primary text-xs font-bold tracking-wide hover:underline">See All</button>
+</div>
+<div class="flex gap-4 overflow-x-auto hide-scrollbar pb-2">
+<div class="flex flex-col items-center gap-2 min-w-[72px]">
+<div class="w-[72px] h-[72px] rounded-xl overflow-hidden ring-2 ring-outline-variant/10">
+<img alt="Actor" class="w-full h-full object-cover" data-alt="Headshot of a middle-aged actor with short hair and intense expression, cinematic soft-box lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0aDYMo79LrXyHOInB_HWZIE_cJDASXSTVoc9XbtndBhSqLi1vS6vxZ278a9_PvYSIyP6VtTjao62t_re2YNTsm1opTjSXIDoVV3ioNsVb_Mc72MxYtyFAM4LUV21KzeUrQLhVmooDzKyngZWuhoXVVvNEzFSM8UTMwMe4ofQCeN2q_yjGwCVMnifxC5HCYwcVCNdBB0XTEfWrxV6zWYP0jzLOIpJFrBCtZBTe1XbhQUcOhfpw4pGOI8cnDu4aazkpurmhCLNGbBUF"/>
+</div>
+<span class="text-[10px] text-center font-bold text-on-surface leading-tight">Caleb<br/>Rivers</span>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[72px]">
+<div class="w-[72px] h-[72px] rounded-xl overflow-hidden ring-2 ring-outline-variant/10">
+<img alt="Actor" class="w-full h-full object-cover" data-alt="Portrait of a young woman with a strong profile and vibrant makeup, dramatic high-contrast lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIuBj-ldPxL-99F8Uh2R1oBwZ6emhvYKGFsxGZ3ZL0dZdHvdVHCECLfbL-6vW1gER6NYtxF3STQsaocq2Roqzvkl5dPvUPY9NdPZvGeNRwIXzXPb9Ah22vL-vvXwXQ8c3jgzhHd6RAWMDHdhMmNAlobHv1ob9tYqErLJdgWk1B0OzEwkwffXJl0zMX9A2TbunJpQ6IGBYf8xOyFImU_mc4ItFA_rOgEuV5BU1pSc1_4sQZMIhM6PbexW9vNWfXzGyY0GmEtf3WuUwI"/>
+</div>
+<span class="text-[10px] text-center font-bold text-on-surface leading-tight">Maya<br/>Sato</span>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[72px]">
+<div class="w-[72px] h-[72px] rounded-xl overflow-hidden ring-2 ring-outline-variant/10">
+<img alt="Actor" class="w-full h-full object-cover" data-alt="Professional headshot of an older man with graying beard and glasses, warm ambient indoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqItNORkq1FoE1k4CcHYK8JoGEgaMxL9HpyyLpegZhtIsLAU5qrI6VCr58LbfnKPCB9W_oyRSGdJoa8ueQgkQo4RF7oQ2hsad8vjZWDEgE1RbORAnR3wYLQfG1fG5_BNvu5h8o_4cLWQy3qV2L-dPyKhxMox8Xj4qi8zBFdnoMq93Z1szOY22upmDccSAnd-t_akwmV-Pacp9WDOAVtAdu2yUp9-3fPqLGfl5X0Sgj0mD_QaWUZZF-qF4aIB7mckBxhsPq__vvHUKo"/>
+</div>
+<span class="text-[10px] text-center font-bold text-on-surface leading-tight">Arthur<br/>Vance</span>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[72px]">
+<div class="w-[72px] h-[72px] rounded-xl overflow-hidden ring-2 ring-outline-variant/10">
+<img alt="Actor" class="w-full h-full object-cover" data-alt="Portrait of a person with unique features looking directly at camera, soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6QlYe-RFLpmL13OHPwXomeINELLTTwGZv2ee3CB1qfvSiH8Tk03mN2TmlagkrAMsodQy3CwdZpPSakigc4SYG52Cz599ZhaLYouBeMT1WCGHJcI3xyesh4SQvQhtV_fsTE-qCK9TlBFvb2uprTfMq-cDnnvPB3bXT2stG2HtpRCZh8-9LjEW1vwK-h3gIsMl7DMm_u7FvEweexpj3sYVM_DHS9kOguQ_3-zUKeusgNfq5U1DQ85abmun4lp0BKz37h2iaPcvnnpiD"/>
+</div>
+<span class="text-[10px] text-center font-bold text-on-surface leading-tight">Zoe<br/>Chen</span>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[72px]">
+<div class="w-[72px] h-[72px] rounded-xl overflow-hidden ring-2 ring-outline-variant/10">
+<img alt="Actor" class="w-full h-full object-cover" data-alt="Close up of a female actor with expressive eyes, cinematic blue-hour lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK9KtjGgAakANR6R_iTglzSe8-Jf_0JxJTTV7mC3WSBpTPVRXLeFKa-X99DVEAyf5Opva0qJsk5yJzWexqdFWCz30kPALivwr97o_6XmOsFIW1B3NT77XgI8mBGlqZg16G_g6cosu3BN_og9NvmFl9GWcrR_QiH4-ONpz6tjYhi9TbcLvRmDrtcKZe0hxBpzBCqZVp3H8VVLUMZ5SPJy0mtu2SZNuCFDVo1TXu7AcFU2tX9qPlKvrfw-Ckt78i1CaswMABk4reoawJ"/>
+</div>
+<span class="text-[10px] text-center font-bold text-on-surface leading-tight">Elena<br/>Kostas</span>
+</div>
+</div>
+</div>
+<!-- Technical Info Bento -->
+<div class="grid grid-cols-2 gap-3 mt-4">
+<div class="bg-surface-container-low p-4 rounded-2xl flex flex-col gap-1">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Director</span>
+<span class="text-sm font-bold text-white">Sion Sono</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-2xl flex flex-col gap-1">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Studio</span>
+<span class="text-sm font-bold text-white">A24 Digital</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-[#1a191b]/80 backdrop-blur-2xl flex justify-around items-center px-4 pb-6 pt-3 rounded-t-3xl shadow-[0_-12px_40px_rgba(0,229,255,0.08)]">
+<a class="flex flex-col items-center justify-center text-gray-500 py-1 px-3 hover:text-white transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide uppercase mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 py-1 px-3 hover:text-white transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="settings_remote">settings_remote</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide uppercase mt-1">Remote</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 py-1 px-3 hover:text-white transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="search">search</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide uppercase mt-1">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#00E5FF]/10 text-[#00E5FF] rounded-xl py-1 px-3 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide uppercase mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

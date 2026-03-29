@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cinematic - Search &amp; Discovery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#2c2c2d",
+              "on-primary": "#005762",
+              "error-container": "#9f0519",
+              "secondary-dim": "#00c6ee",
+              "on-tertiary-container": "#001d3f",
+              "on-primary-container": "#004d57",
+              "on-secondary-fixed": "#003a47",
+              "surface": "#0e0e0f",
+              "primary-container": "#00e3fd",
+              "on-primary-fixed": "#003840",
+              "inverse-primary": "#006976",
+              "secondary-fixed": "#78dfff",
+              "error-dim": "#d7383b",
+              "on-secondary": "#004554",
+              "tertiary-container": "#599cf9",
+              "outline": "#767576",
+              "on-tertiary-fixed": "#001835",
+              "on-error-container": "#ffa8a3",
+              "surface-container": "#1a191b",
+              "tertiary-fixed": "#80b2ff",
+              "on-tertiary": "#002a55",
+              "surface-container-lowest": "#000000",
+              "tertiary-dim": "#5c9ffc",
+              "primary-fixed-dim": "#00d4ec",
+              "surface-container-low": "#131314",
+              "on-secondary-container": "#edfaff",
+              "primary-dim": "#00d4ec",
+              "primary-fixed": "#00e3fd",
+              "secondary": "#10d5ff",
+              "on-surface-variant": "#adaaab",
+              "on-surface": "#ffffff",
+              "primary": "#81ecff",
+              "error": "#ff716c",
+              "tertiary": "#70aaff",
+              "surface-container-high": "#201f21",
+              "inverse-surface": "#fcf8f9",
+              "on-error": "#490006",
+              "secondary-fixed-dim": "#10d5ff",
+              "surface-tint": "#81ecff",
+              "background": "#0e0e0f",
+              "surface-container-highest": "#262627",
+              "secondary-container": "#00677d",
+              "inverse-on-surface": "#565556",
+              "on-primary-fixed-variant": "#005762",
+              "on-tertiary-fixed-variant": "#003971",
+              "on-secondary-fixed-variant": "#00586b",
+              "surface-variant": "#262627",
+              "tertiary-fixed-dim": "#65a4ff",
+              "outline-variant": "#484849",
+              "surface-dim": "#0e0e0f",
+              "on-background": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0e0e0f]/80 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant/20">
+<img alt="User profile" data-alt="close-up portrait of a stylish young man with glasses, soft studio lighting, cinematic teal and orange color grading" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4ewLM-7V97yS1dcq2T02j4i5slugvsxKTTMzV3QXeSA7XuPLRfz6p4Sq0VMU_2i5B3Y0m1z-b2nHHSQbJAG72J__ZlzouHtyV6BiZJZnQgNSuHdyE0Fth3BMtoqeRzFdsGaVVLnVZ87v0jvArcrnLGrNtH5XS1sooYZ8NRpexZ1KcbacqNfevorZS1SBy82FbHu_Txg_bsKLJPbp9nwabsu84DLeMgoHW1LWNMw-UaQRl3e-RvUWVjzr8uBwAT-SXJzq0QA64k61c"/>
+</div>
+<h1 class="text-xl font-bold tracking-tighter text-white font-headline">Cinematic</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors active:scale-95 text-[#00E5FF]">
+<span class="material-symbols-outlined" data-icon="tv_connected">connected_tv</span>
+</button>
+</header>
+<main class="pt-20 pb-32 px-6 max-w-2xl mx-auto">
+<!-- Search Bar Section -->
+<section class="mb-10">
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant group-focus-within:text-primary transition-colors" data-icon="search">search</span>
+</div>
+<input class="w-full bg-surface-container border-none rounded-2xl py-5 pl-12 pr-4 text-on-surface placeholder:text-on-surface-variant focus:ring-2 focus:ring-primary/50 transition-all font-body text-lg" placeholder="Search movies, shows, or actors" type="text"/>
+</div>
+</section>
+<!-- Most Searched / Recent Chips -->
+<section class="mb-10">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold font-headline text-white">Most Searched</h2>
+<button class="text-sm font-semibold text-primary hover:opacity-80 transition-opacity">Clear All</button>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-lg text-sm font-medium hover:brightness-110 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span>
+                    Interstellar
+                </button>
+<button class="px-4 py-2 bg-surface-container-high text-on-surface rounded-lg text-sm font-medium hover:bg-surface-variant transition-all">Succession</button>
+<button class="px-4 py-2 bg-surface-container-high text-on-surface rounded-lg text-sm font-medium hover:bg-surface-variant transition-all">The Last of Us</button>
+<button class="px-4 py-2 bg-surface-container-high text-on-surface rounded-lg text-sm font-medium hover:bg-surface-variant transition-all">Denis Villeneuve</button>
+<button class="px-4 py-2 bg-surface-container-high text-on-surface rounded-lg text-sm font-medium hover:bg-surface-variant transition-all">Sci-Fi Thriller</button>
+</div>
+</section>
+<!-- Trending Genres Bento Grid -->
+<section class="mb-12">
+<h2 class="text-xl font-bold font-headline text-white mb-6">Trending Genres</h2>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<!-- Large Feature Tile -->
+<div class="relative group aspect-[4/5] rounded-3xl overflow-hidden col-span-2 md:col-span-2 md:row-span-2 shadow-2xl">
+<img alt="Sci-Fi Genre" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="dramatic cinematic shot of a futuristic neon-lit city at night with flying vehicles and glowing blue atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKUdWVk9sqiD7iXbyPo_f1y4qnEN6HhTes2ZMMo7W1aei3eZ7QOPjthBU4MT8pRbn1_sQuEyAyc5sfkPhqsGgi7mjLLRAIBnAnPpwqAAwSqd_vd_n1BuCaimnU1XISxiSVyBqXXWaaa5nGIvsBFFToG3qqvvf_KRXKJAkgl62vPcRbkk5KRZsFJyI5_Hentcmr82xderwR0bQ6YLag6WGHp5OqEtTxBNGThf0tCqdumKziS-kRFQ_BoVln36TQFsrGfbVn7kSTxESN"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<span class="text-xs font-bold uppercase tracking-widest text-primary mb-1 block">Featured</span>
+<h3 class="text-3xl font-bold font-headline text-white">Sci-Fi &amp; Cyberpunk</h3>
+</div>
+</div>
+<!-- Action Tile -->
+<div class="relative group aspect-square rounded-3xl overflow-hidden shadow-lg">
+<img alt="Action" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="high-speed chase scene with motion blur, sparks flying from a dark car on a wet asphalt road at night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-m72Xj3rnRDD826PERo_9Tx25hHq31TyxW33B1YiTD0bBlrrahgNrxC1kLE-qxdwvzZy6YbHOS1wxKYQlY4sXSJJ0giiAK6v_sGCWg-zEbV3aDrMgLwkrCOdJUahqoSr06lV1DMgU0PcTRQNvFktXly4Qx6knJVRoZHlASLMEpjwRDsgqsfbX_TpQsJwP0Gmzl8xe8kmhxAhsKzGS6AnpnURyMI7ZEoorF5lG2khFpkAZCVmMSer6tCkkkW3LWPj13qIvsboYN9dp"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<h3 class="text-lg font-bold font-headline text-white">Action</h3>
+</div>
+</div>
+<!-- Horror Tile -->
+<div class="relative group aspect-square rounded-3xl overflow-hidden shadow-lg">
+<img alt="Horror" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="eerie silhouette of a figure in a foggy dark forest with moonlight filtering through bare branches, moody atmospheric horror" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPc6sIPy6Fcnqa1PDQJMFiOJ_wd6wLfgnmh5zYOH1wLsczKvdl0FkhhzB-UIz24iTagGsKKIIyUZJgsl8YztUETAtNpWVsGYaOv_DRGh5EaB2q4JqKoh8dObQPneTEFGEeE7TUykgz7Nah6xDEO5gOqtjQG6kjuxKeHYWw9pCzvDPNCgePDpy5SpzXzSZ9LZBIbfAUqew2ad84GFKfkHFr5BzpHZpclOcMu7YEK31wlEVxFzo8tDA7XKwOOTZU9zfD2WUdGJL_bI8v"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<h3 class="text-lg font-bold font-headline text-white">Horror</h3>
+</div>
+</div>
+<!-- Documentary Tile -->
+<div class="relative group aspect-video rounded-3xl overflow-hidden col-span-2 md:col-span-3 shadow-lg">
+<img alt="Documentary" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="majestic aerial view of the amazon rainforest with a winding river during sunset, vibrant green and deep orange colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4Ds7vgImI4Ovc98ONmqlDFJ5boSz73EtayYKJKpxTvrf4RBSgBX7A7NH61icnRXRglg5ALEgzp7pXwADWeoSdQh03988_hXH2P0u_nWP3_q1hlrz-NsJIhWhALlf3eQMXgumOzm79wRRvoq4IvBq0TDm2IYhXP6qTnU6z-0TZvyRW6jr8kIGfL15ZUoJ0tiV6xMHFIbdjM3112oLD04xbu5VMazwNMz6uxAXu3Ud3-e6LPN9CvTMf2aXIRXTbQXU41ykT4s1YGGQE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+<div class="absolute bottom-4 left-6 flex items-center justify-between w-[calc(100%-3rem)]">
+<h3 class="text-xl font-bold font-headline text-white">Documentaries</h3>
+<span class="material-symbols-outlined text-primary" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Horizontal Scroll -->
+<section class="mb-12">
+<h2 class="text-xl font-bold font-headline text-white mb-6">Explore Categories</h2>
+<div class="flex overflow-x-auto gap-4 hide-scrollbar -mx-6 px-6">
+<!-- TV Shows -->
+<div class="flex-none w-40 p-4 bg-surface-container-low rounded-2xl hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="live_tv">live_tv</span>
+</div>
+<span class="text-white font-semibold">TV Shows</span>
+<p class="text-xs text-on-surface-variant mt-1">1,200+ titles</p>
+</div>
+<!-- Movies -->
+<div class="flex-none w-40 p-4 bg-surface-container-low rounded-2xl hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="w-12 h-12 bg-secondary-container/30 rounded-xl flex items-center justify-center text-secondary mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="movie">movie</span>
+</div>
+<span class="text-white font-semibold">Movies</span>
+<p class="text-xs text-on-surface-variant mt-1">3,500+ titles</p>
+</div>
+<!-- Anime -->
+<div class="flex-none w-40 p-4 bg-surface-container-low rounded-2xl hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="w-12 h-12 bg-tertiary-container/20 rounded-xl flex items-center justify-center text-tertiary mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="animation">animation</span>
+</div>
+<span class="text-white font-semibold">Anime</span>
+<p class="text-xs text-on-surface-variant mt-1">800+ titles</p>
+</div>
+<!-- Sports -->
+<div class="flex-none w-40 p-4 bg-surface-container-low rounded-2xl hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="w-12 h-12 bg-error-container/20 rounded-xl flex items-center justify-center text-error mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="sports_score">sports_score</span>
+</div>
+<span class="text-white font-semibold">Sports</span>
+<p class="text-xs text-on-surface-variant mt-1">Live Events</p>
+</div>
+</div>
+</section>
+<!-- Collections -->
+<section class="mb-10">
+<h2 class="text-xl font-bold font-headline text-white mb-6">Curated Collections</h2>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-2xl hover:bg-surface-container-high transition-colors group cursor-pointer">
+<div class="w-16 h-16 rounded-xl bg-gradient-to-br from-[#00E5FF] to-blue-600 flex items-center justify-center text-white text-2xl font-bold font-headline shadow-lg group-hover:rotate-3 transition-transform">
+                        20
+                    </div>
+<div class="flex-1">
+<h3 class="font-bold text-white">Best of the 2020s</h3>
+<p class="text-sm text-on-surface-variant">Modern masterpieces and cult hits</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-2xl hover:bg-surface-container-high transition-colors group cursor-pointer">
+<div class="w-16 h-16 rounded-xl bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center text-white text-2xl font-bold font-headline shadow-lg group-hover:rotate-3 transition-transform">
+                        OS
+                    </div>
+<div class="flex-1">
+<h3 class="font-bold text-white">Oscar Winners</h3>
+<p class="text-sm text-on-surface-variant">Critically acclaimed award winners</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-[#1a191b]/80 backdrop-blur-2xl z-50 rounded-t-3xl shadow-[0_-12px_40px_rgba(0,229,255,0.08)]">
+<a class="flex flex-col items-center justify-center text-gray-500 py-1 px-3 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide uppercase">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 py-1 px-3 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings_remote">settings_remote</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide uppercase">Remote</span>
+</a>
+<!-- Active Tab: Search -->
+<a class="flex flex-col items-center justify-center bg-[#00E5FF]/10 text-[#00E5FF] rounded-xl py-1 px-3 transition-all scale-100 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="search" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide uppercase">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 py-1 px-3 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide uppercase">Profile</span>
+</a>
+</nav>
+</body></html>
