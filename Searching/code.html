@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LUMINESCENT | Elevate Your Skills</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#0a082f",
+                        "secondary-container": "#00696e",
+                        "on-primary-fixed": "#000000",
+                        "error-container": "#a70138",
+                        "inverse-primary": "#124af1",
+                        "primary-dim": "#3e65ff",
+                        "on-secondary-fixed-variant": "#006266",
+                        "on-primary-fixed-variant": "#00207d",
+                        "surface-container-high": "#1a194b",
+                        "secondary-fixed-dim": "#00e5ee",
+                        "tertiary-fixed-dim": "#ff7d5c",
+                        "surface-variant": "#201e55",
+                        "background": "#0a082f",
+                        "inverse-on-surface": "#52517a",
+                        "on-surface": "#e5e2ff",
+                        "surface-container-low": "#0e0d38",
+                        "tertiary-fixed": "#ff9479",
+                        "surface-tint": "#97a9ff",
+                        "primary-fixed-dim": "#718bff",
+                        "on-tertiary-container": "#000000",
+                        "secondary": "#00f4fe",
+                        "on-secondary": "#00575b",
+                        "primary-container": "#849aff",
+                        "on-secondary-container": "#dffdff",
+                        "primary": "#97a9ff",
+                        "tertiary": "#ff7350",
+                        "primary-fixed": "#849aff",
+                        "on-tertiary": "#440900",
+                        "tertiary-dim": "#dc3300",
+                        "surface-container-lowest": "#000000",
+                        "error-dim": "#d73357",
+                        "on-tertiary-fixed-variant": "#721600",
+                        "error": "#ff6e84",
+                        "on-error": "#490013",
+                        "outline-variant": "#45446c",
+                        "outline": "#72719c",
+                        "on-error-container": "#ffb2b9",
+                        "surface-container-highest": "#201e55",
+                        "surface-container": "#141341",
+                        "secondary-fixed": "#00f4fe",
+                        "on-surface-variant": "#a8a7d5",
+                        "on-tertiary-fixed": "#360600",
+                        "on-primary": "#002283",
+                        "surface-bright": "#26245f",
+                        "surface": "#0a082f",
+                        "on-secondary-fixed": "#004346",
+                        "secondary-dim": "#00e5ee",
+                        "inverse-surface": "#fcf8ff",
+                        "on-background": "#e5e2ff",
+                        "tertiary-container": "#fc3c00",
+                        "on-primary-container": "#001967"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #0a082f; color: #e5e2ff; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-card { background: rgba(20, 19, 65, 0.6); backdrop-filter: blur(20px); }
+        .headline-glow { text-shadow: 0 0 20px rgba(0, 244, 254, 0.3); }
+        .bg-mesh { background-image: radial-gradient(at 0% 0%, rgba(151, 169, 255, 0.15) 0px, transparent 50%), radial-gradient(at 100% 0%, rgba(0, 244, 254, 0.1) 0px, transparent 50%); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col bg-surface overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-[#0a082f] dark:bg-[#0a082f] no-border bg-gradient-to-b from-[#141341] to-transparent flat no shadows">
+<div class="flex items-center gap-4">
+<button class="scale-95 active:opacity-80 transition-all text-[#97a9ff] dark:text-[#97a9ff]">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<span class="font-['Manrope'] font-bold tracking-tight text-[#97a9ff] dark:text-[#97a9ff]">LUMINESCENT</span>
+</div>
+<div class="text-xl font-black tracking-widest text-[#00f4fe] uppercase">LUMINESCENT</div>
+<div class="w-10"></div> <!-- Spacer for balance -->
+</header>
+<main class="flex-grow pt-32 pb-20 px-6 bg-mesh">
+<div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<!-- Hero / Left Content -->
+<div class="lg:col-span-7">
+<div class="inline-block mb-6 px-4 py-1 rounded-full bg-surface-container-high text-secondary text-xs font-bold tracking-[0.2em] uppercase">
+                    Unrestricted Access
+                </div>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold text-on-surface leading-tight tracking-tighter mb-8 headline-glow">
+                    Elevate <br/><span class="text-secondary italic">Your Skills</span>
+</h1>
+<p class="font-body text-xl text-on-surface-variant max-w-lg mb-12 leading-relaxed">
+                    Join the digital elite. Access over 500+ masterclasses designed by world-class practitioners. No fillers, just authority.
+                </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<div>
+<p class="font-headline font-bold text-on-surface text-lg">Pro Certification</p>
+<p class="text-on-surface-variant text-sm">Industry-recognized credentials upon completion.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">all_inclusive</span>
+<div>
+<p class="font-headline font-bold text-on-surface text-lg">Lifetime Updates</p>
+<p class="text-on-surface-variant text-sm">New modules added every week at no extra cost.</p>
+</div>
+</div>
+</div>
+<div class="mt-16 relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="cinematic close up of a high-tech digital workspace with glowing blue neon lights and a professional video editing console in a dark room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA38aTpF4Y2D-bgmV9w2fvNAKWkN1D4hsrEA649mZVXo8D8bNtt7p-AR4qnWgN-b6_0Me4uXu4GK7aOTFD7LHoVRsu0PRj16vt-IadEdrTj2aed9BwrVsyAH9pEHSKBua3UGOnrxIBEMiJhgAoLVJQEdfdSwegvZCnFAbJ9N_E8dllsbHNcq8YGdj_RVHgtwaYi_1-9ORM5jYEkFVl1sJ9xOvEttWW5j0BOVY4Zc1ylDOQEHXcWn4IgdnhV_8R617P_AlOXHXMCPB4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+</div>
+</div>
+<!-- Checkout Form / Right Content -->
+<div class="lg:col-span-5 w-full">
+<div class="glass-card p-10 rounded-xl shadow-2xl relative overflow-hidden border-t border-white/5">
+<!-- Subtle under-glow -->
+<div class="absolute -top-24 -right-24 w-48 h-48 bg-secondary/10 blur-[100px]"></div>
+<h2 class="font-headline text-2xl font-bold mb-8 text-on-surface">Secure Checkout</h2>
+<form class="space-y-8">
+<!-- Plan Selection -->
+<div class="grid grid-cols-2 gap-4 p-1 bg-surface-container-highest rounded-xl">
+<label class="cursor-pointer">
+<input checked="" class="hidden peer" name="plan" type="radio" value="monthly"/>
+<div class="text-center py-4 rounded-lg transition-all duration-300 peer-checked:bg-primary peer-checked:text-on-primary text-on-surface-variant hover:text-on-surface">
+<p class="text-xs uppercase font-bold tracking-widest">Monthly</p>
+<p class="text-xl font-headline font-extrabold">$29</p>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="hidden peer" name="plan" type="radio" value="annual"/>
+<div class="text-center py-4 rounded-lg transition-all duration-300 peer-checked:bg-tertiary peer-checked:text-on-tertiary text-on-surface-variant hover:text-on-surface relative">
+<div class="absolute -top-2 -right-2 px-2 py-0.5 bg-secondary text-on-secondary text-[10px] font-bold rounded">SAVE 40%</div>
+<p class="text-xs uppercase font-bold tracking-widest">Annual</p>
+<p class="text-xl font-headline font-extrabold">$209</p>
+</div>
+</label>
+</div>
+<!-- Inputs -->
+<div class="space-y-6">
+<div class="group">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2 group-focus-within:text-secondary transition-colors">Full Name</label>
+<input class="w-full bg-surface-container-highest border-none border-b-2 border-transparent focus:border-secondary focus:ring-0 rounded-lg py-4 px-4 text-on-surface placeholder:text-outline transition-all" placeholder="Johnathan Sterling" type="text"/>
+</div>
+<div class="group">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2 group-focus-within:text-secondary transition-colors">Email Address</label>
+<input class="w-full bg-surface-container-highest border-none border-b-2 border-transparent focus:border-secondary focus:ring-0 rounded-lg py-4 px-4 text-on-surface placeholder:text-outline transition-all" placeholder="john@authority.com" type="email"/>
+</div>
+</div>
+<!-- CTA -->
+<button class="w-full py-5 rounded-xl bg-gradient-to-br from-primary to-primary-dim text-on-primary font-headline font-extrabold text-lg uppercase tracking-widest shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">
+                            Subscribe Now
+                        </button>
+<!-- Trust Signals -->
+<div class="pt-8 grid grid-cols-2 gap-4 border-t border-outline-variant/20">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span class="text-[10px] uppercase font-bold tracking-widest">Secure AES-256</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">shield_person</span>
+<span class="text-[10px] uppercase font-bold tracking-widest">Privacy Protected</span>
+</div>
+</div>
+</form>
+</div>
+<div class="mt-8 text-center">
+<p class="text-on-surface-variant text-sm">
+                        Cancel anytime. 14-day money back guarantee.
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full flex flex-col md:flex-row items-center justify-between px-8 mt-20 py-12 bg-[#0e0d38] dark:bg-[#0e0d38] tonal-shift-bg flat">
+<div class="text-[#00f4fe] font-bold mb-4 md:mb-0">LUMINESCENT</div>
+<div class="flex flex-wrap justify-center gap-8 mb-4 md:mb-0">
+<a class="font-['Inter'] text-sm tracking-normal text-[#a8a7d5] hover:text-[#00f4fe] underline-offset-4 hover:underline transition-opacity opacity-90 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-sm tracking-normal text-[#a8a7d5] hover:text-[#00f4fe] underline-offset-4 hover:underline transition-opacity opacity-90 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-['Inter'] text-sm tracking-normal text-[#a8a7d5] hover:text-[#00f4fe] underline-offset-4 hover:underline transition-opacity opacity-90 hover:opacity-100" href="#">Secure Payment</a>
+</div>
+<p class="font-['Inter'] text-sm tracking-normal text-[#a8a7d5] opacity-90">© 2024 Luminescent Authority. All rights reserved.</p>
+</footer>
+</body></html>
