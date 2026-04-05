@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#74777d",
+                    "surface-dim": "#d8dadc",
+                    "inverse-surface": "#2d3133",
+                    "surface-container-high": "#e6e8ea",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#eceef0",
+                    "secondary-fixed-dim": "#5ddbbd",
+                    "on-primary-container": "#8192a7",
+                    "surface-bright": "#f7f9fb",
+                    "inverse-primary": "#b7c8de",
+                    "surface": "#f7f9fb",
+                    "tertiary-fixed": "#6bfe9c",
+                    "on-secondary-fixed": "#002019",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#001a08",
+                    "surface-container-highest": "#e0e3e5",
+                    "tertiary-fixed-dim": "#4ae183",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-surface": "#191c1e",
+                    "on-tertiary-fixed-variant": "#005228",
+                    "secondary-fixed": "#7cf8d9",
+                    "on-secondary-container": "#00725e",
+                    "primary": "#041627",
+                    "error": "#ba1a1a",
+                    "primary-container": "#1a2b3c",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#003115",
+                    "background": "#f7f9fb",
+                    "surface-variant": "#e0e3e5",
+                    "on-surface-variant": "#44474c",
+                    "on-primary-fixed": "#0b1d2d",
+                    "secondary": "#006b59",
+                    "on-primary-fixed-variant": "#38485a",
+                    "on-tertiary-fixed": "#00210c",
+                    "error-container": "#ffdad6",
+                    "on-background": "#191c1e",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#7cf8d9",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#d2e4fb",
+                    "surface-tint": "#4f6073",
+                    "primary-fixed-dim": "#b7c8de",
+                    "surface-container-low": "#f2f4f6",
+                    "on-tertiary-container": "#00a656",
+                    "on-secondary-fixed-variant": "#005142",
+                    "outline-variant": "#c4c6cd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-header {
+            backdrop-filter: blur(24px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-border { border: none !important; }
+        .tonal-layering { background-color: rgba(242, 244, 246, 0.8); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/70 dark:bg-slate-900/70 backdrop-blur-xl">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<button class="text-slate-900 dark:text-slate-50 active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+<span class="text-2xl font-extrabold tracking-tighter text-slate-900 dark:text-slate-50">RiseUp</span>
+<div class="flex items-center gap-4">
+<img alt="User profile photo" class="w-8 h-8 rounded-full border border-outline-variant/20" data-alt="Close-up portrait of a professional man with a friendly smile, clean studio lighting, high resolution photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7HFsW3TBNttZgMG4_E2nHG3XqPQjCqrwU4ZjxP_FUrjjFqDJnDsjXwDRBHFEo41V61J9cGHdViyQP1QykgHfg3SCTtmXb68BjkUHhzXUd3xNQuIvQc3yo0Mb16IxkfVVrAsiXpSMyVxojA8et71mpMiaZPJdCcG2ee3aHelr7NBTGfXNjHcYqGMq9Yqn5a6wRgZxyODHLkPW_IINps3L7laNTiw9RRjYNEpYkMI26CQ6fvz_Wt7nCs3A8-KmJHmMLAVVcoJsv0jQ"/>
+</div>
+</div>
+<div class="bg-slate-200/50 dark:bg-slate-800/50 h-[1px] w-full absolute bottom-0"></div>
+</nav>
+<main class="pb-24 pt-20">
+<!-- Hero Section: Featured Campaign -->
+<section class="px-6 mb-12">
+<div class="relative overflow-hidden rounded-[2rem] bg-primary aspect-[4/5] md:aspect-[21/9] flex items-end">
+<img alt="Vertical Farming" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity" data-alt="Futuristic vertical farming facility with glowing magenta and blue LED lights and lush green leafy plants in high-tech stacks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFfjUI8wPvVVFRFJTxp3GtO_zBSEWAB1ZiCeY3AxE26cB_0XnxxXIkHoxeHTZ1VfFB2G_HvmLMF5L_fQE2eb5EFQ2uysbonjJdx_TJhsSESTf4VsdWVNoThO1cGM7VgXAevHG9gn_jO76QpGo9MSeeWpIuLTItnFWwnyGcJe2vTVJZh_aNpakQKLpTN3sqMh-1lEHVSVCP-xI0CEP9ixndlQVvPP5RYTMD4NnrEN_3Ezwz9EZEqJqzqfVk5Jgh6OXG8PEDoWiAANM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent"></div>
+<div class="relative p-8 md:p-12 w-full max-w-3xl">
+<div class="inline-flex items-center gap-2 bg-secondary/20 backdrop-blur-md px-3 py-1 rounded-full mb-4 border border-secondary/30">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed-dim"></span>
+<span class="text-xs font-bold text-secondary-fixed tracking-widest uppercase">Featured Startup</span>
+</div>
+<h1 class="font-headline text-4xl md:text-6xl text-on-primary font-extrabold tracking-tight mb-4 leading-tight">
+                        Revolutionizing Urban Agriculture
+                    </h1>
+<p class="text-on-primary-container text-lg md:text-xl mb-8 max-w-xl">
+                        GreenStack is building modular vertical farms that reduce water usage by 95% while doubling crop yields.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-xl font-bold flex items-center gap-2 active:scale-95 transition-transform">
+                            Invest Now
+                            <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="bg-primary-container/80 backdrop-blur-sm text-on-primary px-8 py-4 rounded-xl font-bold active:scale-95 transition-transform">
+                            View Campaign
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Filters -->
+<section class="px-6 mb-12 overflow-x-auto custom-scrollbar">
+<div class="flex gap-3">
+<button class="whitespace-nowrap px-6 py-3 rounded-full bg-primary text-on-primary font-bold shadow-lg shadow-primary/10">All Projects</button>
+<button class="whitespace-nowrap px-6 py-3 rounded-full bg-surface-container-low text-on-surface-variant font-semibold hover:bg-surface-container-high transition-colors">Tech Startups</button>
+<button class="whitespace-nowrap px-6 py-3 rounded-full bg-surface-container-low text-on-surface-variant font-semibold hover:bg-surface-container-high transition-colors">Community Causes</button>
+<button class="whitespace-nowrap px-6 py-3 rounded-full bg-surface-container-low text-on-surface-variant font-semibold hover:bg-surface-container-high transition-colors">Green Energy</button>
+<button class="whitespace-nowrap px-6 py-3 rounded-full bg-surface-container-low text-on-surface-variant font-semibold hover:bg-surface-container-high transition-colors">Education</button>
+</div>
+</section>
+<!-- Trending Section -->
+<section class="px-6 mb-16">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-headline text-3xl font-extrabold tracking-tight text-primary">Trending Now</h2>
+<p class="text-on-surface-variant mt-1">High-impact opportunities gaining momentum</p>
+</div>
+<button class="text-secondary font-bold flex items-center gap-1 group">
+                    See All 
+                    <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Bento Grid of Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group bg-surface-container-lowest rounded-[1.5rem] overflow-hidden flex flex-col transition-all hover:shadow-[0_24px_48px_rgba(25,28,30,0.06)]">
+<div class="relative h-56 overflow-hidden">
+<img alt="Energy Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Engineers working on a clean energy fusion reactor prototype in a bright modern laboratory" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT3Cear7E86nuo4XT-j1Ud6aBQ9Px8bXkC1ldnMt9M8FQP0iybAyE4nVHYuNcGbR7K7FHgqLplZ31bQWkQMyG9AnTBHn7GoEhEE54rc_PmY_hEc8Q71sjR-MISsQLPheSNdEMRUqupVCifrXki98HR2QUheWniDgBUaDtcReP31y_IBdBmxe5EPmq3FsAGK_aZU88Sg-L8seDUwBaluSnNauoaz72Tee3ynfTkyZxL51i5W3flC0iJX_9ZDb1gBUG34rasSRiCBss"/>
+<div class="absolute top-4 right-4 bg-tertiary-container/90 backdrop-blur-md px-3 py-1.5 rounded-lg flex items-center gap-1.5">
+<span class="material-symbols-outlined text-on-tertiary-container text-sm" data-icon="verified">verified</span>
+<span class="text-[10px] font-bold text-on-tertiary-container tracking-wider uppercase">ESG Grade A</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-xl font-bold text-primary group-hover:text-secondary transition-colors">Solaris Fusion Tech</h3>
+<span class="text-secondary font-bold text-lg">82%</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">Next-gen compact fusion generators for decentralized municipal power grids.</p>
+<!-- Progress Bar -->
+<div class="w-full h-2 bg-surface-variant rounded-full mb-6 overflow-hidden">
+<div class="h-full w-[82%] bg-gradient-to-r from-secondary to-secondary-fixed-dim rounded-full"></div>
+</div>
+<div class="grid grid-cols-3 gap-4 mb-8">
+<div>
+<span class="block text-[10px] font-bold text-outline uppercase tracking-wider mb-1">Raised</span>
+<span class="text-primary font-bold">$1.2M</span>
+</div>
+<div>
+<span class="block text-[10px] font-bold text-outline uppercase tracking-wider mb-1">Goal</span>
+<span class="text-primary font-bold">$1.5M</span>
+</div>
+<div>
+<span class="block text-[10px] font-bold text-outline uppercase tracking-wider mb-1">Backers</span>
+<span class="text-primary font-bold">842</span>
+</div>
+</div>
+<button class="mt-auto w-full py-4 bg-primary text-on-primary font-bold rounded-xl active:scale-95 transition-transform">
+                            Support Project
+                        </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-surface-container-lowest rounded-[1.5rem] overflow-hidden flex flex-col transition-all hover:shadow-[0_24px_48px_rgba(25,28,30,0.06)]">
+<div class="relative h-56 overflow-hidden">
+<img alt="Environment Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Aerial view of a coastal reforestation project with thousands of young mangrove trees planted in geometric patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoXwHb309JwZya1KFTylg0ML4K01eU6iKOCvaIOHWIW_NATno5gInX-oRZHpqpz9g9ttXqGpgNQIj8BsQt6gRN4TSGYzKPFEJXh_yysXRG25_lnaM5_HAFKPeHowIMWGSVFDr-QTRlCcHKy2Tf3vTTIwzgxKFLskAn99tk-VMtNLY4433fsbpErOggFx3hLueR_OOXQdn436jjJbPDRCQxgVtDENqcMoU-PoxwT-vMuyqdEY1zDwEWlDbe2gJ7y3VBFXTpP4nGj2I"/>
+<div class="absolute top-4 right-4 bg-tertiary-container/90 backdrop-blur-md px-3 py-1.5 rounded-lg flex items-center gap-1.5">
+<span class="material-symbols-outlined text-on-tertiary-container text-sm" data-icon="nature">nature</span>
+<span class="text-[10px] font-bold text-on-tertiary-container tracking-wider uppercase">Eco Hero</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-xl font-bold text-primary group-hover:text-secondary transition-colors">Blue Carbon Initiative</h3>
+<span class="text-secondary font-bold text-lg">45%</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">Restoring mangrove ecosystems to sequester carbon and protect coastal communities.</p>
+<div class="w-full h-2 bg-surface-variant rounded-full mb-6 overflow-hidden">
+<div class="h-full w-[45%] bg-gradient-to-r from-secondary to-secondary-fixed-dim rounded-full"></div>
+</div>
+<div class="grid grid-cols-3 gap-4 mb-8">
+<div>
+<span class="block text-[10px] font-bold text-outline uppercase tracking-wider mb-1">Raised</span>
+<span class="text-primary font-bold">$450k</span>
+</div>
+<div>
+<span class="block text-[10px] font-bold text-outline uppercase tracking-wider mb-1">Goal</span>
+<span class="text-primary font-bold">$1.0M</span>
+</div>
+<div>
+<span class="block text-[10px] font-bold text-outline uppercase tracking-wider mb-1">Backers</span>
+<span class="text-primary font-bold">2.1k</span>
+</div>
+</div>
+<button class="mt-auto w-full py-4 bg-primary text-on-primary font-bold rounded-xl active:scale-95 transition-transform">
+                            Support Project
+                        </button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-surface-container-lowest rounded-[1.5rem] overflow-hidden flex flex-col transition-all hover:shadow-[0_24px_48px_rgba(25,28,30,0.06)]">
+<div class="relative h-56 overflow-hidden">
+<img alt="Tech Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Microchip circuit board macro photography with glowing amber lights and futuristic tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ3zm_PwYmO8981u-dP3VvqVjf_i8AI0cV_NvzMdDz1TPU-he-TUf3hZ1IaWfNx2uFXuDUCOWX4ZQJmKnwM5etakBNANV-ERP8EuzA8A8ulBYkXGPKrS2Q30--ixOhuuurSfOdPye2htEFXXGsG4R3yTCmdcvAQFQUgwYOxnsk8BAn4Z28NPsuUuYlQRAlWwTzqgJkIY8dTd_2AZ6Az4hpY3oSUP12wUYIJS3xUxi591RNYMtNnKj_jtP759wLS6eBqmmRQeuxIsM"/>
+<div class="absolute top-4 right-4 bg-tertiary-container/90 backdrop-blur-md px-3 py-1.5 rounded-lg flex items-center gap-1.5">
+<span class="material-symbols-outlined text-on-tertiary-container text-sm" data-icon="bolt">bolt</span>
+<span class="text-[10px] font-bold text-on-tertiary-container tracking-wider uppercase">Fast Growth</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-xl font-bold text-primary group-hover:text-secondary transition-colors">NeuralPath AI</h3>
+<span class="text-secondary font-bold text-lg">94%</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">Assistive AI wearable that helps visually impaired individuals navigate complex cities.</p>
+<div class="w-full h-2 bg-surface-variant rounded-full mb-6 overflow-hidden">
+<div class="h-full w-[94%] bg-gradient-to-r from-secondary to-secondary-fixed-dim rounded-full"></div>
+</div>
+<div class="grid grid-cols-3 gap-4 mb-8">
+<div>
+<span class="block text-[10px] font-bold text-outline uppercase tracking-wider mb-1">Raised</span>
+<span class="text-primary font-bold">$2.8M</span>
+</div>
+<div>
+<span class="block text-[10px] font-bold text-outline uppercase tracking-wider mb-1">Goal</span>
+<span class="text-primary font-bold">$3.0M</span>
+</div>
+<div>
+<span class="block text-[10px] font-bold text-outline uppercase tracking-wider mb-1">Backers</span>
+<span class="text-primary font-bold">1.4k</span>
+</div>
+</div>
+<button class="mt-auto w-full py-4 bg-primary text-on-primary font-bold rounded-xl active:scale-95 transition-transform">
+                            Support Project
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Impact Score Banner -->
+<section class="px-6 mb-16">
+<div class="bg-primary rounded-[2rem] p-8 md:p-16 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+<svg viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<path class="text-secondary" d="M0,400 C150,300 250,100 400,0 L400,400 Z" fill="currentColor"></path>
+</svg>
+</div>
+<div class="relative z-10 max-w-2xl">
+<span class="bg-tertiary_container text-on-tertiary-container px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block border border-on-tertiary-container/30">Impact Milestone</span>
+<h2 class="font-headline text-3xl md:text-5xl font-extrabold text-on-primary mb-6 leading-tight">
+                        Our community has funded $42M in sustainable ventures this year.
+                    </h2>
+<p class="text-on-primary-container text-lg mb-8">
+                        Every investment goes through a rigorous ESG vetting process to ensure your capital creates real-world change.
+                    </p>
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-xl font-bold active:scale-95 transition-transform">
+                        View Transparency Report
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-2xl bg-white dark:bg-slate-950 shadow-[0_-8px_24px_rgba(25,28,30,0.04)]">
+<div class="flex justify-around items-center w-full px-2 py-3 pb-safe">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] font-semibold text-[11px] tracking-wide uppercase mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-teal-700 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/30 rounded-xl px-4 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="explore" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-['Inter'] font-semibold text-[11px] tracking-wide uppercase mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-['Inter'] font-semibold text-[11px] tracking-wide uppercase mt-1">Impact</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+<span class="font-['Inter'] font-semibold text-[11px] tracking-wide uppercase mt-1">Menu</span>
+</a>
+</div>
+</nav>
+</body></html>

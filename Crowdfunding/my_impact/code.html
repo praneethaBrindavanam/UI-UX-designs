@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RiseUp | Contributor Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#74777d",
+                    "surface-dim": "#d8dadc",
+                    "inverse-surface": "#2d3133",
+                    "surface-container-high": "#e6e8ea",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#eceef0",
+                    "secondary-fixed-dim": "#5ddbbd",
+                    "on-primary-container": "#8192a7",
+                    "surface-bright": "#f7f9fb",
+                    "inverse-primary": "#b7c8de",
+                    "surface": "#f7f9fb",
+                    "tertiary-fixed": "#6bfe9c",
+                    "on-secondary-fixed": "#002019",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#001a08",
+                    "surface-container-highest": "#e0e3e5",
+                    "tertiary-fixed-dim": "#4ae183",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-surface": "#191c1e",
+                    "on-tertiary-fixed-variant": "#005228",
+                    "secondary-fixed": "#7cf8d9",
+                    "on-secondary-container": "#00725e",
+                    "primary": "#041627",
+                    "error": "#ba1a1a",
+                    "primary-container": "#1a2b3c",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#003115",
+                    "background": "#f7f9fb",
+                    "surface-variant": "#e0e3e5",
+                    "on-surface-variant": "#44474c",
+                    "on-primary-fixed": "#0b1d2d",
+                    "secondary": "#006b59",
+                    "on-primary-fixed-variant": "#38485a",
+                    "on-tertiary-fixed": "#00210c",
+                    "error-container": "#ffdad6",
+                    "on-background": "#191c1e",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#7cf8d9",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#d2e4fb",
+                    "surface-tint": "#4f6073",
+                    "primary-fixed-dim": "#b7c8de",
+                    "surface-container-low": "#f2f4f6",
+                    "on-tertiary-container": "#00a656",
+                    "on-secondary-fixed-variant": "#005142",
+                    "outline-variant": "#c4c6cd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/70 backdrop-blur-xl flex justify-between items-center px-6 py-4">
+<div class="text-2xl font-extrabold tracking-tighter text-slate-900">RiseUp</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-slate-200 overflow-hidden ring-2 ring-white">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="close-up portrait of a smiling professional man with short dark hair in a bright office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuZkzcqZk9bHnqIW4AA3hlerqKc9sMIjW3iSo1QN5DCQyAzI6CMZGm1ucK9QQ-NaBAfkyhJL9l2KVyJ-YBInRU1SOwdUlrDYkSncKU_lc5Idp7JC8aoBGzFQQU4Gc_3fOUrG_-FBrRKqdK41ZphNXVD3ld4WLTIaoIbWba3z0MI4ACndHKU3mMAFvFh3FJQLE3U61WQT9PW6gr_szFOmy9fiFAUPOwIH-THRrxjHLPNZloRzcNSgViMmmUOUvkuxziEE6JZrjzdZQ"/>
+</div>
+</div>
+<div class="bg-slate-200/50 h-[1px] w-full absolute bottom-0"></div>
+</header>
+<main class="pt-24 px-6 max-w-7xl mx-auto space-y-12">
+<!-- My Impact Summary Section -->
+<section>
+<div class="mb-8">
+<h1 class="text-3xl font-extrabold tracking-tight text-primary">Good Morning, Alex</h1>
+<p class="text-on-surface-variant font-medium mt-1">Here is how your contributions are changing the world today.</p>
+</div>
+<!-- Bento Grid Impact -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Total Contributed -->
+<div class="col-span-1 md:col-span-2 relative overflow-hidden bg-primary-container rounded-xl p-8 flex flex-col justify-between min-h-[220px]">
+<div class="absolute top-0 right-0 p-8 opacity-20">
+<span class="material-symbols-outlined text-[120px]" data-icon="account_balance_wallet" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+</div>
+<div>
+<span class="font-label text-xs uppercase tracking-[0.1em] text-on-primary-container/80 font-bold">Total Contribution</span>
+<h2 class="text-5xl font-extrabold text-white mt-2">$24,580.00</h2>
+</div>
+<div class="flex items-center gap-2 text-secondary-fixed">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span class="text-sm font-semibold">+12% from last month</span>
+</div>
+</div>
+<!-- Projects Backed -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_24_48_rgba(25,28,30,0.06)] flex flex-col justify-between border-b-4 border-secondary">
+<div>
+<span class="font-label text-xs uppercase tracking-[0.1em] text-on-surface-variant font-bold">Projects Supported</span>
+<h2 class="text-5xl font-extrabold text-primary mt-2">14</h2>
+</div>
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-white bg-slate-100 overflow-hidden"><img class="w-full h-full object-cover" data-alt="portrait of a man with spectacles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQzQ91D2kpI9lIHB2BktmLMhcwW07d9KYyLcj0yIqZYKodf9JwKvVWM12h6Zu43t3V5WMeCiFwSzNAwIR852QQNME0Ien1-uDu4_FT9nGI4_qNb6HBjb-eHCOarJQvI_loC3hTRVzHLnb6n0p5o4dzBL0mja2kA-859kGFr_GZQDAYqedI5Vh85Bc02dP-eifQ5vru6wTXELaS97KP-WIMwgTek4fY21mIWsMXiDjmbB9RQvTmfGrJ4n_D-K3ZPiUAiZDyl01e498"/></div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-slate-100 overflow-hidden"><img class="w-full h-full object-cover" data-alt="portrait of a smiling woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALt2eApwzzH1wDU0NDY5Zwg2ibuTf878S9a99_mZUArWxaHA8hq5OrJEMr1IWrSRSwZ_YfN_IAp5IjS_KmnKqQ3nlKC85OvDljCRW4KEpPnEsnWPk71qHdU7O8NfPDJUNe-EUonfuRU9m2CcNdmh7P4i8G0vHYpvSu17WzOr-OWfQD7tRW3nQhH3b5x_7GuAOXO4KKwBC60SADBbYcTvzTcq13iu3hgGfhfEQ10FhOyGAHbxHPmyAcm-oBmWoAVjaP9mERzhOuF6o"/></div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-slate-100 overflow-hidden"><img class="w-full h-full object-cover" data-alt="portrait of a professional woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXAnFzWoKwgPPWDW2Cu4lblT-CvadNGBJrQkAnJuPsBAwXiNfqtUBG6D-nMuwIlBR5hYhKf3W_DNbeu-PVagAbo8Hq7HLPpKR12VswfDpMFcxEeX27pXJzha2UHyIGOJmBFAF6IdiqZogoh5zRc_xnr3g1mM2ckYlCJOjrmAu8zVu0-HSD22j9PbWlCeTNWIk2CLUCAmd3eK6C402KdGK-XvP9yFPtS7Y9A3MjTo5H8uNkizhyIUjGdepiWAlv5S7mSTPSQBi-VEs"/></div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-[10px] font-bold text-slate-600">+11</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Active Backed Projects -->
+<section>
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-2xl font-extrabold tracking-tight text-primary">Active Backed Projects</h2>
+<p class="text-on-surface-variant">Stay updated with the latest progress of your supported initiatives.</p>
+</div>
+<button class="text-secondary font-bold text-sm hover:underline">View All Projects</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_24_48_rgba(25,28,30,0.04)] group transition-transform duration-300 hover:-translate-y-1">
+<div class="h-48 w-full relative">
+<img class="w-full h-full object-cover" data-alt="sustainable vertical farming facility with lush green plants under purple led lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp0ckz-LTNuMXJa8HRF7wJEUMXunqBnjqreK0WBOrJZEy5mBqQGVExDAIfSXlBW_x21-FcFxrY4qTXIDkf-PPuwLVmbIZ_FDLKSTqtaXMynZ85PwUduvrR55FfjY8c-34ybVgPbGYhaLOtaJY7LRCcyRVcMSQnQYtGDYWaIugxSYPw7v3paad2OP9lDve6rJPThSwyZAnzFILp_YxUn9tZacXaayJ6YrA5qqOTktRQG0iT1f5UYJurj6vDNgJi37AJF8a_ibOMMvE"/>
+<div class="absolute top-4 left-4">
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] font-bold px-3 py-1 rounded-full tracking-wider uppercase">Environmental</span>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<h3 class="text-xl font-bold text-primary">Urban Canopy Initiative</h3>
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-bold text-on-surface-variant uppercase tracking-wider">
+<span>Progress</span>
+<span>85% Funded</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full w-[85%] bg-gradient-to-r from-secondary to-secondary-fixed-dim"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg border-l-4 border-secondary">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="campaign">campaign</span>
+<span class="text-[11px] font-bold uppercase tracking-widest text-secondary">Latest Update</span>
+</div>
+<p class="text-sm text-on-surface leading-relaxed italic">"Final permits approved for the Brooklyn site! Planting starts next week."</p>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_24_48_rgba(25,28,30,0.04)] group transition-transform duration-300 hover:-translate-y-1">
+<div class="h-48 w-full relative">
+<img class="w-full h-full object-cover" data-alt="modern minimalist co-working space with large windows and natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5d6QBSGrRZmlZYkgy_8zrRbtu-HYg79tAQpD3xvOW8dbeAJuxMiKMv-C2tieiwfyIYqeYEB-MnJLA2YTUCm9tI9EfFPpac-Xh6w7rfXRWle7F5HNxJ1dqUsTR0j3Ugysi148LGBZA1kuYcUye8gq30nFuGye0gIagqaESH-wx7cm-rFJQKtMsgv-98AQJDjHaUugmk76c4evwIZbWUny4v3zW4suxPqAk9LPz9AEpLgljJEkk7LMBSZ4zNeRrPFTDWxDPbIWVrQg"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary-container text-on-primary-container text-[10px] font-bold px-3 py-1 rounded-full tracking-wider uppercase">Social Impact</span>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<h3 class="text-xl font-bold text-primary">The Knowledge Hub</h3>
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-bold text-on-surface-variant uppercase tracking-wider">
+<span>Progress</span>
+<span>42% Funded</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full w-[42%] bg-gradient-to-r from-secondary to-secondary-fixed-dim"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg border-l-4 border-primary">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="campaign">campaign</span>
+<span class="text-[11px] font-bold uppercase tracking-widest text-primary">Latest Update</span>
+</div>
+<p class="text-sm text-on-surface leading-relaxed italic">"We've secured our first 5 mentors from the tech industry. Onboarding starts Monday."</p>
+</div>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_24_48_rgba(25,28,30,0.04)] group transition-transform duration-300 hover:-translate-y-1">
+<div class="h-48 w-full relative">
+<img class="w-full h-full object-cover" data-alt="clean medical laboratory with sophisticated diagnostic equipment in soft blue tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1En_pL9m5XwwETq5GSZmM1D7HHLkyprP5vPmI4m9Cb95tgRFfw1NFHEqmTGAoBLB8kwarrgZYbIPmZhe5mjkzk4F5B0Vo8X7yxHN4ZWSIsyicJ8qp0YKihza6BogzJSFujLY8hktXc9xM8agvkKvB9g2FaCEF5VDSovA4Vy90A4OUNapqi8bH5N9wLYtGp0aZXcUnG2qsyYrbNz4TRhClNyclSV3N5n8s9OHKbzyWDWU8Ot5VUNHBazIxRDw5z16qf5jH9blvAFs"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary text-white text-[10px] font-bold px-3 py-1 rounded-full tracking-wider uppercase">Healthcare</span>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<h3 class="text-xl font-bold text-primary">BioGen Diagnostics</h3>
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-bold text-on-surface-variant uppercase tracking-wider">
+<span>Progress</span>
+<span>92% Funded</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full w-[92%] bg-gradient-to-r from-secondary to-secondary-fixed-dim"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg border-l-4 border-secondary">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="campaign">campaign</span>
+<span class="text-[11px] font-bold uppercase tracking-widest text-secondary">Latest Update</span>
+</div>
+<p class="text-sm text-on-surface leading-relaxed italic">"Clinical trials phase 1 complete with zero complications. Moving to Phase 2."</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recommended for You -->
+<section class="bg-surface-container-low rounded-3xl p-10 overflow-hidden relative">
+<div class="relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10">
+<div>
+<h2 class="text-2xl font-extrabold tracking-tight text-primary">Recommended for You</h2>
+<p class="text-on-surface-variant mt-1">Based on your interest in Sustainable Urban Development.</p>
+</div>
+<button class="bg-primary text-white px-6 py-3 rounded-lg font-bold text-sm shadow-lg active:scale-95 transition-transform">Explore All Recommendations</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Recommendation Card A -->
+<div class="bg-surface-container-lowest p-2 rounded-2xl flex items-center gap-6 group">
+<div class="h-28 w-28 shrink-0 overflow-hidden rounded-xl">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="modern eco-friendly house with solar panels on the roof surrounded by greenery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtsUlT1JLfyCMeG1Dj0xxmaCej1ywdMyKyxHMu7JWhJ4la5xo9xgjUz6SLR4clJirZAkkZseTBWLVexwj1gR2GzeuvrNGqYC5bl1_nNiupsuld4LkojEFi82A9wjK38gYhc6bsb1xa-rXM2ZsO-nPnLB06P38PLUYE19yPnXA-Lkp6upD4b7lsm0OBqF_KTcqS6PiGtDFIkSU244EUxXwy4oJkovYyttFhxNY9H1YlWF4C9X9Sl_mpf75ouSmWd8rqWr1-nlBgWRs"/>
+</div>
+<div class="pr-6">
+<h4 class="text-lg font-bold text-primary">EcoHousing Network</h4>
+<p class="text-sm text-on-surface-variant line-clamp-1 mb-3">Building carbon-neutral affordable housing units in high-density areas.</p>
+<div class="flex items-center justify-between">
+<span class="text-secondary font-bold text-sm">$45,000 to goal</span>
+<span class="material-symbols-outlined text-on-surface-variant text-lg group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Recommendation Card B -->
+<div class="bg-surface-container-lowest p-2 rounded-2xl flex items-center gap-6 group">
+<div class="h-28 w-28 shrink-0 overflow-hidden rounded-xl">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="solar panels installed in a village setting with blue sky background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvd5gIdOeTksrLMDfddNijvXCYiCys_nZ-LBTn7CSBEXGOGHDfzjxdqAM1U0eQaxZMOm3v3Jy7PK5l4lFOyDeKsqHjZ24Pq8nJ2Xhl7eQ2JFKRncZpV_vJN_0SEiE4Be-klmAq132mHUwuvUQb40_GyoNA7MgEp91FPMvujOfnGNfGv7iVD7DW34JH3VczuE4WqJ5HZvWTyDBxQB8E4E1ZX6i9L6nH-wSb_A2jrCak3voSroMgyCP6WLQNU0bd-F75H7poz73S0WI"/>
+</div>
+<div class="pr-6">
+<h4 class="text-lg font-bold text-primary">Solar Village Power</h4>
+<p class="text-sm text-on-surface-variant line-clamp-1 mb-3">Modular solar grid systems for remote coastal communities.</p>
+<div class="flex items-center justify-between">
+<span class="text-secondary font-bold text-sm">$12,400 to goal</span>
+<span class="material-symbols-outlined text-on-surface-variant text-lg group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Background Decorative Element -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary/5 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-2xl bg-white shadow-[0_-8px_24px_rgba(25,28,30,0.04)] flex justify-around items-center px-2 py-3 pb-safe md:hidden">
+<button class="flex flex-col items-center justify-center text-teal-700 bg-teal-50 rounded-xl px-4 py-1 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Inter'] font-semibold text-[11px] tracking-wide uppercase mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 px-4 py-1 hover:text-teal-600 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-['Inter'] font-semibold text-[11px] tracking-wide uppercase mt-1">Explore</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 px-4 py-1 hover:text-teal-600 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-['Inter'] font-semibold text-[11px] tracking-wide uppercase mt-1">Impact</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 px-4 py-1 hover:text-teal-600 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+<span class="font-['Inter'] font-semibold text-[11px] tracking-wide uppercase mt-1">Menu</span>
+</button>
+</nav>
+<!-- Floating Impact Score Chip -->
+<div class="fixed bottom-28 right-6 z-40">
+<div class="bg-tertiary-container text-on-tertiary-container px-4 py-2 rounded-full shadow-lg flex items-center gap-2 border border-on-tertiary-container/20 backdrop-blur-md">
+<span class="material-symbols-outlined text-sm" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-bold text-xs tracking-tight">ESG Score: 94</span>
+</div>
+</div>
+</body></html>
