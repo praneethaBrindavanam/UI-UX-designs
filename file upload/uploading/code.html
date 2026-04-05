@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vault - Upload Progress</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#c3c6d6",
+                    "inverse-surface": "#2e3132",
+                    "surface-container-highest": "#e1e2e4",
+                    "surface-dim": "#d9dadc",
+                    "surface-container": "#edeef0",
+                    "on-tertiary-fixed-variant": "#005235",
+                    "secondary-fixed": "#dae2ff",
+                    "on-surface-variant": "#434654",
+                    "on-secondary-container": "#415382",
+                    "secondary-container": "#b6c8fe",
+                    "on-primary-fixed": "#001848",
+                    "on-secondary-fixed": "#021945",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "background": "#f8f9fb",
+                    "tertiary-fixed": "#82f9be",
+                    "surface-variant": "#e1e2e4",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#f0f1f3",
+                    "on-surface": "#191c1e",
+                    "surface-container-high": "#e7e8ea",
+                    "primary-fixed-dim": "#b2c5ff",
+                    "on-primary-container": "#c4d2ff",
+                    "tertiary-fixed-dim": "#65dca4",
+                    "on-tertiary-container": "#72e9af",
+                    "inverse-primary": "#b2c5ff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#b4c5fb",
+                    "on-tertiary-fixed": "#002113",
+                    "tertiary": "#004e32",
+                    "on-error-container": "#93000a",
+                    "primary": "#003d9b",
+                    "surface-tint": "#0c56d0",
+                    "on-primary-fixed-variant": "#0040a2",
+                    "surface": "#f8f9fb",
+                    "primary-container": "#0052cc",
+                    "on-background": "#191c1e",
+                    "tertiary-container": "#006844",
+                    "secondary": "#4c5d8d",
+                    "primary-fixed": "#dae2ff",
+                    "outline": "#737685",
+                    "surface-bright": "#f8f9fb",
+                    "surface-container-low": "#f3f4f6",
+                    "on-secondary-fixed-variant": "#344573",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .cubic-spring {
+            transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-slate-50 dark:bg-slate-900 flex items-center justify-between px-6 h-16 w-full docked top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 cursor-pointer" data-icon="menu">menu</span>
+<span class="text-2xl font-black text-blue-800 dark:text-blue-200 tracking-tight font-headline">Vault</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold text-xs">JD</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center px-6 py-12 max-w-4xl mx-auto w-full">
+<!-- Editorial Empty State / Progress Header -->
+<div class="text-center mb-12 w-full">
+<h1 class="font-headline font-extrabold text-5xl md:text-6xl text-on-surface mb-4 tracking-tight">Uploading Folders...</h1>
+<p class="font-body text-on-surface-variant text-lg">Moving 'Financial_Records_2025' to secure vault...</p>
+</div>
+<!-- Asymmetric Visual: Flying Folders -->
+<div class="relative w-full h-48 mb-16 overflow-hidden">
+<!-- Decorative Cloud/Vault Background Element -->
+<div class="absolute inset-0 flex items-center justify-center opacity-10">
+<span class="material-symbols-outlined text-[200px]" data-icon="cloud_done">cloud_done</span>
+</div>
+<!-- Folder Sequence (Simulated Motion Path) -->
+<div class="absolute left-1/4 top-1/2 -translate-y-1/2 opacity-20 scale-75">
+<span class="material-symbols-outlined text-primary text-6xl" data-icon="folder_open">folder_open</span>
+</div>
+<div class="absolute left-1/2 top-1/3 -translate-y-1/2 z-10">
+<div class="p-6 bg-surface-container-lowest rounded-xl shadow-[0_24px_48px_-12px_rgba(0,61,155,0.08)] flex items-center gap-4 border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-5xl" data-icon="folder_zip" data-weight="fill" style="font-variation-settings: 'FILL' 1;">folder_zip</span>
+<div class="text-left">
+<div class="text-xs font-bold text-primary uppercase tracking-widest mb-1">In Transit</div>
+<div class="font-headline font-bold text-on-surface">Tax_Docs_Q4.zip</div>
+</div>
+</div>
+</div>
+<div class="absolute right-1/4 bottom-1/4 opacity-40 scale-90">
+<span class="material-symbols-outlined text-primary text-6xl" data-icon="folder">folder</span>
+</div>
+</div>
+<!-- Progress Section -->
+<div class="w-full max-w-2xl">
+<div class="flex justify-between items-end mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary" data-icon="verified_user" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="text-sm font-semibold text-on-surface-variant uppercase tracking-tighter">Secure Transfer Active</span>
+</div>
+<span class="font-headline font-extrabold text-4xl text-primary">75%</span>
+</div>
+<!-- Custom Progress Bar from Design System -->
+<div class="h-4 w-full bg-surface-container-highest rounded-full overflow-hidden mb-8 relative">
+<!-- Progress Indicator with Tertiary Gradient Shimmer -->
+<div class="absolute top-0 left-0 h-full w-3/4 rounded-full bg-gradient-to-r from-tertiary to-tertiary-fixed-dim shadow-[0_0_20px_rgba(101,220,164,0.4)]">
+<!-- Shimmer Overlay (CSS representation) -->
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent w-1/2"></div>
+</div>
+</div>
+<!-- Bento-style Status Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-xl" data-icon="speed">speed</span>
+</div>
+<div>
+<div class="text-xs text-on-surface-variant font-medium">Speed</div>
+<div class="text-sm font-bold">12.5 MB/s</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-xl" data-icon="timer">timer</span>
+</div>
+<div>
+<div class="text-xs text-on-surface-variant font-medium">Remaining</div>
+<div class="text-sm font-bold">~ 42 seconds</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Button (Contextual) -->
+<button class="mt-12 px-8 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-full font-headline font-bold text-sm tracking-wide shadow-lg hover:scale-105 transition-transform cubic-spring">
+            Pause All Tasks
+        </button>
+</main>
+<!-- Illustrative Background Element -->
+<div class="fixed top-24 -right-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+<div class="fixed bottom-32 -left-12 w-48 h-48 bg-tertiary/5 rounded-full blur-3xl -z-10"></div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-8 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_-8px_30px_rgb(0,61,155,0.04)] rounded-t-3xl border-t border-slate-100 dark:border-slate-800">
+<!-- Upload (Active since we are on an upload screen) -->
+<a class="flex flex-col items-center justify-center bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-100 rounded-2xl px-5 py-1.5 transition-all duration-300 scale-110 cubic-spring" href="#">
+<span class="material-symbols-outlined" data-icon="cloud_upload">cloud_upload</span>
+<span class="font-inter text-[11px] font-semibold tracking-wide">Upload</span>
+</a>
+<!-- My Files (Inactive) -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-1.5 hover:text-blue-600 dark:hover:text-blue-300" href="#">
+<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
+<span class="font-inter text-[11px] font-semibold tracking-wide">My Files</span>
+</a>
+<!-- Settings (Inactive) -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-1.5 hover:text-blue-600 dark:hover:text-blue-300" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-inter text-[11px] font-semibold tracking-wide">Settings</span>
+</a>
+</nav>
+<!-- Visual Anchor Image (Hidden but provided for descriptive prompt) -->
+<div class="hidden">
+<img data-alt="minimalist 3d render of sleek blue digital folders floating in a clean white architectural space with soft volumetric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC15QsjFun7WcKS4eNJvVdwsknlynVw3Po_Fhe8OqMvA_kF0wd5ofFCUt6fKmt5a_xZV6bqmDUH9VjI1_grGXPdaxMoGCqJD2CMEt__4YOaXywfaKGSxtwFZmGcce7XJiKCok8cEX2tFRgXeEmUEjGQxeIiWt_5AG4mw9mRlBtIotAVn9em_Mw1HUMXyNgszJ5p9T12oCRid-9W_C_XDgs6r7qoQeLTjPNHVQpxRMuYfrBT7xEYm9s07Tgwy37THBFlIeH-MgMGy74"/>
+</div>
+</body></html>

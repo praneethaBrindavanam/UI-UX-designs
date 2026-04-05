@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#c3c6d6",
+                    "inverse-surface": "#2e3132",
+                    "surface-container-highest": "#e1e2e4",
+                    "surface-dim": "#d9dadc",
+                    "surface-container": "#edeef0",
+                    "on-tertiary-fixed-variant": "#005235",
+                    "secondary-fixed": "#dae2ff",
+                    "on-surface-variant": "#434654",
+                    "on-secondary-container": "#415382",
+                    "secondary-container": "#b6c8fe",
+                    "on-primary-fixed": "#001848",
+                    "on-secondary-fixed": "#021945",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "background": "#f8f9fb",
+                    "tertiary-fixed": "#82f9be",
+                    "surface-variant": "#e1e2e4",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#f0f1f3",
+                    "on-surface": "#191c1e",
+                    "surface-container-high": "#e7e8ea",
+                    "primary-fixed-dim": "#b2c5ff",
+                    "on-primary-container": "#c4d2ff",
+                    "tertiary-fixed-dim": "#65dca4",
+                    "on-tertiary-container": "#72e9af",
+                    "inverse-primary": "#b2c5ff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#b4c5fb",
+                    "on-tertiary-fixed": "#002113",
+                    "tertiary": "#004e32",
+                    "on-error-container": "#93000a",
+                    "primary": "#003d9b",
+                    "surface-tint": "#0c56d0",
+                    "on-primary-fixed-variant": "#0040a2",
+                    "surface": "#f8f9fb",
+                    "primary-container": "#0052cc",
+                    "on-background": "#191c1e",
+                    "tertiary-container": "#006844",
+                    "secondary": "#4c5d8d",
+                    "primary-fixed": "#dae2ff",
+                    "outline": "#737685",
+                    "surface-bright": "#f8f9fb",
+                    "surface-container-low": "#f3f4f6",
+                    "on-secondary-fixed-variant": "#344573",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .cubic-bezier-spring {
+            transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-slate-50 dark:bg-slate-900 flex items-center justify-between px-6 h-16 w-full fixed top-0 z-50">
+<div class="flex items-center gap-4">
+<button class="text-blue-700 dark:text-blue-400 hover:bg-slate-200 dark:hover:bg-slate-800 p-2 rounded-xl transition-transform scale-95">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="text-2xl font-black text-blue-800 dark:text-blue-200 tracking-tight font-headline">Vault</span>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-manrope font-bold text-lg text-blue-700 dark:text-blue-400" href="#">Upload</a>
+<a class="font-manrope font-bold text-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 px-3 py-1 rounded-lg transition-all" href="#">My Files</a>
+<a class="font-manrope font-bold text-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 px-3 py-1 rounded-lg transition-all" href="#">Settings</a>
+</nav>
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-secondary-container">
+<img class="w-full h-full object-cover" data-alt="professional male portrait with neutral background and soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUahmUqHhTeHCYlxEgfC-lKN-osOWc3MbkwC4l7FJdyBmko-hzzHwMGokbWRSMNqM2YhcdNXvJ7nK-0Ge4MGhB5OMRYjfL02r3GqRvjAqcBBEMFZ8eJ-KLi17lFlg6He6R9eXrsH92d0w-I-hJN6AodT2Qg5JDOVl5X6h3kVrY5s_vH4kStD0LRbJPR2wDXcP7eZ3Ms7ZZvhd6lN16_oEb9VrQILUh9YeWu18NuoXWKlsoEVtNhcE8UJnq630GoCtd5tMqSFhY4_0"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-4 md:px-8 max-w-7xl mx-auto">
+<!-- Hero / Upload Zone Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+<div class="lg:col-span-7 flex flex-col justify-center text-left">
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold text-on-surface leading-[1.1] mb-6 tracking-tight">
+                    Ready to Upload?
+                </h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-lg mb-10 leading-relaxed">
+                    Drag and drop or select files to begin. Your secure architectural atrium for digital assets.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-10 py-5 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-full font-headline font-bold text-lg shadow-[0_24px_48px_-12px_rgba(0,61,155,0.15)] hover:scale-[1.02] transition-transform flex items-center gap-3">
+<span class="material-symbols-outlined">cloud_upload</span>
+                        Upload Files
+                    </button>
+<button class="px-8 py-5 text-primary font-headline font-bold text-lg hover:bg-primary-fixed/50 rounded-full transition-colors">
+                        Learn More
+                    </button>
+</div>
+</div>
+<!-- Asymmetric Upload Canvas -->
+<div class="lg:col-span-5 relative">
+<div class="w-full aspect-square bg-surface-container-low rounded-[2rem] flex flex-col items-center justify-center border-4 border-dashed border-outline-variant/30 hover:border-primary/50 hover:bg-primary-fixed transition-all duration-500 group relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="abstract flowing blue and white geometric patterns with soft lighting and clean aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFOuqqMLJOm3JU6Srrp_s32gCT9XDAn_GMBUkF4xzp7TEEb8OU0g_-8Iq4h3Z3RL_6kfe3Wj6BcdytPtIQl__-vUELtdyB7t_YSdyya_vXyHQQybWsMyvzfbS8-2ONH9BUjXlhf9Pdj4mosG5e-aaxGCVRCBEJE9xb_RS_eXZsYG3Q-V4TxNIAgfHI8UmrAE3Py9hjav38VLed117BF7y5OZ-jDSUO2JZtPzkIXPi9ypvoQItuThfxYTF6DmRB7EhbzDw85CjVzdw"/>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center p-8">
+<div class="w-32 h-32 bg-surface-container-lowest rounded-3xl flex items-center justify-center mb-6 shadow-xl group-hover:-translate-y-4 transition-transform cubic-bezier-spring">
+<span class="material-symbols-outlined text-6xl text-primary" style="font-variation-settings: 'opsz' 48;">folder_open</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">Drop your files here</h3>
+<p class="text-on-surface-variant text-sm">Supports PDF, JPG, PNG, and MP4 up to 500MB</p>
+</div>
+</div>
+<!-- Floating Decorative Card -->
+<div class="absolute -bottom-6 -left-6 glass-panel p-4 rounded-2xl shadow-[0_24px_48px_-12px_rgba(0,61,155,0.08)] hidden md:block">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-tertiary-fixed rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface">End-to-end Encrypted</p>
+<p class="text-[10px] text-on-surface-variant">Your privacy is our structure.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Uploads - Bento Grid Layout -->
+<section>
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline text-3xl font-extrabold tracking-tight text-on-surface">Recent Uploads</h2>
+<button class="text-primary font-bold flex items-center gap-1 hover:gap-2 transition-all">
+                    View Gallery <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6">
+<!-- Large Featured Card -->
+<div class="md:col-span-2 lg:col-span-3 bg-surface-container-lowest p-6 rounded-3xl shadow-[0_12px_24px_-8px_rgba(0,61,155,0.04)] border border-outline-variant/10 group cursor-pointer">
+<div class="aspect-video rounded-2xl overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="modern minimalist office interior with white desks and large windows overlooking a city skyline" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVZr2HHibNHeANuYOH4bQHUtgaMFNHqAwBxr75PfMvablvOb_I1Vnv72EtNceTMw47TTADrkVSr_B6t0sGG4bcBAkLp53kj59cSoResIDndSw_RhD1fsuwG4bwpNWDxEwBhpyAztSz58hUiJSlVzBQAKkA8v_SVbg-QSkFGxY4GKDt0e8DfPESyfqRtwVxOT2eWe2AJcut51Q7npsUrmclCvUcj4PkFAxbpP0uJ6y1xPSWPqlTqtdrW-Kdko_35_TtlOXQBjfF6yg"/>
+<div class="absolute top-4 right-4 glass-panel px-3 py-1 rounded-full text-xs font-bold text-primary">Photography</div>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<h4 class="font-bold text-lg mb-1">Architecture_Project_Final.zip</h4>
+<p class="text-sm text-on-surface-variant">Uploaded 2 hours ago • 142 MB</p>
+</div>
+<span class="material-symbols-outlined text-outline">more_vert</span>
+</div>
+</div>
+<!-- Secondary Card -->
+<div class="md:col-span-2 lg:col-span-3 bg-surface-container-lowest p-6 rounded-3xl shadow-[0_12px_24px_-8px_rgba(0,61,155,0.04)] border border-outline-variant/10 group cursor-pointer">
+<div class="aspect-video rounded-2xl overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="deep blue abstract gradient with soft smooth transitions and subtle grainy texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEJVFe5cJ99nh8qEb-JmEHiJGM7TmQ3Q8jJfUQR9yT_FSA17-FIkdoK6qqP1YGccdNNaRKvR1wVdH593A3YZ_NOt_B2V-O_spaA-5HSDM1H6ttOCkI9LOk4qaDT3MBiSrqX2VOKPzkP8bXNfbFw3t_iCoOKQXoFxtU5uH7dRbwQPuAHj5ooZQt_cL3hehsKJwQgazjw0-xnIRFvu1UYRS4ryeIE_7w9YEfh1LqroHRDUrmzX3LhO6cg6JnkV37S2MaI78GN_wQCY4"/>
+<div class="absolute top-4 right-4 glass-panel px-3 py-1 rounded-full text-xs font-bold text-primary">Asset</div>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<h4 class="font-bold text-lg mb-1">Brand_Guidelines_2024.pdf</h4>
+<p class="text-sm text-on-surface-variant">Uploaded 5 hours ago • 12.5 MB</p>
+</div>
+<span class="material-symbols-outlined text-outline">more_vert</span>
+</div>
+</div>
+<!-- Small Grid Items -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-4 rounded-2xl border border-outline-variant/5 flex items-center gap-4 hover:bg-secondary-fixed transition-colors cursor-pointer">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">description</span>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="font-bold text-sm truncate">Invoice_Sept.pdf</p>
+<p class="text-[11px] text-on-surface-variant">Yesterday • 450 KB</p>
+</div>
+</div>
+<div class="lg:col-span-2 bg-surface-container-lowest p-4 rounded-2xl border border-outline-variant/5 flex items-center gap-4 hover:bg-secondary-fixed transition-colors cursor-pointer">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">image</span>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="font-bold text-sm truncate">Hero_Draft_01.png</p>
+<p class="text-[11px] text-on-surface-variant">Yesterday • 4.2 MB</p>
+</div>
+</div>
+<div class="lg:col-span-2 bg-surface-container-lowest p-4 rounded-2xl border border-outline-variant/5 flex items-center gap-4 hover:bg-secondary-fixed transition-colors cursor-pointer">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">video_library</span>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="font-bold text-sm truncate">Landing_Video.mp4</p>
+<p class="text-[11px] text-on-surface-variant">2 days ago • 89 MB</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Dynamic Progress Notification (Floating) -->
+<div class="fixed bottom-24 right-6 w-80 glass-panel p-5 rounded-2xl shadow-[0_24px_48px_-12px_rgba(0,61,155,0.12)] border border-primary/10 hidden md:block">
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold text-primary uppercase tracking-widest">Active Upload</span>
+<span class="text-xs font-bold text-tertiary">78%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden mb-3">
+<div class="h-full w-[78%] bg-gradient-to-r from-tertiary to-tertiary-fixed-dim rounded-full relative">
+<div class="absolute inset-0 bg-white/20 animate-pulse"></div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-primary">attachment</span>
+</div>
+<div class="overflow-hidden">
+<p class="text-xs font-bold truncate">Q4_Revenue_Projections.xlsx</p>
+<p class="text-[10px] text-on-surface-variant">1.2 MB of 1.5 MB remaining</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-8 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-t border-slate-100 dark:border-slate-800 shadow-[0_-8px_30px_rgb(0,61,155,0.04)] md:hidden">
+<div class="flex flex-col items-center justify-center bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-100 rounded-2xl px-5 py-1.5 cubic-bezier(0.34,1.56,0.64,1) transition-all duration-300 scale-110">
+<span class="material-symbols-outlined">cloud_upload</span>
+<span class="font-inter text-[11px] font-semibold tracking-wide">Upload</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-1.5 hover:text-blue-600 dark:hover:text-blue-300 transition-colors">
+<span class="material-symbols-outlined">folder_open</span>
+<span class="font-inter text-[11px] font-semibold tracking-wide">My Files</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-1.5 hover:text-blue-600 dark:hover:text-blue-300 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-inter text-[11px] font-semibold tracking-wide">Settings</span>
+</div>
+</nav>
+</body></html>

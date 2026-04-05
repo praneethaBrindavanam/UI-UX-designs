@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Upload Success - Vault</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#c3c6d6",
+                    "inverse-surface": "#2e3132",
+                    "surface-container-highest": "#e1e2e4",
+                    "surface-dim": "#d9dadc",
+                    "surface-container": "#edeef0",
+                    "on-tertiary-fixed-variant": "#005235",
+                    "secondary-fixed": "#dae2ff",
+                    "on-surface-variant": "#434654",
+                    "on-secondary-container": "#415382",
+                    "secondary-container": "#b6c8fe",
+                    "on-primary-fixed": "#001848",
+                    "on-secondary-fixed": "#021945",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "background": "#f8f9fb",
+                    "tertiary-fixed": "#82f9be",
+                    "surface-variant": "#e1e2e4",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#f0f1f3",
+                    "on-surface": "#191c1e",
+                    "surface-container-high": "#e7e8ea",
+                    "primary-fixed-dim": "#b2c5ff",
+                    "on-primary-container": "#c4d2ff",
+                    "tertiary-fixed-dim": "#65dca4",
+                    "on-tertiary-container": "#72e9af",
+                    "inverse-primary": "#b2c5ff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#b4c5fb",
+                    "on-tertiary-fixed": "#002113",
+                    "tertiary": "#004e32",
+                    "on-error-container": "#93000a",
+                    "primary": "#003d9b",
+                    "surface-tint": "#0c56d0",
+                    "on-primary-fixed-variant": "#0040a2",
+                    "surface": "#f8f9fb",
+                    "primary-container": "#0052cc",
+                    "on-background": "#191c1e",
+                    "tertiary-container": "#006844",
+                    "secondary": "#4c5d8d",
+                    "primary-fixed": "#dae2ff",
+                    "outline": "#737685",
+                    "surface-bright": "#f8f9fb",
+                    "surface-container-low": "#f3f4f6",
+                    "on-secondary-fixed-variant": "#344573",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .cubic-bezier-transition {
+            transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased min-h-screen flex flex-col overflow-hidden">
+<!-- TopAppBar -->
+<header class="flex items-center justify-between px-6 h-16 w-full fixed top-0 z-50 bg-slate-50 dark:bg-slate-900">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-800 p-2 rounded-full transition-transform scale-95" data-icon="menu">menu</button>
+<span class="text-2xl font-black text-blue-800 dark:text-blue-200 tracking-tight font-headline">Vault</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-manrope font-bold text-lg text-slate-500">Upload</span>
+</div>
+</header>
+<!-- Main Content Atrium -->
+<main class="flex-1 flex flex-col items-center justify-center px-6 relative">
+<!-- Intentional Asymmetry: Background Decorative Element -->
+<div class="absolute top-24 right-[10%] w-64 h-64 bg-tertiary/5 rounded-full blur-3xl -z-10"></div>
+<div class="absolute bottom-32 left-[5%] w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+<!-- Success Container -->
+<div class="max-w-xl w-full flex flex-col items-center text-center space-y-12">
+<!-- Celebratory Icon with Soft Lift -->
+<div class="relative">
+<div class="w-32 h-32 rounded-full bg-surface-container-lowest shadow-[0_24px_48px_-12px_rgba(0,61,155,0.08)] flex items-center justify-center group">
+<div class="w-24 h-24 rounded-full bg-gradient-to-br from-tertiary to-tertiary-container flex items-center justify-center scale-100 group-hover:scale-105 transition-transform cubic-bezier-transition duration-500">
+<span class="material-symbols-outlined text-white text-5xl" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<!-- Floating decorative bubbles -->
+<div class="absolute -top-4 -right-4 w-6 h-6 bg-tertiary-fixed rounded-full opacity-40"></div>
+<div class="absolute bottom-2 -left-8 w-4 h-4 bg-primary-fixed rounded-full opacity-60"></div>
+</div>
+<!-- Headline Editorial Authority -->
+<div class="space-y-4">
+<h1 class="font-headline font-extrabold text-4xl md:text-5xl lg:text-6xl text-on-surface tracking-tight leading-tight">
+                    Success! Your files are safely stored.
+                </h1>
+<p class="text-on-surface-variant font-body text-lg md:text-xl max-w-md mx-auto">
+                    Encryption completed. Your assets are now part of your permanent vault architecture.
+                </p>
+</div>
+<!-- Action Cluster -->
+<div class="flex flex-col sm:flex-row items-center gap-6 w-full max-w-md">
+<!-- Primary Action: View My Files -->
+<button class="w-full sm:flex-1 py-4 px-8 rounded-full bg-gradient-to-br from-primary to-primary-container text-white font-headline font-bold text-lg shadow-lg hover:shadow-primary/20 transition-all hover:scale-[1.02] active:scale-95 cubic-bezier-transition">
+                    View My Files
+                </button>
+<!-- Tertiary Action: Upload More -->
+<button class="w-full sm:flex-1 py-4 px-8 rounded-full font-headline font-bold text-lg text-primary hover:bg-primary-fixed/50 transition-all active:scale-95 cubic-bezier-transition">
+                    Upload More
+                </button>
+</div>
+<!-- Recently Stored Assets (Subtle Glassmorphism) -->
+<div class="w-full pt-12">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-surface-container-lowest/80 backdrop-blur-xl p-4 rounded-xl shadow-sm flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="description">description</span>
+<div class="text-left">
+<p class="text-[11px] font-bold text-on-surface truncate">Quarterly_Report.pdf</p>
+<p class="text-[9px] text-on-surface-variant uppercase tracking-widest">2.4 MB</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest/80 backdrop-blur-xl p-4 rounded-xl shadow-sm flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="image">image</span>
+<div class="text-left">
+<p class="text-[11px] font-bold text-on-surface truncate">Brand_Assets_01.zip</p>
+<p class="text-[9px] text-on-surface-variant uppercase tracking-widest">45 MB</p>
+</div>
+</div>
+<div class="hidden md:flex bg-surface-container-lowest/80 backdrop-blur-xl p-4 rounded-xl shadow-sm items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="movie">movie</span>
+<div class="text-left">
+<p class="text-[11px] font-bold text-on-surface truncate">Keynote_Hero.mp4</p>
+<p class="text-[9px] text-on-surface-variant uppercase tracking-widest">128 MB</p>
+</div>
+</div>
+<div class="hidden md:flex bg-surface-container-lowest/80 backdrop-blur-xl p-4 rounded-xl shadow-sm items-center gap-3">
+<span class="material-symbols-outlined text-slate-400" data-icon="folder_zip">folder_zip</span>
+<div class="text-left">
+<p class="text-[11px] font-bold text-on-surface truncate">Project_Final_V2.raw</p>
+<p class="text-[9px] text-on-surface-variant uppercase tracking-widest">1.2 GB</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Hidden on desktop, shown on mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-8 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_-8px_30px_rgb(0,61,155,0.04)] rounded-t-3xl border-t border-slate-100 dark:border-slate-800">
+<!-- Upload Tab (Active if we just finished uploading) -->
+<a class="flex flex-col items-center justify-center bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-100 rounded-2xl px-5 py-1.5 cubic-bezier-transition transition-all duration-300 scale-110" href="#">
+<span class="material-symbols-outlined" data-icon="cloud_upload" style="font-variation-settings: 'FILL' 1;">cloud_upload</span>
+<span class="font-inter text-[11px] font-semibold tracking-wide mt-1">Upload</span>
+</a>
+<!-- My Files Tab -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-1.5 hover:text-blue-600 dark:hover:text-blue-300 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
+<span class="font-inter text-[11px] font-semibold tracking-wide mt-1">My Files</span>
+</a>
+<!-- Settings Tab -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-1.5 hover:text-blue-600 dark:hover:text-blue-300 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-inter text-[11px] font-semibold tracking-wide mt-1">Settings</span>
+</a>
+</nav>
+<!-- Desktop Navigation Cluster (Visible on web) -->
+<div class="hidden md:flex fixed right-8 top-1/2 -translate-y-1/2 flex-col gap-6 z-40">
+<div class="p-3 bg-surface-container-lowest shadow-xl rounded-full flex flex-col items-center gap-6">
+<button class="p-4 rounded-full bg-primary-fixed text-primary transition-transform hover:scale-110">
+<span class="material-symbols-outlined" data-icon="cloud_upload">cloud_upload</span>
+</button>
+<button class="p-4 rounded-full text-on-surface-variant hover:bg-surface-container-low transition-transform hover:scale-110">
+<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
+</button>
+<button class="p-4 rounded-full text-on-surface-variant hover:bg-surface-container-low transition-transform hover:scale-110">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+<div class="w-8 h-px bg-outline-variant/30 mx-auto"></div>
+<button class="p-4 rounded-full text-on-surface-variant hover:bg-surface-container-low transition-transform hover:scale-110">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</div>
+</body></html>
