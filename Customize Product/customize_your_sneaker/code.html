@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#ebebeb",
+                        "background": "#0e0e11",
+                        "on-primary-container": "#001b61",
+                        "secondary-dim": "#d7d4d3",
+                        "inverse-on-surface": "#555458",
+                        "inverse-primary": "#004eeb",
+                        "surface-bright": "#2c2c30",
+                        "secondary-container": "#474646",
+                        "secondary-fixed-dim": "#d7d4d3",
+                        "error-container": "#a70138",
+                        "tertiary-fixed-dim": "#f0f1f1",
+                        "error-dim": "#d73357",
+                        "primary-fixed-dim": "#6c8cff",
+                        "on-error-container": "#ffb2b9",
+                        "on-tertiary-fixed": "#4f5051",
+                        "secondary": "#e5e2e1",
+                        "on-tertiary": "#5e5f60",
+                        "on-tertiary-container": "#555757",
+                        "surface-tint": "#94aaff",
+                        "on-primary-fixed-variant": "#002376",
+                        "on-surface": "#f0edf1",
+                        "on-secondary-fixed": "#403f3f",
+                        "surface-container-low": "#131316",
+                        "surface-container-high": "#1f1f23",
+                        "surface-container-highest": "#25252a",
+                        "on-secondary-fixed-variant": "#5c5b5b",
+                        "tertiary-fixed": "#ffffff",
+                        "surface-variant": "#25252a",
+                        "tertiary": "#f9f9f9",
+                        "error": "#ff6e84",
+                        "surface-container-lowest": "#000000",
+                        "on-tertiary-fixed-variant": "#6c6d6e",
+                        "on-primary-fixed": "#000000",
+                        "surface-container": "#19191d",
+                        "on-error": "#490013",
+                        "surface": "#0e0e11",
+                        "outline-variant": "#48474b",
+                        "surface-dim": "#0e0e11",
+                        "primary-dim": "#3467ff",
+                        "on-secondary-container": "#d2d0cf",
+                        "outline": "#767579",
+                        "primary-fixed": "#819bff",
+                        "secondary-fixed": "#e5e2e1",
+                        "primary-container": "#819bff",
+                        "on-background": "#f0edf1",
+                        "on-secondary": "#525151",
+                        "tertiary-dim": "#ebebeb",
+                        "on-surface-variant": "#acaaae",
+                        "on-primary": "#00257c",
+                        "inverse-surface": "#fcf8fd",
+                        "primary": "#94aaff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Epilogue"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-glass {
+            background: rgba(37, 37, 42, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .signature-gradient {
+            background: linear-gradient(135deg, #94aaff 0%, #3467ff 100%);
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(148, 170, 255, 0.4);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary min-h-screen flex flex-col">
+<!-- TopAppBar from JSON -->
+<header class="bg-[#0e0e11] dark:bg-[#0e0e11] fixed top-0 w-full z-50">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform text-[#94aaff]">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-['Epilogue'] tracking-tighter font-bold uppercase text-2xl font-black italic tracking-tighter text-[#94aaff]">KINETIC</h1>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<span class="font-headline font-bold text-sm tracking-widest text-[#94aaff]">CUSTOMIZE</span>
+<span class="font-headline font-bold text-sm tracking-widest text-white/70 hover:opacity-80 transition-opacity cursor-pointer">GALLERY</span>
+<span class="font-headline font-bold text-sm tracking-widest text-white/70 hover:opacity-80 transition-opacity cursor-pointer">PROFILE</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:block text-right mr-2">
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Model</p>
+<p class="text-xs font-headline font-bold">Velociti Elite v1</p>
+</div>
+<button class="hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform text-[#94aaff]">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Area: The Canvas -->
+<main class="flex-1 pt-20 pb-32 flex flex-col items-center justify-center relative overflow-hidden">
+<!-- Background Editorial Text -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+<h2 class="font-headline font-black text-[20vw] opacity-[0.03] leading-none select-none italic">VELOCITI</h2>
+</div>
+<!-- Hero Sneaker Section -->
+<section class="relative w-full max-w-6xl aspect-[4/3] md:aspect-video flex items-center justify-center p-6">
+<div class="relative w-full h-full group">
+<!-- Sneaker Shadow -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-2/3 h-12 bg-black/40 blur-3xl rounded-full"></div>
+<!-- Main Product Image -->
+<img alt="Velociti Elite v1 Premium Sneaker" class="w-full h-full object-contain relative z-10 transition-transform duration-700 hover:scale-105" data-alt="ultra-high-definition studio shot of a minimalist sleek athletic sneaker, floating at a dynamic angle, cinematic neutral lighting, deep blacks and metallic accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgFBFSz6KQosbAsof-jdu0lJMq9Pom6lCMMGyR1jfOC0SOzgu_vNhRNARi_jBLKZbIafgajpACzw2o210bFqPRpDwowUqVcRBk-6rQN5h_Bg21p60qjHJwDM7FHYkElIIPotLgwGBklORDj_5y8e9SE5mYbV219DvidZt0lzNOBYz0SAso2rOVZBJVLIt_X-iPrWeAX2maX7DQg_k4IZFOMtBQHWVoVDj8Q0-zrBh9sBnkF9rBGSeSZn65CSoa22XPohpcm_ezfnS7"/>
+<!-- Hotspot Labels (Asymmetric Editorial Touch) -->
+<div class="absolute top-[20%] right-[15%] z-20 hidden md:block">
+<div class="flex items-center gap-3">
+<div class="w-12 h-[1px] bg-primary"></div>
+<span class="font-headline font-bold text-xs tracking-tighter text-primary uppercase">01 / Upper Shell</span>
+</div>
+</div>
+<div class="absolute bottom-[30%] left-[10%] z-20 hidden md:block">
+<div class="flex items-center gap-3">
+<span class="font-headline font-bold text-xs tracking-tighter text-primary uppercase">02 / Carbon Outsole</span>
+<div class="w-12 h-[1px] bg-primary"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Customizer Tray (The Technical Spec) -->
+<section class="fixed bottom-24 left-0 w-full z-40 px-6">
+<div class="max-w-4xl mx-auto custom-glass rounded-3xl p-6 shadow-2xl">
+<!-- Section Tabs -->
+<div class="flex gap-2 overflow-x-auto no-scrollbar pb-6 border-b border-outline-variant/15">
+<button class="bg-primary text-on-primary-fixed px-6 py-2 rounded-full font-headline font-bold text-xs uppercase tracking-widest flex-shrink-0">Part</button>
+<button class="bg-secondary-container text-on-surface px-6 py-2 rounded-full font-headline font-bold text-xs uppercase tracking-widest flex-shrink-0 hover:bg-surface-container-high transition-colors">Color</button>
+<button class="bg-secondary-container text-on-surface px-6 py-2 rounded-full font-headline font-bold text-xs uppercase tracking-widest flex-shrink-0 hover:bg-surface-container-high transition-colors">Material</button>
+<button class="bg-secondary-container text-on-surface px-6 py-2 rounded-full font-headline font-bold text-xs uppercase tracking-widest flex-shrink-0 hover:bg-surface-container-high transition-colors">Finish</button>
+</div>
+<!-- Active Control View: Parts -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+<!-- Part Card 1 -->
+<div class="bg-surface-container-high p-4 rounded-xl border border-transparent hover:border-primary/30 transition-all cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] text-primary font-black">01</span>
+<span class="material-symbols-outlined text-sm opacity-30 group-hover:opacity-100 transition-opacity">info</span>
+</div>
+<p class="font-headline font-bold text-sm">UPPER</p>
+<p class="text-[10px] text-on-surface-variant uppercase">Knit-Tech 2.0</p>
+</div>
+<!-- Part Card 2 (Active State) -->
+<div class="bg-surface-container-highest p-4 rounded-xl border border-primary/50 shadow-lg shadow-primary/10 cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] text-primary font-black">02</span>
+<span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-headline font-bold text-sm">OUTSOLE</p>
+<p class="text-[10px] text-primary uppercase">Carbon Fiber</p>
+</div>
+<!-- Part Card 3 -->
+<div class="bg-surface-container-high p-4 rounded-xl border border-transparent hover:border-primary/30 transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] text-primary font-black">03</span>
+<span class="material-symbols-outlined text-sm opacity-30">info</span>
+</div>
+<p class="font-headline font-bold text-sm">LACES</p>
+<p class="text-[10px] text-on-surface-variant uppercase">Lock-Tight Nylon</p>
+</div>
+<!-- Part Card 4 -->
+<div class="bg-surface-container-high p-4 rounded-xl border border-transparent hover:border-primary/30 transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] text-primary font-black">04</span>
+<span class="material-symbols-outlined text-sm opacity-30">info</span>
+</div>
+<p class="font-headline font-bold text-sm">HEEL</p>
+<p class="text-[10px] text-on-surface-variant uppercase">Adaptive Foam</p>
+</div>
+</div>
+<!-- Color Palette (Floating Technical Row) -->
+<div class="mt-8 flex items-center gap-6 overflow-x-auto no-scrollbar">
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface-variant whitespace-nowrap">Palette Select</span>
+<div class="flex gap-4">
+<div class="w-8 h-8 rounded-full bg-background ring-2 ring-primary p-0.5"><div class="w-full h-full rounded-full bg-[#0e0e11]"></div></div>
+<div class="w-8 h-8 rounded-full bg-[#f0f1f1]"></div>
+<div class="w-8 h-8 rounded-full bg-primary-dim"></div>
+<div class="w-8 h-8 rounded-full bg-[#ff6e84]"></div>
+<div class="w-8 h-8 rounded-full bg-[#d2d0cf]"></div>
+<div class="w-8 h-8 rounded-full bg-[#94ffb2]"></div>
+<div class="w-8 h-8 rounded-full bg-[#ffb261]"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Actions & Checkout -->
+<div class="fixed bottom-0 left-0 w-full z-50 bg-[#0e0e11] px-6 py-4 flex items-center justify-between gap-4">
+<div class="flex gap-4">
+<button class="bg-surface-container-highest text-on-surface px-6 py-3 rounded-xl font-headline font-bold text-xs uppercase tracking-widest hover:bg-surface-container-high transition-all">Reset</button>
+<button class="bg-surface-container-highest text-on-surface px-6 py-3 rounded-xl font-headline font-bold text-xs uppercase tracking-widest hover:bg-surface-container-high transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">save</span>
+                Save
+            </button>
+</div>
+<button class="signature-gradient text-on-primary-fixed flex-1 max-w-md py-4 rounded-xl font-headline font-black text-sm uppercase tracking-[0.2em] shadow-xl shadow-primary/20 scale-100 active:scale-95 transition-transform">
+            Checkout
+        </button>
+</div>
+<!-- BottomNavBar from JSON (Rendered for Mobile UX Context) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center pt-3 pb-8 px-6 bg-[#131316]/70 backdrop-blur-xl z-[60] md:hidden rounded-t-3xl shadow-[0px_-24px_48px_rgba(0,0,0,0.5)]">
+<div class="flex flex-col items-center justify-center text-[#94aaff] bg-[#94aaff]/10 rounded-xl px-4 py-1 scale-110 duration-300 ease-out">
+<span class="material-symbols-outlined">edit_note</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest">Customize</span>
+</div>
+<div class="flex flex-col items-center justify-center text-white/50 hover:text-white transition-colors">
+<span class="material-symbols-outlined">auto_awesome_motion</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest">Gallery</span>
+</div>
+<div class="flex flex-col items-center justify-center text-white/50 hover:text-white transition-colors">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest">Profile</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,700;0,800;0,900;1,900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#ebebeb",
+                        "background": "#0e0e11",
+                        "on-primary-container": "#001b61",
+                        "secondary-dim": "#d7d4d3",
+                        "inverse-on-surface": "#555458",
+                        "inverse-primary": "#004eeb",
+                        "surface-bright": "#2c2c30",
+                        "secondary-container": "#474646",
+                        "secondary-fixed-dim": "#d7d4d3",
+                        "error-container": "#a70138",
+                        "tertiary-fixed-dim": "#f0f1f1",
+                        "error-dim": "#d73357",
+                        "primary-fixed-dim": "#6c8cff",
+                        "on-error-container": "#ffb2b9",
+                        "on-tertiary-fixed": "#4f5051",
+                        "secondary": "#e5e2e1",
+                        "on-tertiary": "#5e5f60",
+                        "on-tertiary-container": "#555757",
+                        "surface-tint": "#94aaff",
+                        "on-primary-fixed-variant": "#002376",
+                        "on-surface": "#f0edf1",
+                        "on-secondary-fixed": "#403f3f",
+                        "surface-container-low": "#131316",
+                        "surface-container-high": "#1f1f23",
+                        "surface-container-highest": "#25252a",
+                        "on-secondary-fixed-variant": "#5c5b5b",
+                        "tertiary-fixed": "#ffffff",
+                        "surface-variant": "#25252a",
+                        "tertiary": "#f9f9f9",
+                        "error": "#ff6e84",
+                        "surface-container-lowest": "#000000",
+                        "on-tertiary-fixed-variant": "#6c6d6e",
+                        "on-primary-fixed": "#000000",
+                        "surface-container": "#19191d",
+                        "on-error": "#490013",
+                        "surface": "#0e0e11",
+                        "outline-variant": "#48474b",
+                        "surface-dim": "#0e0e11",
+                        "primary-dim": "#3467ff",
+                        "on-secondary-container": "#d2d0cf",
+                        "outline": "#767579",
+                        "primary-fixed": "#819bff",
+                        "secondary-fixed": "#e5e2e1",
+                        "primary-container": "#819bff",
+                        "on-background": "#f0edf1",
+                        "on-secondary": "#525151",
+                        "tertiary-dim": "#ebebeb",
+                        "on-surface-variant": "#acaaae",
+                        "on-primary": "#00257c",
+                        "inverse-surface": "#fcf8fd",
+                        "primary": "#94aaff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Epilogue"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-auto-rows: 10px;
+            gap: 24px;
+        }
+        /* Custom scrollbar for a premium look */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0e0e11;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f1f23;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body antialiased">
+<!-- TopAppBar -->
+<header class="bg-[#0e0e11] dark:bg-[#0e0e11] fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<button class="text-[#94aaff] hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-['Epilogue'] tracking-tighter font-bold uppercase text-2xl font-black italic tracking-tighter text-[#94aaff]">KINETIC</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#94aaff] hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-16">
+<div class="relative overflow-hidden rounded-3xl bg-surface-container-low p-8 md:p-12 min-h-[300px] flex flex-col justify-center">
+<div class="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 opacity-20 pointer-events-none">
+<h2 class="font-headline text-[10rem] font-black italic text-primary leading-none uppercase select-none">CREATIONS</h2>
+</div>
+<div class="relative z-10 max-w-2xl">
+<p class="font-label text-primary uppercase tracking-[0.3em] mb-4 text-xs font-bold">The Digital Atelier</p>
+<h2 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight mb-6 uppercase">Community<br/><span class="text-primary italic">Gallery</span></h2>
+<p class="text-on-surface-variant text-lg max-w-md leading-relaxed">Explore a curated stream of high-performance designs from our global collective of creators.</p>
+</div>
+</div>
+</section>
+<!-- Filters/Tabs -->
+<div class="flex gap-4 mb-12 overflow-x-auto pb-4 no-scrollbar">
+<button class="bg-primary text-on-primary-fixed font-bold px-8 py-3 rounded-full text-sm uppercase tracking-widest transition-all hover:shadow-[0_0_20px_rgba(148,170,255,0.3)]">Recent</button>
+<button class="bg-surface-container-high text-on-surface px-8 py-3 rounded-full text-sm uppercase tracking-widest transition-all hover:bg-surface-container-highest">Trending</button>
+<button class="bg-surface-container-high text-on-surface px-8 py-3 rounded-full text-sm uppercase tracking-widest transition-all hover:bg-surface-container-highest">Staff Picks</button>
+</div>
+<!-- Masonry Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+<!-- Card 1 -->
+<div class="group relative flex flex-col gap-6 bg-surface-container-low rounded-xl p-4 transition-all duration-500 hover:bg-surface-container-high">
+<div class="relative aspect-[4/5] overflow-hidden rounded-lg bg-surface-container-lowest">
+<img alt="Red performance sneaker" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" data-alt="Close-up side view of a vibrant red high-performance sneaker with technical details against a dark moody background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwsfP1OiBI02x3L5HCZWRJhd434IUNLYqDiZ8nG2D4k5xDcOexE1CU3oA57IVw-Jyfwy8NXvyok7oV94I-pafk_AAY3u5oueKSAluSJEdh15xolnXTh-1be43uEzIURg0k7P9-PdtjQe9BHGjaDez208a2l5b4xV4puBgG8CpF7_IMPV6YqBoUsV57iktr2S0Mgd0NtQ2GA5-yagDw1KLomlURP84yJxESxqjLD-EDfgbWjNhug8mWTvW1GnfdY4N6ri_ZyuzMxtbO"/>
+<div class="absolute top-4 right-4 bg-background/60 backdrop-blur-md p-2 rounded-full text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div>
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight">VELOCITI RED-SHIFT</h3>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-widest mt-1">by @hyper_flux</p>
+</div>
+<button class="w-full bg-gradient-to-r from-primary to-primary-dim text-on-primary-fixed font-black py-4 rounded-md uppercase tracking-tighter flex items-center justify-center gap-2 group-hover:shadow-[0_8px_24px_rgba(52,103,255,0.4)] transition-all">
+<span class="material-symbols-outlined text-xl">auto_fix_high</span>
+                        Remix Design
+                    </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative flex flex-col gap-6 bg-surface-container-low rounded-xl p-4 transition-all duration-500 hover:bg-surface-container-high lg:mt-12">
+<div class="relative aspect-[4/3] overflow-hidden rounded-lg bg-surface-container-lowest">
+<img alt="Iridescent sneaker" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" data-alt="Modern high-top sneaker with iridescent metallic panels and futuristic silhouette on a clean studio surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7uUke5347vVeyMBozSiQdhmh-SaBMYF0M8pGwe8n4LcCBeiVG0N-JQ0h0mH5sjYdklwoE7C-bqm5HLPx8EE_jT5XqF2clOxnyvnsmqPyW04X3h1uDeFspZWyW5_DYP7Z3GzPgMyFzTzDoWKkIMFpMH1R6pbsn_GxaD2QrWxFkNmm_g3Ih8ZRblReP4wIJD1gJ1mmyqoVBCCc56IuuDrRHTNvV5C0zx9tCKqO9QmJ91o2OryDqwMh7iAPozseo5Y3nzYfc7ie05y4T"/>
+<div class="absolute top-4 right-4 bg-background/60 backdrop-blur-md p-2 rounded-full text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div>
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight">CHROME PHANTOM</h3>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-widest mt-1">by @cyber_punk_88</p>
+</div>
+<button class="w-full bg-surface-container-highest text-on-surface font-black py-4 rounded-md uppercase tracking-tighter flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary-fixed transition-all">
+<span class="material-symbols-outlined text-xl">auto_fix_high</span>
+                        Remix Design
+                    </button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative flex flex-col gap-6 bg-surface-container-low rounded-xl p-4 transition-all duration-500 hover:bg-surface-container-high">
+<div class="relative aspect-square overflow-hidden rounded-lg bg-surface-container-lowest">
+<img alt="Minimalist white sneaker" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" data-alt="Minimalist luxury white leather sneaker with geometric sole design and subtle blue accents in bright architectural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuJRc4CIyji_Lqm628Aq-vsSJhCnmk_5ejTIpilDEuI1XUGb6huTfWiFB3oM33oHuYJa02XYxlC2kFO3VE2hpB2r5xVvu5MamYibqR9Ie_x3Ajb7fQucD0O8FirGHLrBJLqmPB6SqfeBx97lxHqvzn8PquZV99B-RwQqXH_5Eo7JS1ObKYHwZ3wHuuDACOrw1NGAjOGonc6BENYgJYhmQjdQexzquF1mAGp1vqVDha-D6arKbWc1AcbraMRE8XwQDDqwt-i563Vc5r"/>
+<div class="absolute top-4 right-4 bg-background/60 backdrop-blur-md p-2 rounded-full text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div>
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight">ALABASTER CORE</h3>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-widest mt-1">by @studio_minimal</p>
+</div>
+<button class="w-full bg-surface-container-highest text-on-surface font-black py-4 rounded-md uppercase tracking-tighter flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary-fixed transition-all">
+<span class="material-symbols-outlined text-xl">auto_fix_high</span>
+                        Remix Design
+                    </button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group relative flex flex-col gap-6 bg-surface-container-low rounded-xl p-4 transition-all duration-500 hover:bg-surface-container-high md:-mt-8">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg bg-surface-container-lowest">
+<img alt="Neon green sneaker" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" data-alt="Aggressive neon green and black trail running sneaker with heavy texture and carbon fiber details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDreYd53BUq6-fMc9YH3L47Bb0BBmyvwRwqP-E5PDSCqmmxzEV_U7UDJ0dtBRn4dOi1l3EeLr6H0VClhpeHpaWBJbKarn5E02g0anRosWAgIFCRTG5JKWK8Zi0eZkJ4KH2M05eV7mbRAYvAqAW7mcbkW3KdnlVn94Qm7EOu9CXz00imu9rDBxJjFWRkmwuKhtVFbFpIjjyPDxg857N_A1X51iRDL9e_WLfJpjZHqCS35DJIjUMbxll9-6bwIV7uPMNB3NDiMpC1lNgD"/>
+<div class="absolute top-4 right-4 bg-background/60 backdrop-blur-md p-2 rounded-full text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div>
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight">NEON VERTIGO</h3>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-widest mt-1">by @trail_blazer</p>
+</div>
+<button class="w-full bg-surface-container-highest text-on-surface font-black py-4 rounded-md uppercase tracking-tighter flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary-fixed transition-all">
+<span class="material-symbols-outlined text-xl">auto_fix_high</span>
+                        Remix Design
+                    </button>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="group relative flex flex-col gap-6 bg-surface-container-low rounded-xl p-4 transition-all duration-500 hover:bg-surface-container-high">
+<div class="relative aspect-video overflow-hidden rounded-lg bg-surface-container-lowest">
+<img alt="Earth tone sneaker" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" data-alt="Earth-toned lifestyle sneaker with premium suede textures and mocha accents in soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnzQGCRtN3wK5K1Bj4jbqOsOMf7tEAmHjFH37-qp612YblFwiTAhhNz8gXGs2A_4X2pPiIG5b7mIDjh_qKrzhnkMTo1IunP3ETRaKepZTDoOHKbhwTlP-ezE-erIMuEEVCZtM0cpNldZkuDY2mqWeSJJEpACdePrgVh7_D6hrry0gTF_Pvhema8JbbmOrQ6jPLuWoW99U5YGTqA0gSCoJzAvHXugHBIS3WkygEFuu2xk1kPOUmBL0dU0nSIk94opc3AqgEVGo-P_5V"/>
+<div class="absolute top-4 right-4 bg-background/60 backdrop-blur-md p-2 rounded-full text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div>
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight">TERRA FORMA</h3>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-widest mt-1">by @earth_bound</p>
+</div>
+<button class="w-full bg-surface-container-highest text-on-surface font-black py-4 rounded-md uppercase tracking-tighter flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary-fixed transition-all">
+<span class="material-symbols-outlined text-xl">auto_fix_high</span>
+                        Remix Design
+                    </button>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group relative flex flex-col gap-6 bg-surface-container-low rounded-xl p-4 transition-all duration-500 hover:bg-surface-container-high lg:mt-[-4rem]">
+<div class="relative aspect-[4/5] overflow-hidden rounded-lg bg-surface-container-lowest">
+<img alt="Dark technical sneaker" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" data-alt="Monochromatic black techwear sneaker with matte and gloss textures and heavy duty strap details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGfKFZsMxQRU9DJpNy0BeS--gikyueoiP8NnpjNYE9PUF7qiof2hGJIn0PfLa1fo5myQBH2Om5RmvkIkOMr4FXLX7a9_mUE2a7uRLARb7MTsqFC7yjb7NpP-hXAK4tjrQrFv0mIKWgh9xY0dgyEfu2s9-PGrykNC4b3aIXEjMF9v32j3x0q6UqZCEdEiAG-5DruemXhcmwJMrBEuwb54y_pP96EAgnMNbGXmtaIzPvwxsWSCY_s84vt9ovNhcVuLhaQkRjyBWT6VlE"/>
+<div class="absolute top-4 right-4 bg-background/60 backdrop-blur-md p-2 rounded-full text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div>
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight">OBSIDIAN TECH</h3>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-widest mt-1">by @dark_mode_studio</p>
+</div>
+<button class="w-full bg-surface-container-highest text-on-surface font-black py-4 rounded-md uppercase tracking-tighter flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary-fixed transition-all">
+<span class="material-symbols-outlined text-xl">auto_fix_high</span>
+                        Remix Design
+                    </button>
+</div>
+</div>
+</div>
+<!-- Load More Section -->
+<div class="mt-24 text-center">
+<button class="font-headline text-2xl font-black italic text-primary/40 hover:text-primary uppercase tracking-tighter transition-all">
+                Reveal More Creations
+                <span class="block text-[10px] font-label font-normal tracking-[0.5em] text-on-surface-variant mt-2">Scroll for depth</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center pt-3 pb-8 px-6 bg-[#131316]/70 backdrop-blur-xl z-50 rounded-t-3xl shadow-[0px_-24px_48px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-white/50 hover:text-white transition-colors duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1">edit_note</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest">Customize</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#94aaff] bg-[#94aaff]/10 rounded-xl px-4 py-1 scale-110 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">auto_awesome_motion</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest">Gallery</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/50 hover:text-white transition-colors duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#ebebeb",
+                    "background": "#0e0e11",
+                    "on-primary-container": "#001b61",
+                    "secondary-dim": "#d7d4d3",
+                    "inverse-on-surface": "#555458",
+                    "inverse-primary": "#004eeb",
+                    "surface-bright": "#2c2c30",
+                    "secondary-container": "#474646",
+                    "secondary-fixed-dim": "#d7d4d3",
+                    "error-container": "#a70138",
+                    "tertiary-fixed-dim": "#f0f1f1",
+                    "error-dim": "#d73357",
+                    "primary-fixed-dim": "#6c8cff",
+                    "on-error-container": "#ffb2b9",
+                    "on-tertiary-fixed": "#4f5051",
+                    "secondary": "#e5e2e1",
+                    "on-tertiary": "#5e5f60",
+                    "on-tertiary-container": "#555757",
+                    "surface-tint": "#94aaff",
+                    "on-primary-fixed-variant": "#002376",
+                    "on-surface": "#f0edf1",
+                    "on-secondary-fixed": "#403f3f",
+                    "surface-container-low": "#131316",
+                    "surface-container-high": "#1f1f23",
+                    "surface-container-highest": "#25252a",
+                    "on-secondary-fixed-variant": "#5c5b5b",
+                    "tertiary-fixed": "#ffffff",
+                    "surface-variant": "#25252a",
+                    "tertiary": "#f9f9f9",
+                    "error": "#ff6e84",
+                    "surface-container-lowest": "#000000",
+                    "on-tertiary-fixed-variant": "#6c6d6e",
+                    "on-primary-fixed": "#000000",
+                    "surface-container": "#19191d",
+                    "on-error": "#490013",
+                    "surface": "#0e0e11",
+                    "outline-variant": "#48474b",
+                    "surface-dim": "#0e0e11",
+                    "primary-dim": "#3467ff",
+                    "on-secondary-container": "#d2d0cf",
+                    "outline": "#767579",
+                    "primary-fixed": "#819bff",
+                    "secondary-fixed": "#e5e2e1",
+                    "primary-container": "#819bff",
+                    "on-background": "#f0edf1",
+                    "on-secondary": "#525151",
+                    "tertiary-dim": "#ebebeb",
+                    "on-surface-variant": "#acaaae",
+                    "on-primary": "#00257c",
+                    "inverse-surface": "#fcf8fd",
+                    "primary": "#94aaff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Epilogue"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #94aaff 0%, #3467ff 100%);
+        }
+        .glass-panel {
+            background: rgba(37, 37, 42, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary min-h-screen pb-40">
+<!-- TopAppBar -->
+<header class="bg-[#0e0e11] dark:bg-[#0e0e11] fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<button class="text-[#94aaff] hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-2xl font-black italic tracking-tighter text-[#94aaff] font-['Epilogue'] uppercase">KINETIC</h1>
+</div>
+<button class="text-[#94aaff] hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</header>
+<main class="pt-24 px-6 max-w-7xl mx-auto">
+<!-- Editorial Header Section -->
+<section class="mb-12">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary mb-2 block">Final Preview</span>
+<h2 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter leading-none uppercase mb-4">
+                KINETIC <span class="text-primary italic">V1.0</span>
+</h2>
+<p class="text-on-surface-variant max-w-lg">Review your technical specifications and visual configuration before finalizing your atelier order.</p>
+</section>
+<!-- Product Preview Grid (Asymmetric) -->
+<section class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 mb-20 h-[600px] md:h-[800px]">
+<div class="md:col-span-2 md:row-span-2 bg-surface-container-low rounded-xl overflow-hidden relative group">
+<img alt="Side profile" class="w-full h-full object-cover" data-alt="Side profile of a sleek futuristic high-top sneaker in electric blue and matte black with technical mesh details and glowing accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhMGqhmmHAf9cHeHN46YrwcXzIkZO1HDr-pVxt0osjBmpzE8FIjPRoBKuXLM6MeWpREYwGBpryXmbbogBFyjHRwOOXOyhgbsVryN4C1P-wKIFW29eJ2QgHImOKZ1fXVlATJ42JBaTAY27PT9RDxcgCa99y70VltQFjTUtCEmL-SQ7NFFNTHvUtU6FTcmW3LMSWTROQkm43u8SwxAsTBj4w2o_2TmUm6JTuvDDM_friFBalw4Ke-iw8ZuQ8YdKlCkO3M3AkgFw2JvKe"/>
+<div class="absolute bottom-6 left-6">
+<span class="bg-primary/20 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-primary border border-primary/30">Lateral View</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl overflow-hidden relative">
+<img alt="Top view" class="w-full h-full object-cover" data-alt="Top-down view of a modern sneaker showing intricate lacing patterns and premium blue technical fabric texture against dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh-SLV4kCBYG1VH6cFMmVpZjY89MipTdxWaRobh0Oi70C8PVotjMFMU5QqZ368MnRpZnyuC94kArrnkTkNFKQ1ybYWFC-fb-tATAVy_IctZ1U4YGweAnLGJVGJceG0sAo85Rx6XTPbkStY0JQ3HsWJraRSsG0CLtMollXHwoQLmoxdbBcp8xw-0kSnnnYoxMYIXaKWtzO9iYU_Duxc8Sq69xR9RITSjA7Cf-2S8d8CwGcsAGdVJQ4qk9z6aCrVtgghPxg1sOIBkZ2a"/>
+</div>
+<div class="bg-surface-container-low rounded-xl overflow-hidden relative">
+<img alt="Sole detail" class="w-full h-full object-cover" data-alt="Macro close-up of a sneaker sole with aggressive tread pattern in vibrant electric blue rubber and carbon fiber inserts." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_EcU4pgR_gTQp_cFKYL5wIZGERFAm_Ylvr0F8Cz5outwH_ZpzxdeBe6eXA-GTO5xJqAeW0gxjaaSzIy0kQGFzoOiiCykqrpxv5JR_7uiUkrynMEZuloYQlyloxGI_nxm1oJgHbpFREy9M76h85bTP0iSxwkwXLp-FOKSrDou3tK25l0vKmjHOjS-VMyyYWLYo-tonaih2jcD3XvfhEuNJYHasqAUMQe1tzv7mVlxQaLNjemWoixv0Bxfrv2gN2xMJwxQgUDderer0"/>
+</div>
+<div class="md:col-span-2 bg-surface-container-low rounded-xl overflow-hidden relative">
+<img alt="Heel view" class="w-full h-full object-cover" data-alt="Rear angle of a customized sneaker focusing on the heel counter and personalized typography in silver against deep blue leather." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd6cuiwOrF00JDXbJH5VOOX9iHbqbyAJ84qSgnVojmiAE52qjXHbMVSzFvGVI0FuAHeLHyPHdD6lXO0PI7Po978X3u5AhNGeViVgJs4V75677uuYb00sCG34crTSH2a4PhROEn58YLNw5jIuAxi9y1nbn_vHR4nOF5xB6P_eZ9Meojmc8CmwkZLWdvNIbMDYmTbwcjVWpPmaNkAIPFFY9vdCmD9YWEdOfR2X7rUGu_zeu1hwPiAsiN9GS20UcwLNkFnB6VbRsErs5A"/>
+</div>
+</section>
+<!-- Technical Specs & Identity Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-20">
+<!-- Left: Specifications -->
+<div class="lg:col-span-2">
+<div class="flex items-center gap-3 mb-8">
+<span class="w-12 h-[1px] bg-primary"></span>
+<h3 class="font-headline text-2xl font-bold uppercase tracking-tight">Technical Specs</h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-12">
+<div class="flex flex-col gap-2">
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-[0.2em]">Part: Chassis</span>
+<div class="flex items-center justify-between group cursor-default">
+<span class="text-lg font-medium">Upper Body</span>
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Electric Blue / Matte Tech</span>
+</div>
+<div class="h-[1px] w-full bg-outline-variant/20"></div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-[0.2em]">Part: Traction</span>
+<div class="flex items-center justify-between group cursor-default">
+<span class="text-lg font-medium">Outsole</span>
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Electric Blue / High-Grip Rubber</span>
+</div>
+<div class="h-[1px] w-full bg-outline-variant/20"></div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-[0.2em]">Part: Structural</span>
+<div class="flex items-center justify-between group cursor-default">
+<span class="text-lg font-medium">Lace System</span>
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Reflective Silver / Speed Lace</span>
+</div>
+<div class="h-[1px] w-full bg-outline-variant/20"></div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-[0.2em]">Part: Comfort</span>
+<div class="flex items-center justify-between group cursor-default">
+<span class="text-lg font-medium">Insole</span>
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Kinetic-Air™ / Black Mesh</span>
+</div>
+<div class="h-[1px] w-full bg-outline-variant/20"></div>
+</div>
+</div>
+</div>
+<!-- Right: Identity/Custom Text -->
+<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">fingerprint</span>
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight">Identity Tag</h3>
+</div>
+<div class="bg-surface-container-high p-6 rounded-lg mb-4 flex items-center justify-center border border-primary/20 relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+<span class="text-4xl font-headline font-black italic tracking-tighter text-on-surface drop-shadow-lg">KINETIC-01</span>
+</div>
+<p class="text-xs text-on-surface-variant text-center uppercase tracking-widest leading-relaxed">
+                    Custom text engraved on the lateral heel counter in silver foil.
+                </p>
+</div>
+</div>
+<!-- Price Breakdown Table -->
+<section class="max-w-2xl ml-auto mb-20 bg-surface-container-low p-8 rounded-xl">
+<h4 class="font-headline text-lg font-bold uppercase mb-6 tracking-wide">Investment Summary</h4>
+<div class="space-y-4">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Base Model: Kinetic V1.0</span>
+<span>$180.00</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Custom Colorway (Electric Blue)</span>
+<span>$25.00</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Identity Engraving</span>
+<span>$15.00</span>
+</div>
+<div class="h-[1px] bg-outline-variant/30 my-4"></div>
+<div class="flex justify-between items-end">
+<div class="flex flex-col">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary">Total Amount</span>
+<span class="text-3xl font-headline font-black italic tracking-tighter">USD $220.00</span>
+</div>
+<span class="text-[10px] text-on-surface-variant uppercase">Includes Global Shipping</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar (Contextual) -->
+<div class="fixed bottom-0 left-0 w-full z-[60] px-6 pb-10 pt-6 glass-panel flex flex-col md:flex-row items-center justify-center gap-6">
+<div class="flex flex-col items-center md:items-start">
+<span class="text-on-surface-variant text-[10px] uppercase tracking-[0.2em]">Config ID: KNTC-99238</span>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs font-bold uppercase tracking-widest">Atelier Slot Available</span>
+</div>
+</div>
+<button class="kinetic-gradient text-on-primary-fixed w-full md:w-auto px-12 py-5 rounded-md font-headline font-extrabold uppercase tracking-widest text-lg shadow-[0px_24px_48px_rgba(148,170,255,0.3)] hover:scale-[1.02] active:scale-95 transition-all">
+            Add to Cart
+        </button>
+</div>
+<!-- BottomNavBar -->
+<nav class="bg-[#131316]/70 backdrop-blur-xl fixed bottom-0 w-full z-50 rounded-t-3xl shadow-[0px_-24px_48px_rgba(0,0,0,0.5)] hidden md:flex justify-around items-center pt-3 pb-8 px-6">
+<a class="flex flex-col items-center justify-center text-white/50 hover:text-white transition-colors duration-300 ease-out font-['Inter'] text-[10px] uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined mb-1">edit_note</span>
+            Customize
+        </a>
+<a class="flex flex-col items-center justify-center text-white/50 hover:text-white transition-colors duration-300 ease-out font-['Inter'] text-[10px] uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined mb-1">auto_awesome_motion</span>
+            Gallery
+        </a>
+<a class="flex flex-col items-center justify-center text-[#94aaff] bg-[#94aaff]/10 rounded-xl px-4 py-1 font-['Inter'] text-[10px] uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+            Profile
+        </a>
+</nav>
+<!-- Mobile Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center pt-3 pb-8 px-6 bg-[#131316]/70 backdrop-blur-xl z-[70] md:hidden">
+<a class="flex flex-col items-center justify-center text-white/50 font-['Inter'] text-[10px] uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">edit_note</span>
+            Customize
+        </a>
+<a class="flex flex-col items-center justify-center text-white/50 font-['Inter'] text-[10px] uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">auto_awesome_motion</span>
+            Gallery
+        </a>
+<a class="flex flex-col items-center justify-center text-[#94aaff] bg-[#94aaff]/10 rounded-xl px-4 py-1 font-['Inter'] text-[10px] uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">person</span>
+            Profile
+        </a>
+</nav>
+</body></html>
