@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Service Selection</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#b4c5ff",
+                    "on-background": "#191c1e",
+                    "primary": "#004ac6",
+                    "surface-dim": "#d8dadc",
+                    "secondary-fixed": "#dbe1ff",
+                    "on-tertiary-container": "#ffede6",
+                    "inverse-surface": "#2d3133",
+                    "outline-variant": "#c3c6d7",
+                    "on-surface": "#191c1e",
+                    "on-secondary-container": "#394c84",
+                    "surface-variant": "#e0e3e5",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#dbe1ff",
+                    "primary-container": "#2563eb",
+                    "surface-container": "#eceef0",
+                    "tertiary": "#943700",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#b4c5ff",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#e6e8ea",
+                    "secondary-container": "#acbfff",
+                    "on-tertiary-fixed": "#360f00",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-secondary-fixed": "#00174b",
+                    "on-surface-variant": "#434655",
+                    "outline": "#737686",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "surface-tint": "#0053db",
+                    "inverse-on-surface": "#eff1f3",
+                    "tertiary-container": "#bc4800",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "secondary": "#495c95",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-secondary-fixed-variant": "#31447b",
+                    "on-primary-container": "#eeefff",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#ffdbcd",
+                    "background": "#f7f9fb",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-primary-fixed": "#00174b",
+                    "surface": "#f7f9fb",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-bright": "#f7f9fb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .signature-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #004ac6 100%);
+        }
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(24px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<nav class="w-full sticky top-0 z-50 bg-[#f7f9fb] dark:bg-slate-900">
+<div class="flex items-center justify-between px-6 h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="p-2 -ml-2 hover:bg-[#f2f4f6] dark:hover:bg-slate-800 transition-colors rounded-full active:scale-95 transition-transform text-[#2563EB] dark:text-blue-400">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] font-semibold text-lg text-[#191c1e] dark:text-white">Schedule</h1>
+</div>
+<div class="flex items-center">
+<button class="p-2 hover:bg-[#f2f4f6] dark:hover:bg-slate-800 transition-colors rounded-full active:scale-95 transition-transform text-[#434655] dark:text-slate-400">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-6 pt-8">
+<!-- Hero/Intro Section -->
+<header class="mb-12">
+<p class="font-headline font-bold text-primary tracking-tight mb-2">Expert Consultations</p>
+<h2 class="font-headline font-extrabold text-4xl lg:text-5xl text-on-surface mb-4 max-w-2xl leading-tight">
+                Select a service to start your growth journey.
+            </h2>
+<div class="h-1 w-24 signature-gradient rounded-full"></div>
+</header>
+<!-- Bento Grid Service Selection -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Large Featured Card: 1-on-1 Design Consultation -->
+<div class="md:col-span-8 group cursor-pointer">
+<div class="h-full bg-surface-container-lowest rounded-[2rem] p-8 transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.08)] relative overflow-hidden flex flex-col justify-between border border-outline-variant/15">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+<img alt="Professional Design Collaboration" class="w-full h-full object-cover" data-alt="Modern minimalist office workspace with high-end furniture, soft morning sunlight, and blurred professional design artifacts on a desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ9udneg8mpPpIRnfd3_QG92sortg-SjTsGXjmk7F9e-XSd3xdTjXxggE1_Kn9pjq9EnIf3ExlFdHHt0YRxT35_zZAO4jVoraN7AJB-TaUJDrrdz6y9grRytJE03ddLL75pLHQd_cGbTBTpcKm2D2wtnJHVdgLfh_iQJb3hcUHgQPvyIK_uz9Kl4lZyTTwL9A5a7sIeVsqx8Jk-ovT4D9_ok7_aLRRCjF3hQCpzRnc6-lwW2Vn0fjcQaZ-Ii8aO6udwJt7POjIaIU"/>
+</div>
+<div>
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary-container/10 text-primary rounded-full mb-6">
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="text-xs font-semibold uppercase tracking-wider">Most Popular</span>
+</div>
+<h3 class="font-headline font-bold text-3xl mb-4 max-w-md">1-on-1 Design Consultation</h3>
+<p class="text-on-surface-variant text-lg max-w-md leading-relaxed mb-8">
+                            A deep dive into your design process, career goals, or specific project roadblocks with personalized feedback.
+                        </p>
+</div>
+<div class="flex flex-wrap items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">schedule</span>
+<span class="font-medium text-on-surface">60 Minutes</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">payments</span>
+<span class="font-bold text-2xl text-on-surface">$150</span>
+</div>
+<button class="ml-auto px-8 py-3 signature-gradient text-white rounded-xl font-semibold hover:opacity-90 active:scale-95 transition-all">
+                            Book Session
+                        </button>
+</div>
+</div>
+</div>
+<!-- Small Secondary Card: UX Audit -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="h-full bg-surface-container-low rounded-[2rem] p-8 transition-all duration-300 hover:bg-surface-container-lowest hover:scale-[1.02] border border-outline-variant/10">
+<div class="w-14 h-14 bg-surface-container-lowest rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl">analytics</span>
+</div>
+<h3 class="font-headline font-bold text-2xl mb-4">UX Audit</h3>
+<p class="text-on-surface-variant text-base leading-relaxed mb-8">
+                        Complete heuristic evaluation of your existing product to identify usability friction.
+                    </p>
+<div class="mt-auto space-y-4">
+<div class="flex justify-between items-center text-sm font-medium">
+<span class="text-on-surface-variant">Duration</span>
+<span class="text-on-surface">90 Min</span>
+</div>
+<div class="flex justify-between items-center text-sm font-bold">
+<span class="text-on-surface-variant">Starting from</span>
+<span class="text-xl text-on-surface">$299</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Asymmetric Row: Portfolio Review -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="h-full bg-tertiary-fixed rounded-[2rem] p-8 transition-all duration-300 hover:scale-[1.02] border border-outline-variant/10">
+<div class="w-14 h-14 bg-white/50 rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-3xl" style="font-variation-settings: 'FILL' 1;">folder_special</span>
+</div>
+<h3 class="font-headline font-bold text-2xl mb-4">Portfolio Review</h3>
+<p class="text-on-tertiary-fixed-variant text-base leading-relaxed mb-8">
+                        Get your case studies ready for high-tier agency and tech company applications.
+                    </p>
+<div class="flex justify-between items-center">
+<span class="font-bold text-xl text-on-tertiary-fixed">$85</span>
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Another Card: Career Coaching -->
+<div class="md:col-span-8 group cursor-pointer">
+<div class="h-full bg-secondary-fixed rounded-[2rem] p-8 border border-outline-variant/10 flex flex-col md:flex-row gap-8 items-center transition-all duration-300 hover:scale-[1.01]">
+<div class="flex-1">
+<h3 class="font-headline font-bold text-2xl mb-4">Career Coaching</h3>
+<p class="text-on-secondary-fixed-variant text-base leading-relaxed mb-6">
+                            Long-term mentorship for designers moving into leadership or transitioning from other fields.
+                        </p>
+<div class="flex items-center gap-4">
+<span class="px-4 py-1.5 bg-white/40 rounded-full text-xs font-bold text-on-secondary-fixed uppercase tracking-widest">Ongoing</span>
+<span class="text-lg font-bold text-on-secondary-fixed">$450 / month</span>
+</div>
+</div>
+<div class="w-full md:w-48 h-48 rounded-2xl overflow-hidden shadow-xl rotate-3 group-hover:rotate-0 transition-transform">
+<img alt="Design Mentorship" class="w-full h-full object-cover" data-alt="A diverse group of designers collaborating over laptop screens in a brightly lit, high-ceiling modern loft studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOUItGXdXkeY_yMQTckbx_7b2YVO_6ZPS7lvHxRxUp3phui7pVtd7S9lHP2rmbSvr0dePPVX4VPsPOYk_jeG3P0Kt7vBQKc1ciGUe2ZfamsxrNsc9ThwTM5fLmDCVXLKLWltzpW_hBoJC6FJ8iLeLhrLaLwbhftnUFvmRiDRuAJ9_dFM-lPmXFUS-YtpupuIZvTNh-7zLhbkLRhZr3FZ5BZMz7tLqMN0N1mGWNWTpJq35wyKwT1g_VeM2Dx3vyNz9xUM99ZFBd36k"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Footnote / Help -->
+<footer class="mt-20 pb-12 flex flex-col items-center text-center">
+<p class="text-on-surface-variant font-medium mb-4">Need a custom workshop for your team?</p>
+<button class="text-primary font-bold hover:underline underline-offset-8 transition-all">
+                Contact for Corporate Inquiries
+            </button>
+</footer>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-2 pb-6 z-50 bg-[#ffffff]/80 dark:bg-slate-900/80 backdrop-blur-3xl shadow-[0_-4px_24px_rgba(0,0,0,0.04)] rounded-t-2xl border-t border-[#c3c6d7]/15">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-[#434655] dark:text-slate-400 px-4 py-1 hover:text-[#2563EB] dark:hover:text-blue-300 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] font-medium text-[11px] mt-1">Home</span>
+</a>
+<!-- Bookings (Active) -->
+<a class="flex flex-col items-center justify-center text-[#2563EB] dark:text-blue-400 bg-[#f2f4f6] dark:bg-slate-800 rounded-xl px-4 py-1 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="font-['Inter'] font-medium text-[11px] mt-1">Bookings</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-[#434655] dark:text-slate-400 px-4 py-1 hover:text-[#2563EB] dark:hover:text-blue-300 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] font-medium text-[11px] mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Schedule - Calendar View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#b4c5ff",
+                    "on-background": "#191c1e",
+                    "primary": "#004ac6",
+                    "surface-dim": "#d8dadc",
+                    "secondary-fixed": "#dbe1ff",
+                    "on-tertiary-container": "#ffede6",
+                    "inverse-surface": "#2d3133",
+                    "outline-variant": "#c3c6d7",
+                    "on-surface": "#191c1e",
+                    "on-secondary-container": "#394c84",
+                    "surface-variant": "#e0e3e5",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#dbe1ff",
+                    "primary-container": "#2563eb",
+                    "surface-container": "#eceef0",
+                    "tertiary": "#943700",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#b4c5ff",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#e6e8ea",
+                    "secondary-container": "#acbfff",
+                    "on-tertiary-fixed": "#360f00",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-secondary-fixed": "#00174b",
+                    "on-surface-variant": "#434655",
+                    "outline": "#737686",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "surface-tint": "#0053db",
+                    "inverse-on-surface": "#eff1f3",
+                    "tertiary-container": "#bc4800",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "secondary": "#495c95",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-secondary-fixed-variant": "#31447b",
+                    "on-primary-container": "#eeefff",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#ffdbcd",
+                    "background": "#f7f9fb",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-primary-fixed": "#00174b",
+                    "surface": "#f7f9fb",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-bright": "#f7f9fb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+        }
+        h1, h2, h3 {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col pb-24">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-[#f7f9fb] dark:bg-slate-900 transition-colors">
+<div class="flex items-center justify-between px-6 h-16 w-full max-w-7xl mx-auto">
+<button class="text-[#2563EB] dark:text-blue-400 hover:bg-[#f2f4f6] dark:hover:bg-slate-800 transition-colors active:scale-95 transition-transform p-2 rounded-xl">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] font-semibold text-lg text-on-surface">Schedule</h1>
+<button class="text-[#2563EB] dark:text-blue-400 hover:bg-[#f2f4f6] dark:hover:bg-slate-800 transition-colors active:scale-95 transition-transform p-2 rounded-xl">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</header>
+<main class="flex-grow max-w-7xl mx-auto w-full px-6 pt-4 pb-12">
+<div class="flex flex-col md:flex-row gap-8">
+<!-- Left Column: Calendar Shell -->
+<section class="flex-1">
+<div class="bg-surface-container-lowest rounded-3xl p-6 shadow-[0_4px_24px_rgba(0,0,0,0.02)] border border-outline-variant/10">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h2 class="text-2xl font-bold font-headline text-on-surface">October 2023</h2>
+<p class="text-on-surface-variant font-body text-sm mt-1">Select your preferred date</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-2 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Calendar Grid -->
+<div class="grid grid-cols-7 gap-y-6 text-center">
+<!-- Days of Week -->
+<div class="text-on-surface-variant font-label text-xs font-semibold uppercase tracking-wider">Mon</div>
+<div class="text-on-surface-variant font-label text-xs font-semibold uppercase tracking-wider">Tue</div>
+<div class="text-on-surface-variant font-label text-xs font-semibold uppercase tracking-wider">Wed</div>
+<div class="text-on-surface-variant font-label text-xs font-semibold uppercase tracking-wider">Thu</div>
+<div class="text-on-surface-variant font-label text-xs font-semibold uppercase tracking-wider">Fri</div>
+<div class="text-on-surface-variant font-label text-xs font-semibold uppercase tracking-wider">Sat</div>
+<div class="text-on-surface-variant font-label text-xs font-semibold uppercase tracking-wider">Sun</div>
+<!-- Row 1 -->
+<div class="flex items-center justify-center py-2 text-on-surface-variant/30 text-sm">25</div>
+<div class="flex items-center justify-center py-2 text-on-surface-variant/30 text-sm">26</div>
+<div class="flex items-center justify-center py-2 text-on-surface-variant/30 text-sm">27</div>
+<div class="flex items-center justify-center py-2 text-on-surface-variant/30 text-sm">28</div>
+<div class="flex items-center justify-center py-2 text-on-surface-variant/30 text-sm">29</div>
+<div class="flex items-center justify-center py-2 text-on-surface-variant/30 text-sm">30</div>
+<div class="flex items-center justify-center py-2 font-body text-sm relative">
+                            1
+                            <span class="absolute bottom-0 w-1 h-1 rounded-full bg-primary-container"></span>
+</div>
+<!-- Row 2 -->
+<div class="flex items-center justify-center py-2 font-body text-sm">2</div>
+<div class="flex items-center justify-center py-2 font-body text-sm">3</div>
+<div class="flex items-center justify-center py-2 font-body text-sm relative">
+                            4
+                            <span class="absolute bottom-0 w-1 h-1 rounded-full bg-primary-container"></span>
+</div>
+<div class="flex items-center justify-center py-2 font-body text-sm">5</div>
+<div class="flex items-center justify-center py-2 font-body text-sm">6</div>
+<div class="flex items-center justify-center py-2 font-body text-sm">7</div>
+<div class="flex items-center justify-center py-2 font-body text-sm">8</div>
+<!-- Row 3: Selected Week Example -->
+<div class="flex items-center justify-center py-2 font-body text-sm">9</div>
+<div class="flex items-center justify-center py-2 font-body text-sm">10</div>
+<div class="flex items-center justify-center py-2 font-body text-sm">11</div>
+<div class="flex items-center justify-center py-2 font-body text-sm">12</div>
+<!-- ACTIVE DATE -->
+<div class="flex items-center justify-center py-2">
+<span class="w-10 h-10 flex items-center justify-center rounded-2xl bg-gradient-to-br from-primary-container to-primary text-white font-bold shadow-lg shadow-primary/20">13</span>
+</div>
+<div class="flex items-center justify-center py-2 font-body text-sm">14</div>
+<div class="flex items-center justify-center py-2 font-body text-sm">15</div>
+<!-- Row 4 -->
+<div class="flex items-center justify-center py-2 font-body text-sm">16</div>
+<div class="flex items-center justify-center py-2 font-body text-sm">17</div>
+<div class="flex items-center justify-center py-2 font-body text-sm">18</div>
+<div class="flex items-center justify-center py-2 font-body text-sm">19</div>
+<div class="flex items-center justify-center py-2 font-body text-sm">20</div>
+<div class="flex items-center justify-center py-2 font-body text-sm">21</div>
+<div class="flex items-center justify-center py-2 font-body text-sm">22</div>
+</div>
+</div>
+</section>
+<!-- Right Column: Slots and Details -->
+<aside class="w-full md:w-[380px] space-y-6">
+<!-- Selected Day Context -->
+<div class="bg-surface-container-low rounded-3xl p-6">
+<h3 class="text-sm font-label font-semibold text-primary uppercase tracking-widest mb-4">Availability</h3>
+<div class="flex items-end justify-between">
+<div>
+<p class="text-3xl font-headline font-bold text-on-surface">Friday</p>
+<p class="text-on-surface-variant font-body">October 13th, 2023</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-2xl font-headline font-bold text-on-surface">8</span>
+<span class="text-[10px] font-label font-medium text-on-surface-variant uppercase">Slots Open</span>
+</div>
+</div>
+</div>
+<!-- Time Slot Grid -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Slot Item -->
+<button class="bg-surface-container-lowest p-4 rounded-2xl flex flex-col gap-1 border border-transparent hover:border-primary/20 hover:scale-[1.02] transition-all group">
+<span class="text-xs font-label text-on-surface-variant group-hover:text-primary transition-colors">Morning</span>
+<span class="text-lg font-headline font-bold text-on-surface">09:00 AM</span>
+</button>
+<!-- Slot Item Selected -->
+<button class="bg-gradient-to-br from-primary-container to-primary p-4 rounded-2xl flex flex-col gap-1 shadow-lg shadow-primary/20 scale-[1.02]">
+<span class="text-xs font-label text-on-primary/70">Morning</span>
+<span class="text-lg font-headline font-bold text-on-primary">10:30 AM</span>
+</button>
+<!-- Slot Item -->
+<button class="bg-surface-container-lowest p-4 rounded-2xl flex flex-col gap-1 border border-transparent hover:border-primary/20 hover:scale-[1.02] transition-all group">
+<span class="text-xs font-label text-on-surface-variant group-hover:text-primary transition-colors">Afternoon</span>
+<span class="text-lg font-headline font-bold text-on-surface">01:30 PM</span>
+</button>
+<!-- Slot Item -->
+<button class="bg-surface-container-lowest p-4 rounded-2xl flex flex-col gap-1 border border-transparent hover:border-primary/20 hover:scale-[1.02] transition-all group">
+<span class="text-xs font-label text-on-surface-variant group-hover:text-primary transition-colors">Afternoon</span>
+<span class="text-lg font-headline font-bold text-on-surface">03:00 PM</span>
+</button>
+<!-- Slot Item -->
+<button class="bg-surface-container-lowest p-4 rounded-2xl flex flex-col gap-1 border border-transparent hover:border-primary/20 hover:scale-[1.02] transition-all group">
+<span class="text-xs font-label text-on-surface-variant group-hover:text-primary transition-colors">Evening</span>
+<span class="text-lg font-headline font-bold text-on-surface">05:30 PM</span>
+</button>
+<!-- Slot Item (Locked/Unavailable) -->
+<div class="bg-surface-container-low/50 p-4 rounded-2xl flex flex-col gap-1 opacity-50 cursor-not-allowed">
+<span class="text-xs font-label text-on-surface-variant">Evening</span>
+<span class="text-lg font-headline font-bold text-on-surface-variant">07:00 PM</span>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full h-16 bg-gradient-to-br from-primary-container to-primary text-on-primary font-headline font-bold text-lg rounded-2xl shadow-xl shadow-primary/10 hover:opacity-90 active:scale-95 transition-all">
+                    Confirm Selection
+                </button>
+</aside>
+</div>
+<!-- Bento Grid: Meta Information -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+<div class="md:col-span-2 bg-surface-container-low rounded-3xl p-8 flex items-center justify-between overflow-hidden relative group">
+<div class="relative z-10 max-w-sm">
+<h4 class="text-xl font-headline font-bold text-on-surface mb-2">Need a recurring slot?</h4>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Book multiple sessions at once and save 15% on your total. Perfect for ongoing projects or consultations.</p>
+<button class="px-6 py-3 bg-on-surface text-surface rounded-xl font-body font-semibold text-sm hover:bg-primary transition-colors">Explore Packages</button>
+</div>
+<div class="absolute right-0 top-0 h-full w-1/2 opacity-10 group-hover:opacity-20 transition-opacity">
+<img alt="Abstract pattern" class="h-full w-full object-cover" data-alt="Abstract minimalist background with soft shadows and flowing geometric shapes in a clean light blue palette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuujngG21QHbOaeecVZT_3gnOh291-_wlHGxH6fmcjG-DoGcBljdDEaXEkCnaY0ReKSZeb3gkhDuLE2aoJD5Tfil72T-aiu8w-VyaAaJloyDAnpEhD1EVLTAYY9mdi0g6JqSLILXFrgKslQzwbKvfjynpzzAXfrF_4bP1AmHqUezD9i8Ncf4WLSyUNZXzFN3nk8UxkyTL9QvbRoXYn_fRR1i2AVdZcA1IRkBr_3E6PjOaNedejNehudYengkuSlazo-BknUujXIZk"/>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/15 rounded-3xl p-8 flex flex-col justify-center items-center text-center">
+<div class="w-16 h-16 bg-tertiary-fixed rounded-2xl flex items-center justify-center text-on-tertiary-fixed mb-4">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<h4 class="font-headline font-bold text-on-surface">Secure Booking</h4>
+<p class="text-on-surface-variant text-xs mt-2">Verified providers and encrypted data protection.</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-[#ffffff]/80 dark:bg-slate-900/80 backdrop-blur-3xl shadow-[0_-4px_24px_rgba(0,0,0,0.04)] border-t border-[#c3c6d7]/15">
+<div class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-2 pb-safe h-20">
+<a class="flex flex-col items-center justify-center text-[#434655] dark:text-slate-400 px-4 py-1 hover:text-[#2563EB] dark:hover:text-blue-300 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] font-medium text-[11px]">Home</span>
+</a>
+<!-- Active Tab: Bookings (closest match to Schedule/Calendar) -->
+<a class="flex flex-col items-center justify-center text-[#2563EB] dark:text-blue-400 bg-[#f2f4f6] dark:bg-slate-800 rounded-xl px-4 py-1 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="font-['Inter'] font-medium text-[11px]">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#434655] dark:text-slate-400 px-4 py-1 hover:text-[#2563EB] dark:hover:text-blue-300 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] font-medium text-[11px]">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>
