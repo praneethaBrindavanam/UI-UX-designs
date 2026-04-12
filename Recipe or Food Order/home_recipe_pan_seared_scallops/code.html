@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Culinary Editorial - Pan-Seared Scallops</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#e5e2e1",
+            "surface-variant": "#e5e2e1",
+            "primary": "#006538",
+            "on-tertiary-fixed": "#40000c",
+            "on-error": "#ffffff",
+            "on-surface": "#1b1c1c",
+            "tertiary": "#943942",
+            "on-secondary-container": "#531800",
+            "secondary-container": "#fc6018",
+            "inverse-surface": "#303030",
+            "on-tertiary-container": "#fff2f2",
+            "primary-fixed-dim": "#79da9c",
+            "on-secondary-fixed": "#380d00",
+            "on-primary": "#ffffff",
+            "surface-tint": "#006d3d",
+            "tertiary-container": "#b35159",
+            "primary-container": "#13804b",
+            "tertiary-fixed": "#ffdada",
+            "error": "#ba1a1a",
+            "secondary": "#a83900",
+            "background": "#fcf9f8",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f6f3f2",
+            "on-secondary": "#ffffff",
+            "inverse-on-surface": "#f3f0ef",
+            "secondary-fixed-dim": "#ffb59a",
+            "surface-bright": "#fcf9f8",
+            "on-tertiary-fixed-variant": "#7e2932",
+            "tertiary-fixed-dim": "#ffb3b5",
+            "on-primary-fixed": "#00210f",
+            "outline-variant": "#becabe",
+            "error-container": "#ffdad6",
+            "surface": "#fcf9f8",
+            "on-background": "#1b1c1c",
+            "surface-container": "#f0eded",
+            "outline": "#6f7a70",
+            "on-primary-container": "#d5ffde",
+            "surface-container-high": "#eae7e7",
+            "on-primary-fixed-variant": "#00522d",
+            "on-error-container": "#93000a",
+            "primary-fixed": "#95f7b6",
+            "on-surface-variant": "#3f4940",
+            "surface-dim": "#dcd9d9",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed": "#ffdbcf",
+            "inverse-primary": "#79da9c",
+            "on-secondary-fixed-variant": "#802a00"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "fontFamily": {
+            "headline": ["Inter"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f6f3f2;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #becabe;
+      border-radius: 10px;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Shell (The Anchor) -->
+<header class="bg-[#fcf9f8] flex justify-between items-center px-6 py-4 w-full sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<button class="hover:bg-[#dcd9d9] transition-colors p-2 rounded-xl active:opacity-80 active:scale-95">
+<span class="material-symbols-outlined text-stone-900">menu</span>
+</button>
+<span class="text-2xl font-black text-[#1b1c1c] uppercase tracking-widest">The Culinary Editorial</span>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<a class="text-[#13804B] font-bold font-headline transition-all" href="#">Recipes</a>
+<a class="text-stone-500 font-headline hover:bg-[#dcd9d9] transition-colors" href="#">Kitchen</a>
+<a class="text-stone-500 font-headline hover:bg-[#dcd9d9] transition-colors" href="#">Inventory</a>
+<a class="text-stone-500 font-headline hover:bg-[#dcd9d9] transition-colors" href="#">Settings</a>
+</nav>
+<button class="hover:bg-[#dcd9d9] transition-colors p-2 rounded-xl active:opacity-80 active:scale-95">
+<span class="material-symbols-outlined text-stone-900">search</span>
+</button>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-4 md:px-12 py-8 pb-32">
+<!-- Hero Section: Editorial Layout -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-20">
+<div class="lg:col-span-7 relative group overflow-hidden rounded-2xl bg-surface-container">
+<img alt="Gourmet pan-seared scallops" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of golden brown pan-seared scallops on a white plate with lemon butter sauce, fresh parsley, and dramatic soft side lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEgRqnjygAt-P6h_EWYrCW_P43fW5g-rkEgpxuTFYCIDTTPNwnOXJqkBlJ1U3xJrPOji-xT7tLOfiXy_6Nh9BF3oWjgCgA5sfnJg4xaXsxJfHpHJfoQnyFXu8fSTQGdMR1-7HLTeEl09aNK8sUxf9-jMJG-1RRNBBM0v9W4lfvkv_LEs740DdiwqnkLez1mJt3zP7lxAx42Hy4bxj94S35YHziCmM2TNHS5Lo_Rk_eGcj_7Bt3qS3rqxmlYnwfBmBcyDYJQxFjRipe"/>
+<div class="absolute top-6 left-6 flex gap-2">
+<span class="bg-primary text-on-primary px-4 py-1 rounded-full font-bold text-sm uppercase tracking-wider shadow-lg">Ready</span>
+<span class="bg-white/80 backdrop-blur-md text-on-surface px-4 py-1 rounded-full font-bold text-sm uppercase tracking-wider shadow-lg">15 MINS</span>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col justify-center h-full">
+<div class="mb-4">
+<span class="text-secondary font-black uppercase tracking-[0.2em] text-sm">Main Course</span>
+</div>
+<h1 class="text-6xl md:text-7xl font-black text-on-surface leading-tight tracking-tighter mb-6">
+          Pan-Seared Scallops <span class="text-primary">with Lemon Butter.</span>
+</h1>
+<p class="text-xl text-on-surface-variant leading-relaxed max-w-lg mb-8 font-medium">
+          A masterclass in texture and simplicity. Achieving the perfect golden crust while maintaining a tender, buttery interior is the hallmark of professional kitchen execution.
+        </p>
+<div class="flex items-center gap-4">
+<div class="flex flex-col">
+<span class="text-xs font-black uppercase text-stone-400 tracking-widest">Difficulty</span>
+<span class="font-bold text-lg">Intermediate</span>
+</div>
+<div class="w-px h-10 bg-outline-variant opacity-20"></div>
+<div class="flex flex-col">
+<span class="text-xs font-black uppercase text-stone-400 tracking-widest">Serves</span>
+<span class="font-bold text-lg">2 People</span>
+</div>
+<div class="w-px h-10 bg-outline-variant opacity-20"></div>
+<button class="ml-auto bg-gradient-to-br from-[#006538] to-[#13804b] text-on-primary px-8 py-4 rounded-xl font-bold uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all shadow-xl">
+            Start Cooking
+          </button>
+</div>
+</div>
+</section>
+<!-- Bento Grid Content Section -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Ingredients (The Prep Well) -->
+<aside class="lg:col-span-4 space-y-8">
+<div class="bg-surface-container-low rounded-3xl p-8 sticky top-28">
+<h2 class="text-3xl font-black mb-8 tracking-tight">The Mise en Place</h2>
+<div class="space-y-6">
+<label class="flex items-center gap-4 group cursor-pointer">
+<input class="w-6 h-6 rounded-lg border-2 border-outline-variant text-primary focus:ring-primary focus:ring-offset-2 bg-transparent transition-all" type="checkbox"/>
+<div class="flex flex-col">
+<span class="text-lg font-bold group-hover:text-primary transition-colors">1 lb Large Sea Scallops</span>
+<span class="text-sm text-stone-500 uppercase font-medium">Patted dry with paper towels</span>
+</div>
+</label>
+<label class="flex items-center gap-4 group cursor-pointer">
+<input class="w-6 h-6 rounded-lg border-2 border-outline-variant text-primary focus:ring-primary focus:ring-offset-2 bg-transparent transition-all" type="checkbox"/>
+<div class="flex flex-col">
+<span class="text-lg font-bold group-hover:text-primary transition-colors">3 tbsp Unsalted Butter</span>
+<span class="text-sm text-stone-500 uppercase font-medium">Cold, cubed for emulsification</span>
+</div>
+</label>
+<label class="flex items-center gap-4 group cursor-pointer">
+<input class="w-6 h-6 rounded-lg border-2 border-outline-variant text-primary focus:ring-primary focus:ring-offset-2 bg-transparent transition-all" type="checkbox"/>
+<div class="flex flex-col">
+<span class="text-lg font-bold group-hover:text-primary transition-colors">2 tbsp Grapeseed Oil</span>
+<span class="text-sm text-stone-500 uppercase font-medium">Or high-smoke point oil</span>
+</div>
+</label>
+<label class="flex items-center gap-4 group cursor-pointer">
+<input class="w-6 h-6 rounded-lg border-2 border-outline-variant text-primary focus:ring-primary focus:ring-offset-2 bg-transparent transition-all" type="checkbox"/>
+<div class="flex flex-col">
+<span class="text-lg font-bold group-hover:text-primary transition-colors">1/2 Fresh Lemon</span>
+<span class="text-sm text-stone-500 uppercase font-medium">Juiced and zested</span>
+</div>
+</label>
+<label class="flex items-center gap-4 group cursor-pointer">
+<input class="w-6 h-6 rounded-lg border-2 border-outline-variant text-primary focus:ring-primary focus:ring-offset-2 bg-transparent transition-all" type="checkbox"/>
+<div class="flex flex-col">
+<span class="text-lg font-bold group-hover:text-primary transition-colors">Maldon Sea Salt</span>
+<span class="text-sm text-stone-500 uppercase font-medium">To taste</span>
+</div>
+</label>
+</div>
+<div class="mt-12 p-6 bg-error-container rounded-2xl border-l-4 border-error">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-error">priority_high</span>
+<span class="text-on-error-container font-black uppercase tracking-widest text-sm">Allergy Alert</span>
+</div>
+<p class="text-on-error-container text-sm font-semibold">Contains Shellfish and Dairy. Ensure equipment is sanitized for cross-contamination safety.</p>
+</div>
+</div>
+</aside>
+<!-- Right Column: Step-by-Step Instructions -->
+<section class="lg:col-span-8 space-y-12">
+<h2 class="text-4xl font-black tracking-tighter mb-4">Orchestration Steps</h2>
+<!-- Step 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-3xl group hover:shadow-xl transition-all duration-500 border-l-8 border-primary">
+<div class="flex justify-between items-start mb-6">
+<span class="text-6xl font-black text-surface-dim group-hover:text-primary transition-colors duration-500">01</span>
+<div class="bg-surface-container-low px-4 py-2 rounded-xl flex items-center gap-2">
+<span class="material-symbols-outlined text-primary scale-90">check_circle</span>
+<span class="text-xs font-black uppercase tracking-widest">Prep Phase</span>
+</div>
+</div>
+<h3 class="text-2xl font-black mb-4">The Moisture Removal</h3>
+<p class="text-xl text-on-surface-variant leading-relaxed mb-6">
+            Remove the small, tough side muscle from the scallops if still attached. Pat the scallops <strong class="text-on-surface">bone-dry</strong> with paper towels. Any surface moisture will cause them to steam instead of sear. Season generously with salt just before cooking.
+          </p>
+</div>
+<!-- Step 2: With Timer -->
+<div class="bg-surface-container-lowest p-8 rounded-3xl group hover:shadow-xl transition-all duration-500 border-l-8 border-tertiary">
+<div class="flex justify-between items-start mb-6">
+<span class="text-6xl font-black text-surface-dim group-hover:text-tertiary transition-colors duration-500">02</span>
+<div class="bg-surface-container-low px-4 py-2 rounded-xl flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary scale-90" data-weight="fill">timer</span>
+<span class="text-xs font-black uppercase tracking-widest">Active Sear</span>
+</div>
+</div>
+<h3 class="text-2xl font-black mb-4">High-Heat Contact</h3>
+<p class="text-xl text-on-surface-variant leading-relaxed mb-8">
+            Add oil to a large stainless steel pan over high heat. Once the oil begins to smoke slightly, add scallops one by one, leaving space between them. Do not move them for 2 minutes to develop a deep brown crust.
+          </p>
+<div class="bg-surface-container p-6 rounded-2xl flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-full border-4 border-tertiary border-t-transparent flex items-center justify-center">
+<span class="text-xl font-black">2:00</span>
+</div>
+<div>
+<span class="text-xs font-black uppercase text-stone-400 tracking-widest block">Heat Map Timer</span>
+<span class="text-lg font-bold">First Side Sear</span>
+</div>
+</div>
+<button class="bg-tertiary text-on-tertiary px-6 py-3 rounded-xl font-bold uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all">
+              Start Timer
+            </button>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-3xl group hover:shadow-xl transition-all duration-500 border-l-8 border-secondary">
+<div class="flex justify-between items-start mb-6">
+<span class="text-6xl font-black text-surface-dim group-hover:text-secondary transition-colors duration-500">03</span>
+<div class="bg-surface-container-low px-4 py-2 rounded-xl flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary scale-90">restaurant</span>
+<span class="text-xs font-black uppercase tracking-widest">Emulsification</span>
+</div>
+</div>
+<h3 class="text-2xl font-black mb-4">The Butter Baste</h3>
+<p class="text-xl text-on-surface-variant leading-relaxed">
+            Flip the scallops. Add the butter, lemon juice, and zest to the pan. Use a spoon to baste the scallops with the bubbling lemon butter for 1 minute. Remove immediately to a warm plate. Garnish with fresh herbs.
+          </p>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Navigation (The Filter / Responsive Pivot) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl flex justify-around items-center px-4 pb-6 pt-3 shadow-[0_-4px_24px_rgba(27,28,28,0.06)] rounded-t-3xl border-t border-stone-200/20">
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#006538] to-[#13804b] text-white rounded-xl px-5 py-2 duration-200 scale-90" href="#">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<span class="font-headline text-[10px] font-bold uppercase tracking-wider mt-1">Recipes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 px-5 py-2" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-headline text-[10px] font-bold uppercase tracking-wider mt-1">Kitchen</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 px-5 py-2" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-headline text-[10px] font-bold uppercase tracking-wider mt-1">Inventory</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 px-5 py-2" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-headline text-[10px] font-bold uppercase tracking-wider mt-1">Settings</span>
+</a>
+</nav>
+</body></html>
