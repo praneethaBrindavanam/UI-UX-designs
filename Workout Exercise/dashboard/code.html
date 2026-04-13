@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vitality - High Performance Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-dim": "#beee00",
+                        "primary": "#f3ffca",
+                        "background": "#0e0e0e",
+                        "secondary-fixed-dim": "#d6d4d3",
+                        "tertiary-dim": "#eaebec",
+                        "error-dim": "#d53d18",
+                        "on-secondary": "#525151",
+                        "on-surface": "#ffffff",
+                        "on-tertiary": "#5d5f60",
+                        "on-secondary-fixed": "#3f3f3f",
+                        "surface-container-lowest": "#000000",
+                        "outline-variant": "#484847",
+                        "on-error-container": "#ffd2c8",
+                        "inverse-surface": "#fcf9f8",
+                        "tertiary-fixed-dim": "#edeeef",
+                        "secondary": "#e4e2e1",
+                        "secondary-container": "#474747",
+                        "primary-container": "#cafd00",
+                        "surface-tint": "#f3ffca",
+                        "inverse-on-surface": "#565555",
+                        "surface-container": "#1a1a1a",
+                        "tertiary": "#f8f9fa",
+                        "primary-fixed-dim": "#beee00",
+                        "on-surface-variant": "#adaaaa",
+                        "on-tertiary-container": "#555758",
+                        "primary-fixed": "#cafd00",
+                        "surface-variant": "#262626",
+                        "on-primary-container": "#4a5e00",
+                        "secondary-fixed": "#e4e2e1",
+                        "surface-dim": "#0e0e0e",
+                        "inverse-primary": "#516700",
+                        "surface": "#0e0e0e",
+                        "error": "#ff7351",
+                        "tertiary-fixed": "#fbfcfd",
+                        "on-secondary-fixed-variant": "#5c5b5b",
+                        "outline": "#767575",
+                        "on-tertiary-fixed-variant": "#696c6d",
+                        "surface-container-low": "#131313",
+                        "on-primary": "#516700",
+                        "surface-bright": "#2c2c2c",
+                        "on-background": "#ffffff",
+                        "on-error": "#450900",
+                        "on-primary-fixed-variant": "#526900",
+                        "surface-container-high": "#20201f",
+                        "on-tertiary-fixed": "#4c4f50",
+                        "on-secondary-container": "#d2d0cf",
+                        "tertiary-container": "#eaebec",
+                        "error-container": "#b92902",
+                        "on-primary-fixed": "#3a4a00",
+                        "surface-container-highest": "#262626",
+                        "secondary-dim": "#d6d4d3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Lexend"],
+                        "body": ["Manrope"],
+                        "label": ["Lexend"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-shadow-glow {
+            text-shadow: 0 0 20px rgba(243, 255, 202, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-6 py-4 w-full sticky top-0 z-50 bg-[#0e0e0e]/90 backdrop-blur-2xl">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="close up professional portrait of a fit young woman with a focused expression, high contrast lighting, urban gym background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRPMA-cE7yR36TV2tEeASfP3yxRFU0C86ZJ-GgjhnttKGUkQ1hdmogTGTqk10YYZfS46AKITBwJYCdJEdbg4KZr_-17ZbKgXb8VpWJfmtLfObiEoT_EfCldYwDV6HMAXxnTgiHI7Br0tECivqxmp_NrNi19mkcIbb1RLvGLBYn1P1f1CmEEcfNffc8EPSTjjKNI3lAINouPucUoyCzITjkVq3OcNgU_UsaveLH5DPCsXkeuRK9p3ScT5keZX1Yx2T383igjdmiJQ"/>
+</div>
+<h1 class="text-2xl font-headline font-black italic text-primary tracking-tighter uppercase">VITALITY</h1>
+</div>
+<button class="text-primary hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+</button>
+</header>
+<main class="px-6 pb-32 pt-4 max-w-7xl mx-auto space-y-8">
+<!-- Hero Section: Movement Progress -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+<div class="md:col-span-7 space-y-2">
+<p class="font-headline font-bold text-primary tracking-widest uppercase text-sm">Today's Pulse</p>
+<h2 class="font-headline text-5xl md:text-7xl font-black text-white leading-none tracking-tighter">
+                    FUEL THE <br/> <span class="text-primary">MOMENTUM</span>
+</h2>
+</div>
+<div class="md:col-span-5 relative flex justify-center py-8">
+<!-- Progress Ring -->
+<div class="relative w-64 h-64 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90 transform">
+<circle class="text-surface-container-highest" cx="128" cy="128" fill="transparent" r="110" stroke="currentColor" stroke-width="16"></circle>
+<circle class="text-primary-container filter drop-shadow-[0_0_12px_rgba(202,253,0,0.4)]" cx="128" cy="128" fill="transparent" r="110" stroke="currentColor" stroke-dasharray="690" stroke-dashoffset="180" stroke-linecap="round" stroke-width="20"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline text-5xl font-black text-white">74%</span>
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Movement</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Stats -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Heart Rate Widget -->
+<div class="col-span-2 bg-surface-container-low rounded-lg p-6 flex flex-col justify-between overflow-hidden relative group">
+<div class="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-40 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">favorite</span>
+</div>
+<div class="relative z-10">
+<p class="font-label text-xs uppercase text-primary tracking-widest mb-1">Heart Rate</p>
+<div class="flex items-baseline gap-2">
+<span class="font-headline text-4xl font-bold text-white">128</span>
+<span class="font-body text-on-surface-variant">BPM</span>
+</div>
+</div>
+<!-- Mini Waveform -->
+<div class="h-12 flex items-end gap-1 mt-4">
+<div class="w-1 bg-primary-container h-4 rounded-full"></div>
+<div class="w-1 bg-primary-container h-8 rounded-full"></div>
+<div class="w-1 bg-primary-container h-6 rounded-full"></div>
+<div class="w-1 bg-primary-container h-10 rounded-full"></div>
+<div class="w-1 bg-primary-container h-12 rounded-full"></div>
+<div class="w-1 bg-primary-container h-7 rounded-full"></div>
+<div class="w-1 bg-primary-container h-9 rounded-full"></div>
+<div class="w-1 bg-primary-container h-5 rounded-full"></div>
+<div class="w-1 bg-primary-container h-11 rounded-full animate-pulse"></div>
+</div>
+</div>
+<div class="bg-surface-container-high rounded-lg p-6 flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary text-3xl">local_fire_department</span>
+<div>
+<p class="font-headline text-2xl font-bold text-white">840</p>
+<p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">KCAL</p>
+</div>
+</div>
+<div class="bg-surface-container-high rounded-lg p-6 flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary text-3xl">timer</span>
+<div>
+<p class="font-headline text-2xl font-bold text-white">42</p>
+<p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">MINS</p>
+</div>
+</div>
+</div>
+<!-- Next Up: HIIT Card -->
+<section class="space-y-4">
+<div class="flex justify-between items-end">
+<h3 class="font-headline text-2xl font-black uppercase tracking-tighter italic">Next Up</h3>
+<a class="font-label text-xs uppercase text-primary tracking-widest hover:underline underline-offset-4" href="#">View All</a>
+</div>
+<div class="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-xl overflow-hidden group cursor-pointer">
+<img alt="HIIT Workout background" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="dynamic shot of athlete performing intense explosive burpees in a dark industrial gym, moody dramatic lighting with neon accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqDH5uuEn1QYctyR76SgsXJw1CfC9xVUg5ITknnXYQKeNjvnVN5C5206W-rpNrTdPcsmIKOUeMJDhYRi-M0oxWiqFIZxBC67efO41uE7e00Q19EmRq0HRuS72BPfHbjd0P6csCFvdT3WWAm8Gr4JIwvNgXkwjc3k1o10mN2nkDii3H31wx79NIrdI15-qCsPORk0svVROFmEeGfifNPSyaLhYiix_bO2qZUE5OSazE0O-btxLZ9rKVobheLD-xgRCOzcyOgD3rGA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end">
+<div class="flex flex-wrap gap-3 mb-4">
+<span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label text-[10px] font-black uppercase tracking-widest">Advanced</span>
+<span class="bg-white/10 backdrop-blur-md text-white px-3 py-1 rounded-full font-label text-[10px] font-black uppercase tracking-widest">35 MIN</span>
+</div>
+<h4 class="font-headline text-4xl md:text-6xl font-black text-white uppercase italic leading-none mb-2">HIIT Blast</h4>
+<p class="text-on-surface-variant max-w-md font-body text-sm md:text-base mb-6">High-intensity explosive movements designed to maximize caloric burn and athletic power.</p>
+<button class="w-fit flex items-center gap-3 bg-gradient-to-br from-[#f3ffca] to-[#cafd00] text-on-primary-container px-8 py-3 rounded-full font-label font-black uppercase tracking-widest transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-primary-container/20">
+<span>Start Session</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Secondary Tray: Recent Activity -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container-low p-6 rounded-lg space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="font-headline font-bold text-lg uppercase tracking-tight">Daily Streaks</h3>
+<span class="material-symbols-outlined text-primary">bolt</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-black font-black text-xs">M</div>
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-black font-black text-xs">T</div>
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-black font-black text-xs">W</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant font-black text-xs">T</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant font-black text-xs">F</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant font-black text-xs">S</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant font-black text-xs">S</div>
+</div>
+<p class="font-headline font-black text-2xl italic text-primary">12 DAY STREAK</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-lg space-y-4">
+<h3 class="font-headline font-bold text-lg uppercase tracking-tight">Active Social</h3>
+<div class="flex -space-x-4 overflow-hidden">
+<img alt="friend 1" class="inline-block h-10 w-10 rounded-full ring-2 ring-background object-cover" data-alt="male portrait fitness influencer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkKj8FA3Xfkw1g5b6tMNXT76Ye2N4zHqaKkELd0xYOQNnislRK9WDcdv2AwaFAXUG6gvXOFX4PjIwyBXlnaEdsVFfvHh22_8a4rgm0-jDYs_jIYerSEWQOSap-KUkj3T1IUfWdrmogs0RU3FlIJqJacMKCnV63yiycAi-yg3RAYVP6V_Ycw-6qcSvCtFbNIEaz1tFJ6WSkoNlGnUGOYnZEjjQqOVhn4uIcPyQiPtuUZSqzx841JkiO4F3uLnd4UB1_5waP34WU3g"/>
+<img alt="friend 2" class="inline-block h-10 w-10 rounded-full ring-2 ring-background object-cover" data-alt="female portrait athlete" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9RIlAMF0snYwJ7ldfKuea-4Noplw0Rv_iLtu11ks5vaSQKEuQrs2GvDBxDCEuzFJIyfDJHLDZ2YTDNSLiT2WrUes8GA3GnaRyqdjgFAQ5d-jpdY60Blto97p57I_8cRMS_vM3A1irzQ8FpwJAyru2IboxG7-5lV3L9lBGPBzAboKgzteHebH-tjKvOIEnpI7ZuKu28NHFrK2TWQttTqvTg1F7KVd5m6ECFS402XqmoIF4fyIMWwp_YgL0Q9v9OYg6MlqqwDVd8g"/>
+<img alt="friend 3" class="inline-block h-10 w-10 rounded-full ring-2 ring-background object-cover" data-alt="male athlete profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBogWm-FsY3-ugztDUlGjIOJhtMdv8SaYqxqbD28OLogBkDHYDuhnI-WGOd-L7Uzf1v6Da-ZUGOde7PCW9Ypauabs4btqFKH7iruMG67Yhh3B9TU7Yg_kvBv0Ftc7-KSv_lIGDbRMzq1hu3u-xgrkAtAvQBam1B9PFuTzGDI8_eTcPZ5bmM6xRZPP-R9jGZ4lgLH2B58w8ggNfCbLetPPzA9m4qZyFVkPbL1TtTeNbhvVSn4hwxoN24sYFyJe16V9vqspd8Xyv2bA"/>
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-surface-container-highest ring-2 ring-background text-[10px] font-black">+24</div>
+</div>
+<p class="font-body text-sm text-on-surface-variant">3 teammates are currently crushing sessions.</p>
+</div>
+</section>
+</main>
+<!-- NavigationDrawer (Suppressed for this view) -->
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-end px-4 pb-6 pt-2 bg-[#0e0e0e]/80 backdrop-blur-3xl rounded-t-[3rem] shadow-[0_-12px_40px_rgba(243,255,202,0.06)]">
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#f3ffca] to-[#cafd00] text-black rounded-full px-6 py-2 scale-110 -translate-y-2 shadow-lg shadow-[#cafd00]/20" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-lexend text-[10px] font-bold uppercase tracking-widest">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-200 px-4 py-2 hover:scale-105 transition-all duration-300 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">fitness_center</span>
+<span class="font-lexend text-[10px] font-bold uppercase tracking-widest">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-200 px-4 py-2 hover:scale-105 transition-all duration-300 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">play_circle</span>
+<span class="font-lexend text-[10px] font-bold uppercase tracking-widest">Train</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-200 px-4 py-2 hover:scale-105 transition-all duration-300 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-lexend text-[10px] font-bold uppercase tracking-widest">Social</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-200 px-4 py-2 hover:scale-105 transition-all duration-300 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-lexend text-[10px] font-bold uppercase tracking-widest">Stats</span>
+</a>
+</nav>
+</body></html>

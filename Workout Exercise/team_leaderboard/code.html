@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-dim": "#beee00",
+                        "primary": "#f3ffca",
+                        "background": "#0e0e0e",
+                        "secondary-fixed-dim": "#d6d4d3",
+                        "tertiary-dim": "#eaebec",
+                        "error-dim": "#d53d18",
+                        "on-secondary": "#525151",
+                        "on-surface": "#ffffff",
+                        "on-tertiary": "#5d5f60",
+                        "on-secondary-fixed": "#3f3f3f",
+                        "surface-container-lowest": "#000000",
+                        "outline-variant": "#484847",
+                        "on-error-container": "#ffd2c8",
+                        "inverse-surface": "#fcf9f8",
+                        "tertiary-fixed-dim": "#edeeef",
+                        "secondary": "#e4e2e1",
+                        "secondary-container": "#474747",
+                        "primary-container": "#cafd00",
+                        "surface-tint": "#f3ffca",
+                        "inverse-on-surface": "#565555",
+                        "surface-container": "#1a1a1a",
+                        "tertiary": "#f8f9fa",
+                        "primary-fixed-dim": "#beee00",
+                        "on-surface-variant": "#adaaaa",
+                        "on-tertiary-container": "#555758",
+                        "primary-fixed": "#cafd00",
+                        "surface-variant": "#262626",
+                        "on-primary-container": "#4a5e00",
+                        "secondary-fixed": "#e4e2e1",
+                        "surface-dim": "#0e0e0e",
+                        "inverse-primary": "#516700",
+                        "surface": "#0e0e0e",
+                        "error": "#ff7351",
+                        "tertiary-fixed": "#fbfcfd",
+                        "on-secondary-fixed-variant": "#5c5b5b",
+                        "outline": "#767575",
+                        "on-tertiary-fixed-variant": "#696c6d",
+                        "surface-container-low": "#131313",
+                        "on-primary": "#516700",
+                        "surface-bright": "#2c2c2c",
+                        "on-background": "#ffffff",
+                        "on-error": "#450900",
+                        "on-primary-fixed-variant": "#526900",
+                        "surface-container-high": "#20201f",
+                        "on-tertiary-fixed": "#4c4f50",
+                        "on-secondary-container": "#d2d0cf",
+                        "tertiary-container": "#eaebec",
+                        "error-container": "#b92902",
+                        "on-primary-fixed": "#3a4a00",
+                        "surface-container-highest": "#262626",
+                        "secondary-dim": "#d6d4d3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Lexend"],
+                        "body": ["Manrope"],
+                        "label": ["Lexend"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .kinetic-blur {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-6 py-4 w-full sticky top-0 z-50 bg-[#0e0e0e]/90 backdrop-blur-2xl no-border bg-surface-container-low">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary">
+<img class="w-full h-full object-cover" data-alt="Close up portrait of a smiling athletic woman with glowing skin and short hair in a modern studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZI_dD6V74VBR_3bApvC1Zp9Id9tKgteWdeFZER0UhME96alw4UitZbL8a1cZ2sbRPT9A_nk8hx7rqmEqKgtXOigbtXplfwtMf8MvXMkD1AIznyOIXQ3qU_1m9z6lyuV_vDb7fYevFNEUXFWxzpVxZt6x8Kf9qg6_A93pGz_30BxXsF2zzY4M_GSZIXYSWxNCJr-a4iJfkYJt32Z9LZj-DyII78430Q2Tt4GzUNBwWCLV3_DjVPlpvxo5-h_C8Qf76KFa3NHcslA"/>
+</div>
+<span class="text-2xl font-lexend font-black italic text-[#f3ffca] tracking-tighter">VITALITY</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#f3ffca] hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="pb-32 px-4 pt-6 max-w-5xl mx-auto">
+<!-- Hero Section: Podium -->
+<section class="mb-12">
+<div class="flex flex-col gap-2 mb-8">
+<h1 class="font-headline font-black text-5xl md:text-7xl tracking-tighter uppercase leading-none text-primary">
+                    The<br/>Arena
+                </h1>
+<p class="font-body text-on-surface-variant text-lg">Weekly Team Momentum</p>
+</div>
+<!-- Kinetic Podium Layout -->
+<div class="grid grid-cols-3 items-end gap-2 md:gap-4 h-[320px] md:h-[400px]">
+<!-- 2nd Place -->
+<div class="flex flex-col items-center group">
+<div class="relative mb-4">
+<div class="w-16 h-16 md:w-24 md:h-24 rounded-full overflow-hidden border-4 border-zinc-400 group-hover:scale-110 transition-transform duration-500">
+<img class="w-full h-full object-cover" data-alt="Athletic man with focused expression during a workout, dramatic shadows and cool lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDt1NFqiWb_JxY2QhnSpeKzJQNlSqmZe9DFg314ql791gTcOzNkXfyF8gzlkC6Nqy1Ywr4NLDvfoljY54-zVUJUoqhMY3vjfbXyD_iufAHEbw7YOjXLgasbtxixUloOg-v3mZHDbAznK6VZRBK001DRJoKTn9yKBQteMg9dGY3-AwtZb-dYe8QpkCp2PuVG2SJzDtGr68LMz3WFjeH85lXzHY3GYsOxz9BNBvHOPvfMA90aeJZL_U80tRjfwEjVPwNPYGYg4hduA"/>
+</div>
+<div class="absolute -bottom-2 -right-1 bg-zinc-400 text-black text-xs font-black px-2 py-0.5 rounded-full">2</div>
+</div>
+<div class="w-full bg-surface-container-high rounded-t-xl p-4 text-center h-32 md:h-40 flex flex-col justify-end">
+<span class="font-headline font-bold text-xs md:text-sm truncate uppercase mb-1">Marcus J.</span>
+<span class="font-headline font-black text-xl md:text-2xl text-zinc-300">8,420</span>
+</div>
+</div>
+<!-- 1st Place -->
+<div class="flex flex-col items-center group">
+<div class="relative mb-6">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 text-primary">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+<div class="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-primary group-hover:scale-110 transition-transform duration-500 shadow-[0_0_30px_rgba(243,255,202,0.3)]">
+<img class="w-full h-full object-cover" data-alt="Professional athlete female with high ponytail and intense focus, sweating during training session" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJGYzTF-RUsQOoqZVp64U7GAHpeAWmYo4WwpcbgbxAKbl-1quhE6EKtSGKBCOLweeC90k62katKOkjixVD5eGZCcy3gv3yUhgBM20z1WWC9bphLDFX56tNENcQ61hOk1gtRMXnnE5xGDpnKDyJDaxI92fFvvmA2TVz8slrnkIy338EYursEDKvnat_28SMArzzyr0-H5InMs6IygUxCCfpVwI7bgxEMvkwJc3eTgL_GkUJSwIzazfbxJuFV7bxYIwebkottdkDvw"/>
+</div>
+<div class="absolute -bottom-2 -right-1 bg-primary text-black text-xs font-black px-2 py-0.5 rounded-full">1</div>
+</div>
+<div class="w-full bg-gradient-to-t from-primary-container/20 to-primary-container/40 rounded-t-xl p-4 text-center h-48 md:h-60 flex flex-col justify-end border-x border-t border-primary/20">
+<span class="font-headline font-bold text-sm md:text-base truncate uppercase mb-1 text-primary">Sarah Kinetic</span>
+<span class="font-headline font-black text-3xl md:text-4xl text-primary">12,850</span>
+</div>
+</div>
+<!-- 3rd Place -->
+<div class="flex flex-col items-center group">
+<div class="relative mb-4">
+<div class="w-14 h-14 md:w-20 md:h-20 rounded-full overflow-hidden border-4 border-orange-800 group-hover:scale-110 transition-transform duration-500">
+<img class="w-full h-full object-cover" data-alt="Young man with a friendly smile wearing athletic gear, bright natural outdoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUrOpH0lGgMcOfs47qpXAOKdiqVj8SnOL9DdFxTKGpWR6-bbm5ws0s4mby_aZ2PKG6AO1PPvK01JQe8CCYFlMWDUawtK037dOOPlc_1_jAghP6SlOHEXCnV9C9zHUlZ7NPBIjItxu67yfeLqdTdS1cxoQ_sGklS117PiXrjHPqX_BfSXofW9P0erkEnAlDCfVP35kBSZkX4pH8VqeEr1OWBSKS1Su2DHBjPGhRxHeIlR57BrPOXETkdLmwVWCpdSKDppzIvwmZHA"/>
+</div>
+<div class="absolute -bottom-2 -right-1 bg-orange-800 text-white text-xs font-black px-2 py-0.5 rounded-full">3</div>
+</div>
+<div class="w-full bg-surface-container-low rounded-t-xl p-4 text-center h-24 md:h-32 flex flex-col justify-end">
+<span class="font-headline font-bold text-xs md:text-sm truncate uppercase mb-1">Leo Vance</span>
+<span class="font-headline font-black text-lg md:text-xl text-orange-200">7,100</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Leaderboard List -->
+<section class="space-y-3">
+<div class="flex items-center justify-between px-2 mb-6">
+<h3 class="font-headline font-bold text-lg uppercase tracking-widest text-on-surface-variant">Team Pulse</h3>
+<div class="flex gap-2">
+<span class="bg-surface-container-high px-3 py-1 rounded-full text-[10px] font-black uppercase text-primary border border-primary/10">Weekly</span>
+<span class="bg-surface-container-lowest px-3 py-1 rounded-full text-[10px] font-black uppercase text-zinc-500">All-Time</span>
+</div>
+</div>
+<!-- List Item 4 -->
+<div class="bg-surface-container-low hover:bg-surface-container rounded-lg p-4 flex items-center gap-4 transition-all duration-300 group border-l-4 border-transparent hover:border-primary">
+<span class="font-headline font-black text-zinc-600 group-hover:text-primary transition-colors w-6">04</span>
+<div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Young woman with braids smiling warmly in an athletic setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsm9Hu-pgK2LMbFf1oF1R3sWhiTdd96onBO20Fy7u6_GqQBO6-2ECDmGRIED9aYrUvVT6BaThUAG2408kwS1elKcjmZhB8kSMYubeBYHFOWMP8d-zvSQ6WVNJIdDa_Qt6KrCVVo68l8lb6Xk1pbktvF6zkwsABgbRgt8qZKAHHrdniKuHhwNbCMDzZBLPoKrEeyA2K48w6KEbxVKIv60O_W-oV6DXHO5J-vFn9Krne2o6JYeELfoN_8V-lHMbZ24uNaGDmwqnGyg"/>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-2">
+<h4 class="font-headline font-bold text-sm md:text-base uppercase">Jordan Rivers</h4>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<p class="font-body text-xs text-on-surface-variant">6,840 pts • 4 day streak</p>
+</div>
+<button class="bg-surface-container-high hover:bg-primary hover:text-black px-4 py-2 rounded-full transition-all duration-300 flex items-center gap-2 group/btn">
+<span class="material-symbols-outlined text-sm group-hover/btn:animate-bounce" data-icon="celebration">celebration</span>
+<span class="font-headline font-black text-[10px] uppercase">Cheer</span>
+</button>
+</div>
+<!-- List Item 5 -->
+<div class="bg-surface-container-low hover:bg-surface-container rounded-lg p-4 flex items-center gap-4 transition-all duration-300 group border-l-4 border-transparent hover:border-primary">
+<span class="font-headline font-black text-zinc-600 group-hover:text-primary transition-colors w-6">05</span>
+<div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up of a man with determined eyes and short hair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCToVkuWyz1dtJNCKAwmnqobHBGAoeGo5Rpo3Va2LPqKoG6Wa_rCzJh6WnPBiTuapqlmm-HDV8uFPTYjvt6Qnc9AouhGdVu9zFFz05AwZxZCChsOAa7lf-sK5qHkYbg2dGQWjqm_wHWHLKj4TpErvLI1Tffd7Dxq0mUklNzIEFZAjtKXHf0hKnB1WVAUEjuCXP4iDJhgwYnKytFcUzwlZh17w807XbZHjsOpTKLl-L7woG_oLWGqEH0R9ytNVavC9693Cf9JhyKfA"/>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-2">
+<h4 class="font-headline font-bold text-sm md:text-base uppercase">Alex Kinetic</h4>
+<span class="bg-primary/20 text-primary text-[8px] font-black px-1.5 py-0.5 rounded uppercase">Pro</span>
+</div>
+<p class="font-body text-xs text-on-surface-variant">5,210 pts • New Personal Record</p>
+</div>
+<button class="bg-surface-container-high hover:bg-primary hover:text-black px-4 py-2 rounded-full transition-all duration-300 flex items-center gap-2 group/btn">
+<span class="material-symbols-outlined text-sm group-hover/btn:animate-bounce" data-icon="celebration">celebration</span>
+<span class="font-headline font-black text-[10px] uppercase">Cheer</span>
+</button>
+</div>
+<!-- List Item 6 -->
+<div class="bg-surface-container-low hover:bg-surface-container rounded-lg p-4 flex items-center gap-4 transition-all duration-300 group border-l-4 border-transparent hover:border-primary">
+<span class="font-headline font-black text-zinc-600 group-hover:text-primary transition-colors w-6">06</span>
+<div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Woman with short blonde hair looking directly at camera with a slight smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC64YhzYDthCaUcGFfd50EDBVMSQfgY2GzvYHqvR59QJy91YQWHHgkKdBYXuoRT2jxc6ZlCJfFobdOI3Js8sXowhEEUY9CnC75t2CT6zKMar_FXk-ioG1M-Pdoa6SmR2nSWus2wRDkozUrsXokh-MxEoln6mW3AHZImmuGsUplLJ1wa4jcP2thj-GsY5pRVXaYOW2cNMzDWZuDLOfpBI401J2ds8OpalaZsNoC7fDs3t7UzvLnEwu1U2z6cuH3vYgvqE5vLAHua1g"/>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-2">
+<h4 class="font-headline font-bold text-sm md:text-base uppercase">Mia Sol</h4>
+</div>
+<p class="font-body text-xs text-on-surface-variant">4,900 pts • Just finished: HIIT Core</p>
+</div>
+<button class="bg-surface-container-high hover:bg-primary hover:text-black px-4 py-2 rounded-full transition-all duration-300 flex items-center gap-2 group/btn">
+<span class="material-symbols-outlined text-sm group-hover/btn:animate-bounce" data-icon="celebration">celebration</span>
+<span class="font-headline font-black text-[10px] uppercase">Cheer</span>
+</button>
+</div>
+<!-- List Item 7 (The User Highlight) -->
+<div class="bg-primary/5 hover:bg-primary/10 rounded-lg p-4 flex items-center gap-4 transition-all duration-300 group border border-primary/20">
+<span class="font-headline font-black text-primary w-6">24</span>
+<div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 border-2 border-primary">
+<img class="w-full h-full object-cover" data-alt="User profile photo of a smiling woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-gVeHLEEXjwF098hs_gyvVoVXiTdFkMeTZ71OVzRl36_98z6wID46Ep-2ASdOFy65Tii2nA6Ylnm7jSkrbu8DAcUNp3Qqu7EdMuJ3SAxaoPIxb2byBoIwMv0ZlET3yCc46_jdwFSR1ukjkjVah_oeS7gNsvxDBPIgRD_RWzUZdZO3lL_hMU5xMLfq_mhvSCFHF2dyIzpVf2N35YobB9r1qYzL_jZ3DFadC2of9xnGCjUaP8q0P5yhCJQLdf0CXwBM28P7MarOZw"/>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-2">
+<h4 class="font-headline font-bold text-sm md:text-base uppercase text-primary">You</h4>
+<span class="text-[10px] font-lexend font-black text-zinc-500 uppercase tracking-widest">Level 42</span>
+</div>
+<p class="font-body text-xs text-on-surface-variant">1,840 pts • Keep climbing!</p>
+</div>
+<div class="px-4 py-2 rounded-full bg-zinc-900 border border-zinc-800">
+<span class="font-headline font-black text-[10px] text-zinc-400 uppercase">Climbing</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-end px-4 pb-6 pt-2 bg-[#0e0e0e]/80 backdrop-blur-3xl docked full-width rounded-t-[3rem] shadow-[0_-12px_40px_rgba(243,255,202,0.06)] tonal-shift-bg-zinc-900">
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-200 px-4 py-2 hover:scale-105 transition-all duration-300 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="grid_view">grid_view</span>
+<span class="font-lexend text-[10px] font-bold uppercase tracking-widest">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-200 px-4 py-2 hover:scale-105 transition-all duration-300 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="fitness_center">fitness_center</span>
+<span class="font-lexend text-[10px] font-bold uppercase tracking-widest">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-200 px-4 py-2 hover:scale-105 transition-all duration-300 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="play_circle">play_circle</span>
+<span class="font-lexend text-[10px] font-bold uppercase tracking-widest">Train</span>
+</a>
+<!-- Active Tab: Social (Leaderboard) -->
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#f3ffca] to-[#cafd00] text-black rounded-full px-6 py-2 scale-110 -translate-y-2 shadow-lg shadow-[#cafd00]/20 transition-all duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="groups" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="font-lexend text-[10px] font-bold uppercase tracking-widest">Social</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-200 px-4 py-2 hover:scale-105 transition-all duration-300 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="monitoring">monitoring</span>
+<span class="font-lexend text-[10px] font-bold uppercase tracking-widest">Stats</span>
+</a>
+</nav>
+</body></html>

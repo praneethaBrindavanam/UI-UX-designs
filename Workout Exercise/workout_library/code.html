@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-dim": "#beee00",
+                        "primary": "#f3ffca",
+                        "background": "#0e0e0e",
+                        "secondary-fixed-dim": "#d6d4d3",
+                        "tertiary-dim": "#eaebec",
+                        "error-dim": "#d53d18",
+                        "on-secondary": "#525151",
+                        "on-surface": "#ffffff",
+                        "on-tertiary": "#5d5f60",
+                        "on-secondary-fixed": "#3f3f3f",
+                        "surface-container-lowest": "#000000",
+                        "outline-variant": "#484847",
+                        "on-error-container": "#ffd2c8",
+                        "inverse-surface": "#fcf9f8",
+                        "tertiary-fixed-dim": "#edeeef",
+                        "secondary": "#e4e2e1",
+                        "secondary-container": "#474747",
+                        "primary-container": "#cafd00",
+                        "surface-tint": "#f3ffca",
+                        "inverse-on-surface": "#565555",
+                        "surface-container": "#1a1a1a",
+                        "tertiary": "#f8f9fa",
+                        "primary-fixed-dim": "#beee00",
+                        "on-surface-variant": "#adaaaa",
+                        "on-tertiary-container": "#555758",
+                        "primary-fixed": "#cafd00",
+                        "surface-variant": "#262626",
+                        "on-primary-container": "#4a5e00",
+                        "secondary-fixed": "#e4e2e1",
+                        "surface-dim": "#0e0e0e",
+                        "inverse-primary": "#516700",
+                        "surface": "#0e0e0e",
+                        "error": "#ff7351",
+                        "tertiary-fixed": "#fbfcfd",
+                        "on-secondary-fixed-variant": "#5c5b5b",
+                        "outline": "#767575",
+                        "on-tertiary-fixed-variant": "#696c6d",
+                        "surface-container-low": "#131313",
+                        "on-primary": "#516700",
+                        "surface-bright": "#2c2c2c",
+                        "on-background": "#ffffff",
+                        "on-error": "#450900",
+                        "on-primary-fixed-variant": "#526900",
+                        "surface-container-high": "#20201f",
+                        "on-tertiary-fixed": "#4c4f50",
+                        "on-secondary-container": "#d2d0cf",
+                        "tertiary-container": "#eaebec",
+                        "error-container": "#b92902",
+                        "on-primary-fixed": "#3a4a00",
+                        "surface-container-highest": "#262626",
+                        "secondary-dim": "#d6d4d3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Lexend"],
+                        "body": ["Manrope"],
+                        "label": ["Lexend"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-glass {
+            background: rgba(38, 38, 38, 0.4);
+            backdrop-filter: blur(24px);
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(243, 255, 202, 0.3);
+            color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-6 py-4 w-full sticky top-0 z-50 bg-[#0e0e0e]/90 backdrop-blur-2xl">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-primary/20">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a fit person with sharp focus and cinematic lighting against a dark textured wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBg3CFZ9KAa-rps73N5C4Hwrc3XKxe0BluUHeANkGDuLysen9NsyQV_sIdcFaiwliHCOlX93BA0D6ZqAId_dqlFizrp9ITeaPeujTgnEvDLm63ka74zqHnXF6UU1XaaQBhB8cXpYhNqbFPYuNTQqteDRaN9jZYZ-nAYvVsi9v8htPiMLY1PVeW47GJP9-CGRwPaPsgSqJHE8ISegdsTlxE5BMj8d1zcqYjDBbLOu7IFJeY5L6zNQh5U26dc8p4Pw5_2TDDATv3-g"/>
+</div>
+</div>
+<h1 class="text-2xl font-headline font-black italic text-primary tracking-tighter uppercase">VITALITY</h1>
+<button class="text-primary hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" style="font-size: 28px;">notifications</span>
+</button>
+</header>
+<main class="pb-32 px-6 pt-4">
+<!-- Hero Section / Editorial Header -->
+<section class="relative mb-12">
+<div class="absolute -left-10 top-0 text-9xl font-headline font-black opacity-5 text-stroke select-none uppercase">LIBRARY</div>
+<h2 class="text-5xl md:text-7xl font-headline font-black text-primary leading-tight tracking-tighter mb-4 z-10 relative">
+                CHOOSE YOUR<br/>MOMENTUM
+            </h2>
+<p class="text-on-surface-variant font-body text-lg max-w-md">Curated session flows designed to shatter plateaus and redefine your physical limits.</p>
+</section>
+<!-- Category Horizontal Scroll -->
+<div class="flex gap-4 overflow-x-auto pb-8 no-scrollbar -mx-6 px-6">
+<button class="flex-shrink-0 bg-primary-container text-on-primary-container px-8 py-3 rounded-xl font-headline font-bold text-sm uppercase tracking-widest shadow-lg shadow-primary-container/20">
+                All Workouts
+            </button>
+<button class="flex-shrink-0 bg-surface-container text-on-surface-variant hover:text-primary px-8 py-3 rounded-xl font-headline font-bold text-sm uppercase tracking-widest transition-colors">
+                HIIT Blast
+            </button>
+<button class="flex-shrink-0 bg-surface-container text-on-surface-variant hover:text-primary px-8 py-3 rounded-xl font-headline font-bold text-sm uppercase tracking-widest transition-colors">
+                Zen Yoga
+            </button>
+<button class="flex-shrink-0 bg-surface-container text-on-surface-variant hover:text-primary px-8 py-3 rounded-xl font-headline font-bold text-sm uppercase tracking-widest transition-colors">
+                Iron Strength
+            </button>
+</div>
+<!-- Bento Grid Workout Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Featured Card: HIIT Blast -->
+<div class="group relative aspect-[4/5] overflow-hidden rounded-lg bg-surface-container-low transition-transform duration-500 hover:scale-[0.98]">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10"></div>
+<img alt="HIIT Blast" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="dynamic shot of an athlete mid-jump during a high intensity interval workout in a moody industrial gym with neon highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl210NWksxe0s3T49Yw7APEt2MHNW4e_AtCiq3sgjzQCo5RFm9kVPIsqpYWlgX6ZhB-LMxvIlgP3hQgmIvr5TSF70tF8r_TEV31tbBY_oZwZ6sb6hRseg5mZq5jQ3yIBX0WrFbuVLIWu5eQbE2cW5poVQEPL-bTvAHhKJVDd664kPg8XJD7BdJr7BwUypOreUFmWQ9_pt8JRlfrdlqFNppssCk8dUvOFkXz3T3zryHAo19aPMjRcqXGut-eEkW-ZDhbl0TtKlZxA"/>
+<div class="absolute bottom-0 left-0 p-8 z-20 w-full">
+<div class="flex justify-between items-end">
+<div>
+<span class="inline-block bg-primary text-on-primary font-headline font-black text-[10px] px-3 py-1 rounded-full uppercase mb-4 tracking-tighter">HIIT Blast</span>
+<h3 class="text-4xl font-headline font-black text-white leading-none mb-2">METABOLIC<br/>EXPLOSION</h3>
+<div class="flex items-center gap-4 text-on-surface-variant font-label text-xs uppercase tracking-widest">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 24 MIN</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">bolt</span> HARD</span>
+</div>
+</div>
+<button class="w-14 h-14 bg-primary text-black rounded-full flex items-center justify-center hover:scale-110 transition-transform active:scale-95 shadow-xl shadow-primary/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card: Zen Yoga -->
+<div class="group relative aspect-[4/5] overflow-hidden rounded-lg bg-surface-container-low transition-transform duration-500 hover:scale-[0.98]">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10"></div>
+<img alt="Zen Yoga" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="serene person practicing yoga in a bright minimalist studio with soft morning sunlight creating long shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUmi6q9dVdfC1nWMQ4tEvsIVSyE0sp0E5qT-dCF6IKqfplo3QiDmaI87W7SY62-fojOczr14hf5-U0tCGvyOdBYew4VNq77we2HN6uiWYWbN3n6Jdu0mu_qxZRp0tgaEHaRyf0P5Q9JaA6sWMqqT3xbmkXVAocoGfFNGoiMmGmlP2oS2IELF7Q9Q40ZHY5_6jWFKY-nYBKHMWS1uxLppeb2nlL25m2v3piyqWGDQpmRhOOT4aaQ10PPVfB0NZEBImcfjPEHs8Y7w"/>
+<div class="absolute bottom-0 left-0 p-8 z-20 w-full">
+<div class="flex justify-between items-end">
+<div>
+<span class="inline-block bg-white text-black font-headline font-black text-[10px] px-3 py-1 rounded-full uppercase mb-4 tracking-tighter">Zen Yoga</span>
+<h3 class="text-4xl font-headline font-black text-white leading-none mb-2">FLUID<br/>EQUILIBRIUM</h3>
+<div class="flex items-center gap-4 text-on-surface-variant font-label text-xs uppercase tracking-widest">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 45 MIN</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">bolt</span> MODERATE</span>
+</div>
+</div>
+<button class="w-14 h-14 bg-white text-black rounded-full flex items-center justify-center hover:scale-110 transition-transform active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card: Iron Strength -->
+<div class="group relative aspect-[4/5] overflow-hidden rounded-lg bg-surface-container-low transition-transform duration-500 hover:scale-[0.98]">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10"></div>
+<img alt="Iron Strength" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="close-up of hands gripping a heavy barbell with chalk dust in the air, intense low-key lighting focused on muscle tension" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFBzGgmAakimuso2xAL0A1E6afczAuGbwxn-dgecmvTLmoF5ljvyB5q5vx30Vx2yBpDO7W2Kr6mqWm0qAJMp7xrNECAUWqazo47GwxCRRsh9kDCRDiZuVZYLEUwRURnLHu6cAXnMATpOdhqVg53xIbQ5OjqP1iJCo9yuimKffX5vR9suxi1p371h7cbob5KKlYM33yL8dCxeC7EDJwIF_NJ38EIN0FoZRlPXhyaArVeBJgtAsQNmO67kWA2IvHPYYa0K850ztn5g"/>
+<div class="absolute bottom-0 left-0 p-8 z-20 w-full">
+<div class="flex justify-between items-end">
+<div>
+<span class="inline-block bg-primary-container text-on-primary-container font-headline font-black text-[10px] px-3 py-1 rounded-full uppercase mb-4 tracking-tighter">Iron Strength</span>
+<h3 class="text-4xl font-headline font-black text-white leading-none mb-2">POWER<br/>THRESHOLD</h3>
+<div class="flex items-center gap-4 text-on-surface-variant font-label text-xs uppercase tracking-widest">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 50 MIN</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">bolt</span> ELITE</span>
+</div>
+</div>
+<button class="w-14 h-14 bg-primary-container text-black rounded-full flex items-center justify-center hover:scale-110 transition-transform active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card: Quick Cardio -->
+<div class="group relative aspect-[4/5] overflow-hidden rounded-lg bg-surface-container-low transition-transform duration-500 hover:scale-[0.98]">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10"></div>
+<img alt="Quick Cardio" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="man running through urban streets at dusk with motion blur and glowing city lights in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD5GhSA1YcXL93bkLQFjOk5yBs8H8q-XkebEs-fmWHuJGT8ThNOI_TVtZwF-BXViSC-kKdjVlMMfj3ZPkgdjT0OvZU2svMog_Ae1SfhxJHCqhc0AlT_IdWLnkfElrvzmerZqP2LOGIA6O6QsDTuG2bXRbYenJL-JOBOtfGlZ_9yHrSrOSQR3mGRtjMquUrz9EOvA8F8gy-Vfn6L3KGzKwiirJKMxH0yTw7FLwCL2_wuFKIJU3pF_wcLr2QcuGb2S85lZpvwrUv1g"/>
+<div class="absolute bottom-0 left-0 p-8 z-20 w-full">
+<div class="flex justify-between items-end">
+<div>
+<span class="inline-block bg-secondary text-on-secondary font-headline font-black text-[10px] px-3 py-1 rounded-full uppercase mb-4 tracking-tighter">Quick Cardio</span>
+<h3 class="text-4xl font-headline font-black text-white leading-none mb-2">URBAN<br/>SPRINT</h3>
+<div class="flex items-center gap-4 text-on-surface-variant font-label text-xs uppercase tracking-widest">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 15 MIN</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">bolt</span> EASY</span>
+</div>
+</div>
+<button class="w-14 h-14 bg-secondary text-black rounded-full flex items-center justify-center hover:scale-110 transition-transform active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-end px-4 pb-6 pt-2 bg-[#0e0e0e]/80 backdrop-blur-3xl rounded-t-[3rem] shadow-[0_-12px_40px_rgba(243,255,202,0.06)]">
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-200 px-4 py-2 transition-all duration-300 hover:scale-105 active:scale-90">
+<span class="material-symbols-outlined text-2xl mb-1">grid_view</span>
+<span class="font-headline text-[10px] font-bold uppercase tracking-widest">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-gradient-to-br from-[#f3ffca] to-[#cafd00] text-black rounded-full px-6 py-2 scale-110 -translate-y-2 shadow-lg shadow-[#cafd00]/20 transition-transform">
+<span class="material-symbols-outlined text-2xl mb-1">fitness_center</span>
+<span class="font-headline text-[10px] font-bold uppercase tracking-widest">Library</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-200 px-4 py-2 transition-all duration-300 hover:scale-105 active:scale-90">
+<span class="material-symbols-outlined text-2xl mb-1">play_circle</span>
+<span class="font-headline text-[10px] font-bold uppercase tracking-widest">Train</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-200 px-4 py-2 transition-all duration-300 hover:scale-105 active:scale-90">
+<span class="material-symbols-outlined text-2xl mb-1">groups</span>
+<span class="font-headline text-[10px] font-bold uppercase tracking-widest">Social</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-200 px-4 py-2 transition-all duration-300 hover:scale-105 active:scale-90">
+<span class="material-symbols-outlined text-2xl mb-1">monitoring</span>
+<span class="font-headline text-[10px] font-bold uppercase tracking-widest">Stats</span>
+</div>
+</nav>
+</body></html>

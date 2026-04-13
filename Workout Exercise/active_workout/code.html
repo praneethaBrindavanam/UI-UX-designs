@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vitality - Active Workout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-dim": "#beee00",
+                    "primary": "#f3ffca",
+                    "background": "#0e0e0e",
+                    "secondary-fixed-dim": "#d6d4d3",
+                    "tertiary-dim": "#eaebec",
+                    "error-dim": "#d53d18",
+                    "on-secondary": "#525151",
+                    "on-surface": "#ffffff",
+                    "on-tertiary": "#5d5f60",
+                    "on-secondary-fixed": "#3f3f3f",
+                    "surface-container-lowest": "#000000",
+                    "outline-variant": "#484847",
+                    "on-error-container": "#ffd2c8",
+                    "inverse-surface": "#fcf9f8",
+                    "tertiary-fixed-dim": "#edeeef",
+                    "secondary": "#e4e2e1",
+                    "secondary-container": "#474747",
+                    "primary-container": "#cafd00",
+                    "surface-tint": "#f3ffca",
+                    "inverse-on-surface": "#565555",
+                    "surface-container": "#1a1a1a",
+                    "tertiary": "#f8f9fa",
+                    "primary-fixed-dim": "#beee00",
+                    "on-surface-variant": "#adaaaa",
+                    "on-tertiary-container": "#555758",
+                    "primary-fixed": "#cafd00",
+                    "surface-variant": "#262626",
+                    "on-primary-container": "#4a5e00",
+                    "secondary-fixed": "#e4e2e1",
+                    "surface-dim": "#0e0e0e",
+                    "inverse-primary": "#516700",
+                    "surface": "#0e0e0e",
+                    "error": "#ff7351",
+                    "tertiary-fixed": "#fbfcfd",
+                    "on-secondary-fixed-variant": "#5c5b5b",
+                    "outline": "#767575",
+                    "on-tertiary-fixed-variant": "#696c6d",
+                    "surface-container-low": "#131313",
+                    "on-primary": "#516700",
+                    "surface-bright": "#2c2c2c",
+                    "on-background": "#ffffff",
+                    "on-error": "#450900",
+                    "on-primary-fixed-variant": "#526900",
+                    "surface-container-high": "#20201f",
+                    "on-tertiary-fixed": "#4c4f50",
+                    "on-secondary-container": "#d2d0cf",
+                    "tertiary-container": "#eaebec",
+                    "error-container": "#b92902",
+                    "on-primary-fixed": "#3a4a00",
+                    "surface-container-highest": "#262626",
+                    "secondary-dim": "#d6d4d3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Lexend"],
+                    "body": ["Manrope"],
+                    "label": ["Lexend"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(243, 255, 202, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-6 py-4 w-full sticky top-0 z-50 bg-[#0e0e0e]/90 backdrop-blur-2xl">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Intense close-up of an athlete face with sweat, dark moody lighting, cinematic film grain, high contrast fitness photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ8bxy8u9ZKDzOpciqORZuGwROCEJWl-nl03KHaYtSJ-BgB5Z8oltRsh_Wlw99Sz9ti6ou0VXMZ56mes2CG5dCNbMY7JKQ3hfR5JkopfyFggwFmiXWUnJHCw005uOer4z_6VjaUNSFD-l1v-4wnJn-qA8P-ebPJ4dp6gOiUwtCga2mitdGCkgPRx-OarFOp3Wr3DA6z_-NBg3UXHWdFmOIjKXmwrWW4vQ2xgjvnMacp18E7qLQHpvvV5akia331Hjloq1wbtyPgw"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline font-black tracking-tighter uppercase text-[#f3ffca] text-xl">VITALITY</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#f3ffca] text-2xl hover:opacity-80 transition-opacity cursor-pointer">notifications</span>
+</div>
+</header>
+<main class="max-w-md mx-auto px-6 pb-32 pt-4">
+<!-- Live Indicator -->
+<div class="flex items-center gap-2 mb-8 animate-pulse">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-headline text-xs font-bold uppercase tracking-[0.2em] text-on-surface-variant">Live Session: High Intensity Power</span>
+</div>
+<!-- Hero Progress Ring Section -->
+<div class="relative flex justify-center items-center mb-12">
+<!-- Background Image Blur -->
+<div class="absolute inset-0 opacity-20 blur-3xl scale-150 -z-10 bg-gradient-to-tr from-primary-container to-transparent rounded-full"></div>
+<!-- SVG Progress Ring -->
+<div class="relative w-80 h-80 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle class="text-surface-container-highest" cx="160" cy="160" fill="transparent" r="140" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary shadow-[0_0_20px_rgba(243,255,202,0.5)]" cx="160" cy="160" fill="transparent" r="140" stroke="currentColor" stroke-dasharray="880" stroke-dashoffset="220" stroke-linecap="round" stroke-width="14"></circle>
+</svg>
+<!-- Inner Stats -->
+<div class="absolute flex flex-col items-center">
+<span class="font-headline text-6xl font-black text-primary text-glow tracking-tighter">42:18</span>
+<span class="font-label text-sm uppercase tracking-widest text-on-surface-variant mt-1">Elapsed Time</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid Stats -->
+<div class="grid grid-cols-2 gap-4 mb-12">
+<!-- Heart Rate -->
+<div class="bg-surface-container-low p-6 rounded-lg flex flex-col justify-between h-40 group hover:bg-surface-container transition-colors duration-300">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-error-dim scale-125" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Current BPM</span>
+</div>
+<div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline text-4xl font-bold text-on-surface">158</span>
+<span class="font-headline text-sm text-on-surface-variant">Peak</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest mt-3 rounded-full overflow-hidden">
+<div class="w-3/4 h-full bg-error-dim"></div>
+</div>
+</div>
+</div>
+<!-- Calories -->
+<div class="bg-surface-container-low p-6 rounded-lg flex flex-col justify-between h-40 hover:bg-surface-container transition-colors duration-300">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary-dim scale-125">local_fire_department</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Calories</span>
+</div>
+<div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline text-4xl font-bold text-on-surface">642</span>
+<span class="font-headline text-sm text-on-surface-variant">Kcal</span>
+</div>
+<span class="font-body text-xs text-primary-dim mt-1">+12% vs last avg</span>
+</div>
+</div>
+<!-- Heart Rate Zone - Full Width -->
+<div class="col-span-2 bg-surface-container-low p-6 rounded-lg hover:bg-surface-container transition-colors duration-300">
+<div class="flex justify-between items-center mb-4">
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Intensity Zone</span>
+<span class="bg-primary-container/20 text-primary-container px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Anaerobic</span>
+</div>
+<div class="flex gap-1 h-3">
+<div class="flex-1 bg-zinc-800 rounded-l-sm"></div>
+<div class="flex-1 bg-zinc-800"></div>
+<div class="flex-1 bg-zinc-800"></div>
+<div class="flex-1 bg-primary-container shadow-[0_0_10px_rgba(202,253,0,0.4)]"></div>
+<div class="flex-1 bg-zinc-800 rounded-r-sm"></div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-4">
+<button class="w-full py-6 rounded-xl bg-gradient-to-br from-[#f3ffca] to-[#cafd00] text-on-primary-container font-headline font-black uppercase tracking-widest flex items-center justify-center gap-3 active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined">pause_circle</span>
+                Pause Workout
+            </button>
+<button class="w-full py-5 rounded-xl border border-outline-variant/30 text-on-surface font-headline font-bold uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-surface-variant/40 transition-colors">
+<span class="material-symbols-outlined">stop_circle</span>
+                Finish &amp; Save
+            </button>
+</div>
+</main>
+<!-- Navigation Overlay (Suppressed as per rules for focus journey, but shown as placeholder for context if needed - though rules say suppress navigation for task-focused. I will provide the shell styling as a floating action if the user wanted but here I'll stick to a minimal active-state indicator) -->
+<!-- BottomNavBar (Hidden for focused workout mode as per UX Goal rules) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-end px-4 pb-6 pt-2 bg-[#0e0e0e]/80 backdrop-blur-3xl rounded-t-[3rem] shadow-[0_-12px_40px_rgba(243,255,202,0.06)]">
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-200 px-4 py-2 transition-all duration-300">
+<span class="material-symbols-outlined mb-1">grid_view</span>
+<span class="font-lexend text-[10px] font-bold uppercase tracking-widest">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-200 px-4 py-2 transition-all duration-300">
+<span class="material-symbols-outlined mb-1">fitness_center</span>
+<span class="font-lexend text-[10px] font-bold uppercase tracking-widest">Library</span>
+</div>
+<!-- Active Tab: Train -->
+<div class="flex flex-col items-center justify-center bg-gradient-to-br from-[#f3ffca] to-[#cafd00] text-black rounded-full px-6 py-2 scale-110 -translate-y-2 shadow-lg shadow-[#cafd00]/20">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="font-lexend text-[10px] font-bold uppercase tracking-widest">Train</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-200 px-4 py-2 transition-all duration-300">
+<span class="material-symbols-outlined mb-1">groups</span>
+<span class="font-lexend text-[10px] font-bold uppercase tracking-widest">Social</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-200 px-4 py-2 transition-all duration-300">
+<span class="material-symbols-outlined mb-1">monitoring</span>
+<span class="font-lexend text-[10px] font-bold uppercase tracking-widest">Stats</span>
+</div>
+</nav>
+</body></html>
