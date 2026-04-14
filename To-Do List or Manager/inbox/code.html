@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inbox - Command Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#3a485c",
+                    "on-surface-variant": "#454652",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#131b2e",
+                    "secondary-container": "#d5e3fd",
+                    "surface-container": "#eaedff",
+                    "surface-container-highest": "#dae2fd",
+                    "inverse-surface": "#283044",
+                    "surface-variant": "#dae2fd",
+                    "on-primary-container": "#8d8aff",
+                    "on-tertiary-fixed-variant": "#004c6e",
+                    "on-background": "#131b2e",
+                    "on-secondary-fixed": "#0d1c2f",
+                    "on-tertiary-fixed": "#001e2f",
+                    "on-primary-fixed": "#0f0069",
+                    "tertiary-fixed": "#c9e6ff",
+                    "surface": "#faf8ff",
+                    "tertiary": "#001d2e",
+                    "outline-variant": "#c6c5d4",
+                    "surface-bright": "#faf8ff",
+                    "inverse-primary": "#c3c0ff",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "inverse-on-surface": "#eef0ff",
+                    "tertiary-fixed-dim": "#89ceff",
+                    "tertiary-container": "#00334c",
+                    "primary-fixed": "#e2dfff",
+                    "primary": "#0e0068",
+                    "on-primary": "#ffffff",
+                    "on-secondary-container": "#57657b",
+                    "secondary-fixed": "#d5e3fd",
+                    "secondary-fixed-dim": "#b9c7e0",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#e2e7ff",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f2f3ff",
+                    "on-tertiary-container": "#00a1e4",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "background": "#faf8ff",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#4d44e3",
+                    "secondary": "#515f74",
+                    "primary-container": "#1d00a4",
+                    "surface-dim": "#d2d9f4",
+                    "outline": "#767683"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface min-h-screen">
+<nav class="bg-[#faf8ff] dark:bg-[#001d2e] font-manrope tracking-tight font-bold text-on-surface docked full-width top-0 no-border tonal-shift bg-[#f2f3ff] dark:bg-[#002a41] flat-no-shadows flex justify-between items-center px-6 py-4 w-full sticky z-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a professional woman with a confident smile in a bright airy studio environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaTax1rO07ucJqd_3ADfj0jrNXLwlBJHegTIPHfXaONT1XT5IFAcXL_rjj_tkOd8eV5RDuTECR9_SP8i1ye96lN2gclaSrPXpZcLROV06H3TEK6-9kKMhfTAmoGlWM-JiydZxNFZhLJBAKueMo-j3U8krknHdNx2ZWWskD8Zf1mEmOodxhaqUwEqQTlwU9jFQdw1T70TCQ0kHfDYnJUz4VVDL2Ame_gzUI0rDpxPtwF-oAM-dswOD5kzQEzloBEbqiiL0yeW-NGhA8"/>
+</div>
+<span class="text-xl font-bold tracking-tighter text-[#0e0068] dark:text-[#dae2fd]">Command Center</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-8">
+<a class="text-[#57657b] dark:text-[#c6c5d4] hover:opacity-80 transition-opacity text-sm font-semibold" href="#">Dashboard</a>
+<a class="text-[#57657b] dark:text-[#c6c5d4] hover:opacity-80 transition-opacity text-sm font-semibold" href="#">Projects</a>
+<a class="text-[#4d44e3] dark:text-[#00a1e4] hover:opacity-80 transition-opacity text-sm font-semibold" href="#">Inbox</a>
+<a class="text-[#57657b] dark:text-[#c6c5d4] hover:opacity-80 transition-opacity text-sm font-semibold" href="#">Settings</a>
+</div>
+<button class="active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[#0e0068] dark:text-[#dae2fd]">search</span>
+</button>
+</div>
+</nav>
+<main class="max-w-4xl mx-auto px-6 pt-12 pb-32">
+<header class="mb-12">
+<h1 class="font-headline text-4xl font-extrabold tracking-tight text-on-surface mb-2">Inbox</h1>
+<p class="text-on-surface-variant font-medium opacity-70">Capture thoughts and process incoming requests.</p>
+</header>
+<section class="mb-16">
+<div class="bg-surface-container-lowest p-1 rounded-2xl shadow-[0_-8px_24px_rgba(19,27,46,0.04)] ring-1 ring-outline-variant/10">
+<div class="flex items-center p-4 gap-4">
+<span class="material-symbols-outlined text-primary/40 text-3xl">add_circle</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-xl font-medium placeholder:text-outline-variant text-on-surface" placeholder="Quick capture: press enter to save..." type="text"/>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-surface-container rounded-xl transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">schedule</span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-xl transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">label</span>
+</button>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-xl font-bold active:scale-95 transition-all shadow-lg shadow-primary/20">
+                            Capture
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<section class="space-y-8">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-headline text-xl font-bold text-on-surface-variant">Unorganized Items (4)</h2>
+<div class="flex gap-2">
+<button class="text-on-primary-fixed-variant font-semibold text-sm hover:underline">Batch Archive</button>
+</div>
+</div>
+<div class="space-y-4">
+<div class="group relative overflow-hidden bg-surface-container-low rounded-2xl transition-all hover:bg-surface-container-high border-l-4 border-surface-tint">
+<div class="p-6 flex items-center justify-between">
+<div class="flex gap-5 items-center">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-surface-tint">mail</span>
+</div>
+<div>
+<h3 class="font-semibold text-lg text-on-surface">Follow up with Sarah about the Q4 projections</h3>
+<p class="text-sm text-on-surface-variant mt-1">From: sarah.j@tech-nexus.com • 2h ago</p>
+</div>
+</div>
+<div class="flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-10 h-10 rounded-full bg-on-tertiary-container/10 flex items-center justify-center text-on-tertiary-container hover:bg-on-tertiary-container/20 transition-colors">
+<span class="material-symbols-outlined">tactic</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-error-container/10 flex items-center justify-center text-error hover:bg-error-container/20 transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group relative overflow-hidden bg-surface-container-low rounded-2xl transition-all hover:bg-surface-container-high">
+<div class="p-6 flex items-center justify-between">
+<div class="flex gap-5 items-center">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-surface-tint">sticky_note_2</span>
+</div>
+<div>
+<h3 class="font-semibold text-lg text-on-surface">Research micro-interaction trends for dashboard</h3>
+<p class="text-sm text-on-surface-variant mt-1">Manual Entry • 4h ago</p>
+</div>
+</div>
+<div class="flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-10 h-10 rounded-full bg-on-tertiary-container/10 flex items-center justify-center text-on-tertiary-container hover:bg-on-tertiary-container/20 transition-colors">
+<span class="material-symbols-outlined">tactic</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-error-container/10 flex items-center justify-center text-error hover:bg-error-container/20 transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group relative overflow-hidden bg-surface-container-low rounded-2xl transition-all hover:bg-surface-container-high border-l-4 border-on-tertiary-container/30">
+<div class="p-6 flex items-center justify-between">
+<div class="flex gap-5 items-center">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-surface-tint">voice_chat</span>
+</div>
+<div>
+<h3 class="font-semibold text-lg text-on-surface">Voice memo: "Review the API documentation for Auth0 integration"</h3>
+<p class="text-sm text-on-secondary-fixed-variant mt-1">Transcribed • 6h ago</p>
+</div>
+</div>
+<div class="flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-10 h-10 rounded-full bg-on-tertiary-container/10 flex items-center justify-center text-on-tertiary-container hover:bg-on-tertiary-container/20 transition-colors">
+<span class="material-symbols-outlined">tactic</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-error-container/10 flex items-center justify-center text-error hover:bg-error-container/20 transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group relative overflow-hidden bg-surface-container-low rounded-2xl transition-all hover:bg-surface-container-high">
+<div class="p-6 flex items-center justify-between">
+<div class="flex gap-5 items-center">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-surface-tint">link</span>
+</div>
+<div>
+<h3 class="font-semibold text-lg text-on-surface">https://www.uxdesign.cc/editorial-design-systems</h3>
+<p class="text-sm text-on-surface-variant mt-1">Clipped from Chrome • Yesterday</p>
+</div>
+</div>
+<div class="flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-10 h-10 rounded-full bg-on-tertiary-container/10 flex items-center justify-center text-on-tertiary-container hover:bg-on-tertiary-container/20 transition-colors">
+<span class="material-symbols-outlined">tactic</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-error-container/10 flex items-center justify-center text-error hover:bg-error-container/20 transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-primary/5 p-8 rounded-3xl border border-primary/5 flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h4 class="font-headline text-xl font-bold text-primary mb-2">Smart Organization</h4>
+<p class="text-sm text-on-primary-fixed-variant leading-relaxed">Let the Command Center AI categorize your inbox items into active projects automatically.</p>
+</div>
+<button class="mt-6 text-primary font-bold text-sm inline-flex items-center gap-2 hover:translate-x-1 transition-transform">
+                    Configure AI Logic <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="bg-secondary-container/30 p-8 rounded-3xl border border-secondary-container/20 flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">move_to_inbox</span>
+<h4 class="font-headline text-xl font-bold text-secondary mb-2">Clean Slate</h4>
+<p class="text-sm text-on-secondary-fixed-variant leading-relaxed">You've processed 12 items today. Only 4 more until you reach Inbox Zero.</p>
+</div>
+<div class="mt-6 h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-surface-tint w-3/4 rounded-full"></div>
+</div>
+</div>
+</div>
+</main>
+<footer class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#faf8ff]/70 dark:bg-[#001d2e]/70 backdrop-blur-xl z-50 md:hidden shadow-[0_-8px_24px_rgba(19,27,46,0.06)] border-t border-[#c6c5d4]/15">
+<a class="flex flex-col items-center justify-center text-[#57657b] dark:text-[#c6c5d4] px-5 py-2 hover:text-[#4d44e3] transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-inter text-[11px] font-medium tracking-wide">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#57657b] dark:text-[#c6c5d4] px-5 py-2 hover:text-[#4d44e3] transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">tactic</span>
+<span class="font-inter text-[11px] font-medium tracking-wide">Projects</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#dae2fd] dark:bg-[#004a77] text-[#0e0068] dark:text-[#dae2fd] rounded-2xl px-5 py-2 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inbox</span>
+<span class="font-inter text-[11px] font-medium tracking-wide">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#57657b] dark:text-[#c6c5d4] px-5 py-2 hover:text-[#4d44e3] transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-inter text-[11px] font-medium tracking-wide">Settings</span>
+</a>
+</footer>
+</body></html>

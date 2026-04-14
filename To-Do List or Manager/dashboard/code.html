@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#3a485c",
+                        "on-surface-variant": "#454652",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#131b2e",
+                        "secondary-container": "#d5e3fd",
+                        "surface-container": "#eaedff",
+                        "surface-container-highest": "#dae2fd",
+                        "inverse-surface": "#283044",
+                        "surface-variant": "#dae2fd",
+                        "on-primary-container": "#8d8aff",
+                        "on-tertiary-fixed-variant": "#004c6e",
+                        "on-background": "#131b2e",
+                        "on-secondary-fixed": "#0d1c2f",
+                        "on-tertiary-fixed": "#001e2f",
+                        "on-primary-fixed": "#0f0069",
+                        "tertiary-fixed": "#c9e6ff",
+                        "surface": "#faf8ff",
+                        "tertiary": "#001d2e",
+                        "outline-variant": "#c6c5d4",
+                        "surface-bright": "#faf8ff",
+                        "inverse-primary": "#c3c0ff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "inverse-on-surface": "#eef0ff",
+                        "tertiary-fixed-dim": "#89ceff",
+                        "tertiary-container": "#00334c",
+                        "primary-fixed": "#e2dfff",
+                        "primary": "#0e0068",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#57657b",
+                        "secondary-fixed": "#d5e3fd",
+                        "secondary-fixed-dim": "#b9c7e0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e2e7ff",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f2f3ff",
+                        "on-tertiary-container": "#00a1e4",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "background": "#faf8ff",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#4d44e3",
+                        "secondary": "#515f74",
+                        "primary-container": "#1d00a4",
+                        "surface-dim": "#d2d9f4",
+                        "outline": "#767683"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+        }
+        .bento-tall { grid-row: span 2; }
+        .bento-wide { grid-column: span 8; }
+        .bento-standard { grid-column: span 4; }
+        @media (max-width: 1024px) {
+            .editorial-grid { display: flex; flex-direction: column; }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed">
+<header class="bg-[#faf8ff] dark:bg-[#001d2e] flex justify-between items-center px-6 py-4 w-full sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a professional man with a neutral expression in a minimalist studio setting with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf0SqpY8QoAJhePZuI76NuIuC3R9Yf-l5zaxZElz6hT2pMi_L6BNpxpBSF_PfuOyF7saM0xChKh5kg6n9Xw9tRAYjD6-0fExm-kIp9wUfvPC4pmoEK4pfOOBFDLz-3CQ7DjeQzO9cX45lFrqUJgFSs7YLafOjN7qPfxCxKxnN7ZwCe_OKA1j7sxQb50zQTT-jKcDUiH5VHdfbkTNmlxL6dgyIeBiq-QN2A8js07PILLTxtTzcBHtUaSDii2YI3iRRkPCpPq7vg25GL"/>
+</div>
+<h1 class="text-xl font-bold tracking-tighter text-[#0e0068] dark:text-[#dae2fd] font-headline">Command Center</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#4d44e3] dark:text-[#00a1e4] font-bold transition-opacity hover:opacity-80" href="#">Dashboard</a>
+<a class="text-[#57657b] dark:text-[#c6c5d4] font-medium transition-opacity hover:opacity-80" href="#">Projects</a>
+<a class="text-[#57657b] dark:text-[#c6c5d4] font-medium transition-opacity hover:opacity-80" href="#">Inbox</a>
+<a class="text-[#57657b] dark:text-[#c6c5d4] font-medium transition-opacity hover:opacity-80" href="#">Settings</a>
+</nav>
+<button class="material-symbols-outlined text-[#0e0068] dark:text-[#dae2fd] active:scale-95 transition-transform" data-icon="search">search</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 py-12 pb-32">
+<section class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<p class="text-on-tertiary-container font-label text-sm font-semibold tracking-widest uppercase mb-2">Operational Overview</p>
+<h2 class="text-5xl font-extrabold font-headline tracking-tight text-on-surface">Hello, Architect.</h2>
+</div>
+<div class="flex gap-3">
+<button class="bg-surface-container-high text-on-secondary-container px-6 py-3 rounded-xl font-semibold hover:opacity-80 transition-opacity">Schedule Sync</button>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-3 rounded-xl font-semibold shadow-lg active:scale-95 transition-all">New Project</button>
+</div>
+</div>
+</section>
+<div class="editorial-grid">
+<div class="bento-wide space-y-8">
+<section class="bg-surface-container-lowest rounded-[2rem] p-8 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-64 h-64 bg-surface-container-highest/30 rounded-full -mr-20 -mt-20 blur-3xl group-hover:bg-primary-fixed/20 transition-colors duration-500"></div>
+<div class="relative z-10">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-2xl font-bold font-headline tracking-tight">Focus for Today</h3>
+<span class="text-on-tertiary-container font-semibold text-sm">3 Priorities Locked</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-6 p-6 bg-surface-container-low rounded-2xl hover:bg-surface-container-highest transition-colors cursor-pointer border-l-4 border-surface-tint">
+<span class="material-symbols-outlined text-surface-tint" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+<div class="flex-1">
+<h4 class="font-bold text-lg font-headline">Refine Design System Architecture</h4>
+<p class="text-on-secondary-container text-sm">Technical Editorial Theme implementation</p>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 bg-primary-fixed rounded-full">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-[10px] font-bold text-on-primary-fixed uppercase tracking-tighter">High</span>
+</div>
+</div>
+<div class="flex items-center gap-6 p-6 bg-surface-container-low rounded-2xl hover:bg-surface-container-highest transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-outline" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+<div class="flex-1">
+<h4 class="font-bold text-lg font-headline">Review Q3 Cognitive Load Report</h4>
+<p class="text-on-secondary-container text-sm">Dashboard performance analytics</p>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 bg-secondary-fixed rounded-full">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-[10px] font-bold text-on-secondary-fixed uppercase tracking-tighter">Med</span>
+</div>
+</div>
+<div class="flex items-center gap-6 p-6 bg-surface-container-low rounded-2xl hover:bg-surface-container-highest transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-outline" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+<div class="flex-1">
+<h4 class="font-bold text-lg font-headline">Synchronize with DevOps Flow</h4>
+<p class="text-on-secondary-container text-sm">Integration patterns for Command Center</p>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 bg-surface-container-highest rounded-full">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Low</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-low rounded-[2rem] p-8">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-2xl font-bold font-headline tracking-tight">Project Velocity</h3>
+<div class="flex gap-2">
+<span class="px-4 py-1 bg-surface-container-lowest rounded-full text-xs font-bold border border-outline-variant/15">Weekly</span>
+</div>
+</div>
+<div class="h-64 flex items-end justify-between gap-4 px-4">
+<div class="w-full bg-primary-container/10 rounded-t-xl h-[40%] relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-xl h-full transition-all group-hover:opacity-80"></div>
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">40%</span>
+</div>
+<div class="w-full bg-primary-container/10 rounded-t-xl h-[65%] relative group">
+<div class="absolute bottom-0 w-full bg-surface-tint rounded-t-xl h-full transition-all group-hover:opacity-80"></div>
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">65%</span>
+</div>
+<div class="w-full bg-primary-container/10 rounded-t-xl h-[85%] relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-xl h-full transition-all group-hover:opacity-80"></div>
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">85%</span>
+</div>
+<div class="w-full bg-primary-container/10 rounded-t-xl h-[55%] relative group">
+<div class="absolute bottom-0 w-full bg-surface-tint rounded-t-xl h-full transition-all group-hover:opacity-80"></div>
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">55%</span>
+</div>
+<div class="w-full bg-primary-container/10 rounded-t-xl h-[95%] relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-xl h-full transition-all group-hover:opacity-80"></div>
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">95%</span>
+</div>
+<div class="w-full bg-primary-container/10 rounded-t-xl h-[70%] relative group">
+<div class="absolute bottom-0 w-full bg-surface-tint rounded-t-xl h-full transition-all group-hover:opacity-80"></div>
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">70%</span>
+</div>
+</div>
+<div class="flex justify-between mt-4 px-4 text-[10px] font-bold text-on-secondary-container uppercase tracking-widest">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+</div>
+</section>
+</div>
+<div class="bento-standard space-y-8">
+<section class="bg-surface-container-highest rounded-[2rem] p-8 h-full">
+<h3 class="text-2xl font-bold font-headline tracking-tight mb-8">Critical Deadlines</h3>
+<div class="space-y-6">
+<div class="relative pl-6 border-l-2 border-error">
+<p class="text-[10px] font-bold text-error uppercase tracking-widest mb-1">In 2 Hours</p>
+<h4 class="font-bold text-on-surface">Client Feedback Loop</h4>
+<p class="text-sm text-on-secondary-container">System V4 Final Approval</p>
+</div>
+<div class="relative pl-6 border-l-2 border-on-tertiary-container">
+<p class="text-[10px] font-bold text-on-tertiary-container uppercase tracking-widest mb-1">Tomorrow</p>
+<h4 class="font-bold text-on-surface">Sprint Retrospective</h4>
+<p class="text-sm text-on-secondary-container">Internal Alignment Session</p>
+</div>
+<div class="relative pl-6 border-l-2 border-outline">
+<p class="text-[10px] font-bold text-on-secondary-container uppercase tracking-widest mb-1">Friday</p>
+<h4 class="font-bold text-on-surface">Quarterly Roadmap</h4>
+<p class="text-sm text-on-secondary-container">Strategic Planning Phase</p>
+</div>
+</div>
+<div class="mt-12 p-6 rounded-2xl bg-surface-container-lowest/50 backdrop-blur-sm border border-outline-variant/15">
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold uppercase tracking-widest">Current Load</span>
+<span class="text-xl font-bold font-headline">78%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-surface-tint w-[78%]"></div>
+</div>
+<p class="mt-4 text-xs text-on-secondary-container leading-relaxed">You are nearing optimal capacity. Consider delegating non-critical tasks.</p>
+</div>
+<div class="mt-8 rounded-2xl overflow-hidden aspect-square relative group">
+<img alt="Workspace" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="minimalist modern office interior with large windows, clean white desks, and architectural plants in bright morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnsyVn6oOIsk-vRozax0NuLz_f_zqfwH1RSPNi2fopTpOxqzLll_eFZEZFVxlAi5ONUVj-rJs8FgeLBOPw_sXtfH5Tw-tPkL1xZsqRXT3D2tjOgayGe1j5sOBvUM7kL4eldto1rY9iW1SjH6zD3MtYsk6NKRRWEc-RAsc6KzEIK4LV1P_Meg-szjWxtbDMvgcE2u-1GWHIYKMbG9GhVSlFeQrimQczzFrzN5aGwb283B02VQDdQ7Y9BpsoCoivCmpLAyf7K5MUVYg5"/>
+<div class="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<p class="text-on-primary font-headline font-bold text-lg">Focus Environment</p>
+<p class="text-on-primary/80 text-xs">Aesthetic Clarity leads to Mental Speed</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#faf8ff]/70 dark:bg-[#001d2e]/70 backdrop-blur-xl z-50 shadow-[0_-8px_24px_rgba(19,27,46,0.06)] md:hidden">
+<a class="flex flex-col items-center justify-center bg-[#dae2fd] dark:bg-[#004a77] text-[#0e0068] dark:text-[#dae2fd] rounded-2xl px-5 py-2 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-inter text-[11px] font-medium tracking-wide">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#57657b] dark:text-[#c6c5d4] px-5 py-2 hover:text-[#4d44e3] transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="tactic">tactic</span>
+<span class="font-inter text-[11px] font-medium tracking-wide">Projects</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#57657b] dark:text-[#c6c5d4] px-5 py-2 hover:text-[#4d44e3] transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="inbox">inbox</span>
+<span class="font-inter text-[11px] font-medium tracking-wide">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#57657b] dark:text-[#c6c5d4] px-5 py-2 hover:text-[#4d44e3] transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-inter text-[11px] font-medium tracking-wide">Settings</span>
+</a>
+</nav>
+</body></html>
