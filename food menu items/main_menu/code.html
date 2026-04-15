@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Nocturnal Curator | The Velvet Lounge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#2d3449",
+                    "background": "#0b1326",
+                    "error": "#ffb4ab",
+                    "primary": "#f2ca50",
+                    "surface-container-lowest": "#060e20",
+                    "secondary": "#ffb875",
+                    "surface-container-low": "#131b2e",
+                    "error-container": "#93000a",
+                    "primary-fixed": "#ffe088",
+                    "on-primary-container": "#554300",
+                    "on-background": "#dae2fd",
+                    "on-tertiary-fixed-variant": "#27438a",
+                    "surface-tint": "#e9c349",
+                    "tertiary-fixed-dim": "#b4c5ff",
+                    "secondary-fixed": "#ffdcc0",
+                    "on-error": "#690005",
+                    "secondary-container": "#a96000",
+                    "inverse-primary": "#735c00",
+                    "surface": "#0b1326",
+                    "on-tertiary-fixed": "#00174b",
+                    "on-tertiary-container": "#254188",
+                    "outline-variant": "#4d4635",
+                    "primary-container": "#d4af37",
+                    "on-primary": "#3c2f00",
+                    "on-secondary-fixed-variant": "#6b3b00",
+                    "on-secondary-container": "#fff7f3",
+                    "on-error-container": "#ffdad6",
+                    "surface-dim": "#0b1326",
+                    "primary-fixed-dim": "#e9c349",
+                    "on-secondary-fixed": "#2d1600",
+                    "tertiary-fixed": "#dbe1ff",
+                    "surface-container": "#171f33",
+                    "on-surface-variant": "#d0c5af",
+                    "on-surface": "#dae2fd",
+                    "surface-bright": "#31394d",
+                    "inverse-surface": "#dae2fd",
+                    "on-tertiary": "#082b72",
+                    "on-secondary": "#4b2800",
+                    "inverse-on-surface": "#283044",
+                    "tertiary-container": "#97b0ff",
+                    "on-primary-fixed": "#241a00",
+                    "outline": "#99907c",
+                    "tertiary": "#bfcdff",
+                    "on-primary-fixed-variant": "#574500",
+                    "surface-container-high": "#222a3d",
+                    "surface-container-highest": "#2d3449",
+                    "secondary-fixed-dim": "#ffb875"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.5rem",
+                    "lg": "1rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>body {
+    background-color: #0b1326;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCt53JE7JvTisH7lJHkDOCM6HDK36iEmeX7MQV66unbG7p4cEkcF_6NfTwx9lximGUEBtun5nVQiZiJj8k22v8IjNLfeJkEqlFLNLc7KJD4VfY_h2Df7n3_V-32_ASqrTSano_0UjWH12v4xCAKHMKVB9RRPRpxa4gUaDRhFvkTKbwkXaNs7PuvZEZqKsyvLqG5baOBRCN0nwOIjler03bEBqnvFQGwhNRVHJBZPAv2pilg246enaQNLH8lgszRRlLBsJ4k9jTpbZRI);
+    color: #dae2fd;
+    font-family: "Manrope", sans-serif
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.font-serif {
+    font-family: "Noto Serif", serif
+    }
+.font-sans {
+    font-family: "Manrope", sans-serif
+    }
+::-webkit-scrollbar {
+    display: none
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0b1326]/60 backdrop-blur-xl flex justify-between items-center px-6 h-20">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#f2ca50]" data-icon="menu">menu</span>
+<h1 class="text-2xl font-serif italic text-[#f2ca50]">The Nocturnal Curator</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#f2ca50]" data-icon="search">search</span>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-5xl mx-auto">
+<!-- Featured Cocktails Carousel -->
+<section class="mb-12">
+<div class="flex justify-between items-end mb-6">
+<div>
+<span class="text-xs font-sans uppercase tracking-[0.3em] text-secondary mb-1 block">Exclusives</span>
+<h2 class="text-3xl font-serif text-on-surface">Featured Cocktails</h2>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-full bg-surface-container-high text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-2 rounded-full bg-surface-container-high text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory">
+<!-- Featured Card 1 -->
+<div class="min-w-[85%] md:min-w-[400px] snap-center relative aspect-[4/5] rounded-xl overflow-hidden group">
+<img alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close-up of a vibrant orange cocktail in a crystal glass with a large clear ice cube and citrus peel garnish, moody atmospheric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY3QRusKJVB0uBlrJY7oucfmwD6ozvDMrZhmgvUog2HtNhX0fD7DvNDQJSSW8zYhQX0IzDUt9riUgpRtRoTTdWoI35e9r6KTXIt-cAL12je3F0yiwWtHK9CPopdDwh0Rb9VEDlLi8lvXxaRrJeXhRW84xTJWK_ZBnv2d0JAfdwtyJbJjvuOV-QSylyOIbX3QsZSzlx3kKohUSOCLAd97ARGdnoX3K2ijdeuwMaoAExO45WG6FBIFUxMHVggktTQsQ2MHyYb3FCs_5Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<h3 class="text-2xl font-serif text-white mb-1">Midnight Negroni</h3>
+<p class="text-sm text-on-surface-variant line-clamp-2 mb-4">A brooding blend of dark gin, bespoke vermouth, and charcoal-infused bitters.</p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-bold">$22.00</span>
+<button class="bg-gradient-to-b from-[#f2ca50] to-[#d4af37] text-on-primary px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2">
+                                Add to Order <span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Featured Card 2 -->
+<div class="min-w-[85%] md:min-w-[400px] snap-center relative aspect-[4/5] rounded-xl overflow-hidden group">
+<img alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Elegant martini glass with a gold-leaf garnish, dark velvet background, dramatic golden rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaK_ob1mWdU1qbCGBcW4PYFOLQf9dDlCQivrRwH8Ij5dkR8MvNveWrAWhMzU4oU-nSuvrWWCgCchdAmJUhjlIsjaTSeooM1IJtUzAijQSVc78ISBcwR06WvvtIpiZcJ7cLccVXweXhY5BocSLTK5tHNYY9nzPt1_NfSqMvFOggdiDqgAZL6wRCaU3Pj-Jzbm1AozEXdj35D-GZU1EgEWXcMi9fXlmbEpXyBU3QBYxJy-8s_8fiLWVjuepHG53rjmyMCve1WH8QsKx1"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<h3 class="text-2xl font-serif text-white mb-1">The Gilded Vesper</h3>
+<p class="text-sm text-on-surface-variant line-clamp-2 mb-4">Vodka, dry gin, and Lillet Blanc, finished with an edible 24k gold leaf.</p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-bold">$28.00</span>
+<button class="bg-gradient-to-b from-[#f2ca50] to-[#d4af37] text-on-primary px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2">
+                                Add to Order <span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Chips -->
+<section class="mb-10 sticky top-20 z-40 bg-background/80 backdrop-blur-md py-4 -mx-6 px-6">
+<div class="flex gap-3 overflow-x-auto pb-2 no-scrollbar">
+<button class="whitespace-nowrap px-6 py-2 rounded-full bg-secondary-container text-on-secondary-container font-bold text-sm tracking-wide">Cocktails</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-medium text-sm tracking-wide hover:bg-surface-bright transition-colors">Wine</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-medium text-sm tracking-wide hover:bg-surface-bright transition-colors">Beer</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-medium text-sm tracking-wide hover:bg-surface-bright transition-colors">Small Plates</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-medium text-sm tracking-wide hover:bg-surface-bright transition-colors">Large Plates</button>
+</div>
+</section>
+<!-- Menu Item Cards -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Item 1 -->
+<div class="flex gap-4 p-4 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all group border border-transparent hover:border-outline-variant/10">
+<div class="w-28 h-28 rounded-lg overflow-hidden flex-shrink-0 relative">
+<img alt="" class="w-full h-full object-cover" data-alt="Artisanal small plate featuring seared scallops with gold-flecked foam on dark ceramic, top-down view, moody lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYEW34b7plJLUmXhxD7y2t2m9WMRK_NIhjbAB3crkaBjcP4NMnP9HRcTt7f-S-Bi9CNvgPy0-Iep4oe4B9eXNmHdnaAzEDgzQYdjMSuvWbiSZFqe1eTc3d-dShwHGFujZAlqoeFI48IxDMMs7rQaKgrmwznjaZUOHkmMS19kEBrjoTujMJtjLONaOZJY0d106K3MjEf3LYQSF0HowXiGh2ddF9Rm_f46ahxl_XZmBfBdoMk65ynTpsqbbC07DJMChbUU2kH5i9GKHt"/>
+<div class="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-serif text-lg text-on-surface leading-tight">Velvet Scallops</h4>
+<span class="text-primary font-bold">$19</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1 line-clamp-2">Pan-seared Hokkaido scallops with vanilla-infused parsnip purée and brown butter.</p>
+</div>
+<div class="flex justify-end mt-2">
+<button class="w-8 h-8 rounded-full border border-outline-variant/30 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all active:scale-90">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-4 p-4 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all group border border-transparent hover:border-outline-variant/10">
+<div class="w-28 h-28 rounded-lg overflow-hidden flex-shrink-0 relative">
+<img alt="" class="w-full h-full object-cover" data-alt="Classic old fashioned cocktail with a large single ice cube and orange twist, dark wooden background, low key photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABK9YNx2FMjoBsGoYLooZT-uM1duNwkVTnhgS8I1GOp54SR5J47VbvLtsUUvZCXzX1Ywn3VDnCAIEd5q4kmIulZVT5JIa4wFAqfPUYLMZVyCoI6wlDrDgREwbBTOY45v-x_esV0CB75zLvOkPSAcWGfDEm60_E5N_I5PzsANc7nZxUz4BmqNBnmvzapFhjFUVvsUEnUyZHw6D5w6siSrDhYux77lFcxsgSosoZyKo8Ad8IaYBXfMYuOETz51XPenlgFHohzQ_sAdMw"/>
+<div class="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-serif text-lg text-on-surface leading-tight">Smoked Old Fashioned</h4>
+<span class="text-primary font-bold">$18</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1 line-clamp-2">Double-oaked bourbon, maple reduction, and walnut bitters, smoked tableside.</p>
+</div>
+<div class="flex justify-end mt-2">
+<button class="w-8 h-8 rounded-full border border-outline-variant/30 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all active:scale-90">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex gap-4 p-4 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all group border border-transparent hover:border-outline-variant/10">
+<div class="w-28 h-28 rounded-lg overflow-hidden flex-shrink-0 relative">
+<img alt="" class="w-full h-full object-cover" data-alt="Truffle beef tartare on a toasted brioche point, garnished with microgreens, luxury dining aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX246too90QhGcbctxMP29pxXtFL8AYze_1EFO8nPRL20vGZSPsi_TWFL6vSb-xKrkGpDBpYLzZ6d0lC_kKeZfzJ_C0QtdkTI6RPl8HWXtCtws3dvyNCEgeCPiAldhXDscPf4m5Ibnox0c3yD6mxEGz6vo3EAIfsmJkc2P35a4wp9jjOgstKHxxys0HpFOC7MwSJImk5xYHrMbugrmZQMow9sJ70Gmbwp-LvzaMff6-eyZTu5ombPFbSc8c1jjFASDQ_p0S4skw8B1"/>
+<div class="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-serif text-lg text-on-surface leading-tight">Truffle Beef Tartare</h4>
+<span class="text-primary font-bold">$24</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1 line-clamp-2">Hand-cut wagyu beef, black truffle emulsion, and cured egg yolk on toasted brioche.</p>
+</div>
+<div class="flex justify-end mt-2">
+<button class="w-8 h-8 rounded-full border border-outline-variant/30 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all active:scale-90">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex gap-4 p-4 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all group border border-transparent hover:border-outline-variant/10">
+<div class="w-28 h-28 rounded-lg overflow-hidden flex-shrink-0 relative">
+<img alt="" class="w-full h-full object-cover" data-alt="Craft gin fizz cocktail with a thick foam layer, garnished with lavender, soft ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRWEFddB0SrJ5aKKDM14bM_enZYmCwQV2NxzcXCEqYiILq9YtyxDKJYzyDSIqFzmerO9eAj3IrOMzuHskwg64Wb3WWmxXSAjSMw-oqveGqP3j3YjNOEu0PpKzr1ycOlwThnQZvC58ELThL_dv06aVxY6nguxDkfEjEjglkoYdSUCecR3fHvBMWLDS_7FsRLLL5Y_eOAnQS5k_CDeYh--vlyJLoN7uRlRQs9YW_qdsBG_RTbEUXjfFPLE394hNHyVYPZnD0HxkC3Db6"/>
+<div class="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-serif text-lg text-on-surface leading-tight">Lavender Fizz</h4>
+<span class="text-primary font-bold">$16</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1 line-clamp-2">Botanical gin, fresh lemon, house lavender syrup, and frothy egg white.</p>
+</div>
+<div class="flex justify-end mt-2">
+<button class="w-8 h-8 rounded-full border border-outline-variant/30 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all active:scale-90">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-6 bg-[#31394d]/70 backdrop-blur-md z-50 rounded-t-xl shadow-[0_-4px_20px_rgba(6,14,32,0.5)]">
+<div class="flex flex-col items-center justify-center bg-gradient-to-b from-[#f2ca50] to-[#d4af37] text-[#0b1326] rounded-xl px-4 py-1.5 active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="local_bar">local_bar</span>
+<span class="font-sans text-[10px] uppercase tracking-widest mt-1">Cocktails</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#d0c5af] opacity-60 hover:opacity-100 transition-opacity active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
+<span class="font-sans text-[10px] uppercase tracking-widest mt-1">Dining</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#d0c5af] opacity-60 hover:opacity-100 transition-opacity active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-sans text-[10px] uppercase tracking-widest mt-1">Orders</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#d0c5af] opacity-60 hover:opacity-100 transition-opacity active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="font-sans text-[10px] uppercase tracking-widest mt-1">Reserve</span>
+</div>
+</nav>
+</body></html>

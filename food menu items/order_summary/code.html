@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#2d3449",
+                    "background": "#0b1326",
+                    "error": "#ffb4ab",
+                    "primary": "#f2ca50",
+                    "surface-container-lowest": "#060e20",
+                    "secondary": "#ffb875",
+                    "surface-container-low": "#131b2e",
+                    "error-container": "#93000a",
+                    "primary-fixed": "#ffe088",
+                    "on-primary-container": "#554300",
+                    "on-background": "#dae2fd",
+                    "on-tertiary-fixed-variant": "#27438a",
+                    "surface-tint": "#e9c349",
+                    "tertiary-fixed-dim": "#b4c5ff",
+                    "secondary-fixed": "#ffdcc0",
+                    "on-error": "#690005",
+                    "secondary-container": "#a96000",
+                    "inverse-primary": "#735c00",
+                    "surface": "#0b1326",
+                    "on-tertiary-fixed": "#00174b",
+                    "on-tertiary-container": "#254188",
+                    "outline-variant": "#4d4635",
+                    "primary-container": "#d4af37",
+                    "on-primary": "#3c2f00",
+                    "on-secondary-fixed-variant": "#6b3b00",
+                    "on-secondary-container": "#fff7f3",
+                    "on-error-container": "#ffdad6",
+                    "surface-dim": "#0b1326",
+                    "primary-fixed-dim": "#e9c349",
+                    "on-secondary-fixed": "#2d1600",
+                    "tertiary-fixed": "#dbe1ff",
+                    "surface-container": "#171f33",
+                    "on-surface-variant": "#d0c5af",
+                    "on-surface": "#dae2fd",
+                    "surface-bright": "#31394d",
+                    "inverse-surface": "#dae2fd",
+                    "on-tertiary": "#082b72",
+                    "on-secondary": "#4b2800",
+                    "inverse-on-surface": "#283044",
+                    "tertiary-container": "#97b0ff",
+                    "on-primary-fixed": "#241a00",
+                    "outline": "#99907c",
+                    "tertiary": "#bfcdff",
+                    "on-primary-fixed-variant": "#574500",
+                    "surface-container-high": "#222a3d",
+                    "surface-container-highest": "#2d3449",
+                    "secondary-fixed-dim": "#ffb875"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.5rem",
+                    "lg": "1rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(49, 57, 77, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .gold-gradient {
+            background: linear-gradient(to bottom, #f2ca50, #d4af37);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body min-h-screen pb-40">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-[#0b1326]/60 backdrop-blur-xl flex justify-between items-center px-6 h-20">
+<div class="flex items-center gap-4">
+<button class="text-[#f2ca50] active:scale-95 duration-300">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="text-2xl font-serif italic text-[#f2ca50]">The Nocturnal Curator</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#f2ca50]" data-icon="search">search</span>
+</div>
+</header>
+<main class="pt-28 px-6 max-w-2xl mx-auto">
+<!-- Editorial Header -->
+<div class="mb-12">
+<span class="text-secondary font-label text-[10px] uppercase tracking-[0.3em] mb-2 block">Review Selection</span>
+<h2 class="text-4xl font-headline text-on-surface leading-tight">Your Evening<br/>Curated</h2>
+</div>
+<!-- Cart Items List -->
+<div class="space-y-8">
+<!-- Item 1 -->
+<div class="group flex items-center gap-6 p-1 rounded-xl transition-colors hover:bg-surface-container-high">
+<div class="relative w-24 h-24 shrink-0 overflow-hidden rounded-lg shadow-xl">
+<img alt="Cocktail" class="w-full h-full object-cover" data-alt="Close-up of a frothy Espresso Martini in a chilled coupe glass with three coffee beans on dark moody background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnxIigb7DrqgIqfvSx6JRdysTUjWoE5Dc86JGupHFDav90t7yts38ndLFMz5TPokBiwHs2fjumJqMUmZEEvDeFZXmi3arKJHqwVB3aoj_kPQU7O6XLFkd_Z4VsWeCvuwKGyJHZM7U1Lm6nFs2_-r6jFd6HnO-Ikr4uqCsAzBzhuU5BqeOJDeD4EaP088CALK-X_0vGCLsX7IbLSo06L0YpZu2-s7wiptPjkNA9JLbu-X4VoPh_qYKi2xhCmyP3DBjrJKQhicyhVaRO"/>
+<div class="absolute inset-0 ring-1 ring-inset ring-primary/10"></div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline text-xl text-on-surface">Espresso Martini</h3>
+<span class="text-primary font-body font-semibold">$36.00</span>
+</div>
+<div class="flex justify-between items-center">
+<p class="text-on-surface-variant text-sm font-label uppercase tracking-wider">2x Curations</p>
+<button class="text-on-surface-variant hover:text-error transition-colors p-2">
+<span class="material-symbols-outlined" data-icon="delete_outline">delete_outline</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="group flex items-center gap-6 p-1 rounded-xl transition-colors hover:bg-surface-container-high">
+<div class="relative w-24 h-24 shrink-0 overflow-hidden rounded-lg shadow-xl">
+<img alt="Pizza" class="w-full h-full object-cover" data-alt="Artisanal truffle pizza with melted cheese and fresh herbs on a dark rustic table with warm atmospheric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmwWSj1fFBRha_5c7oAW84OnIbiHhsUUnaEItufyoBmHDSSTA_mJdQePLLxT0_IsCCSAHuu14oe9X7Dq-dpg0X0SQLl-8GGqxM7lZKCwewN9cRXMVK0LbLjUEoDhufev24KD7PSB1p9fOqxl6IBAGxJh2mCIPuHhiwgLct2feV5Wkh13FktGbXlLlESwh48UTK7oVhlsyUuP_acJk99moj1Ytffy7CpJYmOLjAXFGEhQV5eeWmH3RndCYai46aTsIJKi8RsFqtnTe4"/>
+<div class="absolute inset-0 ring-1 ring-inset ring-primary/10"></div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline text-xl text-on-surface">Truffle Pizza</h3>
+<span class="text-primary font-body font-semibold">$28.00</span>
+</div>
+<div class="flex justify-between items-center">
+<p class="text-on-surface-variant text-sm font-label uppercase tracking-wider">1x Curation</p>
+<button class="text-on-surface-variant hover:text-error transition-colors p-2">
+<span class="material-symbols-outlined" data-icon="delete_outline">delete_outline</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="group flex items-center gap-6 p-1 rounded-xl transition-colors hover:bg-surface-container-high">
+<div class="relative w-24 h-24 shrink-0 overflow-hidden rounded-lg shadow-xl">
+<img alt="Old Fashioned" class="w-full h-full object-cover" data-alt="Smoked Old Fashioned cocktail in a crystal rocks glass with a large clear ice sphere and orange peel garnish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkmpD4zmiO2gaUAVsQmXL7SRIyEFtMoZ-HSzgkZ4y-JOhv6FHJyhL3VkxP-7Vnv3020SSGTYL5AUZPuU_5XcfBbFw0TfZq3j_gdeeoYDE7lp1e1J6r8zk5Tn57SM1LU2XDHLTq889r3y1Cm7h_wgv4PNktqz35laSoDUX5Kw80CLwFMYbUbGedf3M2atgMTGbXO8LlP_AW6abkKX-kamBIV-Z_ST7W9qAui-rOLD1ROKM1hb6NDuiVSIQjrTCNeQEqI802SuYMWTTP"/>
+<div class="absolute inset-0 ring-1 ring-inset ring-primary/10"></div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline text-xl text-on-surface">Smoked Old Fashioned</h3>
+<span class="text-primary font-body font-semibold">$22.00</span>
+</div>
+<div class="flex justify-between items-center">
+<p class="text-on-surface-variant text-sm font-label uppercase tracking-wider">1x Curation</p>
+<button class="text-on-surface-variant hover:text-error transition-colors p-2">
+<span class="material-symbols-outlined" data-icon="delete_outline">delete_outline</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Order Summary Detail -->
+<section class="mt-16 pt-10 border-t border-outline-variant/10">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-label text-sm uppercase tracking-widest">Subtotal</span>
+<span class="text-on-surface font-semibold">$86.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-label text-sm uppercase tracking-widest">Service Charge (10%)</span>
+<span class="text-on-surface font-semibold">$8.60</span>
+</div>
+<div class="flex justify-between items-center pt-6">
+<span class="text-on-surface font-headline text-2xl">Total Payable</span>
+<span class="text-primary font-headline text-3xl font-bold tracking-tight">$94.60</span>
+</div>
+</div>
+<!-- Notes field -->
+<div class="mt-10 bg-surface-container-low p-6 rounded-xl">
+<label class="block text-xs font-label uppercase tracking-widest text-secondary mb-3">Special Instructions</label>
+<textarea class="w-full bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-outline/50 p-0 resize-none h-16 text-sm" placeholder="Add notes for the curator..."></textarea>
+</div>
+</section>
+</main>
+<!-- Bottom Action Shell -->
+<div class="fixed bottom-0 left-0 w-full z-50 px-6 pb-10 pt-6 glass-panel rounded-t-xl shadow-[0_-4px_40px_rgba(0,0,0,0.5)]">
+<div class="max-w-2xl mx-auto">
+<button class="w-full gold-gradient text-on-primary font-label font-extrabold uppercase tracking-[0.2em] py-5 rounded-lg flex items-center justify-center gap-3 transition-transform active:scale-95 shadow-2xl">
+<span>Confirm &amp; Order</span>
+<span class="material-symbols-outlined text-lg" data-icon="lock_open">lock_open</span>
+</button>
+<p class="text-center text-[10px] text-on-surface-variant/60 mt-4 uppercase tracking-widest">
+                Curated with precision for table 24
+            </p>
+</div>
+</div>
+<!-- BottomNavBar Suppression Rule: Hidden as this is a transactional focus screen -->
+</body></html>
