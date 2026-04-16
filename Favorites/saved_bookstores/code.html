@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#ffffff",
+                    "inverse-on-surface": "#565555",
+                    "primary-container": "#9396ff",
+                    "error-container": "#a70138",
+                    "primary": "#a4a6ff",
+                    "on-secondary": "#005c52",
+                    "surface-variant": "#262626",
+                    "secondary-fixed-dim": "#50ebd5",
+                    "on-surface": "#ffffff",
+                    "tertiary-fixed": "#ff9742",
+                    "on-primary": "#1100a3",
+                    "surface-dim": "#0e0e0e",
+                    "on-primary-fixed-variant": "#0f009c",
+                    "surface-container": "#1a1919",
+                    "on-tertiary-fixed-variant": "#5d2c00",
+                    "primary-dim": "#6062f2",
+                    "on-primary-fixed": "#000000",
+                    "outline": "#767575",
+                    "outline-variant": "#484847",
+                    "tertiary-fixed-dim": "#f08934",
+                    "surface": "#0e0e0e",
+                    "on-error-container": "#ffb2b9",
+                    "on-tertiary-container": "#4c2300",
+                    "surface-container-highest": "#262626",
+                    "secondary-dim": "#50ebd5",
+                    "background": "#0e0e0e",
+                    "surface-container-low": "#131313",
+                    "on-error": "#490013",
+                    "on-tertiary-fixed": "#2b1100",
+                    "on-primary-container": "#0b0081",
+                    "on-secondary-container": "#dcfff7",
+                    "surface-container-high": "#20201f",
+                    "secondary": "#62fae3",
+                    "surface-bright": "#2c2c2c",
+                    "primary-fixed": "#9396ff",
+                    "primary-fixed-dim": "#8486ff",
+                    "tertiary-dim": "#ec8731",
+                    "inverse-surface": "#fcf9f8",
+                    "surface-tint": "#a4a6ff",
+                    "error": "#ff6e84",
+                    "tertiary-container": "#fd933d",
+                    "secondary-container": "#006b5f",
+                    "secondary-fixed": "#62fae3",
+                    "surface-container-lowest": "#000000",
+                    "tertiary": "#ffa765",
+                    "error-dim": "#d73357",
+                    "on-secondary-fixed-variant": "#00675c",
+                    "on-tertiary": "#5b2c00",
+                    "on-secondary-fixed": "#004840",
+                    "on-surface-variant": "#adaaaa",
+                    "inverse-primary": "#494adb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0e0e0e;
+            color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+        }
+        .editorial-shadow {
+            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#0e0e0e]/80 backdrop-blur-xl">
+<div class="flex items-center gap-4">
+<button class="p-2 -ml-2 text-[#a4a6ff] hover:bg-surface-container rounded-full transition-all active:opacity-80 scale-95 active:scale-90">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="font-headline tracking-tight font-bold text-lg text-[#a4a6ff]">Archive</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/20">
+<img alt="User Profile" data-alt="close-up portrait of a creative professional in soft studio lighting with a clean minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnwx-OCnzjtl_bjTdh0qKDTzAhYb_HaDB7firl0ud45vuMox3Q8zfutPAuB6qrLLv_dbd5RG5tXlYMTi3F706TCAwRFltNEXElBQcp3Gn4kKnzZRo7ikM7tFeSo2fezmMDR5xgYd51fydd25kA-aFzf1ksYWICRFVj8OP3c6FHvXOQ9m8LgASOB_PG2BymOHH6ZxSspneHE84XX2FyOMPonOdl9Qm4CRUzi7WmQF-gybwk5c3sgVrQUy5aWZvKjaLWhQXnkz2JRGA"/>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-4xl mx-auto">
+<!-- Editorial Header -->
+<div class="mb-12">
+<span class="font-label text-secondary uppercase tracking-[0.2em] text-[10px] mb-2 block">Curated Collection</span>
+<h2 class="font-headline text-display-lg text-4xl md:text-5xl font-extrabold tracking-tighter text-on-surface">Favorited Bookstores</h2>
+<p class="mt-4 text-on-surface-variant font-body max-w-md leading-relaxed">A sanctuary for the bibliophile. Your private gallery of the world's most evocative literary spaces.</p>
+</div>
+<!-- Asymmetric List View -->
+<div class="flex flex-col gap-10">
+<!-- Bookstore Card 1 (Large Editorial) -->
+<div class="group relative flex flex-col md:flex-row gap-6 items-start">
+<div class="w-full md:w-3/5 overflow-hidden rounded-xl bg-surface-container editorial-shadow aspect-[4/3] md:aspect-[16/10]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="atmospheric interior of a grand historic bookstore with towering wooden shelves and soft amber lighting casting long shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRrl83-enV9D6Gi29oBJa1_mgbF1YldfPW4XnqyWpnOguFhwHW65KLcVlrHCF-R3w3NnIsF2LU4DcXR-jIL7aSYG6zIgqG-R07QoYJF1h6B0jtEe98WtWy1IlGtHw_yLdYBDfFK7zm_AHBtQbUbFU7Uwyu6aJuRIbftFnhAE-oRIjmQtm81HV8ERCtRYhVuUAeUjHUE2nA2IkPGcnA1zeE39MWLQ2Vh2bCGeeoWb7U-X21XxXBj7MzQSm4cVGaHv1cixcAzvOwHsM"/>
+<button class="absolute top-4 left-4 p-3 rounded-full bg-surface-dim/40 backdrop-blur-md text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<div class="w-full md:w-2/5 md:pt-4">
+<div class="flex items-center gap-2 mb-3">
+<span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary font-label text-[10px] uppercase tracking-widest">Books</span>
+<span class="text-on-surface-variant text-[12px] font-label">• 0.4 miles away</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2 tracking-tight group-hover:text-primary transition-colors">The Alchemist's Den</h3>
+<p class="text-on-surface-variant text-sm mb-6 font-body">Portobello Road, Notting Hill</p>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(98,250,227,0.6)]"></div>
+<span class="font-label text-xs text-secondary font-semibold uppercase tracking-wider">Open until 9 PM</span>
+</div>
+</div>
+</div>
+<!-- Bookstore Card 2 (Inverted layout for rhythm) -->
+<div class="group relative flex flex-col md:flex-row-reverse gap-6 items-start">
+<div class="w-full md:w-3/5 overflow-hidden rounded-xl bg-surface-container editorial-shadow aspect-[4/3] md:aspect-[16/10]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="minimalist modern bookstore interior with clean white shelves and organized rows of colorful book spines in soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYGY6N7k-5b0yV1kKi1ry0IDTAYFsVxPB8b5s5IHYb9chJTi3y3o-WND6cLDDBJcn1oRZYtJwKRRlUOVvEWHYSRPFwMmw9zax7HinlaBo_d3L4_C1UKCcQICJ79Fu1zPN0vPUHyE2ZbcT6V-rwJUVKiaRJXA7S96kXj-S-Ts_8WxiTzAN_ztkTAV-OvxSJjDt0-kIzMAuyMU9xq3yoPa-RnJp_tZBBrkZae3zi-hTqjGLxQfQtkAa6tKAkyI8DYad70WEc-Bw8wlw"/>
+<button class="absolute top-4 right-4 p-3 rounded-full bg-surface-dim/40 backdrop-blur-md text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<div class="w-full md:w-2/5 md:pt-4 md:text-right md:flex md:flex-col md:items-end">
+<div class="flex items-center gap-2 mb-3">
+<span class="text-on-surface-variant text-[12px] font-label">2.1 miles away •</span>
+<span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary font-label text-[10px] uppercase tracking-widest">Library</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2 tracking-tight group-hover:text-primary transition-colors">Vellum &amp; Vice</h3>
+<p class="text-on-surface-variant text-sm mb-6 font-body">Lower East Side, Manhattan</p>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(98,250,227,0.6)]"></div>
+<span class="font-label text-xs text-secondary font-semibold uppercase tracking-wider">Open until 11 PM</span>
+</div>
+</div>
+</div>
+<!-- Bookstore Card 3 (Grid-style variant) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="group relative bg-surface-container-low rounded-xl p-4 transition-colors hover:bg-surface-container">
+<div class="relative overflow-hidden rounded-lg aspect-square mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="narrow cozy bookstore aisle with overflowing bookshelves and a vintage ladder leaning against the wall in warm dusk light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC75XjYrCFXp4IBv9o6ZQ-5ZM4VwJsUYAXqnDIR2GOZf99Y4ID-e2_h0tB76t_L0prFKJDicpUBAG_4oA5uT0t-YfjBbSx3Et0mZvBubvEX02DysLkR8zCXbVuTh4MfZ9_D2p1fA7nSJYSDRAE2UvYvIzSZqIZbmKa_rnSQ-Ybs-PsOpMM9D7q9biGH_0x_AAjcrVJbELzE5W2yXJCLy9Kex03ZU75hG4k8Vo2eYrWxcDAhEKNpOa79dYUusAp1hkNMco-nismuyDY"/>
+<button class="absolute top-3 right-3 p-2 rounded-full bg-surface-dim/60 backdrop-blur-md text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<div>
+<h4 class="font-headline text-xl font-bold text-on-surface mb-1 tracking-tight">Paperback Paradise</h4>
+<p class="text-on-surface-variant text-xs mb-4 font-body">The Mission, San Francisco</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-error-dim"></div>
+<span class="font-label text-[10px] text-error-dim font-bold uppercase tracking-widest">Closed • Opens 10 AM</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group relative bg-surface-container-low rounded-xl p-4 transition-colors hover:bg-surface-container">
+<div class="relative overflow-hidden rounded-lg aspect-square mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="contemporary bookstore cafe with sleek tables and bookshelf walls in a bright airy space with green plants" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-h1_oL0Zzwh1DDCVrdcI0ODhwoBoUDJJRALOnd5LY_kX2ClQVfXNwlJFC9jLIh8lX--QBGHL0UpbYgVJt113yurkATnLIGoS444w0mOgvDff15Xr5wK4q77cwhzrxsgCD6ZfHjLsei2WOzXcCZbzUVU2QGgfTrv2l4uA9DvxPdQGdbDq_1o-wE0N0HtFDmlxZio9ytShW5U3IaCa3PKhIlYmtZ52xN3YyP4MQyiUzqPW0_3IJ5Rh4dw5Hl1tDqvd08Hhlg2N2aWM"/>
+<button class="absolute top-3 right-3 p-2 rounded-full bg-surface-dim/60 backdrop-blur-md text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<div>
+<h4 class="font-headline text-xl font-bold text-on-surface mb-1 tracking-tight">The Boundless Room</h4>
+<p class="text-on-surface-variant text-xs mb-4 font-body">Prenzlauer Berg, Berlin</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(98,250,227,0.6)]"></div>
+<span class="font-label text-[10px] text-secondary font-bold uppercase tracking-widest">Open until 8 PM</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-6 bg-[#131313]/90 backdrop-blur-2xl shadow-[0px_-10px_40px_rgba(0,0,0,0.4)] rounded-t-[24px]">
+<a class="flex flex-col items-center justify-center text-[#adaaaa] opacity-60 hover:bg-[#262626] rounded-full transition-all duration-300 px-4 py-1" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1">explore</span>
+<span class="font-headline text-[10px] font-medium uppercase tracking-widest">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#adaaaa] opacity-60 hover:bg-[#262626] rounded-full transition-all duration-300 px-4 py-1" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1">grid_view</span>
+<span class="font-headline text-[10px] font-medium uppercase tracking-widest">Categories</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#a4a6ff] bg-[#a4a6ff]/10 rounded-full px-4 py-1 transition-all" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="font-headline text-[10px] font-medium uppercase tracking-widest">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#adaaaa] opacity-60 hover:bg-[#262626] rounded-full transition-all duration-300 px-4 py-1" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1">group</span>
+<span class="font-headline text-[10px] font-medium uppercase tracking-widest">Social</span>
+</a>
+</nav>
+</body></html>

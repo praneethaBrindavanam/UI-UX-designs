@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Social Favorites | The Curated Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#ffffff",
+                        "inverse-on-surface": "#565555",
+                        "primary-container": "#9396ff",
+                        "error-container": "#a70138",
+                        "primary": "#a4a6ff",
+                        "on-secondary": "#005c52",
+                        "surface-variant": "#262626",
+                        "secondary-fixed-dim": "#50ebd5",
+                        "on-surface": "#ffffff",
+                        "tertiary-fixed": "#ff9742",
+                        "on-primary": "#1100a3",
+                        "surface-dim": "#0e0e0e",
+                        "on-primary-fixed-variant": "#0f009c",
+                        "surface-container": "#1a1919",
+                        "on-tertiary-fixed-variant": "#5d2c00",
+                        "primary-dim": "#6062f2",
+                        "on-primary-fixed": "#000000",
+                        "outline": "#767575",
+                        "outline-variant": "#484847",
+                        "tertiary-fixed-dim": "#f08934",
+                        "surface": "#0e0e0e",
+                        "on-error-container": "#ffb2b9",
+                        "on-tertiary-container": "#4c2300",
+                        "surface-container-highest": "#262626",
+                        "secondary-dim": "#50ebd5",
+                        "background": "#0e0e0e",
+                        "surface-container-low": "#131313",
+                        "on-error": "#490013",
+                        "on-tertiary-fixed": "#2b1100",
+                        "on-primary-container": "#0b0081",
+                        "on-secondary-container": "#dcfff7",
+                        "surface-container-high": "#20201f",
+                        "secondary": "#62fae3",
+                        "surface-bright": "#2c2c2c",
+                        "primary-fixed": "#9396ff",
+                        "primary-fixed-dim": "#8486ff",
+                        "tertiary-dim": "#ec8731",
+                        "inverse-surface": "#fcf9f8",
+                        "surface-tint": "#a4a6ff",
+                        "error": "#ff6e84",
+                        "tertiary-container": "#fd933d",
+                        "secondary-container": "#006b5f",
+                        "secondary-fixed": "#62fae3",
+                        "surface-container-lowest": "#000000",
+                        "tertiary": "#ffa765",
+                        "error-dim": "#d73357",
+                        "on-secondary-fixed-variant": "#00675c",
+                        "on-tertiary": "#5b2c00",
+                        "on-secondary-fixed": "#004840",
+                        "on-surface-variant": "#adaaaa",
+                        "inverse-primary": "#494adb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0e0e0e;
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .masonry-grid { column-count: 2; }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid { column-count: 3; }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#0e0e0e]/80 backdrop-blur-xl">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer transition-all active:opacity-80 scale-95" data-icon="menu">menu</span>
+<h1 class="font-['Manrope'] text-2xl font-extrabold tracking-tighter text-[#a4a6ff]">Archive</h1>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-['Manrope'] tracking-tight font-bold text-lg text-[#adaaaa] hover:text-[#a4a6ff] transition-colors duration-300" href="#">Discover</a>
+<a class="font-['Manrope'] tracking-tight font-bold text-lg text-[#adaaaa] hover:text-[#a4a6ff] transition-colors duration-300" href="#">Categories</a>
+<a class="font-['Manrope'] tracking-tight font-bold text-lg text-[#adaaaa] hover:text-[#a4a6ff] transition-colors duration-300" href="#">Library</a>
+<a class="font-['Manrope'] tracking-tight font-bold text-lg text-[#a4a6ff] transition-colors duration-300" href="#">Social</a>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/20 hover:scale-105 transition-all cursor-pointer">
+<img alt="User Profile" data-alt="close-up portrait of a professional male designer with a creative aesthetic, soft studio lighting, neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_6C7U30C0XtpgXVhZLbvL66p9nLU2gpeqhzjygpcQvoEfQpLcIT8JnSX102P6Q4Aa35IbC1dQ0G1GeHzhSuS2jVsV6ykyYCTTaiLm_F4POyQZ0RO9TuZ8LerezmMAuwY_VQ0gRROTJb46WoVAUqfnR-jGD22NW1MBAGqN_e_xfpQrW_5pOixgCVgefuJFVPcKGWXj5M5TKRV6UFgr-Pse9l1s8TWNJ3zralvrwzNSktpJfvp0db2Rukx_JH03XKJBIdXkmsgYxhA"/>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Editorial Header -->
+<div class="mb-12">
+<span class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-2 block">Curated Feed</span>
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Social Favorites</h2>
+<p class="font-body text-on-surface-variant max-w-xl text-lg leading-relaxed">
+                A high-fidelity collection of visual inspirations and technical benchmarks gathered from the global creative community.
+            </p>
+</div>
+<!-- Filter Chips -->
+<div class="flex flex-wrap gap-3 mb-10">
+<button class="px-6 py-2 rounded-full bg-primary/10 text-primary font-label text-sm font-medium border border-primary/20">All Platforms</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-highest text-on-surface-variant font-label text-sm font-medium hover:bg-primary/5 transition-colors">Behance</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-highest text-on-surface-variant font-label text-sm font-medium hover:bg-primary/5 transition-colors">GitHub</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-highest text-on-surface-variant font-label text-sm font-medium hover:bg-primary/5 transition-colors">Dribbble</button>
+</div>
+<!-- Staggered Pinterest Grid -->
+<div class="masonry-grid">
+<!-- Item 1: Behance -->
+<div class="masonry-item group cursor-pointer">
+<div class="bg-surface-container rounded-xl overflow-hidden transition-all duration-500 hover:translate-y-[-4px]">
+<div class="relative overflow-hidden aspect-[4/5]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="abstract 3d digital art with fluid iridescent shapes in purple and teal hues, smooth curves and soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhMzvfxnGi3l-8RZ9ZMsjgITIsH7yr3DTIadJmYl65Q80FZkw-DOHgFzdxt4-L2pXuBikQmXG-Q4s0SDFVxpRjZW6xOowR-iZYSS2P6iXNsgnaC7WweKkyr25kFj9sWQwfR3cfDZiHE6aXSsfSqI-Q4zde2_u03giq3_1D8ukaLbBTcVOJKC4fYk9UJHY4lhT_ezpFVkwqvKc9d7uAj7oNFbNG-pcYxqNl532fhEjyjX304cfa3f7mBTvSn-OFUZVm3qz30C6mB0c"/>
+<div class="absolute top-4 left-4 bg-surface-dim/60 backdrop-blur-md p-2 rounded-lg">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="palette">palette</span>
+</div>
+</div>
+<div class="p-5">
+<h3 class="font-headline text-xl font-bold mb-3 group-hover:text-primary transition-colors">Luminal Aesthetics 2024</h3>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<img class="w-6 h-6 rounded-full" data-alt="portrait of a female artist, digital creator, minimalist style background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYdR_0H8TRa_SQjXhpjqTCtWLWFd-_PEo8_IPnwLwkMIzH7XD2M9z0oGV29T9akisHZPE5Hs_yXTI5kJIjQyxVvb4IZEqmgpIT1vcengfDy0D5WfByymivZnu0s24J4yaSnFj5hC9Ba1i6NgVQsIj5XtgFvE9V8L9Iz1oZTcYpeg1XclGCNa0Dn7tI_Ej8Svgk2Zk4v-EIJq_iv8rZ5OVYvhTqXfrUZk0bghpmq0JBDD8uHtoqZR-BewgQSjYTcHAiFN73HpUQqLU"/>
+<span class="font-label text-xs text-on-surface-variant">Elena Rossi</span>
+</div>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/50">Behance</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2: GitHub -->
+<div class="masonry-item group cursor-pointer">
+<div class="bg-surface-container rounded-xl overflow-hidden transition-all duration-500 hover:translate-y-[-4px]">
+<div class="relative overflow-hidden aspect-video bg-surface-container-highest flex items-center justify-center p-8">
+<div class="w-full h-full rounded-lg bg-surface-dim border border-outline-variant/10 p-4 font-mono text-[10px] text-primary/70 overflow-hidden">
+<code>const archive = () =&gt; {<br/>  return curate(favorites);<br/>};</code>
+</div>
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
+<div class="absolute top-4 left-4 bg-surface-dim/60 backdrop-blur-md p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="terminal">terminal</span>
+</div>
+</div>
+<div class="p-5">
+<h3 class="font-headline text-xl font-bold mb-3 group-hover:text-primary transition-colors">Neo-Vim Ghost Engine</h3>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary-dim flex items-center justify-center text-[10px] font-bold text-on-primary">JD</div>
+<span class="font-label text-xs text-on-surface-variant">Jordan Devs</span>
+</div>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/50">GitHub</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 3: Dribbble/Design -->
+<div class="masonry-item group cursor-pointer">
+<div class="bg-surface-container rounded-xl overflow-hidden transition-all duration-500 hover:translate-y-[-4px]">
+<div class="relative overflow-hidden aspect-square">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="minimalist mobile app interface design showing a clean dashboard with sleek charts and typography, dark mode aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAppGG1I4nbk4QBCDtrpFwlJQ87D1VEgZ9XaJPB_xtwbrJCA43XrNr5D8zg0_Q6wqi4VE4M8bMHqXUYH8K3p7x4AngJ0p7qAW0JnWDGILOugfbiE9TBL9wNU3I__W7B2d62FK6zYu0usOE1HteZquv20t7EbpN3S6Rdu5xmaFTU1UrEkvRpVm4TixeI40XDhYVBOkynV_nny2M5F22gVaFq4rGNZlqRPOCDy8d0davDQRQpnKUdCWeF85jOgAFyFh0n44GQRnGMJHY"/>
+<div class="absolute top-4 left-4 bg-surface-dim/60 backdrop-blur-md p-2 rounded-lg">
+<span class="material-symbols-outlined text-tertiary text-xl" data-icon="token">token</span>
+</div>
+</div>
+<div class="p-5">
+<h3 class="font-headline text-xl font-bold mb-3 group-hover:text-primary transition-colors">Zen Finance UI Kit</h3>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<img class="w-6 h-6 rounded-full" data-alt="portrait of a smiling male designer in glasses, soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYGmKTzUPRtlhzKgLMVCuO3HlOGW3lzya3etbDFLgFrhDs3HYi_Ns4KYkeLxhUBSDwIrYiI2fDteJOxZoBeiyaaPRCErZgUE9vfS1OpLGeisalX6EZ2Ap6u9am6qpX6CcUNymVCb7eNVObTHz0cVOFWs3aWx6fQZashPiINx9zspwv8DL8T1w1Z9CN4ci6d-8g9qY830TwwH9IP2T5XQx2At9s0sJKk60nbjghmjeWw6svq2WRxHRU9DqFClIagKr_J_XyHKBrcig"/>
+<span class="font-label text-xs text-on-surface-variant">Marcus Wu</span>
+</div>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/50">Dribbble</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 4: Behance -->
+<div class="masonry-item group cursor-pointer">
+<div class="bg-surface-container rounded-xl overflow-hidden transition-all duration-500 hover:translate-y-[-4px]">
+<div class="relative overflow-hidden aspect-[3/4]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="architectural photography of a brutalist concrete building with sharp shadows and geometric lines, dramatic sunset lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYJvBSWatIa5mFLaqTyt54UwtZqoXzPl00fGFpol-fQZ71imh_0fnf_VLUb9teL9FUpBN59AhZXR_iAOH99EPsLcBemmCkNQJWN8pQ9jk1j6Zx1DnnV-Yzlf0OKlurj3FBLdRua1s_Qnqk0Zwztwc1XwHDIFt4aTJUY1KNhwW6rn1Kt_TiBRyQ7acNlCUHgg2kAhU9wHQLHximQJB7e1UncRlLrk4P78dMjjd4n54Jyu89TpcAEgA0UkxkWSTXVK2eAdfnYMfDshg"/>
+<div class="absolute top-4 left-4 bg-surface-dim/60 backdrop-blur-md p-2 rounded-lg">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="architecture">architecture</span>
+</div>
+</div>
+<div class="p-5">
+<h3 class="font-headline text-xl font-bold mb-3 group-hover:text-primary transition-colors">Shadow &amp; Form</h3>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<img class="w-6 h-6 rounded-full" data-alt="portrait of a woman architect with a creative professional look, minimalist dark office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWGZfmrio6igy8eeWSP2HsdOL6t8H2FGEQq1SGLIcnUvakfqGi6lBjMEf1hsX2qw5ECVi7bQKmIK7a_q2spAVzSZ-Qqe0dYhpE4pN9kA8EztGRuuJEATR7amT3fNZvkLn78yBP4IaF4_iFS-W6EjuhK7bf0Yozy2IrHPWuxCt_bDqZU9HXKVkGCBm0uqSHGCmOfJ4FVGG_DhdxC_W-OsHmRFKkXdm3iWzq6m6ifaGWoggYY5KBuXMXNDkjpTdYt4GmJrqQ0-eTZ-A"/>
+<span class="font-label text-xs text-on-surface-variant">Sarah Jenkins</span>
+</div>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/50">Behance</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 5: GitHub -->
+<div class="masonry-item group cursor-pointer">
+<div class="bg-surface-container rounded-xl overflow-hidden transition-all duration-500 hover:translate-y-[-4px]">
+<div class="relative overflow-hidden aspect-video bg-surface-container-high p-6 flex flex-col justify-end">
+<div class="flex gap-2 mb-4">
+<div class="h-1 w-8 bg-primary rounded-full"></div>
+<div class="h-1 w-12 bg-primary-container rounded-full opacity-40"></div>
+<div class="h-1 w-6 bg-secondary rounded-full"></div>
+</div>
+<p class="font-body text-sm text-on-surface-variant italic mb-2">"Performance first reactive engine..."</p>
+<div class="absolute top-4 left-4 bg-surface-dim/60 backdrop-blur-md p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="deployed_code">deployed_code</span>
+</div>
+</div>
+<div class="p-5">
+<h3 class="font-headline text-xl font-bold mb-3 group-hover:text-primary transition-colors">FluxCore State Engine</h3>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<img class="w-6 h-6 rounded-full" data-alt="portrait of a young male software developer, tech aesthetic, soft blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_-4XO1HmpvzvGlIcY1oW1lsksVNIR1xhgnokgkN4V7FvWwVmNcy4_UuctA6ZquP0LKcI5EQOnlmVLVjKIvcMEXyioKg45dqWOZ4JZsc0RHK6yLcNk3zVxja_vP5QEvQGuHzPh1jRJ7ddGG8AhImEJoiXM_mO2r0sl9f-dM5ePuBSEBSHu48XQJ0tpOqd2G1NnKuaHuH1gc0ai1mn2DQtmTTleLt3Y4btWOHm0i4tGOpQybV1teJ8pXsKmDKuL7Wk8OoMClZiVOew"/>
+<span class="font-label text-xs text-on-surface-variant">Arjun Mehta</span>
+</div>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/50">GitHub</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 6: Editorial Style -->
+<div class="masonry-item group cursor-pointer">
+<div class="bg-surface-container rounded-xl overflow-hidden transition-all duration-500 hover:translate-y-[-4px]">
+<div class="relative overflow-hidden aspect-square">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="close-up of lines of high-quality computer code on a dark screen with vibrant syntax highlighting in neon colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOEnzFSyM5VN0kmER74GZ8wyQ6DqcbatDqnmPJEFqcCP39My11hAWx3DwhxJj1YsbYqYsyb-TFNQVfwog_Ej2Z3h8HqtAZzSOQCpVD1HmUbJvwAwzDjkIan8K_sati1A04SdRN3b8ogSxikjfyDX8EHJcT9AHuJdooC7uwgpx67fSKiCI5ShOQBUSk5rmrvWPeBIdj6q9RJeu2zogP5ylbApc7-A6klNFaiLuyaEdh4jvTbO2umf57h0Gays_sH39BpRwwki7BLmM"/>
+<div class="absolute top-4 left-4 bg-surface-dim/60 backdrop-blur-md p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="code">code</span>
+</div>
+</div>
+<div class="p-5">
+<h3 class="font-headline text-xl font-bold mb-3 group-hover:text-primary transition-colors">Archive Component Library</h3>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center text-[10px] font-bold text-on-secondary">A</div>
+<span class="font-label text-xs text-on-surface-variant">Archivists Team</span>
+</div>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/50">GitHub</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB: Add New Link (Suppressing per context - Social main screen might need it but usually detail focused screens suppress) -->
+<!-- Decision: Main Social screen is a top level destination, FAB is appropriate -->
+<button class="fixed bottom-28 right-8 w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary-dim text-on-primary flex items-center justify-center shadow-[0px_20px_40px_rgba(0,0,0,0.4)] active:scale-90 transition-all z-[60]">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-6 bg-[#131313]/90 backdrop-blur-2xl shadow-[0px_-10px_40px_rgba(0,0,0,0.4)] rounded-t-[24px]">
+<div class="flex flex-col items-center justify-center text-[#adaaaa] opacity-60 hover:bg-[#262626] rounded-full transition-all duration-300 px-4 py-1">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-['Manrope'] text-[10px] font-medium uppercase tracking-widest mt-1">Discover</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#adaaaa] opacity-60 hover:bg-[#262626] rounded-full transition-all duration-300 px-4 py-1">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-['Manrope'] text-[10px] font-medium uppercase tracking-widest mt-1">Categories</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#adaaaa] opacity-60 hover:bg-[#262626] rounded-full transition-all duration-300 px-4 py-1">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-['Manrope'] text-[10px] font-medium uppercase tracking-widest mt-1">Library</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#a4a6ff] bg-[#a4a6ff]/10 rounded-full px-4 py-1">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-['Manrope'] text-[10px] font-medium uppercase tracking-widest mt-1">Social</span>
+</div>
+</nav>
+</body></html>

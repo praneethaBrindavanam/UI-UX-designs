@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-background": "#ffffff",
+            "inverse-on-surface": "#565555",
+            "primary-container": "#9396ff",
+            "error-container": "#a70138",
+            "primary": "#a4a6ff",
+            "on-secondary": "#005c52",
+            "surface-variant": "#262626",
+            "secondary-fixed-dim": "#50ebd5",
+            "on-surface": "#ffffff",
+            "tertiary-fixed": "#ff9742",
+            "on-primary": "#1100a3",
+            "surface-dim": "#0e0e0e",
+            "on-primary-fixed-variant": "#0f009c",
+            "surface-container": "#1a1919",
+            "on-tertiary-fixed-variant": "#5d2c00",
+            "primary-dim": "#6062f2",
+            "on-primary-fixed": "#000000",
+            "outline": "#767575",
+            "outline-variant": "#484847",
+            "tertiary-fixed-dim": "#f08934",
+            "surface": "#0e0e0e",
+            "on-error-container": "#ffb2b9",
+            "on-tertiary-container": "#4c2300",
+            "surface-container-highest": "#262626",
+            "secondary-dim": "#50ebd5",
+            "background": "#0e0e0e",
+            "surface-container-low": "#131313",
+            "on-error": "#490013",
+            "on-tertiary-fixed": "#2b1100",
+            "on-primary-container": "#0b0081",
+            "on-secondary-container": "#dcfff7",
+            "surface-container-high": "#20201f",
+            "secondary": "#62fae3",
+            "surface-bright": "#2c2c2c",
+            "primary-fixed": "#9396ff",
+            "primary-fixed-dim": "#8486ff",
+            "tertiary-dim": "#ec8731",
+            "inverse-surface": "#fcf9f8",
+            "surface-tint": "#a4a6ff",
+            "error": "#ff6e84",
+            "tertiary-container": "#fd933d",
+            "secondary-container": "#006b5f",
+            "secondary-fixed": "#62fae3",
+            "surface-container-lowest": "#000000",
+            "tertiary": "#ffa765",
+            "error-dim": "#d73357",
+            "on-secondary-fixed-variant": "#00675c",
+            "on-tertiary": "#5b2c00",
+            "on-secondary-fixed": "#004840",
+            "on-surface-variant": "#adaaaa",
+            "inverse-primary": "#494adb"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline": ["Manrope"],
+            "body": ["Plus Jakarta Sans"],
+            "label": ["Inter"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .editorial-gradient {
+      background: linear-gradient(180deg, rgba(14,14,14,0) 0%, rgba(14,14,14,0.9) 100%);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#0e0e0e]/80 backdrop-blur-xl">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#a4a6ff] scale-95 active:opacity-80 transition-all">menu</button>
+<span class="font-['Manrope'] text-2xl font-extrabold tracking-tighter text-[#a4a6ff]">Archive</span>
+</div>
+<div class="flex items-center gap-6 md:flex hidden">
+<nav class="flex gap-8">
+<a class="text-[#a4a6ff] font-bold font-['Manrope'] tracking-tight text-lg hover:text-[#a4a6ff] transition-colors duration-300" href="#">Discover</a>
+<a class="text-[#adaaaa] font-['Manrope'] tracking-tight text-lg hover:text-[#a4a6ff] transition-colors duration-300" href="#">Library</a>
+<a class="text-[#adaaaa] font-['Manrope'] tracking-tight text-lg hover:text-[#a4a6ff] transition-colors duration-300" href="#">Social</a>
+</nav>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-outline-variant/10">
+<img alt="user profile avatar" data-alt="close-up portrait of a stylish young person with soft studio lighting and dark atmospheric background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC-tQrbcRi7WsKTlMfR3GZi7OLHFPQV8V7KAcX21e68i4ZnZ2az2veHivjrVtAL_geklrTn7IpXFp5pd8puE8M90SDbEsfbgt-SUBAfzXbth8YZzRvC05FeeycEK6iidBe3N2sBVm_bZxyJdKlKs7u2qbTohQSjBH0eGZ7fC7W3Qs4gb59d7NHWyTXQft-vQ6iZ0jCcYhoRa1g02jVbpdrricHu0fujZt1IgZxSOdeL-MyR4FHBsq7S9NSO9ofr_QNCRQNrvUSO5k"/>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-12">
+<span class="font-label text-primary uppercase tracking-[0.2em] text-[10px] mb-2 block">Curated Collection</span>
+<h1 class="font-headline text-display-lg text-5xl md:text-6xl font-extrabold tracking-tighter mb-4 text-on-surface">My Favorites</h1>
+<p class="font-body text-on-surface-variant max-w-lg leading-relaxed">
+        Your personal sanctuary of digital artifacts. A curated library of the stories, sounds, and experiences that define your journey.
+      </p>
+</section>
+<!-- Bento Grid Category Cards -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Bookstores Card (Teal Accent) -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container h-[400px] transition-all duration-500 hover:bg-surface-container-high">
+<img alt="Bookstores" class="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-105" data-alt="moody high-angle shot of a classic mahogany bookstore interior with tall shelves filled with leather-bound books and warm amber lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZMoA6Y1GHqAbSaG0Y3VGaiVno-lkhpQVI7TJg7bMMPL0iaa0UasoeXMhJbaN8PjiLFAXZkIImIWAWIK4DPDsoUMI6Ug52pG8kfR_AnX4P-hHfpevJrpF3zOCpTBPCptHad6XHUHnNcZOWlup6sXOqeIUzZQvP7CJWy_dkBRLCtjb0OInVu6URnlc8XpqNbk87hOS-wMtNbKR1fytiWr6upNhnqXKQVNzWngZYTD4luR9ZW0QPe9NLCPBBBnUGnAqK797K4maS2gU"/>
+<div class="absolute inset-0 editorial-gradient"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end">
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label text-[10px] uppercase tracking-widest">Literature</span>
+<span class="text-on-surface-variant font-label text-xs">24 Saved Locations</span>
+</div>
+<h2 class="font-headline text-3xl font-bold text-on-surface">Bookstores</h2>
+<p class="text-on-surface-variant font-body text-sm mt-2 max-w-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">Explore quiet corners and hidden shelves from your favorite urban sanctuaries.</p>
+</div>
+<div class="absolute top-6 right-6">
+<button class="w-12 h-12 rounded-full bg-surface-container-highest/80 backdrop-blur-md flex items-center justify-center text-secondary transition-all active:scale-90">
+<span class="material-symbols-outlined">arrow_outward</span>
+</button>
+</div>
+</div>
+<!-- Video Games Card (Purple Accent) -->
+<div class="md:col-span-4 group relative overflow-hidden rounded-xl bg-surface-container h-[400px] transition-all duration-500 hover:bg-surface-container-high">
+<img alt="Video Games" class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105" data-alt="abstract neon light trails in purple and blue tones reflecting off dark metallic surfaces, futuristic gaming aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGriKxHfyHsLJvs5kD-RfZWxxHj4hT8PhMYtD3p9DovAZy8uMmyG-kjz-olJVT-JL_qAhxsHH0kL5ES9nf-GCFpDCZmLHdSJ9bp7WwjwcU_IMt4OyVV6FxkpAhc9ifoCypbBq3t7me1rhcojscBM-QeyM7I0ctAjguwUVWNQ6cQ_OxuTwnhgBXmP-y3rSPZpALYOjIyAWC4OgdeHv1MtitP2Wv7CbIF4Hvihm-ACusnmliqKs46REUGHQFZoVjFdtXpltF0-CjB2c"/>
+<div class="absolute inset-0 editorial-gradient"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end">
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full font-label text-[10px] uppercase tracking-widest">Interactive</span>
+</div>
+<h2 class="font-headline text-3xl font-bold text-on-surface">Video Games</h2>
+<span class="text-on-surface-variant font-label text-xs mt-1">112 Items in Vault</span>
+</div>
+</div>
+<!-- Podcasts Card (Orange Accent) -->
+<div class="md:col-span-5 group relative overflow-hidden rounded-xl bg-surface-container h-[450px] transition-all duration-500 hover:bg-surface-container-high">
+<img alt="Podcasts" class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105" data-alt="vintage microphone on a dark studio desk with warm orange backlighting and soft bokeh circles in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnLkvh-F22zQYmwdslezlxtAUxOqY-pwvsvP1S6b7CxT2lYSprJWOxyyLW-lbpMdcPgMyA5soXx9luNaq1i0gOkbZd2tRZLqx_0xwlByPwLf_HVMOOgTjowP9ImdGfFBOeEUCcuIRGwoFm52wrpdM_kCAl70LQVsycR2TckS5vMmV2Y6A4irl_KTxh3Ztj7-kgZ3tG3GcoUbmWESszyodf2_bURd3FkqFc5CDoPHjC9zM6eZAnyPMxUSZOCDLdPow5h8eMtKu3dCQ"/>
+<div class="absolute inset-0 editorial-gradient"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end">
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full font-label text-[10px] uppercase tracking-widest">Audio Narrative</span>
+</div>
+<h2 class="font-headline text-3xl font-bold text-on-surface">Podcasts</h2>
+<span class="text-on-surface-variant font-label text-xs mt-1">48 Series Subscribed</span>
+</div>
+</div>
+<!-- Streaming Card (Primary Accent) -->
+<div class="md:col-span-7 group relative overflow-hidden rounded-xl bg-surface-container h-[450px] transition-all duration-500 hover:bg-surface-container-high">
+<img alt="Streaming" class="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-105" data-alt="cinematic widescreen shot of a glowing cinema screen in a dark theater, vibrant light reflecting on empty velvet seats" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE9bNCP5dqx0eebn0xkwQat7A-BHJe3GPTA__-khseBLNeo47ey6BXujfbvx4-BBgVsZSGTiUh_6wvQji-eI2YoMnFfi5LS1JjVjqm7Zs4H8IvJlqqFuDiIWrp53l1ujooacWavc8elglcgjV99erLzAB5LTelGb3CnPjz5RXn7gmKT7SVvlNmboeUqERwnpmJ8Nmi-q59tLGqUPqABdnfpXb2ZCy14vtgIlDGzHJJRihEozvxNErWOPxwuRGH2dZ2nVwyi0lrNOU"/>
+<div class="absolute inset-0 editorial-gradient"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end">
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full font-label text-[10px] uppercase tracking-widest">Cinema &amp; Series</span>
+</div>
+<h2 class="font-headline text-3xl font-bold text-on-surface">Streaming</h2>
+<div class="flex justify-between items-end mt-2">
+<span class="text-on-surface-variant font-label text-xs">84 Titles Watched</span>
+<div class="flex -space-x-3">
+<div class="w-8 h-8 rounded-full border-2 border-surface-container bg-surface-variant overflow-hidden">
+<img alt="Media 1" data-alt="movie poster art featuring abstract colorful geometry" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC64fVsb_V6n1tgMkaaU2WBcZesuw9z-0m7gxgbp75lcw72EWgzInEB-L9Y4Du5R6jTURh7Hh9BZJLdNszMLfV291s0ixQLQu2UTpPKHMLFPKDiFz1Kwy_R9Z_2Nh0BT02byMOUA6UO1jMof0lELt8L_0rx-GSrACuDLINM36sGy0foqVpS3ZPYWNyPGvx8Xbv5WN_H10OeL0yVqnYzsd0m0pt1pJmL0Vu6GGHeRykOigfLuhmIeE3S0ooq7oZjvlSG43LXVPBSPQE"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface-container bg-surface-variant overflow-hidden">
+<img alt="Media 2" data-alt="cinematic shot of a protagonist standing on a cliff at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6BjAvumLWNGkv1dysJehJhxHgnt-PU-2pQuhHuczgJXU5ETuA1508-AcUO-Ju10UHjRb4_m63ZV8X6Ah3-bBY7c7MmJwJtsgN8ND7AiVxHAPKzy_egpkuMzbIoli0Ka2V35dUI1CKR-ls5yeQkBsiAfCzIiXFRtoO32DBiobdT941eP-400kcT2hMTkPCJ8-BzJKiO_8ya1-xa7EEyGV9NpNp97SYCZr1Oqb1Orrb0pLmkJ6tu68aqhfIDO1gSJXM8XCKf25rIWQ"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface-container bg-surface-variant overflow-hidden">
+<img alt="Media 3" data-alt="dark dramatic poster for a sci-fi series with a glowing portal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGfrIDwukZgo6GOoISfD6xlejaLnxYwgpL20o5Zq90XE2epYdLiWELlOTEytuSvUa8wCvjU4piu8yrhCitMAeB_xyeHcWSoxZX1H-OhLWQ9UdJvEyQ5acEi1ga9F6jpkDX5NWllVr9VBpZsoMqiWovkvJKsV3OkEO4I9Q4n12km4NX0mp7M7VuJbr7CiVTQmtL_ieeLh5t0mzqh7dr0kFQ_tyRkVI2bUcXytCbMvWOBLG-ODiTD18qh9LZR3Kv8p8sBm9HTCUKe50"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Stats Ticker / Subtle Section -->
+<section class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 py-8 border-t border-outline-variant/10">
+<div>
+<span class="block font-headline text-3xl font-bold text-on-surface">268</span>
+<span class="block font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant mt-1">Total Artifacts</span>
+</div>
+<div>
+<span class="block font-headline text-3xl font-bold text-secondary">12</span>
+<span class="block font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant mt-1">New This Week</span>
+</div>
+<div>
+<span class="block font-headline text-3xl font-bold text-tertiary">85%</span>
+<span class="block font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant mt-1">Vault Completion</span>
+</div>
+<div>
+<span class="block font-headline text-3xl font-bold text-primary">4</span>
+<span class="block font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant mt-1">Active Streams</span>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-6 bg-[#131313]/90 backdrop-blur-2xl rounded-t-[24px] shadow-[0px_-10px_40px_rgba(0,0,0,0.4)] md:hidden">
+<div class="flex flex-col items-center justify-center text-[#adaaaa] opacity-60 hover:bg-[#262626] rounded-full transition-all duration-300 px-4 py-1">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-['Manrope'] text-[10px] font-medium uppercase tracking-widest mt-1">Discover</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#a4a6ff] bg-[#a4a6ff]/10 rounded-full px-4 py-1">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-['Manrope'] text-[10px] font-medium uppercase tracking-widest mt-1">Categories</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#adaaaa] opacity-60 hover:bg-[#262626] rounded-full transition-all duration-300 px-4 py-1">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-['Manrope'] text-[10px] font-medium uppercase tracking-widest mt-1">Library</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#adaaaa] opacity-60 hover:bg-[#262626] rounded-full transition-all duration-300 px-4 py-1">
+<span class="material-symbols-outlined">group</span>
+<span class="font-['Manrope'] text-[10px] font-medium uppercase tracking-widest mt-1">Social</span>
+</div>
+</nav>
+<!-- Desktop Lateral Decoration -->
+<div class="fixed left-6 bottom-12 hidden lg:block vertical-text">
+<span class="font-label text-[10px] uppercase tracking-[0.3em] text-outline-variant rotate-180" style="writing-mode: vertical-rl;">The Curated Experience © 2024</span>
+</div>
+</body></html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Indigo Archive - Discovery Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#ffffff",
+                    "inverse-on-surface": "#565555",
+                    "primary-container": "#9396ff",
+                    "error-container": "#a70138",
+                    "primary": "#a4a6ff",
+                    "on-secondary": "#005c52",
+                    "surface-variant": "#262626",
+                    "secondary-fixed-dim": "#50ebd5",
+                    "on-surface": "#ffffff",
+                    "tertiary-fixed": "#ff9742",
+                    "on-primary": "#1100a3",
+                    "surface-dim": "#0e0e0e",
+                    "on-primary-fixed-variant": "#0f009c",
+                    "surface-container": "#1a1919",
+                    "on-tertiary-fixed-variant": "#5d2c00",
+                    "primary-dim": "#6062f2",
+                    "on-primary-fixed": "#000000",
+                    "outline": "#767575",
+                    "outline-variant": "#484847",
+                    "tertiary-fixed-dim": "#f08934",
+                    "surface": "#0e0e0e",
+                    "on-error-container": "#ffb2b9",
+                    "on-tertiary-container": "#4c2300",
+                    "surface-container-highest": "#262626",
+                    "secondary-dim": "#50ebd5",
+                    "background": "#0e0e0e",
+                    "surface-container-low": "#131313",
+                    "on-error": "#490013",
+                    "on-tertiary-fixed": "#2b1100",
+                    "on-primary-container": "#0b0081",
+                    "on-secondary-container": "#dcfff7",
+                    "surface-container-high": "#20201f",
+                    "secondary": "#62fae3",
+                    "surface-bright": "#2c2c2c",
+                    "primary-fixed": "#9396ff",
+                    "primary-fixed-dim": "#8486ff",
+                    "tertiary-dim": "#ec8731",
+                    "inverse-surface": "#fcf9f8",
+                    "surface-tint": "#a4a6ff",
+                    "error": "#ff6e84",
+                    "tertiary-container": "#fd933d",
+                    "secondary-container": "#006b5f",
+                    "secondary-fixed": "#62fae3",
+                    "surface-container-lowest": "#000000",
+                    "tertiary": "#ffa765",
+                    "error-dim": "#d73357",
+                    "on-secondary-fixed-variant": "#00675c",
+                    "on-tertiary": "#5b2c00",
+                    "on-secondary-fixed": "#004840",
+                    "on-surface-variant": "#adaaaa",
+                    "inverse-primary": "#494adb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 selection:text-primary">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#0e0e0e]/80 backdrop-blur-xl">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#a4a6ff] text-2xl scale-95 active:opacity-80 transition-all cursor-pointer" data-icon="menu">menu</span>
+<h1 class="font-['Manrope'] text-2xl font-extrabold tracking-tighter text-[#a4a6ff]">Archive</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[#a4a6ff] font-bold font-['Manrope'] tracking-tight text-lg hover:text-[#a4a6ff] transition-colors duration-300" href="#">Discover</a>
+<a class="text-[#adaaaa] font-['Manrope'] tracking-tight text-lg hover:text-[#a4a6ff] transition-colors duration-300" href="#">Categories</a>
+<a class="text-[#adaaaa] font-['Manrope'] tracking-tight text-lg hover:text-[#a4a6ff] transition-colors duration-300" href="#">Library</a>
+<a class="text-[#adaaaa] font-['Manrope'] tracking-tight text-lg hover:text-[#a4a6ff] transition-colors duration-300" href="#">Social</a>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/20 scale-95 active:opacity-80 transition-all cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="close-up portrait of a professional man in soft studio lighting with a clean dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJFpu3LbE9__UiFi5dkbGz52Jd0BpgeBwqpbZbKSB9E930b277nCqjpxFLNLm5waBjVcDtSHjdzZMIIj606Fvg_gpVcdYfT2b5IQG5JbQ53OqtERumN63P8RNN9hp6wEgf0y3XEF-qGfvuAi6xz0ELzN27cUnh4VS5VHiPekpNQ76vI1bgSJrJyog93i-lLwM1H6r7FVauxmDYP4841T5T_NXwdBMj2rPYkIihmLQfx1K3fuE1uXio1LgtsJ-9OJ0vAeF6IUvOSUs"/>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto space-y-12">
+<!-- Search Section -->
+<section class="relative">
+<div class="max-w-2xl mx-auto">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors" data-icon="search">search</span>
+<input class="w-full bg-surface-container-highest border-none rounded-full py-4 pl-14 pr-6 text-on-surface placeholder:text-on-surface-variant focus:ring-0 focus:outline-none transition-all" placeholder="Search the archive..." type="text"/>
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-primary transition-all duration-300 group-focus-within:w-[90%]"></div>
+</div>
+</div>
+</section>
+<!-- Trending Bookstores (Carousel) -->
+<section class="space-y-6">
+<div class="flex justify-between items-end">
+<div>
+<span class="font-label text-secondary text-[10px] uppercase tracking-[0.2em] font-semibold mb-2 block">Curation Pick</span>
+<h2 class="font-headline text-3xl font-bold tracking-tight">Trending Bookstores</h2>
+</div>
+<button class="text-primary font-label text-sm font-medium hover:underline flex items-center gap-1">
+                    View Maps <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="flex gap-6 overflow-x-auto hide-scrollbar -mx-6 px-6 pb-4">
+<!-- Store Card 1 -->
+<div class="flex-none w-[320px] md:w-[400px] group cursor-pointer">
+<div class="relative aspect-[16/10] rounded-xl overflow-hidden mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="interior of a modern cozy bookstore with floor-to-ceiling wooden shelves and soft warm ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe0EjheLWjm31knkb8mwiyBb-cvVA6goAXqxvLsWJ5MwWZ1vZHEvjGbo8V3vrG0Xz8D_iUwwIro-JcAnetX0cozzGJJ4utduvBTue9nAWXPq2qjXbfTTT5FZeyJlHUgnkU4B4jjvy10jzeqcXhEQzyIcHTXWPIoyM8n59F89ZSpc9K9RK6j6ycoPvESLg30HtwoSok4y-0Tv3Fykvrp6_rTldkPY_eBtrW3hzykOVf9c71YhCt1MGLN5inOiH8rgicCuvZK-s0pho"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-surface-container-highest/60 backdrop-blur-md flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all shadow-lg active:scale-90">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="space-y-1">
+<h3 class="font-headline text-xl font-bold text-on-surface group-hover:text-primary transition-colors">The Midnight Chapter</h3>
+<p class="font-label text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span> Paris, France • Open until 11PM
+                        </p>
+</div>
+</div>
+<!-- Store Card 2 -->
+<div class="flex-none w-[320px] md:w-[400px] group cursor-pointer">
+<div class="relative aspect-[16/10] rounded-xl overflow-hidden mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="minimalist aesthetic bookstore with white shelves and emerald green accents in a bright airy space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2jVxbff_pzEG-c7u3WRLZqvS1d8_yJ1np-TTd63u_x99uwW_hwkGmRFk_MeyiIs-3bCrhnby2WxGmhXfpSQKW7FtUU6qlohe6He5zUREiY0yg4ILQ_P0AxEB1W9si_NJelLBeVt39yVOko4dhikmDZFA5uANtaitEw9BNMhnLjrl0z9-WuVOB21S4WS1OSo1BRco0y1x1c1miT8ogcEmfLX31Bshiu_zoQ2HlZsinjIy0MigRGoOfY3mpizlYzTYtyc-3WTHbEk4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-surface-container-highest/60 backdrop-blur-md flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all shadow-lg active:scale-90">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="space-y-1">
+<h3 class="font-headline text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Vellum &amp; Vine</h3>
+<p class="font-label text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span> Portland, OR • Specialty Coffee
+                        </p>
+</div>
+</div>
+<!-- Store Card 3 -->
+<div class="flex-none w-[320px] md:w-[400px] group cursor-pointer">
+<div class="relative aspect-[16/10] rounded-xl overflow-hidden mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="grand classical library architecture with ornate dark wood carvings and brass reading lamps" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVUYledatW2_nbHyXd-gqzY77tg4RzI6UXeWrXnj5UHQl-hVjKjh8YoxfxgvbPZkE1IFSS1sFDWMGZThf8VzORUVyvq8HkOiEHB4BRB3g3uEn8cAVw5aiEKGcyR_DRx3t5DPJEaFA_nU0B9VuH4H6UucWU4ZySRwKR5hvpy0Oy5b7J8Bw2Gxj5_kqpWO4ArED72i5FY-iOdfxzYLksy8QmBcMmAqueSxqINO_QhvUv-9KG-1EfZwVY1C9WzwFcQsusrC8Y6dVrEuo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-surface-container-highest/60 backdrop-blur-md flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all shadow-lg active:scale-90">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="space-y-1">
+<h3 class="font-headline text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Archival Echoes</h3>
+<p class="font-label text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span> London, UK • Rare Editions
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Recommended Games (Bento-style Grid) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 space-y-6">
+<div class="flex items-center gap-3">
+<span class="w-2 h-8 bg-primary rounded-full"></span>
+<h2 class="font-headline text-2xl font-bold tracking-tight">Recommended Games</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Game Item 1 -->
+<div class="bg-surface-container rounded-xl p-4 flex gap-4 group hover:bg-surface-container-high transition-all">
+<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="cinematic digital art of a futuristic cybernetic landscape with purple neon lights and rain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbsXt-v4JX8ne6yZBjCDAeshC0s6xG3CtIx5Yy7ibyvlKHrRReRyVxKil_dgbkmtFrG9aLk5EqRtNm61iFuEBVkuc7g_rRnFlSL9s82URH8zQTFlNyziAZVSHKxX09_KYT8r6azHbxtLHmcMqgga_TuD-okvAgnf0c6Uuh7gvgZmuVDQ-WNzUa9KzHJr2iNA53eBYClic0XeY6EbqUYfNn8WE8PbUqbBx2uBSfaHIC1sXSqLOzHZCi3bUL9AdDkZiNhYYqD3yHGuU"/>
+</div>
+<div class="flex flex-col justify-between py-1 w-full">
+<div>
+<h4 class="font-headline font-bold text-primary">Cyber Drift</h4>
+<p class="text-xs text-on-surface-variant font-label">Action • 12GB</p>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs font-bold text-secondary">NEW RELEASE</span>
+<button class="text-primary active:scale-75 transition-transform">
+<span class="material-symbols-outlined text-xl" data-icon="favorite">favorite</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Game Item 2 -->
+<div class="bg-surface-container rounded-xl p-4 flex gap-4 group hover:bg-surface-container-high transition-all">
+<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="abstract fantasy landscape with floating islands and a golden mystical tree under a purple sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi-B3BIiChfxqbdpTa2DFA006ZIHegCTWcIa5utbt7iuLBcM5HJqeVrUmByzZnBQOvONwZd62dzB-civwmxEvFvXrWKROZC5_b-Uj46ycURBcelDYeSJsoUq3-30ailqNh8OHSPdt1Q4im9k_4fQCxYyiOe8faJqgSV6MyOBErtIAtjM2FJcy9XhuUptj--RVMR2PtgB4Lq-0KO19C-96yre6xhbIY2ggep_g_rXLYEXVGfFtJcUBjopwgCqV-q8P3A6M8YD9jvTk"/>
+</div>
+<div class="flex flex-col justify-between py-1 w-full">
+<div>
+<h4 class="font-headline font-bold text-primary">Ethereal Realm</h4>
+<p class="text-xs text-on-surface-variant font-label">RPG • 24GB</p>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs font-bold text-secondary">EDITOR'S CHOICE</span>
+<button class="text-primary active:scale-75 transition-transform">
+<span class="material-symbols-outlined text-xl" data-icon="favorite">favorite</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- New Podcasts (Vertical Sidebar) -->
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<span class="w-2 h-8 bg-tertiary rounded-full"></span>
+<h2 class="font-headline text-2xl font-bold tracking-tight">New Podcasts</h2>
+</div>
+<div class="space-y-3">
+<!-- Podcast Item 1 -->
+<div class="flex items-center gap-4 p-3 bg-surface-container-low rounded-xl border border-transparent hover:border-outline-variant/10 transition-all cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-tertiary/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="mic">mic</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold truncate">Beyond the Void</h4>
+<p class="text-[10px] text-on-surface-variant font-label">Ep 42 • 45 min</p>
+</div>
+<button class="text-tertiary p-2 active:scale-75 transition-transform">
+<span class="material-symbols-outlined text-lg" data-icon="favorite">favorite</span>
+</button>
+</div>
+<!-- Podcast Item 2 -->
+<div class="flex items-center gap-4 p-3 bg-surface-container-low rounded-xl border border-transparent hover:border-outline-variant/10 transition-all cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-tertiary/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="mic">mic</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold truncate">Analog Memories</h4>
+<p class="text-[10px] text-on-surface-variant font-label">Ep 128 • 52 min</p>
+</div>
+<button class="text-tertiary p-2 active:scale-75 transition-transform">
+<span class="material-symbols-outlined text-lg" data-icon="favorite">favorite</span>
+</button>
+</div>
+<!-- Podcast Item 3 -->
+<div class="flex items-center gap-4 p-3 bg-surface-container-low rounded-xl border border-transparent hover:border-outline-variant/10 transition-all cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-tertiary/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="mic">mic</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold truncate">Synthetic Hearts</h4>
+<p class="text-[10px] text-on-surface-variant font-label">Ep 08 • 38 min</p>
+</div>
+<button class="text-tertiary p-2 active:scale-75 transition-transform">
+<span class="material-symbols-outlined text-lg" data-icon="favorite">favorite</span>
+</button>
+</div>
+</div>
+<button class="w-full py-4 rounded-xl border border-outline-variant/20 font-label text-xs tracking-widest text-on-surface-variant uppercase hover:bg-surface-container-highest hover:text-on-surface transition-all">
+                    Explore All Audio
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-6 bg-[#131313]/90 backdrop-blur-2xl shadow-[0px_-10px_40px_rgba(0,0,0,0.4)] rounded-t-[24px]">
+<a class="flex flex-col items-center justify-center text-[#a4a6ff] bg-[#a4a6ff]/10 rounded-full px-4 py-1 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-['Manrope'] text-[10px] font-medium uppercase tracking-widest mt-1">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#adaaaa] opacity-60 hover:bg-[#262626] rounded-full p-2 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-['Manrope'] text-[10px] font-medium uppercase tracking-widest mt-1">Categories</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#adaaaa] opacity-60 hover:bg-[#262626] rounded-full p-2 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-['Manrope'] text-[10px] font-medium uppercase tracking-widest mt-1">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#adaaaa] opacity-60 hover:bg-[#262626] rounded-full p-2 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-['Manrope'] text-[10px] font-medium uppercase tracking-widest mt-1">Social</span>
+</a>
+</nav>
+<!-- Contextual FAB (Only on Discover) -->
+<button class="fixed right-6 bottom-32 md:bottom-10 w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary-dim text-on-primary shadow-[0px_20px_40px_rgba(0,0,0,0.4)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-40">
+<span class="material-symbols-outlined scale-125" data-icon="add" style="font-variation-settings: 'FILL' 0, 'wght' 600;">add</span>
+</button>
+</body></html>
