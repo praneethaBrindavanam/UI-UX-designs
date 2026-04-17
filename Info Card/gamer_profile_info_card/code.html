@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Curator Hub - Gamer Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#005a3c",
+                    "primary-fixed": "#d8e2ff",
+                    "outline-variant": "#a9b4b9",
+                    "on-primary-container": "#004eaa",
+                    "on-surface-variant": "#566166",
+                    "inverse-primary": "#4d8eff",
+                    "background": "#f7f9fb",
+                    "on-primary-fixed": "#003c86",
+                    "secondary-container": "#e9ddff",
+                    "primary-container": "#d8e2ff",
+                    "on-secondary-container": "#6029c9",
+                    "secondary-fixed": "#e9ddff",
+                    "secondary-fixed-dim": "#ddcdff",
+                    "on-secondary-fixed-variant": "#6a37d4",
+                    "on-secondary": "#fdf7ff",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-dim": "#005f40",
+                    "primary-fixed-dim": "#c3d4ff",
+                    "on-primary": "#f7f7ff",
+                    "on-secondary-fixed": "#4d00b7",
+                    "on-error": "#fff7f6",
+                    "on-tertiary": "#e6ffee",
+                    "on-error-container": "#752121",
+                    "outline": "#717c82",
+                    "tertiary-fixed-dim": "#58e7ab",
+                    "inverse-surface": "#0b0f10",
+                    "surface-variant": "#d9e4ea",
+                    "tertiary": "#006d4a",
+                    "secondary": "#6e3bd8",
+                    "secondary-dim": "#622bcb",
+                    "tertiary-container": "#69f6b8",
+                    "error-container": "#fe8983",
+                    "surface-tint": "#005ac2",
+                    "surface-dim": "#cfdce3",
+                    "surface-bright": "#f7f9fb",
+                    "primary": "#005ac2",
+                    "on-primary-fixed-variant": "#0057bd",
+                    "on-tertiary-fixed": "#00452d",
+                    "error-dim": "#4e0309",
+                    "tertiary-fixed": "#69f6b8",
+                    "on-surface": "#2a3439",
+                    "on-background": "#2a3439",
+                    "error": "#9f403d",
+                    "inverse-on-surface": "#9a9d9f",
+                    "surface-container-low": "#f0f4f7",
+                    "primary-dim": "#004fab",
+                    "on-tertiary-fixed-variant": "#006544",
+                    "surface": "#f7f9fb",
+                    "surface-container-highest": "#d9e4ea",
+                    "surface-container": "#e8eff3",
+                    "surface-container-high": "#e1e9ee"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; color: #2a3439; }
+        .font-manrope { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-header { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface selection:bg-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#f7f9fb]/80 dark:bg-slate-900/80 backdrop-blur-xl">
+<nav class="flex items-center justify-between px-6 py-4 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400" data-icon="grid_view">grid_view</span>
+<h1 class="text-xl font-bold tracking-tight text-slate-800 dark:text-slate-100 font-manrope">Curator Hub</h1>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-slate-500 dark:text-slate-400 font-inter text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-lg" href="#">Real Estate</a>
+<a class="text-slate-500 dark:text-slate-400 font-inter text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-lg" href="#">Gaming</a>
+<a class="text-blue-600 dark:text-blue-400 font-bold font-inter text-sm px-3 py-2 rounded-lg" href="#">Profile</a>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-5xl mx-auto">
+<!-- Gamer Profile Section -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Profile Main Card (Bento Style) -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+<!-- Hero Profile Card -->
+<section class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0px_10px_30px_rgba(42,52,57,0.04)] relative">
+<div class="h-48 w-full bg-gradient-to-br from-secondary to-primary relative overflow-hidden" data-alt="abstract geometric composition with flowing liquid shapes in deep purple and vibrant blue tones with subtle film grain texture" style="background-image: linear-gradient(135deg, #6e3bd8 0%, #005ac2 100%);">
+<div class="absolute inset-0 opacity-20" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCTOZ2GO3fnmdxPiI3qV6NiQfh75vcF9jmI2AvIB40gvPT5JwJ9Ej4a_7EH47JSx0Dqzb4gjczJE6-5-jAADdqGNo0LTO8vGbrV8MF08m9bAd1KulP3z4Es0keMtqJZr148AVCDwo0BUJ_xfu92KkHn5wcErpR87vMEpc9GYNtaKn6cGWtzFL_gtEP1nfOrvzUcW8sakVyMfMuBqED0e5MhXvasYY0k8uq02T1ej-N3A3iRBn27cXH-AyknzXAe9NxzlcQBp6iFC6ri');">
+</div>
+</div>
+<div class="px-8 pb-8 -mt-16 relative flex flex-col md:flex-row items-end md:items-center justify-between gap-6">
+<div class="flex flex-col md:flex-row items-center gap-6">
+<div class="w-32 h-32 rounded-2xl border-4 border-surface-container-lowest overflow-hidden shadow-xl bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="portrait of a young professional gamer with purple neon light reflecting on their face wearing a minimalist white hoodie" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb3h5BU-GwTahWPCmrgZzxdMYcNapxA1M0M4HsrCSgo-DgwpD3ain3vj9ZxrTVhEMuK5Vap-DIqd_EuCzoP_nCoAM4SvgVxIMO8W1e1YiO-Xm14G4shHzi1XYiDJ0F8R_QummVBOj28MsqcYHZ6XYRQS3eQYh1_a_DjX5bGKTd6LN04y7cSxjsdPhNPphg7pVDvExLtgcNyQlLfAOBg1jiiNyRj3YyzmA-fsKN6UrOqKed7WW9FWZlYZ8SDevalj1D2nEomsy_Afqu"/>
+</div>
+<div class="text-center md:text-left pt-4">
+<h2 class="text-3xl font-extrabold font-manrope text-on-surface tracking-tight">Kinesis_Nova</h2>
+<div class="flex items-center gap-2 mt-1">
+<span class="flex items-center gap-1 text-on-surface-variant text-sm font-medium">
+<span class="material-symbols-outlined text-[18px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                        Elite Tier Curator
+                                    </span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed shadow-[0_0_8px_#69f6b8]"></span>
+<span class="text-tertiary font-bold text-xs uppercase tracking-widest">Live Now</span>
+</div>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 rounded-full font-manrope font-bold text-sm text-on-primary bg-gradient-to-r from-primary to-primary-dim shadow-lg hover:shadow-xl transition-all active:scale-95">
+                                Follow
+                            </button>
+<button class="p-2.5 rounded-full bg-surface-container-high text-primary hover:bg-surface-container-highest transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Statistics Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Win Rate -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_10px_30px_rgba(42,52,57,0.04)] border-l-4 border-primary">
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary-dim p-2 bg-primary-container/30 rounded-lg" data-icon="military_tech">military_tech</span>
+<span class="text-tertiary font-bold text-xs bg-tertiary-container px-2 py-1 rounded-md">+2.4%</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-xs font-semibold uppercase tracking-wider font-label">Win Rate</p>
+<p class="text-3xl font-extrabold font-manrope text-on-surface mt-1">68.5%</p>
+</div>
+</div>
+</div>
+<!-- K/D Ratio -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_10px_30px_rgba(42,52,57,0.04)] border-l-4 border-secondary">
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-secondary-dim p-2 bg-secondary-container/30 rounded-lg" data-icon="target">target</span>
+<span class="text-secondary font-bold text-xs bg-secondary-container px-2 py-1 rounded-md">Top 1%</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-xs font-semibold uppercase tracking-wider font-label">K/D Ratio</p>
+<p class="text-3xl font-extrabold font-manrope text-on-surface mt-1">4.12</p>
+</div>
+</div>
+</div>
+<!-- Hours Played -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_10px_30px_rgba(42,52,57,0.04)] border-l-4 border-tertiary">
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-tertiary-dim p-2 bg-tertiary-container/30 rounded-lg" data-icon="schedule">schedule</span>
+<span class="text-on-surface-variant font-medium text-xs">Total</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-xs font-semibold uppercase tracking-wider font-label">Hours Played</p>
+<p class="text-3xl font-extrabold font-manrope text-on-surface mt-1">2,840</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Achievements Section -->
+<section class="bg-surface-container-low rounded-xl p-8">
+<h3 class="text-lg font-bold font-manrope text-on-surface mb-6">Recent Achievements</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex items-center gap-4 bg-surface-container-lowest p-4 rounded-lg shadow-sm">
+<div class="w-12 h-12 bg-primary-container/20 rounded-full flex items-center justify-center text-primary-dim">
+<span class="material-symbols-outlined" data-icon="workspace_premium" data-weight="fill">workspace_premium</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface font-manrope">Master of Shadows</p>
+<p class="text-xs text-on-surface-variant">Completed 50 stealth missions</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-lowest p-4 rounded-lg shadow-sm">
+<div class="w-12 h-12 bg-secondary-container/20 rounded-full flex items-center justify-center text-secondary-dim">
+<span class="material-symbols-outlined" data-icon="bolt" data-weight="fill">bolt</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface font-manrope">Speed Demon</p>
+<p class="text-xs text-on-surface-variant">Ranked #1 in weekly race</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Sidebar Info -->
+<aside class="lg:col-span-4 flex flex-col gap-8">
+<!-- Equipment / PC Build -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0px_10px_30px_rgba(42,52,57,0.04)]">
+<h3 class="text-lg font-bold font-manrope text-on-surface mb-6">Battle Station</h3>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="developer_board">developer_board</span>
+<div>
+<p class="text-xs font-semibold uppercase text-outline tracking-widest font-label">Graphics Card</p>
+<p class="text-sm font-medium text-on-surface">RTX 4090 OC Edition</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="mouse">mouse</span>
+<div>
+<p class="text-xs font-semibold uppercase text-outline tracking-widest font-label">Peripherals</p>
+<p class="text-sm font-medium text-on-surface">Pro Wireless G-Series</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="desktop_windows">desktop_windows</span>
+<div>
+<p class="text-xs font-semibold uppercase text-outline tracking-widest font-label">Monitor</p>
+<p class="text-sm font-medium text-on-surface">360Hz QD-OLED 27"</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Game Library Mini-List -->
+<div class="bg-surface-container-low p-8 rounded-xl">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-sm font-bold uppercase tracking-widest font-label text-on-surface-variant">Top Games</h3>
+<span class="text-xs text-primary font-bold cursor-pointer hover:underline">View All</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="vibrant cyberpunk city street with neon signs and flying vehicles in a futuristic setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFdCPo9xSI3wd4vYsQboqGkmXXhcmofRqa81a8AKNTGYlMebFa4a5NEF2aiTe1AHs6WA4Xenqc8J6nm_LI4LU6bh3C1ACWMkbpvrwcEWFwiz70vKFsuYQvv9poo2ZFYvvg-L1g29Y_z84TKkJJQHYPVAaGlbByRx0V79H8sgC5xjKWRG83zdXRuJCO-Uav7Iy0zGrsakeoaiM29cabdYut7NbQgJ171xT4lgRukSzeIj_1IgbJzP7-3kld1-t5ZiJAlwMKQMWMm_Kc"/>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Neo-Strike: 2077</p>
+<p class="text-xs text-on-surface-variant">1,240 hrs</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="dramatic cinematic shot of a mystical forest with floating islands and ancient stone ruins" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAN06fIxaguVn_KEnXu7tWhVtOqAl5LuM8vN3B4aCRtZ-JAntX-UfYMzbD9WhikJH2MfaphWVCAnmj5WMMCXkV9ixShyZLxxX-ZWg5DE3y_Sm_6h9PZRffn8xfw1P3WzDe5KB7IuSt7VBdPch0h5mY2Im5ZvaB6hFsI-KyHTdgaP5aKamVZpVLxIe1XuvwAtDDLwXczHCEOGVyiDiM8Ny6tD6k0sx_J0NFwGwoRkzvQnrNvOAIKFBopN0T_uzf0hL1WEEppyHhO_ie"/>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Ethereal Realms</p>
+<p class="text-xs text-on-surface-variant">860 hrs</p>
+</div>
+</div>
+<div class="flex items-center gap-3 opacity-60">
+<div class="w-10 h-10 rounded-lg bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="stylized low-poly desert landscape with a lone wanderer and giant sand dunes at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHcZJRr8d9P2iCs0byH4jTuDXJVOmSR5f4T3M1ph8bdOECJ01w0vpCDcVMtjgFcyqJnDAM60X3Gh95wnrsHG1kWYp6WbGIq46avy0EV_An3RWIhteb3mBH96ilhOMZKnavovj72bqCYShsPKelWJRA0IoTDHqMSLk_OgtGdud4V6x0odSmhmnKa7bqGyMFl3S2qqx_7cgoDl39zxOfUMahAfAcCOMtS0RkUB9QafHDuCu1cwUZe2ev3Uw8CfKdg7kUo6ba3siLaX6s"/>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Sands of Exile</p>
+<p class="text-xs text-on-surface-variant">740 hrs</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl z-50 rounded-t-2xl shadow-[0px_-10px_30px_rgba(42,52,57,0.04)] border-t border-slate-100/10">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-500 transition-all active:translate-y-0.5 duration-150">
+<span class="material-symbols-outlined mb-1" data-icon="domain">domain</span>
+<span class="font-inter text-[11px] font-semibold uppercase tracking-wider">Real Estate</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-500 transition-all active:translate-y-0.5 duration-150">
+<span class="material-symbols-outlined mb-1" data-icon="sports_esports">sports_esports</span>
+<span class="font-inter text-[11px] font-semibold uppercase tracking-wider">Gaming</span>
+</div>
+<div class="flex flex-col items-center justify-center text-blue-600 dark:text-blue-400 bg-blue-50/50 dark:bg-blue-900/20 rounded-xl px-4 py-1 active:translate-y-0.5 duration-150">
+<span class="material-symbols-outlined mb-1" data-icon="account_circle">account_circle</span>
+<span class="font-inter text-[11px] font-semibold uppercase tracking-wider">Profile</span>
+</div>
+</nav>
+</body></html>
