@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wanderlust | Activity Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#f9f9f9",
+                        "outline-variant": "#c3c6d1",
+                        "primary": "#001e40",
+                        "on-surface-variant": "#43474f",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface": "#f9f9f9",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#ac3509",
+                        "on-primary-container": "#799dd6",
+                        "tertiary-container": "#00393f",
+                        "surface-container": "#eeeeee",
+                        "secondary-container": "#fe6f42",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary-container": "#44a9b5",
+                        "inverse-surface": "#2f3131",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#dadada",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#75d5e2",
+                        "on-secondary-fixed": "#3a0a00",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#ffdbd0",
+                        "on-secondary-container": "#631800",
+                        "inverse-primary": "#a7c8ff",
+                        "surface-variant": "#e2e2e2",
+                        "on-primary-fixed": "#001b3c",
+                        "tertiary-fixed": "#92f1fe",
+                        "surface-container-low": "#f3f3f3",
+                        "on-background": "#1a1c1c",
+                        "on-tertiary-fixed-variant": "#004f56",
+                        "on-surface": "#1a1c1c",
+                        "on-tertiary-fixed": "#001f23",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#d5e3ff",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e8e8e8",
+                        "primary-container": "#003366",
+                        "secondary-fixed-dim": "#ffb59f",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "surface-tint": "#3a5f94",
+                        "tertiary": "#002226",
+                        "on-secondary-fixed-variant": "#852300",
+                        "on-secondary": "#ffffff",
+                        "outline": "#737780",
+                        "surface-bright": "#f9f9f9",
+                        "primary-fixed-dim": "#a7c8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift {
+            background: linear-gradient(180deg, rgba(243, 243, 243, 0.8) 0%, rgba(249, 249, 249, 0.8) 100%);
+        }
+        .editorial-shadow {
+            box-shadow: 0 10px 32px -4px rgba(0, 30, 64, 0.06);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-slate-50/70 dark:bg-slate-900/70 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-xl shadow-blue-900/5">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto">
+<button class="text-blue-900 dark:text-blue-200 active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<h1 class="font-serif italic font-bold text-2xl text-blue-950 dark:text-white">Wanderlust</h1>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/20 active:scale-95 duration-200">
+<img alt="User profile" data-alt="Close-up portrait of a traveler smiling in soft morning light with blurred coastal background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCffrLYxK1_jegcstaZwFchDVsVVuQVdjrnEQe2r4aHE8cqIMrYoBho_Un3wV2pLRWTZutCdRfJrkF2ojd16RqgPTcHDCJQGytTULYpyF12vjPBUzWImpCY5OQoMgqw9UWT0nX_DzfPfKQPkZYseWu6RtVz8KLcDbl04UnSUEZjHDrct5SFZNfTmW6RkAMnTVIVAjXARwj-46S5Vxiej_3TvL4yPjdwdPBVe4Iad1x4TwXVbSAmUDkNogW8cfLxJWFSuFlKES8O838"/>
+</div>
+</div>
+</header>
+<main class="max-w-screen-xl mx-auto px-4 md:px-12 py-8">
+<!-- Welcome Narrative -->
+<section class="mb-12">
+<h2 class="font-headline italic text-4xl md:text-5xl text-primary mb-4 leading-tight">
+                Curated <span class="bg-secondary-fixed px-2">Inspiration</span> for your next journey.
+            </h2>
+<p class="text-on-surface-variant font-body max-w-lg">
+                Explore a collection of stories from the world's most evocative corners, shared by our community of digital explorers.
+            </p>
+</section>
+<!-- Activity Feed - Asymmetric Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16">
+<!-- Feed Item 1: Wide Feature -->
+<article class="lg:col-span-8 flex flex-col group">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl overflow-hidden shadow-sm">
+<img alt="Elena V." data-alt="Portrait of a young woman with sunglasses laughing outdoors in bright sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQluiIE1vlOLBgmoY27GBJE2D72vFHEp8J3P0XYn095h_OyYs1Ab5bFnd-ZFpv6ThzWKDKo6RSFbVRfFLoLzqSJMLNzTYMWB36yuaIPzB8a_ZNwf23TpifyuB_dQsxhGcu4ouiv5gqIg6eaA5YAexidqx4oVH0YMFvhWbC58H2DDKL6jeB5ty-7n8nVtXLCBC4zdcD9NqlgGEwMnmgw50IP4zARNFghwcfZ5QDIc6x3eOlXcczVzpzAP8zmxyj6gRkT5vf4Ok0mtc"/>
+</div>
+<div>
+<p class="font-bold text-primary">Elena Valerius</p>
+<div class="flex items-center gap-1 text-secondary text-xs font-semibold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span>
+<span>Amalfi Coast, Italy</span>
+</div>
+</div>
+</div>
+<span class="text-on-surface-variant/60 text-xs font-medium">2 hours ago</span>
+</div>
+<div class="relative overflow-hidden rounded-xl editorial-shadow bg-surface-container-low h-[500px]">
+<img alt="Amalfi Coast View" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Panoramic view of colorful Positano buildings clinging to cliffs overlooking the sparkling turquoise Mediterranean sea at golden hour" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDewyBtkrrm3hAvIIiPz7plU-rsWOPgUhR4ToXMs5dAH0lhsHnQ49_7k7L6eYUD5Xkoex1UvC7ioa6N1wRo2-8eeCVbz-z2DBzTpRkN2KXd3ZyWbh3_J0uodGtun5hoGLYozUrhyf5rS-2wxBksy50-CFqvqAQp26lUogzkCC9gB3y2Z9LjnOZtILxpv2K8lDhi7EbE_hJier6BuSshQItTZYM7MgbApK1hWWwe01tcqmXwSNlIJqIcEgpwLY1qZ8pZeaO4znSQO8A"/>
+<div class="absolute top-4 right-4 bg-secondary text-on-secondary px-3 py-1 rounded-md text-[10px] font-bold tracking-widest uppercase shadow-lg">
+                        Must See
+                    </div>
+</div>
+<div class="mt-6 flex items-start justify-between">
+<div class="max-w-xl">
+<p class="font-body text-on-surface leading-relaxed">
+                            Waking up to the scent of lemon groves and the sound of distant waves. The Amalfi Coast isn't just a place, it's a feeling of timeless elegance and afternoon Aperol... <button class="text-secondary font-bold hover:underline">more</button>
+</p>
+</div>
+<div class="flex gap-4 items-center pl-4">
+<button class="flex flex-col items-center text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="text-[10px] font-bold">1.2k</span>
+</button>
+<button class="flex flex-col items-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="text-[10px] font-bold">48</span>
+</button>
+<button class="flex flex-col items-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="text-[10px] font-bold">Save</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Sidebar / Pull Quote / Second Item -->
+<aside class="lg:col-span-4 space-y-12">
+<!-- Travel Tip Pull-Quote -->
+<div class="bg-secondary-fixed p-8 rounded-xl border border-secondary/10 relative overflow-hidden">
+<span class="material-symbols-outlined absolute -right-4 -top-4 text-8xl text-secondary/5" data-icon="format_quote">format_quote</span>
+<h3 class="font-headline italic text-2xl text-on-secondary-fixed mb-4">"The best views are found after the hardest climbs."</h3>
+<p class="font-body text-on-secondary-fixed-variant text-sm">Traveler tip: Hike the Path of the Gods at sunrise to avoid the midday heat and the crowds.</p>
+</div>
+<!-- Feed Item 2: Vertical Detail -->
+<article class="flex flex-col group">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl overflow-hidden shadow-sm">
+<img alt="Julian M." data-alt="Close up of a man with a beard wearing a hiking hat looking into the distance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwX3bra5hjMyByy3EOy1lBwbdAy2U-FeLlkbYgrdvHYeA8UqBPBulCVsYNRAjpAhleHxAimVKTNlzdI4-NdPAOElJq1sGvxgKaJ40WcqB9l8phF3Nvsp8-SxpCCbJYPUcfzlKhdnGp3BV8UoBqIPUrc8F6pzPtdtFxtkXSxUKbZQz17h056Li6N_mMrvModg8ulovl9lTeTJGvyK8bXyoVmsAd4rwcPCq0fC1jDkgW74khd8JJwD79yqroBJcaspizzHgJfDd9XKs"/>
+</div>
+<div>
+<p class="font-bold text-primary text-sm">Julian Marra</p>
+<div class="flex items-center gap-1 text-secondary text-[10px] font-semibold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[12px]" data-icon="location_on">location_on</span>
+<span>Kyoto, Japan</span>
+</div>
+</div>
+</div>
+<span class="text-on-surface-variant/60 text-[10px] font-medium">5 hours ago</span>
+</div>
+<div class="relative overflow-hidden rounded-xl editorial-shadow bg-surface-container-low aspect-[4/5]">
+<img alt="Kyoto Temple" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Sunlight filtering through dense orange torii gates at Fushimi Inari Shrine in Kyoto with soft shadows and atmospheric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo35J8DwSuCyMp-hflOcT7KTIXVjw6_uOdpHPwYzjUxPD8RIeaJKQqKTsNm0GIV-sWVrxinV9hnAu2Jo3kDrxvvTSitxd5n54DZV9gZffNVsxRGt1uydjK_bMMenbVGmWuATnXCY98bY_i-nZhAgCEdGfQSOewDmP9O_d0V1b_9wejh4VAef9wmvqhqTSjCKgp5epzgMpJ8xyWwV4q2yeuIFG_Z94dHykY5jUgqSTsM_FTdEbH4MJBIrmiAZtQSOjN4SwMU7y7YS4"/>
+</div>
+<div class="mt-4">
+<p class="font-body text-sm text-on-surface leading-snug mb-3">
+                            Finding zen in the silence of Arashiyama. The bamboo groves whispering in the wind is something everyone should hear... <button class="text-secondary font-bold">more</button>
+</p>
+<div class="flex gap-4">
+<button class="text-on-surface-variant hover:text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-lg" data-icon="favorite">favorite</span>
+<span class="text-[10px] font-bold">842</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-lg" data-icon="bookmark">bookmark</span>
+</button>
+</div>
+</div>
+</article>
+</aside>
+<!-- Feed Item 3: Secondary Feature -->
+<article class="lg:col-span-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-surface-container-low p-6 md:p-12 rounded-[2rem] editorial-shadow">
+<div class="md:col-span-7 relative">
+<div class="overflow-hidden rounded-xl shadow-2xl h-[400px]">
+<img alt="Maldives Beach" class="w-full h-full object-cover" data-alt="Drone shot of a solitary sandbank in crystal clear turquoise water with gentle ripples under a bright tropical sun" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClgIFUxuEA-u4kfFVq80VlU-yg7tL-uwUHB6C7pYRhepvzCPF-DX-iHegI39TcDUMs4alwk73fpvIreEI5XTAAZaRZoT_u9r1MrPdXNlNS-SEQmbkgJHz6lYqDHY6cHGqphdFST2theXbEGOHvpC5B3ZJ22gJF1NppAF3OY4VyI4H3iejXVVUItoG1fbdmPEs5zssZ7T3tKEma9EICw5UxNVCTTD1r2jWQ7hVHr57Y_BV9j94fctFX9g3h-wFg07SemeQEFyR2D9g"/>
+</div>
+</div>
+<div class="md:col-span-5 space-y-6">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full border-2 border-secondary-container p-0.5">
+<img alt="Sarah J." class="w-full h-full rounded-full object-cover" data-alt="Portrait of a travel photographer holding a camera in a breezy tropical setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8WfaEVCg6mJJIw030u67poP4IQSFe39UHCnS4d0xnZubpdPhYooK_B-lw_a-OKhetNmlO_zYQfNjy4seaQBvCgz1LQOuY9XM2UNnKE66TzrCH-HUlwNmU6Dz1MfTksbNMLuSb4uH7h1IehJiEGbnGEyAMq7lR7kchuPRoEO4s2cbCNzXUpO8HtMqgzn4D6X5cd25mBCpuN12w8gcP10wyF95JpaQ3QDgHSpE87eQMQ5CRPERWjeb-jbdQRdIsukcivm-KVNNfqdA"/>
+</div>
+<div>
+<p class="font-bold text-primary">Sarah Jenkins</p>
+<p class="text-xs text-on-surface-variant">Maldives • 8 hours ago</p>
+</div>
+</div>
+<h4 class="font-headline italic text-3xl text-primary">Blue on Blue.</h4>
+<p class="font-body text-on-surface-variant">
+                        Spent the afternoon on a sandbar that only exists for three hours a day. The isolation is profound and perfectly peaceful. If you're looking for the ultimate escape, this is it.
+                    </p>
+<div class="flex gap-6 pt-4">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-md font-bold text-sm hover:bg-primary-container transition-colors shadow-lg active:scale-95 duration-200">
+                            View Itinerary
+                        </button>
+<div class="flex items-center gap-4">
+<button class="text-primary active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<button class="text-primary active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Feed Item 4: Grid Card -->
+<article class="lg:col-span-4 group">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded-full overflow-hidden">
+<img alt="Marcus T." data-alt="Portrait of a man wearing a denim shirt in an urban sunset setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCchvZLrUBNxWgHHVG3nHudO1ULkscr0PSAqMkAq2gjSkSW7sKBnNimNhpYulrLMpnkuA64tJi2MLbt4Vu5vEBAUKQxZTV13oH-fHIYG_Y90e8SVSg1YrFVoAFGcPcSjwwFRwnHVjvi4mh-yoemzCXCbAJU3N_MI6evdCxhaO5SM2bUPI3y-JjNyI0rbNsPH3Opr4ZwIBu-si-3FiNUqjh9GX-KNzsjB8_J19tcfoRVWz9QSaxMJqos5IBIOpI7JeNPz4DWhB_HiM"/>
+</div>
+<span class="font-bold text-sm">Marcus Thorne</span>
+</div>
+<div class="relative rounded-xl overflow-hidden aspect-square editorial-shadow">
+<img alt="Taj Mahal" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="The Taj Mahal reflecting in its garden pools during a misty lavender sunrise with soft focus architectural details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNj07pYIbHCFCw6vOm-8DZxOP75nFINNEAcKEaVxdgGfuoBVLa-HlsgL9_AlXwdRsHyLh5mxo3gKrccd4CCyuaEOBsQcs0_YlR0GF-z3Io6ejNkmzV2bT4-XnouIa4NAV2fxdKhL8wKRAfzsfFDTFhITLkOixolN2Z0PNvdp54RgYnKjjLWK8kk2BJOshR6DpuCYxHehl_6qnvptwhWEwxVeaVAM16B1-b6Gnuf67FzmZWhXC67ssI1milVS_EvD-ml_7o-iii-kk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<p class="text-white font-bold">Agra, India</p>
+</div>
+</div>
+<div class="mt-4 flex justify-between items-center">
+<span class="text-xs font-bold text-secondary-container">#HistoricalWonders</span>
+<span class="text-[10px] uppercase font-bold text-outline-variant">12 hours ago</span>
+</div>
+</article>
+<!-- Feed Item 5: Grid Card -->
+<article class="lg:col-span-4 group">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded-full overflow-hidden">
+<img alt="Clara K." data-alt="Portrait of a woman with a wide brimmed hat smiling in a sunny field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHjMlaYpJSizkF2tkA4c828Ly-UI3Cqgrf03CJ22pTB6FSH2owerGsJm3zoLvWrUWdylLmSaJHtvOwZQF2biVkVcn1hPHrTn1xdSNHvFNCRXISQMA0_lKJrL3j4t3YZ2hFY8Y1utRMBDGxXd5naWhWcGq_RBubJCsSRUA0Cy2Bs_RPcckTQvICft1yKy2geEOkQ1JNHLFev1xOeC4EEFeEatD4iS7NugngSmJr7b0z1Ti6UHqpy80dnG51CzitgGHGFvaC75rW6u8"/>
+</div>
+<span class="font-bold text-sm">Clara Kloss</span>
+</div>
+<div class="relative rounded-xl overflow-hidden aspect-square editorial-shadow">
+<img alt="Vietnam" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Misty green mountains and terraced rice fields in Sa Pa Vietnam with a lone hiker on a narrow trail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAuI5tck6WiXmr0kZXrU5X0pyGJQ5qnIhYkAsv0wxvwD-jZGHJvYJBHw_kW3-osDgzDWAcMbbPdi2yNet3Q2_A-yg0uoprqnNikb4iCuo0I2NJV23hEDtlAMZxByUVUzees6D3V_lDuw7SMdyswNk0N5v4ZgeVmsoDMbg9XlDsZpzGCOdpbj4lZG9iw7pxiiEJ9MFUsrBtIekdZNScbgGEG2Aez1Io9eyfa-ZsWGSTk11jR-68h8TTQRAwiQXPikgtTFf4V39nYN0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<p class="text-white font-bold">Sa Pa, Vietnam</p>
+</div>
+</div>
+<div class="mt-4 flex justify-between items-center">
+<span class="text-xs font-bold text-secondary-container">#NatureLovers</span>
+<span class="text-[10px] uppercase font-bold text-outline-variant">1 day ago</span>
+</div>
+</article>
+<!-- Feed Item 6: Grid Card -->
+<article class="lg:col-span-4 group">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded-full overflow-hidden">
+<img alt="David L." data-alt="Portrait of a man with spectacles in a modern office space with natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxvendnAu6MRq9tCfYKJHSBdqQqXub_9IOOxq1I_BepNUN-_MkUoBiISY9JN-XTIs8g3lPi0o_7rPmqsRCbx5S0H_HQmeiwXw4fx0rA8pF8QQZJtWq-OX4n9IQo8cxF9pl6Yg7g21aq95rzPJBX_3Q-mYx4qk-qiTAYhMmdkxPQYJ3O_4DVJ2iNUPRKjA7PCJTbuetHgtTHK8zuCGhhcYA7K8W6lDMZOCphKLr6Tm1gDCM-bbQDII1zo1-hPAn5a_U9jOfQB4Trgw"/>
+</div>
+<span class="font-bold text-sm">David Lin</span>
+</div>
+<div class="relative rounded-xl overflow-hidden aspect-square editorial-shadow">
+<img alt="Lisbon" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Close up of classic blue and white azulejo tiles on a sun-drenched wall in a Lisbon alleyway" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm1tHocSH5sa09QyFT_SOa2KJb-LmcjiCirosurPiC2-g-EEnns3pImnmqeLM4j-8iKniUVpkzQBGd073eCJfWDcH-Vp7xHo2oYdh5T3WJLfWuV144HF6lEgR0leq8Kh8Ag-sJpsBPblypJF0oj3n-abYkpzUG82PBBVfD8riizkndtvaT0WHs1VoH1Zxk06AkvBxR6zwJFhzuOoJnajcj8GJHRl6q9VqtmSP3VXUdxPNMCxAWoPiWe7cfMm1lQhOwC2A-knh6HpI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<p class="text-white font-bold">Lisbon, Portugal</p>
+</div>
+</div>
+<div class="mt-4 flex justify-between items-center">
+<span class="text-xs font-bold text-secondary-container">#ArtAndCulture</span>
+<span class="text-[10px] uppercase font-bold text-outline-variant">1 day ago</span>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-3 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-t-3xl shadow-2xl shadow-blue-950/10 border-none">
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 opacity-70 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-sans text-[10px] font-bold uppercase tracking-widest mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200 rounded-xl px-4 py-1.5 active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-sans text-[10px] font-bold uppercase tracking-widest mt-1">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 opacity-70 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="font-sans text-[10px] font-bold uppercase tracking-widest mt-1">Saved</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 opacity-70 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-sans text-[10px] font-bold uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

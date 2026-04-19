@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#f9f9f9",
+                    "outline-variant": "#c3c6d1",
+                    "primary": "#001e40",
+                    "on-surface-variant": "#43474f",
+                    "inverse-on-surface": "#f1f1f1",
+                    "surface": "#f9f9f9",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#ac3509",
+                    "on-primary-container": "#799dd6",
+                    "tertiary-container": "#00393f",
+                    "surface-container": "#eeeeee",
+                    "secondary-container": "#fe6f42",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-tertiary-container": "#44a9b5",
+                    "inverse-surface": "#2f3131",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#dadada",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed-dim": "#75d5e2",
+                    "on-secondary-fixed": "#3a0a00",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#ffdbd0",
+                    "on-secondary-container": "#631800",
+                    "inverse-primary": "#a7c8ff",
+                    "surface-variant": "#e2e2e2",
+                    "on-primary-fixed": "#001b3c",
+                    "tertiary-fixed": "#92f1fe",
+                    "surface-container-low": "#f3f3f3",
+                    "on-background": "#1a1c1c",
+                    "on-tertiary-fixed-variant": "#004f56",
+                    "on-surface": "#1a1c1c",
+                    "on-tertiary-fixed": "#001f23",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#d5e3ff",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#e8e8e8",
+                    "primary-container": "#003366",
+                    "secondary-fixed-dim": "#ffb59f",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "surface-tint": "#3a5f94",
+                    "tertiary": "#002226",
+                    "on-secondary-fixed-variant": "#852300",
+                    "on-secondary": "#ffffff",
+                    "outline": "#737780",
+                    "surface-bright": "#f9f9f9",
+                    "primary-fixed-dim": "#a7c8ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift {
+            transition: background-color 0.3s ease;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<header class="bg-slate-50/70 dark:bg-slate-900/70 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-xl shadow-blue-900/5 tonal-shift">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-200 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-serif italic font-bold text-2xl text-blue-950 dark:text-white">Wanderlust</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-blue-900 dark:text-blue-200 hover:text-orange-600 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">search</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden ring-2 ring-primary/5">
+<img alt="User Profile" data-alt="close-up portrait of a smiling woman with natural lighting and soft blurred background outdoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvIDQP4fhAbeEVc319imtWLrDWUssPBlVmWoVOSKUKrWPVHROc8Gq2_5zfZ3VQR6PFkbboxMM0L0M1PtOflX9q4GtVFV8HkZiblEqioO4ws-w4aamX-EYBLsWexrn6Mc8HpvaXYzLiGqDMF-U8cL_7Cpkf6D4Q4r7rskNNPCINuju_Z_e0r3yYOPT9_G7ZSPaLrMhApU6xYXGSXS83IHBAdc3uUjyq9p-Ob65Jux1JGkTPZv3wH2pT0gMblueecKKMR3Av5DKDGJo"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pb-32">
+<!-- Hero Image Carousel Section -->
+<section class="relative w-full aspect-[4/5] md:aspect-[21/9] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="stunning tropical beach with turquoise water and palm trees at sunset with soft orange and pink sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjjh_1PT7WL6Wj6MZQ6jUHea2AloRFPtag7OjBqAsc7ljH-_XRBAtIwKSWT9UM8me5-6GZYRW-WpeMVEPcsWxQCoAoAaXUA3EKVkyrHlEaHrj_GxjsLEwR5SDnOn9juSMpXqgM8qpIMYzpL0zy1MphDZP6zs-Os9A93FDLIUX5visrA7-4p1eOPN9JdTs_YpXZ8aNRhmYYZXtPXzvqZfKmWXkxyCHUCOEDAk3BT-kQ5JnS56Trqi7xn5Fn-wp5o5x_7pRorKn3npA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+<div class="absolute top-6 right-6">
+<span class="bg-secondary text-on-secondary px-3 py-1.5 rounded-xl font-label text-[10px] font-bold uppercase tracking-widest shadow-lg">Featured Trip</span>
+</div>
+<!-- Carousel Indicators -->
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+<div class="w-8 h-1 rounded-full bg-white"></div>
+<div class="w-2 h-1 rounded-full bg-white/40"></div>
+<div class="w-2 h-1 rounded-full bg-white/40"></div>
+</div>
+</section>
+<!-- Content Canvas -->
+<div class="max-w-4xl mx-auto px-6 -mt-16 relative z-10">
+<!-- Header Card -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-2xl shadow-blue-950/10 mb-8">
+<div class="flex flex-col md:flex-row md:justify-between md:items-end gap-6">
+<div>
+<div class="flex items-center gap-2 text-secondary mb-2">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="font-label text-xs font-bold uppercase tracking-widest">Amalfi Coast, Italy</span>
+</div>
+<h2 class="font-headline italic text-4xl md:text-5xl text-primary mb-4 leading-tight">The Sun-Drenched Path of Gods</h2>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden">
+<img alt="Marco Rossi" data-alt="portrait of a bearded man wearing a linen shirt standing against a rustic stone wall in warm sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ79POLBzcMGGfAQ0A5yI8NQWQ8B6gn6_EsRDRxyy4sJyEAWk5Ht6RWsnBSsLCGEUsTYWTTQh-_IByrcowmpR7lYBfY5hIeysdTuDVV9gfGzCKHhZB1cTX12sfOEtGpoFVAwYNU32mzFVn0dJZznb75GLv2Hnkw7JV7Rwu2KEi2rLzKBrek8Vrf4OhVxAGAOIlcf85ZKrSXLMLz8tBJIKp1r2DAeLb5ljfjVQatq_zfDulLo1TGQvauQvgzYEfyEAECowRmFvJHhA"/>
+</div>
+<div>
+<p class="font-body font-bold text-sm text-on-surface">Marco Rossi</p>
+<p class="font-label text-xs text-outline">Travel Enthusiast • 2 days ago</p>
+</div>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 md:flex-none px-6 py-3 bg-primary text-on-primary rounded-xl font-bold text-sm hover:bg-primary-container transition-all active:scale-95 duration-200 shadow-lg shadow-primary/20">
+                            Book Experience
+                        </button>
+<button class="p-3 bg-surface-container-high text-primary rounded-xl hover:bg-secondary-container hover:text-on-secondary-container transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">bookmark</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Narrative & Details Bento -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Main Story -->
+<div class="md:col-span-2 space-y-8">
+<div class="prose prose-slate max-w-none">
+<p class="font-headline text-xl italic text-on-surface leading-relaxed mb-6">
+                            "There is a moment, just as the sun dips behind the cliffs of Positano, where the entire world seems to turn into a golden watercolor painting."
+                        </p>
+<p class="font-body text-on-surface-variant leading-relaxed text-lg mb-4">
+                            The Sentiero degli Dei (Path of the Gods) isn't just a hike; it's a spiritual journey suspended between the sky and the sea. Starting from the quiet village of Agerola, the trail snakes through limestone ridges and ancient vineyards that have stood for centuries.
+                        </p>
+<div class="bg-secondary-fixed p-6 rounded-xl my-8 relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-8xl">lightbulb</span>
+</div>
+<h4 class="font-headline text-lg italic text-on-secondary-fixed mb-2">Pro Traveler Tip</h4>
+<p class="font-body text-sm text-on-secondary-fixed-variant leading-relaxed">
+                                Start your trek no later than 8:00 AM. Not only will you beat the Mediterranean heat, but you'll have the trail to yourself before the ferry crowds arrive from Sorrento. Don't forget to stop at the lemonade stand halfway!
+                            </p>
+</div>
+<p class="font-body text-on-surface-variant leading-relaxed text-lg">
+                            As you descend toward Nocelle, the view opens up to reveal the entire coastline stretching toward Capri. Every step feels like a discovery, a quiet conversation with history and nature that leaves you breathless—and not just from the incline.
+                        </p>
+</div>
+<!-- Comments Section -->
+<div class="bg-surface-container-low rounded-xl p-8">
+<h3 class="font-headline italic text-2xl text-primary mb-6">Voyager Thoughts</h3>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-dim shrink-0"></div>
+<div class="flex-1">
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm">
+<p class="font-body font-bold text-sm text-on-surface mb-1">Elena Sofia</p>
+<p class="font-body text-sm text-on-surface-variant">Did this last summer! That lemonade stand truly is a lifesaver. Great photos!</p>
+</div>
+<div class="flex gap-4 mt-2 ml-2">
+<button class="font-label text-[10px] font-bold uppercase tracking-widest text-outline hover:text-secondary">Like</button>
+<button class="font-label text-[10px] font-bold uppercase tracking-widest text-outline hover:text-secondary">Reply</button>
+</div>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-dim shrink-0"></div>
+<div class="flex-1">
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm">
+<p class="font-body font-bold text-sm text-on-surface mb-1">James Miller</p>
+<p class="font-body text-sm text-on-surface-variant">Is the trail difficult for beginners? Thinking of going next month.</p>
+</div>
+<div class="flex gap-4 mt-2 ml-2">
+<button class="font-label text-[10px] font-bold uppercase tracking-widest text-outline hover:text-secondary">Like</button>
+<button class="font-label text-[10px] font-bold uppercase tracking-widest text-outline hover:text-secondary">Reply</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 flex gap-3">
+<input class="flex-1 bg-surface-container-highest border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-secondary/20 font-body" placeholder="Share your thoughts..." type="text"/>
+<button class="p-3 bg-primary text-on-primary rounded-xl">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Sidebar Info -->
+<div class="space-y-6">
+<!-- Map Card -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-lg shadow-blue-950/5">
+<div class="h-48 bg-surface-dim relative">
+<img class="w-full h-full object-cover grayscale opacity-50" data-alt="minimalist topographic map style image of the Italian coast with clean lines and soft blue tones" data-location="Amalfi" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcWfsrnw6BnT5V3hEXTGZFeqG4TJi3oUSnckkuJNbNVmKZlOuyjJfHjYFwhJnFNc6c7xX3yaUy8eqOsa77ka7I3TyU5Ee6ZE2nrLXylNSG5hSiY1lLIrRUIakmXjuklC8lHVK16kdx7H7CDcj77iOV5FJ2KyXd69fdasAYfmg-Jbf11h3nM524LRfN_DDACj4ed1moxvB6AtekDD5e_ChbYPUq8tSIoJmzAL0hGMsVpYM9vdbS3B6Tax8ijmdLelicF2zTLQTyBQU"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center animate-pulse">
+<span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+<div class="p-4">
+<h4 class="font-body font-bold text-sm text-primary mb-1">Amalfi Coast</h4>
+<p class="font-label text-xs text-outline leading-tight">Campania Region, Southern Italy</p>
+</div>
+</div>
+<!-- Stats Card -->
+<div class="bg-surface-container-low rounded-xl p-6 space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">trending_up</span>
+<span class="font-body text-sm font-medium">Difficulty</span>
+</div>
+<span class="font-label text-xs font-bold text-primary">MODERATE</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">schedule</span>
+<span class="font-body text-sm font-medium">Duration</span>
+</div>
+<span class="font-label text-xs font-bold text-primary">3-4 HOURS</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">distance</span>
+<span class="font-body text-sm font-medium">Distance</span>
+</div>
+<span class="font-label text-xs font-bold text-primary">7.8 KM</span>
+</div>
+</div>
+<!-- Gallery Snippet -->
+<div class="space-y-3">
+<h4 class="font-label text-[10px] font-bold uppercase tracking-widest text-outline">More from this journey</h4>
+<div class="grid grid-cols-2 gap-2">
+<img class="aspect-square object-cover rounded-xl" data-alt="vibrant blue Mediterranean water hitting craggy limestone rocks in the bright midday sun" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTcbkOLkFyIxo8GAg7lOQ3p5xRrAVpYj9TXICMzk71_yGK1asx_DvfGA3iJ6YpHBVsQvB5euBrpTu2d6fsjdAD23d7lERkyT4bZkXVIcQiPKPCVAc0nomepczFKU8Jgyx9KInJlPnVl4M141yxSCIW3nYRLLd4er8XnKrSs9F1yggtNmZlSeMeuDuE9hSJQ0ouraBjZFnLtTtg9N29weQE20GjwsS7BjBz2k4r1Mm-cXxONZ-NKhld3WUZ0XTb-dq3d3ut_ZWUPVs"/>
+<img class="aspect-square object-cover rounded-xl" data-alt="narrow cobblestone alley in an Italian village with laundry hanging between pastel colored buildings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC03_C7AuwXex4Z6wHK2XAwXXVwG_TjAvayQoKTxCMrI-fxFHGBOqcSZSILpzZRJ2EKVTeD49iQkuGmnIACxahYmSePefX4SFbrrkjW3IogA49M9TAbImU0ye3--ctZRSp14lysIWVBz2hK6r32j9FgyrchTaek-wXU0uGWLri0Edm7E-aL-t9HWNip59kajFZrCsGLaOEjHC_WGQu0qDyhtx3vVknJZg0-5c6FfzlAfoIt0_XwPCSw6dRPAChwCjw8HArIJUb9Tjs"/>
+<img class="aspect-square object-cover rounded-xl" data-alt="a plate of fresh seafood pasta with lemons on a rustic wooden table overlooking the ocean" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyI_qATiBYMslvmama1FLELs1fkhFXlUw84H2mKzXC2xgV_rwjSlKkrsfDYb8xibSyimCShnI6-tWgv6N1KgjXigtobSClHKjA2ufu3BKaT7tGvt9owL9wovkeBIPW9KKZPNo9GIBzKcVL9omxDG81sNOuBDmURBp5rq81_gYwpqHX5zmnRr0BO_xHX1_SLih0qcIqHcANhc-OsizL62dTcuUhfSCfDi48S0F-anFuESXiAP3eRRLW65TSN2pXkOxCtqKQNiGbYJs"/>
+<div class="aspect-square rounded-xl bg-primary/10 flex items-center justify-center text-primary cursor-pointer hover:bg-primary/20 transition-all">
+<span class="font-label text-xs font-bold">+12</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-3 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-t-3xl shadow-2xl shadow-blue-950/10">
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 opacity-70 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-sans text-[10px] font-bold uppercase tracking-widest mt-1">Explore</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200 rounded-xl px-4 py-1.5 active:scale-90 duration-150 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="auto_stories" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="font-sans text-[10px] font-bold uppercase tracking-widest mt-1">Feed</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 opacity-70 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="font-sans text-[10px] font-bold uppercase tracking-widest mt-1">Saved</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 opacity-70 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-sans text-[10px] font-bold uppercase tracking-widest mt-1">Profile</span>
+</div>
+</nav>
+</body></html>
