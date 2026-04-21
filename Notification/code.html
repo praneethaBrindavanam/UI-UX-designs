@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary": "#f1faff",
+                      "secondary-container": "#cee6f0",
+                      "secondary-fixed-dim": "#c0d8e2",
+                      "on-surface-variant": "#576164",
+                      "on-background": "#2b3437",
+                      "on-error-container": "#6e0a12",
+                      "error": "#a83836",
+                      "surface-tint": "#23677a",
+                      "on-tertiary": "#f8f8ff",
+                      "tertiary-container": "#bfd5ff",
+                      "on-error": "#fff7f6",
+                      "outline-variant": "#aab3b8",
+                      "on-primary-fixed": "#00404f",
+                      "background": "#f7fafc",
+                      "on-secondary": "#f1faff",
+                      "on-tertiary-container": "#344a6c",
+                      "surface-container-highest": "#dbe4e8",
+                      "on-secondary-fixed": "#2d434a",
+                      "surface-dim": "#d2dbe0",
+                      "on-surface": "#2b3437",
+                      "on-tertiary-fixed-variant": "#3d5376",
+                      "on-primary-fixed-variant": "#155e71",
+                      "primary-dim": "#105b6d",
+                      "tertiary-fixed-dim": "#b1c7f0",
+                      "surface-container-low": "#eff4f7",
+                      "on-primary-container": "#015467",
+                      "inverse-surface": "#0b0f10",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary": "#4c626b",
+                      "outline": "#737c80",
+                      "error-dim": "#67040d",
+                      "surface": "#f7fafc",
+                      "secondary-dim": "#40565e",
+                      "surface-bright": "#f7fafc",
+                      "primary-fixed": "#a5e3fa",
+                      "inverse-on-surface": "#9a9d9f",
+                      "on-secondary-container": "#3f555d",
+                      "on-tertiary-fixed": "#203658",
+                      "surface-container": "#e8eff2",
+                      "tertiary-fixed": "#bfd5ff",
+                      "primary-container": "#a5e3fa",
+                      "on-secondary-fixed-variant": "#495f67",
+                      "primary": "#23677a",
+                      "surface-container-high": "#e2e9ed",
+                      "tertiary-dim": "#3e5477",
+                      "surface-variant": "#dbe4e8",
+                      "tertiary": "#4a6084",
+                      "inverse-primary": "#a5e3fa",
+                      "secondary-fixed": "#cee6f0",
+                      "primary-fixed-dim": "#97d5eb",
+                      "error-container": "#fa746f"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "1.5rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-pulse {
+            position: relative;
+        }
+        .soft-pulse::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--primary-container);
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex items-center justify-center p-4 antialiased">
+<!-- Mobile Lock Screen Canvas -->
+<div class="relative w-full max-w-[390px] h-[844px] rounded-[3rem] overflow-hidden bg-on-background shadow-2xl flex flex-col items-center">
+<!-- Mock Wallpaper -->
+<div class="absolute inset-0 z-0">
+<img alt="abstract soft gradient background" class="w-full h-full object-cover opacity-60" data-alt="abstract artistic background with soft flowing shapes in deep teal, misty blue and charcoal grey, cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiJ7hpjsodz-8t8BeUwZSbOsUn3-RquOECKQHLJ7Tb2um7PaTXGH0dPgOWD63JhRTl2tZPjbwJdsOXMLui8H5QUj4T39ck3IdcjTmmXgIWbFWHa-M3V1CdF64yfE4SWVfKsg4KdjAwsWAk5ApM2X_9yTPTaIo5Q3cBAa9qCma54GDs6X4zOJTjkEzaCA2sKRWxB5B0FxYXD-t0Fsrx3OHjeNrcNEOlj6IbRgJkYokKinWdDSAzd4XFtJ32F6QmrYgOop4_KlI821k"/>
+</div>
+<!-- Lock Screen Status Bar -->
+<div class="relative z-10 w-full flex justify-between px-8 pt-12 text-on-primary">
+<span class="font-semibold text-sm">9:41</span>
+<div class="flex gap-1.5 items-center">
+<span class="material-symbols-outlined text-sm">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-sm">wifi</span>
+<span class="material-symbols-outlined text-sm">battery_full</span>
+</div>
+</div>
+<!-- Clock Area -->
+<div class="relative z-10 mt-16 text-center text-on-primary">
+<h1 class="font-headline font-bold text-7xl tracking-tighter">09:41</h1>
+<p class="font-body text-lg font-medium opacity-80 mt-1">Tuesday, October 24</p>
+</div>
+<!-- Notification Center Area -->
+<div class="relative z-10 w-full px-4 mt-auto mb-20 flex flex-col items-center">
+<!-- Medication Reminder Notification Banner -->
+<div class="w-full bg-surface-container-lowest/80 backdrop-blur-2xl rounded-xl shadow-[0_-4px_24px_rgba(0,0,0,0.04)] overflow-hidden">
+<div class="p-5">
+<!-- Header: App Identity -->
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">medication</span>
+</div>
+<span class="font-headline font-extrabold text-sm tracking-tight text-primary">Aura Health</span>
+</div>
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest font-medium">Now</span>
+</div>
+<!-- Content: Medication Details -->
+<div class="mb-5">
+<div class="flex items-center gap-2 mb-1">
+<h3 class="font-headline font-bold text-lg text-on-surface">Medication Reminder</h3>
+<!-- Soft Pulse Indicator -->
+<div class="w-2 h-2 rounded-full bg-primary relative flex items-center justify-center">
+<div class="absolute inset-0 rounded-full bg-primary-container animate-ping opacity-75"></div>
+</div>
+</div>
+<p class="font-body text-[14px] leading-relaxed text-on-surface-variant">
+                            Time to take your morning <span class="font-semibold text-on-surface">Vitamin D</span> and <span class="font-semibold text-on-surface">Magnesium</span>. Keeping a consistent schedule helps with absorption!
+                        </p>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-2">
+<button class="w-full py-3.5 bg-primary text-on-primary font-label text-xs font-bold uppercase tracking-widest rounded-lg active:scale-[0.98] transition-transform duration-200">
+                            Mark as Taken
+                        </button>
+<button class="w-full py-3.5 bg-secondary-container/50 text-on-secondary-container font-label text-xs font-semibold uppercase tracking-widest rounded-lg active:scale-[0.98] transition-transform duration-200">
+                            Remind in 15 min
+                        </button>
+</div>
+</div>
+</div>
+<!-- Hint text -->
+<p class="mt-8 text-on-primary/60 font-label text-xs font-medium tracking-wide">Swipe up to open</p>
+<!-- Home Indicator -->
+<div class="w-32 h-1.5 bg-on-primary/40 rounded-full mt-4"></div>
+</div>
+</div>
+<!-- Background Decorative Elements -->
+<div class="fixed top-0 left-0 -z-10 w-full h-full bg-surface pointer-events-none opacity-50">
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-container/20 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-tertiary-container/20 rounded-full blur-[120px]"></div>
+</div>
+</body></html>
