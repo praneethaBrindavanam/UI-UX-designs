@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface-variant": "#45464d",
+            "surface-bright": "#f8f9ff",
+            "surface-container-high": "#dce9ff",
+            "primary-fixed": "#dae2fd",
+            "primary": "#000000",
+            "on-background": "#0b1c30",
+            "on-secondary-container": "#006f66",
+            "tertiary-fixed-dim": "#c4c7c9",
+            "inverse-on-surface": "#eaf1ff",
+            "on-tertiary-fixed": "#191c1e",
+            "primary-fixed-dim": "#bec6e0",
+            "surface-container-highest": "#d3e4fe",
+            "on-secondary-fixed": "#00201d",
+            "on-error": "#ffffff",
+            "on-primary-fixed": "#131b2e",
+            "surface-container": "#e5eeff",
+            "surface-container-low": "#eff4ff",
+            "surface-tint": "#565e74",
+            "secondary": "#006a61",
+            "background": "#f8f9ff",
+            "tertiary-fixed": "#e0e3e5",
+            "on-surface": "#0b1c30",
+            "on-primary-fixed-variant": "#3f465c",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed-variant": "#444749",
+            "on-tertiary-container": "#818486",
+            "on-primary": "#ffffff",
+            "surface": "#f8f9ff",
+            "surface-variant": "#d3e4fe",
+            "tertiary": "#000000",
+            "secondary-fixed": "#89f5e7",
+            "on-secondary-fixed-variant": "#005049",
+            "surface-dim": "#cbdbf5",
+            "secondary-fixed-dim": "#6bd8cb",
+            "secondary-container": "#86f2e4",
+            "inverse-primary": "#bec6e0",
+            "on-primary-container": "#7c839b",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "outline": "#76777d",
+            "tertiary-container": "#191c1e",
+            "outline-variant": "#c6c6cd",
+            "inverse-surface": "#213145",
+            "error": "#ba1a1a",
+            "primary-container": "#131b2e"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "lg": "24px",
+            "sm": "8px",
+            "gutter": "16px",
+            "md": "16px",
+            "xs": "4px",
+            "xl": "48px",
+            "unit": "4px"
+          },
+          "fontFamily": {
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Inter"]
+          },
+          "fontSize": {
+            "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+            "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+            "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.04em", "fontWeight": "500"}],
+            "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+            "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+            "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full h-16 flex items-center justify-between px-4 z-50 bg-white dark:bg-slate-950 shadow-sm border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-teal-600 dark:text-teal-400">arrow_back</span>
+</button>
+<h1 class="font-['Plus_Jakarta_Sans'] font-semibold text-lg text-slate-900 dark:text-slate-50">Hotel Confirmed</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-teal-500">
+<img alt="User profile photo" data-alt="close-up portrait of a professional man with a friendly expression in a corporate setting with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv3aWXmccDBtO0kl8M5BkNF2Yb0hzRh7AbxVSR4tMWm-eTorLWIN8eJqCu8VIcDvkOY0Adh34mkrG1tsmSpFgI4dhUei8Ej1xf9RL41SgkHk0ff5A2boYled43AlfHP5cZiKyJtLw-NTB2qshTJtUcVfd35fGpDOpfPv-z9QAzn4BMb3c4fNvw5v8OdcmMnAvNImSSFFHLoAHAjpqOPu8VYNtWginpzYKb_2ug5dEyNcDiMCd7MvrWCDN7JnUYJdEfJ6c1ckGo7VM"/>
+</div>
+</header>
+<main class="pt-16 pb-32 max-w-7xl mx-auto px-4 md:px-margin-desktop">
+<!-- Hero Section with Asymmetric Layout -->
+<section class="mt-lg grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 overflow-hidden rounded-xl shadow-[0_4px_12px_rgba(15,23,42,0.08)] relative h-[300px] md:h-[450px]">
+<img alt="The Ritz-Carlton, London" class="w-full h-full object-cover" data-alt="Exterior facade of a grand luxury hotel in London with classical architecture, ornate stonework, and warm evening lighting through large windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCvM80zDkwt5RYyhXBjoCS6KZc1nxV86vDyidLqfLSFN-tszIC8XS5LvIwPn3kNBeMGBOHuBkjzWNJlZhctPnDdXhgO5lODtFqM75Z9J_ZrLMpVFyww74R4reRC6SQMKAWXOoykCyXYDbhAifY_ofoARTBlwp5IxsW-QSj35KAAJfiO2KnFiy8VoMa30mdcS5Kztbb3-raJ3X31QvG3TJy9sjY_bD8W2lGk6Qj0jwfTcNdUzOOrOlZd-yIpZVm88mOAmq-XQqWEJM"/>
+<div class="absolute bottom-0 left-0 w-full p-lg bg-gradient-to-t from-black/80 to-transparent">
+<h2 class="text-white font-headline-lg text-headline-lg">The Ritz-Carlton, London</h2>
+<div class="flex items-center gap-xs text-white/90 mt-xs">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<p class="font-body-sm text-body-sm">150 Piccadilly, London W1J 9BR, United Kingdom</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<div class="bg-white p-lg rounded-xl shadow-[0_4px_12px_rgba(15,23,42,0.08)] flex-1 flex flex-col justify-center items-center text-center">
+<div class="w-16 h-16 bg-teal-50 rounded-full flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-teal-600 text-3xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="text-teal-600 font-label-md text-label-md mb-xs">CONFIRMATION #7249103</p>
+<p class="font-headline-sm text-headline-sm text-on-surface">Stay Confirmed</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-sm">Your reservation at The Ritz-Carlton is officially booked and guaranteed.</p>
+</div>
+<div class="bg-primary-container p-lg rounded-xl shadow-[0_4px_12px_rgba(15,23,42,0.08)] text-white">
+<p class="font-label-sm text-label-sm opacity-80 uppercase tracking-widest mb-sm">Total Price</p>
+<p class="font-headline-md text-headline-md">£1,420.00</p>
+<p class="font-body-sm text-body-sm opacity-70 mt-xs italic">Includes taxes &amp; fees</p>
+</div>
+</div>
+</section>
+<!-- Details Bento Grid -->
+<section class="mt-xl grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Date & Room Card -->
+<div class="md:col-span-2 bg-white p-lg rounded-xl shadow-[0_4px_12px_rgba(15,23,42,0.08)] border border-slate-100">
+<div class="grid grid-cols-2 gap-xl border-b border-slate-100 pb-lg mb-lg">
+<div>
+<p class="text-on-surface-variant font-label-md text-label-md mb-xs flex items-center gap-2">
+<span class="material-symbols-outlined text-teal-600">login</span> Check-in
+            </p>
+<p class="font-headline-sm text-headline-sm">Fri, 24 May 2024</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">From 3:00 PM</p>
+</div>
+<div>
+<p class="text-on-surface-variant font-label-md text-label-md mb-xs flex items-center gap-2">
+<span class="material-symbols-outlined text-teal-600">logout</span> Check-out
+            </p>
+<p class="font-headline-sm text-headline-sm">Mon, 27 May 2024</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Until 12:00 PM</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div class="flex gap-md items-center">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Deluxe King Room" class="w-full h-full object-cover" data-alt="Interior of a luxury hotel room featuring a large king-sized bed with white linens, elegant headboard, and soft ambient light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYe5vCJpx9m2R1ttYCweKkwoDgLHu0vKmg2YI1vDSrzEUewyBfxOAZ1ATUneCIL74ebluhbJcLoIYMNp-oabutal5280G0jaJAasdMRNWjCEcyzaePCABmNjngDXpLHJ6y6A0MeV-ABe4QrohT0paYCaXmIRQXi3Nae9GruBiunX4s5hNXx7_iYcpClvoY_MMWVOeHghPMntte_SJdXWHKJSv1nLmseBODefhiG6dWrd22WNusjgjEmDqZ0DbmDMNZ_E_bNelYbZ4"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Room Type</p>
+<p class="font-headline-sm text-headline-sm">Deluxe King Room</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">2 Adults • City View • 45m²</p>
+</div>
+</div>
+<a class="text-teal-600 font-label-md text-label-md flex items-center gap-1 hover:underline" href="#">
+            View room details <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Map & Location Card -->
+<div class="bg-white rounded-xl shadow-[0_4px_12px_rgba(15,23,42,0.08)] border border-slate-100 overflow-hidden flex flex-col">
+<div class="h-40 bg-slate-200 relative">
+<img alt="Map placeholder" class="w-full h-full object-cover grayscale" data-alt="clean minimalist map view of London streets near Piccadilly with a single elegant teal pin marker" data-location="London" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIlZ6yVhgSLDbj_r6NEP22emKfd70G0JKZnMFAE4uy8NgA6hVHck_km_9efhj2_69-wtwfiAck5YOosNOryPwjCiQ8sTYtwKp0mSYr1hMfh4pONWqRJjAGR59P1Uvpc3fhlEzAFDozwoLdGRA74vAxDYCDZy-__QqgiFBaOcGDfzl9K0dODp9ekgBLL_dWsrH26qyc8pEzJYAVbiT3KYN4MQe4Zjp8cPfuM5u_q67I4TiMOI7IsYxINy_p25rZtImgVearmqZkPhU"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-8 h-8 bg-teal-600 rounded-full border-4 border-white shadow-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xs" style="font-variation-settings: 'FILL' 1;">hotel</span>
+</div>
+</div>
+</div>
+<div class="p-lg flex-1">
+<p class="font-label-md text-label-md text-on-surface-variant mb-xs">Address</p>
+<p class="font-body-sm text-body-sm mb-md leading-relaxed">150 Piccadilly, London W1J 9BR, United Kingdom</p>
+<button class="w-full py-3 px-4 border border-teal-600 text-teal-600 rounded-lg font-label-md text-label-md hover:bg-teal-50 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-md">map</span> Open in Maps
+          </button>
+</div>
+</div>
+<!-- Special Requests Card -->
+<div class="bg-white p-lg rounded-xl shadow-[0_4px_12px_rgba(15,23,42,0.08)] border border-slate-100">
+<p class="font-headline-sm text-headline-sm mb-md flex items-center gap-2">
+<span class="material-symbols-outlined text-teal-600">volunteer_activism</span> Special Requests
+        </p>
+<div class="bg-surface-container-low p-md rounded-lg mb-md">
+<p class="font-body-sm text-body-sm text-on-surface italic">"High floor preferred, away from the elevator. Celebrating an anniversary."</p>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Special requests are subject to availability upon check-in and may incur additional charges.</p>
+</div>
+<!-- Cancellation Policy Card -->
+<div class="md:col-span-2 bg-white p-lg rounded-xl shadow-[0_4px_12px_rgba(15,23,42,0.08)] border border-slate-100">
+<p class="font-headline-sm text-headline-sm mb-md flex items-center gap-2 text-error">
+<span class="material-symbols-outlined">info</span> Cancellation Policy
+        </p>
+<div class="flex flex-col md:flex-row gap-lg">
+<div class="flex-1 border-l-4 border-teal-500 pl-md">
+<p class="font-label-md text-label-md text-teal-600">Free Cancellation</p>
+<p class="font-body-sm text-body-sm mt-xs">Until 2:00 PM on May 22, 2024 (local hotel time)</p>
+</div>
+<div class="flex-1 border-l-4 border-slate-200 pl-md">
+<p class="font-label-md text-label-md text-on-surface-variant">Partial Refund</p>
+<p class="font-body-sm text-body-sm mt-xs">From May 22, 2:01 PM: One-night stay penalty</p>
+</div>
+<div class="flex-1 border-l-4 border-slate-200 pl-md">
+<p class="font-label-md text-label-md text-on-surface-variant">No Refund</p>
+<p class="font-body-sm text-body-sm mt-xs">Cancellations after May 24, 3:00 PM</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Action Bar -->
+<section class="mt-xl flex flex-col md:flex-row items-center justify-center gap-md">
+<button class="w-full md:w-auto px-12 py-4 bg-teal-600 text-white rounded-xl font-headline-sm text-headline-sm shadow-lg hover:bg-teal-700 transition-all active:scale-95 flex items-center justify-center gap-3">
+<span class="material-symbols-outlined">call</span> Contact Hotel
+      </button>
+<button class="w-full md:w-auto px-12 py-4 text-on-surface-variant font-headline-sm text-headline-sm hover:bg-slate-100 rounded-xl transition-all flex items-center justify-center gap-3">
+<span class="material-symbols-outlined">mail</span> Send to Email
+      </button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 z-50 flex justify-around items-center px-4 pb-safe bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 shadow-[0_-4px_12px_rgba(15,23,42,0.08)]">
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-1 hover:text-teal-500 transition-transform active:scale-90 duration-200">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Explore</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-1 hover:text-teal-500 transition-transform active:scale-90 duration-200">
+<span class="material-symbols-outlined">search</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Search</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-teal-50 dark:bg-teal-900/20 text-teal-600 dark:text-teal-400 rounded-xl px-4 py-1 transition-transform active:scale-90 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold">Trips</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-1 hover:text-teal-500 transition-transform active:scale-90 duration-200">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Profile</span>
+</div>
+</nav>
+</body></html>

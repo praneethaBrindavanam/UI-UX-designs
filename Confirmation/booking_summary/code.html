@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Booking Confirmation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#45464d",
+                    "surface-bright": "#f8f9ff",
+                    "surface-container-high": "#dce9ff",
+                    "primary-fixed": "#dae2fd",
+                    "primary": "#000000",
+                    "on-background": "#0b1c30",
+                    "on-secondary-container": "#006f66",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-tertiary-fixed": "#191c1e",
+                    "primary-fixed-dim": "#bec6e0",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-secondary-fixed": "#00201d",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#131b2e",
+                    "surface-container": "#e5eeff",
+                    "surface-container-low": "#eff4ff",
+                    "surface-tint": "#565e74",
+                    "secondary": "#006a61",
+                    "background": "#f8f9ff",
+                    "tertiary-fixed": "#e0e3e5",
+                    "on-surface": "#0b1c30",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "on-tertiary-container": "#818486",
+                    "on-primary": "#ffffff",
+                    "surface": "#f8f9ff",
+                    "surface-variant": "#d3e4fe",
+                    "tertiary": "#000000",
+                    "secondary-fixed": "#89f5e7",
+                    "on-secondary-fixed-variant": "#005049",
+                    "surface-dim": "#cbdbf5",
+                    "secondary-fixed-dim": "#6bd8cb",
+                    "secondary-container": "#86f2e4",
+                    "inverse-primary": "#bec6e0",
+                    "on-primary-container": "#7c839b",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "outline": "#76777d",
+                    "tertiary-container": "#191c1e",
+                    "outline-variant": "#c6c6cd",
+                    "inverse-surface": "#213145",
+                    "error": "#ba1a1a",
+                    "primary-container": "#131b2e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "sm": "8px",
+                    "gutter": "16px",
+                    "margin-desktop": "64px",
+                    "md": "16px",
+                    "xs": "4px",
+                    "margin-mobile": "20px",
+                    "xl": "48px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "headline-sm": ["Plus Jakarta Sans"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f8f9ff;
+        }
+        .success-bg {
+            background: radial-gradient(circle at center, rgba(0, 106, 97, 0.08) 0%, rgba(248, 249, 255, 0) 70%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface antialiased">
+<!-- Top Navigation -->
+<header class="fixed top-0 left-0 w-full h-16 flex items-center justify-between px-4 z-50 max-w-7xl mx-auto bg-white dark:bg-slate-950 shadow-sm border-b border-slate-200 dark:border-slate-800">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-teal-600 dark:text-teal-400" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Plus_Jakarta_Sans'] font-semibold text-lg text-slate-900 dark:text-slate-50">Booking Confirmed</h1>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="Professional portrait of a young woman with a friendly smile, outdoor lighting with soft green foliage background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwFgV78Ge1QuMNzfFLsig7v0tzx5iABRQHTxrLMp8X42bNJcDLfFCwElIWEy9jr3Nwu7epL66G2geAdWaX0hya-lyz8nHt1N7PNF9omFnnZNa7WD7-W97k_IYYKLo2ewNzXVIicTeqA56zvz2dXm92ijjgJ8e9fLrO3SwHLgShY6vyZ7UV-C5EyI-qfr0mhJTTuQ_MIoYBXiJDAQnwxrJzT8pI-Kc-O3i8iCBPwTyZyIw209YlgSlBZZ8IVE6Rx_lIFRm_yU9y1mo"/>
+</div>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile md:px-margin-desktop max-w-3xl mx-auto min-h-screen">
+<!-- Success Hero Section -->
+<section class="flex flex-col items-center justify-center text-center mb-xl success-bg py-lg rounded-xl">
+<div class="w-24 h-24 bg-secondary-container rounded-full flex items-center justify-center mb-md shadow-lg shadow-secondary/10">
+<span class="material-symbols-outlined text-[48px] text-on-secondary-container" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-xs">Booking Confirmed!</h2>
+<p class="font-body-md text-on-surface-variant max-w-sm">Your adventure is secured. We've sent the confirmation details to your email.</p>
+</section>
+<!-- Order Summary Card -->
+<div class="bg-surface-container-lowest rounded-xl p-lg shadow-[0_4px_12px_rgba(15,23,42,0.08)] mb-gutter border border-surface-container">
+<div class="flex items-center justify-between mb-md">
+<div>
+<span class="font-label-sm text-on-surface-variant uppercase tracking-wider block mb-xs">Order ID</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">#VE-8842910</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-wider block mb-xs">Total Amount</span>
+<span class="font-headline-sm text-headline-sm text-secondary">$1,248.50</span>
+</div>
+</div>
+<div class="flex items-center gap-sm pt-md border-t border-outline-variant">
+<span class="material-symbols-outlined text-secondary" data-icon="verified">verified</span>
+<span class="font-label-md text-on-secondary-fixed-variant">Payment secured with Voyage Elite Protection</span>
+</div>
+</div>
+<!-- Flight Detail Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(15,23,42,0.08)] overflow-hidden border border-surface-container">
+<!-- Flight Header -->
+<div class="bg-primary-container p-md flex justify-between items-center">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-xs">
+<img alt="Airline logo" class="w-full h-full object-contain" data-alt="Minimalist British Airways speedbird logo on a clean white background, high contrast corporate identity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYB3qRHQXQOEHUGr9Aq9Bn1dUvs2YxrRm8GrSAseFmiromCmJDC19I0PmSdAETWgsajYwnCr66ebrYim4vgAFjgc5MhUFzSadZMl_uliXq7bX3DBh4Y1cTDjYuX59w_Cr-ADxA3S_AgBLRRHa9PqJw52wBcIBuHbsHpBu5L8-w__qUuIgeGoczk-fjdODCkFTNnmLUUGIj19oJlhHt_yKBehwA_m9oXABpjDJxV0lKVnBIhEWjcTlH_Er758ElzIM0UMcUfbOy6EE"/>
+</div>
+<div>
+<span class="font-label-md text-white block">British Airways</span>
+<span class="font-label-sm text-on-primary-container">Flight BA286 • Boeing 777-300ER</span>
+</div>
+</div>
+<div class="bg-secondary-container/20 px-sm py-xs rounded-full">
+<span class="font-label-sm text-secondary-container">Confirmed</span>
+</div>
+</div>
+<!-- Flight Body -->
+<div class="p-lg">
+<div class="flex justify-between items-center mb-xl">
+<div class="flex-1">
+<span class="font-headline-lg text-headline-lg block">SFO</span>
+<span class="font-label-md text-on-surface-variant">San Francisco</span>
+<span class="font-label-sm text-on-surface-variant block mt-xs">19:15, Oct 12</span>
+</div>
+<div class="flex flex-col items-center px-lg relative flex-1">
+<div class="w-full h-[1px] bg-outline-variant relative">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-surface-container-lowest px-md">
+<span class="material-symbols-outlined text-secondary text-[24px]" data-icon="flight_takeoff">flight_takeoff</span>
+</div>
+</div>
+<span class="font-label-sm text-on-surface-variant mt-md">10h 45m</span>
+</div>
+<div class="flex-1 text-right">
+<span class="font-headline-lg text-headline-lg block">LHR</span>
+<span class="font-label-md text-on-surface-variant">London Heathrow</span>
+<span class="font-label-sm text-on-surface-variant block mt-xs">14:00, Oct 13</span>
+</div>
+</div>
+<!-- Passenger/Seat Info -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter bg-surface-container-low p-md rounded-lg">
+<div>
+<span class="font-label-sm text-on-surface-variant block mb-xs">Passenger</span>
+<span class="font-label-md text-on-surface">Alex Johnson</span>
+</div>
+<div>
+<span class="font-label-sm text-on-surface-variant block mb-xs">Class</span>
+<span class="font-label-md text-on-surface">Premium Economy</span>
+</div>
+<div>
+<span class="font-label-sm text-on-surface-variant block mb-xs">Seat</span>
+<span class="font-label-md text-on-surface">24K (Window)</span>
+</div>
+<div>
+<span class="font-label-sm text-on-surface-variant block mb-xs">Gate</span>
+<span class="font-label-md text-on-surface">G-92</span>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="px-lg pb-lg">
+<div class="flex items-center gap-sm text-on-surface-variant mb-md">
+<span class="material-symbols-outlined text-[20px]" data-icon="calendar_today">calendar_today</span>
+<span class="font-body-sm">Added to your Apple Wallet &amp; Calendar</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Fixed Action Bar -->
+<div class="fixed bottom-0 left-0 w-full bg-white dark:bg-slate-950 p-gutter shadow-[0_-4px_12px_rgba(15,23,42,0.08)] z-50">
+<div class="max-w-3xl mx-auto flex flex-col gap-sm">
+<button class="w-full h-14 bg-secondary text-white rounded-xl font-headline-sm flex items-center justify-center gap-sm hover:opacity-90 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+                View Digital Tickets
+            </button>
+<button class="w-full h-12 bg-transparent text-on-surface font-label-md flex items-center justify-center hover:bg-surface-container transition-colors rounded-xl">
+                Go to Home Screen
+            </button>
+</div>
+</div>
+</body></html>

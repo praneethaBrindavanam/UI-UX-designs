@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#45464d",
+                    "surface-bright": "#f8f9ff",
+                    "surface-container-high": "#dce9ff",
+                    "primary-fixed": "#dae2fd",
+                    "primary": "#000000",
+                    "on-background": "#0b1c30",
+                    "on-secondary-container": "#006f66",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-tertiary-fixed": "#191c1e",
+                    "primary-fixed-dim": "#bec6e0",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-secondary-fixed": "#00201d",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#131b2e",
+                    "surface-container": "#e5eeff",
+                    "surface-container-low": "#eff4ff",
+                    "surface-tint": "#565e74",
+                    "secondary": "#006a61",
+                    "background": "#f8f9ff",
+                    "tertiary-fixed": "#e0e3e5",
+                    "on-surface": "#0b1c30",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "on-tertiary-container": "#818486",
+                    "on-primary": "#ffffff",
+                    "surface": "#f8f9ff",
+                    "surface-variant": "#d3e4fe",
+                    "tertiary": "#000000",
+                    "secondary-fixed": "#89f5e7",
+                    "on-secondary-fixed-variant": "#005049",
+                    "surface-dim": "#cbdbf5",
+                    "secondary-fixed-dim": "#6bd8cb",
+                    "secondary-container": "#86f2e4",
+                    "inverse-primary": "#bec6e0",
+                    "on-primary-container": "#7c839b",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "outline": "#76777d",
+                    "tertiary-container": "#191c1e",
+                    "outline-variant": "#c6c6cd",
+                    "inverse-surface": "#213145",
+                    "error": "#ba1a1a",
+                    "primary-container": "#131b2e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "sm": "8px",
+                    "gutter": "16px",
+                    "margin-desktop": "64px",
+                    "md": "16px",
+                    "xs": "4px",
+                    "margin-mobile": "20px",
+                    "xl": "48px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "headline-sm": ["Plus Jakarta Sans"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .perforated-edge {
+            background-image: radial-gradient(circle at 0px 10px, transparent 10px, white 10px);
+            background-size: 100% 20px;
+        }
+        .mask-ticket {
+            mask-image: radial-gradient(circle at 0% 50%, transparent 12px, black 13px),
+                        radial-gradient(circle at 100% 50%, transparent 12px, black 13px);
+            mask-composite: intersect;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-32">
+<!-- Top Navigation -->
+<header class="fixed top-0 left-0 w-full h-16 flex items-center justify-between px-4 z-50 max-w-7xl mx-auto bg-white border-b border-slate-200 shadow-sm">
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-slate-50 transition-colors active:scale-95 duration-150 rounded-full">
+<span class="material-symbols-outlined text-teal-600">arrow_back</span>
+</button>
+<h1 class="font-headline-sm text-slate-900">Boarding Pass</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="Close up portrait of a professional man with a friendly expression in a brightly lit studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNTpucIATOnWXcMbjCGQ3gLicaA6OYbfIMQ2CdjUueAikttG4gD07DPd-t6auj7gcksmTJwI-el8aMx8hou5RTBxOIx-H0P3eOxeLOJ0kEcOwKttkNxnIk9NoB2_rFNT9OppX1jDfPaafceAGMA_JLmBc7wq3tChnVWLplREdyd9SiSf1jif62Q70M4KZ-Hh4PNJT2hOnEcywS2cEWaKeb_YywDVXqH8d0jNtC1CbRphovEHkZ451x5nyIuwDFcvzI4ozq5DgAlmQ"/>
+</div>
+</header>
+<main class="mt-24 px-margin-mobile md:px-margin-desktop max-w-2xl mx-auto">
+<!-- Success Alert -->
+<div class="mb-lg flex items-center gap-md bg-secondary-container/30 p-md rounded-xl">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<p class="font-label-md text-on-secondary-fixed-variant">Booking Confirmed</p>
+</div>
+<!-- Ticket Component -->
+<div class="relative bg-white rounded-xl shadow-[0_-4px_12px_rgba(15,23,42,0.08)] overflow-hidden">
+<!-- Ticket Top Section -->
+<div class="p-lg">
+<div class="flex justify-between items-center mb-xl">
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-wider">Flight</span>
+<span class="font-headline-md text-teal-600">QA 482</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-wider">Terminal</span>
+<span class="font-headline-md text-slate-900">3</span>
+</div>
+</div>
+<div class="flex justify-between items-center relative mb-xl">
+<div class="flex flex-col">
+<span class="font-headline-lg text-slate-900">LHR</span>
+<span class="font-body-sm text-on-surface-variant">London, UK</span>
+</div>
+<div class="flex-1 flex flex-col items-center px-md">
+<div class="w-full border-t-2 border-dashed border-slate-200 relative">
+<span class="material-symbols-outlined absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-teal-600 bg-white px-2">flight_takeoff</span>
+</div>
+<span class="font-label-sm text-teal-600 mt-2">11h 20m</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-headline-lg text-slate-900">JFK</span>
+<span class="font-body-sm text-on-surface-variant">New York, US</span>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-lg pt-lg border-t border-slate-100">
+<div>
+<span class="font-label-sm text-on-surface-variant block mb-1">Gate</span>
+<span class="font-headline-sm text-slate-900">B24</span>
+</div>
+<div>
+<span class="font-label-sm text-on-surface-variant block mb-1">Seat</span>
+<span class="font-headline-sm text-slate-900">12A</span>
+</div>
+<div>
+<span class="font-label-sm text-on-surface-variant block mb-1">Boarding</span>
+<span class="font-headline-sm text-teal-600">08:15</span>
+</div>
+<div>
+<span class="font-label-sm text-on-surface-variant block mb-1">Class</span>
+<span class="font-headline-sm text-slate-900">Business</span>
+</div>
+</div>
+</div>
+<!-- Perforated Line Visual -->
+<div class="relative h-6 flex items-center">
+<div class="absolute left-[-12px] w-6 h-6 rounded-full bg-background"></div>
+<div class="w-full border-t-2 border-dashed border-slate-100"></div>
+<div class="absolute right-[-12px] w-6 h-6 rounded-full bg-background"></div>
+</div>
+<!-- Ticket Bottom Section (QR Code) -->
+<div class="p-lg bg-slate-50 flex flex-col items-center">
+<div class="bg-white p-lg rounded-xl shadow-sm border border-slate-200 mb-md">
+<img alt="QR code for scanning" class="w-48 h-48 mix-blend-multiply opacity-90" data-alt="A clean, high-contrast black and white QR code displayed on a white digital background for flight boarding" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL_TPO4GSzwDEjRrENptArFcosSYeQ199IAPDy-nUil5Dr-ixt7vuDe8Cq0LyaAMQ5TKP39O51pwIp31bsiS9HkLFBMhl0uPJpFIokJco5lNMLL3MF8CtOfW-TjvkVQ7TrLG_eWv98v6lHD0nRgodWhZVKbIeoOfdl125nhVBWxyUssnZyK8LOzD-L-LAYUZYfiGikRBwM92S_qvj4rIpVD-GZtS-VRT-9pmGR1vyq3d8kJIJtUmg1A7XqutQwr5M5vQeSGBloBtI"/>
+</div>
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest">Scan for Boarding</span>
+<p class="font-body-sm text-slate-500 mt-2">PNR: XJ83K2P</p>
+</div>
+</div>
+<!-- Actions Section -->
+<div class="mt-xl flex flex-col gap-md">
+<button class="w-full bg-slate-900 text-white py-lg rounded-xl font-headline-sm flex items-center justify-center gap-md hover:bg-slate-800 transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_card</span>
+                Add to Apple Wallet
+            </button>
+<div class="flex gap-md">
+<button class="flex-1 border border-slate-200 bg-white text-slate-700 py-md rounded-xl font-label-md flex items-center justify-center gap-sm hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-teal-600">share</span>
+                    Share Pass
+                </button>
+<button class="flex-1 border border-slate-200 bg-white text-slate-700 py-md rounded-xl font-label-md flex items-center justify-center gap-sm hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-teal-600">download</span>
+                    Save PDF
+                </button>
+</div>
+</div>
+<!-- Help/Support Link -->
+<div class="mt-xl text-center">
+<button class="text-teal-600 font-label-md hover:underline">View Baggage Allowance &amp; Rules</button>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full h-20 z-50 flex justify-around items-center px-4 pb-safe bg-white border-t border-slate-200 shadow-[0_-4px_12px_rgba(15,23,42,0.08)]">
+<a class="flex flex-col items-center justify-center text-slate-500 px-4 py-1 hover:text-teal-500 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 px-4 py-1 hover:text-teal-500 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-teal-50 text-teal-600 rounded-xl px-4 py-1 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold">Trips</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 px-4 py-1 hover:text-teal-500 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</body></html>
