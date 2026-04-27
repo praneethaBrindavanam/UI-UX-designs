@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-pane {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .active-glow {
+            box-shadow: 0 8px 24px rgba(0, 123, 255, 0.2);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#e2e2e2",
+                        "surface-variant": "#333535",
+                        "on-primary-container": "#74829d",
+                        "outline-variant": "#44474d",
+                        "on-tertiary": "#00363a",
+                        "inverse-on-surface": "#2f3131",
+                        "surface-container": "#1e2020",
+                        "outline": "#8f9097",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#b9c7e4",
+                        "tertiary-fixed": "#7df4ff",
+                        "on-secondary-container": "#00285b",
+                        "on-primary-fixed-variant": "#39475f",
+                        "secondary-fixed-dim": "#adc7ff",
+                        "error": "#ffb4ab",
+                        "secondary": "#adc7ff",
+                        "surface-container-highest": "#333535",
+                        "on-primary": "#233148",
+                        "surface-container-high": "#282a2b",
+                        "on-primary-fixed": "#0d1c32",
+                        "surface-container-low": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#004493",
+                        "tertiary": "#00dbe9",
+                        "surface-bright": "#37393a",
+                        "tertiary-container": "#001d1f",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#4a8eff",
+                        "surface-tint": "#b9c7e4",
+                        "on-tertiary-fixed-variant": "#004f54",
+                        "surface-dim": "#121414",
+                        "primary": "#b9c7e4",
+                        "secondary-fixed": "#d8e2ff",
+                        "background": "#121414",
+                        "surface": "#121414",
+                        "inverse-primary": "#515f78",
+                        "on-tertiary-container": "#009099",
+                        "primary-fixed": "#d6e3ff",
+                        "primary-container": "#0a192f",
+                        "inverse-surface": "#e2e2e2",
+                        "on-secondary-fixed": "#001a41",
+                        "on-secondary": "#002e68",
+                        "on-surface-variant": "#c5c6cd",
+                        "on-tertiary-fixed": "#002022",
+                        "tertiary-fixed-dim": "#00dbe9",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0c0f0f",
+                        "on-surface": "#e2e2e2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "lg": "24px",
+                        "unit": "4px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "xl": "32px",
+                        "container-margin": "20px",
+                        "gutter": "12px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "button": ["Inter"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "button": ["16px", {"lineHeight": "1.0", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "h1": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h2": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-slate-950/60 backdrop-blur-2xl border-b border-white/5 shadow-2xl">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-blue-500 dark:text-blue-400" data-icon="menu">menu</span>
+<span class="font-inter tracking-[0.2em] uppercase text-xs font-bold text-blue-400 font-black tracking-widest">ORBITAL</span>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-blue-500 dark:text-blue-400" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 px-container-margin pb-32">
+<!-- Hero Section -->
+<section class="mb-xl">
+<div class="relative h-64 rounded-xl overflow-hidden glass-pane mb-md">
+<img class="w-full h-full object-cover opacity-60" data-alt="Cinematic satellite view of earth from orbit with glowing atmosphere and deep blue ocean reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0rYANzr9YjewRmJGiheQG5hV3IbtdYZB-bVjsbGC9tEnlj91AhyzVyR10IGEHYxAy99nuwjFbsnDmdDtkl851DKef37hHfwJxihpZcqldDGteCnP_23l-Do0tYRoVz7nr-kd9ACAZWxIJ89M4fTbnu6DXLaxRqQRrP1j1xIsdN2arzm37ax3yR9u176J7VEZxIRUyzcojLBxJ8xnf_errFCt8a5z7FwB7iebFArDZzLMjo2VtDZq69sfESWqhZi3PKYVyMBnOPq0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+<div class="absolute bottom-md left-md">
+<h1 class="font-h1 text-h1 text-on-surface">Neural Interface</h1>
+<p class="font-body-md text-on-primary-container">Next-generation telemetry systems.</p>
+</div>
+</div>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-2 gap-gutter mb-xl">
+<!-- Large Card -->
+<div class="col-span-2 glass-pane rounded-xl p-md flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-tertiary">SYSTEM STATUS</span>
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="bolt">bolt</span>
+</div>
+<h2 class="font-h2 text-h2">98.4% Efficiency</h2>
+<div class="w-full bg-white/5 h-1 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[98%] shadow-[0_0_10px_rgba(0,219,233,0.5)]"></div>
+</div>
+</div>
+<!-- Small Card 1 -->
+<div class="glass-pane rounded-xl p-md flex flex-col gap-xs">
+<span class="material-symbols-outlined text-blue-400" data-icon="biotech">biotech</span>
+<span class="font-label-caps text-[10px] text-on-primary-container">SCANNING</span>
+<span class="text-lg font-bold">Deep Scan</span>
+</div>
+<!-- Small Card 2 -->
+<div class="glass-pane rounded-xl p-md flex flex-col gap-xs border-blue-500/30">
+<span class="material-symbols-outlined text-cyan-400" data-icon="psychology">psychology</span>
+<span class="font-label-caps text-[10px] text-on-primary-container">NEURAL LINK</span>
+<span class="text-lg font-bold">Active</span>
+</div>
+<!-- Asymmetric Wide Card -->
+<div class="col-span-2 glass-pane rounded-xl overflow-hidden flex h-32">
+<div class="flex-1 p-md flex flex-col justify-center">
+<span class="font-label-caps text-label-caps text-on-primary-container">TELEMETRY</span>
+<h3 class="text-xl font-bold">Sector 7-G</h3>
+</div>
+<div class="w-1/3 relative">
+<img class="w-full h-full object-cover grayscale opacity-40" data-alt="Abstract digital mesh pattern representing global network connections with soft blue highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5yXUmloOeHwKMQMxOamu0CAmf5Wa1nX0d_G02Amd3fcFl5QJ9qwIg0EgyhZlRaI_3caD1JavQOSWMU96V3zXsxy2-Bk6a111Jupxu63cfjeqkpKXBKXpJ7YuWoj5K32qCO8st66hiwtMsLtYXVc2EWbmf58c-EdSEtn-utmj72LPlWiQIWLYr1nxgfUhweHK3G-l_lwuDuv4v-Pi04qW0oXgUtZ199zfd8VaqVUUx-nzKTGfOGEm4ZDwGgZUfkZgRPNKBx3EWfkw"/>
+</div>
+</div>
+</div>
+<!-- Recent Activity List -->
+<section class="space-y-sm">
+<h3 class="font-label-caps text-label-caps text-on-primary-container px-xs">RECENT COMMANDS</h3>
+<div class="divide-y divide-white/5 glass-pane rounded-xl overflow-hidden">
+<div class="p-md flex items-center justify-between hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-blue-400 text-md" data-icon="terminal">terminal</span>
+</div>
+<div>
+<p class="font-bold text-sm">Sequence Alpha</p>
+<p class="text-xs text-on-primary-container">Initialized 2m ago</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-primary-container" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="p-md flex items-center justify-between hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-cyan-500/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-cyan-400 text-md" data-icon="sync">sync</span>
+</div>
+<div>
+<p class="font-bold text-sm">Sync Telemetry</p>
+<p class="text-xs text-on-primary-container">Completed 15m ago</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-primary-container" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Radial Hub Navigation (Conceptual Mockup) -->
+<!-- The user requested a radial hub bottom-right. We simulate the 'expanded' state as a semi-transparent overlay -->
+<div class="fixed inset-0 z-[60] pointer-events-none">
+<!-- Radial Menu Background Blur -->
+<div class="absolute inset-0 bg-slate-950/20 backdrop-blur-md opacity-0 transition-opacity duration-500"></div>
+<!-- Radial Container -->
+<div class="absolute bottom-8 right-8 w-64 h-64 flex items-center justify-center pointer-events-auto">
+<!-- Radial Icons (Expanded Positions) -->
+<!-- Home -->
+<button class="absolute glass-pane w-12 h-12 rounded-full flex items-center justify-center -translate-y-28 translate-x-0 transition-all duration-300 active:scale-95 shadow-xl">
+<span class="material-symbols-outlined text-white/60" data-icon="grid_view">grid_view</span>
+</button>
+<!-- Search -->
+<button class="absolute glass-pane w-12 h-12 rounded-full flex items-center justify-center -translate-y-20 -translate-x-20 transition-all duration-300 active:scale-95 shadow-xl">
+<span class="material-symbols-outlined text-white/60" data-icon="explore">explore</span>
+</button>
+<!-- Profile -->
+<button class="absolute glass-pane w-12 h-12 rounded-full flex items-center justify-center translate-y-0 -translate-x-28 transition-all duration-300 active:scale-95 shadow-xl">
+<span class="material-symbols-outlined text-white/60" data-icon="account_circle">account_circle</span>
+</button>
+<!-- Settings -->
+<button class="absolute glass-pane w-12 h-12 rounded-full flex items-center justify-center -translate-y-24 -translate-x-10 transition-all duration-300 active:scale-95 shadow-xl border-cyan-500/20">
+<span class="material-symbols-outlined text-cyan-400" data-icon="settings">settings</span>
+</button>
+<!-- Notifications -->
+<button class="absolute glass-pane w-12 h-12 rounded-full flex items-center justify-center -translate-y-10 -translate-x-24 transition-all duration-300 active:scale-95 shadow-xl">
+<span class="material-symbols-outlined text-white/60" data-icon="notifications">notifications</span>
+</button>
+<!-- Main FAB -->
+<button class="relative z-10 w-16 h-16 rounded-full bg-secondary-container text-white flex items-center justify-center shadow-[0_8px_32px_0_rgba(0,123,255,0.4)] transition-transform active:scale-90 border border-white/20">
+<span class="material-symbols-outlined text-3xl font-bold" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- BottomNavBar (Fallback/Standard as per JSON instructions) -->
+<!-- Hidden by default in this specific "Radial Hub" request but structure maintained for system logic -->
+<nav class="hidden md:flex fixed bottom-0 left-0 w-full z-50 justify-around items-center px-4 pb-6">
+<div class="bg-white/5 backdrop-blur-xl rounded-full border border-white/10 mx-6 mb-8 flex justify-around w-full max-w-lg p-2 shadow-[0_8px_32px_0_rgba(0,0,0,0.8)]">
+<div class="flex items-center justify-center bg-blue-500/20 text-cyan-400 rounded-full p-3 shadow-[0_0_20px_rgba(0,123,255,0.4)]">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+</div>
+<div class="flex items-center justify-center text-white/40 p-3 hover:text-blue-300 transition-transform duration-300">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+</div>
+<div class="flex items-center justify-center text-white/40 p-3 hover:text-blue-300 transition-transform duration-300">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+</div>
+<div class="flex items-center justify-center text-white/40 p-3 hover:text-blue-300 transition-transform duration-300">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</div>
+</div>
+</nav>
+<!-- Navigation Drawer (Side) -->
+<aside class="fixed inset-y-0 left-0 z-[100] flex flex-col p-8 bg-slate-950/95 backdrop-blur-3xl h-full w-4/5 border-r border-white/10 transform -translate-x-full transition-transform duration-500">
+<div class="flex flex-col gap-4 mb-8">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full glass-pane overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of a futuristic astronaut pilot in sleek white gear with blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIBJZPA6LK6V9_b6tZwD5bFkH9AukmV2sbsonusBpmqace_shdGUQuDwSdKkyCbKrLGjdeIKPFKU4GZqplWfJlp1TZt0DpyF-F6L0GfLC1A_APfPJqIKObdS3b_yIkZzTB8YHhtU8aaFadedJgMIoY6aqlCIiYAfOvwHVriplk9A4Mc-9sXTPgxS7-QS8_obISQ9dNC1mCfkHuqVdLygRtd803odIYUI8F-2tqh3xdS47dEQ2Nlcq9BESlNL1jWi2YcpNivkcbUAc"/>
+</div>
+<div>
+<h4 class="font-inter font-bold text-on-surface">Commander Solo</h4>
+<p class="text-xs text-on-primary-container">Sector 7-G</p>
+</div>
+</div>
+<span class="font-label-caps text-[10px] text-tertiary tracking-widest">ACTIVE SESSION</span>
+</div>
+<nav class="flex flex-col gap-2 divide-y divide-white/5">
+<a class="flex items-center gap-4 p-4 bg-blue-500/10 text-cyan-300 border-l-4 border-cyan-400 font-semibold transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-inter font-light tracking-tight">Command Center</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-white/60 hover:text-white hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-inter font-light tracking-tight">Telemetry</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-white/60 hover:text-white hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="biotech">biotech</span>
+<span class="font-inter font-light tracking-tight">Deep Scan</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-white/60 hover:text-white hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-inter font-light tracking-tight">Neural Link</span>
+</a>
+</nav>
+</aside>
+</body></html>

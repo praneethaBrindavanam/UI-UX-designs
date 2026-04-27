@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ORBITAL | Immersive Navigation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;700;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-pane {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(0, 219, 233, 0.4);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#e2e2e2",
+                        "surface-variant": "#333535",
+                        "on-primary-container": "#74829d",
+                        "outline-variant": "#44474d",
+                        "on-tertiary": "#00363a",
+                        "inverse-on-surface": "#2f3131",
+                        "surface-container": "#1e2020",
+                        "outline": "#8f9097",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#b9c7e4",
+                        "tertiary-fixed": "#7df4ff",
+                        "on-secondary-container": "#00285b",
+                        "on-primary-fixed-variant": "#39475f",
+                        "secondary-fixed-dim": "#adc7ff",
+                        "error": "#ffb4ab",
+                        "secondary": "#adc7ff",
+                        "surface-container-highest": "#333535",
+                        "on-primary": "#233148",
+                        "surface-container-high": "#282a2b",
+                        "on-primary-fixed": "#0d1c32",
+                        "surface-container-low": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#004493",
+                        "tertiary": "#00dbe9",
+                        "surface-bright": "#37393a",
+                        "tertiary-container": "#001d1f",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#4a8eff",
+                        "surface-tint": "#b9c7e4",
+                        "on-tertiary-fixed-variant": "#004f54",
+                        "surface-dim": "#121414",
+                        "primary": "#b9c7e4",
+                        "secondary-fixed": "#d8e2ff",
+                        "background": "#121414",
+                        "surface": "#121414",
+                        "inverse-primary": "#515f78",
+                        "on-tertiary-container": "#009099",
+                        "primary-fixed": "#d6e3ff",
+                        "primary-container": "#0a192f",
+                        "inverse-surface": "#e2e2e2",
+                        "on-secondary-fixed": "#001a41",
+                        "on-secondary": "#002e68",
+                        "on-surface-variant": "#c5c6cd",
+                        "on-tertiary-fixed": "#002022",
+                        "tertiary-fixed-dim": "#00dbe9",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0c0f0f",
+                        "on-surface": "#e2e2e2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "lg": "24px",
+                        "unit": "4px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "xl": "32px",
+                        "container-margin": "20px",
+                        "gutter": "12px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "button": ["Inter"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "button": ["16px", {"lineHeight": "1.0", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "h1": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h2": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md overflow-hidden selection:bg-tertiary selection:text-on-tertiary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-slate-950/60 backdrop-blur-2xl border-b border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-400" data-icon="menu">menu</span>
+<span class="font-inter tracking-[0.2em] uppercase text-xs font-bold text-blue-400 font-black tracking-widest">ORBITAL</span>
+</div>
+<button class="p-2 rounded-full hover:bg-white/5 transition-all duration-300 active:scale-95 duration-200 ease-out">
+<span class="material-symbols-outlined text-on-background text-2xl" data-icon="close">close</span>
+</button>
+</header>
+<!-- Full-Screen Navigation Overlay -->
+<main class="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+<!-- Abstract Background -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-background opacity-80"></div>
+<img class="w-full h-full object-cover mix-blend-overlay" data-alt="abstract fluid motion of deep blue and violet ethereal smoke with soft digital grain and cinematic ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm3flD_aALSwOGG2Ft8J23LEuFl7G7khbsomU7T9jVjWWJ8C7JkwWMNPgqtURNQvETgl4a2sHOqQJ7F9osrRUrlAHdFcNC2xHvdNxuUKq2ByDUxYzyEpO6dDx98R5P5mSoypQKRpA3fnR4L_sqIasVS7AAbr4kJutC3jjLXb4G2Tkig6wxTuMzZwot9kU00IaK-TSD2wn1yNIE_HQwWjjjpXtoiT7xJj4HTwnwqOOCfZLNgvHREzHpYUNYXFdeubrZQWiJRpBZ3nw"/>
+</div>
+<!-- Navigation Content -->
+<nav class="relative z-10 w-full px-container-margin flex flex-col space-y-xl items-start md:items-center">
+<div class="group cursor-pointer">
+<span class="block text-white/20 font-label-caps text-[10px] mb-xs tracking-[0.3em] group-hover:text-tertiary transition-colors">01 / DISCOVER</span>
+<h2 class="font-h1 text-[64px] md:text-[96px] leading-none tracking-tighter text-on-surface hover:text-tertiary transition-all duration-500 hover:translate-x-4 md:hover:translate-x-0 md:hover:scale-110">
+                    WORKS
+                </h2>
+</div>
+<div class="group cursor-pointer">
+<span class="block text-white/20 font-label-caps text-[10px] mb-xs tracking-[0.3em] group-hover:text-tertiary transition-colors">02 / SPACE</span>
+<h2 class="font-h1 text-[64px] md:text-[96px] leading-none tracking-tighter text-on-surface hover:text-tertiary transition-all duration-500 hover:translate-x-4 md:hover:translate-x-0 md:hover:scale-110">
+                    STUDIO
+                </h2>
+</div>
+<div class="group cursor-pointer">
+<span class="block text-white/20 font-label-caps text-[10px] mb-xs tracking-[0.3em] group-hover:text-tertiary transition-colors">03 / CONNECT</span>
+<h2 class="font-h1 text-[64px] md:text-[96px] leading-none tracking-tighter text-on-surface hover:text-tertiary transition-all duration-500 hover:translate-x-4 md:hover:translate-x-0 md:hover:scale-110">
+                    CONTACT
+                </h2>
+</div>
+<div class="group cursor-pointer">
+<span class="block text-white/20 font-label-caps text-[10px] mb-xs tracking-[0.3em] group-hover:text-tertiary transition-colors">04 / ORIGIN</span>
+<h2 class="font-h1 text-[64px] md:text-[96px] leading-none tracking-tighter text-on-surface hover:text-tertiary transition-all duration-500 hover:translate-x-4 md:hover:translate-x-0 md:hover:scale-110">
+                    ABOUT
+                </h2>
+</div>
+</nav>
+<!-- Footer Meta within Nav -->
+<div class="absolute bottom-xl left-container-margin right-container-margin z-20 flex justify-between items-end border-t border-white/10 pt-md">
+<div class="flex flex-col gap-1">
+<p class="font-label-caps text-white/40 uppercase tracking-widest text-[10px]">Active Session</p>
+<p class="font-body-md text-tertiary font-bold tracking-tighter text-glow">SECTOR 7-G / COMMANDER SOLO</p>
+</div>
+<div class="flex gap-md">
+<a class="w-10 h-10 rounded-full glass-pane flex items-center justify-center hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="language">language</span>
+</a>
+<a class="w-10 h-10 rounded-full glass-pane flex items-center justify-center hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="share">share</span>
+</a>
+</div>
+</div>
+</main>
+<!-- NavigationDrawer (Contextual Secondary Links) -->
+<div class="hidden md:flex fixed inset-y-0 left-0 z-[100] w-1/4 flex-col p-8 bg-slate-950/95 backdrop-blur-3xl border-r border-white/10 shadow-[20px_0_80px_rgba(0,0,0,0.9)]">
+<div class="flex items-center gap-md mb-xl">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-tertiary/30">
+<img class="w-full h-full object-cover" data-alt="portrait of a focused professional pilot in a sleek dark uniform with subtle glowing interface reflections on skin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZsThfA1auQoPpjk9Wr-z0RcfpGeqgIoc0EDaFFIeL8XdAw9yxsG4WfpOiWAqly41hLzoNEqGYxzmUL7DRPcNAsXMfcYR4en6VdZyJxJfyU1R1dPTwbJivBmYVwzgOpBJ-3JrqiaUPJ4aZt97VuZWuINC5zr2jebAGt3h0Zx22p-QdXBtZD_Nk8w_oxFeiFG0XdCw6OW9oinqvtiRxBrc_wG69DTS8cBVL9g1xoCEsUwVyCgrdaCAXbdphhBMBkPBOGE3s80cwDR4"/>
+</div>
+<div>
+<p class="font-inter font-bold text-blue-400">Commander Solo</p>
+<p class="text-[10px] text-white/40 tracking-widest">NEURAL LINK ACTIVE</p>
+</div>
+</div>
+<div class="flex flex-col space-y-sm divide-y divide-white/5">
+<a class="flex items-center gap-md p-md bg-blue-500/10 text-cyan-300 border-l-4 border-cyan-400 font-semibold transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-inter font-light tracking-tight">Command Center</span>
+</a>
+<a class="flex items-center gap-md p-md text-white/60 hover:text-white hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-inter font-light tracking-tight">Telemetry</span>
+</a>
+<a class="flex items-center gap-md p-md text-white/60 hover:text-white hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="biotech">biotech</span>
+<span class="font-inter font-light tracking-tight">Deep Scan</span>
+</a>
+<a class="flex items-center gap-md p-md text-white/60 hover:text-white hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-inter font-light tracking-tight">Neural Link</span>
+</a>
+</div>
+</div>
+<!-- BottomNavBar (Hidden in full-screen mode per suppression logic, but defined for system consistency) -->
+<!-- The user is in a "Focused Journey" (full-screen menu), so BottomNavBar is suppressed to prioritize content canvas -->
+</body></html>
