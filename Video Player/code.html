@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#2e3132",
+                    "surface": "#111415",
+                    "surface-container-lowest": "#0c0f10",
+                    "on-surface-variant": "#b9cacb",
+                    "error-container": "#93000a",
+                    "surface-bright": "#373a3b",
+                    "on-primary": "#00363a",
+                    "on-primary-container": "#006970",
+                    "surface-variant": "#323536",
+                    "secondary-fixed-dim": "#dcb8ff",
+                    "outline": "#849495",
+                    "on-background": "#e1e3e4",
+                    "on-secondary": "#480081",
+                    "surface-tint": "#00dbe9",
+                    "primary-fixed": "#7df4ff",
+                    "primary-container": "#00f0ff",
+                    "secondary": "#dcb8ff",
+                    "inverse-surface": "#e1e3e4",
+                    "on-tertiary": "#313030",
+                    "primary-fixed-dim": "#00dbe9",
+                    "on-tertiary-container": "#605f5e",
+                    "on-secondary-fixed-variant": "#6700b5",
+                    "tertiary": "#f9f5f5",
+                    "tertiary-container": "#dcd9d8",
+                    "secondary-fixed": "#efdbff",
+                    "inverse-primary": "#006970",
+                    "surface-container-low": "#191c1d",
+                    "on-error": "#690005",
+                    "on-error-container": "#ffdad6",
+                    "error": "#ffb4ab",
+                    "on-primary-fixed": "#002022",
+                    "on-secondary-container": "#dcb7ff",
+                    "primary": "#dbfcff",
+                    "secondary-container": "#7701d0",
+                    "on-secondary-fixed": "#2c0051",
+                    "on-tertiary-fixed-variant": "#474646",
+                    "background": "#111415",
+                    "outline-variant": "#3b494b",
+                    "surface-container-highest": "#323536",
+                    "on-primary-fixed-variant": "#004f54",
+                    "surface-container-high": "#282a2b",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "surface-container": "#1d2021",
+                    "surface-dim": "#111415",
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "on-surface": "#e1e3e4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-gap-sm": "8px",
+                    "container-padding": "20px",
+                    "edge-margin": "16px",
+                    "stack-gap-lg": "24px",
+                    "touch-target-min": "48px",
+                    "stack-gap-md": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Space Grotesk"],
+                    "headline-md": ["Space Grotesk"],
+                    "label-lg": ["Space Grotesk"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Space Grotesk"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { margin: 0; padding: 0; overflow: hidden; background-color: #111415; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48; }
+        .glass-panel { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .glow-cyan { filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.4)); }
+        .progress-glow { box-shadow: 0 0 12px rgba(0, 240, 255, 0.6); }
+        .touch-ripple:active { background: rgba(0, 240, 255, 0.1); border-radius: 50%; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface h-screen w-screen overflow-hidden font-body-md">
+<!-- Video Canvas Base -->
+<div class="fixed inset-0 z-0 bg-surface-container-lowest">
+<img alt="Cinematic neon cityscape" class="w-full h-full object-cover opacity-60" data-alt="Cinematic sprawling futuristic cityscape at night with intense neon cyan and purple lights and moody atmospheric fog" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6bh9JKDtEQhNG7GJnrGIik2aR9PBdsC3aqt2QPWSpu7l5JsduNsjPwf8mhBC1Wxp3NVyWmF-0_dXPgdvYk1jv7zv8ibH4qDFgLJOU8AfdWAwnQYva87kJqOkll22nOq0PvuOmnmBIf8afktpU1nLXGYgxfAGQRiu4VozSSPWO5HaIWG_i1fO_2evDY9MZk8gyPrR8ChetQTz1UwRiYbNJHnXfvhHOp4waeZxcIIyOH_sqdX3BDoYmkjl4bvD9flLmzGrV0C99lw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60"></div>
+</div>
+<!-- Top App Bar Shell -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-black/40 backdrop-blur-md border-b border-white/10">
+<div class="flex items-center gap-4">
+<button class="h-touch-target-min w-touch-target-min flex items-center justify-center text-cyan-400 active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="text-cyan-400 font-['Space_Grotesk'] font-bold tracking-tight text-lg">Now Playing</h1>
+</div>
+<div class="flex items-center">
+<button class="h-touch-target-min w-touch-target-min flex items-center justify-center text-cyan-400 active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<!-- Center Player Controls -->
+<main class="relative z-10 h-full flex flex-col justify-center items-center px-edge-margin">
+<!-- Main Control Cluster -->
+<div class="flex items-center justify-center gap-stack-gap-lg w-full mb-stack-gap-lg">
+<!-- Skip Backward -->
+<button class="w-[64px] h-[64px] flex flex-col items-center justify-center text-on-surface hover:text-cyan-400 transition-colors active:scale-90">
+<span class="material-symbols-outlined !text-[32px]" data-icon="replay_10">replay_10</span>
+<span class="font-label-sm text-[10px] uppercase mt-1">Backward</span>
+</button>
+<!-- Play Toggle -->
+<button class="w-[88px] h-[88px] rounded-full bg-primary-container text-on-primary-fixed flex items-center justify-center progress-glow active:scale-95 transition-all">
+<span class="material-symbols-outlined !text-[48px]" data-icon="pause" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<!-- Skip Forward -->
+<button class="w-[64px] h-[64px] flex flex-col items-center justify-center text-on-surface hover:text-cyan-400 transition-colors active:scale-90">
+<span class="material-symbols-outlined !text-[32px]" data-icon="forward_10">forward_10</span>
+<span class="font-label-sm text-[10px] uppercase mt-1">Forward</span>
+</button>
+</div>
+<!-- Gesture Overlays (Indication Only) -->
+<div class="absolute inset-0 flex pointer-events-none">
+<div class="w-1/2 h-full touch-ripple flex items-center justify-start pl-12 opacity-0 hover:opacity-100 transition-opacity">
+<div class="bg-black/20 backdrop-blur-sm p-4 rounded-full border border-white/5">
+<span class="material-symbols-outlined text-white" data-icon="keyboard_double_arrow_left">keyboard_double_arrow_left</span>
+</div>
+</div>
+<div class="w-1/2 h-full touch-ripple flex items-center justify-end pr-12 opacity-0 hover:opacity-100 transition-opacity">
+<div class="bg-black/20 backdrop-blur-sm p-4 rounded-full border border-white/5">
+<span class="material-symbols-outlined text-white" data-icon="keyboard_double_arrow_right">keyboard_double_arrow_right</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Controls & Navigation -->
+<div class="fixed bottom-0 left-0 w-full z-50 flex flex-col items-center px-6 pb-safe h-auto bg-black/60 backdrop-blur-xl border-t border-white/10 rounded-t-lg">
+<!-- Metadata Header -->
+<div class="w-full flex items-center justify-between pt-stack-gap-md pb-stack-gap-sm">
+<div class="flex flex-col">
+<span class="text-cyan-400 font-headline-md text-base truncate max-w-[200px]">Neon Protocol: Sector 7</span>
+<span class="font-label-sm text-gray-500 uppercase tracking-widest">S1 : E04 • 4K HDR • 5.1</span>
+</div>
+<div class="flex gap-stack-gap-sm">
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container font-label-sm rounded-lg text-[10px] uppercase">New</span>
+<span class="px-2 py-0.5 bg-white/10 text-on-surface font-label-sm rounded-lg text-[10px] uppercase">18+</span>
+</div>
+</div>
+<!-- Progress/Seek Bar -->
+<div class="w-full py-4 group">
+<div class="relative w-full h-1 bg-white/20 rounded-full cursor-pointer">
+<div class="absolute left-0 top-0 h-full w-[45%] bg-primary-container rounded-full">
+<!-- Playhead -->
+<div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-4 h-4 bg-primary-container rounded-full progress-glow ring-4 ring-primary-container/20 group-active:w-6 group-active:h-6 transition-all"></div>
+</div>
+</div>
+<div class="flex justify-between mt-stack-gap-sm">
+<span class="font-label-sm text-cyan-400">18:24</span>
+<span class="font-label-sm text-gray-500">42:15</span>
+</div>
+</div>
+<!-- Accessory Controls Cluster -->
+<div class="w-full flex items-center justify-between h-20">
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 p-2 hover:bg-white/5 rounded-xl transition-all text-gray-400 hover:text-cyan-400">
+<span class="material-symbols-outlined" data-icon="volume_up">volume_up</span>
+<div class="hidden md:block w-24 h-1 bg-white/20 rounded-full overflow-hidden">
+<div class="w-3/4 h-full bg-cyan-400"></div>
+</div>
+</button>
+<button class="flex items-center gap-1 p-2 hover:bg-white/5 rounded-xl transition-all text-gray-400 hover:text-cyan-400">
+<span class="font-label-lg uppercase">1.5x</span>
+</button>
+</div>
+<!-- Global Nav (Icons Only per JSON) -->
+<div class="flex items-center justify-center gap-6">
+<div class="flex flex-col items-center justify-center text-gray-500 p-2 hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-cyan-400 bg-cyan-400/10 rounded-xl p-2 drop-shadow-[0_0_12px_rgba(0,240,255,0.2)]">
+<span class="material-symbols-outlined" data-icon="explore" style="font-variation-settings: 'FILL' 1;">explore</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 p-2 hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 p-2 hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-gray-400 hover:text-cyan-400 transition-colors">
+<span class="material-symbols-outlined" data-icon="closed_caption">closed_caption</span>
+</button>
+<button class="p-2 text-gray-400 hover:text-cyan-400 transition-colors">
+<span class="material-symbols-outlined" data-icon="fullscreen">fullscreen</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Floating Action Button Context (Only if relevant) -->
+<!-- Suppressed on Details/Player screen per Relevance Check -->
+</body></html>
