@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ChromaTool - Generator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#7c2e00",
+                        "on-background": "#191c1d",
+                        "primary-fixed-dim": "#adc6ff",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#6063ee",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#07006c",
+                        "on-primary-container": "#fefcff",
+                        "surface": "#f8f9fa",
+                        "inverse-surface": "#2e3132",
+                        "tertiary-fixed-dim": "#ffb595",
+                        "primary-fixed": "#d8e2ff",
+                        "background": "#f8f9fa",
+                        "surface-tint": "#005bc1",
+                        "outline-variant": "#c1c6d7",
+                        "tertiary-container": "#c64f00",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#191c1d",
+                        "primary-container": "#0070eb",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary": "#9e3d00",
+                        "on-secondary-fixed-variant": "#2f2ebe",
+                        "surface-dim": "#d9dadb",
+                        "inverse-primary": "#adc6ff",
+                        "on-surface-variant": "#414755",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary": "#0058bc",
+                        "tertiary-fixed": "#ffdbcc",
+                        "on-tertiary-fixed": "#351000",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-container": "#edeeef",
+                        "surface-container-low": "#f3f4f5",
+                        "outline": "#717786",
+                        "surface-variant": "#e1e3e4",
+                        "on-secondary-container": "#fffbff",
+                        "secondary-fixed-dim": "#c0c1ff",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f8f9fa",
+                        "secondary-fixed": "#e1e0ff",
+                        "on-primary-fixed": "#001a41",
+                        "on-primary-fixed-variant": "#004493",
+                        "secondary": "#4648d4",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "12px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "panel-width": "320px",
+                        "unit": "4px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "xl": "48px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "mono-label": ["Space Grotesk"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h2": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h1": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                        "mono-label": ["13px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "h1": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .color-bar-active {
+            box-shadow: inset 0 0 0 2px #ffffff, 0 0 0 2px #0058bc;
+        }
+        .backdrop-blur-md { backdrop-filter: blur(12px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-40 flex items-center justify-between px-4 h-14 w-full bg-white/80 backdrop-blur-md border-b border-gray-100">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="palette">palette</span>
+<span class="text-lg font-bold text-gray-900">ChromaTool</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="hover:bg-gray-50 p-sm rounded-full transition-colors active:opacity-80">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="share">share</span>
+</button>
+<button class="hover:bg-gray-50 p-sm rounded-full transition-colors active:opacity-80">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<main class="pb-32">
+<!-- Control Strip -->
+<section class="max-w-7xl mx-auto px-md py-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-md mb-lg">
+<div class="space-y-unit">
+<h1 class="font-h1 text-h1 text-on-background">Palette Generator</h1>
+<p class="font-body-sm text-on-surface-variant">Create professional color harmonies with ease.</p>
+</div>
+<div class="flex flex-wrap items-center gap-sm">
+<div class="flex bg-surface-container p-xs rounded-xl border border-outline-variant">
+<button class="px-md py-sm bg-white shadow-sm rounded-lg font-label-md text-label-md text-primary">Analogous</button>
+<button class="px-md py-sm hover:bg-surface-container-high rounded-lg font-label-md text-label-md text-on-surface-variant">Triadic</button>
+<button class="px-md py-sm hover:bg-surface-container-high rounded-lg font-label-md text-label-md text-on-surface-variant">Complement</button>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-lg py-sm h-10 flex items-center gap-sm rounded-xl hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="refresh">refresh</span>
+                        Generate
+                    </button>
+</div>
+</div>
+<!-- Main Canvas: Large Tappable Color Bars -->
+<div class="grid grid-cols-1 md:grid-cols-5 h-[530px] min-h-[400px] gap-unit rounded-full overflow-hidden shadow-sm border border-outline-variant bg-surface-container-highest">
+<!-- Color Bar 1 -->
+<div class="group relative flex flex-col items-center justify-end pb-xl transition-all cursor-pointer bg-primary-container hover:z-10 hover:scale-[1.02]">
+<div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity gap-md">
+<button class="bg-white/20 backdrop-blur-md p-sm rounded-full text-white border border-white/40">
+<span class="material-symbols-outlined" data-icon="lock_open">lock_open</span>
+</button>
+<span class="font-mono-label text-mono-label text-white bg-black/20 px-sm py-xs rounded">#0070EB</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<span class="font-label-md text-label-md text-white/80">Primary</span>
+<div class="flex gap-xs items-center">
+<span class="material-symbols-outlined text-[16px] text-white" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-label-sm text-white">AA</span>
+</div>
+</div>
+</div>
+<!-- Color Bar 2 (Locked) -->
+<div class="group relative flex flex-col items-center justify-end pb-xl transition-all cursor-pointer bg-[#0058BC] ring-2 ring-inset ring-white border-x border-white/10">
+<div class="absolute inset-0 flex flex-col items-center justify-center opacity-100 transition-opacity gap-md">
+<button class="bg-white p-sm rounded-full text-primary shadow-lg">
+<span class="material-symbols-outlined" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+</button>
+<span class="font-mono-label text-mono-label text-white bg-black/40 px-sm py-xs rounded">#0058BC</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<span class="font-label-md text-label-md text-white/80">Seed</span>
+<div class="flex gap-xs items-center">
+<span class="material-symbols-outlined text-[16px] text-white" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-label-sm text-white">AAA</span>
+</div>
+</div>
+</div>
+<!-- Color Bar 3 -->
+<div class="group relative flex flex-col items-center justify-end pb-xl transition-all cursor-pointer bg-[#6063EE] hover:z-10 hover:scale-[1.02]">
+<div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity gap-md">
+<button class="bg-white/20 backdrop-blur-md p-sm rounded-full text-white border border-white/40">
+<span class="material-symbols-outlined" data-icon="lock_open">lock_open</span>
+</button>
+<span class="font-mono-label text-mono-label text-white bg-black/20 px-sm py-xs rounded">#6063EE</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<span class="font-label-md text-label-md text-white/80">Secondary</span>
+<div class="flex gap-xs items-center">
+<span class="material-symbols-outlined text-[16px] text-white" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-label-sm text-white">AA</span>
+</div>
+</div>
+</div>
+<!-- Color Bar 4 -->
+<div class="group relative flex flex-col items-center justify-end pb-xl transition-all cursor-pointer bg-[#ADC6FF] hover:z-10 hover:scale-[1.02]">
+<div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity gap-md">
+<button class="bg-black/10 backdrop-blur-md p-sm rounded-full text-on-surface border border-black/10">
+<span class="material-symbols-outlined" data-icon="lock_open">lock_open</span>
+</button>
+<span class="font-mono-label text-mono-label text-on-surface bg-white/40 px-sm py-xs rounded">#ADC6FF</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Accent</span>
+<div class="flex gap-xs items-center">
+<span class="material-symbols-outlined text-[16px] text-error" data-icon="cancel" style="font-variation-settings: 'FILL' 1;">cancel</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">FAIL</span>
+</div>
+</div>
+</div>
+<!-- Color Bar 5 -->
+<div class="group relative flex flex-col items-center justify-end pb-xl transition-all cursor-pointer bg-[#D8E2FF] hover:z-10 hover:scale-[1.02]">
+<div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity gap-md">
+<button class="bg-black/10 backdrop-blur-md p-sm rounded-full text-on-surface border border-black/10">
+<span class="material-symbols-outlined" data-icon="lock_open">lock_open</span>
+</button>
+<span class="font-mono-label text-mono-label text-on-surface bg-white/40 px-sm py-xs rounded">#D8E2FF</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Surface</span>
+<div class="flex gap-xs items-center">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">AA</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tool Cards Section -->
+<section class="max-w-7xl mx-auto px-md grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Tonal Sliders -->
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant">
+<div class="flex items-center justify-between mb-md">
+<h3 class="font-label-md text-label-md text-on-surface">Tonal Palette</h3>
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant" data-icon="tune">tune</span>
+</div>
+<div class="space-y-md">
+<div class="space-y-xs">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Lightness</span>
+<span>64%</span>
+</div>
+<div class="relative h-1.5 w-full bg-surface-container-highest rounded-full">
+<div class="absolute top-0 left-0 h-full w-[64%] bg-primary rounded-full"></div>
+<div class="absolute top-1/2 left-[64%] -translate-y-1/2 -translate-x-1/2 w-5 h-5 bg-white border border-outline-variant rounded-full shadow-sm cursor-pointer"></div>
+</div>
+</div>
+<div class="space-y-xs">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Saturation</span>
+<span>82%</span>
+</div>
+<div class="relative h-1.5 w-full bg-surface-container-highest rounded-full">
+<div class="absolute top-0 left-0 h-full w-[82%] bg-secondary rounded-full"></div>
+<div class="absolute top-1/2 left-[82%] -translate-y-1/2 -translate-x-1/2 w-5 h-5 bg-white border border-outline-variant rounded-full shadow-sm cursor-pointer"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Accessibility Card -->
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant">
+<div class="flex items-center justify-between mb-md">
+<h3 class="font-label-md text-label-md text-on-surface">WCAG Compliance</h3>
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant" data-icon="accessibility_new">accessibility_new</span>
+</div>
+<div class="grid grid-cols-2 gap-sm">
+<div class="bg-surface p-sm rounded-lg border border-outline-variant flex flex-col gap-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Text Contrast</span>
+<div class="flex items-center gap-xs">
+<span class="font-h2 text-h2 text-on-surface">7.4</span>
+<span class="bg-primary-container text-on-primary-container px-xs py-unit rounded font-mono-label text-[10px]">AAA</span>
+</div>
+</div>
+<div class="bg-surface p-sm rounded-lg border border-outline-variant flex flex-col gap-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">UI Elements</span>
+<div class="flex items-center gap-xs">
+<span class="font-h2 text-h2 text-on-surface">3.2</span>
+<span class="bg-error-container text-on-error-container px-xs py-unit rounded font-mono-label text-[10px]">FAIL</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Inspiration Card -->
+<div class="relative group rounded-xl overflow-hidden border border-outline-variant bg-gray-900 aspect-video md:aspect-auto">
+<img alt="" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform" data-alt="A high-end architectural shot of a modern minimalist gallery space with clean concrete floors and vast white walls. Soft, cool lighting illuminates the scene, casting gentle shadows that emphasize the sharp geometric lines of the structure. The overall atmosphere is professional, quiet, and sophisticated, mirroring a high-utility creative tool's aesthetic. Small pops of electric blue and deep slate gray are scattered throughout the space in subtle furniture accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX_WBg10KyYDn5IbwBEe-U8H-W8_qdJpYNGRIdqty_tcvR08W6euL1mPigIyDEX9bYaumnXxCcrrvZU6ByVdrw-b54jijNPPFiK4QhRkcElHNKRIZ7AbDXUT5ZtPpFht-mWsZa9h2Zsr4VXmeYadMM20Kwf-qeKAGJTtavcVvkW4yZ7-BEZXbKaNSij0SWiM2q5d-BxtPX7z0eUzfhlyHTbZXGFZ3rv8DGycbJ-o3l18UQAWCPZ19HmfXG1Szw3V0fyJgmHdqeuLo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent"></div>
+<div class="absolute bottom-md left-md">
+<p class="font-label-sm text-label-sm text-white/60 mb-xs">Mood Inspiration</p>
+<h3 class="font-label-md text-label-md text-white">Modernist Blueprint</h3>
+</div>
+<button class="absolute top-sm right-sm bg-white/20 backdrop-blur-md p-xs rounded-full text-white">
+<span class="material-symbols-outlined text-[18px]" data-icon="fullscreen">fullscreen</span>
+</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-2 pb-safe backdrop-blur-lg bg-gray-50/90 border-t border-gray-200">
+<a class="flex flex-col items-center justify-center text-gray-400 hover:text-gray-900 transition-colors tap-highlight-transparent active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 hover:text-gray-900 transition-colors tap-highlight-transparent active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="colorize">colorize</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Picker</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-600 relative after:content-[''] after:absolute after:top-0 after:w-8 after:h-0.5 after:bg-blue-600 tap-highlight-transparent active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Generator</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 hover:text-gray-900 transition-colors tap-highlight-transparent active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="folder_special">folder_special</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Library</span>
+</a>
+</nav>
+</body></html>
