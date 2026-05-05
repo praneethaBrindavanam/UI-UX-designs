@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#e9e8e7",
+                    "on-error-container": "#93000a",
+                    "on-background": "#1b1c1c",
+                    "on-secondary-fixed-variant": "#454746",
+                    "secondary": "#5d5f5d",
+                    "outline-variant": "#c4c7c7",
+                    "secondary-container": "#e2e3e1",
+                    "on-surface": "#1b1c1c",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-container": "#efeded",
+                    "primary-fixed": "#e5e2e1",
+                    "tertiary-container": "#09006b",
+                    "surface-variant": "#e4e2e2",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#5f5e5e",
+                    "primary-container": "#1c1b1b",
+                    "surface": "#fbf9f9",
+                    "on-surface-variant": "#444748",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "tertiary": "#000000",
+                    "outline": "#747878",
+                    "primary": "#000000",
+                    "secondary-fixed-dim": "#c6c7c5",
+                    "on-tertiary-container": "#7273ff",
+                    "on-tertiary-fixed-variant": "#2b20d2",
+                    "inverse-on-surface": "#f2f0f0",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#474746",
+                    "surface-container-highest": "#e4e2e2",
+                    "on-tertiary-fixed": "#09006b",
+                    "inverse-primary": "#c8c6c5",
+                    "surface-dim": "#dbdad9",
+                    "on-primary-container": "#858383",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f5f3f3",
+                    "on-secondary-fixed": "#1a1c1b",
+                    "background": "#fbf9f9",
+                    "secondary-fixed": "#e2e3e1",
+                    "tertiary-fixed": "#e1dfff",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#fbf9f9",
+                    "on-secondary-container": "#636563",
+                    "inverse-surface": "#303031",
+                    "on-primary-fixed": "#1c1b1b",
+                    "tertiary-fixed-dim": "#c1c1ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "sm": "8px",
+                    "margin": "40px",
+                    "xl": "48px",
+                    "unit": "4px",
+                    "xs": "4px",
+                    "xxl": "80px",
+                    "lg": "24px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Newsreader"],
+                    "label-caps": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Newsreader"],
+                    "display-md": ["Newsreader"],
+                    "caption": ["Inter"],
+                    "headline-lg": ["Newsreader"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "label-caps": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display-md": ["48px", {"lineHeight": "1.15", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "caption": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 24px;
+        }
+        @media (min-width: 768px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 font-newsreader uppercase tracking-widest text-sm fixed top-0 w-full z-50 border-b border-zinc-200 dark:border-zinc-800">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<button class="scale-95 active:opacity-80 transition-transform flex items-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="font-newsreader italic font-bold text-2xl tracking-tighter text-zinc-900 dark:text-zinc-50">CURATED</div>
+<button class="scale-95 active:opacity-80 transition-transform flex items-center">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto min-h-screen">
+<!-- Hero Title Section -->
+<section class="mb-12 border-b border-zinc-200 pb-12">
+<h1 class="font-display-md text-display-md text-on-background mb-4">Feed</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl">A curated selection of lists, perspectives, and obsessions from our global community of thinkers.</p>
+<div class="flex flex-wrap gap-4 mt-8">
+<span class="px-4 py-1 border border-primary text-label-caps font-label-caps bg-primary text-on-primary">All Collections</span>
+<span class="px-4 py-1 border border-outline text-label-caps font-label-caps hover:bg-surface-container transition-colors cursor-pointer">Literature</span>
+<span class="px-4 py-1 border border-outline text-label-caps font-label-caps hover:bg-surface-container transition-colors cursor-pointer">Travel</span>
+<span class="px-4 py-1 border border-outline text-label-caps font-label-caps hover:bg-surface-container transition-colors cursor-pointer">Design</span>
+<span class="px-4 py-1 border border-outline text-label-caps font-label-caps hover:bg-surface-container transition-colors cursor-pointer">Music</span>
+</div>
+</section>
+<!-- Masonry Feed -->
+<div class="masonry-grid">
+<!-- Collection Card 1 -->
+<article class="masonry-item border border-zinc-200 bg-white group hover:border-zinc-400 transition-colors">
+<div class="relative overflow-hidden aspect-[4/5]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A moody, high-contrast photograph of a classic library interior with floor-to-ceiling wooden bookshelves filled with leather-bound books. Soft, natural light filters through a tall window, illuminating floating dust motes and creating deep shadows. The aesthetic is sophisticated and academic, leaning into a dark-academia editorial style with rich textures and a quiet, contemplative atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmZQY6E069CYzUqFisjbh-6eVz9IoPlkZPdh1LFU__R44lSSE3Cj9t90LYXjshM71UQxTOpvdTk0ZiYCST7627KnM0a5kXoNjlNUBRKKRW5Y28p2vVjO4T8N9m1qLcDsSaRB4EXkVoYfDcAw_ZxFcqqDAL7GhctUKRtyX7R1nVFv96MerrY2SU-YQ0uxSi2p7kqmZxOrJPc1Ngp4nNhP26JoHo8WNTV81e_pnyjvje9LW-R45nRRIvTIAVFYKLmu2SnL4UZRirj_Db"/>
+<div class="absolute inset-0 bg-black/10"></div>
+</div>
+<div class="p-6">
+<span class="font-label-caps text-label-caps text-secondary mb-2 block">LITERATURE</span>
+<h2 class="font-headline-md text-headline-md text-on-background mb-4 group-hover:italic transition-all">My Top 5 Sci-Fi Books</h2>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start gap-3 border-b border-zinc-100 pb-2">
+<span class="font-newsreader italic text-zinc-400">01</span>
+<span class="font-body-md text-zinc-700">The Left Hand of Darkness</span>
+</li>
+<li class="flex items-start gap-3 border-b border-zinc-100 pb-2">
+<span class="font-newsreader italic text-zinc-400">02</span>
+<span class="font-body-md text-zinc-700">Neuromancer</span>
+</li>
+<li class="flex items-start gap-3 border-b border-zinc-100 pb-2">
+<span class="font-newsreader italic text-zinc-400">03</span>
+<span class="font-body-md text-zinc-700">Hyperion</span>
+</li>
+</ul>
+<div class="flex items-center justify-between pt-4 border-t border-zinc-100">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-zinc-200 overflow-hidden">
+<img data-alt="Close-up professional portrait of a modern creator with a clean, minimalist aesthetic. Soft lighting on a neutral background creates a high-end editorial feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHU3Oh7-ojQAKbXjwnvYxpdMJr-TyP4--mHaSAZ9JbloyZ3jBTPfP4bpwD8R1NZWsVrJwbqgdbLGvBqPGXD_3WyrjKJqmYBdQ22dT7c8N9Rb6qsOytmiFoh8oj3QTFFoLTHOV7BDgsyCH9LlVDHHVxYrc51IvWJrmAC4NNqBWMbjCHvzZeYlwB93DKoxHsTCUwEMcNRcJNDyTVs2E9EkFVnM-T_LCW-4jPGWLpCDslKO1l6asxKZXpKPbQfOCGvo4zBk63AdIpYFcI"/>
+</div>
+<span class="font-caption text-caption text-on-background font-semibold">Julian Vane</span>
+</div>
+<div class="flex gap-4">
+<button class="text-zinc-400 hover:text-zinc-900 transition-colors flex items-center"><span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span></button>
+<button class="text-zinc-400 hover:text-zinc-900 transition-colors flex items-center"><span class="material-symbols-outlined text-[20px]" data-icon="bookmark">bookmark</span></button>
+<button class="text-zinc-400 hover:text-zinc-900 transition-colors flex items-center"><span class="material-symbols-outlined text-[20px]" data-icon="share">share</span></button>
+</div>
+</div>
+</div>
+</article>
+<!-- Collection Card 2 -->
+<article class="masonry-item border border-zinc-200 bg-white group hover:border-zinc-400 transition-colors">
+<div class="relative overflow-hidden aspect-square">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A beautifully composed, sunlight-drenched view of a hidden London park featuring a weathered stone fountain surrounded by lush, overgrown greenery and blooming white hydrangeas. The lighting is bright and ethereal, capturing a quiet morning atmosphere in a sophisticated metropolitan sanctuary. The visual style is crisp, clean, and highly detailed, emphasizing natural textures and a serene urban aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0RrtiNy2g9JmUnNVD0kADv0wpMbk1F1TxFioYloQQict-BTkLmbRLgG1A4dw--VoiPoVsD4u2Y27Lh1MlOe8-ggBHkLwUWurzJSlf57XGkCChii3M2MlXwyWB-KrseB5djJvP4Fdobj8uNdy7poK60aeUAGyUVE1RoMABevUZSwiIxlCjoqkLYWLdgLHJY27oIy8tsgIcJVk1T-TTIbwOdbcdWm_UH9IwRWdMdcC4EOTadsYyyP6OlO1KF-8mnqoDsS-n-h_3ZtLi"/>
+</div>
+<div class="p-6">
+<span class="font-label-caps text-label-caps text-secondary mb-2 block">TRAVEL</span>
+<h2 class="font-headline-md text-headline-md text-on-background mb-4 group-hover:italic transition-all">Best Hidden Parks in London</h2>
+<p class="font-body-md text-secondary mb-6 line-clamp-2">Exploring the secret garden squares and overgrown sanctuaries that provide peace in the city.</p>
+<div class="flex items-center justify-between pt-4 border-t border-zinc-100">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-zinc-200 overflow-hidden">
+<img data-alt="Minimalist studio portrait of a woman with a confident, artistic expression, shot with high-key lighting on a beige background for a fashion editorial feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHPufWTU3ceajAJSCmqiZytsn1AdebKx3EVhxC-Q7MBeC7lwnvSQ-XxgxGO4zMtt74wbAWrNSSVpcBa4j-nnYNQu07jYeQnHuEjYDWYz1J2XkK_Q501swy1VwLkrhK-MQ2PNRMJHXIBDKnEvptwvaZ533la69r4pSElL3Tp2xSIAO5flBU3EnA203xBbLsHRUP8soWIURquLUtKsfm4Tr6LbM1q6caDVDuyhvo56JMLk5w43H-oHTu5KIj8TBYdJpCBNG__k1z1lLR"/>
+</div>
+<span class="font-caption text-caption text-on-background font-semibold">Elena Rossi</span>
+</div>
+<div class="flex gap-4">
+<button class="text-zinc-400 hover:text-zinc-900 transition-colors flex items-center"><span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span></button>
+<button class="text-zinc-400 hover:text-zinc-900 transition-colors flex items-center"><span class="material-symbols-outlined text-[20px]" data-icon="bookmark">bookmark</span></button>
+<button class="text-zinc-400 hover:text-zinc-900 transition-colors flex items-center"><span class="material-symbols-outlined text-[20px]" data-icon="share">share</span></button>
+</div>
+</div>
+</div>
+</article>
+<!-- Collection Card 3 -->
+<article class="masonry-item border border-zinc-200 bg-white group hover:border-zinc-400 transition-colors">
+<div class="p-6">
+<span class="font-label-caps text-label-caps text-secondary mb-2 block">CULT CLASSICS</span>
+<h2 class="font-headline-md text-headline-md text-on-background mb-4 group-hover:italic transition-all">Essentials: 1970s Interior Design</h2>
+<div class="grid grid-cols-2 gap-2 mb-6">
+<div class="aspect-square bg-zinc-100 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A minimalist living room with a vintage 1970s aesthetic, featuring a low-profile velvet sofa in burnt orange and a geometric chrome coffee table. The walls are off-white with thin black frames. The lighting is warm and cinematic, emphasizing the bold shapes and retro-modern textures. High-end magazine photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtI2IIFDugPksRoYlxnJKpJYC_mQvMaZ4jxQBEH5IyCJyTacpAVvjtwgG0y_A5myweSBbLGlhTqeLXgK26N3M1Xoszf_ThAlCmxlvFJYCJ2O85F5Ap8t8firSciX0FfFuQveqAuYCujeajr7czBA0YAj65aFx7ZtSvlSK4Y8m1trBhGA5gHaAf8n_y4kLFNfxZRXz60y_EkoQF9_mqebxaDljCw39nipHQXy2u8xWG6K4Z4Mwji7gw1tzU7r9Lh27ARNb63L8LRjDm"/>
+</div>
+<div class="aspect-square bg-zinc-100 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A detail shot of 1970s inspired decor featuring a globe-style chrome lamp and an abstract woven tapestry on a clean white wall. The composition is asymmetrical and modern, focusing on the interplay of metallic reflection and organic fabric texture in a bright gallery-like space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8p5MLJUzFpSY9O0Xev426LRD_d9dHgr31kn2mSXyrP6J3Wl10DiXR13FfDICo-arr3wQ685V4c27oNgXJI5sFQZw7PPTZnri0QVjvPpgC3oA1KyZjPZPwr-UvRw4yweJnexFln8UOGx069da0WDPUMfWtqOF-sjY_C8xgEVs5INBBKSMy-f-QupbC5cNGeJ_euuMnJV96f93s8KKTrc7DVFldFqO8D_g3AElWDl7x3Ytvvyg1XOvixuTWbn29eoMp356JzcSd2Yhl"/>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-zinc-100">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-zinc-200 overflow-hidden">
+<img data-alt="A sharp, minimalist headshot of a creative professional against a charcoal background, using dramatic side-lighting to create deep shadows and bright highlights, mimicking a high-fashion portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT8MK5kymMKCggmoiYndeTHMptlEH3PLgMyr2NSjEScveXCO9Qya8X4_-T5EMwC9TAxzQBhwkJRC5N1teLPfdthY3pNFIcjVgXpxWgEOAr8FzB0kCT1x_1ya6tKlP5fmC_obBxv162W3eW3ndcqS02XwKcNkMOVLSONVfaMil8fJgO0KFbjaa4sB706I1E6FUFgG5GhdjtdRlOvu36P3dufwNvf0WgfrmSBFwpAofLfZuZ61-C2_oSAOO8fdPPgm571h1Ey_L4L6_C"/>
+</div>
+<span class="font-caption text-caption text-on-background font-semibold">David Chen</span>
+</div>
+<div class="flex gap-4">
+<button class="text-zinc-400 hover:text-zinc-900 transition-colors flex items-center"><span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span></button>
+<button class="text-zinc-400 hover:text-zinc-900 transition-colors flex items-center"><span class="material-symbols-outlined text-[20px]" data-icon="bookmark">bookmark</span></button>
+<button class="text-zinc-400 hover:text-zinc-900 transition-colors flex items-center"><span class="material-symbols-outlined text-[20px]" data-icon="share">share</span></button>
+</div>
+</div>
+</div>
+</article>
+<!-- Collection Card 4 -->
+<article class="masonry-item border border-zinc-200 bg-white group hover:border-zinc-400 transition-colors">
+<div class="relative overflow-hidden aspect-video">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A cinematic, low-angle shot of a smoke-filled jazz club stage at midnight. A single spotlight cuts through the haze, illuminating an upright bass and a vintage microphone. The color palette is dominated by deep indigos and cool grays, with a sharp, grainy film texture that evokes a sense of timeless sophistication and nocturnal urban life." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ-CaxFU4dcXEK8lgURJKsfg90W5ITcGCJeT7zCuvy16y7bsX99x_KHKn9dIlHbEpb5XaCk4JVhWOCbuCp8IMPtQw9JH4AMIP-qsl0fayRVse4fsy1cslwmubjFjcMEv6lLlTyOx99tcgtPBjE5ofmvMv739LyrrfBXMAJeHKs0CqZVOt2CsRsVtzhwGSuMzXpvezJuvaLE3s0RIyun6JXCzucld9AZFmsUySPXQIcxPSv6GnS64PTvReFSZEu-d8hnKopsCF7yqy3"/>
+</div>
+<div class="p-6">
+<span class="font-label-caps text-label-caps text-secondary mb-2 block">MUSIC</span>
+<h2 class="font-headline-md text-headline-md text-on-background mb-4 group-hover:italic transition-all">Late Night Jazz: The Essentials</h2>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start gap-3 border-b border-zinc-100 pb-2">
+<span class="font-newsreader italic text-zinc-400">01</span>
+<span class="font-body-md text-zinc-700">Kind of Blue - Miles Davis</span>
+</li>
+</ul>
+<div class="flex items-center justify-between pt-4 border-t border-zinc-100">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-zinc-200 overflow-hidden">
+<img data-alt="A professional male portrait in black and white, featuring a soft-focus background. The subject is wearing a dark turtleneck, looking thoughtfully away from the camera. The style is timeless and sophisticated, reminiscent of a literary magazine feature." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUPYKsXJNl4w4_CenbUW4eZlysUTsE0NqdfU7enMMSIy1-Ue0dDsif0fvaE7xmcv0OzXzroXg1lnXyLwJZHqZWR5UamiEizsTD1bZNm9xwA_LTvJKVtZPFyhk0HrW7JuAlqqjOECydvRF8Rs5IPKA1F9gLKWMLV_F-TJj9gNBYfZzOOBAFs9oA8MiLm9fqToaHW_7njB0sSUJjP1hjlZPxiKNrjhqp5Z76zUIpgoDWT7uugQdHT8NLPc8HsrdKba9a0HHBBG0cSEpe"/>
+</div>
+<span class="font-caption text-caption text-on-background font-semibold">Marcus Wright</span>
+</div>
+<div class="flex gap-4">
+<button class="text-zinc-400 hover:text-zinc-900 transition-colors flex items-center"><span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span></button>
+<button class="text-zinc-400 hover:text-zinc-900 transition-colors flex items-center"><span class="material-symbols-outlined text-[20px]" data-icon="bookmark">bookmark</span></button>
+<button class="text-zinc-400 hover:text-zinc-900 transition-colors flex items-center"><span class="material-symbols-outlined text-[20px]" data-icon="share">share</span></button>
+</div>
+</div>
+</div>
+</article>
+<!-- Collection Card 5 -->
+<article class="masonry-item border border-zinc-200 bg-white group hover:border-zinc-400 transition-colors">
+<div class="relative overflow-hidden aspect-[3/4]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A clean, flat-lay photography composition of modernist design objects on a textured light gray surface. Included are a minimalist fountain pen, a black notebook, a small architect's ruler, and a simple ceramic espresso cup. The lighting is soft and directional, creating long, delicate shadows. The color palette is strictly monochrome with subtle metallic accents, embodying a refined and functional design philosophy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS4Czl5kHPMUvJH-L7A2mTBUDMhPtfmAyrAcmbXPTIuTF0MnIcc1a9YD5kL8N7yTeS5FozH00-7WUouTWXW71ckOqRB1R1CmbXylyd19IwILFG_ZAwmeJfRuDOM3kXn23aKGnkjzI2qNADQVXmffGeN5Lx-Wi5VcWuTanKXbhb3891crfRU_DOUSjBFTyYct1HDHkUMdMtMyxXywqXR9ndiVEsh0t6nPdu1ykAKlPyb6iDgh6OZ2ARa_RnuN5OwIvJAsSwkvp6vkYn"/>
+</div>
+<div class="p-6">
+<span class="font-label-caps text-label-caps text-secondary mb-2 block">WORKFLOW</span>
+<h2 class="font-headline-md text-headline-md text-on-background mb-4 group-hover:italic transition-all">Daily Tools for Focused Work</h2>
+<p class="font-body-md text-secondary mb-6 line-clamp-3">A selection of analog and digital tools that help maintain clarity and deep focus during the creative process.</p>
+<div class="flex items-center justify-between pt-4 border-t border-zinc-100">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-zinc-200 overflow-hidden">
+<img data-alt="Naturalistic portrait of a creative individual in a bright, airy studio. Soft window light illuminates the face, highlighting natural textures and an authentic expression. The aesthetic is modern, clean, and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWtplDokTZMrocB3qHkJwaRsOYfbLqiRyibPIUuU9LMWX4LUtDBh46c8vre0-w_a3c228vqXIZtOTH-Zltb7kwqslulUwoGVuuPLACv-SHEaCkaYBSVI_hE0fBbFz55a3TajVxrX7rouk1C7GEBnX-_-HJiIKeesBPRifPYK7AfbLUhlumRILQQ-Eau5i_rnJBjB6F5IEiuWMOOjA56g26U7U0p6WtZQCz04_dTGjVN-EJx1BvHjitmXB4MULjnyWvqwgsVLC_9bbx"/>
+</div>
+<span class="font-caption text-caption text-on-background font-semibold">Sarah Kim</span>
+</div>
+<div class="flex gap-4">
+<button class="text-zinc-400 hover:text-zinc-900 transition-colors flex items-center"><span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span></button>
+<button class="text-zinc-400 hover:text-zinc-900 transition-colors flex items-center"><span class="material-symbols-outlined text-[20px]" data-icon="bookmark">bookmark</span></button>
+<button class="text-zinc-400 hover:text-zinc-900 transition-colors flex items-center"><span class="material-symbols-outlined text-[20px]" data-icon="share">share</span></button>
+</div>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- NavigationDrawer (Hidden on mobile usually, but kept for structural intent) -->
+<aside class="fixed inset-y-0 left-0 z-[60] p-8 flex flex-col space-y-6 bg-white dark:bg-zinc-950 h-full w-80 border-r border-zinc-200 dark:border-zinc-800 -translate-x-full lg:hidden">
+<div class="font-newsreader font-black uppercase text-3xl mb-8">THE EDITORIAL</div>
+<nav class="flex flex-col space-y-4">
+<a class="text-zinc-600 dark:text-zinc-400 font-newsreader text-lg border-b border-zinc-100 hover:pl-2 transition-all duration-200 hover:text-zinc-900 dark:hover:text-zinc-100 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="star">star</span> Featured
+            </a>
+<a class="text-indigo-600 dark:text-indigo-400 font-bold italic font-newsreader text-lg border-b border-zinc-100 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span> Latest Awards
+            </a>
+<a class="text-zinc-600 dark:text-zinc-400 font-newsreader text-lg border-b border-zinc-100 hover:pl-2 transition-all duration-200 hover:text-zinc-900 dark:hover:text-zinc-100 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span> Expert Panels
+            </a>
+</nav>
+</aside>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-4 bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800 md:hidden">
+<a class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-600 py-1 px-4 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-newsreader text-[10px] uppercase tracking-wider font-medium mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-600 py-1 px-4 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="format_list_numbered">format_list_numbered</span>
+<span class="font-newsreader text-[10px] uppercase tracking-wider font-medium mt-1">Rankings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-900 dark:text-zinc-50 bg-zinc-100 dark:bg-zinc-800 rounded-none py-1 px-4 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="forum" style="font-variation-settings: 'FILL' 1;">forum</span>
+<span class="font-newsreader text-[10px] uppercase tracking-wider font-medium mt-1">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-600 py-1 px-4 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-newsreader text-[10px] uppercase tracking-wider font-medium mt-1">Profile</span>
+</a>
+</nav>
+<!-- Desktop Navigation Anchors (Extra Context) -->
+<div class="hidden md:flex fixed right-8 top-1/2 -translate-y-1/2 flex-col gap-8 z-40">
+<div class="w-1 h-32 bg-zinc-200 dark:bg-zinc-800 relative">
+<div class="absolute top-0 left-0 w-full h-1/4 bg-zinc-900 dark:bg-zinc-50"></div>
+</div>
+<div class="flex flex-col gap-4 items-end">
+<span class="text-label-caps text-zinc-400 origin-right -rotate-90 translate-y-8">DISCOVER</span>
+<span class="text-label-caps text-zinc-900 dark:text-zinc-50 origin-right -rotate-90 translate-y-16">COLLECTIONS</span>
+</div>
+</div>
+</body></html>

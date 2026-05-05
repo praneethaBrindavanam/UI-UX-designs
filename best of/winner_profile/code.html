@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#e9e8e7",
+                    "on-error-container": "#93000a",
+                    "on-background": "#1b1c1c",
+                    "on-secondary-fixed-variant": "#454746",
+                    "secondary": "#5d5f5d",
+                    "outline-variant": "#c4c7c7",
+                    "secondary-container": "#e2e3e1",
+                    "on-surface": "#1b1c1c",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-container": "#efeded",
+                    "primary-fixed": "#e5e2e1",
+                    "tertiary-container": "#09006b",
+                    "surface-variant": "#e4e2e2",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#5f5e5e",
+                    "primary-container": "#1c1b1b",
+                    "surface": "#fbf9f9",
+                    "on-surface-variant": "#444748",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "tertiary": "#000000",
+                    "outline": "#747878",
+                    "primary": "#000000",
+                    "secondary-fixed-dim": "#c6c7c5",
+                    "on-tertiary-container": "#7273ff",
+                    "on-tertiary-fixed-variant": "#2b20d2",
+                    "inverse-on-surface": "#f2f0f0",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#474746",
+                    "surface-container-highest": "#e4e2e2",
+                    "on-tertiary-fixed": "#09006b",
+                    "inverse-primary": "#c8c6c5",
+                    "surface-dim": "#dbdad9",
+                    "on-primary-container": "#858383",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f5f3f3",
+                    "on-secondary-fixed": "#1a1c1b",
+                    "background": "#fbf9f9",
+                    "secondary-fixed": "#e2e3e1",
+                    "tertiary-fixed": "#e1dfff",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#fbf9f9",
+                    "on-secondary-container": "#636563",
+                    "inverse-surface": "#303031",
+                    "on-primary-fixed": "#1c1b1b",
+                    "tertiary-fixed-dim": "#c1c1ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "sm": "8px",
+                    "margin": "40px",
+                    "xl": "48px",
+                    "unit": "4px",
+                    "xs": "4px",
+                    "xxl": "80px",
+                    "lg": "24px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Newsreader"],
+                    "label-caps": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Newsreader"],
+                    "display-md": ["Newsreader"],
+                    "caption": ["Inter"],
+                    "headline-lg": ["Newsreader"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "label-caps": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display-md": ["48px", {"lineHeight": "1.15", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "caption": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fbf9f9;
+            color: #1b1c1c;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-zinc-950 flex justify-between items-center w-full px-6 py-4 fixed top-0 z-[100] border-b border-zinc-200 dark:border-zinc-800">
+<div class="flex items-center gap-4">
+<button class="scale-95 active:opacity-80 transition-transform">
+<span class="material-symbols-outlined text-zinc-900 dark:text-zinc-50">menu</span>
+</button>
+<span class="font-newsreader italic font-bold text-2xl tracking-tighter text-zinc-900 dark:text-zinc-50">CURATED</span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-newsreader uppercase tracking-widest text-sm text-zinc-500 dark:text-zinc-400 hover:text-indigo-600 transition-colors" href="#">Explore</a>
+<a class="font-newsreader uppercase tracking-widest text-sm text-zinc-900 dark:text-zinc-50 font-bold border-b-2 border-zinc-900" href="#">Rankings</a>
+<a class="font-newsreader uppercase tracking-widest text-sm text-zinc-500 dark:text-zinc-400 hover:text-indigo-600 transition-colors" href="#">Feed</a>
+</div>
+<button class="scale-95 active:opacity-80 transition-transform">
+<span class="material-symbols-outlined text-zinc-900 dark:text-zinc-50">search</span>
+</button>
+</header>
+<main class="pt-20 pb-xxl">
+<!-- Hero Section -->
+<section class="relative w-full h-[751px] overflow-hidden bg-black">
+<img class="w-full h-full object-cover opacity-90" data-alt="A high-contrast, editorial photograph of a luxury designer sneaker positioned as a sculptural object on a stark white podium. The lighting is dramatic and precise, casting sharp architectural shadows that emphasize the meticulous craftsmanship and premium leather texture. The scene is set in a minimalist, gallery-like environment with soft, high-key ambient light. The overall mood is sophisticated and expensive, following a black and white theme with subtle silver metallic accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV2GM5fGDb0cq8UkBSbpA1aZpbYX6hGRqaELVnW_QiG00c3pG9digLQw-pMf-BpCDGPJtw0ALh2E99V7GlAdYDHdcpDDRWBc6cpYzDkG-9H95-Nr9R6vufyS0Mzz2QUJU4eERX33n8f-fjw4oHv19X5mISXZqR44DwNxzV-kA70qW1q8_p9z2lZloNWyLT83Bvk2Xv1q76_cqr675GcXEEz2Z-rFlhlCJqRvvikaudfxRKyHaU8mF3DCUqoL6M3iwSGByH77Nahtl8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-margin left-margin right-margin text-white">
+<div class="mb-sm">
+<span class="bg-white text-black font-label-caps text-label-caps px-4 py-1 inline-block">2024 WINNER</span>
+</div>
+<h1 class="font-display-lg text-display-lg mb-xs max-w-4xl">The Obsidian Velocity</h1>
+<p class="font-headline-md text-headline-md italic text-zinc-300">#1 in High-Performance Footwear</p>
+</div>
+</section>
+<div class="max-w-[1400px] mx-auto px-6 lg:px-margin mt-xxl">
+<!-- Asymmetric Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xxl">
+<!-- Left: Expert Verdict & Badges (8 Cols) -->
+<div class="lg:col-span-8 space-y-xl">
+<section class="border-t border-zinc-200 pt-md" id="the-expert-verdict">
+<span class="font-label-caps text-label-caps text-zinc-500 block mb-md">THE EXPERT VERDICT</span>
+<div class="space-y-md">
+<p class="font-display-md text-display-md leading-tight text-zinc-900">"A masterclass in technical restraint and aesthetic purity."</p>
+<div class="font-body-lg text-body-lg text-secondary space-y-md max-w-2xl">
+<p>After three months of rigorous field testing across diverse urban environments, the Obsidian Velocity doesn't just meet expectations—it redefines the category. Our panel of material scientists and footwear designers unanimously voted this the pinnacle of contemporary craftsmanship.</p>
+<p>The silhouette manages to feel both futuristic and archival, leveraging a proprietary carbon-weave sole that offers unprecedented energy return without sacrificing the tactile feedback required for precision movement. It is, quite simply, the standard by which all subsequent entries will be measured.</p>
+</div>
+</div>
+</section>
+<!-- Why it Won Badges -->
+<section class="pt-xl" id="why-it-won">
+<span class="font-label-caps text-label-caps text-zinc-500 block mb-md">WHY IT WON</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter">
+<div class="border border-zinc-200 p-md flex items-start gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="construction">construction</span>
+<div>
+<h4 class="font-label-caps text-label-caps mb-xs">CRAFTSMANSHIP</h4>
+<p class="font-caption text-caption text-secondary">Hand-finished components with zero-tolerance seam alignment.</p>
+</div>
+</div>
+<div class="border border-zinc-200 p-md flex items-start gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="eco">eco</span>
+<div>
+<h4 class="font-label-caps text-label-caps mb-xs">SUSTAINABILITY</h4>
+<p class="font-caption text-caption text-secondary">Utilizes 74% recycled marine plastics in the primary weave.</p>
+</div>
+</div>
+<div class="border border-zinc-200 p-md flex items-start gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="bolt">bolt</span>
+<div>
+<h4 class="font-label-caps text-label-caps mb-xs">INNOVATION</h4>
+<p class="font-caption text-caption text-secondary">First-to-market adaptive lacing system with haptic feedback.</p>
+</div>
+</div>
+<div class="border border-zinc-200 p-md flex items-start gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="diamond">diamond</span>
+<div>
+<h4 class="font-label-caps text-label-caps mb-xs">LIFETIME VALUE</h4>
+<p class="font-caption text-caption text-secondary">Ranked top for durability after 500 miles of active wear.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right: Spec Sheet & Actions (4 Cols) -->
+<div class="lg:col-span-4">
+<div class="sticky top-xxl space-y-xl">
+<section class="bg-surface-container p-xl border border-zinc-200" id="quick-look">
+<span class="font-label-caps text-label-caps text-zinc-500 block mb-md">QUICK LOOK</span>
+<div class="space-y-md">
+<div class="flex justify-between items-end border-b border-zinc-300 pb-xs">
+<span class="font-label-caps text-zinc-400">WEIGHT</span>
+<span class="font-body-md font-medium text-primary">240g</span>
+</div>
+<div class="flex justify-between items-end border-b border-zinc-300 pb-xs">
+<span class="font-label-caps text-zinc-400">MATERIAL</span>
+<span class="font-body-md font-medium text-primary">Aero-Carbon Weave</span>
+</div>
+<div class="flex justify-between items-end border-b border-zinc-300 pb-xs">
+<span class="font-label-caps text-zinc-400">RELEASE</span>
+<span class="font-body-md font-medium text-primary">October 2024</span>
+</div>
+<div class="flex justify-between items-end border-b border-zinc-300 pb-xs">
+<span class="font-label-caps text-zinc-400">MSRP</span>
+<span class="font-body-md font-medium text-primary">$450.00</span>
+</div>
+<div class="flex justify-between items-end border-b border-zinc-300 pb-xs">
+<span class="font-label-caps text-zinc-400">ORIGIN</span>
+<span class="font-body-md font-medium text-primary">Milano, Italy</span>
+</div>
+</div>
+<button class="w-full mt-xl bg-primary text-white font-label-caps text-label-caps py-md hover:bg-zinc-800 transition-colors">
+                                ACQUIRE NOW
+                            </button>
+</section>
+</div>
+</div>
+</div>
+<!-- Bento User Gallery -->
+<section class="mt-xxl border-t border-zinc-200 pt-xl">
+<div class="flex justify-between items-end mb-xl">
+<div>
+<span class="font-label-caps text-label-caps text-zinc-500 block mb-xs">COMMUNITY PERSPECTIVE</span>
+<h2 class="font-headline-lg text-headline-lg">In the Wild</h2>
+</div>
+<button class="font-label-caps text-label-caps text-primary border-b border-primary pb-1">SUBMIT YOURS</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Large Feature Photo -->
+<div class="col-span-2 row-span-2 aspect-square overflow-hidden bg-zinc-100 border border-zinc-200">
+<img class="w-full h-full object-cover" data-alt="A lifestyle shot of the Obsidian Velocity sneakers worn in an urban architectural setting. The feet are positioned on a clean concrete step, with the sharp geometric lines of a modern museum building in the background. The lighting is cool, blue-hour natural light, creating a serene and sophisticated urban aesthetic. The palette is dominated by grays, blacks, and cool whites, perfectly matching the design system's luxury editorial feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsNeRV_JU46Fmi2HWiJWD5fQKqYLM38Acw18ZyjHG7SlyzSgiTcifHeJehOkmIQt618Ge4IhsPw6Hoy1VVl2QQErYXDXk5ZrOySwMNE-M7xDQbLX5Mek_yxOVzBeHuIpaHGpB2rHKviB_j8Tn2ctnJefksgufGWt7qVUQaByNf1TzNUBLYnzY3ndqwms1rNes3a0SHGwH-3TNAOPYf7ZPwxeuMx4CaN6Sxn232qDUcYNHBhTfpRGUf8T8FhJokmTydmjV9UgaCx5N7"/>
+</div>
+<div class="aspect-square overflow-hidden bg-zinc-100 border border-zinc-200">
+<img class="w-full h-full object-cover" data-alt="A top-down, minimalist detail shot of the shoe's technical carbon-weave texture. The focus is sharp on the intricate pattern of the material, highlighted by soft directional lighting that reveals the depth and quality of the fabric. The image is clean, brightly lit, and follows a monochromatic theme with deep shadows emphasizing the high-tech construction of the footwear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWg75dmsdfpZUUxOaL23MIf8z8Odnc8it2wWvhcM1mzLCyL0m_U1ZoBTUTrgcZnBVhURoJwqFw5ggTaFdmJUNrG7BY461PHX1ElAbFYPisBJ493njhf6dycvIzllpLzNGtF4PtHzc8Hid49UmA5z8jDMwn3qlCtUdwl6qIXdzMCWV5TOQgz2i21ABeFBj0EsmZJigbkrnQFtWVos3B8lEAMze4Pf3lwV6Z6k3r3PVcCEjZqUrKzjRcSbshi8DyPlaR-MFdMoznvSiF"/>
+</div>
+<div class="aspect-square overflow-hidden bg-zinc-100 border border-zinc-200">
+<img class="w-full h-full object-cover" data-alt="A street-style photograph of the designer sneakers in motion, capturing the dynamic energy of an urban environment. The shot uses a slightly blurred background of city lights at dusk to emphasize the shoe's sleek silhouette. The color palette is high-contrast black and white, maintaining the premium luxury editorial aesthetic established across the entire interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGmIF05pH9VMKlS3cWJ_kERVlXLcfHL-RJnGDf1q2aOpjmP-glJDn8NIGr7hIwnH1eS07n7M6tHrY_E4oOkAhNbwojfq_PLRn80PGYWEGY1fTYkc38XAWpS4qeprxittY4s4SF7-mxtyPT1IU_FaDYm4sJLgAsR2FTQGaBSiPVX9pxm93XsdjFOaADQV3RktueZyDO4adhhuXQ3eR4NEwicDYoli5UMo0ChD6861pAFbyQuCvBWqBE_YXADpTUKOuvXyUXKkAdE0Ia"/>
+</div>
+<div class="col-span-2 aspect-[2/1] overflow-hidden bg-zinc-100 border border-zinc-200">
+<img class="w-full h-full object-cover" data-alt="A cinematic, low-angle shot of the sneaker's heel and sole detail, showcasing the unique tread pattern and branding. The lighting is high-key and atmospheric, with a clean white studio background that lets the product's architectural form take center stage. The mood is one of focused immersion, where every detail is treated with the reverence of high art." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFgLbIS2hcydWLIv6cg4IpBVWscYH7UUmneMB3x7blMYvQoQaxaFxE884FOpJq0PhIG1GGVcjmgimGsumn6axrZIu6Jxcr4oVC6qa2bOaXH247toJO6XPvcT_YODhhVu-ZoxQd6OuX9R9XlAdhlDqBBTagr5ccVj8M2pWrM42h4dQdU1TlM0euDtOp5w_Ysg-5eOgZds_tNYPAvBquXyfztszEmeViC7sd1_FSRupRq2rvaLrLwSvnuEi0jngQ3zWQuF6A3jy2LOcu"/>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Visible on Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-4 bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800">
+<button class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-600 py-1 px-4 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-newsreader text-[10px] uppercase tracking-wider font-medium">Explore</span>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-900 dark:text-zinc-50 bg-zinc-100 dark:bg-zinc-800 rounded-none py-1 px-4 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="format_list_numbered">format_list_numbered</span>
+<span class="font-newsreader text-[10px] uppercase tracking-wider font-medium">Rankings</span>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-600 py-1 px-4 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-newsreader text-[10px] uppercase tracking-wider font-medium">Feed</span>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-600 py-1 px-4 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-newsreader text-[10px] uppercase tracking-wider font-medium">Profile</span>
+</button>
+</nav>
+</body></html>

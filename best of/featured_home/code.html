@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#e9e8e7",
+                    "on-error-container": "#93000a",
+                    "on-background": "#1b1c1c",
+                    "on-secondary-fixed-variant": "#454746",
+                    "secondary": "#5d5f5d",
+                    "outline-variant": "#c4c7c7",
+                    "secondary-container": "#e2e3e1",
+                    "on-surface": "#1b1c1c",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-container": "#efeded",
+                    "primary-fixed": "#e5e2e1",
+                    "tertiary-container": "#09006b",
+                    "surface-variant": "#e4e2e2",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#5f5e5e",
+                    "primary-container": "#1c1b1b",
+                    "surface": "#fbf9f9",
+                    "on-surface-variant": "#444748",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "tertiary": "#000000",
+                    "outline": "#747878",
+                    "primary": "#000000",
+                    "secondary-fixed-dim": "#c6c7c5",
+                    "on-tertiary-container": "#7273ff",
+                    "on-tertiary-fixed-variant": "#2b20d2",
+                    "inverse-on-surface": "#f2f0f0",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#474746",
+                    "surface-container-highest": "#e4e2e2",
+                    "on-tertiary-fixed": "#09006b",
+                    "inverse-primary": "#c8c6c5",
+                    "surface-dim": "#dbdad9",
+                    "on-primary-container": "#858383",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f5f3f3",
+                    "on-secondary-fixed": "#1a1c1b",
+                    "background": "#fbf9f9",
+                    "secondary-fixed": "#e2e3e1",
+                    "tertiary-fixed": "#e1dfff",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#fbf9f9",
+                    "on-secondary-container": "#636563",
+                    "inverse-surface": "#303031",
+                    "on-primary-fixed": "#1c1b1b",
+                    "tertiary-fixed-dim": "#c1c1ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "sm": "8px",
+                    "margin": "40px",
+                    "xl": "48px",
+                    "unit": "4px",
+                    "xs": "4px",
+                    "xxl": "80px",
+                    "lg": "24px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Newsreader"],
+                    "label-caps": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Newsreader"],
+                    "display-md": ["Newsreader"],
+                    "caption": ["Inter"],
+                    "headline-lg": ["Newsreader"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "label-caps": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display-md": ["48px", {"lineHeight": "1.15", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "caption": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-zinc-950 docked full-width top-0 border-b border-zinc-200 dark:border-zinc-800 sticky z-50">
+<div class="flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="scale-95 active:opacity-80 transition-transform">
+<span class="material-symbols-outlined text-zinc-900 dark:text-zinc-50" data-icon="menu">menu</span>
+</button>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="font-newsreader uppercase tracking-widest text-sm text-zinc-900 dark:text-zinc-50 font-bold border-b-2 border-zinc-900 dark:border-zinc-50 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200" href="#">Explore</a>
+<a class="font-newsreader uppercase tracking-widest text-sm text-zinc-500 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200" href="#">Archive</a>
+<a class="font-newsreader uppercase tracking-widest text-sm text-zinc-500 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200" href="#">About</a>
+</nav>
+</div>
+<div class="font-newsreader italic font-bold text-2xl tracking-tighter text-zinc-900 dark:text-zinc-50">CURATED</div>
+<div class="flex items-center gap-4">
+<button class="scale-95 active:opacity-80 transition-transform">
+<span class="material-symbols-outlined text-zinc-900 dark:text-zinc-50" data-icon="search">search</span>
+</button>
+<button class="hidden md:block border border-primary px-4 py-1 font-label-caps uppercase text-xs hover:bg-primary hover:text-on-primary transition-colors">Subscribe</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-margin md:px-xxl py-xl">
+<!-- Hero Section: The Daily Best -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-lg mb-xxl items-center border-b border-outline-variant pb-xxl">
+<div class="md:col-span-7 relative group overflow-hidden">
+<img class="w-full aspect-[4/5] md:aspect-[16/10] object-cover grayscale-0 group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="A cinematic, high-fashion editorial photograph of a minimalist luxury lounge. The room features sharp architectural lines, soft diffused morning light streaming through floor-to-ceiling windows, and a palette of warm beiges, deep charcols, and subtle indigo accents. A single designer chair sits as a sculptural centerpiece. The mood is quiet, sophisticated, and intensely curated, embodying a modern high-end magazine aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE61GeqMPAlH4lyCVFovjOgNHmJbMzrostf8QM9ZBWXTICR2799FRcl1DPB-mOwBdMkS3-s2mftjHmx9RBwm4oL8YvYaNWhy5d_K1C88zGY7KA8r60d8PuIDaAWzgjA07HiE4cGGLiwe0kN6XxVF9BA2MdLynvz2adMmo3mUNkq4ZmO1hh8mmWnwi5-_LvjxxqBjyTup9DRzTxCBegQPDn9frsQ1NMpZrmz5FE6Z646nngYTbw7ODBzaugNJG4Q7ADZnc20lTm0MIg"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 border border-zinc-900">
+<span class="font-label-caps text-zinc-900">THE DAILY BEST</span>
+</div>
+</div>
+<div class="md:col-span-5 flex flex-col justify-center space-y-6 md:pl-lg">
+<span class="font-label-caps text-zinc-500">MAY 24, 2024</span>
+<h1 class="font-display-md text-zinc-900 leading-tight">The Quiet Revolution of Minimalist Living.</h1>
+<p class="font-body-lg text-secondary max-w-md">Exploring why the most influential designers are turning away from maximalism and towards spaces that breathe.</p>
+<div class="pt-4">
+<button class="bg-primary text-on-primary px-8 py-4 font-label-caps hover:bg-zinc-800 transition-colors uppercase">Read the Feature</button>
+</div>
+</div>
+</section>
+<!-- Trending Categories: Horizontal Scroll -->
+<section class="mb-xxl">
+<div class="flex justify-between items-end mb-lg">
+<h2 class="font-headline-lg italic">Trending Categories</h2>
+<a class="font-label-caps text-indigo-600 border-b border-indigo-600 pb-1" href="#">View All</a>
+</div>
+<div class="flex overflow-x-auto gap-md pb-md hide-scrollbar snap-x">
+<!-- Category Card 1 -->
+<div class="flex-none w-64 md:w-80 snap-start group cursor-pointer">
+<div class="relative aspect-square overflow-hidden mb-md border border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A breathtaking aerial view of a rugged coastline where deep blue ocean waves crash against jagged obsidian cliffs. The lighting is low-contrast and atmospheric, typical of a professional travel editorial. The color palette is dominated by dark oceanic blues and stony greys, maintaining a minimalist and high-end aesthetic. The mood is adventurous yet serene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-Yhz0QiNT1smeuCVOU_OlNBgcF_42bqzc3byM7PE-4aNJwxUNzNlBx6PhA-NIHMIUfdJAKnk1mWu1EjUKZm80oEZv5a1ks8wYn8NimX1PfCdursy2hkJ3NHJvRUoiWGTjalxwHgltG2Gi5AHmYAuT83EQfQv52t8h3hsqV4etSX4UDBjp9nwi1abG7hnNgY6EEsnro1uS68Za_-Y7rBWygE_PQh3_IBrUrWvp4FHceZPGi8J-o2g-TO3Kd4NkIeAv0OT_9lqgOBp5"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+</div>
+<span class="font-label-caps uppercase text-xs text-zinc-500">Travel</span>
+<h3 class="font-headline-md mt-1">Undiscovered Coasts</h3>
+</div>
+<!-- Category Card 2 -->
+<div class="flex-none w-64 md:w-80 snap-start group cursor-pointer">
+<div class="relative aspect-square overflow-hidden mb-md border border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A clean, minimalist workspace featuring high-end technology with matte finishes. A sleek silver laptop sits on a light grey desk surface next to a single architectural lamp. The lighting is sharp and clinical, highlighting the metallic textures and precise design. The aesthetic is monochromatic with silver and white tones, creating a focused and modern atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn-3_4zVFuj-FsRBxiM2RmzN3wNrDQc8KUOkLUXxsY5Huo6sSYE3a1NT1jgNnCwyYUnLIz3ndecmt5mAc_BXWoXS8qIV6AzuKkdBWYKAV_6Wwc86a4IJwVd-CuMmxgXRbYwTujPffJaV2-nvyJ4uGQk1OyjtYASCOHKV1COpgEBPDIu5KsHzoYF270avx3jLn7Lu5jEKVAutjE7ld9O-FH4hIF-M2p3kVZrSvuo9Ixn0JGCCH0pLfLlY4OuwGnR12-OkAFGr-TYrQ0"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+</div>
+<span class="font-label-caps uppercase text-xs text-zinc-500">Tech</span>
+<h3 class="font-headline-md mt-1">Future Form Factors</h3>
+</div>
+<!-- Category Card 3 -->
+<div class="flex-none w-64 md:w-80 snap-start group cursor-pointer">
+<div class="relative aspect-square overflow-hidden mb-md border border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="An editorial close-up of high-quality sustainable textiles in neutral earth tones like oatmeal, sand, and charcoal. The focus is on the rich, organic texture of the linen and wool fabrics. Lighting is soft and natural, emphasizing depth and quality. The overall composition is abstract and architectural, suggesting a luxurious and conscious lifestyle aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANz3AXbzeOs7V6ZwCsc1pxeP3Z3_kTGE6TZhh9-LGgCdwZYNfSyFJS4ZsjWM8VnUDhpzwmbEk154vaq0nmYOmf4LI-YBZ7nRJXyD5bPcZEa8_hS2veEb-ig8rLsiPmPUQ1m6lqg9Wo3Ky1deVL3DsigngmO4RQyr1QpBIxzIkCuHtthUpzbrnEPv4J7PfshINz7sWxiNXrbRHyJC_sVK-Knk4_j-J14L3k-zK8gXiGCH7NfgsDWbVv9i1lvXpLc1nK5uR3XhICMttM"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+</div>
+<span class="font-label-caps uppercase text-xs text-zinc-500">Lifestyle</span>
+<h3 class="font-headline-md mt-1">Sustainable Textures</h3>
+</div>
+<!-- Category Card 4 -->
+<div class="flex-none w-64 md:w-80 snap-start group cursor-pointer">
+<div class="relative aspect-square overflow-hidden mb-md border border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A gourmet culinary dish plated on a dark ceramic piece, featuring vibrant organic vegetables and artistic sauce drippings. The style is that of a fine-dining magazine, with dramatic top-down lighting creating deep shadows and bright highlights on the fresh textures. The color palette centers on dark charcoal backgrounds with brilliant natural pops of color." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB68m-LViNLbf3djirvIQsjMIMpmFv0cuWHJ24Zh71r_hUPYThXYnB8BvfFm4qoFEGscDmziwfeFnkLPO56-vKLJ1iYiFQZrQYFOjSYUjFKYg_j61mt2KvfFtkrLkXGDbi-7-rTtpU0bEksibXhm6PSeEqlYIqjixbNo7atvkJiqtpapnsc9lI7YLQp6FvXgxzRiCOVjkM0UC58pPvSn_QnVDBQAzH7B0GpVGiJD064-TeczwXwaE7DOmnqbVP0oCOOcS61WFFUXdxR"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+</div>
+<span class="font-label-caps uppercase text-xs text-zinc-500">Gastronomy</span>
+<h3 class="font-headline-md mt-1">The Modern Table</h3>
+</div>
+</div>
+</section>
+<!-- Editor's Picks: Curation Grid (Bento) -->
+<section class="mb-xxl">
+<h2 class="font-display-md mb-xl border-b border-zinc-900 pb-4">Editor's Picks</h2>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Main Feature Pick -->
+<div class="md:col-span-8 flex flex-col md:flex-row gap-lg group cursor-pointer">
+<div class="md:w-1/2 overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A minimalist architectural interior showing a concrete staircase spiraling into a void. The lighting is stark and high-contrast, casting long dramatic shadows. The style is clean and geometric, emphasizing form over function. The mood is meditative and avant-garde, rendered in a sophisticated palette of greys, blacks, and off-whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwkl_nuMKt0TNOnEAVAphufRv5TE4Eka0hwzobjpM-bj8TlrWcwYEPAkcZxR2JXp6KVpCQDol_PFMRTxTU5LbVYRVOtVykeMWbDeTEPJSas60ZoeTStGAL4dz2jHJQBayElR6JEruNsGBbIptcMdgKfpuJChL16AVT_IIImNNFHHGOwlPtKXnDj-s6zUdSEiN9UINLy0OJc854W45KkK19VwHHLWXP1BIRi0NHnmYfuWresAvFNnBk34O2wggV1a9Ld2u8d7gu2yOd"/>
+</div>
+<div class="md:w-1/2 flex flex-col justify-center space-y-4">
+<span class="font-label-caps text-indigo-600">ARCHITECTURE</span>
+<h3 class="font-headline-lg">Concrete Poetry: The New Brutalism</h3>
+<p class="font-body-md text-secondary">A deep dive into the resurgence of raw materials in urban residential design.</p>
+<div class="flex items-center gap-2 pt-2">
+<div class="w-8 h-[1px] bg-zinc-900"></div>
+<span class="font-caption italic">By Julianna Vance</span>
+</div>
+</div>
+</div>
+<!-- Secondary Pick 1 -->
+<div class="md:col-span-4 flex flex-col group cursor-pointer border-l md:pl-lg border-zinc-200">
+<div class="overflow-hidden mb-md border border-outline-variant aspect-[3/2]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A studio product photograph of a luxury minimalist watch with a white face and a brown leather strap. The background is a flat, neutral grey. Lighting is soft and even, highlighting the fine craftsmanship and metallic details. The visual style is crisp and commercial, fitting a high-end luxury editorial. The mood is timeless and elegant." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9qvk5woIjs0Hqeb5sPTVpWf4enEanuBVwi3maLW4qM5rz2lHDx-l20ZdOUDOV3HrYmWQ_d5ZdXU4fOh1giaaN81EWTxAvswV8IlrU7z3WeSXY0drc7fr_MbIwvewX5ZUaziWQZdUWjul2IcE5_6cYXSIt-DmDtAlzKC3GhH4qBdy_1L91Niw6t9fGcnpugW_S7FBKOuMIEnbNLJGiKg6MFyH889RiFBMNyNp0dGDHQaMAlIJXWxHJdmZyViUYp1fuTyeJ2xgHwuuw"/>
+</div>
+<span class="font-label-caps text-zinc-500">CURATED OBJECTS</span>
+<h3 class="font-headline-md mt-1">The Timeless Wrist</h3>
+<p class="font-caption text-secondary mt-2">Precision engineered for the modern minimalist.</p>
+</div>
+<!-- Small Picks Row -->
+<div class="md:col-span-4 group cursor-pointer pt-xl border-t border-zinc-200">
+<h4 class="font-label-caps text-zinc-400 mb-4">01</h4>
+<h3 class="font-headline-md">Redefining Remote Luxury</h3>
+<p class="font-body-md text-secondary mt-2">How high-speed satellite internet changed the architectural footprint of remote retreats.</p>
+</div>
+<div class="md:col-span-4 group cursor-pointer pt-xl border-t border-zinc-200">
+<h4 class="font-label-caps text-zinc-400 mb-4">02</h4>
+<h3 class="font-headline-md">The Indigo Palette</h3>
+<p class="font-body-md text-secondary mt-2">Why designers are obsessing over a single shade of blue this season.</p>
+</div>
+<div class="md:col-span-4 group cursor-pointer pt-xl border-t border-zinc-200">
+<h4 class="font-label-caps text-zinc-400 mb-4">03</h4>
+<h3 class="font-headline-md">Grains of Truth</h3>
+<p class="font-body-md text-secondary mt-2">The return of artisanal sourdough and the craft of heritage baking.</p>
+</div>
+</div>
+</section>
+<!-- Newsletter / Footer Call to Action -->
+<section class="bg-primary px-lg py-xxl text-on-primary text-center">
+<span class="font-label-caps tracking-[0.3em]">STAY INFORMED</span>
+<h2 class="font-display-md mt-4 mb-xl">The Weekly Edit</h2>
+<form class="max-w-lg mx-auto flex flex-col md:flex-row gap-4">
+<input class="flex-grow bg-transparent border-b border-on-primary focus:ring-0 focus:border-indigo-400 text-on-primary placeholder:text-zinc-500 py-2" placeholder="Your Email" type="email"/>
+<button class="bg-white text-primary px-8 py-2 font-label-caps hover:bg-zinc-200 transition-colors uppercase" type="submit">Subscribe</button>
+</form>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-4 bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800">
+<a class="flex flex-col items-center justify-center text-zinc-900 dark:text-zinc-50 bg-zinc-100 dark:bg-zinc-800 rounded-none py-1 px-4" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-newsreader text-[10px] uppercase tracking-wider font-medium">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-600 py-1 px-4" href="#">
+<span class="material-symbols-outlined" data-icon="format_list_numbered">format_list_numbered</span>
+<span class="font-newsreader text-[10px] uppercase tracking-wider font-medium">Rankings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-600 py-1 px-4" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-newsreader text-[10px] uppercase tracking-wider font-medium">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-600 py-1 px-4" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-newsreader text-[10px] uppercase tracking-wider font-medium">Profile</span>
+</a>
+</nav>
+<!-- NavigationDrawer (Desktop Side) -->
+<div class="fixed inset-y-0 left-0 z-[60] p-8 flex flex-col space-y-6 bg-white dark:bg-zinc-950 h-full w-80 border-r border-zinc-200 dark:border-zinc-800 transition-transform duration-300 -translate-x-full lg:translate-x-0 hidden lg:flex" id="drawer">
+<div class="font-newsreader font-black uppercase text-3xl mb-8">THE EDITORIAL</div>
+<div class="flex flex-col space-y-4">
+<a class="font-newsreader text-lg border-b border-zinc-100 text-indigo-600 dark:text-indigo-400 font-bold italic hover:pl-2 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-2 align-middle" data-icon="star">star</span>Featured
+            </a>
+<a class="font-newsreader text-lg border-b border-zinc-100 text-zinc-600 dark:text-zinc-400 hover:pl-2 transition-all duration-200 hover:text-zinc-900 dark:hover:text-zinc-100" href="#">
+<span class="material-symbols-outlined mr-2 align-middle" data-icon="military_tech">military_tech</span>Latest Awards
+            </a>
+<a class="font-newsreader text-lg border-b border-zinc-100 text-zinc-600 dark:text-zinc-400 hover:pl-2 transition-all duration-200 hover:text-zinc-900 dark:hover:text-zinc-100" href="#">
+<span class="material-symbols-outlined mr-2 align-middle" data-icon="psychology">psychology</span>Expert Panels
+            </a>
+<a class="font-newsreader text-lg border-b border-zinc-100 text-zinc-600 dark:text-zinc-400 hover:pl-2 transition-all duration-200 hover:text-zinc-900 dark:hover:text-zinc-100" href="#">
+<span class="material-symbols-outlined mr-2 align-middle" data-icon="inventory_2">inventory_2</span>Archive
+            </a>
+<a class="font-newsreader text-lg border-b border-zinc-100 text-zinc-600 dark:text-zinc-400 hover:pl-2 transition-all duration-200 hover:text-zinc-900 dark:hover:text-zinc-100" href="#">
+<span class="material-symbols-outlined mr-2 align-middle" data-icon="settings">settings</span>Settings
+            </a>
+</div>
+</div>
+</body></html>
