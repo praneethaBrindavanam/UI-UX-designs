@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-error": "#690005",
+                        "surface-container-high": "#2b2a2a",
+                        "on-tertiary-fixed-variant": "#484645",
+                        "on-primary-fixed": "#1c1b1b",
+                        "outline": "#8e9192",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "inverse-on-surface": "#313030",
+                        "on-surface": "#e5e2e1",
+                        "primary-fixed": "#e5e2e1",
+                        "inverse-primary": "#5f5e5e",
+                        "on-secondary-fixed-variant": "#454747",
+                        "secondary": "#c6c6c7",
+                        "error-container": "#93000a",
+                        "background": "#141313",
+                        "on-primary": "#313030",
+                        "on-primary-container": "#7d7b7b",
+                        "surface-bright": "#3a3939",
+                        "surface-container-highest": "#353434",
+                        "on-tertiary": "#32302f",
+                        "on-secondary": "#2f3131",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-variant": "#353434",
+                        "outline-variant": "#444748",
+                        "error": "#ffb4ab",
+                        "primary": "#c8c6c5",
+                        "on-tertiary-fixed": "#1d1b1a",
+                        "surface-tint": "#c8c6c5",
+                        "on-tertiary-container": "#7e7b79",
+                        "tertiary-fixed-dim": "#cac6c3",
+                        "on-secondary-container": "#b4b5b5",
+                        "tertiary": "#cac6c3",
+                        "surface": "#141313",
+                        "on-background": "#e5e2e1",
+                        "surface-dim": "#141313",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "on-primary-fixed-variant": "#474646",
+                        "tertiary-fixed": "#e6e1df",
+                        "secondary-fixed": "#e2e2e2",
+                        "secondary-container": "#454747",
+                        "primary-container": "#0f0f0f",
+                        "surface-container": "#201f1f",
+                        "tertiary-container": "#100f0e",
+                        "surface-container-low": "#1c1b1b",
+                        "on-surface-variant": "#c4c7c7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "64px",
+                        "stack-md": "32px",
+                        "gutter": "24px",
+                        "margin-edge": "48px",
+                        "container-max": "1440px",
+                        "stack-sm": "16px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-base": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "title-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-base": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "title-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .profile-focus:hover .avatar-ring {
+            border-width: 3px;
+            transform: scale(1.05);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-base min-h-screen flex flex-col items-center selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar Shell Component -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center w-full px-margin-edge py-stack-sm bg-transparent">
+<div class="flex items-center gap-unit">
+<span class="material-symbols-outlined text-primary" data-icon="movie_filter">movie_filter</span>
+<h1 class="text-title-sm font-headline-md tracking-widest text-primary dark:text-primary-fixed-dim">CINE-LUXE</h1>
+</div>
+<div class="flex items-center">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary-fixed transition-colors p-2" data-icon="help">help</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center w-full max-w-container-max px-gutter pt-[100px] pb-stack-lg">
+<!-- Headline Section -->
+<section class="text-center mb-stack-lg">
+<h2 class="text-display-lg font-display-lg text-on-background tracking-tight">Who's Watching?</h2>
+</section>
+<!-- Profile Grid Area -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-stack-md w-full max-w-4xl px-gutter">
+<!-- Profile: Alex (Electric Blue Theme) -->
+<button class="group flex flex-col items-center gap-stack-sm profile-focus outline-none focus:ring-0">
+<div class="relative w-32 h-32 md:w-40 md:h-40 rounded-xl overflow-hidden glass-card avatar-ring border-2 border-transparent transition-all duration-300 group-hover:border-primary-fixed group-focus:border-primary-fixed">
+<img alt="Alex" class="w-full h-full object-cover" data-alt="A close-up portrait of a young man with a friendly expression, set against a vibrant electric blue neon background. The lighting is cinematic and high-contrast, with cool blue tones reflecting on his face. The overall aesthetic is sleek and premium, fitting a luxury digital interface, with a subtle glassmorphic blur in the peripheral areas." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALTBr_kRBTFqK4G-Raa7errfx5SfDS59Qc1FJNsyLZg31dfL5WJbn1KNf398CeIUYZCFV7dfIhkjEceCjugyxajE7zEhCzqxCVFGJRrhylxOJJXquEeFORdn_fG-rWxJXrTDo_GTachDb7MJtTwfPRvsDDmSA53VMNBUat81HVKzD5e_N2T_sefK77T8n1hd3ZfmQHEEfadHTxRRIuEGpK9PkmZ9Y5Buf9gQn_NJ10eH9Vd3or3mSYCVNxlJEosMI_bjxgkBjxdWNi"/>
+</div>
+<span class="text-title-sm font-headline-md text-on-surface-variant group-hover:text-on-surface transition-colors">Alex</span>
+</button>
+<!-- Profile: Jordan (Sunset Orange Theme) -->
+<button class="group flex flex-col items-center gap-stack-sm profile-focus outline-none focus:ring-0">
+<div class="relative w-32 h-32 md:w-40 md:h-40 rounded-xl overflow-hidden glass-card avatar-ring border-2 border-transparent transition-all duration-300 group-hover:border-tertiary-fixed group-focus:border-tertiary-fixed">
+<img alt="Jordan" class="w-full h-full object-cover" data-alt="A portrait of a woman with a warm, welcoming smile, illuminated by a rich sunset orange glow. The background is a soft, out-of-focus gradient of amber and deep red. The cinematic lighting creates a professional and high-end feel, maintaining a clean aesthetic with deep charcoal foundations and vibrant profile-specific accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkQnA8H6Gb-OCVDZY0Q48ITyUdSxrVefaoZmc9sDf7y0g_qdbmJ-rcHlDF5Y0kpk6j6IU3O5wghS53VJ_uTvef2heN640Rn9EIVFNtwAErXfikzsYw4MCKkC1oIoWu8byvBOcVACFRtPIeZntChuKkSBjTPcLVsYVx_5puyO24Nm51jExIOKqgs7vsLwgZt19lcNKSfYMuvMf1h1uMxzqqIca4jFMUGPI0u1HNwPWqKFfZ17GUlhZFq1PqGVm6YitxLNo049rGU2sx"/>
+</div>
+<span class="text-title-sm font-headline-md text-on-surface-variant group-hover:text-on-surface transition-colors">Jordan</span>
+</button>
+<!-- Profile: Sam (Royal Purple Theme) -->
+<button class="group flex flex-col items-center gap-stack-sm profile-focus outline-none focus:ring-0">
+<div class="relative w-32 h-32 md:w-40 md:h-40 rounded-xl overflow-hidden glass-card avatar-ring border-2 border-transparent transition-all duration-300 group-hover:border-secondary-fixed group-focus:border-secondary-fixed">
+<img alt="Sam" class="w-full h-full object-cover" data-alt="A sophisticated portrait of a man in a dark environment, highlighted by deep royal purple rim lighting. The style is ultra-modern and minimalist, with a focus on depth and immersion. The lighting is subtle yet impactful, creating a sense of exclusive luxury and focused personalized environment within a cinematic theater app interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNA6a5-I2nmKPbDgFJ-Rpm1fYwvcUH9Fgv_pBfw_2vdErypJ_vwrbkReTDiPXLpR3-YZFGuxc1rVm8wqo5S1AlL3ZOkQNvrYaabOnhIn4vI7LxJIuYw2SKCcdwH_b4RuDW2wKvSsAKOhh1pV4Y5qRssrcMQ7JQpoQ7zZDuEdUSYvNfiEUY4C9wjnxRacqgIWrOXVD_NdT0BXso_r-c061Iy9-Ys_j2r4xOstuy03gaLiRTT7IRWttx3dHunzLn_NjoCnmKPkayH9wF"/>
+</div>
+<span class="text-title-sm font-headline-md text-on-surface-variant group-hover:text-on-surface transition-colors">Sam</span>
+</button>
+<!-- Profile: Kids (Vibrant Accent) -->
+<button class="group flex flex-col items-center gap-stack-sm profile-focus outline-none focus:ring-0">
+<div class="relative w-32 h-32 md:w-40 md:h-40 rounded-xl overflow-hidden glass-card avatar-ring border-2 border-transparent transition-all duration-300 group-hover:border-error group-focus:border-error">
+<img alt="Kids" class="w-full h-full object-cover" data-alt="A playful and colorful high-resolution character illustration suitable for a children's profile, featuring vibrant reds and yellows. The lighting is bright and cheerful, contrasting with the dark charcoal theater background of the app. The style remains premium and modern, using high-contrast focus states to ensure accessibility and fun for a young audience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz1vuwEg4tndo8NrDU2aN4PMbydgIYFi_yKww_-HpeZ0_XQ6Fu8984wrdoDGEA2yPthKtMW7amwnmbe7Pxtk6TQbkJgwlK3jZw1F4OiRAzXYwxrNZuDOOurhCx7MCRjbeHTfi4G9ZMnq3yDe2Jkb5C7ZF8iO7BqVo50sN_SzCHlshnxVitimTkiTZ6CTUQNhVGiRFoC6WwMbm5_0E9JKkeBuVZrDl9cAU1LWBjiK39v_xIddFAzh6Dy3Skg6L9ZRfoYjCmXZGPqAwP"/>
+</div>
+<span class="text-title-sm font-headline-md text-on-surface-variant group-hover:text-on-surface transition-colors">Kids</span>
+</button>
+<!-- Action: Add Profile -->
+<button class="group flex flex-col items-center gap-stack-sm profile-focus outline-none focus:ring-0">
+<div class="relative w-32 h-32 md:w-40 md:h-40 rounded-xl flex items-center justify-center glass-card border-2 border-dashed border-outline-variant/30 transition-all duration-300 group-hover:bg-surface-container-highest group-hover:border-on-surface group-focus:border-on-surface">
+<span class="material-symbols-outlined text-outline-variant group-hover:text-on-surface text-4xl" data-icon="add">add</span>
+</div>
+<span class="text-title-sm font-headline-md text-on-surface-variant group-hover:text-on-surface transition-colors">Add Profile</span>
+</button>
+</div>
+<!-- Secondary Action Button -->
+<footer class="mt-stack-lg">
+<button class="px-gutter py-stack-sm border border-outline-variant hover:border-on-surface hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface rounded-lg transition-all duration-300 font-label-caps text-label-caps tracking-[0.2em] glass-card uppercase">
+                Manage Profiles
+            </button>
+</footer>
+</main>
+<!-- BottomNavBar Suppressed - Transactional Screen Logic Applied -->
+<!-- This screen is a gateway/focused journey, global navigation is hidden to prioritize the profile selection task. -->
+</body></html>
