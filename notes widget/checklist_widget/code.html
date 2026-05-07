@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Note Studio - Checklist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#c0c7d6",
+                        "secondary": "#5e5f56",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-primary-container": "#9da1ff",
+                        "on-secondary-fixed-variant": "#46473f",
+                        "tertiary": "#222935",
+                        "secondary-fixed": "#e4e3d7",
+                        "on-tertiary-container": "#a3aab9",
+                        "inverse-surface": "#27313f",
+                        "tertiary-fixed": "#dce2f3",
+                        "on-tertiary-fixed": "#151c27",
+                        "primary-container": "#2e3192",
+                        "surface-tint": "#4f54b4",
+                        "background": "#f8f9ff",
+                        "outline-variant": "#c7c5d4",
+                        "on-secondary-container": "#64655c",
+                        "on-primary-fixed-variant": "#373a9b",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "surface-bright": "#f8f9ff",
+                        "secondary-container": "#e4e3d7",
+                        "surface-container": "#e6eeff",
+                        "primary": "#15157d",
+                        "surface-container-highest": "#d9e3f6",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#dee9fc",
+                        "on-surface": "#121c2a",
+                        "tertiary-container": "#383f4c",
+                        "on-error-container": "#93000a",
+                        "on-background": "#121c2a",
+                        "primary-fixed": "#e1e0ff",
+                        "surface-dim": "#d0dbed",
+                        "inverse-primary": "#c0c1ff",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary-fixed": "#04006d",
+                        "on-secondary-fixed": "#1b1c15",
+                        "surface-variant": "#d9e3f6",
+                        "secondary-fixed-dim": "#c7c7bc",
+                        "error-container": "#ffdad6",
+                        "outline": "#777683",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#464652",
+                        "on-tertiary-fixed-variant": "#404754"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "unit": "4px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "widget-margin": "12px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "stack-gap": "12px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "helper-text": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "display": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "helper-text": ["12px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "headline-md": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #FDFCF0; /* Brand Paper Background */
+            font-family: 'Inter', sans-serif;
+        }
+        .paper-card {
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(21, 21, 125, 0.04);
+        }
+        .checkbox-custom:checked {
+            background-color: #15157d;
+            border-color: #15157d;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen text-on-surface">
+<!-- TopAppBar from JSON -->
+<header class="flex justify-between items-center w-full px-md py-sm h-16 bg-surface border-b border-outline-variant sticky top-0 z-50">
+<div class="flex items-center gap-md">
+<button class="active:scale-95 transition-transform duration-150 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Note Studio</h1>
+</div>
+<button class="active:scale-95 transition-transform duration-150 p-sm rounded-full bg-primary text-on-primary">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow p-md mb-20">
+<div class="max-w-md mx-auto space-y-lg">
+<!-- Contextual Header -->
+<div class="flex flex-col gap-xs">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Active Lists</span>
+<h2 class="font-display text-display text-primary">Weekly Grocery</h2>
+</div>
+<!-- Bento/Asymmetric Checklist Layout -->
+<div class="grid grid-cols-1 gap-stack-gap">
+<!-- Active Task Card -->
+<div class="paper-card border border-outline-variant p-md rounded-xl flex items-center gap-md transition-all duration-200">
+<div class="relative flex items-center justify-center">
+<input class="checkbox-custom h-6 w-6 rounded border-2 border-outline appearance-none cursor-pointer checked:bg-primary checked:border-primary" type="checkbox"/>
+</div>
+<div class="flex flex-col flex-grow">
+<span class="font-body-lg text-body-lg text-on-surface">Almond Milk (Unsweetened)</span>
+<span class="font-helper-text text-helper-text text-on-surface-variant">2 cartons • Dairy aisle</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<!-- Another Active Task Card -->
+<div class="paper-card border border-outline-variant p-md rounded-xl flex items-center gap-md">
+<div class="relative flex items-center justify-center">
+<input class="checkbox-custom h-6 w-6 rounded border-2 border-outline appearance-none cursor-pointer checked:bg-primary checked:border-primary" type="checkbox"/>
+</div>
+<div class="flex flex-col flex-grow">
+<span class="font-body-lg text-body-lg text-on-surface">Fresh Avocado</span>
+<span class="font-helper-text text-helper-text text-on-surface-variant">3 units • Produce</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<!-- Featured Image Item (Asymmetric Element) -->
+<div class="grid grid-cols-2 gap-stack-gap">
+<div class="relative rounded-xl overflow-hidden h-40 paper-card">
+<img alt="Fresh Produce" class="w-full h-full object-cover" data-alt="A macro close-up photograph of vibrant, green avocados and fresh vegetables arranged artistically on a light wooden surface. The lighting is soft and natural, emphasizing the organic textures and rich colors of the produce. The overall atmosphere is clean, healthy, and minimalist, echoing the digital tactility of a premium paper notebook." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD39yAHhMZ_2_tWpg8dudML1FgtztVDX1WCxzgbSUUsENKH8hWQwb3892nXe7XM0p7yDNYoMGPVSZPQn-yJA6-rvlrCKwPn8T3SLmW0xCF9uegb49AhOjEqQoX02HIzvjQVg99pdA3C7KJAYCw8vkYzxHyCTjWqzTR-7O_9FjXEKc9rY1UrPt_-8SQkUR3WbG1mp8UmtyeDnEpHgv9K5Lb11DWI9rBpUHl845P5k7oW9S4ZiX7S9XpEbC5iokoH2x8uWvU3VYTqeBaR"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent flex items-end p-sm">
+<span class="text-on-primary font-label-caps text-[10px] uppercase">Recipe Inspiration</span>
+</div>
+</div>
+<div class="paper-card border border-outline-variant p-md rounded-xl flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<span class="font-label-caps text-label-caps text-primary">Quick Tip</span>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="lightbulb">lightbulb</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">"Pick avocados with a slight give for use today."</p>
+</div>
+</div>
+<!-- Completed Item Section -->
+<div class="pt-md border-t border-outline-variant">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-sm block">Completed (3)</span>
+<div class="space-y-stack-gap opacity-60">
+<div class="flex items-center gap-md px-sm py-xs">
+<span class="material-symbols-outlined text-primary" data-icon="check_box" style="font-variation-settings: 'FILL' 1;">check_box</span>
+<span class="font-body-lg text-body-lg text-on-surface-variant line-through">Whole Grain Bread</span>
+</div>
+<div class="flex items-center gap-md px-sm py-xs">
+<span class="material-symbols-outlined text-primary" data-icon="check_box" style="font-variation-settings: 'FILL' 1;">check_box</span>
+<span class="font-body-lg text-body-lg text-on-surface-variant line-through">Sea Salt</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Inline Input (Tactile Ruled Line) -->
+<div class="pt-lg">
+<div class="border-b border-outline-variant focus-within:border-primary transition-colors flex items-center gap-md py-sm">
+<span class="material-symbols-outlined text-outline" data-icon="add">add</span>
+<input class="bg-transparent border-none focus:ring-0 w-full font-body-lg text-body-lg placeholder:text-outline-variant" placeholder="Add new item..." type="text"/>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar from JSON -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-md pb-safe pt-2 border-t border-outline-variant shadow-md h-20">
+<!-- Notes Tab -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low px-4 py-1">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-label-caps text-label-caps">Notes</span>
+</div>
+<!-- Checklists Tab (ACTIVE) -->
+<div class="flex flex-col items-center justify-center text-primary font-bold bg-primary-container/20 rounded-full px-4 py-1">
+<span class="material-symbols-outlined" data-icon="checklist" style="font-variation-settings: 'FILL' 1;">checklist</span>
+<span class="font-label-caps text-label-caps">Checklists</span>
+</div>
+<!-- Archive Tab -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low px-4 py-1">
+<span class="material-symbols-outlined" data-icon="archive">archive</span>
+<span class="font-label-caps text-label-caps">Archive</span>
+</div>
+<!-- Search Tab -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low px-4 py-1">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-caps text-label-caps">Search</span>
+</div>
+</nav>
+</body></html>

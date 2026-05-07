@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#c0c7d6",
+                        "secondary": "#5e5f56",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-primary-container": "#9da1ff",
+                        "on-secondary-fixed-variant": "#46473f",
+                        "tertiary": "#222935",
+                        "secondary-fixed": "#e4e3d7",
+                        "on-tertiary-container": "#a3aab9",
+                        "inverse-surface": "#27313f",
+                        "tertiary-fixed": "#dce2f3",
+                        "on-tertiary-fixed": "#151c27",
+                        "primary-container": "#2e3192",
+                        "surface-tint": "#4f54b4",
+                        "background": "#f8f9ff",
+                        "outline-variant": "#c7c5d4",
+                        "on-secondary-container": "#64655c",
+                        "on-primary-fixed-variant": "#373a9b",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "surface-bright": "#f8f9ff",
+                        "secondary-container": "#e4e3d7",
+                        "surface-container": "#e6eeff",
+                        "primary": "#15157d",
+                        "surface-container-highest": "#d9e3f6",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#dee9fc",
+                        "on-surface": "#121c2a",
+                        "tertiary-container": "#383f4c",
+                        "on-error-container": "#93000a",
+                        "on-background": "#121c2a",
+                        "primary-fixed": "#e1e0ff",
+                        "surface-dim": "#d0dbed",
+                        "inverse-primary": "#c0c1ff",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary-fixed": "#04006d",
+                        "on-secondary-fixed": "#1b1c15",
+                        "surface-variant": "#d9e3f6",
+                        "secondary-fixed-dim": "#c7c7bc",
+                        "error-container": "#ffdad6",
+                        "outline": "#777683",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#464652",
+                        "on-tertiary-fixed-variant": "#404754"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "unit": "4px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "widget-margin": "12px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "stack-gap": "12px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "helper-text": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "display": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "helper-text": ["12px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "headline-md": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .paper-texture {
+            background-color: #FDFCF0;
+            background-image: radial-gradient(#E5E7EB 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+        .shadow-tactile {
+            box-shadow: 0 4px 12px rgba(21, 21, 125, 0.04);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-lg flex items-center justify-center min-h-screen p-md">
+<!-- Document Preview Widget Wrapper -->
+<div class="w-full max-w-sm flex flex-col gap-stack-gap">
+<!-- Top App Bar (Shared Component Reference) -->
+<header class="flex justify-between items-center w-full px-md py-sm h-16 bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Note Studio</h1>
+</div>
+<div class="flex items-center gap-sm">
+<button class="active:scale-95 transition-transform duration-150 p-xs">
+<span class="material-symbols-outlined text-primary" data-icon="add">add</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas Area -->
+<main class="flex-grow space-y-md">
+<!-- Document Preview Card -->
+<article class="paper-texture border border-outline-variant rounded-xl overflow-hidden shadow-tactile group active:scale-[0.98] transition-transform duration-200">
+<div class="p-md space-y-stack-gap">
+<!-- Category Tag -->
+<div class="inline-flex items-center px-sm py-xs bg-[#F3F2E0] text-primary rounded-lg border border-outline-variant/30">
+<span class="font-label-caps text-label-caps">PROJECT PROPOSAL</span>
+</div>
+<!-- Headline -->
+<h2 class="font-display text-display text-on-surface leading-tight">Architecture of the Modern Mind</h2>
+<!-- Preview Image -->
+<div class="relative w-full h-40 rounded-lg overflow-hidden my-md bg-surface-container">
+<img alt="Minimalist Architecture" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="A clean, minimalist architectural photograph showing the sharp intersection of two white concrete walls against a clear, soft blue sky. The lighting is high-key and serene, casting subtle linear shadows that mimic a ruled notebook. The image has a calm, professional mood with a light-mode aesthetic, emphasizing geometric precision and white space. Sophisticated textures of smooth plaster and clear glass create a tactile yet digital feeling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcTh8Pzc_WB1EsCwkSmj3FuIK_M0pybajkuyNgF0EjmJRruU6Ja5bmM6B6E11Rys48tvs0_s4vD8w-i-rKHRjduSBI6Togu01tHyuA880WYr3rYjhiMe0Qp0ukrolPwPj0w_6MPNupY9JSUkCx6RrLn9jh03iUfy_3tW3JeA_wyWaEuCsqUiX7gmSmhbRqnSagHJ56K434mEzhVBH8LfhUPp_omsdVZe13oFv0077T_ANBymO9gS2C4Cjx2BQdIAgh7DWH2HA_ityF"/>
+</div>
+<!-- Preview Text -->
+<div class="space-y-sm">
+<p class="font-body-lg text-body-lg text-on-surface-variant line-clamp-4">
+                            The evolution of cognitive workspaces in the digital era requires a return to tactile foundations. When we interact with physical paper, our spatial memory anchors information more effectively than on fluid digital screens. This document explores the intersection of "Paper-First" philosophy with the efficiency of modern cloud-based systems...
+                        </p>
+</div>
+<!-- Read More Link -->
+<div class="pt-sm">
+<a class="inline-flex items-center gap-xs text-primary font-label-caps text-label-caps border-b border-primary/20 hover:border-primary transition-all" href="#">
+                            READ MORE
+                            <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Footer / Metadata -->
+<footer class="px-md py-sm bg-surface-container-low border-t border-outline-variant flex justify-between items-center">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="history">history</span>
+<span class="font-helper-text text-helper-text uppercase tracking-wider">Edited 2h ago</span>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-xs text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+<button class="p-xs text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+</button>
+</div>
+</footer>
+</article>
+<!-- Secondary List Hint -->
+<div class="px-md">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-sm">RELATED NOTES</h3>
+<div class="space-y-sm">
+<div class="flex items-center gap-md p-sm bg-white border border-outline-variant rounded-lg">
+<div class="w-10 h-10 bg-primary-fixed rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="description">description</span>
+</div>
+<div class="flex-grow">
+<div class="font-body-sm text-body-sm font-semibold text-on-surface">Design System V2</div>
+<div class="font-helper-text text-helper-text text-on-surface-variant">Updated yesterday</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Shared Component Reference) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-md pb-safe pt-2 border-t border-outline-variant shadow-md rounded-t-xl">
+<!-- Active State: Notes -->
+<a class="flex flex-col items-center justify-center text-primary font-bold bg-primary-container/20 rounded-full px-4 py-1 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="description" style="font-variation-settings: 'FILL' 1;">description</span>
+<span class="font-label-caps text-label-caps">Notes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="checklist">checklist</span>
+<span class="font-label-caps text-label-caps">Checklists</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="archive">archive</span>
+<span class="font-label-caps text-label-caps">Archive</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-caps text-label-caps">Search</span>
+</a>
+</nav>
+<!-- Spacer for Bottom Nav -->
+<div class="h-20"></div>
+</div>
+</body></html>

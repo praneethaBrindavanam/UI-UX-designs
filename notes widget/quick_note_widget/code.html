@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Note Studio - Quick Note</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#c0c7d6",
+                        "secondary": "#5e5f56",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-primary-container": "#9da1ff",
+                        "on-secondary-fixed-variant": "#46473f",
+                        "tertiary": "#222935",
+                        "secondary-fixed": "#e4e3d7",
+                        "on-tertiary-container": "#a3aab9",
+                        "inverse-surface": "#27313f",
+                        "tertiary-fixed": "#dce2f3",
+                        "on-tertiary-fixed": "#151c27",
+                        "primary-container": "#2e3192",
+                        "surface-tint": "#4f54b4",
+                        "background": "#f8f9ff",
+                        "outline-variant": "#c7c5d4",
+                        "on-secondary-container": "#64655c",
+                        "on-primary-fixed-variant": "#373a9b",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "surface-bright": "#f8f9ff",
+                        "secondary-container": "#e4e3d7",
+                        "surface-container": "#e6eeff",
+                        "primary": "#15157d",
+                        "surface-container-highest": "#d9e3f6",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#dee9fc",
+                        "on-surface": "#121c2a",
+                        "tertiary-container": "#383f4c",
+                        "on-error-container": "#93000a",
+                        "on-background": "#121c2a",
+                        "primary-fixed": "#e1e0ff",
+                        "surface-dim": "#d0dbed",
+                        "inverse-primary": "#c0c1ff",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary-fixed": "#04006d",
+                        "on-secondary-fixed": "#1b1c15",
+                        "surface-variant": "#d9e3f6",
+                        "secondary-fixed-dim": "#c7c7bc",
+                        "error-container": "#ffdad6",
+                        "outline": "#777683",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#464652",
+                        "on-tertiary-fixed-variant": "#404754",
+                        "paper-yellow": "#FDFCF0",
+                        "paper-tint": "#F3F2E0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "unit": "4px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "widget-margin": "12px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "stack-gap": "12px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "helper-text": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "display": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "helper-text": ["12px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "headline-md": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f8f9ff;
+            font-family: 'Inter', sans-serif;
+        }
+        .paper-texture {
+            background-color: #FDFCF0;
+            background-image: radial-gradient(#E5E7EB 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex items-center justify-center min-h-screen p-md">
+<!-- The Quick Note Widget -->
+<div class="w-full max-w-[360px] aspect-[4/5] paper-texture rounded-xl shadow-xl flex flex-col relative border border-outline-variant overflow-hidden">
+<!-- Top App Bar (Simplified for Widget) -->
+<div class="flex justify-between items-center w-full px-md py-sm h-16">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Note Studio</h1>
+</div>
+<button class="bg-primary text-on-primary w-10 h-10 rounded-full flex items-center justify-center shadow-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="check" style="font-variation-settings: 'wght' 600;">check</span>
+</button>
+</div>
+<!-- Main Input Area -->
+<div class="flex-grow px-md pt-xs pb-md">
+<textarea class="w-full h-full bg-transparent border-none focus:ring-0 text-on-surface font-body-lg text-body-lg resize-none placeholder:text-on-surface-variant/50" placeholder="What's on your mind?"></textarea>
+</div>
+<!-- Horizontal Ruler Line (Mimicking Notebook) -->
+<div class="mx-md border-t border-outline-variant opacity-50"></div>
+<!-- Category Chips & Footer -->
+<div class="p-md flex flex-wrap gap-sm items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mr-xs">Categorize</span>
+<!-- Chip: Work -->
+<button class="bg-paper-tint text-primary px-sm py-xs rounded-lg border border-outline-variant/30 flex items-center gap-xs hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[16px]" data-icon="work">work</span>
+<span class="font-label-caps text-label-caps">Work</span>
+</button>
+<!-- Chip: Personal -->
+<button class="bg-paper-tint text-primary px-sm py-xs rounded-lg border border-outline-variant/30 flex items-center gap-xs hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[16px]" data-icon="person">person</span>
+<span class="font-label-caps text-label-caps">Personal</span>
+</button>
+<!-- Chip: Ideas -->
+<button class="bg-primary-container/20 text-primary px-sm py-xs rounded-lg border border-primary/20 flex items-center gap-xs hover:bg-primary-container/30 transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[16px]" data-icon="lightbulb" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<span class="font-label-caps text-label-caps">Ideas</span>
+</button>
+</div>
+<!-- Visual Tactile Accent: Side Binding -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary/10"></div>
+</div>
+<!-- Background Decoration for Context -->
+<div class="fixed inset-0 -z-10 opacity-40">
+<img class="w-full h-full object-cover grayscale" data-alt="A clean and organized home office desk background with a blurred perspective. The scene features a high-quality wooden surface, a minimalist laptop, and soft natural lighting coming from a side window. The overall aesthetic is calm, quiet, and professional, using a muted color palette that complements a light-mode UI design focused on focus and productivity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXhxmutOIsEjiCPM6I8DF4vDqnHWA_Xks3kLtUkZEIB2PxaXmc8Isy1pMNWvzKcLAXj13XHcey2BE0JBMm9_fDHDgnF_Qsoj8ZZt6vHx4j5W2Ghj4HHnFXVwpsf8pqBRU6noBNkKoMtiskwA7cdxPyA1X5j-WyEkfmh8HcS0rszUa0VCSh2A-7al68swVkHDOz2IvXl-M6XVQDlaeTEiWv7AHYWOFYVv4N8p_bMaZlKVhbSj03y-9V758PNPgDOucESi899vFfjzbR"/>
+</div>
+<!-- Navigation suppressed for focused widget view as per shell mandate -->
+</body></html>
