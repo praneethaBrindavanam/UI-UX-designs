@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#d7e2ff",
+                        "surface-container-low": "#f2f4f6",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#82cfff",
+                        "surface-container-high": "#e6e8ea",
+                        "secondary-fixed": "#c6e7ff",
+                        "secondary-container": "#2dbcfe",
+                        "primary-fixed-dim": "#b6c7eb",
+                        "on-secondary-fixed-variant": "#004c6b",
+                        "on-tertiary-container": "#fd595e",
+                        "background": "#f7f9fb",
+                        "surface-variant": "#e0e3e5",
+                        "outline-variant": "#c5c6ce",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#031632",
+                        "on-background": "#191c1e",
+                        "on-secondary-fixed": "#001e2d",
+                        "on-primary-fixed-variant": "#374765",
+                        "tertiary-fixed": "#ffdad8",
+                        "surface-bright": "#f7f9fb",
+                        "primary-container": "#1a2b48",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#92001b",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container": "#eceef0",
+                        "on-surface": "#191c1e",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb3b0",
+                        "surface": "#f7f9fb",
+                        "surface-tint": "#4e5f7e",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary-container": "#004866",
+                        "tertiary": "#370005",
+                        "on-tertiary-fixed": "#410007",
+                        "on-surface-variant": "#44474d",
+                        "secondary": "#00658d",
+                        "surface-dim": "#d8dadc",
+                        "on-primary-container": "#8293b5",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#5e000e",
+                        "outline": "#75777e",
+                        "on-primary-fixed": "#081b38",
+                        "inverse-primary": "#b6c7eb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "12px",
+                        "xs": "4px",
+                        "base": "4px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "container-margin": "20px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Hanken Grotesk"],
+                        "price-display": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "title-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "price-display": ["18px", {"lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f7f9fb;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- Top AppBar -->
+<header class="bg-surface flex items-center justify-between px-container-margin py-md w-full sticky top-0 z-50">
+<div class="flex items-center gap-md">
+<button class="transition-colors duration-200 ease-in-out hover:bg-surface-container-low p-xs rounded-full">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+</button>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight">SkyBound</h1>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A close-up professional headshot of a stylish man with a clean beard, looking confidently at the camera. The lighting is bright and high-key, emphasizing a clean and corporate modern aesthetic. The background is a soft, out-of-focus urban environment with cool blue and white tones that match the SkyBound brand identity. The image is crisp and conveys reliability and travel-savvy professionalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkLgAwCJYsXlpowllzcjnZGVmLpUIqKRw3b4Wc7VfpKoE5gxRvXpL-4j5uELcAeIMnubE51vdvHmOAQP9RAszcaYGrnKWQsYXNz4yjlWemiNZq5VnPux9zxlbrUk7oX1-dSj8xY8FY8t5BKJQkK1AsXBZ3Khnlp9Ea9h4FaKVOXq2t7Vo00eL0F70naIctlfk82NS2zLnVW5VSczOmY5nSjLQCOJOCzOFrFCioagjAtARbn1y1EtMrzk-Xop7_JyUSlvjQQXxWLg"/>
+</div>
+</div>
+</header>
+<main class="pb-32">
+<!-- Search Info Summary (Implicit Context) -->
+<section class="px-container-margin pt-md pb-sm">
+<div class="flex flex-col gap-xs">
+<div class="flex items-center gap-xs text-on-surface-variant font-label-sm">
+<span class="text-label-sm font-label-sm">SFO</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="east">east</span>
+<span class="text-label-sm font-label-sm">JFK</span>
+</div>
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-primary">24 Flights Found</h2>
+<span class="text-label-sm font-label-sm bg-primary-fixed text-on-primary-fixed px-sm py-xs rounded-lg">Sep 14 - Sep 21</span>
+</div>
+</div>
+</section>
+<!-- Filter Bar -->
+<div class="sticky top-[72px] z-40 bg-background/80 backdrop-blur-md py-sm">
+<div class="flex items-center gap-sm overflow-x-auto px-container-margin no-scrollbar">
+<button class="flex items-center gap-xs bg-primary text-on-primary px-md py-sm rounded-lg whitespace-nowrap transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="tune">tune</span>
+<span class="font-label-sm text-label-sm">Sort &amp; Filter</span>
+</button>
+<div class="h-6 w-[1px] bg-outline-variant mx-xs"></div>
+<button class="bg-surface-container-highest text-on-surface-variant px-md py-sm rounded-full whitespace-nowrap font-label-sm text-label-sm hover:bg-secondary-fixed transition-colors">
+                    Price: Low-High
+                </button>
+<button class="bg-surface-container-highest text-on-surface-variant px-md py-sm rounded-full whitespace-nowrap font-label-sm text-label-sm hover:bg-secondary-fixed transition-colors">
+                    Stops: Non-stop
+                </button>
+<button class="bg-surface-container-highest text-on-surface-variant px-md py-sm rounded-full whitespace-nowrap font-label-sm text-label-sm hover:bg-secondary-fixed transition-colors">
+                    Airlines
+                </button>
+</div>
+</div>
+<!-- Flight Cards List -->
+<div class="px-container-margin mt-lg flex flex-col gap-lg">
+<!-- Flight Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(26,43,72,0.05)] border border-outline-variant/30 p-md flex flex-col gap-md">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center border border-outline-variant/20 overflow-hidden">
+<img alt="Airline Logo" class="w-8 h-8 object-contain" data-alt="A minimalist vector logo of a modern airline carrier. The logo features abstract wing shapes in deep navy blue on a clean white background. The style is professional and corporate, reflecting a high-end aviation brand. The lighting is flat and graphic, emphasizing high contrast and legibility as seen in modern travel applications." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8YqAK4Bpta55lqQM6qSIGN_icGGUKeyr9ai92SRzNOsRhVPbR5gCSwSWPWs0cedC70En6enW_GCHmG9CWCkEWd6kqnHpYEEYjDiuxcChjFJEtj60yspWdYojK76y6PCAJt67fmcatGY_CkiXj9LeK5AOSCnhnFW67r1tAdjfMeVNG82fJRC6Z7m9ij034a9EabSnVGdsJ2-mSqYWcGXii8312WD17yOLES_8jgIVrLVq-cs2R9r1pt9pQ886-H1FtMqpHV7z1Qw"/>
+</div>
+<div>
+<p class="font-title-lg text-title-lg text-primary leading-tight">Skyways Air</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Economy • Boeing 787</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-price-display text-price-display text-on-tertiary-container">$452</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">per traveler</p>
+</div>
+</div>
+<!-- Flight Timeline -->
+<div class="flex items-center justify-between gap-md py-sm">
+<div class="flex flex-col items-start">
+<p class="font-title-lg text-title-lg text-primary">08:30 AM</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">SFO</p>
+</div>
+<div class="flex-1 flex flex-col items-center gap-xs">
+<p class="font-label-sm text-label-sm text-on-surface-variant">5h 30m</p>
+<div class="relative w-full h-[2px] bg-outline-variant/30 flex items-center justify-center">
+<div class="absolute left-0 w-2 h-2 rounded-full border-2 border-primary bg-background"></div>
+<div class="w-2/3 border-t-2 border-dashed border-primary"></div>
+<span class="material-symbols-outlined text-primary text-[16px] mx-xs" data-icon="flight_takeoff">flight_takeoff</span>
+<div class="absolute right-0 w-2 h-2 rounded-full border-2 border-primary bg-background"></div>
+</div>
+<p class="font-label-sm text-label-sm text-secondary">Non-stop</p>
+</div>
+<div class="flex flex-col items-end">
+<p class="font-title-lg text-title-lg text-primary">05:00 PM</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">JFK</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-sm border-t border-outline-variant/20">
+<div class="flex items-center gap-md">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="work">work</span>
+<span class="font-label-sm text-label-sm">Cabin Bag</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="luggage">luggage</span>
+<span class="font-label-sm text-label-sm">Checked Bag</span>
+</div>
+</div>
+<button class="text-secondary font-label-sm text-label-sm font-bold flex items-center gap-xs">
+                        Details <span class="material-symbols-outlined text-[16px]" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Flight Card 2 (Price Drop Alert) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(26,43,72,0.05)] border border-outline-variant/30 p-md flex flex-col gap-md relative">
+<div class="absolute -top-3 left-md bg-on-tertiary-container text-white px-sm py-1 rounded-md flex items-center gap-xs shadow-md">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_down">trending_down</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Price Drop</span>
+</div>
+<div class="flex justify-between items-start mt-xs">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center border border-outline-variant/20 overflow-hidden">
+<img alt="Airline Logo" class="w-full h-full object-cover" data-alt="A corporate blue airplane tail graphic against a bright clear sky background. The visual represents a reliable commercial airline with a modern aesthetic. The lighting is brilliant and sun-drenched, creating a feeling of optimistic travel. Colors are dominated by sky blue and clean whites, fitting the design's bright sky theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDDvPaJJOKuenFUGz-ZUvRIEIPTB8unDkVwldgw-HQ5VXVH5BeGvzqsIFAqcQA4QQv1dFykEJkE43TdStwf0cbB_SEAhbK_9O2WqhgCuSn-GtjUtw3kKX6f0EN0Z2WkkWVIReQASeSB6HNx32kX0MDQ_cykV39snDnUVmKq9XAtD6UghtjmXIgRHq39otoCQfEvFSQJpZ1e100FLUAjBr5PNho71S1bYeTZTJeYncdfQ_5tRCNNhmMjziKwfWZrN5lxvR3Dpyc0g"/>
+</div>
+<div>
+<p class="font-title-lg text-title-lg text-primary leading-tight">Atlantic Jets</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Premium • Airbus A350</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-price-display text-price-display text-on-tertiary-container">$389</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">per traveler</p>
+</div>
+</div>
+<div class="flex items-center justify-between gap-md py-sm">
+<div class="flex flex-col items-start">
+<p class="font-title-lg text-title-lg text-primary">11:15 AM</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">SFO</p>
+</div>
+<div class="flex-1 flex flex-col items-center gap-xs">
+<p class="font-label-sm text-label-sm text-on-surface-variant">7h 15m</p>
+<div class="relative w-full h-[2px] bg-outline-variant/30 flex items-center justify-center">
+<div class="absolute left-0 w-2 h-2 rounded-full border-2 border-primary bg-background"></div>
+<div class="w-1/2 border-t-2 border-dashed border-primary"></div>
+<div class="bg-surface-container-highest px-xs rounded text-[10px] text-on-surface-variant font-bold border border-outline-variant/30">1 STOP</div>
+<div class="w-1/2 border-t-2 border-dashed border-primary"></div>
+<div class="absolute right-0 w-2 h-2 rounded-full border-2 border-primary bg-background"></div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">via ORD</p>
+</div>
+<div class="flex flex-col items-end">
+<p class="font-title-lg text-title-lg text-primary">09:30 PM</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">JFK</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-sm border-t border-outline-variant/20">
+<div class="flex items-center gap-md">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="work">work</span>
+<span class="font-label-sm text-label-sm">Cabin Bag</span>
+</div>
+</div>
+<button class="text-secondary font-label-sm text-label-sm font-bold flex items-center gap-xs">
+                        Details <span class="material-symbols-outlined text-[16px]" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Flight Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(26,43,72,0.05)] border border-outline-variant/30 p-md flex flex-col gap-md">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center border border-outline-variant/20 overflow-hidden">
+<img alt="Airline Logo" class="w-8 h-8 object-contain" data-alt="A stylized minimalist icon of a bird in flight, rendered in soft gray and silver tones on a white background. The lighting is soft and diffuse, suggesting a high-end, premium brand identity for a luxury airline. The composition is centered and balanced, using clean lines and plenty of whitespace to evoke a sense of calm and efficiency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxLYDjgprKDeIeujV5a9w-VI8ENIqS5gvhdbnCWFSURvigNna24RicaUsUHf8LAv7sBfKWXLfYV5dfT_WcrFXfEjXy8HCI2vMCxuXR_6FcM5CPdpi0-i4qwZvTavrh0NluDiRFlta9P3H4ZKdaEgXcgpbfr3PQLkpkGUVoNSB2m2BP6whARrTZjwFxdh2FRVs3uiziXZfdHJlYbHGHSeN2sO9-m8nYSMeFwEBLUhcuVDNtGQM-YyN9vp_HPD9YhSCz7X3CSx6ggg"/>
+</div>
+<div>
+<p class="font-title-lg text-title-lg text-primary leading-tight">Vista Airways</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Business • Embraer 195</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-price-display text-price-display text-on-tertiary-container">$612</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">per traveler</p>
+</div>
+</div>
+<div class="flex items-center justify-between gap-md py-sm">
+<div class="flex flex-col items-start">
+<p class="font-title-lg text-title-lg text-primary">02:15 PM</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">SFO</p>
+</div>
+<div class="flex-1 flex flex-col items-center gap-xs">
+<p class="font-label-sm text-label-sm text-on-surface-variant">5h 45m</p>
+<div class="relative w-full h-[2px] bg-outline-variant/30 flex items-center justify-center">
+<div class="absolute left-0 w-2 h-2 rounded-full border-2 border-primary bg-background"></div>
+<div class="w-2/3 border-t-2 border-dashed border-primary"></div>
+<span class="material-symbols-outlined text-primary text-[16px] mx-xs" data-icon="flight_takeoff">flight_takeoff</span>
+<div class="absolute right-0 w-2 h-2 rounded-full border-2 border-primary bg-background"></div>
+</div>
+<p class="font-label-sm text-label-sm text-secondary">Non-stop</p>
+</div>
+<div class="flex flex-col items-end">
+<p class="font-title-lg text-title-lg text-primary">11:00 PM</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">JFK</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-sm border-t border-outline-variant/20">
+<div class="flex items-center gap-md">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="work">work</span>
+<span class="font-label-sm text-label-sm">Cabin Bag</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="luggage">luggage</span>
+<span class="font-label-sm text-label-sm">Checked Bag</span>
+</div>
+</div>
+<button class="text-secondary font-label-sm text-label-sm font-bold flex items-center gap-xs">
+                        Details <span class="material-symbols-outlined text-[16px]" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter py-sm pb-safe bg-surface-container-lowest shadow-[0px_-4px_20px_rgba(26,43,72,0.05)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-lg py-xs transition-transform duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-sm text-label-sm">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-lg py-xs transition-transform duration-150 active:scale-90 hover:text-secondary" href="#">
+<span class="material-symbols-outlined" data-icon="flight_takeoff">flight_takeoff</span>
+<span class="font-label-sm text-label-sm">Trips</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-lg py-xs transition-transform duration-150 active:scale-90 hover:text-secondary" href="#">
+<span class="material-symbols-outlined" data-icon="local_offer">local_offer</span>
+<span class="font-label-sm text-label-sm">Deals</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-lg py-xs transition-transform duration-150 active:scale-90 hover:text-secondary" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<!-- Contextual FAB (Search Filter) -->
+<button class="fixed right-container-margin bottom-24 bg-primary text-on-primary w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-transform active:scale-90 z-40">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+</body></html>
