@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AzureStay | Luxury Seaside Search Results</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#006399",
+                    "inverse-primary": "#94ccff",
+                    "surface-container-highest": "#dee0ff",
+                    "on-background": "#161a32",
+                    "background": "#fbf8ff",
+                    "tertiary-container": "#707273",
+                    "on-surface-variant": "#404850",
+                    "outline": "#707881",
+                    "tertiary": "#57595b",
+                    "on-primary-fixed": "#001d32",
+                    "primary-container": "#0077b6",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#686259",
+                    "on-tertiary-fixed": "#191c1d",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#fbf8ff",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#d5d8f9",
+                    "on-primary-container": "#f3f7ff",
+                    "secondary-fixed": "#ebe1d6",
+                    "surface": "#fbf8ff",
+                    "tertiary-fixed-dim": "#c5c7c8",
+                    "on-secondary-fixed-variant": "#4c463e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#1f1b14",
+                    "secondary": "#645d55",
+                    "outline-variant": "#bfc7d1",
+                    "surface-variant": "#dee0ff",
+                    "on-tertiary-container": "#f7f8f9",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#ececff",
+                    "secondary-fixed-dim": "#cec5ba",
+                    "surface-container-low": "#f4f2ff",
+                    "inverse-on-surface": "#f0efff",
+                    "on-tertiary-fixed-variant": "#454748",
+                    "on-primary-fixed-variant": "#004b74",
+                    "secondary-container": "#e8ded3",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#e1e3e4",
+                    "inverse-surface": "#2b2f48",
+                    "surface-container-high": "#e5e6ff",
+                    "on-primary": "#ffffff",
+                    "primary-fixed": "#cde5ff",
+                    "primary-fixed-dim": "#94ccff",
+                    "primary": "#005d90",
+                    "error": "#ba1a1a",
+                    "on-surface": "#161a32"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "stack-lg": "48px",
+                    "stack-md": "24px",
+                    "stack-sm": "12px",
+                    "margin-desktop": "64px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "label-bold": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "headline-sm": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "label-bold": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filter-shadow {
+            box-shadow: 0 4px 20px 0 rgba(0, 99, 153, 0.05);
+        }
+        .property-card-shadow {
+            box-shadow: 0 4px 20px 0 rgba(0, 99, 153, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .property-card-shadow:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px 0 rgba(0, 99, 153, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md text-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-surface dark:bg-surface-dim shadow-sm">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex items-center justify-between h-20">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-headline-md" data-icon="beach_access">beach_access</span>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim">AzureStay</h1>
+</div>
+<!-- Desktop Nav Links (derived from typical explore context) -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-bold text-label-bold text-primary border-b-2 border-primary pb-1 transition-all duration-200 ease-in-out" href="#">Explore</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary-container transition-colors transition-all duration-200 ease-in-out" href="#">Saved</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary-container transition-colors transition-all duration-200 ease-in-out" href="#">Trips</a>
+</nav>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary text-headline-md" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Filter Bar Section -->
+<section class="bg-surface sticky top-20 z-40 py-stack-sm filter-shadow">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row md:items-center gap-4 bg-secondary-container rounded-full px-6 py-3">
+<div class="flex items-center gap-3 flex-1">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full font-label-bold text-label-bold text-on-secondary-container placeholder:text-on-secondary-container/60" placeholder="Where are you going?" type="text"/>
+</div>
+<div class="h-6 w-[1px] bg-outline-variant hidden md:block"></div>
+<div class="flex items-center gap-3 flex-1">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-bold text-label-bold text-on-secondary-container">June 12 — June 19</span>
+</div>
+<div class="h-6 w-[1px] bg-outline-variant hidden md:block"></div>
+<div class="flex items-center gap-3 flex-1">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="group">group</span>
+<span class="font-label-bold text-label-bold text-on-secondary-container">2 guests</span>
+</div>
+<button class="bg-primary text-on-primary rounded-full px-8 py-2 font-label-bold text-label-bold hover:bg-[#023E8A] transition-colors">
+                    Search
+                </button>
+</div>
+</div>
+</section>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-stack-lg pb-stack-lg">
+<div class="flex items-center justify-between mb-stack-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">32 Stays in Amalfi Coast</h2>
+<div class="hidden md:flex items-center gap-4">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-low rounded-full border border-outline-variant font-label-bold text-label-bold">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+                    Filters
+                </button>
+</div>
+</div>
+<!-- Property Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="property-card-shadow bg-surface-container-lowest rounded-xl overflow-hidden group">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img alt="Luxury Coastal Villa" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A luxurious white-washed Mediterranean villa overlooking the deep turquoise ocean of the Amalfi Coast during the golden hour. The architecture is sleek and modern with large glass windows and an infinity pool that merges with the horizon. The atmosphere is serene and exclusive, captured in high-fidelity photography with soft, warm lighting that emphasizes the coastal luxury lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEnGGejlQx6VJP0LDjddKi6ijBq-E-o8DGQEp8f6ETMg5iibd1vMcrdprOpKdN1iFiEoQRgQu5MV69Hsqb6BqAvFxGtdrnILTT5At_Wzk1VPdPXonI4bglpJVjTWxJtzdVGxKdb9qWxsE_Y8tX2PkAQSMDgFYfC5AE4zDZ6edYaMV4E3SeKEyCa15lcDkbn8Ar7PE2NBYuHKs_WO5RfCd0anHxCBiIWs2Qa5ElZ7-l3cs3VMlQijKk4MetZe67relxCV8wdK1gX44"/>
+<button class="absolute top-4 right-4 p-2 bg-white/20 backdrop-blur-md rounded-full text-white">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="p-stack-md">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm">Azure Serenity Suite</h3>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-bold text-label-bold">4.9</span>
+</div>
+</div>
+<p class="text-on-surface-variant font-body-sm mb-4">Positano, Italy</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-fixed-variant rounded-full text-body-sm font-label-bold">Non-smoking</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-fixed-variant rounded-full text-body-sm font-label-bold">Pet-friendly</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-label-bold text-headline-sm text-primary">$850</span>
+<span class="text-on-surface-variant font-body-sm">/ night</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="property-card-shadow bg-surface-container-lowest rounded-xl overflow-hidden group">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img alt="Modern Beachfront Loft" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="An ultra-modern beachfront loft with floor-to-ceiling glass walls that reveal a private white sand beach and crystal-clear azure waters. The interior features minimalist furniture in sandy neutral tones and natural textures. The midday sun creates bright, crisp reflections on the polished surfaces, evoking a sense of calm, high-end relaxation and coastal sophistication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8ObkrjMJQosRP9u3dnL9qSzMNYrgEkCoDyajoet3464JDx8Am502rtUp_8YJ6FhC9uqFX5yEuEWojdFMvNhgCAj0uOaKV7upUqUWPilK4uxtVkFdg7bZ_9zArh-ipwdnY3lEMJcTd9fpLtmUJ1JOmojBX23dFNjSUDi-e-TNPzzTkaLVEtNspQDJ3VDjuOixTLpQ3TR5bPcpIMNtbKJJmGsSpYsC7AixEBllvdSSveo4g3G60Uhs09GhYt3sBiRG88eKXHLV0JJo"/>
+<button class="absolute top-4 right-4 p-2 bg-white/20 backdrop-blur-md rounded-full text-white">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="p-stack-md">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm">The Glass Horizon</h3>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-bold text-label-bold">4.8</span>
+</div>
+</div>
+<p class="text-on-surface-variant font-body-sm mb-4">Praiano, Italy</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-fixed-variant rounded-full text-body-sm font-label-bold">Beachfront</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-fixed-variant rounded-full text-body-sm font-label-bold">Free Spa</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-label-bold text-headline-sm text-primary">$1,200</span>
+<span class="text-on-surface-variant font-body-sm">/ night</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="property-card-shadow bg-surface-container-lowest rounded-xl overflow-hidden group">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img alt="Cliffside Retreat" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A charming yet luxurious stone cottage perched on a dramatic cliffside overlooking a secluded rocky bay. Cascading bougainvillea in vibrant pink frame the stone archways. The scene is illuminated by the soft, diffused light of a coastal morning, creating a dreamy and romantic atmosphere with deep blue water and pale stone textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-u5PVjLNAkwi8okBqc4yoDj43mjSG4K0W5eUROE4Yt7qGsfvyenib5M3LTdTCdiALfk118P6yV5Uhl_61t7mPPvrhl2Dwd9NqWk9F7iGmlG_BJbuhOiQIRnFFcIB2vF_WrGczIasyADQqbUzZp9E1Yvu0f3CCvdWuDmtHUJrBAUxo8OSdItteglBT94jAA76c2H1oN6rlmrEAp0PhVdDmOHs5cc4MOqCxxO7xirsam6WQ7pgZsk_QFuhOXjPtFlQ48zW14KzdPVE"/>
+<button class="absolute top-4 right-4 p-2 bg-white/20 backdrop-blur-md rounded-full text-white">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="p-stack-md">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm">Cliffhanger Boutique</h3>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-bold text-label-bold">5.0</span>
+</div>
+</div>
+<p class="text-on-surface-variant font-body-sm mb-4">Ravello, Italy</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-fixed-variant rounded-full text-body-sm font-label-bold">Breakfast Inc.</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-fixed-variant rounded-full text-body-sm font-label-bold">Private Deck</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-label-bold text-headline-sm text-primary">$690</span>
+<span class="text-on-surface-variant font-body-sm">/ night</span>
+</div>
+</div>
+</div>
+<!-- Card 4 (Bento Variation for Asymmetry) -->
+<div class="property-card-shadow bg-surface-container-lowest rounded-xl overflow-hidden group sm:col-span-2">
+<div class="flex flex-col md:flex-row h-full">
+<div class="relative w-full md:w-1/2 overflow-hidden aspect-video md:aspect-auto">
+<img alt="Resort Estate" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A sprawling coastal estate with multiple white-washed buildings nestled among lush green gardens and palm trees. A large turquoise pool is at the center, surrounded by elegant wooden deck chairs and white parasols. The lighting is bright and airy, typical of a high-key luxury travel magazine, with a color palette of pristine whites, ocean blues, and natural wood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrX2HUGiw5cRbI6hqAWMfJu72kWFqr-LM_0IOW3UED0WQLtILL-xipmbnWQlt_Vx5VjzaAAHfv02T9JCRECZ_NL8QO0nKu19zKP9eiAQQRs7N_vs62kTmI6O8n1LSxYBPb6Vuu0CZxJH1vhDtfsdIfH3BokOuZ5GMMeHXU9FCWXDVELKf6FqbpK97zrIc38JRrzm4EOnh0t6wI36VOgVW4Te0bCrRxI8xJAF3KZb73sRx_Gep5Dt_XnijE9NYM61He6A8P55WZ4W8"/>
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 rounded-full text-label-bold">Featured Listing</div>
+</div>
+<div class="p-stack-md flex flex-col justify-center flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md">Villa del Mare Estate</h3>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-bold text-label-bold">4.9</span>
+</div>
+</div>
+<p class="text-on-surface-variant font-body-lg mb-4">Amalfi, Italy — Entire 6 Bedroom Estate</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-fixed-variant rounded-full text-body-sm font-label-bold">Concierge Service</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-fixed-variant rounded-full text-body-sm font-label-bold">Chef Available</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-fixed-variant rounded-full text-body-sm font-label-bold">Eco-Friendly</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-label-bold text-headline-md text-primary">$3,400</span>
+<span class="text-on-surface-variant font-body-md">/ night</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="property-card-shadow bg-surface-container-lowest rounded-xl overflow-hidden group">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img alt="Terrace Garden Villa" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A stunning view from a private terrace garden filled with lemon trees and Mediterranean herbs. Below, the colorful village of Positano clings to the cliffs beside the sparkling sea. The lighting is soft evening twilight, with warm glowing lights starting to appear in the village windows, creating an enchanting and sophisticated mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw0_mfy1aBDBnSYOg46ivk2O9_Oz2u1TLcEedaQrSmaFxcpXMNKQnU-TfPwLD3XC0xPE3we4C8GDV42bO0IjiVYBejIJWqnxaCMbVkqMk8LYXnHKFoQ6HRfIblh8MO69ZFebCIadgmKph49OJD5FxA2ZpcNF9ERJPNKR2bG_ACK_tJUF-UMzsXi3sEC6BrVTyriSZlugzDP0ixfJkyWaK44uiQSJ1ayPpj1QL2xT6x1XxQq8I9LJx5hLNC2xliJTknnHfmDWOhgnI"/>
+<button class="absolute top-4 right-4 p-2 bg-white/20 backdrop-blur-md rounded-full text-white">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="p-stack-md">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm">Lemon Grove Haven</h3>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-bold text-label-bold">4.7</span>
+</div>
+</div>
+<p class="text-on-surface-variant font-body-sm mb-4">Minori, Italy</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-fixed-variant rounded-full text-body-sm font-label-bold">Non-smoking</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-fixed-variant rounded-full text-body-sm font-label-bold">Outdoor Kitchen</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-label-bold text-headline-sm text-primary">$420</span>
+<span class="text-on-surface-variant font-body-sm">/ night</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Map Toggle Button -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 z-40 md:bottom-12">
+<button class="flex items-center gap-3 bg-primary text-on-primary px-6 py-3 rounded-full shadow-lg hover:scale-105 active:scale-95 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-label-bold text-label-bold">Show Map</span>
+</button>
+</div>
+<!-- Footer -->
+<footer class="w-full mt-stack-lg bg-secondary-container dark:bg-on-background">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-md flex flex-col md:flex-row justify-between items-center">
+<div class="flex flex-col gap-2 items-center md:items-start mb-stack-sm md:mb-0">
+<h2 class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed">AzureStay</h2>
+<p class="font-body-sm text-body-sm text-on-secondary-container opacity-80">© 2024 AzureStay Luxury Rentals. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-body-sm text-body-sm text-on-secondary-container opacity-80 hover:underline hover:text-primary transition-opacity duration-200" href="#">Explore</a>
+<a class="font-body-sm text-body-sm text-on-secondary-container opacity-80 hover:underline hover:text-primary transition-opacity duration-200" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-secondary-container opacity-80 hover:underline hover:text-primary transition-opacity duration-200" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-secondary-container opacity-80 hover:underline hover:text-primary transition-opacity duration-200" href="#">Support</a>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 md:hidden flex justify-around items-center py-2 px-margin-mobile bg-surface-container-lowest shadow-[0_-4px_20px_0_rgba(0,99,153,0.05)]">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-bold text-[10px]">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-label-bold text-[10px]">Saved</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="luggage">luggage</span>
+<span class="font-label-bold text-[10px]">Trips</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-bold text-[10px]">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Coastal Haven Villa | AzureStay Luxury Rentals</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#006399",
+                    "inverse-primary": "#94ccff",
+                    "surface-container-highest": "#dee0ff",
+                    "on-background": "#161a32",
+                    "background": "#fbf8ff",
+                    "tertiary-container": "#707273",
+                    "on-surface-variant": "#404850",
+                    "outline": "#707881",
+                    "tertiary": "#57595b",
+                    "on-primary-fixed": "#001d32",
+                    "primary-container": "#0077b6",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#686259",
+                    "on-tertiary-fixed": "#191c1d",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#fbf8ff",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#d5d8f9",
+                    "on-primary-container": "#f3f7ff",
+                    "secondary-fixed": "#ebe1d6",
+                    "surface": "#fbf8ff",
+                    "tertiary-fixed-dim": "#c5c7c8",
+                    "on-secondary-fixed-variant": "#4c463e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#1f1b14",
+                    "secondary": "#645d55",
+                    "outline-variant": "#bfc7d1",
+                    "surface-variant": "#dee0ff",
+                    "on-tertiary-container": "#f7f8f9",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#ececff",
+                    "secondary-fixed-dim": "#cec5ba",
+                    "surface-container-low": "#f4f2ff",
+                    "inverse-on-surface": "#f0efff",
+                    "on-tertiary-fixed-variant": "#454748",
+                    "on-primary-fixed-variant": "#004b74",
+                    "secondary-container": "#e8ded3",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#e1e3e4",
+                    "inverse-surface": "#2b2f48",
+                    "surface-container-high": "#e5e6ff",
+                    "on-primary": "#ffffff",
+                    "primary-fixed": "#cde5ff",
+                    "primary-fixed-dim": "#94ccff",
+                    "primary": "#005d90",
+                    "error": "#ba1a1a",
+                    "on-surface": "#161a32"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "stack-lg": "48px",
+                    "stack-md": "24px",
+                    "stack-sm": "12px",
+                    "margin-desktop": "64px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "label-bold": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "headline-sm": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "label-bold": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-surface dark:bg-surface-dim shadow-sm">
+<div class="max-w-container-max mx-auto px-margin-desktop flex items-center justify-between h-20">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="beach_access">beach_access</span>
+<span class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim">AzureStay</span>
+</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="font-label-bold text-label-bold text-primary border-b-2 border-primary pb-1 hover:text-primary-container transition-colors" href="#">Explore</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary-container transition-colors" href="#">Saved</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary-container transition-colors" href="#">Trips</a>
+</nav>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary text-[32px]" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-md">
+<!-- Property Gallery - Asymmetric Bento Layout -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-4 md:h-[600px]">
+<div class="md:col-span-2 md:row-span-2 overflow-hidden rounded-xl shadow-lg group relative cursor-pointer">
+<img alt="Main View" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A sprawling white luxury villa with a massive infinity pool overlooking a shimmering azure ocean at sunset. The architecture is modern coastal with floor-to-ceiling glass walls reflecting the golden light. Lush tropical greenery surrounds the perimeter, creating a private oasis. The atmosphere is serene, high-end, and peaceful with soft warm lighting illuminating the outdoor lounge areas." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrgBtH_SRwTHEqO_IqYHBhyTN4Q4BGXwfTcIWdz1kNpvc8Lwodm0n2_cxMTTeojn0kShhlkkS0R73AOwJ5Ewyi1s6ZPH-TfFH72WgWjkgI1kj9EreuKVLrWUfldAm1VyDEuxL793PO7HedMFh1ilb300w3hwPp_ZbJsCOPiS6ufoBgN1nLvoAjF5i8IuNPBKm4B3qMRk5cAr3yOOctFpp_8ELhEIrEdtDmUe3CaowYvuK6tg9ZQ2IZqHJXLM0Lw5EoytOKdIOC7CY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="overflow-hidden rounded-xl shadow-lg group relative cursor-pointer">
+<img alt="Interior" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A luxurious coastal living room featuring sandy neutral furniture and high-end natural wood accents. Large windows offer a panoramic view of the coastline, while soft ambient light creates a warm and inviting Mediterranean aesthetic. Minimalist decor and plush white textiles reinforce a sense of high-end relaxation and luxury travel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc_hDLHzQKyiLB9i0kXSsQglcKn3As_AYmkNMecPAMDiEU6Wz4TdnuWKuycNkotswj3XfqvkL2gwBAwtH6GVd4n_5BMUADRQUnFyncq8_56yHE5DBqM7Vo8G-U_N4KguIdtlddpEOe53NudjFo3JzcPFKxyJBOux91phnU97nRZrD5jLbXw5neHHnKAzLT9UPFfs65syg0P89s4N9L_bhqSfxwNee1fyRfP1FGsilnD-wh4Q52B0iiv6PmdUKEBAg9sZ0TS4u48H8"/>
+</div>
+<div class="overflow-hidden rounded-xl shadow-lg group relative cursor-pointer">
+<img alt="Bedroom" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="An elegant master bedroom with a king-sized bed facing a private balcony that looks out onto the sea. The room is styled in light blues and crisp whites, capturing the Modern Coastal brand identity. Soft linen curtains catch the sea breeze, and high-key lighting makes the space feel airy and spacious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5UiJobuPPVwsGlVmyaXnSXdeUzip98W2f_EG7SsRsQOQLFpqj_jIaLYoeex_5GOdrC03j7RnSldlWVNL1KMkm4z6uuU7vOjAfWh0IJ4ZyaxPpI22ZuQ5xYHEyu1mPcBnjxRRcbaNvG1KX5UUF-JskHvPQu57rMIiXAKHx6DhOkJ_CBulXmDOhHphbs9_aVbUs-AeO-9CsduL62AXcvf-tAQ2Ioy5c0yFj8m3-lMT7K1pQn66gzJ0Mow5ezlT0nGljKJXc_hSXt_Y"/>
+</div>
+<div class="md:col-span-2 overflow-hidden rounded-xl shadow-lg group relative cursor-pointer">
+<img alt="Dining" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A high-end outdoor dining area on a paved sandy neutral patio overlooking the ocean. A long teak table is set for a luxury dinner under a pergola draped in white bougainvillea. The mood is sophisticated and romantic, with a soft glow from the setting sun and subtle garden lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHhhbThyTjJV6P-rjVdFjK51eB-u1lr_iVNaCsiLG7X9CF94spTD3RyvY4eXZsdkBeaRAI_e4hzVyk8xdU3jOP9lUH735qXY25YclD182KiBu_gjLshkNbBZW7UqWpBZhJziVncocPr-P5SFJzZuhrTCFwb2ggyljPV9_fk2ombhulflm_Y8eYQugJY8sVQ0qfIuz01Rw6Dv0JwnhekAs5kQ_LJo-4Q-GozrMqoII24IvMmBeNiAq3pZ5G59YSQGN7MsrmN3nsbDU"/>
+</div>
+</section>
+<!-- Content Grid -->
+<div class="mt-stack-lg grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Side: Property Info -->
+<div class="md:col-span-8 space-y-stack-lg">
+<!-- Headline & Key Info -->
+<header>
+<h1 class="font-display-lg text-display-lg text-on-background mb-unit">Coastal Haven Villa</h1>
+<div class="flex items-center gap-4 text-on-surface-variant font-body-md">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="star" data-weight="fill">star</span>
+                            4.98 · 124 Reviews
+                        </span>
+<span>·</span>
+<span>Malibu, California, United States</span>
+</div>
+</header>
+<!-- Icon Quick Stats -->
+<div class="flex flex-wrap gap-stack-md py-stack-sm border-y border-outline-variant/30">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="bed">bed</span>
+</div>
+<div>
+<p class="font-label-bold text-label-bold">4 Bedrooms</p>
+<p class="text-body-sm text-on-surface-variant">King &amp; Queen beds</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="bathtub">bathtub</span>
+</div>
+<div>
+<p class="font-label-bold text-label-bold">3.5 Baths</p>
+<p class="text-body-sm text-on-surface-variant">Luxury fixtures</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="groups">groups</span>
+</div>
+<div>
+<p class="font-label-bold text-label-bold">8 Guests</p>
+<p class="text-body-sm text-on-surface-variant">Perfect for families</p>
+</div>
+</div>
+</div>
+<!-- About this home -->
+<section>
+<h2 class="font-headline-sm text-headline-sm mb-stack-sm">About this home</h2>
+<div class="space-y-4 text-body-lg text-on-surface-variant max-w-2xl">
+<p>Perched gracefully above the rugged cliffs of Malibu, the Coastal Haven Villa is a sanctuary of refined elegance and tranquility. Designed with a seamless indoor-outdoor flow, this architectural masterpiece invites the Pacific breeze into every corner.</p>
+<p>Experience the pinnacle of luxury with a private infinity pool that melts into the horizon, a professional chef’s kitchen, and expansive terraces designed for sunset cocktails. Whether you're seeking a quiet retreat or a base for coastal exploration, this villa provides the "air" and space needed to truly unwind.</p>
+</div>
+</section>
+<!-- Amenities -->
+<section>
+<h2 class="font-headline-sm text-headline-sm mb-stack-md">What this place offers</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-y-stack-sm gap-x-8">
+<div class="flex items-center gap-4 py-2">
+<span class="material-symbols-outlined text-outline" data-icon="waves">waves</span>
+<span class="text-body-md">Private infinity pool</span>
+</div>
+<div class="flex items-center gap-4 py-2">
+<span class="material-symbols-outlined text-outline" data-icon="wifi">wifi</span>
+<span class="text-body-md">High-speed Fiber WiFi</span>
+</div>
+<div class="flex items-center gap-4 py-2">
+<span class="material-symbols-outlined text-outline" data-icon="cooking">cooking</span>
+<span class="text-body-md">Gourmet kitchen</span>
+</div>
+<div class="flex items-center gap-4 py-2">
+<span class="material-symbols-outlined text-outline" data-icon="local_parking">local_parking</span>
+<span class="text-body-md">Free valet parking</span>
+</div>
+<div class="flex items-center gap-4 py-2">
+<span class="material-symbols-outlined text-outline" data-icon="ac_unit">ac_unit</span>
+<span class="text-body-md">Central air conditioning</span>
+</div>
+<div class="flex items-center gap-4 py-2">
+<span class="material-symbols-outlined text-outline" data-icon="tv">tv</span>
+<span class="text-body-md">75" 4K Smart TV</span>
+</div>
+</div>
+<button class="mt-stack-md border-2 border-primary text-primary font-label-bold px-8 py-3 rounded-lg hover:bg-primary/5 transition-colors">Show all 45 amenities</button>
+</section>
+<!-- House Rules -->
+<section class="p-stack-md bg-secondary-container/30 rounded-2xl border border-secondary-container">
+<h2 class="font-headline-sm text-headline-sm mb-stack-sm">House rules</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-secondary-fixed-variant" data-icon="schedule">schedule</span>
+<span class="text-body-md">Check-in: After 3:00 PM</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-secondary-fixed-variant" data-icon="schedule">schedule</span>
+<span class="text-body-md">Checkout: 11:00 AM</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-secondary-fixed-variant" data-icon="smoke_free">smoke_free</span>
+<span class="text-body-md">No smoking</span>
+</li>
+</ul>
+<div class="space-y-3 border-l md:border-l-0 md:pl-0 pl-4 border-outline-variant/50">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-error" data-icon="security">security</span>
+<span class="font-label-bold text-label-bold">Security Deposit</span>
+</div>
+<p class="text-body-md text-on-surface-variant">A fully refundable <strong class="text-on-background">$500 security deposit</strong> is required upon booking to cover any potential damages. This hold is released 48 hours after checkout.</p>
+</div>
+</div>
+</section>
+<!-- Map -->
+<section>
+<h2 class="font-headline-sm text-headline-sm mb-stack-sm">Where you'll be</h2>
+<div class="w-full h-80 rounded-2xl overflow-hidden shadow-inner grayscale contrast-125 brightness-110">
+<img alt="Property Location Map" class="w-full h-full object-cover" data-location="Malibu, California" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMj6IJ53OzHRrHplZMAtgUp32jGGxeRLeN8886V9XQjC1h6TsnG_QZljEb32mNDMFW2Zu_2U3ZNQ0jurhKtjRRxq-BsCs0kfyfAAijTlJmYZ3-hS94QA9AfZX19H2lGSMgJMD7-D783I-6_F_AjdfVQhAO7_lMpMqYvQObDAb3pDMP6IwLnDQ3s9UqMdVyiq9he-d30KbgrwgaqR7AUSXTQGLjd3tvCsDUWs9mq42VKAHN1X1fdKGyoUqXumaS_iEuahGW_1IFNNU"/>
+</div>
+<p class="mt-4 font-label-bold text-label-bold">Malibu, California</p>
+<p class="text-body-md text-on-surface-variant">The villa is located in a prestigious gated community, offering total privacy while being only a 10-minute drive from local artisanal markets and boutique dining.</p>
+</section>
+</div>
+<!-- Right Side: Booking Bar (Desktop Sidebar) -->
+<aside class="hidden md:block md:col-span-4 h-fit sticky top-28">
+<div class="bg-surface-container-lowest rounded-2xl shadow-[0_4px_20px_0_rgba(0,99,153,0.05)] border border-outline-variant/30 p-8">
+<div class="flex justify-between items-baseline mb-stack-md">
+<div>
+<span class="font-headline-md text-headline-md text-on-background">$1,250</span>
+<span class="text-on-surface-variant"> / night</span>
+</div>
+</div>
+<div class="space-y-4 mb-stack-md">
+<div class="grid grid-cols-2 border border-outline-variant rounded-xl overflow-hidden">
+<div class="p-3 border-r border-outline-variant">
+<p class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Check-In</p>
+<p class="text-body-md">Oct 24, 2024</p>
+</div>
+<div class="p-3">
+<p class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Checkout</p>
+<p class="text-body-md">Oct 29, 2024</p>
+</div>
+<div class="col-span-2 p-3 border-t border-outline-variant">
+<p class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Guests</p>
+<p class="text-body-md">2 guests</p>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-bold py-4 rounded-xl hover:bg-[#023E8A] transition-all transform active:scale-[0.98] mb-6 shadow-md">Book Now</button>
+<p class="text-center text-body-sm text-on-surface-variant mb-6">You won't be charged yet</p>
+<div class="space-y-3 border-b border-outline-variant/30 pb-4 mb-4">
+<div class="flex justify-between text-body-md">
+<span class="underline text-on-surface-variant">$1,250 x 5 nights</span>
+<span>$6,250</span>
+</div>
+<div class="flex justify-between text-body-md">
+<span class="underline text-on-surface-variant">Cleaning fee</span>
+<span>$250</span>
+</div>
+<div class="flex justify-between text-body-md">
+<span class="underline text-on-surface-variant">Service fee</span>
+<span>$845</span>
+</div>
+</div>
+<div class="flex justify-between font-bold text-body-lg">
+<span>Total before taxes</span>
+<span>$7,345</span>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Mobile Sticky Booking Bar -->
+<div class="md:hidden fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-outline-variant/30 px-margin-mobile py-4 z-50 flex items-center justify-between shadow-lg">
+<div>
+<div class="flex items-center gap-1">
+<span class="font-bold text-lg">$1,250</span>
+<span class="text-on-surface-variant text-sm">/ night</span>
+</div>
+<p class="text-[12px] text-primary font-bold underline">Oct 24 – 29</p>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-label-bold active:scale-95 transition-transform">Reserve</button>
+</div>
+<!-- Footer -->
+<footer class="w-full mt-stack-lg bg-secondary-container dark:bg-on-background">
+<div class="max-w-container-max mx-auto px-margin-desktop py-stack-md flex flex-col md:flex-row justify-between items-center gap-stack-md">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed">AzureStay</span>
+<p class="font-body-sm text-body-sm text-on-secondary-container opacity-80">© 2024 AzureStay Luxury Rentals. All rights reserved.</p>
+</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-body-sm text-body-sm text-on-secondary-container opacity-80 hover:underline hover:text-primary transition-opacity duration-200" href="#">Explore</a>
+<a class="font-body-sm text-body-sm text-on-secondary-container opacity-80 hover:underline hover:text-primary transition-opacity duration-200" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-secondary-container opacity-80 hover:underline hover:text-primary transition-opacity duration-200" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-secondary-container opacity-80 hover:underline hover:text-primary transition-opacity duration-200" href="#">Support</a>
+</nav>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      background-color: #fbf8ff;
+      color: #161a32;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "surface-tint": "#006399",
+                  "inverse-primary": "#94ccff",
+                  "surface-container-highest": "#dee0ff",
+                  "on-background": "#161a32",
+                  "background": "#fbf8ff",
+                  "tertiary-container": "#707273",
+                  "on-surface-variant": "#404850",
+                  "outline": "#707881",
+                  "tertiary": "#57595b",
+                  "on-primary-fixed": "#001d32",
+                  "primary-container": "#0077b6",
+                  "error-container": "#ffdad6",
+                  "on-secondary-container": "#686259",
+                  "on-tertiary-fixed": "#191c1d",
+                  "on-error": "#ffffff",
+                  "surface-bright": "#fbf8ff",
+                  "on-secondary": "#ffffff",
+                  "surface-dim": "#d5d8f9",
+                  "on-primary-container": "#f3f7ff",
+                  "secondary-fixed": "#ebe1d6",
+                  "surface": "#fbf8ff",
+                  "tertiary-fixed-dim": "#c5c7c8",
+                  "on-secondary-fixed-variant": "#4c463e",
+                  "surface-container-lowest": "#ffffff",
+                  "on-secondary-fixed": "#1f1b14",
+                  "secondary": "#645d55",
+                  "outline-variant": "#bfc7d1",
+                  "surface-variant": "#dee0ff",
+                  "on-tertiary-container": "#f7f8f9",
+                  "on-error-container": "#93000a",
+                  "surface-container": "#ececff",
+                  "secondary-fixed-dim": "#cec5ba",
+                  "surface-container-low": "#f4f2ff",
+                  "inverse-on-surface": "#f0efff",
+                  "on-tertiary-fixed-variant": "#454748",
+                  "on-primary-fixed-variant": "#004b74",
+                  "secondary-container": "#e8ded3",
+                  "on-tertiary": "#ffffff",
+                  "tertiary-fixed": "#e1e3e4",
+                  "inverse-surface": "#2b2f48",
+                  "surface-container-high": "#e5e6ff",
+                  "on-primary": "#ffffff",
+                  "primary-fixed": "#cde5ff",
+                  "primary-fixed-dim": "#94ccff",
+                  "primary": "#005d90",
+                  "error": "#ba1a1a",
+                  "on-surface": "#161a32"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "unit": "8px",
+                  "margin-mobile": "20px",
+                  "gutter": "24px",
+                  "stack-lg": "48px",
+                  "stack-md": "24px",
+                  "stack-sm": "12px",
+                  "margin-desktop": "64px",
+                  "container-max": "1280px"
+          },
+          "fontFamily": {
+                  "label-bold": ["Inter"],
+                  "body-lg": ["Inter"],
+                  "display-lg-mobile": ["Playfair Display"],
+                  "headline-sm": ["Playfair Display"],
+                  "display-lg": ["Playfair Display"],
+                  "body-md": ["Inter"],
+                  "headline-md": ["Playfair Display"],
+                  "body-sm": ["Inter"]
+          },
+          "fontSize": {
+                  "label-bold": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                  "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                  "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "700"}],
+                  "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                  "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                  "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                  "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface dark:bg-surface-dim shadow-sm z-50">
+<div class="max-w-container-max mx-auto px-margin-desktop flex items-center justify-between h-20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="beach_access">beach_access</span>
+<span class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim">AzureStay</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-bold text-label-bold text-primary border-b-2 border-primary pb-1 transition-all duration-200 ease-in-out" href="#">Explore</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary-container transition-colors transition-all duration-200 ease-in-out" href="#">Collections</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary-container transition-colors transition-all duration-200 ease-in-out" href="#">Concierge</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary dark:text-inverse-primary" data-icon="account_circle">account_circle</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[707px] flex flex-col justify-center items-center px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="absolute inset-0 -z-10">
+<img alt="Luxury Beachfront Villa" class="w-full h-full object-cover" data-alt="A wide-angle landscape shot of a luxury modern beachfront villa with large floor-to-ceiling windows overlooking a crystal clear turquoise ocean at sunset. The lighting is golden and warm, casting long shadows across the pristine white sand. The atmosphere is serene, high-end, and extremely tranquil, reflecting a modern coastal luxury lifestyle with soft ocean blues and sandy neutrals." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6-EsRyLyqLXFjSNf4qntwtMnBn0dDoYeymnyC6L50NQcGi1_Jmf0QBBnrapng0pcQdkVGoLqGIkvGySvE0PUc-xjGdzMYi5_RFcqzaS5ldIMVXEOb9YLG7ZNMH2NGSWtcJaC9EqF3EanhMUobnU891SyH3d-ZTGSDGY9d_91J3JOsJRB7TaJd1OOp1cBqMyt5JcZm1-Je6z23IR6g0Jn2a9Ym59MxGxZwK-IJt5XCC4X1I5p5att1rqi2uOM7XkxE4Tv6w49i2wY"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/20 to-surface/80"></div>
+</div>
+<div class="max-w-3xl text-center mb-stack-lg">
+<h1 class="font-display-lg text-display-lg text-on-background mb-stack-sm md:text-[64px]">Sanctuary Awaits</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Handpicked luxury retreats for the modern traveler seeking serenity and style.</p>
+</div>
+<!-- Floating Search Bar -->
+<div class="w-full max-w-container-max bg-surface-container-lowest rounded-full shadow-lg p-2 md:p-3 flex flex-col md:flex-row items-stretch md:items-center gap-2">
+<div class="flex-1 px-6 py-2 border-r border-outline-variant flex flex-col justify-center">
+<span class="text-[10px] font-bold uppercase text-primary tracking-widest mb-1">Location</span>
+<input class="bg-transparent border-none p-0 focus:ring-0 placeholder:text-outline text-on-surface font-body-md w-full" placeholder="Where to next?" type="text"/>
+</div>
+<div class="flex-1 px-6 py-2 border-r border-outline-variant flex flex-col justify-center">
+<span class="text-[10px] font-bold uppercase text-primary tracking-widest mb-1">Stay</span>
+<input class="bg-transparent border-none p-0 focus:ring-0 placeholder:text-outline text-on-surface font-body-md w-full" placeholder="Add dates" type="text"/>
+</div>
+<div class="flex-1 px-6 py-2 flex flex-col justify-center">
+<span class="text-[10px] font-bold uppercase text-primary tracking-widest mb-1">Guests</span>
+<input class="bg-transparent border-none p-0 focus:ring-0 placeholder:text-outline text-on-surface font-body-md w-full" placeholder="Add guests" type="text"/>
+</div>
+<button class="bg-primary text-on-primary rounded-full px-8 py-4 flex items-center justify-center gap-2 hover:bg-primary-container transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-bold text-label-bold">Search</span>
+</button>
+</div>
+</section>
+<!-- Featured Collections (Bento Grid) -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-stack-lg">
+<div class="flex justify-between items-end mb-stack-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-background">Featured Collections</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Curated stays tailored to your lifestyle.</p>
+</div>
+<button class="text-primary font-label-bold flex items-center gap-1 hover:underline">
+          View All <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+<!-- Beachfront (Big) -->
+<div class="md:col-span-8 group relative rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all">
+<img alt="Beachfront Collection" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A luxurious minimalist beachfront infinity pool at dusk. The water is perfectly still, reflecting a deep purple and orange sky. In the background, modern white architectural lines of a coastal villa frame the view. The scene is lit by soft, warm architectural spotlights. The overall vibe is high-end, calm, and exclusive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCDJq9rVjQB7HR8_hZlBfKSaNh1jHNUZjq5ogjoO3Os3EtJOBkMkZPqBMrg7IFhMsTV6bPY9tdPjq-xw8Xfr5k0Z4AXG13ASgZncyJctuVPKhpYdJ96aQb83lOkeRK5hBPXgHJm_gzAH4_serArlRoxZ2Wtr3jvCwG1iW4sbj-UQqSkmgarfD93b4bMWahgYCBr9TWx4UEUrVcX8Dq9mP_nA4VSKLDF0WDxf0fiX9DFEoUVKaiiO5pWk3Xk5QPs-Mc_MQx4qgX8hM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<h3 class="font-headline-sm text-headline-sm text-white mb-2">Beachfront Sanctuary</h3>
+<p class="font-body-md text-white/90">Waking up to the rhythm of the tide.</p>
+</div>
+</div>
+<!-- Tiny Homes -->
+<div class="md:col-span-4 group relative rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all">
+<img alt="Tiny Homes Collection" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A modern tiny home with a geometric design and large windows nestled in a misty, lush forest clearing. The house is made of light wood and black metal, appearing sleek and contemporary. Soft morning sunlight filters through the trees, creating a moody and atmospheric setting. The scene evokes a feeling of peaceful isolation and luxury architectural design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPCfUIJwUOZF_BotrfxW6ACSct8TP4cLMIgrhl16ZYwcuHDeRFxvXpAl06_5dNIVS6Qprbq06Rcodu1Y98GXWtlYzqmeyMzMTEvrAMthNPGdpZfwYV-LfwKetrwuak00Ss80MJ1hqVmaAmt4XRDCn0dCSnenD3fsN5mhq9N45XI833ZTgubH-SMrbrs6dSEAN7K-hkciEAvPTBlpWHkhzusn0--84PcaiTJSGFR6_6X4Lm8TGDifDCqdhSRTw5JPN8cF-Hje41t40"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<h3 class="font-headline-sm text-headline-sm text-white mb-2">Tiny Living</h3>
+<p class="font-body-md text-white/90">Minimalist design, maximum comfort.</p>
+</div>
+</div>
+<!-- Cabins -->
+<div class="md:col-span-4 group relative rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all">
+<img alt="Cabins Collection" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="An upscale A-frame cabin built with dark cedar wood and a large glass facade, situated on a snow-covered mountain slope at twilight. Inside, a warm orange glow from a fireplace is visible, contrasting with the cool blue tones of the snowy exterior. The aesthetic is cozy yet high-end, focusing on mountain luxury and premium winter retreats." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsGRQZJJQv7LO8DD1Od37T4WldyPl2xLTZlvfZf4GT0dLHlQKMNc6s2JEZJDp5QUm_6lDsIULF12bGnk_BsSinmhAoMOs1IFFAeaArFBd5LwZhJVyZv5pxkmIh8lQdHLXCIUHeQiVV7-ZQ0UKeS7EeVXriX_JgnrH41cux33J19euUNEecjFrN7a2TAHZeklH4RNdcEewIw1LRdqfWH0QSuVZKv7A1TNCpwhEqzT2cDRnK6FlzqgP28oa3EGjePG6oODXMTSzGCoc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<h3 class="font-headline-sm text-headline-sm text-white mb-2">Modern Cabins</h3>
+<p class="font-body-md text-white/90">Escape to the high country.</p>
+</div>
+</div>
+<!-- Private Islands -->
+<div class="md:col-span-8 group relative rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all">
+<img alt="Private Islands Collection" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="An aerial view of an ultra-luxurious private island estate surrounded by varying shades of turquoise and deep sapphire ocean water. A wooden boardwalk stretches out to a series of overwater bungalows with thatched roofs and modern interiors. The lighting is bright midday sun, highlighting the clarity of the water and the vibrant tropical greenery of the island." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7aUMxKTuP6rd0So2gbiTCUnASK1soy66KOdAXJDSffqbbP91Kjcl4wMd404w-MiR1xDkBrQIYcDw5hcnpFrJTLfFSua83S6L30KXWQAjDaMA-QzP4SDKiYo8v0HQnJ130Yycs46es7HIqTVmcW455jn00z0MhnHClNhHal8Y-EIMOQ2B9yVGDo0mR-CSKWsZOkYTFZz1uE7ncTzYR9zYnfYoPi5qM7yatfLIctzrXZuE-NXPJl523l746mQTse0QXmshRZB_Z0TA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<h3 class="font-headline-sm text-headline-sm text-white mb-2">Private Escapes</h3>
+<p class="font-body-md text-white/90">The ultimate in secluded luxury.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Guest Testimonials -->
+<section class="bg-secondary-container mt-stack-lg py-stack-lg">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-stack-md">
+<h2 class="font-headline-md text-headline-md text-on-secondary-container">Guest Experiences</h2>
+<p class="font-body-md text-on-secondary-container opacity-80">Reflections from our distinguished travelers.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/20">
+<div class="flex text-surface-tint mb-4">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-on-surface mb-6 italic">"AzureStay transformed our perception of luxury. The attention to detail in our Amalfi villa was beyond anything we've experienced. Truly a modern coastal dream."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="Guest" data-alt="A professional headshot of a refined man in his 40s wearing a light linen shirt, standing outdoors with a soft-focus garden background. He looks relaxed and content. The lighting is bright and airy, fitting the modern luxury coastal aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnVGvObHgFuuqqdLnDO7ma--EJek5rxC8jT6AhDqRm5aYftEMGGgHnQ_-3kO7qj6V9fprGE7nZhy5au_YxcCKqCoisrS1Dn58gt7V-AtxyT_bjY91MypeQeFL07wc3OgN9sztjfO9Ifju-evI2yrS5ybypa8bxGTVUN0RbpkRtdugyhkKL1AUaZrojhVMSb5cmGMtj7X2nMfZyruZ9drlPUrrWf9pcYQMBoxfotDKIE80p-gzlkxPl8uTqWjdnVhPJYOczd3IET2w"/>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface">Julian V.</h4>
+<p class="text-[12px] text-on-surface-variant">Stayed in Positano</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/20">
+<div class="flex text-surface-tint mb-4">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-on-surface mb-6 italic">"The search process was so calming, much like the vacation itself. The curation is impeccable—no endless scrolling through subpar options."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="Guest" data-alt="A professional headshot of an elegant woman in her 30s with a warm smile, wearing a white silk blouse. The background is a soft neutral blurred interior. The lighting is flattering and soft, reflecting a high-end luxury brand persona." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK9fAvm8I8_jVVPkN99u6kC6nOHAbV1VK53zFLjlZp_Bo_D4204KbdQBxfr9zpdGOhoB1g7W4GQvx0n1E6pCu0RGXrOT36WWSbXNlC35ZuzIgz-FCb-uv-QTYoLYYwZHTPK5CmjQYCqn9qriTO7X9yYr7v6KD8zORaPDsNg7VX-M9b480Db0XCc-DuS9HNQ2Lj94GZCVGG9xqzteF5cO_iMeY9kpsh3BdjwNszwc-qYEFYDM9WwLFQy0TxOr7njsfqgi8KXdja__w"/>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface">Sophia L.</h4>
+<p class="text-[12px] text-on-surface-variant">Stayed in Santorini</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/20">
+<div class="flex text-surface-tint mb-4">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-on-surface mb-6 italic">"A seamless experience from booking to concierge services. AzureStay is our new standard for family travel. The beachfront villa was flawless."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="Guest" data-alt="A professional headshot of a stylish man in his late 30s, looking towards the camera with a subtle, confident smile. He is wearing a dark polo shirt against a brightly lit coastal balcony background. The aesthetic is modern, clean, and luxurious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtsnUeekmLzNiCj-2M02rL45q0d0McMZO7OmiM7IBf23IKmb7BKzLXw7emTmYVNcl-vV2DTtjAdLR4TbsNTbpfotvfbzPT0hpLHysa_-AT80_BYV7iAzlrZzwnAe87_pHiskrcxpW7JHR-MPQIuWpQrlFzYirWDL1YxDy_Z0e7-FlFqRrv3XkcCaxWNCL95NsH4hWuOA3xA0BUYE-BoqxmlFbsdu0iT4uXrv5b05OXM0z-8z9_dtTA5zwuDMTWVoJHvtuyfyy_iss"/>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface">Marcus D.</h4>
+<p class="text-[12px] text-on-surface-variant">Stayed in Maldives</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop my-stack-lg">
+<div class="bg-primary rounded-2xl p-12 text-center text-on-primary relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<img alt="Ocean Pattern" class="w-full h-full object-cover" data-alt="A textured background of gentle turquoise sea waves with soft white foam under bright sunlight. The image is used as a subtle overlay to add movement and nature-inspired depth to a call-to-action section." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfbo7qB2fBzH-79kjeSQ4jgbSM4dqGNmuZnF11TyrnAKxfwJbaDEaAGzMApRvlvacY8zDLP0X9zO_pxWUXfMinWX9Q7Lzy1HxBeC_TkUzogZ3YtaiPTKkTlREM3MIwlW-TgPmCRd9kZVCnzsniFgpVzjhSeF6ejnm_XXsr0sSv0sNhUj4S_odfdiW3Y6xR7Jb1IFYehx_z2YzCl2XHEwTEB0irfUAsc4INU-qloNG-0xuhJw8tre2UkMPpVmY_CBZfQTmaArFTPTI"/>
+</div>
+<div class="relative z-10">
+<h2 class="font-display-lg text-display-lg mb-stack-sm">Ready to Discover Your Next Sanctuary?</h2>
+<p class="font-body-lg text-body-lg mb-stack-md opacity-90 max-w-2xl mx-auto">Join our exclusive circle of travelers and get access to private listings and elite concierge benefits.</p>
+<div class="flex flex-col md:flex-row justify-center gap-4">
+<button class="bg-surface-container-lowest text-primary px-8 py-4 rounded-full font-label-bold hover:bg-white transition-all">Sign Up for Access</button>
+<button class="border-2 border-white text-white px-8 py-4 rounded-full font-label-bold hover:bg-white/10 transition-all">Explore Destinations</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-stack-lg bg-secondary-container dark:bg-on-background">
+<div class="max-w-container-max mx-auto px-margin-desktop py-stack-md flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<span class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed">AzureStay</span>
+</div>
+<div class="flex flex-wrap justify-center gap-8 mb-6 md:mb-0">
+<a class="font-body-sm text-body-sm text-on-secondary-container opacity-80 hover:underline hover:text-primary transition-opacity duration-200" href="#">Explore</a>
+<a class="font-body-sm text-body-sm text-on-secondary-container opacity-80 hover:underline hover:text-primary transition-opacity duration-200" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-secondary-container opacity-80 hover:underline hover:text-primary transition-opacity duration-200" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-secondary-container opacity-80 hover:underline hover:text-primary transition-opacity duration-200" href="#">Support</a>
+</div>
+<p class="font-body-sm text-body-sm text-on-secondary-container opacity-80">© 2024 AzureStay Luxury Rentals. All rights reserved.</p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 md:hidden shadow-[0_-4px_20px_0_rgba(0,99,153,0.05)] bg-surface-container-lowest">
+<div class="flex justify-around items-center py-2 px-margin-mobile">
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-bold text-[10px]">Explore</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-label-bold text-[10px]">Saved</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="luggage">luggage</span>
+<span class="font-label-bold text-[10px]">Trips</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-bold text-[10px]">Profile</span>
+</div>
+</div>
+</nav>
+</body></html>
