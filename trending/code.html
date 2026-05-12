@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Space+Grotesk:wght@600&amp;family=Hanken+Grotesk:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-dim": "#0b1326",
+            "on-secondary": "#00363e",
+            "on-tertiary-container": "#560038",
+            "inverse-primary": "#842bd2",
+            "tertiary-fixed": "#ffd8e7",
+            "secondary-fixed-dim": "#2fd9f4",
+            "surface-container-highest": "#2d3449",
+            "on-error-container": "#ffdad6",
+            "primary-fixed-dim": "#ddb7ff",
+            "primary-container": "#b76dff",
+            "primary": "#ddb7ff",
+            "primary-fixed": "#f0dbff",
+            "on-secondary-container": "#00515d",
+            "on-secondary-fixed": "#001f25",
+            "on-surface": "#dae2fd",
+            "on-primary-container": "#400071",
+            "on-primary-fixed": "#2c0051",
+            "outline": "#988d9f",
+            "secondary-fixed": "#a2eeff",
+            "secondary": "#5de6ff",
+            "surface-bright": "#31394d",
+            "surface-container": "#171f33",
+            "on-background": "#dae2fd",
+            "surface-tint": "#ddb7ff",
+            "surface-container-lowest": "#060e20",
+            "surface": "#0b1326",
+            "on-secondary-fixed-variant": "#004e5a",
+            "error-container": "#93000a",
+            "surface-container-high": "#222a3d",
+            "error": "#ffb4ab",
+            "surface-variant": "#2d3449",
+            "outline-variant": "#4d4354",
+            "on-primary-fixed-variant": "#6900b3",
+            "tertiary-fixed-dim": "#ffafd3",
+            "surface-container-low": "#131b2e",
+            "inverse-on-surface": "#283044",
+            "inverse-surface": "#dae2fd",
+            "tertiary-container": "#e364a7",
+            "on-primary": "#490080",
+            "on-tertiary-fixed": "#3d0026",
+            "on-surface-variant": "#cfc2d6",
+            "on-tertiary": "#620040",
+            "background": "#0b1326",
+            "secondary-container": "#00cbe6",
+            "on-error": "#690005",
+            "tertiary": "#ffafd3",
+            "on-tertiary-fixed-variant": "#85145a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "stack-base": "12px",
+            "stack-tight": "4px",
+            "container-padding-desktop": "32px",
+            "gutter": "12px",
+            "unit": "4px",
+            "container-padding-mobile": "16px",
+            "stack-large": "24px"
+          },
+          "fontFamily": {
+            "headline-md": ["Sora"],
+            "label-caps": ["Space Grotesk"],
+            "headline-lg": ["Sora"],
+            "artist-name": ["Hanken Grotesk"],
+            "track-title": ["Hanken Grotesk"],
+            "display-lg": ["Sora"],
+            "body-md": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+            "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "artist-name": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "track-title": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "display-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .glass-card {
+      background: rgba(30, 41, 59, 0.4);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .neon-glow-primary {
+      filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.4));
+    }
+    .neon-glow-cyan {
+      filter: drop-shadow(0 0 12px rgba(93, 230, 255, 0.4));
+    }
+    .text-gradient {
+      background: linear-gradient(to right, #ddb7ff, #5de6ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .lyric-inactive {
+      opacity: 0.3;
+      filter: blur(1px);
+      transition: all 0.4s ease;
+    }
+    .lyric-active {
+      opacity: 1;
+      filter: blur(0);
+      transform: scale(1.05);
+      transition: all 0.4s ease;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-dim text-on-surface selection:bg-primary/30">
+<!-- Full Screen Background Artist Imagery -->
+<div class="fixed inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-surface-dim/40 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-dim/60 to-transparent z-10"></div>
+<img alt="Trending Artist" class="w-full h-full object-cover opacity-60" data-alt="A high-contrast cinematic portrait of a charismatic musician performing under moody purple and cyan stage lights. The artist is captured in a moment of deep emotion, with atmospheric haze and lens flares adding to the electric sophistication. The overall aesthetic is dark and immersive, using deep obsidian shadows and vibrant neon highlights to create a professional music-industry visual style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7kak8lpUmbColj7bCV6JN6O9WSgK3agujuXIWpI3yVjXoRhzRo3D4KNqJuCUPTMbMciD2uDOiKwkvSEw9mb0fMBTvB36uO7Zeo9pxDbtI5d2QFaydeLDdugviXb7Pgt9W3wPdciqwrQQBPcDYwwvaXYUpuCVvP0NrNhajhVlB8hY2HaItMyhelJTP7ptwlIYJcibRh9kpJvq_ANccz7s44rmWH9fzy99p-yGUck7YPbWdQiI3OnNbPAagDz6wxUhyXn4tGOYYKZo"/>
+</div>
+<!-- Header Navigation -->
+<header class="bg-surface-container-lowest/80 dark:bg-surface-container-lowest/80 backdrop-blur-xl border-b border-outline-variant/20 fixed top-0 w-full z-50 flex items-center justify-between px-container-padding-mobile h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-100">
+<span class="material-symbols-outlined text-primary text-headline-md">keyboard_arrow_down</span>
+</button>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Playing From Playlist</span>
+<span class="font-headline-md text-body-md text-primary truncate">Global Top 50</span>
+</div>
+</div>
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-100">
+<span class="material-symbols-outlined text-primary text-headline-md">more_vert</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="relative z-20 pt-24 pb-40 px-container-padding-mobile md:px-container-padding-desktop min-h-screen flex flex-col md:grid md:grid-cols-12 md:gap-gutter">
+<!-- Left Column: Artist Detail & Stats -->
+<div class="md:col-span-5 flex flex-col gap-stack-large">
+<div class="space-y-stack-tight">
+<div class="flex items-center gap-2">
+<span class="bg-tertiary-container text-on-tertiary font-label-caps text-label-caps px-2 py-0.5 rounded-full uppercase">Trending</span>
+<span class="text-secondary font-label-caps text-label-caps">#1 Worldwide</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface leading-none">Midnight Pulse</h1>
+<p class="font-artist-name text-headline-md text-primary">Vespera Flux</p>
+</div>
+<!-- Trend Stats Bento Grid -->
+<section class="grid grid-cols-2 gap-stack-base">
+<div class="glass-card p-stack-base rounded-xl col-span-2">
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-2">Growth Velocity</p>
+<div class="flex items-end justify-between">
+<span class="font-display-lg text-headline-lg text-secondary neon-glow-cyan">+124.5%</span>
+<div class="flex items-center text-secondary font-label-caps">
+<span class="material-symbols-outlined">trending_up</span>
+<span>Last 24h</span>
+</div>
+</div>
+</div>
+<div class="glass-card p-stack-base rounded-xl">
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Rank</p>
+<p class="font-headline-md text-headline-md text-on-surface">01</p>
+</div>
+<div class="glass-card p-stack-base rounded-xl">
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Shares</p>
+<p class="font-headline-md text-headline-md text-on-surface">842K</p>
+</div>
+</section>
+<!-- Action Chips -->
+<div class="flex flex-wrap gap-stack-tight">
+<button class="bg-primary-container/20 border border-primary/30 text-primary px-4 py-2 rounded-full font-label-caps text-label-caps hover:bg-primary-container/40 transition-colors">Electronic
+</button><button class="bg-surface-container-highest border border-outline-variant/30 text-on-surface-variant px-4 py-2 rounded-full font-label-caps text-label-caps">Night Drive
+</button><button class="bg-surface-container-highest border border-outline-variant/30 text-on-surface-variant px-4 py-2 rounded-full font-label-caps text-label-caps">Synthwave
+</button></div>
+</div>
+<!-- Right Column: Lyrics Overlay (Scrolling View) -->
+<div class="md:col-span-7 mt-stack-large md:mt-0 flex flex-col h-[400px] md:h-[530px] overflow-y-auto no-scrollbar mask-gradient relative">
+<div class="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-surface-dim to-transparent z-10 pointer-events-none"></div>
+<div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-surface-dim to-transparent z-10 pointer-events-none"></div>
+<div class="space-y-stack-large py-16">
+<p class="font-track-title text-headline-md lyric-inactive">Shadows dancing on the glass</p>
+<p class="font-track-title text-headline-md lyric-inactive">Counting moments as they pass</p>
+<p class="font-track-title text-headline-md text-gradient font-bold lyric-active">Neon light across the floor</p>
+<p class="font-track-title text-headline-md lyric-inactive">I can't take it anymore</p>
+<p class="font-track-title text-headline-md lyric-inactive">Electric pulses in my veins</p>
+<p class="font-track-title text-headline-md lyric-inactive">Washing out the static stains</p>
+<p class="font-track-title text-headline-md lyric-inactive">Midnight rhythm taking hold</p>
+<p class="font-track-title text-headline-md lyric-inactive">Turning all the silver gold</p>
+</div>
+</div>
+</main>
+<!-- Persistent Playbar / Controls -->
+<footer class="fixed bottom-0 w-full z-50">
+<!-- Progress Bar -->
+<div class="w-full h-1 bg-surface-container-highest relative">
+<div class="absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-secondary to-primary neon-glow-primary"></div>
+<div class="absolute left-1/3 top-1/2 -translate-y-1/2 w-3 h-3 bg-on-surface rounded-full shadow-lg"></div>
+</div>
+<div class="bg-surface-container/60 backdrop-blur-3xl px-container-padding-mobile md:px-container-padding-desktop h-28 flex items-center justify-between">
+<!-- Track Info Mini -->
+<div class="hidden md:flex items-center gap-stack-base">
+<div class="w-14 h-14 rounded-lg overflow-hidden border border-glass-stroke shadow-2xl">
+<img alt="Cover Art" class="w-full h-full object-cover" data-alt="Vibrant abstract digital cover art for a music track, featuring swirling neon pink and electric cyan energy waves against a deep obsidian background. The composition is dynamic and futuristic, with microscopic glowing particles and high-fidelity light refraction effects, embodying the electric sophistication brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwMuhTSS2cdYWfNfYRL10uhjmwpmee_i1sXekVzrEF-bXKPlpdp5z59L1ghpgUIZiGAqtqPXCJ3F7zQeojSKsG4fmCFpFIw2UlsYCLMrRI42rhAt4r2A9DGyzc46dBrsv3RGtD9UgeKvw23bUtz2-O1Zey6jmF_wCg3we0mZVT8MkHAkp0SG3AIl-KEqWGNcsLjXeCQ-OfI9apOFesvaTYY5l8gx5cS0tHnFN4lTIHgWbdgA1dFQdNOu9Q0qsXceAWcFQDE7BHf0E"/>
+</div>
+<div class="flex flex-col">
+<span class="font-track-title text-body-md text-on-surface">Midnight Pulse</span>
+<span class="font-artist-name text-artist-name text-on-surface-variant">Vespera Flux</span>
+</div>
+</div>
+<!-- Main Controls -->
+<div class="flex-1 md:flex-none flex items-center justify-around md:justify-center md:gap-stack-large">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-headline-md">shuffle</span>
+</button>
+<button class="text-on-surface hover:text-primary transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined text-headline-lg">skip_previous</span>
+</button>
+<!-- Big Play Button -->
+<button class="w-16 h-16 bg-gradient-to-br from-primary to-inverse-primary rounded-full flex items-center justify-center text-on-primary-container shadow-2xl neon-glow-primary active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[40px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<button class="text-on-surface hover:text-primary transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined text-headline-lg">skip_next</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-headline-md">repeat</span>
+</button>
+</div>
+<!-- Secondary Controls -->
+<div class="hidden md:flex items-center gap-stack-base">
+<button class="text-secondary hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-headline-md" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-headline-md">playlist_add</span>
+</button>
+<div class="flex items-center gap-2 ml-4">
+<span class="material-symbols-outlined text-on-surface-variant text-body-md">volume_up</span>
+<div class="w-24 h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-2/3 h-full bg-on-surface"></div>
+</div>
+</div>
+</div>
+<!-- Mobile Like Button -->
+<div class="md:hidden flex items-center justify-end w-12">
+<button class="text-secondary neon-glow-cyan">
+<span class="material-symbols-outlined text-headline-md" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+</div>
+</footer>
+<!-- Background Blur Elements -->
+<div class="fixed top-1/4 -left-24 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="fixed bottom-1/4 -right-24 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] pointer-events-none"></div>
+</body></html>
