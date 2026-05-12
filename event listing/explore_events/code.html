@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Montserrat:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed-variant": "#005048",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#dee9fc",
+                    "primary-container": "#6063ee",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-primary-container": "#fffbff",
+                    "inverse-surface": "#27313f",
+                    "on-primary-fixed-variant": "#2f2ebe",
+                    "background": "#f8f9ff",
+                    "tertiary-fixed-dim": "#ffb2b9",
+                    "primary-fixed": "#e1e0ff",
+                    "surface": "#f8f9ff",
+                    "surface-container": "#e6eeff",
+                    "inverse-primary": "#c0c1ff",
+                    "on-secondary-fixed": "#00201c",
+                    "secondary": "#006b5f",
+                    "secondary-fixed": "#71f8e4",
+                    "surface-tint": "#494bd6",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#a63047",
+                    "surface-bright": "#f8f9ff",
+                    "primary": "#4648d4",
+                    "tertiary-fixed": "#ffdadc",
+                    "tertiary-container": "#c6495e",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#400010",
+                    "on-surface-variant": "#464554",
+                    "outline-variant": "#c7c4d7",
+                    "outline": "#767586",
+                    "on-secondary-container": "#006f64",
+                    "surface-variant": "#d9e3f6",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#6df5e1",
+                    "error": "#ba1a1a",
+                    "on-background": "#121c2a",
+                    "on-surface": "#121c2a",
+                    "surface-container-highest": "#d9e3f6",
+                    "surface-container-low": "#eff4ff",
+                    "on-primary-fixed": "#07006c",
+                    "on-tertiary-fixed-variant": "#891933",
+                    "secondary-fixed-dim": "#4fdbc8",
+                    "surface-dim": "#d0dbed",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "on-tertiary-container": "#fffbff",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "1.5rem",
+                    "margin-mobile": "1rem",
+                    "stack-md": "1rem",
+                    "margin-desktop": "2.5rem",
+                    "container-max": "1280px",
+                    "stack-sm": "0.5rem",
+                    "stack-lg": "2rem"
+            },
+            "fontFamily": {
+                    "headline-md": ["Montserrat"],
+                    "data-point": ["Inter"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "label-caps": ["Inter"],
+                    "headline-sm": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["30px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "data-point": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-overlay {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- Top AppBar -->
+<header class="bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl fixed top-0 w-full z-50 shadow-sm">
+<div class="flex justify-between items-center px-gutter py-4 w-full">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-200 text-primary dark:text-inverse-primary hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+<div class="font-headline-md text-headline-md font-extrabold text-primary dark:text-inverse-primary tracking-tighter">VIBE</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<img alt="User profile" data-alt="A professional headshot of a smiling young adult with warm, natural lighting. The background is a soft-focus urban environment, creating a clean and modern profile appearance. The style is bright and high-end, fitting a social discovery application's aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuvAIMI7tFdJZ-IfnBsMe4qAfiQ2mHxAA5kRXso3VejG2jfGHox61JuDAvegQIADu1ZorLO-Syk-2abE2knZGiQljURBTB3JnQ6-xgN7F6d6lojtZgwwLQUYax2L9uWf-9F8d4j_gwMGrmcuqWvO_VgQfls97oYBqOAjr8J9dG3g4YNe70JGth1nsxM3L8AEyNxtrwdiAatQNjTs_iM9fMs3RJkH7u2mIgRxpyfVgM7j3KOArsrgGxvA9F-kqd-xG3qZsoxYcv5gM"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-20 pb-24 overflow-x-hidden">
+<!-- Hero Section: Featured Event -->
+<section class="px-gutter mb-stack-lg">
+<div class="relative w-full aspect-[4/5] md:aspect-[21/9] rounded-xl overflow-hidden shadow-[0px_10px_30px_rgba(99,102,241,0.08)] group">
+<img alt="Music Festival Hero" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A massive outdoor music festival at twilight with vibrant purple and electric indigo lighting illuminating a sea of energetic people. The stage features high-tech laser displays and giant LED screens, creating a high-energy urban vibe. The atmosphere is cinematic, electric, and immersive, capturing a pinnacle social experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4vN0v-rZVddUzy4NsT4x6qDEbruAXRwoBVrjBDEiDMkk26D66V20ZuU2m6pXL_0tPKht7pvA4dYyxBOmw4FpNK7KcO1fbG3XUyNlxQ--OliTsvuWQMCAIHVxU995HL8ftHCzrASFNdtJckBJRJzTf5MKZgalmKBwtQU0Swru9RQIaUp0NqOru5ZzMQWXKsatfR4YiJO8dj9NbbdD1lGlr5bsOALuJt3ZPawT8MQKSIPCge7cbaxMdpCn8iydd__yGUnVz50kbMtE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/90 via-on-background/20 to-transparent"></div>
+<!-- Date Badge -->
+<div class="absolute top-4 left-4 glass-overlay w-16 h-16 rounded-xl flex flex-col items-center justify-center shadow-lg">
+<span class="font-label-caps text-label-caps text-primary">AUG</span>
+<span class="font-headline-sm text-headline-sm leading-none text-on-surface">24</span>
+</div>
+<div class="absolute bottom-6 left-6 right-6 flex flex-col items-start gap-stack-sm">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-caps text-[10px]">FEATURED EVENT</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white">Prism Beats Festival 2024</h1>
+<div class="flex items-center gap-2 text-white/80">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+<span class="font-body-md">Grand Arena, Downtown</span>
+</div>
+<button class="mt-2 bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps hover:translate-y-[-2px] hover:shadow-xl active:scale-95 transition-all duration-200">
+                        GET TICKETS
+                    </button>
+</div>
+</div>
+</section>
+<!-- Music Festivals Section -->
+<section class="mb-stack-lg">
+<div class="px-gutter flex justify-between items-end mb-stack-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Music Festivals</h2>
+<button class="text-primary font-label-caps hover:opacity-70">VIEW ALL</button>
+</div>
+<div class="flex overflow-x-auto gap-4 px-gutter hide-scrollbar">
+<!-- Card 1 -->
+<div class="flex-none w-72 bg-white rounded-xl overflow-hidden shadow-[0px_10px_30px_rgba(99,102,241,0.08)] flex flex-col">
+<div class="relative h-48">
+<img alt="Festival 1" class="w-full h-full object-cover" data-alt="A vibrant outdoor jazz festival during the golden hour, with warm sunlight filtering through green trees. People are seen relaxing on the grass with a stylish stage in the background. The mood is sophisticated, warm, and inviting, with a high-end editorial feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfWKCtERBVSMevlUmKICCtFOSr_dbv9_yreJcaxUgNW0JkJjx97NpXn5Nkc5Qoj7RSRjNPQ7ujW82RKmS9ngT-Su3ZnzTpRyOBEyPp4QHyOrGJ66N7lU4OhxWnO1pVtcIF_tR8CT4s0m-Mji1QtDO1v6Xf5izCAh9OKZoFWzHph-QLThAbsw8nFv9BYGOZcelkkIS8UiXJeDyGdtQgm9020M1cISI82_pEXzKnuA7I5NuTwfw7FOv6x_-MmyxN1tzCaeFjC5bwQNg"/>
+<button class="absolute top-3 right-3 w-10 h-10 rounded-full glass-overlay flex items-center justify-center text-primary active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-1">
+<p class="font-label-caps text-primary text-[10px]">AUG 30 • 6:00 PM</p>
+<h3 class="font-body-lg font-bold text-on-surface line-clamp-1">Echoes of Summer</h3>
+<div class="flex items-center justify-between mt-2">
+<span class="text-on-surface-variant font-body-md">Riverside Park</span>
+<button class="bg-primary-container/10 text-primary px-4 py-1.5 rounded-full font-label-caps text-[10px] font-bold">JOIN</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex-none w-72 bg-white rounded-xl overflow-hidden shadow-[0px_10px_30px_rgba(99,102,241,0.08)] flex flex-col">
+<div class="relative h-48">
+<img alt="Festival 2" class="w-full h-full object-cover" data-alt="A sleek underground techno club environment with neon blue and cyan lighting. The composition is dynamic, showing a DJ booth with silhouette figures dancing in a high-contrast urban setting. The style is modern, dark, and high-energy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3i7FlTTI8GBWgzw-kdwit88RYrvGfPR2JgT3X-KzB8hVbSJXbOg9Iaq8KR7V69F_S0n-pjykC6AYcLUnXMOKb7-rhiH9yGPP1xSWoXAFiSsTCaNz0TuA8_uM4PjOJ2OBi4E1GPoISMBPHIVbX3VuUxY7VKkQi_KrcgC8IL8TkUxjPM85k3xvad-kY3BLnGVPHxD5vVUTkLi3oacXqNMcbf8xqlDKXERwhvas9FB9cJ8DeQUpj87GvlCbHTsQB_nrKtAj77NzoIRc"/>
+<button class="absolute top-3 right-3 w-10 h-10 rounded-full glass-overlay flex items-center justify-center text-on-surface-variant active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-1">
+<p class="font-label-caps text-primary text-[10px]">SEP 05 • 10:00 PM</p>
+<h3 class="font-body-lg font-bold text-on-surface line-clamp-1">Midnight Pulse</h3>
+<div class="flex items-center justify-between mt-2">
+<span class="text-on-surface-variant font-body-md">The Warehouse</span>
+<button class="bg-primary-container/10 text-primary px-4 py-1.5 rounded-full font-label-caps text-[10px] font-bold">JOIN</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Creative Workshops Section -->
+<section class="mb-stack-lg">
+<div class="px-gutter flex justify-between items-end mb-stack-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Creative Workshops</h2>
+<button class="text-primary font-label-caps hover:opacity-70">VIEW ALL</button>
+</div>
+<div class="flex overflow-x-auto gap-4 px-gutter hide-scrollbar">
+<!-- Workshop 1 -->
+<div class="flex-none w-64 bg-white rounded-xl overflow-hidden shadow-[0px_10px_30px_rgba(99,102,241,0.08)]">
+<div class="relative h-40">
+<img alt="Workshop 1" class="w-full h-full object-cover" data-alt="A bright, minimalist art studio filled with canvases and vibrant paint palettes. Soft morning light enters through large industrial windows. The scene is clean, creative, and aesthetically pleasing, featuring premium art materials and a serene mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpMTrFtE1BamIR17QAwOxmf4C92UlPDjjwq2qnw3u0_tf7xLZy_P9u4FPWgKRBZLPXiqv1EdAX9EE1QtfgoUBk5ieS1OBP6sxorE4dkhS_RMXkx1_AYDXKfcFjEqF-bo_bm06T3yqAAtWlAHyH0NWfWfBgOjZmu0AGIgZqKSXJlESp85GplQ6V5gzpH_WBVUY4OTuJapgNQF40dodDKzq8A8Q4RHfiuuw4pK6WU4_iRwR2gfPnP30eRV4FKmLrsb0BKirhTXvpWAE"/>
+<div class="absolute bottom-2 left-2 px-2 py-1 glass-overlay rounded-lg font-label-caps text-[10px] text-on-surface">ARTS</div>
+</div>
+<div class="p-4">
+<h3 class="font-body-md font-bold text-on-surface">Abstract Expressionism</h3>
+<p class="text-on-surface-variant text-[12px] mt-1">Sun, Sep 12 • Studio 4</p>
+</div>
+</div>
+<!-- Workshop 2 -->
+<div class="flex-none w-64 bg-white rounded-xl overflow-hidden shadow-[0px_10px_30px_rgba(99,102,241,0.08)]">
+<div class="relative h-40">
+<img alt="Workshop 2" class="w-full h-full object-cover" data-alt="A high-end, modern kitchen workshop with marble countertops and professional culinary equipment. The lighting is warm and bright, emphasizing fresh ingredients and a clean, sophisticated cooking environment. The style is editorial and inviting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeKbQksN7gOdwuKujdj1Xp5rpx6xo2_p-EFCXjNHP7uGmjJ2tj29QNm2XAXDecFKgPn8K1hlQkkF1Tgg2B_gFW9BcryKnIfzlPtCT_MgmLcEjaqKpkAc-0Za7s0adJoonO3UKMeNm-6P4w2vQjC8Epo1a_Vv_TQ4nCXMOogDKKKKj7eHhQzjtoi5d40N7mCENqLJcjg9ZROO3S6OwMfdztK2RvAD2ji_TNwrxFBPYidMxaSyl_75sN7C5pBi-UJtl-JmfkCOeSpQU"/>
+<div class="absolute bottom-2 left-2 px-2 py-1 glass-overlay rounded-lg font-label-caps text-[10px] text-on-surface">CULINARY</div>
+</div>
+<div class="p-4">
+<h3 class="font-body-md font-bold text-on-surface">Modern Fusion Kitchen</h3>
+<p class="text-on-surface-variant text-[12px] mt-1">Sat, Sep 18 • Chef's Table</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Outdoor Camps Section -->
+<section class="mb-12">
+<div class="px-gutter flex justify-between items-end mb-stack-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Outdoor Camps</h2>
+<button class="text-primary font-label-caps hover:opacity-70">VIEW ALL</button>
+</div>
+<div class="px-gutter grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="relative rounded-xl overflow-hidden aspect-[16/9] shadow-[0px_10px_30px_rgba(99,102,241,0.08)]">
+<img alt="Camp 1" class="w-full h-full object-cover" data-alt="A luxury glamping setup under a starry night sky with a warm campfire in the foreground. The tents are elegantly lit from within, creating a cozy and high-end outdoor experience. The atmosphere is peaceful, magical, and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyM_NZYdw3n1XsTHEem2VPZGBr3lyFDaNOw3rdRCnDYxYnzjQak_ZV8TSyipMVkai5WEgyWpnm7dxih1rIHEJ8xcWsryphM6opqTf3yQZEyRasagOAQGoam-LaQQ3xAG0NwhHwWdNDPEEGFKfbhhmD_ang6IcgrDgNf8E08xgZZpCX7jCMFA_H3ONvGFDHjKye0o8g0HvbNQcjg-lgDhY3pT12Gt9V5a5dv6FoWGwfp5PeYdoJkqY-50TsJenN7m9CSGzexL1kGOI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<h3 class="font-headline-sm text-white">Starlit Valley Retreat</h3>
+<p class="text-white/80 font-body-md">Oct 01 - 04 • Alpine Ridge</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom NavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface dark:bg-surface-container-highest shadow-[0px_-10px_30px_rgba(99,102,241,0.08)]">
+<div class="flex justify-around items-center h-20 px-4 pb-safe w-full">
+<a class="flex flex-col items-center justify-center text-primary dark:text-inverse-primary font-bold active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="explore" data-weight="fill" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-caps text-label-caps mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-label-caps text-label-caps mt-1">Favorites</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+<span class="font-label-caps text-label-caps mt-1">Tickets</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-caps text-label-caps mt-1">Profile</span>
+</a>
+</div>
+</nav>
+<!-- Floating Action Button: Contextual for Discovery -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center active:scale-95 transition-transform z-40">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+</body></html>

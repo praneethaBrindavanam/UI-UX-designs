@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed-variant": "#005048",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#dee9fc",
+                    "primary-container": "#6063ee",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-primary-container": "#fffbff",
+                    "inverse-surface": "#27313f",
+                    "on-primary-fixed-variant": "#2f2ebe",
+                    "background": "#f8f9ff",
+                    "tertiary-fixed-dim": "#ffb2b9",
+                    "primary-fixed": "#e1e0ff",
+                    "surface": "#f8f9ff",
+                    "surface-container": "#e6eeff",
+                    "inverse-primary": "#c0c1ff",
+                    "on-secondary-fixed": "#00201c",
+                    "secondary": "#006b5f",
+                    "secondary-fixed": "#71f8e4",
+                    "surface-tint": "#494bd6",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#a63047",
+                    "surface-bright": "#f8f9ff",
+                    "primary": "#4648d4",
+                    "tertiary-fixed": "#ffdadc",
+                    "tertiary-container": "#c6495e",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#400010",
+                    "on-surface-variant": "#464554",
+                    "outline-variant": "#c7c4d7",
+                    "outline": "#767586",
+                    "on-secondary-container": "#006f64",
+                    "surface-variant": "#d9e3f6",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#6df5e1",
+                    "error": "#ba1a1a",
+                    "on-background": "#121c2a",
+                    "on-surface": "#121c2a",
+                    "surface-container-highest": "#d9e3f6",
+                    "surface-container-low": "#eff4ff",
+                    "on-primary-fixed": "#07006c",
+                    "on-tertiary-fixed-variant": "#891933",
+                    "secondary-fixed-dim": "#4fdbc8",
+                    "surface-dim": "#d0dbed",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "on-tertiary-container": "#fffbff",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "1.5rem",
+                    "margin-mobile": "1rem",
+                    "stack-md": "1rem",
+                    "margin-desktop": "2.5rem",
+                    "container-max": "1280px",
+                    "stack-sm": "0.5rem",
+                    "stack-lg": "2rem"
+            },
+            "fontFamily": {
+                    "headline-md": ["Montserrat"],
+                    "data-point": ["Inter"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "label-caps": ["Inter"],
+                    "headline-sm": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["30px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "data-point": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-overlay {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+        }
+        .soft-glow {
+            box-shadow: 0px 10px 30px rgba(99, 102, 241, 0.08);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center px-gutter py-4 w-full max-w-container-max mx-auto">
+<button class="text-primary active:scale-95 duration-200">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="font-headline-md text-headline-md font-extrabold text-primary tracking-tighter">VIBE</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pb-32">
+<!-- Hero Section -->
+<section class="relative w-full h-[530px] md:h-[618px] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A high-energy electronic dance music festival at night featuring vibrant neon lights and laser beams cutting through a dark, atmospheric crowd. The stage glows with intense electric indigo and magenta hues, illuminating a massive audience with raised hands. The visual style is cinematic and high-contrast, capturing the dynamic movement and urban excitement of a premium urban event. Soft bokeh from the stage lights creates a dreamlike, immersive atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsBLmzw3prhhg7cgdHJmX99Z8ghJ6VbdZlFlBUbde5Dg71fvEvT3KKu8UeNr80ojKaSxS-fEpzaLvnutZRE7ECfS9VY26zu_EaigUFqZNck4YUjk6KAxvV8emBMQpcqCibK6a4YJ1qltAR5yI9T1QGbdEiBhiJEhCoThoEaBmVfHH7eoq27bd48aJv0zMTghLgyq9p0EYXgMDcRDyytTz0JjZLrltlcQXHGoX-PdurS4yJpS6SP25Fn-nbqosMzmJbgTe9ReqZNVw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<!-- Date Badge -->
+<div class="absolute top-24 left-gutter">
+<div class="glass-overlay rounded-xl p-4 flex flex-col items-center justify-center min-w-[70px] aspect-square text-primary border border-white/20">
+<span class="font-label-caps text-label-caps">AUG</span>
+<span class="font-headline-md text-headline-md leading-none">24</span>
+</div>
+</div>
+<!-- Title Overlay -->
+<div class="absolute bottom-0 left-0 w-full p-gutter md:p-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 rounded-full bg-secondary-container/20 backdrop-blur-md text-on-secondary-container text-label-caps border border-secondary-container/30">FESTIVAL</span>
+<span class="px-3 py-1 rounded-full bg-primary-container/20 backdrop-blur-md text-on-primary-container text-label-caps border border-primary-container/30">MUSIC</span>
+</div>
+<h1 class="text-white font-display-lg-mobile md:text-display-lg leading-tight mb-2">Neon Nights Festival</h1>
+<div class="flex items-center gap-4 text-white/90">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<span class="font-data-point">Central Park Arena, NYC</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+<span class="font-data-point">8:00 PM - 4:00 AM</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Content Grid -->
+<div class="max-w-container-max mx-auto px-gutter mt-stack-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Main Info -->
+<div class="lg:col-span-8 space-y-stack-lg">
+<!-- About Section -->
+<section class="space-y-stack-md">
+<h2 class="font-headline-sm text-headline-sm text-primary">About the Event</h2>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">
+                            Experience the city's most electric night. Neon Nights returns to the heart of NYC for an immersive 8-hour journey through sound and light. This year, we're pushing boundaries with a custom-built 360-degree stage and a sound system that will leave you breathless.
+                        </p>
+</section>
+<!-- Artist Lineup - Bento Style -->
+<section class="space-y-stack-md">
+<div class="flex justify-between items-end">
+<h2 class="font-headline-sm text-headline-sm text-primary">Artist Lineup</h2>
+<span class="text-primary font-label-caps cursor-pointer">VIEW FULL SCHEDULE</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<!-- Headline -->
+<div class="col-span-2 relative h-64 rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close up portrait of a DJ performing at a high-end music festival with intense blue and pink neon lighting reflecting on their face. The setting is a professional sound booth with glowing audio equipment and a blurred high-energy crowd in the background. The mood is focused and electric." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByEmjUrFDmBpXR8Xw9rzlzdlSUHC1paP5HR06wHyxtU0Li4FiqPPHEFEm0boPQW6DB8IInZFMthD_ThtN_bZ8z3ugoBPWqOriqdpgo0cdX3JHDixFngBVNYylndWEIxAVoT17l5PWei4hstITGLr_gbwp09U4UAezK0NgLaUWnr89z2zeRMvYAAzuA_Ne8wrg8OvHkly6IVnY0MvajI_-vCsyjBj_1LfrdM4tIL5xuaRq2kUCG_tis7IJPLIKcXFkNvm7iTpZcOYk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="text-secondary-fixed text-label-caps block mb-1">HEADLINER</span>
+<span class="text-white font-headline-sm">Kinetix Pulse</span>
+</div>
+</div>
+<!-- Sub Headline -->
+<div class="relative h-64 rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="An artist playing an electric synthesizer under dramatic coral-colored spotlights. The aesthetic is modern and urban with smoke effects and sharp light beams. High-contrast lighting highlights the textures of the performer's outfit and the complex controls of the instrument." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8liN43fOzhIZ87D9994-W2nmLpT32pB-pp9ZrzwpLAq7THIWnlgYBMk-QnMTzrJn2QWOmfePpZaEomURKIBo_l2uwU3db3X6DZxStIbD8tvbEXCkT95UiPwrxUR6H0K-IDFHdidF4X2LuUmV1xqzmWF_hq88du4y8jxQLKXAITvqPYjvohD3Tt3pvX16KZj_Y6g7P_1QlIvHf99qkW-5x9j5xc4KEsyi8YA6IgwHnSAPsAl334O7AAXD5NrvS5lXgO1fUcikdu5s"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="text-white font-headline-sm">Nova Echo</span>
+</div>
+</div>
+<!-- Support -->
+<div class="relative h-48 rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Atmospheric shot of a performer on stage surrounded by intense warm lighting and a foggy environment. The style is editorial and vibrant, using a palette of deep oranges and electric blues to create a high-energy urban vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvBs2NbWQrpRyI1MEuXiBX8FBQPrZWtdqUMNw7KUW0c9YPGV9ZTA8dQ49n7vxK8e-BwPmreuBrOQ_9QMqjNn9wOY5YdD8NGHuWdFvSQzvKjgvUJCuptayh3Qoso9TASBajonVFgZdA0EFlhi8hdKB0-fyrf6P2COX_Cq6OsoUt40A6Jm2dY9ijO9jzG-ThE3qqiAELt3JwNmYwnPOHAmYnvkXn1fJHXcuCrNd4woNPxCz0PUSMTaUQPBLoCFXe4YW4uTq14jfaOaM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="text-white font-data-point">Digital Dream</span>
+</div>
+</div>
+<div class="relative h-48 rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A crowd of people dancing at a festival, captured with a slow shutter speed to show motion and light trails. The color palette features intense indigo and neon teal. The mood is high-energy and social, typical of a vibrant city event." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQUsUDVuQgy0PmGdGZccihCRIW5RRdyb__te_jdcaix6vZdMYVfNK0iyCG-bLxGmkUx93Dt_wm_RMXfDvuJZyJQehayc3F9JyjORTKceHYQS79A5wOWs6dfftyFbYpffIvg5ZBbaPxjNKy1Y8CuDeTiod13dqNpjI3OIucDEzePf7wuetTKaIQdsdHppcZ1-8CtAsbgq_6mMgBwuasNJ0FhF6nKGByRj5uPnbQ-K2nTPm38fnhHnx268cNiFKfr34KCIVcZiePrfU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="text-white font-data-point">Static Flow</span>
+</div>
+</div>
+<div class="relative h-48 rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Dramatic high-key shot of a vocalist on stage under a single white spotlight with a dark background. The lighting creates a pristine, minimalist gallery feel amidst a high-energy concert. Professional and cinematic style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApWKnfoqRmEX987BX7jkzxmnx3_In6t80iSgVNsSNQX-MtuPXXrZYoqdAslC-68Nh07Gkw5DW4Fc2OpCEKAdPH_PbKNvdbntquccBxI8ExgG1gYkKhsrm32tuSGMPCbSr4O-bYRtLPu-Zws4ANKNqPXP-foANKNi89Lq5RA4WasABZ0EbmjgFvgpvaoMh_rw1pYurhLuVhCeyjIO1DO5-TWq8Eiyzqzoqs6i36049WI_0qceL_ZxhiQzR106Kx2Nhg9wMB5F1mUSQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="text-white font-data-point">Vocal Void</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Sidebar Details -->
+<aside class="lg:col-span-4 space-y-stack-lg">
+<!-- Social Proof Card -->
+<div class="bg-white rounded-xl p-6 soft-glow border border-surface-container">
+<h3 class="font-data-point text-on-surface-variant mb-4">WHO'S GOING</h3>
+<div class="flex items-center gap-3">
+<div class="flex -space-x-3">
+<img class="w-10 h-10 rounded-full border-2 border-white object-cover" data-alt="Portrait of a young woman with a trendy urban style, smiling in a city setting. The lighting is soft and natural, emphasizing a high-end editorial feel with vibrant clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJnWOWf99FLJ2lVofwOylf1C18rjJrkKleGVWdlvFEwlrKcJAS8VBtD4-sPflUupSktawCTvNq-Mp7I4d7cwvqp8bsY7KMDbzxjbccRuoB671JiUmHxarxYVEyZoAWfTmMGIl96PgTs5agrp3kmEuQFf9r2CDYSd0CNQN-_DMxVv3oiHVPYTzE5A1_7om7GUT8u4CmwORzpj5oNSDVw6ZeV7YMU3m0SR7H9mU7yEZ1w2iuOOyWSjc8Y2Xjx_7qCJnq4ODdZHaVn4s"/>
+<img class="w-10 h-10 rounded-full border-2 border-white object-cover" data-alt="Portrait of a young man with a modern hairstyle and casual urban clothing. He is standing against a minimalist grey background with warm side lighting, creating a professional and inviting headshot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASG-cD-f0Dc59ao7jjpPBjdvsJg68gg4CazX3RdcAOrjjBfaQCQpdc67LuO4bjSTCkMO_BlMRN99tZOxgwqXSJgHCxYYL8Dogq2RVfBfMaiDVGE7h14vLM9EPGfuk6LG9vjOri5JHH7aiNuhCKyG58_86enMBRimYFzIeNK2dzN48GuHwdEd2SouuJB3oHuMxapnUytEeip_QCx-ZdL67Hw1kYIvTF4LrVTebdUK9aspRtK_nSKwsSWsH0fRyIczgAg2z4WI_XZw0"/>
+<img class="w-10 h-10 rounded-full border-2 border-white object-cover" data-alt="Portrait of a woman with a creative, stylish look, featuring artistic makeup. The setting is high-contrast with urban neon reflections in the background, maintaining a high-energy social feed aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp3eAFAG3MEmLTOQV3HHCmNqP_WZmkD7TTaIIK89Y9mXauuO2wErONmCmZxn75Skxm6kLu0yiq06Bpfiyb27g3iF9BEwS0I-qXifdVYpntyJyWbcGPSjcxagqeJ0sxQX9fCLPgK53sCbBhE0MpXQxhC1yQBvri0WQpv6Lsi2WGeimTGB7KXiBT4ROX7ofEe7o67y8tFEAs8D_yQAqdw0-VXxX2P2CxVCPhMyPxI-4_wLE7A8eMIphC7CK4wrbEkQVWoLu9SbdwI_s"/>
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white text-[12px] font-bold border-2 border-white">+42</div>
+</div>
+<span class="text-body-md text-on-surface-variant">Alex and 42 others are attending</span>
+</div>
+</div>
+<!-- Location Card -->
+<div class="bg-white rounded-xl overflow-hidden soft-glow border border-surface-container">
+<div class="h-40 w-full bg-surface-container-highest relative">
+<img class="w-full h-full object-cover opacity-80" data-alt="A stylized aerial map view of Central Park and the surrounding Manhattan skyline at dusk. The city lights are starting to glow in vibrant oranges and blues, creating a high-contrast urban grid. The overall mood is sophisticated and grand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBpH_GRXInrjMshGfx6wehzkq275hfshNje3k80JCq_f6kJs_26GCaRGMNZvdkvQX2DwnIbmM2BVPLxBluKh4Juv7pQiGQsiITrnIM0Ze8JO8ip1cM4PhjIpsUNS5U45zuZksPSs2SgLBG5-79ycTpxyiqZJbVooDRO3WOE66u1l0F-G3jlDY1yG8tiZ9iie1MU_fwJFx9OH_uu5KfG1GPfGKLZQDw0UgM3fDiIATV61hljSBNTKtimtBrLa9PYC0C85HiPxgPju0"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-primary p-3 rounded-full shadow-lg">
+<span class="material-symbols-outlined text-white">location_on</span>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-sm text-primary mb-1">Central Park Arena</h3>
+<p class="text-on-surface-variant text-body-md mb-4">West Side Dr, New York, NY 10019</p>
+<button class="w-full py-3 rounded-lg border border-outline text-primary font-bold hover:bg-surface-container transition-colors">
+                                GET DIRECTIONS
+                            </button>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<!-- Bottom Action Bar -->
+<div class="fixed bottom-0 w-full z-50 bg-surface dark:bg-surface-container-highest rounded-t-xl shadow-[0px_-10px_30px_rgba(99,102,241,0.08)]">
+<div class="max-w-container-max mx-auto px-gutter py-4 md:py-6 flex justify-between items-center h-24">
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-label-caps">TOTAL PRICE</span>
+<div class="flex items-baseline gap-1">
+<span class="text-primary font-headline-md">$85</span>
+<span class="text-on-surface-variant text-body-md">/ person</span>
+</div>
+</div>
+<button class="bg-primary text-white px-10 py-4 rounded-xl font-bold text-lg hover:-translate-y-0.5 active:scale-95 transition-all duration-200 shadow-lg shadow-primary/20">
+                GET TICKETS
+            </button>
+</div>
+</div>
+</body></html>

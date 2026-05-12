@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed-variant": "#005048",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#dee9fc",
+                    "primary-container": "#6063ee",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-primary-container": "#fffbff",
+                    "inverse-surface": "#27313f",
+                    "on-primary-fixed-variant": "#2f2ebe",
+                    "background": "#f8f9ff",
+                    "tertiary-fixed-dim": "#ffb2b9",
+                    "primary-fixed": "#e1e0ff",
+                    "surface": "#f8f9ff",
+                    "surface-container": "#e6eeff",
+                    "inverse-primary": "#c0c1ff",
+                    "on-secondary-fixed": "#00201c",
+                    "secondary": "#006b5f",
+                    "secondary-fixed": "#71f8e4",
+                    "surface-tint": "#494bd6",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#a63047",
+                    "surface-bright": "#f8f9ff",
+                    "primary": "#4648d4",
+                    "tertiary-fixed": "#ffdadc",
+                    "tertiary-container": "#c6495e",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#400010",
+                    "on-surface-variant": "#464554",
+                    "outline-variant": "#c7c4d7",
+                    "outline": "#767586",
+                    "on-secondary-container": "#006f64",
+                    "surface-variant": "#d9e3f6",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#6df5e1",
+                    "error": "#ba1a1a",
+                    "on-background": "#121c2a",
+                    "on-surface": "#121c2a",
+                    "surface-container-highest": "#d9e3f6",
+                    "surface-container-low": "#eff4ff",
+                    "on-primary-fixed": "#07006c",
+                    "on-tertiary-fixed-variant": "#891933",
+                    "secondary-fixed-dim": "#4fdbc8",
+                    "surface-dim": "#d0dbed",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "on-tertiary-container": "#fffbff",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "1.5rem",
+                    "margin-mobile": "1rem",
+                    "stack-md": "1rem",
+                    "margin-desktop": "2.5rem",
+                    "container-max": "1280px",
+                    "stack-sm": "0.5rem",
+                    "stack-lg": "2rem"
+            },
+            "fontFamily": {
+                    "headline-md": ["Montserrat"],
+                    "data-point": ["Inter"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "label-caps": ["Inter"],
+                    "headline-sm": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["30px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "data-point": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-layer {
+        backdrop-filter: blur(12px);
+        background: rgba(255, 255, 255, 0.7);
+      }
+      .soft-glow {
+        box-shadow: 0px 10px 30px rgba(99, 102, 241, 0.08);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center px-gutter py-4 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="search">search</span>
+<span class="font-headline-md text-headline-md font-extrabold text-primary dark:text-inverse-primary tracking-tighter">VIBE</span>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB34v99c3TFy4098Gyawhj9vDsH-8OzDSyenKkFzKv0RQxdNJhEqwu-tMmT-1qJip3O-JYYrVl_oRM2tLYTxaRiQljoGzsksSmZZGhQhFslko-MltlsLGpe2B5MtZKaq9gbgY6RkzA8dyyqucwTmTX9UTUjX7iC0KDVa1fRigzymnZbcYkqz58yXQfk4jQfQwqStVN2jrN1G57ucDt-whhiXiYsL5sITqn3vTE58jI2gwC0sOv8p5ObfAs5eTA3Jz1If9xH9teuWy4"/>
+</div>
+</div>
+</header>
+<main class="pt-24 px-4 max-w-container-max mx-auto">
+<!-- Search Section -->
+<section class="mb-stack-lg">
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-primary" data-icon="search">search</span>
+</div>
+<input autofocus="" class="w-full h-16 pl-12 pr-4 bg-white border-none rounded-xl soft-glow text-body-lg font-body-lg focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Search events near you" type="text"/>
+</div>
+</section>
+<!-- Categories Bento Grid -->
+<section class="mb-stack-lg">
+<h2 class="font-headline-sm text-headline-sm mb-stack-md text-on-surface">Browse Categories</h2>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<!-- Music -->
+<div class="relative h-48 rounded-xl overflow-hidden group cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A high-energy outdoor music festival at sunset with a large crowd raising their hands towards a brightly lit stage. The atmosphere is electric with vibrant purple and indigo stage lights cutting through the hazy evening air. The overall visual style is urban and dynamic, emphasizing connection and excitement." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARNRCr5u80qkhzEurLwo5j1txCBfvKCDDSTw7vzg7KLqD9FlN5uhF4jVXgpKPS5gmolA7MYNud4a2EvFAsC3A1hFbH8AYB2q0qO7DKXL8oiZ2gCd-QVA9VDibzd2kb6yqUNch55Z0aQIiNO2u2z5-WOU897rM_zLvPcDMqR-wfRCSNU1stEbQrYof_38944nnmbgmCKRfQY5gR4fOmqLJm_hjJCICdO8rH3TEsBi0YOYk8gA6QrNVSZ8hFs18xDrS9CBto5sbR80I"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-primary/20 backdrop-blur-md px-3 py-1 rounded-full text-white font-label-caps text-label-caps mb-1 inline-block">LIVE</span>
+<h3 class="text-white font-headline-sm text-headline-sm">Music</h3>
+</div>
+</div>
+<!-- Tech -->
+<div class="relative h-48 rounded-xl overflow-hidden group cursor-pointer md:col-span-1">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A sleek, modern technology conference hall featuring holographic displays and glowing blue digital interfaces. The lighting is high-contrast with deep shadows and vibrant cyan highlights, creating a futuristic and professional atmosphere. Soft focus on attendees interacting with cutting-edge devices." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDYtZxd_fgjkJyXywiwypdk3MJ2JwPPsvsOWT4P4cdLEbQAEHwjG-7Vue43KJxw1TW-JnWL3ritBzYQE7S-J6_xCH0wugDcNwPC38CyZeNoHE0YPh4LwU1uqv4enMgNwIWudBfMSQo899-LstX95YXwDAeJghbNg5XjE1TbA4CiOE_cB4lmj0hRKi_7OBPXFV6VwmwQhHqNOmVUWhX-vyNGvdppuZ7saeznw9XKHxUZEnwY5dQc3lxD3dlbif-QAT2Olt1CKQyeSs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<h3 class="text-white font-headline-sm text-headline-sm">Tech</h3>
+</div>
+</div>
+<!-- Sports -->
+<div class="relative h-48 rounded-xl overflow-hidden group cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A dynamic shot of an urban basketball court at night, illuminated by bright overhead lights that cast long shadows. The court surface has bold blue and red markings, reflecting a high-energy social sports vibe. One player is captured mid-air during a dunk against a backdrop of city skyscrapers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAygIzRijMCBXBhQDUwgBsQs1d8gX7z3w78mYHvkzPEPWmSmlf_aFPD1o4M4Ev_Z5uk8vAERGfbbPFaEoxMf0Yoh2wfmpaz3ufeu2hj3Xayg_ibhhRa64xsDaLLbw7NMlaL8K6qd-6sGRTF16DJIJg9Zy4itzOEVlt9NnAInwTk606X6daDSBybOsSvsvsB2gkiBGABrL2Grk2B_NsehlZdH6i13y2eGxNWk-hD8xxJE4i6ucKihXHFH0URBLlxEXw6XShh0-Mryio"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<h3 class="text-white font-headline-sm text-headline-sm">Sports</h3>
+</div>
+</div>
+<!-- Arts -->
+<div class="relative h-48 rounded-xl overflow-hidden group cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A minimalist contemporary art gallery with large canvases and modern sculptures. The space is filled with soft, natural light and features clean white walls and polished concrete floors. The mood is sophisticated and editorial, with a palette of whites, grays, and a single vibrant pop of coral from an artwork." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuuRRoSQ4aju8BGNm1ELmiunCnlgztidMd-fPRpSBcEBlfmF5Y1H19-ehfsIf02UIX9fG31P4s9jyoNoGUri66_3CrZDA92hHw_CWNGk4zDlx5s2TpFvizhTdXN55FH0RnD_zder31j-DiF-ZLHrFduBeYOBHhcem7BF3gm-oHhKvmAcbh8EdVYeNrkZO2URA9JNEkmPYiHzNL3nCkUV17TVMRjOSPajBtrzgtdxS5UGf-Z4Sz2GXxAikpdVWslGzpTDaii9M0MCY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<h3 class="text-white font-headline-sm text-headline-sm">Arts</h3>
+</div>
+</div>
+<!-- Wellness -->
+<div class="relative h-48 rounded-xl overflow-hidden group cursor-pointer md:col-span-2">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A serene sunrise yoga session on a modern rooftop overlooking a waking city skyline. The lighting is warm and golden, creating a sense of peace and momentum. Participants are in silhouettes against the bright morning sky, dressed in stylish athletic wear. The aesthetic is clean, inviting, and wellness-focused." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOK-0bnsPMQ-eiRr50a6WEEdhbNap0gx6IAZ08Jzlw00AulfoJHVAaEmJFG75Byt_vb_el4Z5SJntmXcTzX9E4s1MHXyT5TK8N_TXkTcyRgVbRnisgQ9b2kkMbUvXYeu5MIOaI-IMXmA7PndpPdghUlnM2BlHzuBvkdMW6-DBj_TtRp63SSLp7eXFIMzxsIXjlY1hHdV813ihr-ZdzNu5ImljXW1cgzxQmkmtrS_ey9W8QuzPmtqhXeDyxM9e-JRaVtIQxNOt4vDo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<h3 class="text-white font-headline-sm text-headline-sm">Wellness</h3>
+</div>
+</div>
+<!-- Education -->
+<div class="relative h-48 rounded-xl overflow-hidden group cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A bright and airy co-working space where people are engaged in a collaborative workshop. There are large windows, light wood furniture, and vibrant green plants scattered throughout the room. The mood is productive and energetic, with a modern urban feel and plenty of natural high-key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc1davZ4DZVD6TdLEcjaekkrYyN2NbtcBgBFCyWUc1m9z1sYO4toT15GVgL1NukSf42d6-6-TqjCj1g4woBCWAhRY0nVWv88JuF-c2z4RD3RcceFV0GQ4atbu_cPAKKu6nwMuwuTz-dlFR594NmwhIpwntmUI2Sq9DnREoCy4AfYMzbc3l_y_tWj345OryeO9GcaatYRw1eziLGHiJgkvQ9G3sdTxMHjJztr8zFTqKRwPDk-dL6aLRUyOZrLa9zrPx8sIstpxgJX0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<h3 class="text-white font-headline-sm text-headline-sm">Education</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Searches -->
+<section class="mb-stack-lg">
+<div class="flex justify-between items-center mb-stack-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Recent Searches</h2>
+<button class="text-primary font-label-caps text-label-caps">CLEAR ALL</button>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-4 p-4 bg-white rounded-xl soft-glow hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="history">history</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-on-surface">Underground Jazz Club</p>
+<p class="text-on-surface-variant text-label-caps">Search in Music</p>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="north_west">north_west</span>
+</div>
+<div class="flex items-center gap-4 p-4 bg-white rounded-xl soft-glow hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="history">history</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-on-surface">AI Design Workshop</p>
+<p class="text-on-surface-variant text-label-caps">Search in Tech</p>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="north_west">north_west</span>
+</div>
+<div class="flex items-center gap-4 p-4 bg-white rounded-xl soft-glow hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="history">history</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-on-surface">Roof-top Yoga Session</p>
+<p class="text-on-surface-variant text-label-caps">Search in Wellness</p>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="north_west">north_west</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface dark:bg-surface-container-highest rounded-t-xl shadow-[0px_-10px_30px_rgba(99,102,241,0.08)]">
+<div class="flex justify-around items-center h-20 px-4 pb-safe w-full">
+<a class="flex flex-col items-center justify-center text-primary dark:text-inverse-primary font-bold active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="explore" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-caps text-label-caps mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-label-caps text-label-caps mt-1">Favorites</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+<span class="font-label-caps text-label-caps mt-1">Tickets</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-caps text-label-caps mt-1">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>
