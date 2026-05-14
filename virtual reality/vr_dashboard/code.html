@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Obsidian Horizon | VR Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;family=Sora:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#131315",
+                    "on-surface": "#e5e1e4",
+                    "surface-dim": "#131315",
+                    "on-primary-fixed-variant": "#004f54",
+                    "tertiary": "#e5ffba",
+                    "surface-tint": "#00dbe9",
+                    "surface": "#131315",
+                    "inverse-primary": "#006970",
+                    "tertiary-fixed": "#a9f900",
+                    "on-secondary-container": "#fff6fc",
+                    "on-background": "#e5e1e4",
+                    "surface-container-high": "#2a2a2c",
+                    "primary-container": "#00f0ff",
+                    "on-primary-container": "#006970",
+                    "surface-variant": "#353437",
+                    "primary-fixed": "#7df4ff",
+                    "surface-container-highest": "#353437",
+                    "on-error-container": "#ffdad6",
+                    "on-surface-variant": "#b9cacb",
+                    "surface-container-lowest": "#0e0e10",
+                    "outline": "#849495",
+                    "secondary-fixed-dim": "#ebb2ff",
+                    "on-error": "#690005",
+                    "on-tertiary": "#223600",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed-variant": "#334f00",
+                    "secondary": "#ebb2ff",
+                    "surface-bright": "#39393b",
+                    "secondary-fixed": "#f8d8ff",
+                    "inverse-surface": "#e5e1e4",
+                    "on-tertiary-container": "#456900",
+                    "on-secondary": "#520072",
+                    "error-container": "#93000a",
+                    "outline-variant": "#3b494b",
+                    "inverse-on-surface": "#313032",
+                    "on-primary": "#00363a",
+                    "tertiary-fixed-dim": "#94db00",
+                    "surface-container-low": "#1c1b1d",
+                    "on-tertiary-fixed": "#121f00",
+                    "on-secondary-fixed": "#320047",
+                    "primary": "#dbfcff",
+                    "surface-container": "#201f21",
+                    "primary-fixed-dim": "#00dbe9",
+                    "on-primary-fixed": "#002022",
+                    "tertiary-container": "#a2ef00",
+                    "on-secondary-fixed-variant": "#74009f",
+                    "secondary-container": "#b600f8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "z-layer-step": "20px",
+                    "margin-mobile": "24px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-md": ["Geist"],
+                    "label-mono": ["JetBrains Mono"],
+                    "headline-md": ["Sora"],
+                    "body-lg": ["Geist"],
+                    "display-lg": ["Sora"],
+                    "display-lg-mobile": ["Sora"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-mono": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .neon-grid {
+            background-image: linear-gradient(to right, rgba(0, 219, 233, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(0, 219, 233, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .glass-panel {
+            backdrop-filter: blur(30px);
+            background: rgba(19, 19, 21, 0.4);
+            border: 1px solid rgba(0, 219, 233, 0.15);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary/30 min-h-screen overflow-x-hidden neon-grid">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full flex justify-between items-center px-margin-mobile h-16 w-full z-[100] bg-background/40 backdrop-blur-xl border-b border-primary/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+<div class="flex items-center gap-unit">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="spatial_tracking">spatial_tracking</span>
+<h1 class="font-headline-md-mobile text-headline-md-mobile font-bold tracking-tighter text-primary-fixed-dim drop-shadow-[0_0_8px_rgba(0,219,233,0.5)]">OBSIDIAN HORIZON</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 border border-primary/20 hover:bg-primary/20 hover:border-primary transition-all duration-300 scale-95 duration-200 ease-out">
+<span class="material-symbols-outlined text-primary" data-icon="settings_accessibility">settings_accessibility</span>
+</button>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile max-w-screen-xl mx-auto space-y-10">
+<!-- Status Bar -->
+<section class="w-full flex items-center justify-between glass-panel p-4 rounded-xl">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-sm" style="font-variation-settings: 'FILL' 1;">sensors</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">Horizon Core: <span class="text-tertiary-fixed">Active</span></span>
+</div>
+<div class="h-4 w-px bg-outline-variant"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed-dim text-sm">precision_manufacturing</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">Haptics: <span class="text-primary-fixed">Ready</span></span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-mono text-label-mono text-on-surface-variant">21.4 MS LATENCY</span>
+<div class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></div>
+</div>
+</section>
+<!-- Hero Section / Enter VR -->
+<section class="flex flex-col items-center justify-center py-10 relative">
+<div class="absolute inset-0 bg-primary-container/5 blur-[120px] rounded-full"></div>
+<div class="relative z-10 text-center mb-10">
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-primary mb-2">Welcome Back, Pilot</h2>
+<p class="font-body-md text-on-surface-variant max-w-md mx-auto">Calibrating your neural interface for the next generation of spatial computing.</p>
+</div>
+<button class="group relative flex flex-col items-center gap-4">
+<div class="absolute -inset-8 bg-primary-container/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="w-48 h-48 rounded-full bg-surface-container-lowest border border-primary/40 flex items-center justify-center glass-panel shadow-[0_0_50px_rgba(0,219,233,0.3)] transition-all duration-500 group-hover:scale-105 group-hover:border-primary group-hover:shadow-[0_0_80px_rgba(0,219,233,0.5)]">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-5xl text-primary mb-2" data-icon="play_circle" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="font-label-mono text-label-mono text-primary tracking-widest">ENTER VR</span>
+</div>
+</div>
+<div class="flex items-center gap-2 px-4 py-1 rounded-full border border-primary/20 bg-background/60 backdrop-blur-md">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-mono text-[10px] text-primary-fixed-dim tracking-tighter">NEURAL LINK SYNCED</span>
+</div>
+</button>
+</section>
+<!-- Recent Environments Carousel -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-on-surface flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="blur_on">blur_on</span>
+                    Recent Environments
+                </h3>
+<button class="font-label-mono text-label-mono text-primary-fixed-dim hover:underline transition-all">VIEW ALL</button>
+</div>
+<div class="flex gap-gutter overflow-x-auto pb-4 no-scrollbar -mx-margin-mobile px-margin-mobile">
+<!-- Card 1 -->
+<div class="flex-none w-72 glass-panel rounded-2xl overflow-hidden group hover:border-primary transition-all duration-300">
+<div class="h-40 relative">
+<img class="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-500" data-alt="A cinematic, high-fidelity digital rendering of a neon-lit cyberpunk city at night under a heavy rain. The scene is dominated by deep obsidian textures, vibrant cyan and magenta light trails, and floating glass displays. The mood is immersive and atmospheric, reflecting a dark-mode-first spatial computing environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB9uFwcxoXSSiJi-87gzvANTooFWk0YY08z2HR9N8pK6OQvF1NG4zil_FC3e8XOqINLzzCaQHk0PW64e5YFRbRfW0bnr7ManrHACrp43Lk_Lxe7IVvSvNOsIE0SEKeHeWhIe8k_BbS64xI0LL3LuYvSb7RGuANHdGcktVmzBaJQEJFomFgNpDnI9_0EJN3GetpZj2qgBwLHKVV-CxIdYeFKsexOQ0W6XGc5KmX-U1J3FUSvYW2oW5ppyX8GA9wBxQZ9_FNySaeqVU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+<div class="absolute top-3 right-3 px-2 py-1 bg-surface/80 backdrop-blur-md rounded-lg border border-white/10">
+<span class="font-label-mono text-[10px] text-tertiary">STABLE</span>
+</div>
+</div>
+<div class="p-4 space-y-2">
+<h4 class="font-headline-md-mobile text-on-surface">Neon Nexus</h4>
+<p class="font-body-md text-on-surface-variant text-sm line-clamp-2">High-density urban data visualization suite with spatial audio integration.</p>
+<div class="flex items-center gap-2 pt-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="schedule">schedule</span>
+<span class="font-label-mono text-[11px] text-outline">Last accessed: 2h ago</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex-none w-72 glass-panel rounded-2xl overflow-hidden group hover:border-primary transition-all duration-300">
+<div class="h-40 relative">
+<img class="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-500" data-alt="A minimalist abstract 3D environment featuring floating obsidian spheres and translucent glass shards. The lighting is low-key with soft blue volumetric rays piercing through a deep dark atmosphere. The style is hyper-modern and serene, emphasizing a flow state for professional power users." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFjW25bRR5HQY4pMIbzH2Ad7NgXar_Thc5anhrBmDUS3ReLFY28sjxJQ65XZdtsBPraOuOmeNXFlxiaJE_SDjHhs7V55tL7zwhr7y3ZFMjVE4JcPmufz-LaQ1zi1MLyx0s79byRj4X-MWEYUC-EAY2SiALyUmxz2KPGdoGobVnoxqFfSK7hS64Vrxomhbh1g_tb-Gqxyn9HfBfWGMzNs2X1gvwYGvvvQKMkyr7xyI864LEKALLCcTr91rrlxicSzAl-gbfgnFKs_M"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+<div class="absolute top-3 right-3 px-2 py-1 bg-surface/80 backdrop-blur-md rounded-lg border border-white/10">
+<span class="font-label-mono text-[10px] text-primary">FAVORITE</span>
+</div>
+</div>
+<div class="p-4 space-y-2">
+<h4 class="font-headline-md-mobile text-on-surface">Zenith Void</h4>
+<p class="font-body-md text-on-surface-variant text-sm line-clamp-2">Minimalist focus space with adaptive haptic feedback and white noise.</p>
+<div class="flex items-center gap-2 pt-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="schedule">schedule</span>
+<span class="font-label-mono text-[11px] text-outline">Last accessed: 1d ago</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex-none w-72 glass-panel rounded-2xl overflow-hidden group hover:border-primary transition-all duration-300">
+<div class="h-40 relative">
+<img class="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-500" data-alt="A futuristic laboratory environment with high-fidelity textures showing holographic interfaces and sleek obsidian workstations. The room is bathed in a cold cyan light emitting from glowing floor panels. The style is cyber-minimalism, conveying a sense of advanced technological development and deep focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk4G-fkm64zSzb7afCZxwHpBP2EcPif4ukMEhtDN34om3y6Thfw5ZTY0rJRXVJxm6NCUBFiP1DHjrJix9ssPpEfPkC2HsEpwMNJy6KtuopNobLFqzTHu3lx8Ri6Wk6cEqMvyAC4pyaNAN-5SSdmpjOdAg0qtCMoiCfal5NS6i8kPyNaiofeK5siMWq8cR3L0upYjg5k1S9eh80orqothf_8yYcsvYv_4TicTjpV_LunS2C4PryMIX5Z2DwETVn_855Plc5y7gljSM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+<div class="absolute top-3 right-3 px-2 py-1 bg-surface/80 backdrop-blur-md rounded-lg border border-white/10">
+<span class="font-label-mono text-[10px] text-on-secondary-container">BETA</span>
+</div>
+</div>
+<div class="p-4 space-y-2">
+<h4 class="font-headline-md-mobile text-on-surface">Data Core</h4>
+<p class="font-body-md text-on-surface-variant text-sm line-clamp-2">Enterprise-grade cloud infrastructure monitoring in 360-degree spatial view.</p>
+<div class="flex items-center gap-2 pt-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="schedule">schedule</span>
+<span class="font-label-mono text-[11px] text-outline">Last accessed: 3d ago</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Connected Devices Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="glass-panel p-6 rounded-2xl space-y-4">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-md-mobile text-on-surface">Headset Status</h4>
+<span class="px-3 py-1 bg-primary/10 rounded-full text-primary font-label-mono text-xs">CONNECTED</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant font-body-md">Model</span>
+<span class="text-on-surface font-label-mono">OBSIDIAN X-1</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[88%] shadow-[0_0_10px_rgba(0,219,233,0.5)]"></div>
+</div>
+<div class="flex items-center justify-between text-[12px] font-label-mono">
+<span class="text-on-surface-variant uppercase">Battery Life</span>
+<span class="text-primary">88%</span>
+</div>
+</div>
+<div class="glass-panel p-6 rounded-2xl grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<p class="text-on-surface-variant font-label-mono text-xs uppercase">Left Controller</p>
+<div class="flex items-end gap-2">
+<span class="text-2xl font-headline-md text-on-surface">92%</span>
+<span class="material-symbols-outlined text-tertiary-fixed-dim pb-1" data-icon="battery_full">battery_full</span>
+</div>
+</div>
+<div class="space-y-2">
+<p class="text-on-surface-variant font-label-mono text-xs uppercase">Right Controller</p>
+<div class="flex items-end gap-2">
+<span class="text-2xl font-headline-md text-on-surface">84%</span>
+<span class="material-symbols-outlined text-primary-fixed-dim pb-1" data-icon="battery_horiz_050">battery_horiz_050</span>
+</div>
+</div>
+<div class="col-span-2 pt-2 border-t border-white/5 flex items-center justify-between">
+<span class="text-on-surface-variant font-body-md text-sm">Motion Sensors</span>
+<div class="flex gap-1">
+<span class="w-1 h-1 rounded-full bg-primary"></span>
+<span class="w-1 h-1 rounded-full bg-primary"></span>
+<span class="w-1 h-1 rounded-full bg-primary"></span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-margin-mobile left-0 right-0 mx-auto w-fit z-[100] flex gap-gutter p-2 bg-surface-container-lowest/40 backdrop-blur-2xl border border-primary/20 rounded-full shadow-[0_0_20px_rgba(0,219,233,0.15)] animate-pulse-slow">
+<!-- Active -->
+<a class="flex items-center justify-center bg-primary text-on-primary rounded-full w-12 h-12 shadow-[0_0_15px_rgba(0,219,233,0.6)]" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+</a>
+<a class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary-fixed-dim transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+</a>
+<a class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary-fixed-dim transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="blur_on">blur_on</span>
+</a>
+<a class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary-fixed-dim transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="front_hand">front_hand</span>
+</a>
+</nav>
+<!-- Gaze Reticle (Visual Ornament) -->
+<div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[1000] hidden lg:block">
+<div class="w-6 h-6 border border-primary/40 rounded-full flex items-center justify-center">
+<div class="w-1 h-1 bg-primary rounded-full shadow-[0_0_8px_#00dbe9]"></div>
+</div>
+</div>
+</body></html>
