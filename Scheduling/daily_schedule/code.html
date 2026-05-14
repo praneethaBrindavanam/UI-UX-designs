@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clinician Dashboard | MedLink Care</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#d8e3fa",
+                    "on-secondary-fixed": "#00201c",
+                    "secondary": "#006b5e",
+                    "secondary-fixed": "#7cf7e2",
+                    "outline": "#727783",
+                    "tertiary-fixed": "#dfe3e7",
+                    "tertiary": "#43484c",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#00468c",
+                    "on-primary-fixed": "#001b3d",
+                    "outline-variant": "#c2c6d4",
+                    "surface-container-low": "#f0f3ff",
+                    "primary": "#00478d",
+                    "inverse-primary": "#a9c7ff",
+                    "on-surface": "#111c2c",
+                    "primary-fixed-dim": "#a9c7ff",
+                    "on-secondary-fixed-variant": "#005047",
+                    "on-tertiary-container": "#d6dade",
+                    "on-secondary-container": "#007164",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#5b6063",
+                    "surface-tint": "#005db6",
+                    "on-background": "#111c2c",
+                    "secondary-container": "#7cf7e2",
+                    "inverse-on-surface": "#ebf1ff",
+                    "primary-container": "#005eb8",
+                    "on-surface-variant": "#424752",
+                    "on-tertiary-fixed-variant": "#43474b",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#cfdaf1",
+                    "background": "#f9f9ff",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#263142",
+                    "tertiary-fixed-dim": "#c3c7cb",
+                    "surface-container": "#e7eeff",
+                    "primary-fixed": "#d6e3ff",
+                    "secondary-fixed-dim": "#5ddac6",
+                    "on-primary-container": "#c8daff",
+                    "surface-container-high": "#dee8ff",
+                    "surface": "#f9f9ff",
+                    "surface-container-highest": "#d8e3fa",
+                    "on-tertiary-fixed": "#171c1f",
+                    "surface-bright": "#f9f9ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "sm": "12px",
+                    "lg": "48px",
+                    "xl": "64px",
+                    "md": "24px",
+                    "xs": "4px",
+                    "margin-desktop": "40px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "display-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9ff;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline z-50">
+<div class="flex items-center justify-between px-margin-mobile md:px-margin-desktop py-base w-full max-w-[1440px] mx-auto">
+<div class="flex items-center gap-base">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest flex-shrink-0">
+<img alt="Provider profile picture" class="w-full h-full object-cover" data-alt="A professional portrait of a medical provider in a clean clinic environment. The doctor, a man in his late 40s with kind eyes and short-cropped hair, is wearing a crisp white lab coat over a blue button-down shirt. The background is softly blurred, showing a modern, high-tech medical office with cool blue and white tones. The lighting is soft and professional, emphasizing a sense of reliability and human-centric care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPeXn_w-ku4g9uyRk4elmE_xWC9yG604sbHTmEXCdirwtquLt7e1CMWLRrS2KAV_jqQ79A0oziWg5EIEgbdVOXJhmFPvf2rgX7TP1gBE0El9EnTm1V6AKjI9L6z8k_MlZAs25VTprHedsxTuDIGZTUInEfsv-SxQMl82j7KDi5zbN4tIk9iCOb_ROzUD37CHJFXhnpJW42qtsM4E3lx1PMGpQCfyUi7ytDwkX9p1eE4PIyM3qvYm0haLv8UGwywv2fSiPlOovZG9M"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary">MedLink Care</h1>
+</div>
+<div class="hidden md:flex items-center gap-gutter">
+<nav class="flex gap-md">
+<a class="text-primary dark:text-inverse-primary font-label-md text-label-md hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors px-3 py-2 rounded-lg" href="#">Schedule</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors px-3 py-2 rounded-lg" href="#">Patients</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors px-3 py-2 rounded-lg" href="#">Alerts</a>
+</nav>
+<div class="h-6 w-px bg-outline-variant"></div>
+<button class="material-symbols-outlined text-primary dark:text-inverse-primary p-2 hover:bg-surface-container-low transition-colors rounded-full" data-icon="search">search</button>
+</div>
+<button class="md:hidden material-symbols-outlined text-primary dark:text-inverse-primary p-2" data-icon="search">search</button>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-lg pb-32">
+<!-- Metrics Section - Bento Grid Layout -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-lg">
+<div class="md:col-span-4 bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[28px]" data-icon="groups">groups</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Total Patients Today</p>
+<p class="font-display-lg text-display-lg text-on-surface">14</p>
+</div>
+</div>
+<div class="md:col-span-4 bg-error-container border border-error p-md rounded-xl flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-on-error-container flex items-center justify-center text-on-error">
+<span class="material-symbols-outlined text-[28px]" data-icon="warning">warning</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-error-container">Urgent Alerts</p>
+<p class="font-display-lg text-display-lg text-on-error-container">02</p>
+</div>
+</div>
+<div class="md:col-span-4 bg-secondary-container border border-outline-variant p-md rounded-xl flex flex-col justify-center">
+<div class="flex justify-between items-center mb-xs">
+<p class="font-label-md text-label-md text-on-secondary-container">Daily Progress</p>
+<p class="font-label-sm text-label-sm text-on-secondary-container">64%</p>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[64%]"></div>
+</div>
+</div>
+</section>
+<div class="flex flex-col lg:flex-row gap-gutter">
+<!-- Calendar Navigation (Sidebar on Desktop) -->
+<aside class="w-full lg:w-72 flex-shrink-0">
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl sticky top-24">
+<div class="flex items-center justify-between mb-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">October 2023</h2>
+<div class="flex gap-xs">
+<button class="material-symbols-outlined p-1 hover:bg-surface-container transition-colors rounded-full text-on-surface-variant" data-icon="chevron_left">chevron_left</button>
+<button class="material-symbols-outlined p-1 hover:bg-surface-container transition-colors rounded-full text-on-surface-variant" data-icon="chevron_right">chevron_right</button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-base text-center mb-md">
+<span class="font-label-sm text-label-sm text-outline">S</span>
+<span class="font-label-sm text-label-sm text-outline">M</span>
+<span class="font-label-sm text-label-sm text-outline">T</span>
+<span class="font-label-sm text-label-sm text-outline">W</span>
+<span class="font-label-sm text-label-sm text-outline">T</span>
+<span class="font-label-sm text-label-sm text-outline">F</span>
+<span class="font-label-sm text-label-sm text-outline">S</span>
+<!-- Mock Calendar Row -->
+<span class="p-2 text-label-md text-on-surface-variant">22</span>
+<span class="p-2 text-label-md text-on-surface-variant">23</span>
+<span class="p-2 bg-primary text-on-primary rounded-full font-bold">24</span>
+<span class="p-2 text-label-md text-on-surface-variant">25</span>
+<span class="p-2 text-label-md text-on-surface-variant">26</span>
+<span class="p-2 text-label-md text-on-surface-variant">27</span>
+<span class="p-2 text-label-md text-on-surface-variant">28</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-sm rounded-lg font-label-md text-label-md active:scale-95 transition-transform">
+                        Add New Appointment
+                    </button>
+</div>
+</aside>
+<!-- Daily Schedule -->
+<section class="flex-grow">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<div class="p-md border-b border-outline-variant flex justify-between items-center bg-surface-bright">
+<h2 class="font-headline-md text-headline-md text-on-surface">Daily Schedule</h2>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full font-label-sm text-label-sm">Tuesday, Oct 24</span>
+</div>
+<!-- Time Slots -->
+<div class="divide-y divide-outline-variant">
+<!-- 08:00 AM -->
+<div class="flex min-h-[120px] group">
+<div class="w-20 md:w-24 p-md text-right border-r border-outline-variant bg-surface-container-low">
+<span class="font-label-md text-label-md text-on-surface-variant">08:00</span>
+</div>
+<div class="flex-grow p-md">
+<div class="bg-surface-container border border-outline-variant p-md rounded-lg flex flex-col md:flex-row md:items-center justify-between gap-sm hover:border-primary transition-colors cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest overflow-hidden">
+<img alt="Sarah Johnson" class="w-full h-full object-cover" data-alt="A warm, professional headshot of a middle-aged woman with a friendly smile, photographed in soft, natural daylight. She is wearing a dark navy blazer, and the background is a clean, modern medical reception area with soft focus. The aesthetic is bright and clean, conveying trust and a human-centric healthcare experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUijbhrLLQ0VKgcMhr22ZoUOF22fO86atLPrLbgp23LPvlKZVHGlxXY_IncwMI-3vEGbR_NAxoMMJozbx59ynTzd5LYii1EQBGN2ElUQOBP6BD2EBJ2RQJJ5mSzdWyaeuh2qCN31gAv9rxATfHkk1Io2MYKLVregiqi2fN_eQRtjNgvsXneKVBHl6WzfS1BUAhiR0WPj49UUrYocyebqZTCk6HYEYjH8N3lcdx7wbdOpi7nVXgjAbtTCN3ipxRgDXGc9w70rEVolE"/>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface leading-tight">Sarah Johnson</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">General Checkup</p>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-label-sm">Confirmed</span>
+<button class="material-symbols-outlined text-outline" data-icon="more_vert">more_vert</button>
+</div>
+</div>
+</div>
+</div>
+<!-- 09:00 AM -->
+<div class="flex min-h-[120px]">
+<div class="w-20 md:w-24 p-md text-right border-r border-outline-variant bg-surface-container-low">
+<span class="font-label-md text-label-md text-on-surface-variant">09:00</span>
+</div>
+<div class="flex-grow p-md">
+<div class="h-full border-2 border-dashed border-outline-variant rounded-lg flex items-center justify-center text-outline-variant hover:text-primary hover:border-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined mr-base" data-icon="add">add</span>
+<span class="font-label-md text-label-md">Available Slot</span>
+</div>
+</div>
+</div>
+<!-- 10:00 AM -->
+<div class="flex min-h-[120px]">
+<div class="w-20 md:w-24 p-md text-right border-r border-outline-variant bg-surface-container-low">
+<span class="font-label-md text-label-md text-on-surface-variant">10:00</span>
+</div>
+<div class="flex-grow p-md">
+<div class="bg-surface-container border border-outline-variant p-md rounded-lg flex flex-col md:flex-row md:items-center justify-between gap-sm hover:border-primary transition-colors cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest overflow-hidden">
+<img alt="Michael Chen" class="w-full h-full object-cover" data-alt="A portrait of a young adult man with glasses, looking directly at the camera with a calm expression. He is dressed in a smart casual sweater. The lighting is even and soft, set against a neutral, clinical gray background. The photo maintains the modern corporate aesthetic with high clarity and a professional feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfIsk8uVSnaSfVAYS2RqiFKAmjNbTlkF8vxqKQIu6pxlKtblRUxsCg653sZpkBn0uO9fyEsYESOKDiz5LOk1CuLYcapyh-kCsvzNp0zjm79Mrzcs15V9H5wUdYEW8Vou6YMWtNOOx_o2tgtmwZuVBfHZ3E20SVLtzKBqh9LWdnkFT6MOVpBKg_v9m5bPXp5gOjhb3nb7mVTf1d625lzJpDZ7tOXjcjcUWLNqoarv2D1yIR2mjYHI4G3xyP6cqAWI1qL-anRSMno_U"/>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface leading-tight">Michael Chen</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Follow-up: Post-Op</p>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<span class="bg-error-container text-on-error-container px-3 py-1 rounded-full font-label-sm text-label-sm">Urgent</span>
+<button class="material-symbols-outlined text-outline" data-icon="more_vert">more_vert</button>
+</div>
+</div>
+</div>
+</div>
+<!-- 11:00 AM -->
+<div class="flex min-h-[120px]">
+<div class="w-20 md:w-24 p-md text-right border-r border-outline-variant bg-surface-container-low">
+<span class="font-label-md text-label-md text-on-surface-variant">11:00</span>
+</div>
+<div class="flex-grow p-md">
+<div class="bg-surface-container border border-outline-variant p-md rounded-lg flex flex-col md:flex-row md:items-center justify-between gap-sm hover:border-primary transition-colors cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest overflow-hidden">
+<img alt="Elena Rodriguez" class="w-full h-full object-cover" data-alt="A professional headshot of a woman in her 30s with a confident and kind demeanor. She is wearing a tailored blazer. The image has a clean, airy quality with bright, diffuse lighting and a minimalist background that echoes the design system's clinical precision and human-centric focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbiFFB4Qf6qvvclcU179e-vXVolBINaLxq1WNt_pBa1FW004VMR6Ph2CKcz7INnrT4-x3J9I2puHnYQ3UnPKCpLzKzNaK3OcbqSWjmb6ljAGeVGuiHl1GefCTLQUQrxTldWJMZoz5eR7HXk64XDto9eUbfr2KI0mLcRkyxTpwCk4LBv5XtgPQRw-wFSj89YliCqklZWDst9mBtNO4w_9mJ4Y5cqNSssVRo_XeX4gbNcQx7ae2-dKimF14OUNKlOa1qogJgbUi2v_M"/>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface leading-tight">Elena Rodriguez</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Lab Results Review</p>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full font-label-sm text-label-sm">Pending</span>
+<button class="material-symbols-outlined text-outline" data-icon="more_vert">more_vert</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-surface dark:bg-surface-dim border-t border-outline-variant dark:border-outline">
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-on-secondary-fixed-variant text-on-secondary-container dark:text-secondary-fixed rounded-full px-4 py-1 active:scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-sm text-label-sm">Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:text-primary transition-colors active:scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-label-sm text-label-sm">Patients</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:text-primary transition-colors active:scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-label-sm text-label-sm">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:text-primary transition-colors active:scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

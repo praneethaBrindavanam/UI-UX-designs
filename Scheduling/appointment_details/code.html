@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Appointment Detail - MedLink Care</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#d8e3fa",
+                    "on-secondary-fixed": "#00201c",
+                    "secondary": "#006b5e",
+                    "secondary-fixed": "#7cf7e2",
+                    "outline": "#727783",
+                    "tertiary-fixed": "#dfe3e7",
+                    "tertiary": "#43484c",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#00468c",
+                    "on-primary-fixed": "#001b3d",
+                    "outline-variant": "#c2c6d4",
+                    "surface-container-low": "#f0f3ff",
+                    "primary": "#00478d",
+                    "inverse-primary": "#a9c7ff",
+                    "on-surface": "#111c2c",
+                    "primary-fixed-dim": "#a9c7ff",
+                    "on-secondary-fixed-variant": "#005047",
+                    "on-tertiary-container": "#d6dade",
+                    "on-secondary-container": "#007164",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#5b6063",
+                    "surface-tint": "#005db6",
+                    "on-background": "#111c2c",
+                    "secondary-container": "#7cf7e2",
+                    "inverse-on-surface": "#ebf1ff",
+                    "primary-container": "#005eb8",
+                    "on-surface-variant": "#424752",
+                    "on-tertiary-fixed-variant": "#43474b",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#cfdaf1",
+                    "background": "#f9f9ff",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#263142",
+                    "tertiary-fixed-dim": "#c3c7cb",
+                    "surface-container": "#e7eeff",
+                    "primary-fixed": "#d6e3ff",
+                    "secondary-fixed-dim": "#5ddac6",
+                    "on-primary-container": "#c8daff",
+                    "surface-container-high": "#dee8ff",
+                    "surface": "#f9f9ff",
+                    "surface-container-highest": "#d8e3fa",
+                    "on-tertiary-fixed": "#171c1f",
+                    "surface-bright": "#f9f9ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "sm": "12px",
+                    "lg": "48px",
+                    "xl": "64px",
+                    "md": "24px",
+                    "xs": "4px",
+                    "margin-desktop": "40px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "display-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .medic-shadow {
+        box-shadow: 0 4px 12px 0 rgba(0, 71, 141, 0.04);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim sticky top-0 w-full border-b border-outline-variant dark:border-outline z-50">
+<div class="flex items-center justify-between px-margin-mobile md:px-margin-desktop py-base w-full max-w-[1440px] mx-auto">
+<div class="flex items-center gap-md">
+<button class="active:opacity-80 transition-all text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest p-base rounded-full">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary">Appointment Detail</h1>
+</div>
+<div class="flex items-center gap-md">
+<button class="active:opacity-80 transition-all text-primary dark:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest p-base rounded-full">
+<span class="material-symbols-outlined">search</span>
+</button>
+<img alt="Provider profile picture" class="w-10 h-10 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjQ9NZIoZ2HV0b5tF-wAWZivEe_nz8yM1SJXOJgLi3gGXq-tJx_JvQcTrvjLMTO3BQshIyEAO3OUJYUbidbx4angSKAZk368TivRUIbBjV5cCQd8DcR9ebfKbfKNENERAgtBUFw2C_O9VE5j6GFI5jbdzSXsY5uWYJ1FzPOrdsjmFe_fK7c-T4_vtoTQSGUsR73QnTkyOlr0yWiMBzFODPIPTwb8r3Z3JSytE1fDuPC63hEGo4rPoBGidkii6JxPdZt32aOA5pnV0"/>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-lg pb-32">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Column 1: Patient Quick Info & Contact -->
+<div class="lg:col-span-4 space-y-gutter">
+<!-- Patient Card -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md medic-shadow">
+<div class="flex items-center gap-md mb-md">
+<img class="w-20 h-20 rounded-full object-cover" data-alt="A professional studio portrait of a middle-aged woman with a friendly expression. She is wearing a soft blue cardigan in a bright, clean medical office setting. The lighting is soft and high-key, emphasizing a safe and reliable clinical atmosphere. The background is a clean, minimalist white medical environment with a hint of warm wooden textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU4eKXHgt_-QKQQM3FBj1hu_BbxmW-52t7GwD-cAEL6dCt6eIK8qXgHQLFlh5zgz91s8hJLdSRK1Y4AFk9VPGSh8II-WHstBULfgfiKK4LgCZIpx3cvrvPFZ3B8ce6ttLZibn1PmhYYRcLx52XgkK8oMsFYZNxNXXdPPBgV1zm5hTgbQeWWTKWhj4q0RuW9IdKwketbYDLl6-ip2wERIlr_09xVONinWDvm28YO6jRVbqg4-NNeI1dU2KdChWmzvD4peBUX7mHk_g"/>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Alice Meadows</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">ID: #ML-882910</p>
+<span class="inline-flex items-center px-sm py-xs mt-xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Confirmed</span>
+</div>
+</div>
+<div class="space-y-sm pt-md border-t border-outline-variant">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-primary text-[20px]">call</span>
+<span class="font-body-md text-body-md text-on-surface-variant">+1 (555) 234-8910</span>
+</div>
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-primary text-[20px]">mail</span>
+<span class="font-body-md text-body-md text-on-surface-variant">a.meadows@email.com</span>
+</div>
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-primary text-[20px]">location_on</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Seattle, WA</span>
+</div>
+</div>
+</section>
+<!-- Current Vitals Bento Card -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md medic-shadow">
+<h3 class="font-label-md text-label-md text-primary mb-md">LATEST VITALS (08:45 AM)</h3>
+<div class="grid grid-cols-2 gap-sm">
+<div class="bg-background p-sm rounded-lg border border-outline-variant/30 text-center">
+<span class="material-symbols-outlined text-primary mb-xs">favorite</span>
+<p class="font-headline-md text-headline-md text-on-surface">72 <span class="text-body-sm">bpm</span></p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Heart Rate</p>
+</div>
+<div class="bg-background p-sm rounded-lg border border-outline-variant/30 text-center">
+<span class="material-symbols-outlined text-primary mb-xs">blood_pressure</span>
+<p class="font-headline-md text-headline-md text-on-surface">118/75</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Blood Pressure</p>
+</div>
+<div class="bg-background p-sm rounded-lg border border-outline-variant/30 text-center">
+<span class="material-symbols-outlined text-primary mb-xs">thermostat</span>
+<p class="font-headline-md text-headline-md text-on-surface">98.6<span class="text-body-sm">°F</span></p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Temperature</p>
+</div>
+<div class="bg-background p-sm rounded-lg border border-outline-variant/30 text-center">
+<span class="material-symbols-outlined text-primary mb-xs">air</span>
+<p class="font-headline-md text-headline-md text-on-surface">98<span class="text-body-sm">%</span></p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">SpO2</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Column 2: History and Notes -->
+<div class="lg:col-span-8 space-y-gutter">
+<!-- Medical History Summary -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden medic-shadow">
+<div class="p-md bg-surface-container-low border-b border-outline-variant">
+<h3 class="font-headline-md text-headline-md text-on-surface">Medical History Summary</h3>
+</div>
+<div class="p-md space-y-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="space-y-xs">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Chronic Conditions</p>
+<div class="flex flex-wrap gap-xs">
+<span class="px-sm py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full font-label-sm text-label-sm">Type 2 Diabetes</span>
+<span class="px-sm py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full font-label-sm text-label-sm">Hypertension</span>
+</div>
+</div>
+<div class="space-y-xs">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Allergies</p>
+<div class="flex flex-wrap gap-xs">
+<span class="px-sm py-1 bg-error-container text-on-error-container rounded-full font-label-sm text-label-sm">Penicillin</span>
+<span class="px-sm py-1 bg-error-container text-on-error-container rounded-full font-label-sm text-label-sm">Latex</span>
+</div>
+</div>
+</div>
+<div class="pt-md">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-sm">Active Medications</p>
+<ul class="space-y-sm">
+<li class="flex items-center justify-between p-sm bg-background border border-outline-variant rounded-lg">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary">medication</span>
+<span class="font-body-md text-body-md text-on-surface">Metformin 500mg</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Once Daily</span>
+</li>
+<li class="flex items-center justify-between p-sm bg-background border border-outline-variant rounded-lg">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary">medication</span>
+<span class="font-body-md text-body-md text-on-surface">Lisinopril 10mg</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Twice Daily</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Previous Visit Notes -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden medic-shadow">
+<div class="p-md bg-surface-container-low border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">Previous Visit Notes</h3>
+<button class="text-primary font-label-md text-label-md hover:underline transition-all">View All History</button>
+</div>
+<div class="divide-y divide-outline-variant">
+<div class="p-md space-y-sm">
+<div class="flex justify-between items-start">
+<h4 class="font-label-md text-label-md text-on-surface">Routine Check-up</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Oct 12, 2023</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">
+                                "Patient reported mild fatigue and irregular sleep patterns. Advised increasing evening hydration and scheduled a follow-up metabolic panel. Blood pressure remains stable under current medication."
+                            </p>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">person</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dr. Sarah Jenkins</span>
+</div>
+</div>
+<div class="p-md space-y-sm">
+<div class="flex justify-between items-start">
+<h4 class="font-label-md text-label-md text-on-surface">Urgent Care: Seasonal Allergy</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Aug 05, 2023</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">
+                                "Severe hay fever symptoms. Prescribed nasal spray and antihistamines. Patient showed immediate response to treatment."
+                            </p>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">person</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dr. Mark Walton</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Bottom Action Bar / Check-in -->
+<footer class="fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-outline-variant p-md z-40">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-md">
+<div class="flex flex-col md:flex-row items-start md:items-center gap-sm">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-on-surface-variant">schedule</span>
+<p class="font-body-md text-body-md text-on-surface">Appt: <span class="font-bold">10:30 AM - 11:15 AM</span></p>
+</div>
+<div class="hidden md:block w-px h-6 bg-outline-variant mx-sm"></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Location: General Practice Wing, Room 302</p>
+</div>
+<div class="flex items-center gap-md w-full md:w-auto">
+<button class="flex-1 md:flex-none px-xl py-base bg-outline-variant/20 text-on-surface-variant rounded-lg font-label-md text-label-md hover:bg-outline-variant/30 active:scale-95 transition-all">
+                    Reschedule
+                </button>
+<button class="flex-[2] md:flex-none px-xl py-base bg-primary text-on-primary rounded-lg font-label-md text-label-md medic-shadow hover:bg-primary-container active:scale-95 transition-all flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined">how_to_reg</span>
+                    Check-in Patient
+                </button>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Hidden on desktop, shown as Shell requirement) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-surface dark:bg-surface-dim border-t border-outline-variant dark:border-outline">
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-sm text-label-sm">Schedule</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container dark:bg-on-secondary-fixed-variant text-on-secondary-container dark:text-secondary-fixed rounded-full px-4 py-1 hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="font-label-sm text-label-sm">Patients</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-label-sm text-label-sm">Alerts</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</div>
+</nav>
+</body></html>
