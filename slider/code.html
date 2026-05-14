@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#e8e8e8",
+                        "on-primary-fixed-variant": "#45474a",
+                        "on-primary-fixed": "#1a1c1f",
+                        "on-tertiary-fixed-variant": "#36485b",
+                        "primary-fixed": "#e2e2e6",
+                        "primary": "#000000",
+                        "on-tertiary-container": "#73869a",
+                        "tertiary": "#000000",
+                        "inverse-surface": "#2f3131",
+                        "on-surface": "#1a1c1c",
+                        "tertiary-container": "#091d2e",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "surface": "#f9f9f9",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dadada",
+                        "surface-variant": "#e2e2e2",
+                        "primary-container": "#1a1c1f",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#5d5e62",
+                        "background": "#f9f9f9",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#838487",
+                        "surface-container-highest": "#e2e2e2",
+                        "secondary-fixed-dim": "#e6c183",
+                        "secondary-fixed": "#ffdea8",
+                        "secondary": "#755a26",
+                        "tertiary-fixed": "#d1e4fb",
+                        "on-tertiary-fixed": "#091d2e",
+                        "tertiary-fixed-dim": "#b5c8df",
+                        "outline": "#76777b",
+                        "on-secondary-container": "#785c29",
+                        "on-secondary-fixed-variant": "#5b4311",
+                        "outline-variant": "#c6c6ca",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "secondary-container": "#fdd798",
+                        "surface-container": "#eeeeee",
+                        "inverse-on-surface": "#f1f1f1",
+                        "inverse-primary": "#c6c6ca",
+                        "surface-bright": "#f9f9f9",
+                        "primary-fixed-dim": "#c6c6ca",
+                        "on-secondary-fixed": "#271900",
+                        "surface-container-low": "#f3f3f3",
+                        "on-surface-variant": "#45474a",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max-width": "1440px",
+                        "stack-lg": "80px",
+                        "unit": "8px",
+                        "stack-sm": "16px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "stack-md": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Bodoni Moda"],
+                        "body-lg": ["Manrope"],
+                        "display-lg": ["Bodoni Moda"],
+                        "headline-lg": ["Bodoni Moda"],
+                        "display-lg-mobile": ["Bodoni Moda"],
+                        "label-md": ["Manrope"],
+                        "headline-md": ["Bodoni Moda"],
+                        "body-md": ["Manrope"],
+                        "title-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "500"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "title-lg": ["20px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface-container-high/80 backdrop-blur-md text-primary dark:text-primary-fixed docked full-width top-0 sticky flex justify-between items-center w-full px-margin-mobile h-16 z-50">
+<button class="hover:bg-surface-variant/20 dark:hover:bg-surface-container-highest/20 p-2 rounded-full transition-opacity duration-300">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<span class="text-title-lg font-title-lg text-primary dark:text-primary-fixed">Vila Lumière</span>
+<button class="hover:bg-surface-variant/20 dark:hover:bg-surface-container-highest/20 p-2 rounded-full transition-opacity duration-300">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</header>
+<main class="flex-grow pb-24">
+<!-- Immersive Hero Slider -->
+<section class="relative h-[530px] md:h-[663px] w-full overflow-hidden">
+<div class="absolute inset-0">
+<img class="w-full h-full object-cover" data-alt="A breathtaking view of a modern luxury villa in Saint-Tropez at dusk. The architectural masterpiece features clean lines, expansive glass walls, and a shimmering infinity pool that reflects the warm golden hour sky. The surrounding landscape is lush and manicured, conveying a sense of quiet luxury and absolute privacy. The lighting is soft and ambient, highlighting the premium natural stone materials used in the facade." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB12UE8-fghCDTxbl_QUgIQK3Wayt0gkilgEQLt-c_zNnOcEggKPRnfu6jqsEd4n3Bo3bDONOLZC945ryNBJQWMykDwIWsIBRYUYANC5ccVbvKYhMgvbEI7HWhswyEzmIxP4E4IvOwMulzrJKxZ79CC_HVPk1Dg2r6d3XAFqEuA4MuyoezmQYSTLPHUKMIXOqnQe2sYaQfUKAG3Iq1T-RFL_U5xG05xJO90cpGQFbKtQkRP57OgnFjXSuqBLwyDTu3N80xjS26HZW4K"/>
+</div>
+<!-- Slider Overlay Info -->
+<div class="absolute bottom-8 left-0 w-full px-margin-mobile md:px-margin-desktop flex justify-between items-end">
+<div class="flex gap-2">
+<div class="w-2 h-2 rounded-full bg-white"></div>
+<div class="w-2 h-2 rounded-full bg-white/40"></div>
+<div class="w-2 h-2 rounded-full bg-white/40"></div>
+<div class="w-2 h-2 rounded-full bg-white/40"></div>
+</div>
+<div class="bg-black/20 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-label-md font-label-md">
+                    1/12
+                </div>
+</div>
+</section>
+<!-- Property Details -->
+<section class="mt-stack-md px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto">
+<div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-1">Vila Lumière</h1>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<p class="text-body-md font-body-md">Saint-Tropez, France</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline-md text-headline-md text-secondary">$8,500,000</p>
+<p class="text-label-md font-label-md text-on-surface-variant tracking-wider">OFFERED EXCLUSIVELY</p>
+</div>
+</div>
+<!-- Key Specs Bento Grid Style -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-stack-md">
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col gap-2">
+<span class="material-symbols-outlined text-on-primary-fixed-variant">bed</span>
+<p class="font-title-lg text-title-lg">6</p>
+<p class="text-label-md font-label-md text-on-surface-variant uppercase tracking-tighter">Bedrooms</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col gap-2">
+<span class="material-symbols-outlined text-on-primary-fixed-variant">bathtub</span>
+<p class="font-title-lg text-title-lg">7</p>
+<p class="text-label-md font-label-md text-on-surface-variant uppercase tracking-tighter">Bathrooms</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col gap-2">
+<span class="material-symbols-outlined text-on-primary-fixed-variant">square_foot</span>
+<p class="font-title-lg text-title-lg">8,500</p>
+<p class="text-label-md font-label-md text-on-surface-variant uppercase tracking-tighter">Sq Ft</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col gap-2">
+<span class="material-symbols-outlined text-on-primary-fixed-variant">pool</span>
+<p class="font-title-lg text-title-lg">Infinity</p>
+<p class="text-label-md font-label-md text-on-surface-variant uppercase tracking-tighter">Pool Type</p>
+</div>
+</div>
+<!-- Description -->
+<div class="mt-stack-lg max-w-3xl">
+<h3 class="text-title-lg font-title-lg mb-4">Architectural Vision</h3>
+<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
+                    Designed by renowned minimalist architect Julian Volaire, Vila Lumière is a symphony of light and volume. Perched on the hills of Saint-Tropez, this estate offers panoramic views of the Mediterranean. The property features a seamless indoor-outdoor transition, utilizing floor-to-ceiling glass walls and natural limestone flooring throughout. 
+                </p>
+<div class="mt-6 flex gap-4">
+<span class="bg-surface-variant/40 px-4 py-2 rounded-full text-label-md font-label-md text-on-surface">HELIPAD</span>
+<span class="bg-surface-variant/40 px-4 py-2 rounded-full text-label-md font-label-md text-on-surface">WINE CELLAR</span>
+<span class="bg-surface-variant/40 px-4 py-2 rounded-full text-label-md font-label-md text-on-surface">SPA &amp; SAUNA</span>
+</div>
+</div>
+<!-- Floor Plan Preview -->
+<div class="mt-stack-lg">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-title-lg font-title-lg">Floor Plan</h3>
+<button class="text-secondary font-label-md text-label-md flex items-center gap-1 border-b border-secondary/20">
+                        VIEW FULL DETAILS <span class="material-symbols-outlined text-sm">north_east</span>
+</button>
+</div>
+<div class="aspect-video w-full bg-surface-container-high rounded-xl overflow-hidden relative group">
+<img class="w-full h-full object-cover opacity-60 mix-blend-multiply" data-alt="A clean, minimalist floor plan schematic of a luxury estate shown on a digital tablet surface. The drawing features high-contrast black line work against a subtle off-white background. Key areas like the master suite and the terrace are highlighted with sophisticated tertiary navy accents. The environment is a bright, airy architectural studio with soft daylight and professional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlBZsd_NH3pQU5fprRHnPkUwPIMMIdNtqJ9IevxbpPKO8Ztrfb-Fz0HGlJOPLIit7c6zgoDh98RVRT504VMKPo4cWsh8PywswWT9zocJdDRqe2mfNpGfX6i9x9ErevldTPgd3GoU9j3Xlqdwe0679mjaOBY1BxzjwxKwPXt5r5ck7isNrBupkhPS5ZDu4XlNIGsQlUBKsiAxIWb6dbBnYjypF3cSCMdqX9nTboWwLohUnAE_jwGBKBDEWIdSPi-elBpR7jIXE0YOBu"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md text-label-md shadow-lg scale-100 transition-transform active:scale-95">
+                            EXPLORE INTERACTIVE VIEW
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-surface-container-lowest dark:bg-surface-container-low border-t border-outline-variant dark:border-outline shadow-sm">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-secondary dark:hover:text-secondary-fixed transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-label-md font-label-md">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-secondary dark:hover:text-secondary-fixed transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">favorite_border</span>
+<span class="text-label-md font-label-md">Saved</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-secondary dark:hover:text-secondary-fixed transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">chat_bubble_outline</span>
+<span class="text-label-md font-label-md">Inquiry</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-secondary dark:hover:text-secondary-fixed transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">person_outline</span>
+<span class="text-label-md font-label-md">Profile</span>
+</a>
+</nav>
+<!-- Floating Action for Inquiry (Contextual) -->
+<div class="fixed bottom-24 right-margin-mobile z-40 md:right-margin-desktop">
+<button class="bg-primary text-on-primary flex items-center gap-3 pl-6 pr-8 py-4 rounded-full shadow-xl hover:opacity-90 transition-all duration-300">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-label-md text-label-md tracking-widest uppercase">Contact Agent</span>
+</button>
+</div>
+</body></html>
