@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kinetic | Make an Impact</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#dff4ff",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#becab9",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#ffd9e2",
+                        "primary": "#006e1c",
+                        "surface-bright": "#f3faff",
+                        "surface-dim": "#c7dde9",
+                        "on-tertiary-fixed": "#3e001c",
+                        "on-surface-variant": "#3f4a3c",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f3faff",
+                        "surface-container": "#dbf1fe",
+                        "error": "#ba1a1a",
+                        "outline": "#6f7a6b",
+                        "primary-container": "#4caf50",
+                        "secondary": "#0061a4",
+                        "on-primary-fixed-variant": "#005313",
+                        "tertiary-container": "#f26f9d",
+                        "on-background": "#071e27",
+                        "inverse-primary": "#78dc77",
+                        "surface-variant": "#cfe6f2",
+                        "tertiary": "#a63360",
+                        "on-secondary-fixed": "#001d36",
+                        "on-primary-fixed": "#002204",
+                        "secondary-fixed": "#d1e4ff",
+                        "on-primary-container": "#003c0b",
+                        "on-secondary-fixed-variant": "#00497d",
+                        "secondary-fixed-dim": "#9ecaff",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#d5ecf8",
+                        "on-surface": "#071e27",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#78dc77",
+                        "surface-container-highest": "#cfe6f2",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#33a0fd",
+                        "primary-fixed": "#94f990",
+                        "background": "#f3faff",
+                        "on-tertiary-fixed-variant": "#861948",
+                        "on-secondary-container": "#00355c",
+                        "inverse-surface": "#1e333c",
+                        "tertiary-fixed-dim": "#ffb1c7",
+                        "surface-container-low": "#e6f6ff",
+                        "surface-tint": "#006e1c",
+                        "on-tertiary-container": "#690034"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "xl": "80px",
+                        "container-max": "1200px",
+                        "sm": "12px",
+                        "base": "8px",
+                        "lg": "48px",
+                        "gutter": "24px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "caption": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F5F7FA;
+            color: #071e27;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .level-1-shadow {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        .level-2-shadow {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-md py-xs fixed top-0 z-50 bg-surface dark:bg-inverse-surface shadow-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary">Kinetic</span>
+</div>
+<button class="bg-primary text-on-primary px-md py-xs rounded-full font-label-md text-label-md hover:opacity-80 transition-opacity active:scale-95">
+            Get Started
+        </button>
+</header>
+<main class="pt-xl">
+<!-- Hero Section -->
+<section class="px-md py-lg flex flex-col items-center text-center">
+<div class="max-w-md mx-auto">
+<h1 class="font-headline-xl text-headline-xl mb-md text-on-surface">Make an Impact in Your Community</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">Join thousands of volunteers making a real difference. Download Kinetic and start your journey today.</p>
+<div class="flex flex-col gap-sm w-full mb-xl">
+<button class="bg-primary text-on-primary py-md px-lg rounded-xl flex items-center justify-center gap-sm level-1-shadow hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">ios</span>
+<div class="text-left">
+<p class="text-[10px] uppercase font-bold leading-none opacity-80">Download on the</p>
+<p class="font-bold text-lg leading-none">App Store</p>
+</div>
+</button>
+<button class="bg-primary text-on-primary py-md px-lg rounded-xl flex items-center justify-center gap-sm level-1-shadow hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<div class="text-left">
+<p class="text-[10px] uppercase font-bold leading-none opacity-80">Get it on</p>
+<p class="font-bold text-lg leading-none">Google Play</p>
+</div>
+</button>
+</div>
+</div>
+<!-- Smartphone Mockup -->
+<div class="relative w-full max-w-[320px] mx-auto mt-lg">
+<div class="relative z-10 border-[8px] border-inverse-surface rounded-[3rem] overflow-hidden level-2-shadow aspect-[9/19.5] bg-surface">
+<img alt="Kinetic App Event Discovery Screen" class="w-full h-full object-cover" data-alt="A premium smartphone screen displaying a modern mobile app interface for discovering local volunteer events. The UI features high-quality photography of people planting trees and tutoring children, presented in clean white cards with soft rounded corners. The overall aesthetic is bright, using a vibrant Action Green accent color for progress bars and 'Apply Now' buttons. The layout is spacious, professional, and reflects a humanist, community-driven spirit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw1oQT_oP6QfZsiwZ3btpckDZsNJkNZkoCwBOCx4tLZl9hcf2n_DbMf2FTESBkveLK6Qw2i1WIp5K9D_mHftJM8nCLPQBf9kYb4eVzbhSemrdy2apyST7DJWVcY4fQFwtLRZo9Ga4zs4tiJQskIT6WmwTc0_VRWR0OsmYPPqKeQ0ZXQpVu-2M1yZUEn61QL39STm9cXLUxU-TSvb8bv4E3D_iXlA4mP7FMeucIbPfRyn_UPwovZ79LcvmDQej7IX8R2JLt7kKkBo4"/>
+</div>
+<!-- Decorative element behind phone -->
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-primary-container opacity-20 rounded-full blur-3xl -z-0"></div>
+<div class="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary-container opacity-20 rounded-full blur-3xl -z-0"></div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="px-md py-xl bg-surface-container-low">
+<div class="mb-lg">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-xs">Empowering Action</h2>
+<div class="h-1.5 w-16 bg-primary rounded-full"></div>
+</div>
+<div class="flex flex-col gap-md">
+<!-- Feature Card 1 -->
+<div class="bg-surface-container-lowest p-md rounded-xl level-1-shadow flex flex-col gap-sm">
+<div class="w-12 h-12 bg-secondary-container text-on-secondary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl" data-icon="search">search</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Find Local Opportunities</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Discover events based on your skills and interests in your immediate neighborhood.</p>
+</div>
+<!-- Feature Card 2 -->
+<div class="bg-surface-container-lowest p-md rounded-xl level-1-shadow flex flex-col gap-sm">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl" data-icon="history_toggle_off">history_toggle_off</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Track Your Hours</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Easily log your volunteer time and see your community impact through visual dashboards.</p>
+</div>
+<!-- Feature Card 3 -->
+<div class="bg-surface-container-lowest p-md rounded-xl level-1-shadow flex flex-col gap-sm">
+<div class="w-12 h-12 bg-tertiary-container text-on-tertiary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl" data-icon="hub">hub</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Connect with Non-Profits</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Message organizations directly and join dedicated, mission-driven teams that matter to you.</p>
+</div>
+</div>
+</section>
+<!-- Community Progress / Social Proof -->
+<section class="px-md py-xl text-center">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-lg">Our Growing Impact</h2>
+<div class="flex flex-col gap-lg">
+<div>
+<p class="font-headline-xl text-headline-xl text-primary mb-xs">50,000+</p>
+<p class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant">Hours Volunteered</p>
+</div>
+<div class="px-md">
+<div class="w-full bg-surface-variant h-2 rounded-full overflow-hidden mb-xs">
+<div class="bg-primary h-full w-[75%] rounded-full"></div>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">75% of our 2024 Community Goal Reached</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-md py-lg flex flex-col items-center gap-md bg-surface-container-low dark:bg-surface-container-lowest border-t border-outline-variant dark:border-outline">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Kinetic</span>
+<nav class="flex flex-wrap justify-center gap-sm">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">About Us</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+</nav>
+<p class="font-body-md text-body-md text-secondary dark:text-secondary-fixed text-center opacity-90">
+            © 2024 Kinetic. Empowering communities through action.
+        </p>
+</footer>
+</body></html>
