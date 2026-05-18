@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VELOCITY - LOADING STAGE 01</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Geist:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Persona: Gaming - Neon Cyber Lime Glows */
+    .neon-glow {
+      box-shadow: 0 0 20px rgba(207, 188, 255, 0.4), 0 0 40px rgba(207, 188, 255, 0.2);
+    }
+    .cyber-border {
+      border: 1px solid rgba(207, 188, 255, 0.3);
+      position: relative;
+    }
+    .cyber-border::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      border: 1px solid #cfbcff;
+      clip-path: polygon(0 0, 20% 0, 0 20%);
+    }
+    .glitch-text {
+      text-shadow: 2px 0 #6750a4, -2px 0 #e7c365;
+    }
+    body {
+      background-color: #000000;
+      overflow: hidden;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-primary": "#6750a4",
+            "on-surface": "#e5e1e4",
+            "on-tertiary-container": "#503d00",
+            "secondary-fixed-dim": "#cdc0e9",
+            "error": "#ffb4ab",
+            "on-tertiary-fixed": "#241a00",
+            "primary": "#cfbcff",
+            "secondary-container": "#4d4465",
+            "surface-container": "#201f21",
+            "on-tertiary-fixed-variant": "#594400",
+            "on-error": "#690005",
+            "on-secondary-fixed-variant": "#4b4263",
+            "inverse-on-surface": "#303032",
+            "tertiary-fixed-dim": "#e7c365",
+            "error-container": "#93000a",
+            "tertiary": "#e7c365",
+            "on-background": "#e5e1e4",
+            "inverse-surface": "#e5e1e4",
+            "secondary-fixed": "#e9ddff",
+            "surface-container-low": "#1b1b1d",
+            "secondary": "#cdc0e9",
+            "surface-container-high": "#2a2a2c",
+            "tertiary-container": "#c9a74d",
+            "outline": "#948e9c",
+            "on-secondary": "#342b4b",
+            "on-primary": "#381e72",
+            "surface-bright": "#39393b",
+            "surface-container-highest": "#353437",
+            "primary-fixed-dim": "#cfbcff",
+            "surface-variant": "#353437",
+            "on-secondary-container": "#bfb2da",
+            "on-surface-variant": "#cbc4d2",
+            "on-primary-fixed-variant": "#4f378a",
+            "primary-fixed": "#e9ddff",
+            "surface-dim": "#131315",
+            "surface": "#131315",
+            "on-primary-container": "#e0d2ff",
+            "background": "#131315",
+            "tertiary-fixed": "#ffdf93",
+            "surface-container-lowest": "#0e0e10",
+            "on-primary-fixed": "#22005d",
+            "surface-tint": "#cfbcff",
+            "on-error-container": "#ffdad6",
+            "primary-container": "#6750a4",
+            "on-secondary-fixed": "#1f1635",
+            "outline-variant": "#494551",
+            "on-tertiary": "#3e2e00"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "stack-gap": "1rem",
+            "progress-height-md": "12px",
+            "unit": "8px",
+            "progress-height-sm": "4px",
+            "progress-height-lg": "32px",
+            "container-padding": "2rem"
+          },
+          "fontFamily": {
+            "label-mono": ["JetBrains Mono"],
+            "headline-lg": ["Space Grotesk"],
+            "body-md": ["Geist"],
+            "display-xl": ["Space Grotesk"]
+          },
+          "fontSize": {
+            "label-mono": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+            "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+            "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+            "display-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-black text-on-surface min-h-screen flex flex-col font-body-md text-body-md overflow-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-container-padding h-16 bg-surface/80 dark:bg-background/80 backdrop-blur-xl border-b border-outline-variant/30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+</div>
+<h1 class="font-display-xl text-[24px] text-primary tracking-tighter italic font-extrabold uppercase">VELOCITY</h1>
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden border border-primary/50">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A futuristic gamer profile avatar in a circular frame. The avatar is a stylized, high-contrast digital illustration of a hooded figure with glowing cybernetic eyes. The color palette is dominated by deep violets and electric purples, reflecting the 'Gaming Persona' aesthetic with sharp, angular line work and a cinematic neon glow background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk2Ij1nyv0A1KIqS5chLQB68C8dWPZ2Oh63SmWXiHs1sYRMrYT3nN29JYwrSR_DxxoTDy5TU-Tp7XGrFLOpT9EfFTNaBWtWvF1AlhxZjOUe-iYUE3iJIV6g2pO563JjYNsRbAiNZvGL2LKR1_oHOZmbnC1lGIR2ucIOWWLw0EL4VKDLCJdwzn2O94KAHqgPf8xIh7hL6F55qK7gugyrcH_XquILR53fmtQfRK77MI-hfo1WrJNx1XnE8algq4H1yhMSpAbONXEj70"/>
+</div>
+</header>
+<!-- Main Canvas: Loading Screen -->
+<main class="flex-grow flex flex-col items-center justify-center relative px-6 py-20">
+<!-- Background Decor (Technical Geometric Shapes) -->
+<div class="absolute inset-0 opacity-10 pointer-events-none overflow-hidden">
+<div class="absolute top-1/4 -left-10 w-64 h-64 border-2 border-primary rotate-45"></div>
+<div class="absolute bottom-1/4 -right-10 w-96 h-96 border-4 border-tertiary/20 -rotate-12"></div>
+<div class="absolute top-10 right-10 w-32 h-32 border border-primary-fixed/40 rounded-full"></div>
+</div>
+<!-- Central Focus Zone: Animated Shard/Icon -->
+<div class="relative flex flex-col items-center justify-center mb-12">
+<div class="w-48 h-48 relative flex items-center justify-center">
+<!-- Outer Rotating Ring -->
+<div class="absolute inset-0 border-2 border-dashed border-primary/30 rounded-full animate-[spin_10s_linear_infinite]"></div>
+<!-- Inner Shard Container -->
+<div class="w-32 h-32 bg-primary-container/20 backdrop-blur-md flex items-center justify-center cyber-border clip-path-[polygon(50%_0%,_100%_25%,_100%_75%,_50%_100%,_0%_75%,_0%_25%)]">
+<span class="material-symbols-outlined text-primary text-[64px] animate-pulse" data-icon="speed" style="font-variation-settings: 'FILL' 1;">speed</span>
+</div>
+<!-- Decorative Accents -->
+<div class="absolute -top-2 -right-2 bg-tertiary text-on-tertiary font-label-mono text-[10px] px-2 py-0.5 uppercase italic font-bold">ACTV</div>
+</div>
+</div>
+<!-- Loading Headline -->
+<div class="text-center space-y-2 mb-8">
+<h2 class="font-display-xl text-[48px] leading-tight text-primary italic font-black uppercase glitch-text tracking-tighter">
+        LOADING STAGE 01
+      </h2>
+<div class="flex items-center justify-center gap-2">
+<div class="h-[1px] w-12 bg-outline-variant"></div>
+<p class="font-label-mono text-tertiary tracking-widest text-[14px] uppercase">Initializing Neural Link</p>
+<div class="h-[1px] w-12 bg-outline-variant"></div>
+</div>
+</div>
+<!-- Progress Indicator (Gaming Persona: Scanning Highlight) -->
+<div class="w-full max-w-xs space-y-4">
+<div class="relative h-progress-height-md bg-surface-container-highest rounded-full overflow-hidden border border-outline-variant/30">
+<!-- The Flow-Bar -->
+<div class="absolute top-0 left-0 h-full bg-primary neon-glow" style="width: 65%;"></div>
+<!-- Scanning Highlight -->
+<div class="absolute top-0 left-0 h-full w-20 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[shimmer_1.5s_infinite]" style="left: 65%;"></div>
+</div>
+<div class="flex justify-between font-label-mono text-[11px] text-on-surface-variant uppercase tracking-tighter">
+<span>Sector Alpha-9</span>
+<span class="text-primary font-bold">65% Sync</span>
+</div>
+</div>
+<!-- System Logs / Status Text -->
+<div class="mt-16 w-full max-w-md bg-surface-container-lowest/60 border-l-2 border-primary p-4 space-y-1 font-label-mono text-[10px] text-on-surface-variant/80">
+<div class="flex gap-4">
+<span class="text-primary-fixed-dim">[09:22:01]</span>
+<span>VERIFYING ASSETS... <span class="text-tertiary">OK</span></span>
+</div>
+<div class="flex gap-4">
+<span class="text-primary-fixed-dim">[09:22:04]</span>
+<span>ENCRYPTING PACKETS... <span class="text-tertiary">DONE</span></span>
+</div>
+<div class="flex gap-4">
+<span class="text-primary-fixed-dim">[09:22:08]</span>
+<span class="animate-pulse">FETCHING WORLD_STATE_L01... <span class="text-primary">PENDING</span></span>
+</div>
+<div class="flex gap-4 opacity-40">
+<span class="text-primary-fixed-dim">[09:22:10]</span>
+<span>MAPPING SHADER_CACHE...</span>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface-container-low/90 dark:bg-surface-container-lowest/90 backdrop-blur-2xl border-t border-outline-variant/20 shadow-[0_-4px_20px_rgba(207,188,255,0.1)] rounded-t-full md:hidden">
+<!-- Active Destination: Experience -->
+<a class="flex flex-col items-center justify-center text-primary-fixed bg-primary-container/30 rounded-full px-6 py-2 active:scale-90 duration-200 ease-out transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="speed" style="font-variation-settings: 'FILL' 1;">speed</span>
+<span class="font-label-mono text-label-mono mt-1">Experience</span>
+</a>
+<!-- Inactive Destination -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary-fixed-dim transition-all active:scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="theaters">theaters</span>
+<span class="font-label-mono text-label-mono mt-1">Theater</span>
+</a>
+<!-- Inactive Destination -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary-fixed-dim transition-all active:scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="sports_esports">sports_esports</span>
+<span class="font-label-mono text-label-mono mt-1">Arena</span>
+</a>
+<!-- Inactive Destination -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary-fixed-dim transition-all active:scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-mono text-label-mono mt-1">Profile</span>
+</a>
+</nav>
+<!-- Keyframe Animations (Native CSS as per instructions) -->
+<style>
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(500%); }
+    }
+  </style>
+</body></html>

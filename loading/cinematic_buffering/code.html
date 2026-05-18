@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Geist:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-primary": "#6750a4",
+            "on-surface": "#e5e1e4",
+            "on-tertiary-container": "#503d00",
+            "secondary-fixed-dim": "#cdc0e9",
+            "error": "#ffb4ab",
+            "on-tertiary-fixed": "#241a00",
+            "primary": "#cfbcff",
+            "secondary-container": "#4d4465",
+            "surface-container": "#201f21",
+            "on-tertiary-fixed-variant": "#594400",
+            "on-error": "#690005",
+            "on-secondary-fixed-variant": "#4b4263",
+            "inverse-on-surface": "#303032",
+            "tertiary-fixed-dim": "#e7c365",
+            "error-container": "#93000a",
+            "tertiary": "#e7c365",
+            "on-background": "#e5e1e4",
+            "inverse-surface": "#e5e1e4",
+            "secondary-fixed": "#e9ddff",
+            "surface-container-low": "#1b1b1d",
+            "secondary": "#cdc0e9",
+            "surface-container-high": "#2a2a2c",
+            "tertiary-container": "#c9a74d",
+            "outline": "#948e9c",
+            "on-secondary": "#342b4b",
+            "on-primary": "#381e72",
+            "surface-bright": "#39393b",
+            "surface-container-highest": "#353437",
+            "primary-fixed-dim": "#cfbcff",
+            "surface-variant": "#353437",
+            "on-secondary-container": "#bfb2da",
+            "on-surface-variant": "#cbc4d2",
+            "on-primary-fixed-variant": "#4f378a",
+            "primary-fixed": "#e9ddff",
+            "surface-dim": "#131315",
+            "surface": "#131315",
+            "on-primary-container": "#e0d2ff",
+            "background": "#131315",
+            "tertiary-fixed": "#ffdf93",
+            "surface-container-lowest": "#0e0e10",
+            "on-primary-fixed": "#22005d",
+            "surface-tint": "#cfbcff",
+            "on-error-container": "#ffdad6",
+            "primary-container": "#6750a4",
+            "on-secondary-fixed": "#1f1635",
+            "outline-variant": "#494551",
+            "on-tertiary": "#3e2e00"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "stack-gap": "1rem",
+            "progress-height-md": "12px",
+            "unit": "8px",
+            "progress-height-sm": "4px",
+            "progress-height-lg": "32px",
+            "container-padding": "2rem"
+          },
+          "fontFamily": {
+            "label-mono": ["JetBrains Mono"],
+            "headline-lg": ["Space Grotesk"],
+            "body-md": ["Geist"],
+            "display-xl": ["Space Grotesk"]
+          },
+          "fontSize": {
+            "label-mono-mobile": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+            "body-md-mobile": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+            "display-xl-mobile": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr
+    }
+.cinematic-grain {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAqsZcMtJCYgLPo6gtFhz3AUwxM10a2f3X-3irstZP36a8CYitLLzUcHSQKlLnTm4Xg1bBYZCoHYDVBOuJqPH3CJQ7OAHY5pW4K68PJCT1p9NDcGjyByu8uCtTgdOffbGdFllFwdjlPBrSLKWPaN3qnMjNSBO3POy-C32_jWiGAKCBVW6VLqEJbDXJTkwrXrBMVb_eeuNjBAmBUKyIlwYe8n2r1UWy78hQgsScCKIg7xVgjuMM9m8kWUmUwx665-gVZB7vGnuVQEDw);
+    opacity: 0.03
+    }
+.radial-pulse-ring {
+    box-shadow: 0 0 40px #e7c365, inset 0 0 20px #e7c365;
+    border: 2px solid rgba(231, 195, 101, 0.3)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen selection:bg-primary/30 overflow-hidden font-body-md-mobile text-body-md-mobile">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-container-padding h-16 bg-surface/80 dark:bg-background/80 backdrop-blur-xl border-b border-outline-variant/30">
+<div class="flex items-center justify-center h-full">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" data-icon="menu">menu</span>
+</div>
+<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+<h1 class="font-display-xl-mobile text-display-xl-mobile text-primary tracking-tighter">VELOCITY</h1>
+</div>
+<div class="flex items-center justify-center h-full">
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant/50">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A professional and sleek close-up portrait of a person with neutral lighting and a blurred dark background, following a cinematic aesthetic. The lighting is soft and directional, highlighting the contours of the face while maintaining the deep charcoal and sunset orange color palette of the app's brand identity. The style is high-end, modern, and perfectly fits into a premium dark-mode interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeLGs6XI1o3C7j9e3yz01vGAoakuL8tkTPnqXnSBIZWmau0pX5IyTuV_tSAwb3UDVHDFq-hbQWLtJqt8uAojb0ReETWeV6wU1uKo2a0846F7Vy1dF72iXRRVl__K00qE9RSdCvj900JV5j0TdxbZr-MQuIfuQ0lU_f7shYh53RurvtRCsIMGrX7zuRRqp_CrXxCgfhZJz7Uva-TPhi-mqm-rcM2ajNz2J9y4Z64Yx9wDlnFwTQ303EpEsyizskfKuzlpRacRw7_R8"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="relative flex flex-col items-center justify-center min-h-screen px-container-padding pt-16 pb-24">
+<!-- Cinematic Background Elements -->
+<div class="absolute inset-0 cinematic-grain pointer-events-none"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-background via-surface-dim to-background opacity-90 pointer-events-none"></div>
+<!-- Ambient Glows -->
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-tertiary/5 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+<!-- Loading State Container -->
+<div class="relative z-10 flex flex-col items-center gap-12 text-center max-w-[480px]">
+<!-- The Radial Pulse (Focal Point) -->
+<div class="relative">
+<!-- Outer Glow Ring -->
+<div class="w-32 h-32 rounded-full radial-pulse-ring flex items-center justify-center animate-pulse">
+<!-- Inner Rotating Indicator (Simulated with CSS) -->
+<div class="absolute inset-0 rounded-full border-t-4 border-tertiary animate-spin opacity-80" style="animation-duration: 1.5s;"></div>
+<!-- Iconic Center -->
+<span class="material-symbols-outlined text-tertiary text-4xl" data-icon="speed">speed</span>
+</div>
+</div>
+<!-- Content Text -->
+<div class="space-y-4">
+<p class="font-label-mono-mobile text-label-mono-mobile text-tertiary uppercase tracking-widest opacity-80">Buffering Assets</p>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Preparing your cinematic experience...</h2>
+<p class="text-on-surface-variant max-w-[280px] mx-auto opacity-70">Optimizing resolution and immersive sound layers for high-velocity playback.</p>
+</div>
+<!-- Segmented Loader (Cinematic Persona) -->
+<div class="flex gap-2 items-center h-1 mt-4">
+<div class="w-8 h-1 bg-tertiary rounded-full"></div>
+<div class="w-8 h-1 bg-tertiary rounded-full"></div>
+<div class="w-8 h-1 bg-tertiary rounded-full"></div>
+<div class="w-8 h-1 bg-surface-container-highest rounded-full"></div>
+<div class="w-8 h-1 bg-surface-container-highest rounded-full"></div>
+<div class="w-8 h-1 bg-surface-container-highest rounded-full"></div>
+</div>
+</div>
+<!-- Background Cinematic Visual -->
+<div class="absolute inset-0 -z-10 opacity-20">
+<img alt="Cinematic theater atmosphere" class="w-full h-full object-cover" data-alt="A deep, moody, and atmospheric cinematic scene of a dark theater hall with soft golden glowing light reflecting off sleek surfaces. The lighting is low-key, featuring a sunset orange glow that creates a warm, premium feel. The background is slightly blurred with a subtle grain texture, emphasizing a high-end cinematic experience. The color palette is dominated by charcoal, deep black, and rich amber tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLyO3eWtbIlfiU0WzWtip3bS1ZZqBCeYEHavmsweAri3vkqW4C5WYgr6YbRoigXGezvKYOvxwcOFFRRfmAhaftDVslneuTSoX6MIw83v3hYAbwFcIbGiFyj3w9m5Yhc6ZAC2le_ur1f7YQRJXi9kRHnq5W7lDArTqkr2fGwD80FgfLM4SbFHjjEk7TJ43Vuo7_Q2omEysHwqmUb4U4EOnoK9QSZ9iKXhDrUMjJPyNUwt6JIVjQdm10sRAvBS65aeWqLgqLQERlc5k"/>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface-container-low/90 dark:bg-surface-container-lowest/90 backdrop-blur-2xl border-t border-outline-variant/20 shadow-[0_-4px_20px_rgba(207,188,255,0.1)] rounded-t-full">
+<!-- Experience (Active) -->
+<div class="flex flex-col items-center justify-center text-primary-fixed bg-primary-container/30 rounded-full px-6 py-2 transition-all active:scale-90 duration-200 ease-out">
+<span class="material-symbols-outlined" data-icon="speed">speed</span>
+<span class="font-label-mono-mobile text-label-mono-mobile mt-1">Experience</span>
+</div>
+<!-- Theater -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary-fixed-dim transition-all active:scale-90 duration-200 ease-out">
+<span class="material-symbols-outlined" data-icon="theaters">theaters</span>
+<span class="font-label-mono-mobile text-label-mono-mobile mt-1">Theater</span>
+</div>
+<!-- Arena -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary-fixed-dim transition-all active:scale-90 duration-200 ease-out">
+<span class="material-symbols-outlined" data-icon="sports_esports">sports_esports</span>
+<span class="font-label-mono-mobile text-label-mono-mobile mt-1">Arena</span>
+</div>
+<!-- Profile -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary-fixed-dim transition-all active:scale-90 duration-200 ease-out">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-mono-mobile text-label-mono-mobile mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

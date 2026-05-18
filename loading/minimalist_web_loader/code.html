@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Geist:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom thin progress bar override for 1px requirement */
+        .ultra-thin-progress {
+            height: 1px !important;
+        }
+        /* Glassmorphism utility */
+        .glass-surface {
+            backdrop-filter: blur(20px);
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#6750a4",
+                    "on-surface": "#e5e1e4",
+                    "on-tertiary-container": "#503d00",
+                    "secondary-fixed-dim": "#cdc0e9",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed": "#241a00",
+                    "primary": "#cfbcff",
+                    "secondary-container": "#4d4465",
+                    "surface-container": "#201f21",
+                    "on-tertiary-fixed-variant": "#594400",
+                    "on-error": "#690005",
+                    "on-secondary-fixed-variant": "#4b4263",
+                    "inverse-on-surface": "#303032",
+                    "tertiary-fixed-dim": "#e7c365",
+                    "error-container": "#93000a",
+                    "tertiary": "#e7c365",
+                    "on-background": "#e5e1e4",
+                    "inverse-surface": "#e5e1e4",
+                    "secondary-fixed": "#e9ddff",
+                    "surface-container-low": "#1b1b1d",
+                    "secondary": "#cdc0e9",
+                    "surface-container-high": "#2a2a2c",
+                    "tertiary-container": "#c9a74d",
+                    "outline": "#948e9c",
+                    "on-secondary": "#342b4b",
+                    "on-primary": "#381e72",
+                    "surface-bright": "#39393b",
+                    "surface-container-highest": "#353437",
+                    "primary-fixed-dim": "#cfbcff",
+                    "surface-variant": "#353437",
+                    "on-secondary-container": "#bfb2da",
+                    "on-surface-variant": "#cbc4d2",
+                    "on-primary-fixed-variant": "#4f378a",
+                    "primary-fixed": "#e9ddff",
+                    "surface-dim": "#131315",
+                    "surface": "#131315",
+                    "on-primary-container": "#e0d2ff",
+                    "background": "#131315",
+                    "tertiary-fixed": "#ffdf93",
+                    "surface-container-lowest": "#0e0e10",
+                    "on-primary-fixed": "#22005d",
+                    "surface-tint": "#cfbcff",
+                    "on-error-container": "#ffdad6",
+                    "primary-container": "#6750a4",
+                    "on-secondary-fixed": "#1f1635",
+                    "outline-variant": "#494551",
+                    "on-tertiary": "#3e2e00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-gap": "1rem",
+                    "progress-height-md": "12px",
+                    "unit": "8px",
+                    "progress-height-sm": "4px",
+                    "progress-height-lg": "32px",
+                    "container-padding": "2rem"
+            },
+            "fontFamily": {
+                    "label-mono": ["JetBrains Mono"],
+                    "headline-lg": ["Space Grotesk"],
+                    "headline-lg-mobile": ["Space Grotesk"],
+                    "body-md": ["Geist"],
+                    "display-xl": ["Space Grotesk"],
+                    "display-xl-mobile": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "label-mono": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "display-xl-mobile": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-hidden">
+<!-- TopAppBar - Suppressed for transactional/loading screen focus as per guidelines -->
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center px-container-padding relative">
+<!-- Subtle Ambient Background Glow -->
+<div class="absolute inset-0 z-0 flex items-center justify-center">
+<div class="w-[300px] h-[300px] bg-primary/5 rounded-full blur-[100px]"></div>
+</div>
+<!-- Hero Loading Container -->
+<div class="z-10 w-full flex flex-col items-center space-y-12">
+<!-- Logo / Brand Anchor Anchor -->
+<div class="mb-4">
+<span class="font-display-xl-mobile text-display-xl-mobile text-primary tracking-tighter">VELOCITY</span>
+</div>
+<!-- Loading Text -->
+<div class="text-center">
+<h1 class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-[0.6em] opacity-80">
+                    L O A D I N G
+                </h1>
+</div>
+<!-- Ultra-Thin Progress Bar -->
+<div class="w-4/5 max-w-[480px] bg-outline-variant/20 rounded-full ultra-thin-progress overflow-hidden">
+<div class="h-full bg-primary w-[65%] shadow-[0_0_10px_rgba(207,188,255,0.4)]"></div>
+</div>
+<!-- Secondary Status (Low Emphasis) -->
+<div class="mt-8">
+<p class="font-body-md text-body-md text-on-surface-variant/40 animate-pulse">
+                    Initializing high-performance modules...
+                </p>
+</div>
+</div>
+<!-- Cinematic Personna Element: Floating Technical Grid (Subtle) -->
+<div class="absolute bottom-20 left-0 w-full opacity-5 pointer-events-none">
+<div class="grid grid-cols-6 gap-4 px-container-padding">
+<div class="h-1 bg-on-surface-variant rounded-full"></div>
+<div class="h-1 bg-on-surface-variant rounded-full opacity-50"></div>
+<div class="h-1 bg-on-surface-variant rounded-full opacity-30"></div>
+<div class="h-1 bg-on-surface-variant rounded-full opacity-10"></div>
+<div class="h-1 bg-on-surface-variant rounded-full opacity-5"></div>
+<div class="h-1 bg-on-surface-variant rounded-full opacity-0"></div>
+</div>
+</div>
+</main>
+<!-- Content Skeletons (Cinematic Ghost States) -->
+<div class="fixed inset-0 z-[-1] flex flex-col items-center justify-end pb-32 pointer-events-none opacity-10">
+<div class="w-full max-w-md space-y-6 px-8">
+<div class="h-24 w-full bg-surface-container-high rounded-xl"></div>
+<div class="h-24 w-full bg-surface-container-high rounded-xl scale-95 opacity-50"></div>
+</div>
+</div>
+<!-- Bottom Navigation suppressed as per "The Destination Rule" - Loader is a Task-Focused/Linear state -->
+</body></html>
