@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nexus Event - Witness the Future</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #0c1324;
+            color: #dce1fb;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(21, 27, 45, 0.4);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+        }
+        .light-sweep {
+            position: relative;
+            overflow: hidden;
+        }
+        .light-sweep::after {
+            content: "";
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: linear-gradient(
+                45deg,
+                transparent 0%,
+                rgba(195, 192, 255, 0.03) 45%,
+                rgba(195, 192, 255, 0.1) 50%,
+                rgba(195, 192, 255, 0.03) 55%,
+                transparent 100%
+            );
+            animation: sweep 8s infinite linear;
+            pointer-events: none;
+        }
+        @keyframes sweep {
+            0% { transform: translate(-20%, -20%); }
+            100% { transform: translate(10%, 10%); }
+        }
+        .bg-glow {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.12) 0%, rgba(79, 70, 229, 0) 70%);
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#690005",
+                        "on-secondary": "#283044",
+                        "primary-container": "#4f46e5",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#33394c",
+                        "inverse-primary": "#4d44e3",
+                        "error-container": "#93000a",
+                        "inverse-on-surface": "#2a3043",
+                        "surface-tint": "#c3c0ff",
+                        "primary": "#c3c0ff",
+                        "surface-dim": "#0c1324",
+                        "tertiary-fixed": "#b4ebff",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-container-low": "#151b2d",
+                        "tertiary-fixed-dim": "#3cd7ff",
+                        "on-tertiary": "#003642",
+                        "secondary": "#bec6e0",
+                        "surface-container-lowest": "#070d1f",
+                        "on-surface-variant": "#c7c4d8",
+                        "on-primary": "#1d00a5",
+                        "on-secondary-fixed": "#131b2e",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "secondary-fixed": "#dae2fd",
+                        "inverse-surface": "#dce1fb",
+                        "on-tertiary-fixed": "#001f27",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-tertiary-fixed-variant": "#004e5f",
+                        "outline": "#918fa1",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "tertiary-container": "#006980",
+                        "surface-container-highest": "#2e3447",
+                        "tertiary": "#3cd7ff",
+                        "surface-container": "#191f31",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-secondary-container": "#adb4ce",
+                        "on-primary-container": "#dad7ff",
+                        "on-tertiary-container": "#9ce6ff",
+                        "outline-variant": "#464555",
+                        "on-surface": "#dce1fb",
+                        "secondary-container": "#3f465c",
+                        "primary-fixed": "#e2dfff",
+                        "surface": "#0c1324",
+                        "on-background": "#dce1fb",
+                        "surface-variant": "#2e3447",
+                        "surface-container-high": "#23293c",
+                        "background": "#0c1324"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "section-gap": "120px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px",
+                        "unit": "8px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "label-md": ["JetBrains Mono"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-md": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "body-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "body-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="flex flex-col min-h-screen">
+<div class="bg-glow top-[-200px] left-[-200px]"></div>
+<div class="bg-glow bottom-[-200px] right-[-200px]"></div>
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/40 dark:bg-surface/40 backdrop-blur-xl border-b border-white/10 flex justify-between items-center px-margin-mobile h-16">
+<div class="flex items-center gap-2">
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity active:scale-95 duration-200">menu</button>
+</div>
+<span class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface">NEXUS EVENT</span>
+<div class="flex items-center gap-2">
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity active:scale-95 duration-200">account_circle</button>
+</div>
+</header>
+<main class="flex-1 pt-24 pb-32 px-margin-mobile max-w-lg mx-auto w-full">
+<!-- Hero Section -->
+<section class="flex flex-col items-center text-center mb-12">
+<div class="relative w-24 h-24 mb-8 p-4 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center animate-pulse">
+<img alt="Nexus Logo" class="w-full h-full object-contain" src="data:image/png;base64,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"/>
+</div>
+<span class="font-label-md text-label-md text-primary mb-4 block tracking-widest">LAUNCH EVENT</span>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-on-surface mb-6 font-bold tracking-tight">
+                Witness the <span class="text-primary">Future</span> of Connection
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-[320px]">
+                An exclusive evening unveiling the Nexus ecosystem.
+            </p>
+</section>
+<!-- Event Cards (Bento Style) -->
+<div class="grid grid-cols-2 gap-4 mb-12">
+<!-- Location Card -->
+<div class="glass-card light-sweep col-span-2 p-6 rounded-full flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-primary mb-1">LOCATION</p>
+<p class="font-headline-md text-headline-md text-on-surface">The Glass Pavilion, NYC</p>
+</div>
+</div>
+<!-- Date Card -->
+<div class="glass-card light-sweep p-6 rounded-full flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-primary mb-3">event</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">DATE</p>
+<p class="font-headline-md text-headline-md text-on-surface">Nov 12</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">2024</p>
+</div>
+<!-- Time Card -->
+<div class="glass-card light-sweep p-6 rounded-full flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-primary mb-3">schedule</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">TIME</p>
+<p class="font-headline-md text-headline-md text-on-surface">7:00 PM</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Doors 6:30</p>
+</div>
+</div>
+<!-- Call to Action -->
+<div class="flex flex-col gap-4">
+<button class="w-full bg-primary-container text-on-primary-container font-headline-md py-5 rounded-full hover:shadow-[0_0_20px_rgba(79,70,229,0.4)] transition-all active:scale-95 duration-200">
+                RSVP Now
+            </button>
+<button class="w-full glass-card border-primary/20 text-on-surface font-headline-md py-5 rounded-full hover:bg-white/5 transition-all active:scale-95 duration-200">
+                Add to Calendar
+            </button>
+</div>
+<!-- Atmospheric Visual Element -->
+<div class="mt-16 relative h-48 w-full glass-card rounded-full overflow-hidden">
+<img class="w-full h-full object-cover opacity-40 mix-blend-screen" data-alt="A macro shot of a sleek technological interface with glowing electric indigo nodes connected by fine laser-like filaments. The aesthetic is deep dark midnight tech with high backdrop blur and crystal clear glass textures. Cinematic lighting from an unseen top source highlights the sophisticated minimal geometry of the Nexus ecosystem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIL9giETu0QEJ5mHGVMBshg-1Hppn4pqIiJAnioKZxZwDHdSQxz63vzXZaM8ArFRHy4lQ0JBRzipLQk4cZ8niCnyoaFSk1oJUdyZ06gxhUsIZwmRHaWzzdj-F7taplAI7cSsjQbkgeKrzeZrdBrbBQefvA-GbDO6TMyP-pTElMBLEQPeOFPmq7MtOI1jmpJGYVfVwPlCFDmf-3a5mwkLYvCkSp3oMVE3OyCJRdG92VA7PvE2mI1_HNYkfTpq2_HFI9KMJMulHQOUxa"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-center">
+<p class="font-label-sm text-label-sm text-primary tracking-widest">EXPERIENCE THE UNVEILING</p>
+</div>
+</div>
+</main>
+<!-- Bottom Nav Bar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-surface-container-lowest/60 dark:bg-surface-container-lowest/60 backdrop-blur-2xl border-t border-white/5 shadow-[0_-8px_32px_rgba(79,70,229,0.15)] rounded-t-full z-50 md:hidden">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-6 py-2 active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="font-label-sm text-label-sm">Event</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary transition-colors active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<span class="font-label-sm text-label-sm">Location</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary transition-colors active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="how_to_reg">how_to_reg</span>
+<span class="font-label-sm text-label-sm">RSVP</span>
+</a>
+</nav>
+<script>
+        // Simple parallax interaction for the background glow
+        document.addEventListener('mousemove', (e) => {
+            const glows = document.querySelectorAll('.bg-glow');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            glows.forEach((glow, i) => {
+                const speed = (i + 1) * 20;
+                glow.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+            });
+        });
+    </script>
+</body></html>
