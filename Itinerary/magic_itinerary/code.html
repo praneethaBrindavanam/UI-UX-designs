@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Magic Itinerary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#ffe2a9",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#6995ff",
+                        "on-secondary-fixed": "#001847",
+                        "tertiary-container": "#836100",
+                        "surface-container": "#edeeef",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#b2c5ff",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-tint": "#c00000",
+                        "tertiary-fixed": "#ffdf9e",
+                        "surface-dim": "#d9dadb",
+                        "inverse-primary": "#ffb4a8",
+                        "on-secondary-container": "#002c73",
+                        "on-tertiary-fixed": "#261a00",
+                        "on-secondary-fixed-variant": "#0040a0",
+                        "outline": "#936e69",
+                        "surface-container-high": "#e7e8e9",
+                        "on-tertiary": "#ffffff",
+                        "background": "#f8f9fa",
+                        "on-tertiary-fixed-variant": "#5b4300",
+                        "tertiary-fixed-dim": "#fabd00",
+                        "on-primary-fixed-variant": "#930000",
+                        "on-surface-variant": "#5e3f3a",
+                        "secondary": "#2559bf",
+                        "on-error": "#ffffff",
+                        "on-background": "#191c1d",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#410000",
+                        "primary": "#a20000",
+                        "tertiary": "#654a00",
+                        "surface-bright": "#f8f9fa",
+                        "outline-variant": "#e8bdb6",
+                        "on-surface": "#191c1d",
+                        "inverse-on-surface": "#f0f1f2",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#ffdad4",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-variant": "#e1e3e4",
+                        "primary-container": "#d00000",
+                        "surface": "#f8f9fa",
+                        "secondary-fixed": "#dae2ff",
+                        "on-primary-container": "#ffded9",
+                        "inverse-surface": "#2e3132"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "inline-gap": "12px",
+                        "stack-gap": "16px",
+                        "container-padding": "20px",
+                        "section-margin": "32px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Montserrat"],
+                        "body-lg": ["Montserrat"],
+                        "body-md": ["Montserrat"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "button": ["Montserrat"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "30px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "button": ["16px", {"lineHeight": "20px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["26px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-sm": ["20px", {"lineHeight": "26px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sparkle-animation {
+            animation: sparkle 0.6s ease-out forwards;
+        }
+        @keyframes sparkle {
+            0% { transform: scale(0) rotate(0deg); opacity: 0; }
+            50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
+            100% { transform: scale(1) rotate(360deg); opacity: 0; }
+        }
+        .itinerary-line::before {
+            content: '';
+            position: absolute;
+            left: 11px;
+            top: 40px;
+            bottom: 0;
+            width: 2px;
+            background: repeating-linear-gradient(to bottom, transparent, transparent 4px, #e8bdb6 4px, #e8bdb6 8px);
+        }
+        .event-card-active {
+            border-color: #2559bf;
+            box-shadow: 0 4px 15px rgba(37, 89, 191, 0.12);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md selection:bg-secondary-fixed">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center w-full px-container h-16 bg-surface dark:bg-inverse-surface shadow-[0_4px_15px_rgba(37,89,191,0.08)] sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A high-quality close-up portrait of a smiling young adventurer wearing a stylish outdoor hat and a bright red neckerchief. The background is a soft-focus vibrant theme park setting with hints of a grand castle under warm golden hour sunlight. The overall aesthetic is cheerful, clean, and professional, reflecting a premium travel experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2OpklurK8B9hiMuInthZoyyzGqYBoQSap7lk4Aev_BVM9tjLiu6bW9ctEki3Szu3FnkPrh5fBuIAoKJ9tPoN528NCGzGfUU7rElmQxP_einoliFkRa2RT6vFmUZ4mTPBzifXI0fIBnX7t4gdAKStNxGGG2GxYAc8E8b8X9Yb_CxjvG6QtfWflyL_iz_Az87QQ3ntcvKou8rX89GNGMGtsZSTekX1w5lvVGy5fwN59Q4PBfkdk-ONR6dqpjUOaxvHdW29KplBZ2qE"/>
+</div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed-dim">Hello, Adventurer!</h1>
+</div>
+<button class="material-symbols-outlined text-primary p-2 rounded-full hover:bg-surface-container-high transition-colors active:scale-95">
+            notifications
+        </button>
+</header>
+<main class="max-w-3xl mx-auto px-container pb-32">
+<!-- Day Switcher Section -->
+<section class="mt-section-margin">
+<div class="flex items-center justify-between mb-stack-gap">
+<h2 class="font-headline-md text-headline-md text-on-surface">Your Schedule</h2>
+<span class="font-label-md text-label-md text-secondary bg-secondary-fixed px-3 py-1 rounded-full">4 Days Total</span>
+</div>
+<div class="flex gap-3 overflow-x-auto pb-4 no-scrollbar">
+<button class="day-tab flex-shrink-0 flex flex-col items-center justify-center w-32 py-4 rounded-xl transition-all duration-200 bg-secondary-container text-on-secondary-container shadow-md border-2 border-secondary" id="day-1-btn" onclick="switchDay(1)">
+<span class="font-label-md text-label-md opacity-80">DAY 1</span>
+<span class="font-button text-button mt-1">Magic Kingdom</span>
+</button>
+<button class="day-tab flex-shrink-0 flex flex-col items-center justify-center w-32 py-4 rounded-xl transition-all duration-200 bg-surface-container-lowest text-on-surface-variant border-2 border-transparent hover:border-outline-variant" id="day-2-btn" onclick="switchDay(2)">
+<span class="font-label-md text-label-md opacity-70">DAY 2</span>
+<span class="font-button text-button mt-1">CA Adventure</span>
+</button>
+<button class="day-tab flex-shrink-0 flex flex-col items-center justify-center w-32 py-4 rounded-xl transition-all duration-200 bg-surface-container-lowest text-on-surface-variant border-2 border-transparent hover:border-outline-variant" id="day-3-btn" onclick="switchDay(3)">
+<span class="font-label-md text-label-md opacity-70">DAY 3</span>
+<span class="font-button text-button mt-1">Disneyland Park</span>
+</button>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="mt-section-margin relative itinerary-line">
+<div class="space-y-stack-gap">
+<!-- Timeline Item: Rope Drop -->
+<div class="relative flex gap-inline-gap items-start group">
+<div class="z-10 mt-2 bg-surface flex items-center justify-center">
+<div class="w-6 h-6 rounded-full border-4 border-primary bg-white transition-all group-hover:scale-110"></div>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant shadow-[0_4px_15px_rgba(37,89,191,0.06)] hover:shadow-[0_4px_15px_rgba(37,89,191,0.12)] transition-shadow cursor-pointer" onclick="toggleComplete(this)">
+<div class="flex justify-between items-start">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">rocket_launch</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Rope Drop &amp; Space Mountain</h3>
+<p class="font-label-md text-label-md text-secondary mt-1">8:00 AM â¢ Tomorrowland</p>
+</div>
+</div>
+<div class="check-box w-8 h-8 rounded-full border-2 border-outline-variant flex items-center justify-center transition-all bg-white relative overflow-hidden">
+<span class="material-symbols-outlined text-white text-xl scale-0 transition-transform">check</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Timeline Item: Breakfast -->
+<div class="relative flex gap-inline-gap items-start group">
+<div class="z-10 mt-2 bg-surface flex items-center justify-center">
+<div class="w-6 h-6 rounded-full border-4 border-outline-variant bg-white transition-all group-hover:scale-110 group-[.is-complete]:border-primary"></div>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant shadow-[0_4px_15px_rgba(37,89,191,0.06)] hover:shadow-[0_4px_15px_rgba(37,89,191,0.12)] transition-shadow cursor-pointer" onclick="toggleComplete(this)">
+<div class="flex justify-between items-start">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-tertiary text-2xl">restaurant</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Character Breakfast</h3>
+<p class="font-label-md text-label-md text-secondary mt-1">10:30 AM â¢ Plaza Inn</p>
+</div>
+</div>
+<div class="check-box w-8 h-8 rounded-full border-2 border-outline-variant flex items-center justify-center transition-all bg-white relative overflow-hidden">
+<span class="material-symbols-outlined text-white text-xl scale-0 transition-transform">check</span>
+</div>
+</div>
+<div class="mt-4 rounded-lg overflow-hidden h-32 relative">
+<img alt="Plaza Inn Breakfast" class="w-full h-full object-cover" data-alt="A vibrant, warm photograph of a classic Victorian-style dining room with elegant white wood trim and pink floral accents. Soft sunlight streams through large windows onto a table set with Mickey-shaped waffles and colorful fresh fruit. The atmosphere is magical and inviting, captured with a professional shallow depth of field in high-key light mode." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</div>
+</div>
+</div>
+<!-- Timeline Item: Parade -->
+<div class="relative flex gap-inline-gap items-start group">
+<div class="z-10 mt-2 bg-surface flex items-center justify-center">
+<div class="w-6 h-6 rounded-full border-4 border-outline-variant bg-white transition-all group-hover:scale-110"></div>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant shadow-[0_4px_15px_rgba(37,89,191,0.06)] hover:shadow-[0_4px_15px_rgba(37,89,191,0.12)] transition-shadow cursor-pointer" onclick="toggleComplete(this)">
+<div class="flex justify-between items-start">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-secondary text-2xl">celebration</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Parade Viewpoint setup</h3>
+<p class="font-label-md text-label-md text-secondary mt-1">1:00 PM â¢ Main Street U.S.A.</p>
+</div>
+</div>
+<div class="check-box w-8 h-8 rounded-full border-2 border-outline-variant flex items-center justify-center transition-all bg-white relative overflow-hidden">
+<span class="material-symbols-outlined text-white text-xl scale-0 transition-transform">check</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Timeline Item: Fireworks -->
+<div class="relative flex gap-inline-gap items-start group">
+<div class="z-10 mt-2 bg-surface flex items-center justify-center">
+<div class="w-6 h-6 rounded-full border-4 border-outline-variant bg-white transition-all group-hover:scale-110"></div>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant shadow-[0_4px_15px_rgba(37,89,191,0.06)] hover:shadow-[0_4px_15px_rgba(37,89,191,0.12)] transition-shadow cursor-pointer" onclick="toggleComplete(this)">
+<div class="flex justify-between items-start">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-tertiary-container text-2xl" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Fireworks Spectacular</h3>
+<p class="font-label-md text-label-md text-secondary mt-1">8:00 PM â¢ Sleeping Beauty Castle</p>
+</div>
+</div>
+<div class="check-box w-8 h-8 rounded-full border-2 border-outline-variant flex items-center justify-center transition-all bg-white relative overflow-hidden">
+<span class="material-symbols-outlined text-white text-xl scale-0 transition-transform">check</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button (Only on main destinations) -->
+<button class="fixed right-6 bottom-24 w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-transform z-40">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe-offset-2 pt-2 bg-surface dark:bg-inverse-surface border-t border-outline-variant dark:border-outline shadow-[0_-4px_15px_rgba(37,89,191,0.08)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-5 py-1.5 hover:bg-surface-container-high transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-5 py-1.5 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-md text-label-md mt-1">Itinerary</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-5 py-1.5 hover:bg-surface-container-high transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-md text-label-md mt-1">Packing</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-5 py-1.5 hover:bg-surface-container-high transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label-md text-label-md mt-1">Magic Tips</span>
+</a>
+</nav>
+<script>
+        function toggleComplete(card) {
+            const checkBox = card.querySelector('.check-box');
+            const checkIcon = checkBox.querySelector('.material-symbols-outlined');
+            const timelineDot = card.parentElement.querySelector('.z-10 div');
+            
+            const isCompleted = card.getAttribute('data-completed') === 'true';
+            
+            if (!isCompleted) {
+                // Check it
+                card.setAttribute('data-completed', 'true');
+                card.classList.add('event-card-active');
+                checkBox.classList.remove('bg-white', 'border-outline-variant');
+                checkBox.classList.add('bg-secondary', 'border-secondary');
+                checkIcon.classList.remove('scale-0');
+                checkIcon.classList.add('scale-100');
+                timelineDot.classList.remove('border-outline-variant');
+                timelineDot.classList.add('border-primary');
+                
+                // Add sparkle effect
+                const sparkle = document.createElement('span');
+                sparkle.className = 'material-symbols-outlined absolute text-secondary sparkle-animation pointer-events-none';
+                sparkle.textContent = 'grade';
+                sparkle.style.left = '50%';
+                sparkle.style.top = '50%';
+                sparkle.style.marginLeft = '-12px';
+                sparkle.style.marginTop = '-12px';
+                checkBox.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 600);
+            } else {
+                // Uncheck it
+                card.setAttribute('data-completed', 'false');
+                card.classList.remove('event-card-active');
+                checkBox.classList.add('bg-white', 'border-outline-variant');
+                checkBox.classList.remove('bg-secondary', 'border-secondary');
+                checkIcon.classList.remove('scale-100');
+                checkIcon.classList.add('scale-0');
+                timelineDot.classList.add('border-outline-variant');
+                timelineDot.classList.remove('border-primary');
+            }
+        }
+
+        function switchDay(dayNum) {
+            const buttons = document.querySelectorAll('.day-tab');
+            buttons.forEach((btn, idx) => {
+                if (idx + 1 === dayNum) {
+                    btn.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant', 'border-transparent');
+                    btn.classList.add('bg-secondary-container', 'text-on-secondary-container', 'border-secondary', 'shadow-md');
+                } else {
+                    btn.classList.add('bg-surface-container-lowest', 'text-on-surface-variant', 'border-transparent');
+                    btn.classList.remove('bg-secondary-container', 'text-on-secondary-container', 'border-secondary', 'shadow-md');
+                }
+            });
+            
+            // Subtle transition effect for content
+            const mainContent = document.querySelector('section.itinerary-line');
+            mainContent.style.opacity = '0';
+            mainContent.style.transform = 'translateY(10px)';
+            setTimeout(() => {
+                mainContent.style.transition = 'all 0.4s ease';
+                mainContent.style.opacity = '1';
+                mainContent.style.transform = 'translateY(0)';
+            }, 100);
+        }
+    </script>
+</body>
+</html>

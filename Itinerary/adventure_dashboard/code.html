@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Disneyland Adventure Guide - Dashboard</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#ffe2a9",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#6995ff",
+                    "on-secondary-fixed": "#001847",
+                    "tertiary-container": "#836100",
+                    "surface-container": "#edeeef",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#b2c5ff",
+                    "surface-container-highest": "#e1e3e4",
+                    "surface-tint": "#c00000",
+                    "tertiary-fixed": "#ffdf9e",
+                    "surface-dim": "#d9dadb",
+                    "inverse-primary": "#ffb4a8",
+                    "on-secondary-container": "#002c73",
+                    "on-tertiary-fixed": "#261a00",
+                    "on-secondary-fixed-variant": "#0040a0",
+                    "outline": "#936e69",
+                    "surface-container-high": "#e7e8e9",
+                    "on-tertiary": "#ffffff",
+                    "background": "#f8f9fa",
+                    "on-tertiary-fixed-variant": "#5b4300",
+                    "tertiary-fixed-dim": "#fabd00",
+                    "on-primary-fixed-variant": "#930000",
+                    "on-surface-variant": "#5e3f3a",
+                    "secondary": "#2559bf",
+                    "on-error": "#ffffff",
+                    "on-background": "#191c1d",
+                    "primary-fixed-dim": "#ffb4a8",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#410000",
+                    "primary": "#a20000",
+                    "tertiary": "#654a00",
+                    "surface-bright": "#f8f9fa",
+                    "outline-variant": "#e8bdb6",
+                    "on-surface": "#191c1d",
+                    "inverse-on-surface": "#f0f1f2",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#ffdad4",
+                    "surface-container-low": "#f3f4f5",
+                    "surface-variant": "#e1e3e4",
+                    "primary-container": "#d00000",
+                    "surface": "#f8f9fa",
+                    "secondary-fixed": "#dae2ff",
+                    "on-primary-container": "#ffded9",
+                    "inverse-surface": "#2e3132"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "inline-gap": "12px",
+                    "stack-gap": "16px",
+                    "container-padding": "20px",
+                    "section-margin": "32px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "label-md": ["Montserrat"],
+                    "body-lg": ["Montserrat"],
+                    "body-md": ["Montserrat"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "button": ["Montserrat"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-sm": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "30px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "button": ["16px", {"lineHeight": "20px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["26px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-sm": ["20px", {"lineHeight": "26px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { -webkit-tap-highlight-color: transparent; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sparkle-container { position: relative; }
+        .sparkle {
+            position: absolute;
+            pointer-events: none;
+            background: #fabd00;
+            border-radius: 50%;
+            animation: fly 1s ease-out forwards;
+        }
+        @keyframes fly {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(1.5) translate(var(--tw-translate-x), var(--tw-translate-y)); opacity: 0; }
+        }
+        .adventure-card {
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+        }
+        .adventure-card:active {
+            transform: scale(0.97);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-surface sticky top-0 z-40 shadow-[0_4px_15px_rgba(37,89,191,0.08)] flex justify-between items-center w-full px-container-padding h-16">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden border-2 border-primary">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A close-up high-resolution profile portrait of a smiling young adventurer wearing Mickey Mouse ears, set against a blurred background of a sun-drenched theme park. The lighting is warm and golden, reflecting the magical atmosphere of Disneyland. The image features a bright, clean, modern aesthetic with vibrant primary colors and soft bokeh." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary">Hello, Adventurer!</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+</header>
+<main class="px-container-padding py-stack-gap space-y-stack-gap max-w-2xl mx-auto">
+<!-- Welcome Countdown Hero -->
+<section class="relative overflow-hidden rounded-xl bg-gradient-to-br from-secondary to-secondary-container p-6 text-on-secondary shadow-lg">
+<div class="relative z-10">
+<p class="font-label-md text-label-md opacity-90 mb-1">THE MAGIC AWAITS</p>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile mb-4 leading-tight">Your Magic Countdown: 3 Days to Go!</h2>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-body-md">Pack your ears and get ready!</span>
+</div>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute -right-8 -bottom-8 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+<div class="absolute -left-10 -top-10 w-32 h-32 bg-tertiary-fixed-dim/20 rounded-full blur-2xl"></div>
+</section>
+<!-- Preparation Progress Card -->
+<div class="adventure-card bg-surface-container-lowest border border-outline-variant rounded-xl p-5 shadow-[0_4px_15px_rgba(37,89,191,0.08)]">
+<div class="flex justify-between items-end mb-3">
+<h3 class="font-headline-sm text-headline-sm">Trip Progress</h3>
+<span class="font-headline-sm text-headline-sm text-secondary">75% Prepared</span>
+</div>
+<div class="w-full bg-surface-container h-4 rounded-full overflow-hidden relative">
+<div class="bg-secondary h-full rounded-full transition-all duration-1000 ease-out flex items-center justify-end px-1" style="width: 75%;">
+<span class="material-symbols-outlined text-[14px] text-white animate-pulse" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant mt-3 italic">"Almost there! Just a few more snacks to pack."</p>
+</div>
+<!-- Quick Links Bento Grid -->
+<div class="grid grid-cols-2 gap-stack-gap">
+<button class="adventure-card col-span-2 bg-primary text-on-primary p-5 rounded-xl flex items-center justify-between group shadow-md" onclick="createSparkle(event)">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">calendar_today</span>
+</div>
+<div class="text-left">
+<span class="block font-headline-sm text-headline-sm">Today's Itinerary</span>
+<span class="text-on-primary-container text-xs opacity-90">Rope drop to fireworks</span>
+</div>
+</div>
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-1">chevron_right</span>
+</button>
+<button class="adventure-card bg-surface-container-lowest border border-outline-variant p-5 rounded-xl flex flex-col gap-3 shadow-[0_4px_15px_rgba(37,89,191,0.08)]">
+<span class="material-symbols-outlined text-secondary text-3xl">inventory_2</span>
+<div class="text-left">
+<span class="block font-button text-button">Packing List</span>
+<span class="text-on-surface-variant text-xs">8 items remaining</span>
+</div>
+</button>
+<button class="adventure-card bg-surface-container-lowest border border-outline-variant p-5 rounded-xl flex flex-col gap-3 shadow-[0_4px_15px_rgba(37,89,191,0.08)]">
+<span class="material-symbols-outlined text-tertiary text-3xl">map</span>
+<div class="text-left">
+<span class="block font-button text-button">Park Maps</span>
+<span class="text-on-surface-variant text-xs">Navigate the magic</span>
+</div>
+</button>
+</div>
+<!-- Magic Tip Card -->
+<div class="adventure-card bg-tertiary-fixed text-on-tertiary-fixed rounded-xl p-6 shadow-sm border border-tertiary-fixed-dim relative overflow-hidden">
+<div class="flex items-start gap-4 relative z-10">
+<div class="w-10 h-10 shrink-0 bg-tertiary text-tertiary-fixed rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<div>
+<h4 class="font-button text-button mb-1">Magic Tip of the Day</h4>
+<p class="font-body-md text-on-tertiary-fixed-variant leading-relaxed">
+                        To avoid long lines, aim for popular rides during the first showing of the nightly parade! Most people are parked on Main Street, giving you a chance for shorter wait times at Space Mountain.
+                    </p>
+</div>
+</div>
+<!-- Decorative sparkle -->
+<span class="material-symbols-outlined absolute -bottom-2 -right-2 text-tertiary-fixed-dim/50 text-6xl rotate-12" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<!-- Carousel / Recent Activity -->
+<section>
+<h3 class="font-headline-sm text-headline-sm mb-4">Must-Do Experiences</h3>
+<div class="flex gap-4 overflow-x-auto pb-4 no-scrollbar">
+<div class="adventure-card min-w-[160px] bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant shadow-sm shrink-0">
+<img class="w-full h-24 object-cover" data-alt="A cinematic low-angle photograph of the iconic Sleeping Beauty Castle at Disneyland, bathed in soft morning light. The architecture is sharp and detailed, featuring pink stone and blue turrets with gold accents. The atmosphere is magical and serene, with a clear blue sky and lush green landscaping in the foreground. Professional photography with high contrast and vibrant color saturation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4NuVECdQ6vWB1GwcHT6s7hsFl5IywvVMyaIKyRJGMow08GQne1xmXj1bI2ruHKeuw0S1QqISm3z5-QoVDQJ_6fQoaw7uZXjmnZRvkBR0BfHbSNhBY2mqBt8zmX7v0mHFmzGOl3QDsVHUTb96dpWvxO1UXT7usJpCAvaedsfAy4qJMJy3VP6d454bfeO6FlfVPoXAGXlEQ8rKnFtrAR88uV6ZXk1jZCR5CjtEZZ1YJ2YZ-WXn-5vHvF7NZ2auQ-jQp3mquoUclTvo"/>
+<div class="p-3">
+<span class="font-label-md text-label-md text-primary">Classic</span>
+<p class="font-button text-[14px]">Fantasyland</p>
+</div>
+</div>
+<div class="adventure-card min-w-[160px] bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant shadow-sm shrink-0">
+<img class="w-full h-24 object-cover" data-alt="A high-energy, dynamic shot of a roller coaster vehicle zooming through a futuristic neon-lit tunnel at Tomorrowland. The motion blur creates a sense of immense speed and excitement. The color palette is dominated by deep space blues, electric purples, and vibrant neon accents, maintaining a modern, high-tech aesthetic. Cinematic lighting with strong highlights and deep shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsrzbRV4ALHtec_TxYcZ2snsl_HCGkcEYooTt8myOtZ1H02LacpkXzsGY2dtGCao8w_7ye7oJZShiELpbCX9__umKLFMzZ_Je9hP2O68DhJrXsmW_7XmknMOxh0OyrBNQgCS8dP4fSSZSPjydNwRXGdcwPZ1Hp69jgHdBqsggPSdnoX9xGstdHPECbjYZVFZD6wyG-uuL5lf4fS7ZFgsLC6hDyj0hWuafJOpMZIrmKvIMBKinGWw_ANftrkG-grDaiU64SBzHnvZE"/>
+<div class="p-3">
+<span class="font-label-md text-label-md text-secondary">Thrill</span>
+<p class="font-button text-[14px]">Tomorrowland</p>
+</div>
+</div>
+<div class="adventure-card min-w-[160px] bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant shadow-sm shrink-0">
+<img class="w-full h-24 object-cover" data-alt="A sun-drenched wide shot of a classic boardwalk-style wooden roller coaster at a coastal theme park. The vibrant red tracks pop against the bright blue sky and the sparkling ocean in the background. The lighting is harsh and bright, evoking a hot summer day at the pier. The visual style is playful and energetic with high-key lighting and rich saturation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnVaUS9BHsDyP7g4qAHQXHIi0qBi0XXRQ73inaO6XTEJDTZ5y2JOP7C-08geww16aKFqCKPXJIGzztZ6XC5au4AL9DM1zGuZWCwRiZ3FkXKPL_WJm453bG-kBxJnXgr1gpxpESEUV1y5tRrMFZMpP36WKpVc7VPuAKGeGRAr51xa3DNIT2ixqSMbPJ8WqaFDQIJZhej33EcgOLBA4ByS7A63fZOUUR8QN5uGfTZhFw3RCuv8aahkR0BCCjZxb9EstNfDy-HX58kIM"/>
+<div class="p-3">
+<span class="font-label-md text-label-md text-tertiary">Classic</span>
+<p class="font-button text-[14px]">Pixar Pier</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe-offset-2 pt-2 bg-surface shadow-[0_-4px_15px_rgba(37,89,191,0.08)] rounded-t-xl border-t border-outline-variant">
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-5 py-1.5 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-1.5 hover:bg-surface-container-high transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-md text-label-md">Itinerary</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-1.5 hover:bg-surface-container-high transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-md text-label-md">Packing</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-1.5 hover:bg-surface-container-high transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label-md text-label-md">Magic Tips</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction: Sparkle effect on button click
+        function createSparkle(e) {
+            const container = e.currentTarget;
+            for (let i = 0; i < 8; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                const size = Math.random() * 8 + 4;
+                sparkle.style.width = `${size}px`;
+                sparkle.style.height = `${size}px`;
+                
+                const angle = Math.random() * Math.PI * 2;
+                const distance = Math.random() * 60 + 20;
+                sparkle.style.setProperty('--tw-translate-x', `${Math.cos(angle) * distance}px`);
+                sparkle.style.setProperty('--tw-translate-y', `${Math.sin(angle) * distance}px`);
+                
+                sparkle.style.left = `${e.clientX - container.getBoundingClientRect().left}px`;
+                sparkle.style.top = `${e.clientY - container.getBoundingClientRect().top}px`;
+                
+                container.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 1000);
+            }
+        }
+
+        // Handle Active Navigation State (Simulated)
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                navLinks.forEach(l => {
+                    l.classList.remove('bg-secondary-container', 'text-on-secondary-container');
+                    l.classList.add('text-on-surface-variant');
+                    l.querySelector('span:first-child').style.fontVariationSettings = "'FILL' 0";
+                });
+                link.classList.add('bg-secondary-container', 'text-on-secondary-container');
+                link.classList.remove('text-on-surface-variant');
+                link.querySelector('span:first-child').style.fontVariationSettings = "'FILL' 1";
+            });
+        });
+    </script>
+</body>
+</html>
