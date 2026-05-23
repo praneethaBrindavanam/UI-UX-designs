@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Professional Background - Step 2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .progress-bar-transition {
+            transition: width 300ms ease-in-out;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#263143",
+                      "error": "#ba1a1a",
+                      "secondary-fixed-dim": "#adc6ff",
+                      "on-secondary-fixed-variant": "#004395",
+                      "outline-variant": "#bcc9c6",
+                      "background": "#f9f9ff",
+                      "on-primary": "#ffffff",
+                      "on-primary-container": "#f4fffc",
+                      "on-surface": "#111c2d",
+                      "surface-variant": "#d8e3fb",
+                      "surface-bright": "#f9f9ff",
+                      "tertiary": "#525e5c",
+                      "surface-container-highest": "#d8e3fb",
+                      "on-secondary-fixed": "#001a42",
+                      "tertiary-fixed-dim": "#bcc9c6",
+                      "surface-container-high": "#dee8ff",
+                      "inverse-primary": "#6bd8cb",
+                      "primary-fixed": "#89f5e7",
+                      "on-surface-variant": "#3d4947",
+                      "surface-tint": "#006a61",
+                      "inverse-on-surface": "#ecf1ff",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-container": "#008378",
+                      "surface": "#f9f9ff",
+                      "on-tertiary-fixed": "#121e1c",
+                      "surface-dim": "#cfdaf2",
+                      "on-secondary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-container": "#f3fffc",
+                      "primary-fixed-dim": "#6bd8cb",
+                      "on-background": "#111c2d",
+                      "on-secondary-container": "#fefcff",
+                      "on-error": "#ffffff",
+                      "surface-container": "#e7eeff",
+                      "secondary": "#0058be",
+                      "primary": "#00685f",
+                      "on-primary-fixed": "#00201d",
+                      "error-container": "#ffdad6",
+                      "secondary-container": "#2170e4",
+                      "secondary-fixed": "#d8e2ff",
+                      "tertiary-fixed": "#d8e5e2",
+                      "tertiary-container": "#6b7775",
+                      "on-primary-fixed-variant": "#005049",
+                      "surface-container-low": "#f0f3ff",
+                      "outline": "#6d7a77",
+                      "on-tertiary-fixed-variant": "#3d4947"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-md": "1rem",
+                      "stack-sm": "0.5rem",
+                      "margin-mobile": "1.5rem",
+                      "touch-target-min": "3rem",
+                      "gutter-mobile": "1rem",
+                      "stack-lg": "2rem"
+              },
+              "fontFamily": {
+                      "headline-md": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "label-md": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["26px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background flex items-center justify-between px-margin-mobile h-touch-target-min">
+<div class="flex items-center gap-4">
+<button class="hover:bg-surface-variant/50 transition-colors p-2 rounded-full active:scale-95">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile text-primary">Create Account</h1>
+</div>
+<div class="flex items-center">
+<span class="font-label-md text-label-md text-on-surface-variant">Step 2 of 3</span>
+</div>
+</header>
+<!-- Content Canvas -->
+<main class="flex-grow pt-[80px] pb-[100px] px-margin-mobile max-w-lg mx-auto w-full">
+<!-- Progress Bar Component -->
+<div class="w-full h-1.5 bg-primary/10 rounded-full mb-stack-lg overflow-hidden">
+<div class="h-full bg-primary progress-bar-transition" style="width: 66.6%;"></div>
+</div>
+<section class="space-y-stack-lg">
+<div class="space-y-stack-sm">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Tell us about your work</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">This helps us curate job matches and networking opportunities specific to your level.</p>
+</div>
+<!-- Bento-style Form Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.05)] space-y-stack-md">
+<!-- Job Title Input -->
+<div class="space-y-stack-sm">
+<label class="font-label-md text-label-md text-on-surface-variant px-1" for="job-title">Job Title</label>
+<div class="relative group">
+<input class="w-full h-touch-target-min bg-surface-container-low border-none rounded-lg px-4 text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary/20 transition-all outline-none" id="job-title" placeholder="e.g. Senior Product Designer" type="text"/>
+<div class="absolute inset-0 border border-primary/10 rounded-lg pointer-events-none group-focus-within:border-primary"></div>
+</div>
+</div>
+<!-- Years of Experience Dropdown -->
+<div class="space-y-stack-sm">
+<label class="font-label-md text-label-md text-on-surface-variant px-1" for="experience">Years of Experience</label>
+<div class="relative group">
+<select class="w-full h-touch-target-min bg-surface-container-low border-none rounded-lg px-4 text-on-surface appearance-none focus:ring-2 focus:ring-primary/20 transition-all outline-none" id="experience">
+<option disabled="" selected="" value="">Select range</option>
+<option value="0-1">Less than 1 year</option>
+<option value="1-3">1 - 3 years</option>
+<option value="3-5">3 - 5 years</option>
+<option value="5-10">5 - 10 years</option>
+<option value="10+">10+ years</option>
+</select>
+<div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</div>
+<div class="absolute inset-0 border border-primary/10 rounded-lg pointer-events-none group-focus-within:border-primary"></div>
+</div>
+</div>
+</div>
+<!-- Info Note / Personalization Hint -->
+<div class="flex gap-4 p-4 bg-primary/5 rounded-xl border border-primary/10">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">info</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-relaxed">
+                    By providing your professional background, our AI engine will automatically filter high-relevance career paths and skip irrelevant introductory content.
+                </p>
+</div>
+<!-- Visual Decorative Element (Abstract) -->
+<div class="relative h-32 w-full rounded-2xl overflow-hidden opacity-80 mt-stack-lg">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist high-end office environment with soft natural lighting and blurred architectural lines. The image conveys professional success and modern workspace aesthetics, utilizing a calming color palette of soft whites, light blues, and deep teals. The atmosphere is serene, organized, and supportive, perfectly aligning with a friendly professional brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf0yKYs3MxvbhhF5o3IOi1N2lYZ6MH1oKsDzNw_v8eosYlEfgcaxNVMIKwsoNle1m42SZerbhqy1fNEuoQp5sBHJrayr2U__5GbXKofQDfwJeLwnYSx94SxotLmW637YR7gOHWmd-D2gxh1IoAYaeekboXEFKi9iRMbNXslASBSEwkvl-rY_piZmXLQeYYyZxTVOd6-wI8CEESppc3UGAaMszvYyMhoWUnlr3KjQPHW9LZsuoyQQNQGMH-rn7XvWBaZzAY5--1FA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex gap-stack-md px-margin-mobile py-4 bg-surface-container-lowest dark:bg-inverse-surface shadow-[0px_-4px_12px_rgba(0,0,0,0.05)] rounded-t-xl">
+<button class="flex flex-row items-center justify-center border border-primary text-primary bg-transparent rounded-lg px-6 py-4 w-full hover:opacity-90 transition-opacity active:scale-[0.98]">
+<span class="material-symbols-outlined mr-2">chevron_left</span>
+<span class="font-label-md text-label-md">Back</span>
+</button>
+<button class="flex flex-row items-center justify-center bg-primary text-on-primary rounded-lg px-6 py-4 w-full hover:opacity-90 transition-opacity active:scale-[0.98]">
+<span class="font-label-md text-label-md">Continue</span>
+<span class="material-symbols-outlined ml-2">chevron_right</span>
+</button>
+</nav>
+<script>
+        // Simple interaction for the custom select and input focus states
+        const inputs = document.querySelectorAll('input, select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('scale-[1.01]');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('scale-[1.01]');
+            });
+        });
+    </script>
+</body></html>
