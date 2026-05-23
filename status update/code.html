@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>System Status Dashboard</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e1e3e4",
+                    "surface-container-high": "#e7e8e9",
+                    "on-tertiary-container": "#ffae3c",
+                    "on-tertiary-fixed": "#2a1700",
+                    "primary": "#00327d",
+                    "secondary": "#006c49",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed": "#002113",
+                    "surface-tint": "#2559bd",
+                    "on-primary-container": "#a5bdff",
+                    "tertiary-container": "#6e4400",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "primary-container": "#0047ab",
+                    "primary-fixed-dim": "#b1c5ff",
+                    "tertiary": "#4f3000",
+                    "background": "#f8f9fa",
+                    "on-surface": "#191c1d",
+                    "surface-dim": "#d9dadb",
+                    "outline-variant": "#c3c6d5",
+                    "on-secondary-container": "#00714d",
+                    "secondary-fixed": "#6ffbbe",
+                    "surface-container-highest": "#e1e3e4",
+                    "primary-fixed": "#dae2ff",
+                    "secondary-container": "#6cf8bb",
+                    "on-surface-variant": "#434653",
+                    "surface-container": "#edeeef",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-primary-fixed": "#001946",
+                    "surface-bright": "#f8f9fa",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#2e3132",
+                    "surface-container-low": "#f3f4f5",
+                    "surface": "#f8f9fa",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#ffddb8",
+                    "outline": "#737784",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "inverse-primary": "#b1c5ff",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#00419e",
+                    "on-background": "#191c1d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "xl": "32px",
+                    "sm": "8px",
+                    "md": "16px",
+                    "xs": "4px",
+                    "lg": "24px",
+                    "gutter-mobile": "12px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "label-bold": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f8f9fa; /* Using background token from config */
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .progress-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-lg text-on-surface antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-inverse-surface shadow-sm flex items-center justify-between px-margin-mobile h-16 w-full">
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors active:scale-95 duration-150 p-2 rounded-full" data-icon="menu">
+                menu
+            </button>
+<h1 class="font-headline-md text-headline-md-mobile font-bold text-primary dark:text-primary-fixed">System Status</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a person with a warm, friendly expression, set against a clean, minimalist studio background. The lighting is soft and even, typical of high-end corporate photography. The overall aesthetic is modern and professional, aligning with a light-mode UI design system that emphasizes clarity and transparency. The color palette is neutral with soft warm undertones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz27D7I8g_vqrK_jKYAPJGx4dmQhMnEEL5J1pKUPaDWibU7h_obm29z2mtHuIiPM0Pi_GBWJbOi1p-24Yra97SR0Nv4wxjAGSEjUc9INuzIQ4elE5IUps9p6-1fHNpqmpp9311KNGrvxCmWSNo5oW56m1KfGCrPjw8dKRqdzhciDbaXKWmzCLHwCaaaL7iUnlLHxO6vchdIfqwC3IyTFtb7Qve532zQ8Dt7jSwXOJTNQcDzfLS7E2DTbsum-6VEel_UR6vW5uy6-k"/>
+</div>
+</header>
+<main class="pt-24 pb-24 px-margin-mobile flex flex-col gap-lg max-w-md mx-auto">
+<!-- 1. Download Complete Notification -->
+<section class="relative bg-surface p-md rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.05)] border-l-[4px] border-secondary flex flex-col gap-sm overflow-hidden transition-all active:scale-[0.98]">
+<div class="flex items-start gap-md">
+<div class="bg-secondary/10 p-2 rounded-lg">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-1">
+<p class="font-label-bold text-label-bold text-on-surface-variant mb-1">DOWNLOAD COMPLETE</p>
+<p class="font-body-lg text-body-lg text-on-surface">project_assets_final.zip</p>
+</div>
+</div>
+<div class="flex justify-end mt-sm">
+<button class="bg-primary text-on-primary px-lg py-sm rounded-xl font-label-bold text-label-bold hover:opacity-90 transition-opacity active:scale-95">
+                    Open
+                </button>
+</div>
+</section>
+<!-- 2. Active Task Progress -->
+<section class="bg-surface p-md rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.05)] border-l-[4px] border-primary flex flex-col gap-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary animate-spin" style="font-size: 20px;">cloud_upload</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Uploading Video...</h3>
+</div>
+<span class="font-label-md text-label-md text-primary bg-primary-container/20 px-2 py-1 rounded-full">Active</span>
+</div>
+<div class="space-y-sm">
+<div class="w-full h-3 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full progress-pulse" style="width: 65%"></div>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">65% • 2 mins remaining</span>
+<button class="text-error font-label-md text-label-md hover:bg-error-container/20 px-2 py-1 rounded-lg transition-colors">Cancel</button>
+</div>
+</div>
+</section>
+<!-- 3. System Alert -->
+<section class="bg-surface p-md rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.05)] border-l-[4px] border-on-tertiary-container flex items-center justify-between gap-md">
+<div class="flex items-center gap-md">
+<div class="bg-on-tertiary-container/10 p-2 rounded-lg">
+<span class="material-symbols-outlined text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-tertiary-fixed-variant">CRITICAL STORAGE</h4>
+<p class="font-body-lg text-body-lg text-on-surface">Storage almost full: 92% used</p>
+</div>
+</div>
+<a class="font-label-bold text-label-bold text-primary underline underline-offset-4 hover:text-primary-container" href="#">Manage</a>
+</section>
+<!-- Quick Summary / Bento Style Extra -->
+<div class="grid grid-cols-2 gap-md">
+<div class="bg-surface-container-low p-md rounded-xl flex flex-col items-center justify-center text-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant">history</span>
+<span class="font-headline-md text-headline-md text-on-surface">12</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Past 24h</span>
+</div>
+<div class="bg-surface-container-low p-md rounded-xl flex flex-col items-center justify-center text-center gap-sm">
+<span class="material-symbols-outlined text-secondary">verified_user</span>
+<span class="font-headline-md text-headline-md text-on-surface">Secure</span>
+<span class="font-label-md text-label-md text-on-surface-variant">System Health</span>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 flex justify-around items-center px-4 pb-safe bg-surface dark:bg-inverse-surface shadow-[0px_-4px_12px_rgba(0,0,0,0.05)] rounded-t-xl z-50">
+<div class="flex flex-col items-center justify-center bg-secondary-container dark:bg-on-secondary-container text-on-secondary-container dark:text-secondary-container rounded-full px-4 py-1 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-label-md text-label-md">Updates</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant/50 p-2 rounded-xl active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="pending_actions">pending_actions</span>
+<span class="font-label-md text-label-md">Tasks</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant/50 p-2 rounded-xl active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+<span class="font-label-md text-label-md">Alerts</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant/50 p-2 rounded-xl active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-label-md text-label-md">History</span>
+</div>
+</nav>
+<script>
+        // Micro-interaction for buttons
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('click', (e) => {
+                const ripple = document.createElement('div');
+                ripple.className = 'absolute bg-white/30 rounded-full w-2 h-2 animate-ping pointer-events-none';
+                ripple.style.left = `${e.clientX - el.getBoundingClientRect().left}px`;
+                ripple.style.top = `${e.clientY - el.getBoundingClientRect().top}px`;
+                el.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 1000);
+            });
+        });
+    </script>
+</body></html>
