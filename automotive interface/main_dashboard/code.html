@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-error": "#490006",
+                  "on-tertiary-container": "#001d3f",
+                  "on-secondary": "#505254",
+                  "error-dim": "#d7383b",
+                  "surface-container": "#161a1e",
+                  "tertiary-fixed-dim": "#65a4ff",
+                  "surface-tint": "#81ecff",
+                  "on-tertiary": "#002a55",
+                  "tertiary-fixed": "#80b2ff",
+                  "secondary-dim": "#d4d4d7",
+                  "on-background": "#f8f9fe",
+                  "on-secondary-container": "#d0d0d3",
+                  "tertiary": "#70aaff",
+                  "primary": "#81ecff",
+                  "on-primary-fixed": "#003840",
+                  "on-error-container": "#ffa8a3",
+                  "on-tertiary-fixed-variant": "#003971",
+                  "on-surface-variant": "#a9abaf",
+                  "surface-variant": "#22262b",
+                  "primary-fixed": "#00e3fd",
+                  "primary-fixed-dim": "#00d4ec",
+                  "secondary-fixed-dim": "#d4d4d7",
+                  "error": "#ff716c",
+                  "surface-container-highest": "#22262b",
+                  "on-primary-container": "#004d57",
+                  "primary-container": "#00e3fd",
+                  "outline-variant": "#45484c",
+                  "surface-container-high": "#1c2024",
+                  "surface-container-low": "#101417",
+                  "surface-bright": "#282d31",
+                  "on-primary-fixed-variant": "#005762",
+                  "secondary-container": "#454749",
+                  "tertiary-container": "#599cf9",
+                  "inverse-surface": "#f8f9fe",
+                  "background": "#0b0e11",
+                  "secondary": "#e2e2e5",
+                  "on-surface": "#f8f9fe",
+                  "on-secondary-fixed-variant": "#5a5c5e",
+                  "secondary-fixed": "#e2e2e5",
+                  "on-tertiary-fixed": "#001835",
+                  "primary-dim": "#00d4ec",
+                  "on-secondary-fixed": "#3e3f42",
+                  "surface-container-lowest": "#000000",
+                  "tertiary-dim": "#5c9ffc",
+                  "inverse-primary": "#006976",
+                  "error-container": "#9f0519",
+                  "inverse-on-surface": "#535559",
+                  "surface-dim": "#0b0e11",
+                  "on-primary": "#005762",
+                  "outline": "#737679",
+                  "surface": "#0b0e11"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "fontFamily": {
+                  "headline": ["Space Grotesk"],
+                  "body": ["Manrope"],
+                  "label": ["Manrope"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Manrope', sans-serif; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-card {
+      background: rgba(28, 32, 36, 0.6);
+      backdrop-filter: blur(20px);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #81ecff 0%, #00d4ec 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .primary-btn-gradient {
+      background: linear-gradient(135deg, #81ecff 0%, #00d4ec 100%);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen overflow-hidden select-none">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 h-16 bg-opacity-90 backdrop-blur-md bg-[#0b0e11] shadow-[0_0_40px_rgba(0,229,255,0.08)]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-cyan-400">battery_charging_full</span>
+<span class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-cyan-400">12:45 • 72°F</span>
+</div>
+<div class="font-['Space_Grotesk'] font-bold text-[#81ecff] tracking-tighter text-xl">HORIZON OS</div>
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-primary/20">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a man in high-tech clothing with clean lighting and tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRaNvbjV0P2-RkBKrILMQ23GPP7iWbiaaenNoWhiY3EkKprL9-dDhYKrM-j4cAu29v7el6YbZplD2U-HXHEN1OfXMIteoIi4UGClX5edmjgNfCuZqKXa7k98DQdZmxB_cKB9F7lvmOUR9C5ltQk-CD_e6zuvOj3u8lgvR97G5UWIBY5IIrESubGVdCEjCSzBx1an6NEC2o32hAuVOLc2HJqaFW7eUtlZ1dZAqsXSTc1YaZ8lUZJZR3ewJdPp8gf6iNNg5SA2ni_-1s"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="relative w-full h-screen pt-16 pb-24 flex overflow-hidden">
+<!-- Large Interactive Navigation Map (Primary Focus) -->
+<section class="absolute inset-0 z-0">
+<div class="w-full h-full bg-surface-dim">
+<img class="w-full h-full object-cover opacity-50 grayscale brightness-75" data-alt="futuristic dark mode navigation map with neon blue highlighted paths and subtle topographic lines on obsidian background" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZLmGbRmyGcU9q1bndtzdui5_AxZVtwP6i5WIrrksiRAifkBZn7A7mEbeI0V5rhpqyU_4LiT86SD5_JOlz1wg0S7Tp5D8XIPpfork77XUzVCaaEjol3l1Qp7RIck4uED6H26vtAboIdX1CD5yto21j1M1eEFZWm9VMGaO9EFeRuo8podFVCQj3hqmXlkhy9EsAoHw8UG0Q2vGLrxqIpT92DWxZDju7FMWSmAuATA1NNyQq6C2Sy-fwcovfQwIDeOcwTrwFMTx83aR2"/>
+</div>
+<!-- Turn-by-turn Overlay -->
+<div class="absolute top-24 left-8 z-10 w-80 glass-card rounded-xl p-6 border border-white/5 shadow-[0_0_20px_rgba(0,0,0,0.4)]">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">turn_slight_right</span>
+</div>
+<div>
+<h2 class="font-headline text-2xl font-bold text-on-surface">450 <span class="text-lg font-medium opacity-60">FT</span></h2>
+<p class="text-on-surface-variant font-medium">Merge onto Pacific Coast Hwy</p>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-white/10 flex justify-between items-center">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant">Arrival</p>
+<p class="font-headline text-lg font-bold">13:12</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant">Distance</p>
+<p class="font-headline text-lg font-bold">8.4 <span class="text-xs opacity-60">MI</span></p>
+</div>
+</div>
+</div>
+</section>
+<!-- Side Widgets (Asymmetric Layout) -->
+<aside class="relative z-10 w-full flex flex-col justify-between p-8 pointer-events-none">
+<div class="flex justify-end gap-6 pointer-events-auto">
+<!-- Now Playing Widget -->
+<div class="w-72 glass-card rounded-xl p-5 border border-white/5 shadow-[0_10px_30px_rgba(0,0,0,0.3)]">
+<div class="flex gap-4 items-center mb-4">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 shadow-lg">
+<img class="w-full h-full object-cover" data-alt="album cover art featuring abstract vibrant electric blue and violet liquid textures in high definition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_sfdu_4fhc7eVCYaxmmTCLumaincN0-G_PCTro_uSiKeGBIfpQ2OsrD38wRD9TBUljTrkCCK8bZK2KUG9YYaXFZ1HK6i6Y3hnWf0T94ys2H9QyGjdpHGPkgkaOPdw07KNchi8pwT1MV758occ5Aq-sA7auQ2hgN2RsQGJS1vWhXcdAbnySE3M2S8kr_ZUpKqOjXXhKn67RqVk0InjMN0R59-_Qvrz8GPBPScgJoRdmaULgxx5nU71zgWMPte6M57C3zogYd3wCJP_"/>
+</div>
+<div class="overflow-hidden">
+<h3 class="font-headline text-sm font-bold truncate">Midnight Pulse</h3>
+<p class="text-xs text-on-surface-variant truncate">The Synthetics</p>
+</div>
+</div>
+<div class="w-full h-1 bg-white/10 rounded-full mb-3">
+<div class="w-2/3 h-full bg-primary rounded-full shadow-[0_0_10px_rgba(129,236,255,0.6)]"></div>
+</div>
+<div class="flex justify-between items-center px-2">
+<span class="material-symbols-outlined text-on-surface-variant text-xl cursor-pointer hover:text-primary">skip_previous</span>
+<span class="material-symbols-outlined text-primary text-3xl cursor-pointer hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">pause_circle</span>
+<span class="material-symbols-outlined text-on-surface-variant text-xl cursor-pointer hover:text-primary">skip_next</span>
+</div>
+</div>
+<!-- Battery Range Widget -->
+<div class="w-64 glass-card rounded-xl p-5 border border-white/5 shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary">bolt</span>
+<span class="text-[10px] font-headline font-bold uppercase tracking-widest text-primary">System Ready</span>
+</div>
+<div class="mt-4">
+<div class="flex items-baseline gap-1">
+<span class="font-headline text-4xl font-bold text-on-surface">82</span>
+<span class="text-xl font-medium text-on-surface-variant">%</span>
+</div>
+<div class="flex items-baseline gap-1 -mt-1">
+<span class="font-headline text-lg font-medium text-primary">312</span>
+<span class="text-xs font-medium text-on-surface-variant uppercase">Est Miles</span>
+</div>
+</div>
+<div class="mt-4 flex gap-1">
+<div class="h-1.5 flex-1 bg-primary rounded-full"></div>
+<div class="h-1.5 flex-1 bg-primary rounded-full"></div>
+<div class="h-1.5 flex-1 bg-primary rounded-full"></div>
+<div class="h-1.5 flex-1 bg-primary rounded-full"></div>
+<div class="h-1.5 flex-1 bg-white/10 rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Quick Climate Control Bar (Bottom Edge of Canvas) -->
+<div class="w-full flex justify-center pointer-events-auto">
+<div class="w-fit glass-card rounded-full px-8 py-3 flex items-center gap-12 border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">remove</span>
+<div class="flex flex-col items-center">
+<span class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">Driver</span>
+<span class="font-headline text-2xl font-bold">68°</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">add</span>
+</div>
+<div class="h-8 w-[1px] bg-white/10"></div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-primary cursor-pointer" style="font-variation-settings: 'FILL' 1;">toys_fan</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">airware</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">waves</span>
+</div>
+<div class="h-8 w-[1px] bg-white/10"></div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">remove</span>
+<div class="flex flex-col items-center">
+<span class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">Passenger</span>
+<span class="font-headline text-2xl font-bold">71°</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">add</span>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 h-24 flex justify-around items-center px-6 pb-4 bg-[#0b0e11]/80 backdrop-blur-2xl border-t border-white/5 shadow-[0_-10px_40px_rgba(0,229,255,0.1)] rounded-t-[2rem] overflow-hidden">
+<div class="flex flex-col items-center justify-center bg-[#81ecff]/10 text-[#81ecff] rounded-xl px-6 py-2 shadow-[0_0_15px_rgba(129,236,255,0.2)] transition-all duration-300 ease-in-out active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-medium uppercase tracking-tighter">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 opacity-60 hover:bg-white/5 hover:opacity-100 transition-all duration-300 ease-in-out active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined">play_circle</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-medium uppercase tracking-tighter">Media</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 opacity-60 hover:bg-white/5 hover:opacity-100 transition-all duration-300 ease-in-out active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-medium uppercase tracking-tighter">Nav</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 opacity-60 hover:bg-white/5 hover:opacity-100 transition-all duration-300 ease-in-out active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined">thermostat</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-medium uppercase tracking-tighter">Climate</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 opacity-60 hover:bg-white/5 hover:opacity-100 transition-all duration-300 ease-in-out active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-medium uppercase tracking-tighter">Vehicle</span>
+</div>
+</nav>
+</body></html>
