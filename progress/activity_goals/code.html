@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Progress Hub - Activity Tracking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .ring-container {
+            position: relative;
+            transform: rotate(-90deg);
+        }
+        .progress-ring-circle {
+            transition: stroke-dashoffset 0.35s;
+            transform-origin: 50% 50%;
+        }
+        .glow-accent {
+            box-shadow: 0 0 15px rgba(87, 241, 219, 0.3);
+        }
+        .glow-coral {
+            box-shadow: 0 0 15px rgba(255, 165, 174, 0.3);
+        }
+        body {
+            background-color: #121212;
+            color: #e5e2e1;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#313030",
+                    "inverse-surface": "#e5e2e1",
+                    "secondary-fixed-dim": "#ddb7ff",
+                    "tertiary-fixed": "#ffdadc",
+                    "on-error": "#690005",
+                    "on-surface-variant": "#bacac5",
+                    "error": "#ffb4ab",
+                    "surface-tint": "#3cddc7",
+                    "on-tertiary": "#67001f",
+                    "primary-fixed-dim": "#3cddc7",
+                    "on-secondary-fixed-variant": "#6900b3",
+                    "on-tertiary-fixed-variant": "#891933",
+                    "surface-container-low": "#1c1b1b",
+                    "primary": "#57f1db",
+                    "surface": "#131313",
+                    "on-background": "#e5e2e1",
+                    "outline": "#859490",
+                    "on-primary-container": "#00574d",
+                    "on-primary-fixed": "#00201c",
+                    "tertiary-container": "#ffa5ae",
+                    "on-tertiary-container": "#912038",
+                    "on-secondary": "#490080",
+                    "on-secondary-container": "#d6a9ff",
+                    "tertiary-fixed-dim": "#ffb2b9",
+                    "on-primary-fixed-variant": "#005047",
+                    "on-primary": "#003731",
+                    "tertiary": "#ffcdd1",
+                    "secondary-fixed": "#f0dbff",
+                    "on-surface": "#e5e2e1",
+                    "error-container": "#93000a",
+                    "surface-bright": "#393939",
+                    "primary-fixed": "#62fae3",
+                    "on-secondary-fixed": "#2c0051",
+                    "surface-container-high": "#2a2a2a",
+                    "background": "#131313",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-error-container": "#ffdad6",
+                    "surface-variant": "#353534",
+                    "secondary-container": "#6f00be",
+                    "secondary": "#ddb7ff",
+                    "surface-container": "#201f1f",
+                    "primary-container": "#2dd4bf",
+                    "inverse-primary": "#006b5f",
+                    "surface-dim": "#131313",
+                    "on-tertiary-fixed": "#400010",
+                    "outline-variant": "#3c4a46",
+                    "surface-container-highest": "#353534"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "lg": "24px",
+                    "margin-mobile": "20px",
+                    "md": "16px",
+                    "2xl": "48px",
+                    "base": "4px",
+                    "xs": "8px",
+                    "gutter": "16px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "data-display": ["JetBrains Mono"],
+                    "headline-xl": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "data-display": ["20px", {"lineHeight": "24px", "fontWeight": "500"}],
+                    "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface pb-32">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-sm shadow-primary/5 flex items-center justify-between px-margin-mobile h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-primary/20">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="A professional profile headshot of a person with a modern, friendly appearance, set against a blurred high-tech office background. The lighting is crisp and cool, featuring subtle teal and violet reflections that align with a premium digital dashboard aesthetic. The image is clean, sharp, and highly detailed, representing a tech-savvy high-achiever." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH6MgipSu2B9hhDCkJ4E8lBcDQbVmTewsz5STH384HUU4OY4VDx3AAsSuRMlbr9K4eODdXigFdjUOWrr-OKNrWoNeshWCdaXB0Jm1glPncYLAxSUWECxugg9dOG0CjsnQVJ9W87SmTsFSbwQ1C194TOlwoAti-QeAoaoug1aJX2CoXc5euRHcxpf0_pBaqVOjyjqk9MjsvpWeIzm5Qi1afC4L89ErP2nc0MTIDt2oNfie45bD6yi0Jg7DSEpznD8o_JGIZn3JturzR"/>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary tracking-tight">Progress Hub</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/5 transition-colors active:scale-95 transition-transform text-primary">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="mt-20 px-margin-mobile space-y-lg max-w-2xl mx-auto">
+<!-- Activity Rings Card -->
+<section class="glass-card rounded-xl p-lg relative overflow-hidden">
+<div class="flex flex-col md:flex-row items-center gap-lg">
+<!-- Concentric Rings Container -->
+<div class="relative w-48 h-48 flex items-center justify-center">
+<svg class="ring-container" height="180" width="180">
+<!-- Move Ring (Coral) -->
+<circle class="text-white/5" cx="90" cy="90" fill="transparent" r="70" stroke="currentColor" stroke-width="12"></circle>
+<circle class="progress-ring-circle text-tertiary-container" cx="90" cy="90" fill="transparent" r="70" stroke="currentColor" stroke-dasharray="440" stroke-dashoffset="88" stroke-linecap="round" stroke-width="12" style="filter: drop-shadow(0 0 4px rgba(255, 165, 174, 0.5));"></circle>
+<!-- Exercise Ring (Primary Teal) -->
+<circle class="text-white/5" cx="90" cy="90" fill="transparent" r="54" stroke="currentColor" stroke-width="12"></circle>
+<circle class="progress-ring-circle text-primary" cx="90" cy="90" fill="transparent" r="54" stroke="currentColor" stroke-dasharray="340" stroke-dashoffset="102" stroke-linecap="round" stroke-width="12"></circle>
+<!-- Stand Ring (Secondary) -->
+<circle class="text-white/5" cx="90" cy="90" fill="transparent" r="38" stroke="currentColor" stroke-width="12"></circle>
+<circle class="progress-ring-circle text-secondary" cx="90" cy="90" fill="transparent" r="38" stroke="currentColor" stroke-dasharray="240" stroke-dashoffset="36" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<span class="font-data-display text-headline-md text-on-surface">82<span class="text-sm opacity-50">%</span></span>
+<span class="font-label-caps text-[10px] opacity-60">OVERALL</span>
+</div>
+</div>
+<!-- Metrics List -->
+<div class="flex-1 w-full space-y-md">
+<div class="flex items-center justify-between p-sm rounded-lg bg-white/5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary-container" data-icon="local_fire_department">local_fire_department</span>
+<div>
+<p class="font-label-caps text-on-surface-variant">MOVE</p>
+<p class="font-data-display text-lg text-on-surface">640 <span class="text-sm text-on-surface-variant">/ 800 kcal</span></p>
+</div>
+</div>
+<span class="material-symbols-outlined text-tertiary-container opacity-40">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-sm rounded-lg bg-white/5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="timer">timer</span>
+<div>
+<p class="font-label-caps text-on-surface-variant">EXERCISE</p>
+<p class="font-data-display text-lg text-on-surface">42 <span class="text-sm text-on-surface-variant">/ 60 min</span></p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary opacity-40">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-sm rounded-lg bg-white/5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="directions_walk">directions_walk</span>
+<div>
+<p class="font-label-caps text-on-surface-variant">STAND</p>
+<p class="font-data-display text-lg text-on-surface">11 <span class="text-sm text-on-surface-variant">/ 12 hr</span></p>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary opacity-40">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Goal Reached Notification -->
+<div class="bg-primary/10 border border-primary/20 rounded-xl p-md flex items-center gap-md glow-accent">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined font-bold" data-icon="workspace_premium" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div>
+<h3 class="font-headline-md text-on-primary-container text-base">Goal Reached!</h3>
+<p class="font-body-md text-on-surface-variant text-sm">You've hit your daily step goal. Keep up the momentum!</p>
+</div>
+</div>
+<!-- Weekly Progress Bar Chart -->
+<section class="glass-card rounded-xl p-lg space-y-lg">
+<div class="flex items-end justify-between">
+<div>
+<h2 class="font-headline-md text-on-surface text-xl">Weekly Progress</h2>
+<p class="font-body-md text-on-surface-variant text-sm">Steps taken per day</p>
+</div>
+<div class="text-right">
+<p class="font-data-display text-2xl text-tertiary-container">9,402</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant">TODAY'S STEPS</p>
+</div>
+</div>
+<!-- Bar Chart Container -->
+<div class="flex items-end justify-between h-40 pt-4 px-2">
+<!-- Sunday -->
+<div class="flex flex-col items-center gap-xs w-8 group">
+<div class="w-full bg-white/10 rounded-t-sm h-[40%] group-hover:bg-white/20 transition-all"></div>
+<span class="font-label-caps text-[10px] text-on-surface-variant">S</span>
+</div>
+<!-- Monday -->
+<div class="flex flex-col items-center gap-xs w-8 group">
+<div class="w-full bg-white/10 rounded-t-sm h-[65%] group-hover:bg-white/20 transition-all"></div>
+<span class="font-label-caps text-[10px] text-on-surface-variant">M</span>
+</div>
+<!-- Tuesday -->
+<div class="flex flex-col items-center gap-xs w-8 group">
+<div class="w-full bg-white/10 rounded-t-sm h-[55%] group-hover:bg-white/20 transition-all"></div>
+<span class="font-label-caps text-[10px] text-on-surface-variant">T</span>
+</div>
+<!-- Wednesday -->
+<div class="flex flex-col items-center gap-xs w-8 group">
+<div class="w-full bg-white/10 rounded-t-sm h-[85%] group-hover:bg-white/20 transition-all"></div>
+<span class="font-label-caps text-[10px] text-on-surface-variant">W</span>
+</div>
+<!-- Thursday -->
+<div class="flex flex-col items-center gap-xs w-8 group">
+<div class="w-full bg-tertiary-container/40 rounded-t-sm h-[95%] group-hover:bg-tertiary-container/60 transition-all"></div>
+<span class="font-label-caps text-[10px] text-on-surface-variant">T</span>
+</div>
+<!-- Friday (Today - Active) -->
+<div class="flex flex-col items-center gap-xs w-8 group">
+<div class="w-full bg-tertiary-container rounded-t-sm h-full shadow-[0_0_15px_rgba(255,165,174,0.4)]"></div>
+<span class="font-label-caps text-[10px] text-tertiary-container font-bold">F</span>
+</div>
+<!-- Saturday -->
+<div class="flex flex-col items-center gap-xs w-8 group">
+<div class="w-full bg-white/5 rounded-t-sm h-[5%] border border-white/5"></div>
+<span class="font-label-caps text-[10px] text-on-surface-variant">S</span>
+</div>
+</div>
+</section>
+<!-- Extra Insights Bento -->
+<div class="grid grid-cols-2 gap-md">
+<div class="glass-card rounded-xl p-md space-y-xs">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="bolt">bolt</span>
+<span class="font-label-caps text-[10px]">AVG ENERGY</span>
+</div>
+<p class="font-data-display text-lg">2,450 <span class="text-xs opacity-50">kcal</span></p>
+<div class="w-full h-1 bg-white/10 rounded-full mt-2">
+<div class="h-full w-3/4 bg-primary rounded-full"></div>
+</div>
+</div>
+<div class="glass-card rounded-xl p-md space-y-xs">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="bedtime">bedtime</span>
+<span class="font-label-caps text-[10px]">SLEEP</span>
+</div>
+<p class="font-data-display text-lg">7h 42m</p>
+<div class="w-full h-1 bg-white/10 rounded-full mt-2">
+<div class="h-full w-4/5 bg-secondary rounded-full"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface/80 backdrop-blur-xl border-t border-white/10 shadow-[0_-4px_20px_rgba(0,0,0,0.4)] flex justify-around items-center w-full h-20 pb-safe px-4">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-all active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-caps text-label-caps mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-all active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+<span class="font-label-caps text-label-caps mt-1">Media</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-all active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-caps text-label-caps mt-1">Books</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary relative after:content-[''] after:absolute after:-bottom-1 after:w-1 after:h-1 after:bg-primary after:rounded-full after:shadow-[0_0_8px_#57f1db] hover:text-primary/80 transition-all active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="fitness_center" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+<span class="font-label-caps text-label-caps mt-1">Activity</span>
+</a>
+</nav>
+<!-- Contextual Floating Action Button -->
+<button class="fixed right-6 bottom-24 w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-all glow-accent z-40">
+<span class="material-symbols-outlined text-2xl font-bold" data-icon="add">add</span>
+</button>
+<script>
+        // Micro-interaction for activity rings
+        document.querySelectorAll('.progress-ring-circle').forEach(circle => {
+            const radius = circle.r.baseVal.value;
+            const circumference = radius * 2 * Math.PI;
+            
+            // Randomize slightly for visual life on load
+            const offset = circumference - (Math.random() * 0.3 + 0.5) * circumference;
+            circle.style.strokeDashoffset = offset;
+        });
+
+        // Simple parallax effect for cards on scroll
+        window.addEventListener('scroll', () => {
+            const cards = document.querySelectorAll('.glass-card');
+            cards.forEach((card, index) => {
+                const speed = (index + 1) * 0.05;
+                const rect = card.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    const yPos = -(rect.top * speed);
+                    card.style.transform = `translateY(${yPos}px)`;
+                }
+            });
+        });
+    </script>
+</body></html>

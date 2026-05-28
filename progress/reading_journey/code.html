@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .inner-glow-purple {
+            box-shadow: inset 0 0 12px rgba(221, 183, 255, 0.2), 0 0 20px rgba(221, 183, 255, 0.1);
+        }
+        .inner-glow-teal {
+            box-shadow: inset 0 0 12px rgba(87, 241, 219, 0.2), 0 0 20px rgba(87, 241, 219, 0.1);
+        }
+        body {
+            background-color: #121212;
+            color: #e5e2e1;
+            -webkit-font-smoothing: antialiased;
+        }
+        .book-spine {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#313030",
+                        "inverse-surface": "#e5e2e1",
+                        "secondary-fixed-dim": "#ddb7ff",
+                        "tertiary-fixed": "#ffdadc",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#bacac5",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#3cddc7",
+                        "on-tertiary": "#67001f",
+                        "primary-fixed-dim": "#3cddc7",
+                        "on-secondary-fixed-variant": "#6900b3",
+                        "on-tertiary-fixed-variant": "#891933",
+                        "surface-container-low": "#1c1b1b",
+                        "primary": "#57f1db",
+                        "surface": "#131313",
+                        "on-background": "#e5e2e1",
+                        "outline": "#859490",
+                        "on-primary-container": "#00574d",
+                        "on-primary-fixed": "#00201c",
+                        "tertiary-container": "#ffa5ae",
+                        "on-tertiary-container": "#912038",
+                        "on-secondary": "#490080",
+                        "on-secondary-container": "#d6a9ff",
+                        "tertiary-fixed-dim": "#ffb2b9",
+                        "on-primary-fixed-variant": "#005047",
+                        "on-primary": "#003731",
+                        "tertiary": "#ffcdd1",
+                        "secondary-fixed": "#f0dbff",
+                        "on-surface": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "surface-bright": "#393939",
+                        "primary-fixed": "#62fae3",
+                        "on-secondary-fixed": "#2c0051",
+                        "surface-container-high": "#2a2a2a",
+                        "background": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#353534",
+                        "secondary-container": "#6f00be",
+                        "secondary": "#ddb7ff",
+                        "surface-container": "#201f1f",
+                        "primary-container": "#2dd4bf",
+                        "inverse-primary": "#006b5f",
+                        "surface-dim": "#131313",
+                        "on-tertiary-fixed": "#400010",
+                        "outline-variant": "#3c4a46",
+                        "surface-container-highest": "#353534"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "lg": "24px",
+                        "margin-mobile": "20px",
+                        "md": "16px",
+                        "2xl": "48px",
+                        "base": "4px",
+                        "xs": "8px",
+                        "gutter": "16px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "data-display": ["JetBrains Mono"],
+                        "headline-xl": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "data-display": ["20px", {"lineHeight": "24px", "fontWeight": "500"}],
+                        "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen pb-32">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-sm shadow-primary/5 flex items-center justify-between px-margin-mobile h-16">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-white/10 overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional close-up headshot of a person with a serene expression, set against a blurred modern office background. The lighting is soft and flattering, with a cool-toned tech aesthetic. The overall mood is intelligent and focused, matching a high-performance productivity application's professional theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXXwllBiFQvoM-BqMmJP-MOVWhzUo42Bw9pq1qSVjDMM7oy0WWSOvKO228Ov2TM7q-_4er-xq7TUv9xQke-YP1kiL1v-7uOs7Q3TPK-I0Vo9Ik4dUyGtwsSYH7Y8uFynFfM73UiZacCidBUboG8kynEqRg3skqTTLN8_e34lkp58Pd6pDhFW4Wvd9sJ_dpcU08UtI_P2pGmNGOb2Kvc1WOtLuDhpuD_g_mmzjWeZ9cw0yK70cL96nohHT5VErV2AE11tNGSoig13L-"/>
+</div>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary tracking-tight">Progress Hub</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/5 active:scale-95 transition-all text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="pt-24 px-margin-mobile max-w-lg mx-auto">
+<!-- Hero: Book Identity -->
+<section class="mb-xl flex items-center gap-lg">
+<div class="relative w-32 h-44 rounded-lg overflow-hidden shadow-2xl shrink-0">
+<img alt="Atomic Habits" class="w-full h-full object-cover" data-alt="A highly detailed close-up shot of the book cover for Atomic Habits by James Clear. The book has a clean, white minimalist design with small colored dots representing atoms. The shot is captured in a high-tech dark room with subtle purple and teal neon lighting reflecting off the book's matte surface, creating a sophisticated and motivational atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEmO-zlVrUi5WFrsVyvYMbgRXAUNhkaUbwhIPklWWFJIk54Xi82X6MWMuQHdiPcaOVd9CYTlM56ULH_r77tIPYgBOy9KJ6X3vwPSXJKLrR63fXw3crcolWLi5E7oPiTl0ZiNPoFjGRCE21IVrQgfk-Q2j1WXE7m6s--xPZG-lWzc2xZ9yx5PkEVy4d7IpSx-rfZ2BEHYhhu9y36Ou76FRfEuuS4guhsh1GcaoMkvNUt708nprQZ6LJmcAnl-i44k0cdQw3COvCUdm-"/>
+</div>
+<div class="flex flex-col">
+<h1 class="font-headline-md text-headline-md text-on-surface leading-tight mb-xs">Atomic Habits</h1>
+<p class="font-body-md text-on-surface-variant mb-md">James Clear</p>
+<div class="flex items-center gap-2 bg-secondary-container/20 border border-secondary/20 px-3 py-1 rounded-full self-start">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-caps text-label-caps text-secondary">12 DAY STREAK</span>
+</div>
+</div>
+</section>
+<!-- Stats Grid (Bento Style) -->
+<section class="grid grid-cols-2 gap-md mb-xl">
+<!-- 44% Complete -->
+<div class="glass-card p-md rounded-xl col-span-2 flex items-center justify-between inner-glow-purple">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">COMPLETION</p>
+<p class="font-headline-xl text-headline-xl text-secondary leading-none">44%</p>
+</div>
+<div class="relative w-16 h-16">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-white/5" cx="32" cy="32" fill="transparent" r="28" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-secondary" cx="32" cy="32" fill="transparent" r="28" stroke="currentColor" stroke-dasharray="175.9" stroke-dashoffset="98.5" stroke-width="6"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="auto_stories">auto_stories</span>
+</div>
+</div>
+</div>
+<!-- Pages Left -->
+<div class="glass-card p-md rounded-xl">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase">Pages Left</p>
+<p class="font-data-display text-data-display text-on-surface">178 <span class="text-sm font-body-md text-on-surface-variant">pgs</span></p>
+</div>
+<!-- Est. Time -->
+<div class="glass-card p-md rounded-xl">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase">Est. Finish</p>
+<p class="font-data-display text-data-display text-on-surface">3h 12m</p>
+</div>
+</section>
+<!-- Book Shelf Progress Visual -->
+<section class="mb-xl">
+<div class="flex justify-between items-end mb-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">Chapter Breakdown</h2>
+<span class="font-label-caps text-label-caps text-primary">8 / 20 COMPLETED</span>
+</div>
+<div class="glass-card p-lg rounded-xl flex items-end justify-center gap-2 h-48">
+<!-- Visual representation of "books on a shelf" where filled ones are purple -->
+<!-- Completed -->
+<div class="book-spine w-5 h-24 bg-secondary rounded-sm inner-glow-purple border border-secondary/30" title="Introduction"></div>
+<div class="book-spine w-6 h-28 bg-secondary rounded-sm inner-glow-purple border border-secondary/30" title="The Fundamentals"></div>
+<div class="book-spine w-4 h-22 bg-secondary rounded-sm inner-glow-purple border border-secondary/30" title="1st Law: Cue"></div>
+<div class="book-spine w-7 h-32 bg-secondary rounded-sm inner-glow-purple border border-secondary/30" title="Make it Obvious"></div>
+<div class="book-spine w-5 h-26 bg-secondary rounded-sm inner-glow-purple border border-secondary/30" title="Environment Matters"></div>
+<div class="book-spine w-6 h-29 bg-secondary rounded-sm inner-glow-purple border border-secondary/30" title="2nd Law: Craving"></div>
+<div class="book-spine w-4 h-20 bg-secondary rounded-sm inner-glow-purple border border-secondary/30" title="Make it Attractive"></div>
+<div class="book-spine w-5 h-25 bg-secondary rounded-sm inner-glow-purple border border-secondary/30" title="The Influence of Friends"></div>
+<!-- Remaining (Outline Style) -->
+<div class="book-spine w-6 h-30 bg-white/5 border border-white/10 rounded-sm" title="3rd Law: Response"></div>
+<div class="book-spine w-5 h-24 bg-white/5 border border-white/10 rounded-sm" title="Make it Easy"></div>
+<div class="book-spine w-4 h-28 bg-white/5 border border-white/10 rounded-sm" title="Two-Minute Rule"></div>
+<div class="book-spine w-7 h-32 bg-white/5 border border-white/10 rounded-sm" title="4th Law: Reward"></div>
+<div class="book-spine w-5 h-26 bg-white/5 border border-white/10 rounded-sm"></div>
+<div class="book-spine w-6 h-29 bg-white/5 border border-white/10 rounded-sm"></div>
+<div class="book-spine w-4 h-20 bg-white/5 border border-white/10 rounded-sm"></div>
+<div class="book-spine w-5 h-25 bg-white/5 border border-white/10 rounded-sm"></div>
+</div>
+<p class="font-body-md text-on-surface-variant mt-md text-center italic">"You do not rise to the level of your goals. You fall to the level of your systems."</p>
+</section>
+<!-- Call to Action -->
+<section class="flex flex-col gap-md">
+<button class="w-full h-14 bg-primary text-on-primary font-headline-md rounded-lg shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                Resume Reading
+            </button>
+<button class="w-full h-14 bg-white/5 border border-white/10 text-on-surface font-body-md rounded-lg active:bg-white/10 transition-colors">
+                Log Progress
+            </button>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface/80 backdrop-blur-xl border-t border-white/10 shadow-[0_-4px_20px_rgba(0,0,0,0.4)] flex justify-around items-center h-20 pb-safe px-4">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-caps text-label-caps">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+<span class="font-label-caps text-label-caps">Media</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary relative after:content-[''] after:absolute after:-bottom-1 after:w-1 after:h-1 after:bg-primary after:rounded-full after:shadow-[0_0_8px_#57f1db]" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-label-caps text-label-caps">Books</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="fitness_center">fitness_center</span>
+<span class="font-label-caps text-label-caps">Activity</span>
+</a>
+</nav>
+<!-- Floating Action Button for Logging -->
+<button class="fixed right-6 bottom-24 w-14 h-14 bg-secondary text-on-secondary rounded-full shadow-lg shadow-secondary/20 flex items-center justify-center active:scale-90 transition-transform z-40">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<script>
+        // Micro-interaction: Spine hover effect
+        const spines = document.querySelectorAll('.book-spine');
+        spines.forEach(spine => {
+            spine.addEventListener('mouseenter', () => {
+                spine.style.transform = 'translateY(-10px) scale(1.05)';
+            });
+            spine.addEventListener('mouseleave', () => {
+                spine.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Simple scroll reveal for cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
+            observer.observe(card);
+        });
+    </script>
+</body></html>
