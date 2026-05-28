@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .squircle {
+            border-radius: 24%;
+        }
+        .status-indicator {
+            position: absolute;
+            bottom: 4%;
+            right: 4%;
+            width: 25%;
+            height: 25%;
+            border: 2px solid #ffffff;
+            border-radius: 9999px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-bright": "#faf8ff",
+                      "tertiary-container": "#d22348",
+                      "error-container": "#ffdad6",
+                      "background": "#faf8ff",
+                      "on-tertiary-container": "#ffecec",
+                      "on-surface": "#131b2e",
+                      "primary-container": "#2563eb",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "secondary-fixed": "#eaddff",
+                      "surface-container-high": "#e2e7ff",
+                      "surface-tint": "#0053db",
+                      "tertiary-fixed-dim": "#ffb2b7",
+                      "primary-fixed": "#dbe1ff",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-on-surface": "#eef0ff",
+                      "outline-variant": "#c3c6d7",
+                      "inverse-primary": "#b4c5ff",
+                      "secondary": "#712ae2",
+                      "secondary-fixed-dim": "#d2bbff",
+                      "error": "#ba1a1a",
+                      "on-secondary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed-variant": "#92002a",
+                      "outline": "#737686",
+                      "tertiary": "#ad0033",
+                      "on-secondary-fixed-variant": "#5a00c6",
+                      "on-secondary-container": "#fffbff",
+                      "secondary-container": "#8a4cfc",
+                      "tertiary-fixed": "#ffdadb",
+                      "primary": "#004ac6",
+                      "surface-container": "#eaedff",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed": "#40000d",
+                      "on-background": "#131b2e",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed": "#00174b",
+                      "on-secondary-fixed": "#25005a",
+                      "surface-container-low": "#f2f3ff",
+                      "surface": "#faf8ff",
+                      "inverse-surface": "#283044",
+                      "surface-variant": "#dae2fd",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-container": "#eeefff",
+                      "surface-dim": "#d2d9f4",
+                      "surface-container-highest": "#dae2fd",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-surface-variant": "#434655"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "gutter-mobile": "12px",
+                      "unit": "4px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "md": "12px",
+                      "lg": "16px",
+                      "xl": "24px"
+              },
+              "fontFamily": {
+                      "label-caps": ["Manrope"],
+                      "handle-sm": ["JetBrains Mono"],
+                      "display-name": ["Manrope"],
+                      "body-md": ["Manrope"],
+                      "headline-lg-mobile": ["Manrope"]
+              },
+              "fontSize": {
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "handle-sm": ["13px", {"lineHeight": "16px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                      "display-name": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.03em", "fontWeight": "800"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface-bright text-on-surface font-body-md antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-margin-mobile h-16 bg-surface dark:bg-surface-dim">
+<div class="flex items-center gap-md">
+<button class="active:scale-95 duration-100 hover:bg-surface-container-high transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim">arrow_back</span>
+</button>
+<h1 class="font-display-name text-display-name text-primary dark:text-primary-fixed-dim">Avatar System</h1>
+</div>
+<button class="active:scale-95 duration-100 hover:bg-surface-container-high transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim">settings</span>
+</button>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile space-y-xl max-w-2xl mx-auto">
+<!-- Section 1: Brand Identity -->
+<section class="space-y-lg animate-in fade-in slide-in-from-bottom-4 duration-500">
+<div class="flex flex-col items-center text-center space-y-md">
+<div class="relative w-40 h-40 bg-surface-container-lowest p-md squircle shadow-sm border border-outline-variant overflow-hidden">
+<img alt="Nexus Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsNocR1H-CilaZLJkTArU-nwqabf-cffRcilmw9ySfxU2MJhziOrUqEuaWYsF4fANuJQU1I5SSVwA3JfL_gWJg99ViBwBSgvjb6MJaDB2d0enDXdIN-ULt6kI08zna7zRkb0ExMSZK7CqKZGOdJBFA244kym40W6tMC7lP1fZnCF2XFZehpqfpUNIN-x3qPYd9Py3BOph0LxeykR7QR_BzJYUzjcJDEAp7ROrRMla8w2uMrBkinhBJIr0KYmGitJ3zYY0Y2VaxRpw"/>
+</div>
+<div class="space-y-xs">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Brand Assets</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Corporate Identity</h2>
+</div>
+</div>
+</section>
+<!-- Section 2: User Profiles (Realistic) -->
+<section class="space-y-lg">
+<div class="flex items-center justify-between">
+<h3 class="font-display-name text-display-name">User Profiles</h3>
+<span class="font-handle-sm text-handle-sm text-outline px-sm py-xs bg-surface-container-low rounded-lg">Realistic Style</span>
+</div>
+<div class="grid grid-cols-1 gap-xl">
+<!-- Large Profile View -->
+<div class="p-lg bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant flex items-center gap-lg">
+<div class="relative w-24 h-24">
+<img alt="User Profile" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPsFnikTVBJOxmP2nahZCg7RqKpPO0nnuOVFkBSxye0HJYrQkA86OCZ5uqiLcpX28yUS56mlyt7a0l7bAG1UrkeOeHBY-U-yWGT_gAS8TLf6u7Q9EaotbVoCY_7M4cDdnh18Lb4f921-szXZYm_q-_QlId5-koyAKbif1BdUFd_HJdObu1Ss2Z0etPUL8GPO0Knibxof02wLbYen3-nOrLxyzq9xQctbvxpdaZAlLG-5EK-JiAFgwX5ovQ3-u-EASdJkkyf7EHkiA"/>
+<div class="status-indicator bg-green-500"></div>
+</div>
+<div>
+<h4 class="font-display-name text-display-name">Elena Rodriguez</h4>
+<p class="text-on-surface-variant font-body-md">Senior Product Designer</p>
+<div class="mt-xs inline-flex items-center px-sm py-xs bg-surface-container-high rounded-full">
+<span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Active Now</span>
+</div>
+</div>
+</div>
+<!-- List Item Views -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant divide-y divide-outline-variant/30">
+<div class="p-md flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="relative w-12 h-12">
+<img alt="User Profile Small" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_uGjI-jdv-7gEtn9EFYh4J_ASqQ5CN2o5SRDANbMYRyIq-OWvE1aeUHlrnNymSU4esOkwjyR6xuUKN54x6WzoFEGlBGilkkYCIiuI1xZHL8Ujz2JCa9uqWOJASAvK41mAofeYBL-0wbi2O3rbbfjlYzCkKVFqzWenB3PgHzH_1_9I2dkVWmKqR9uUOXvzprcYlD8dlKXWgjKt0fGJXWig9XuVTwtiYllDJK18Mj3CJslI9T9HfGWiWSzX7YGXVDTkKSuHlsgKGcY"/>
+<div class="status-indicator bg-orange-400"></div>
+</div>
+<div>
+<p class="font-bold text-on-surface">Dr. Marcus Chen</p>
+<p class="text-xs text-on-surface-variant">Available for consultation</p>
+</div>
+</div>
+<button class="material-symbols-outlined text-outline hover:text-primary transition-colors">chat_bubble</button>
+</div>
+<div class="p-md flex items-center justify-between">
+<div class="flex items-center gap-md opacity-70">
+<div class="relative w-12 h-12 grayscale">
+<img alt="User Profile Small" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPsFnikTVBJOxmP2nahZCg7RqKpPO0nnuOVFkBSxye0HJYrQkA86OCZ5uqiLcpX28yUS56mlyt7a0l7bAG1UrkeOeHBY-U-yWGT_gAS8TLf6u7Q9EaotbVoCY_7M4cDdnh18Lb4f921-szXZYm_q-_QlId5-koyAKbif1BdUFd_HJdObu1Ss2Z0etPUL8GPO0Knibxof02wLbYen3-nOrLxyzq9xQctbvxpdaZAlLG-5EK-JiAFgwX5ovQ3-u-EASdJkkyf7EHkiA"/>
+<div class="status-indicator bg-outline"></div>
+</div>
+<div>
+<p class="font-bold text-on-surface">Sarah Jenkins</p>
+<p class="text-xs text-on-surface-variant">Offline • 2h ago</p>
+</div>
+</div>
+<button class="material-symbols-outlined text-outline hover:text-primary transition-colors">history</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Creative Profiles (3D) -->
+<section class="space-y-lg">
+<div class="flex items-center justify-between">
+<h3 class="font-display-name text-display-name">Creative Profiles</h3>
+<span class="font-handle-sm text-handle-sm text-outline px-sm py-xs bg-surface-container-low rounded-lg">3D Illustration</span>
+</div>
+<div class="grid grid-cols-2 gap-lg">
+<!-- Bento Card 1 -->
+<div class="group relative overflow-hidden rounded-3xl bg-surface-container-lowest p-md border border-outline-variant shadow-sm hover:shadow-md transition-all">
+<div class="aspect-square rounded-2xl overflow-hidden mb-md">
+<img alt="3D Profile 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWH0HX_UX0svr1EjyCN9nGuF_9DuBc-ZSL0t3LMf271zk1hwqkxXtWxmNyX-dFMXEs3sT3_qmahDkAzS5zYlq47M5hXz_zWbm-XDxQFNDcpsSvaMsWs05IoCT_Hg90gSby8gpNA0Clm4CrPlJh0k1HQ6zFy7bxpyAYQBBV5SvxGcznzGELTpdh2fIQp7o-JiTpAhYll8LLhkVeWlso_xFXwbWb7k8CVFPPFpKd81DOwh7-aWVas0zK_kVINAiTbKmXmiTp-b6b5do"/>
+</div>
+<div class="text-center">
+<p class="font-label-caps text-label-caps text-on-surface">Support Hero</p>
+<p class="text-xs text-outline">Gamified UI</p>
+</div>
+</div>
+<!-- Bento Card 2 -->
+<div class="group relative overflow-hidden rounded-3xl bg-surface-container-lowest p-md border border-outline-variant shadow-sm hover:shadow-md transition-all">
+<div class="aspect-square rounded-2xl overflow-hidden mb-md">
+<img alt="3D Profile 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5tO-Boggcic5MK2f9xIK1W0SN1l2Hf8zzyTG3TbCowsyGUUfDjDRMHlbK2sbRHRi5Sv9YHrlv8RMCtHwV1RRCscFWNjPVDp-bA-p5NWREXhGwmHBAFcGxDlSGtBTiF2py4n7rp7k_kK7vkAmST8Uvvx5_bdF0qneyTWCtKfplP7eOGSSFGv5VXGIjwbKHQITnmdGe_tiHz0OG1FUi-8WyM3R-KIczGUdxUsoXGcfcKpneMlwxIP8j76GHC66GeOszaXA8oC9J_gc"/>
+</div>
+<div class="text-center">
+<p class="font-label-caps text-label-caps text-on-surface">Creative Lead</p>
+<p class="text-xs text-outline">Vibrant Mesh</p>
+</div>
+</div>
+</div>
+<!-- placement flexibility demonstration -->
+<div class="bg-primary/5 p-xl rounded-3xl border border-primary/10 space-y-md">
+<p class="text-center text-primary font-label-caps text-label-caps">Identity Grid System</p>
+<div class="flex flex-wrap justify-center gap-sm">
+<div class="w-10 h-10 rounded-xl overflow-hidden shadow-sm"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWH0HX_UX0svr1EjyCN9nGuF_9DuBc-ZSL0t3LMf271zk1hwqkxXtWxmNyX-dFMXEs3sT3_qmahDkAzS5zYlq47M5hXz_zWbm-XDxQFNDcpsSvaMsWs05IoCT_Hg90gSby8gpNA0Clm4CrPlJh0k1HQ6zFy7bxpyAYQBBV5SvxGcznzGELTpdh2fIQp7o-JiTpAhYll8LLhkVeWlso_xFXwbWb7k8CVFPPFpKd81DOwh7-aWVas0zK_kVINAiTbKmXmiTp-b6b5do"/></div>
+<div class="w-10 h-10 rounded-xl overflow-hidden shadow-sm"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5tO-Boggcic5MK2f9xIK1W0SN1l2Hf8zzyTG3TbCowsyGUUfDjDRMHlbK2sbRHRi5Sv9YHrlv8RMCtHwV1RRCscFWNjPVDp-bA-p5NWREXhGwmHBAFcGxDlSGtBTiF2py4n7rp7k_kK7vkAmST8Uvvx5_bdF0qneyTWCtKfplP7eOGSSFGv5VXGIjwbKHQITnmdGe_tiHz0OG1FUi-8WyM3R-KIczGUdxUsoXGcfcKpneMlwxIP8j76GHC66GeOszaXA8oC9J_gc"/></div>
+<div class="w-10 h-10 rounded-xl overflow-hidden shadow-sm"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPsFnikTVBJOxmP2nahZCg7RqKpPO0nnuOVFkBSxye0HJYrQkA86OCZ5uqiLcpX28yUS56mlyt7a0l7bAG1UrkeOeHBY-U-yWGT_gAS8TLf6u7Q9EaotbVoCY_7M4cDdnh18Lb4f921-szXZYm_q-_QlId5-koyAKbif1BdUFd_HJdObu1Ss2Z0etPUL8GPO0Knibxof02wLbYen3-nOrLxyzq9xQctbvxpdaZAlLG-5EK-JiAFgwX5ovQ3-u-EASdJkkyf7EHkiA"/></div>
+<div class="w-10 h-10 rounded-xl overflow-hidden shadow-sm"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_uGjI-jdv-7gEtn9EFYh4J_ASqQ5CN2o5SRDANbMYRyIq-OWvE1aeUHlrnNymSU4esOkwjyR6xuUKN54x6WzoFEGlBGilkkYCIiuI1xZHL8Ujz2JCa9uqWOJASAvK41mAofeYBL-0wbi2O3rbbfjlYzCkKVFqzWenB3PgHzH_1_9I2dkVWmKqR9uUOXvzprcYlD8dlKXWgjKt0fGJXWig9XuVTwtiYllDJK18Mj3CJslI9T9HfGWiWSzX7YGXVDTkKSuHlsgKGcY"/></div>
+<div class="w-10 h-10 rounded-xl overflow-hidden shadow-sm flex items-center justify-center bg-white border border-dashed border-outline text-outline">
+<span class="material-symbols-outlined text-sm">add</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-lg pb-xl bg-surface-container dark:bg-surface-container-lowest shadow-sm">
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-xl px-md py-sm transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-weight="fill">widgets</span>
+<span class="font-label-caps text-label-caps">Components</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-sm hover:bg-surface-variant dark:hover:bg-inverse-surface transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-caps text-label-caps">Documentation</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-sm hover:bg-surface-variant dark:hover:bg-inverse-surface transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-caps text-label-caps">Settings</span>
+</a>
+</nav>
+<script>
+        // Micro-interactions for avatar hover/touch
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('mouseenter', () => {
+                img.style.transition = 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            });
+        });
+    </script>
+</body></html>
