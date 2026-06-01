@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Editorial Travel - Home Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#d9dadb",
+                    "primary-fixed": "#e1e0ff",
+                    "on-primary-fixed": "#04006d",
+                    "outline-variant": "#c7c5d4",
+                    "surface-bright": "#f8f9fa",
+                    "primary": "#15157d",
+                    "on-surface-variant": "#464652",
+                    "secondary-fixed-dim": "#ffb59e",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#ffdbd0",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#4f54b4",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#2e3192",
+                    "on-surface": "#191c1d",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#191c1d",
+                    "outline": "#777683",
+                    "on-error": "#ffffff",
+                    "secondary": "#ad3300",
+                    "on-tertiary-fixed": "#00201f",
+                    "surface-container-low": "#f3f4f5",
+                    "on-tertiary-container": "#59b8b5",
+                    "secondary-container": "#ff642d",
+                    "on-secondary-fixed": "#3a0b00",
+                    "on-secondary-container": "#5a1600",
+                    "tertiary-container": "#004645",
+                    "on-tertiary-fixed-variant": "#00504e",
+                    "on-primary-fixed-variant": "#373a9b",
+                    "tertiary": "#002e2d",
+                    "tertiary-fixed-dim": "#78d6d2",
+                    "inverse-surface": "#2e3132",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "surface": "#f8f9fa",
+                    "inverse-primary": "#c0c1ff",
+                    "background": "#f8f9fa",
+                    "surface-variant": "#e1e3e4",
+                    "on-primary-container": "#9da1ff",
+                    "surface-container-high": "#e7e8e9",
+                    "inverse-on-surface": "#f0f1f2",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e1e3e4",
+                    "surface-container": "#edeeef",
+                    "tertiary-fixed": "#94f2ef",
+                    "on-secondary-fixed-variant": "#842500"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "stack-lg": "48px",
+                    "stack-sm": "12px",
+                    "container-margin-mobile": "20px",
+                    "container-margin-desktop": "48px",
+                    "gutter": "24px",
+                    "stack-md": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Playfair Display"],
+                    "caption": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f8f9fa;
+            color: #191c1d;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .hero-gradient {
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 60%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-md flex justify-between items-center px-container-margin-mobile h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed-dim hover:bg-surface-variant/50 transition-colors duration-200 p-2 rounded-full">menu</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile dark:text-on-surface text-primary">Morning, Sarah</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed-dim hover:bg-surface-variant/50 transition-colors duration-200 p-2 rounded-full">notifications</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Sarah's Profile" data-alt="A high-end studio portrait of a sophisticated young traveler woman with a gentle smile, shot in soft, natural morning light. The background is a clean, minimalist off-white studio setting that aligns with the premium editorial brand aesthetic. The lighting is diffused and professional, emphasizing a modern, curated lifestyle vibe with subtle warm tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVthRcvo683YiXIeiP6CVaDRvdyvhwytKQjsLs8dCQA6RxSo_MDDjW4gaDTNDm1HNL_l_NSdnNcrwFjt_BR0xu7f3FqD4FUjDbRqLteA9QFCJCqgsDSitQtjG_1J9Tl3wS4IIOoLGIz6drAhjGdzfRJbD8L_-cOXzvEvMTdfVWNYHfOTpOc2I9OZ2VxUO3jMQTNKLya6tqdoouMVEAw5rHyJ3c_HzMkLDutFWCSpiCKhhokU_VVC41vijJnCMzTBCjdGasTgqG4Mc"/>
+</div>
+</div>
+</nav>
+<main class="pt-20 pb-24">
+<!-- Featured Hero Section -->
+<section class="px-container-margin-mobile md:px-container-margin-desktop mb-stack-lg">
+<div class="relative w-full aspect-[4/5] md:aspect-[21/9] rounded-3xl overflow-hidden shadow-sm group">
+<img alt="Kyoto Escape" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A breathtaking, cinematic view of a traditional Japanese temple in Kyoto nestled among vibrant autumn foliage in deep reds and oranges. The scene is captured during the golden hour, with soft, directional light casting long shadows and highlighting the intricate architectural details of the pagoda. The composition is expansive and editorial, evoking a sense of serene, high-end travel exploration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLquJaTpICcrgxNozZpafY7dg8ostLQXMGifIRD4WAMaiam4TjNZCS9kw3-Wqt6pfI6LZ-GtoYzeCU_wFEyN9DQ8Nmct7yXIT0-An1r_BBzoOlbRAYB4tZhBIPhMlrIEYHrZCnmFhehXr78EisLig-qd48wgsUG0PPSNlhi_yAJSigRwWCrRCKbuKz-FnR2ql0IHYh37AlHM4ybBg04wy-BF5XDAJGJmK9z92yApb3G_fmUXDZHYFmeGAOPC_6q78KQTD5Q3H0_HI"/>
+<div class="absolute inset-0 hero-gradient"></div>
+<div class="absolute top-6 right-6">
+<span class="bg-primary/90 text-on-primary px-4 py-1.5 rounded-full font-label-md text-label-md backdrop-blur-md">98% Match</span>
+</div>
+<div class="absolute bottom-10 left-8 right-8">
+<p class="text-on-primary/80 font-label-md text-label-md tracking-widest uppercase mb-2">Your next escape</p>
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-on-primary mb-6">Kyoto: The Zen of Autumn</h2>
+<button class="bg-on-primary text-primary px-8 py-3 rounded-full font-label-md text-label-md hover:bg-white active:scale-95 transition-all">Explore Collection</button>
+</div>
+</div>
+</section>
+<!-- Horizontal Scroll: Inspired by Bali -->
+<section class="mb-stack-lg">
+<div class="px-container-margin-mobile md:px-container-margin-desktop flex justify-between items-end mb-6">
+<div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Inspired by your trip to Bali</h3>
+<p class="text-on-surface-variant font-body-md">Coastal sanctuaries with familiar soul.</p>
+</div>
+<button class="text-primary font-label-md text-label-md hover:underline decoration-2 underline-offset-4">View All</button>
+</div>
+<div class="flex overflow-x-auto no-scrollbar gap-6 px-container-margin-mobile md:px-container-margin-desktop">
+<!-- Greece Card -->
+<div class="flex-none w-[280px] md:w-[360px]">
+<div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-sm group">
+<img alt="Greece" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A pristine white-washed villa balcony in Santorini, Greece, overlooking the deep cerulean Aegean Sea at midday. The aesthetic is ultra-clean and minimalist, with a single Sage Green olive branch in a terracotta pot. High-key lighting creates a crisp, premium feel, emphasizing the soft off-white textures of the Mediterranean architecture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0f5U6JPBUozoZC5Zk0jWQYEJ9W08nwyTDZR6w4UJz0HPR_EvKT8YBKIkhLleVpvhIodTw1UMt5XwQCxw-8oevBDE-5mD8ObaqGTTgDJh4SFkZ7adinGZjAaVdL6Nd1ytJokm77ap_D3lwduCRg3q3F2mxJtR1JH1eNnFQzrUqWtPvfzBxpc4IMw6iH0p_9M08bq8pGeslYJ1SJq0GHW5CdrDuBt8PXAlvBKFbG4i_FLAZh76ws7n0aFPeehY9lOyUFgklgLupgCY"/>
+<div class="absolute top-4 right-4 text-on-primary bg-black/20 backdrop-blur-sm p-2 rounded-full material-symbols-outlined cursor-pointer hover:bg-black/40 transition-colors">favorite</div>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-1">Milos Waterfront</h4>
+<p class="text-on-surface-variant font-label-md text-label-md">Greece • Boutique Sanctuary</p>
+</div>
+<!-- Portugal Card -->
+<div class="flex-none w-[280px] md:w-[360px]">
+<div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-sm group">
+<img alt="Portugal" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A dramatic coastal scene in the Algarve, Portugal, featuring golden limestone cliffs and a secluded turquoise cove. The lighting is warm and cinematic, capturing the raw energy of the Atlantic ocean. The visual style is editorial and sophisticated, focusing on the natural textures of the rugged coastline and the serene, expansive horizon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZG-psdp5Tp7BgVyZoi1VeGBjU-2oh5qS4S79OaYvijbXkXUCKTTEbn46-HTar6bYnUY7y0CCMcIDE6Ybx5L2Zy4hNOFdpd0quwy6tNdWk1jVztUk_7TKDDso76HAQ7FK3EJtDv-wT5Ro8r0xUWxKH_su7ZQzx2FQsKi4kzVvxvtei7gJdEBTrE6slcKyLtEPsFhBi5EDPhIDjvdGNc3mNgSby9FuvEngeaeZFiW_Ixf3mnRRxYEQ--Ltz6yR27vIxiieI6I4N0Ek"/>
+<div class="absolute top-4 right-4 text-on-primary bg-black/20 backdrop-blur-sm p-2 rounded-full material-symbols-outlined cursor-pointer hover:bg-black/40 transition-colors">favorite</div>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-1">Algarve Retreat</h4>
+<p class="text-on-surface-variant font-label-md text-label-md">Portugal • Coastal Escape</p>
+</div>
+<!-- Amalfi Card -->
+<div class="flex-none w-[280px] md:w-[360px]">
+<div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-sm group">
+<img alt="Amalfi Coast" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A luxury terrace view of Positano on the Amalfi Coast, Italy, during the blue hour. The colorful buildings clinging to the cliffside are softly illuminated, reflecting in the calm waters below. The mood is romantic and refined, with a high-end magazine aesthetic that emphasizes the exclusive, curated nature of the destination." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4-C7mCSHGoQUzP36vCRB0kUJs1PvqxxxSqIkS2fEwwns7ZqMMnry0qtgNSad_-gSKXCufDB_8bh-qX48_wMjbyLqPXaWQlOiBQLKawVN33MYMtkCk1JbANnU7ETbz8-AzheQuxpkJB4ojmStdJrwIw8w6gG8LD1LITwmbDHjsLGAZ2hhhYcFf6iQMu0ivC9twgQGxB8UaISf6ooEVrAZyJWZOInGbNhukqLJAm6Qit6uv5iFFoVHKL7ofMY1anZn5QTHMUTNnAB8"/>
+<div class="absolute top-4 right-4 text-on-primary bg-black/20 backdrop-blur-sm p-2 rounded-full material-symbols-outlined cursor-pointer hover:bg-black/40 transition-colors">favorite</div>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-1">Positano Vista</h4>
+<p class="text-on-surface-variant font-label-md text-label-md">Italy • Luxury Living</p>
+</div>
+</div>
+</section>
+<!-- Grid: Trending for Adventurers -->
+<section class="px-container-margin-mobile md:px-container-margin-desktop mb-stack-lg">
+<div class="mb-8">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Trending for Adventurers</h3>
+<p class="text-on-surface-variant font-body-md">Curated paths for the bold and curious.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Safari Bento Item -->
+<div class="relative rounded-3xl overflow-hidden min-h-[400px] shadow-sm group bg-surface-container">
+<img alt="Serengeti Safari" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90" data-alt="A wide-angle editorial shot of a luxury tented camp in the Serengeti at sunrise. A majestic acacia tree is silhouetted against a soft pink and gold sky. The scene is tranquil yet adventurous, showcasing a sophisticated safari experience that blends raw nature with high-end, minimalist comfort and refined aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaxjm4cUjUVcaz7W9i6YEop6_LrFsGqghn80VFJY1C-6F6oOXzgR_PX_KWNxsi-QrrAIyoUuiNtumopI2Ur8Y7zaw6CEgmw5PwID1ZaE_c2PL-k5pImcT-UWWNLGHpyqZIxMCflPM48SAd6WHicSlUX7nMN0ts6NpW4jP7h1uGV10fhOu7MXrip0RcdcOpZdNVDvWkD5cJ6Yn5gJCIJu2JFahOIdtpgIY84jPA6UibQ8FU47DVIhIF4NzO1Y3QEAuoLSvsuCKwOV8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-0.5 rounded-full font-label-md text-[10px] tracking-widest uppercase">Tanzania</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-primary mb-2">Serengeti Dawn Expeditions</h4>
+<p class="text-on-primary/70 font-caption text-caption line-clamp-2">Experience the Great Migration from the silent vantage of a luxury hot air balloon.</p>
+</div>
+</div>
+<!-- Mountain Trek Bento Item -->
+<div class="relative rounded-3xl overflow-hidden min-h-[400px] shadow-sm group bg-surface-container">
+<img alt="Swiss Alps" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90" data-alt="A crisp, high-altitude view of the Swiss Alps, featuring jagged snow-capped peaks against a sharp, clear blue sky. A lone, distant climber is visible on a ridge, emphasizing scale and adventure. The lighting is cold and bright, creating a clean, modern editorial feel that emphasizes clarity, perseverance, and elite mountaineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm20ug2KBT5mfVHtZxYTDGyqxyJ4X91vEJ1_gIvNJjNlA3Gg_KVlqZWgmtRFx50Hxjvdx6pnlnYEfv4pp6qyol0ZFRIogl3YVyrXKAMwFprODEmsTG9uHmXzAh2U-CuDZVK61-BixPU64XvGwgX25z46Ar1rreBTigRdA73QykKX2cBpIS_X47BGpscTotn0xmcUBqKaEa5ZXpkScey-Y5MNbQIfOMbdr88hXj6D2GeHcrJMkRwlbIajamRKk2Ep5EreO9uNaJwBw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-0.5 rounded-full font-label-md text-[10px] tracking-widest uppercase">Switzerland</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-primary mb-2">The Eiger Vertical Route</h4>
+<p class="text-on-primary/70 font-caption text-caption line-clamp-2">A masterclass in technical trekking through the heart of the Bernese Oberland.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Editorial Promo -->
+<section class="px-container-margin-mobile md:px-container-margin-desktop mb-stack-lg">
+<div class="bg-primary text-on-primary rounded-[32px] p-8 md:p-16 text-center">
+<h3 class="font-display-lg-mobile text-display-lg-mobile mb-4">The Wanderer's Journal</h3>
+<p class="font-body-lg text-body-lg text-on-primary/80 max-w-2xl mx-auto mb-8">Receive weekly curated travel narratives, rare destination finds, and exclusive member-only experiences delivered to your inbox.</p>
+<div class="flex flex-col md:flex-row gap-4 justify-center max-w-md mx-auto">
+<input class="bg-white/10 border-none rounded-full px-6 py-3 text-on-primary placeholder:text-on-primary/50 focus:ring-2 focus:ring-on-primary/30 font-body-md flex-grow" placeholder="Your email address" type="email"/>
+<button class="bg-secondary-container text-on-secondary-container px-8 py-3 rounded-full font-label-md text-label-md hover:opacity-90 transition-opacity">Subscribe</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-4px_12px_rgba(21,21,125,0.04)] flex justify-around items-center h-20 px-container-margin-mobile w-full">
+<!-- Explore Tab (Active) -->
+<div class="flex flex-col items-center">
+<button class="flex items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full w-12 h-12 transition-transform duration-150 active:scale-90">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+</button>
+</div>
+<!-- Favorites Tab -->
+<div class="flex flex-col items-center">
+<button class="flex items-center justify-center text-on-surface-variant dark:text-outline w-12 h-12 hover:text-primary dark:hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<!-- Search/Travel Explore Tab -->
+<div class="flex flex-col items-center">
+<button class="flex items-center justify-center text-on-surface-variant dark:text-outline w-12 h-12 hover:text-primary dark:hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">travel_explore</span>
+</button>
+</div>
+<!-- Profile Tab -->
+<div class="flex flex-col items-center">
+<button class="flex items-center justify-center text-on-surface-variant dark:text-outline w-12 h-12 hover:text-primary dark:hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</nav>
+<script>
+        // Simple micro-interaction for the bottom nav
+        const navButtons = document.querySelectorAll('nav.fixed.bottom-0 button');
+        navButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Reset all to inactive (simplified for demo)
+                navButtons.forEach(b => {
+                    b.className = "flex items-center justify-center text-on-surface-variant dark:text-outline w-12 h-12 hover:text-primary dark:hover:text-primary-fixed transition-colors";
+                    const icon = b.querySelector('.material-symbols-outlined');
+                    if(icon) icon.style.fontVariationSettings = "'FILL' 0";
+                });
+                // Set current to active
+                this.className = "flex items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full w-12 h-12 transition-transform duration-150 active:scale-90";
+                const icon = this.querySelector('.material-symbols-outlined');
+                if(icon) icon.style.fontVariationSettings = "'FILL' 1";
+            });
+        });
+
+        // Parallax effect for hero image
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.pageYOffset;
+            const heroImg = document.querySelector('section img');
+            if (heroImg) {
+                heroImg.style.transform = `translateY(${scrollPos * 0.1}px) scale(${1 + scrollPos * 0.0001})`;
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Arashiyama Bamboo Grove - Kyoto</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Playfair+Display:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d9dadb",
+                        "primary-fixed": "#e1e0ff",
+                        "on-primary-fixed": "#04006d",
+                        "outline-variant": "#c7c5d4",
+                        "surface-bright": "#f8f9fa",
+                        "primary": "#15157d",
+                        "on-surface-variant": "#464652",
+                        "secondary-fixed-dim": "#ffb59e",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#ffdbd0",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#4f54b4",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#2e3192",
+                        "on-surface": "#191c1d",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#191c1d",
+                        "outline": "#777683",
+                        "on-error": "#ffffff",
+                        "secondary": "#ad3300",
+                        "on-tertiary-fixed": "#00201f",
+                        "surface-container-low": "#f3f4f5",
+                        "on-tertiary-container": "#59b8b5",
+                        "secondary-container": "#ff642d",
+                        "on-secondary-fixed": "#3a0b00",
+                        "on-secondary-container": "#5a1600",
+                        "tertiary-container": "#004645",
+                        "on-tertiary-fixed-variant": "#00504e",
+                        "on-primary-fixed-variant": "#373a9b",
+                        "tertiary": "#002e2d",
+                        "tertiary-fixed-dim": "#78d6d2",
+                        "inverse-surface": "#2e3132",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "surface": "#f8f9fa",
+                        "inverse-primary": "#c0c1ff",
+                        "background": "#f8f9fa",
+                        "surface-variant": "#e1e3e4",
+                        "on-primary-container": "#9da1ff",
+                        "surface-container-high": "#e7e8e9",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-container": "#edeeef",
+                        "tertiary-fixed": "#94f2ef",
+                        "on-secondary-fixed-variant": "#842500"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "stack-lg": "48px",
+                        "stack-sm": "12px",
+                        "container-margin-mobile": "20px",
+                        "container-margin-desktop": "48px",
+                        "gutter": "24px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "caption": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .bamboo-gradient {
+            background: linear-gradient(to bottom, rgba(25, 28, 29, 0) 0%, rgba(25, 28, 29, 0.8) 100%);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-md flex justify-between items-center px-container-margin-mobile h-16 w-full">
+<button aria-label="Back" class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-variant/50 transition-colors">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<span class="font-display-lg-mobile text-primary tracking-tight text-[24px]">Arashiyama</span>
+<button aria-label="Share" class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-variant/50 transition-colors">
+<span class="material-symbols-outlined text-primary">ios_share</span>
+</button>
+</header>
+<!-- Hero Section -->
+<section class="relative w-full h-[618px] md:h-[751px] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A breathtaking, wide-angle cinematic shot of the Arashiyama Bamboo Grove in Kyoto during the soft morning light. The towering green bamboo stalks reach toward the sky, creating a rhythmic pattern of vertical lines that frame a quiet, winding stone path. The lighting is ethereal and diffused, casting long, gentle shadows that emphasize the serene and editorial travel magazine aesthetic. The overall mood is one of profound tranquility and natural elegance, with a clean, high-end visual style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeJ5kor9w7fDZ0U4E6w-VbrlylEtIYCtJTGmqD5D6mf0hXzc-V_Vz3owLvQGkUlj2RU6BKsnlY60SrMCx3SkR0waxtflSfAjhYkcr90KRnJki7KG4Ls915qig__tmCTKemtBwDJXTTYMTKZpFWrdoTeRXlL6jPnsVLd3zOSkThBX9PwO5QNcB-6CB2TM3Udi9oOmfH0EwebcWq3bB9NOrKUe4cwNFTO3zRtoTZLiJd0yaOjs9VC9jIN56WgGs-UrajCXcTRGerxns"/>
+<div class="absolute inset-0 bamboo-gradient flex flex-col justify-end p-container-margin-mobile pb-12">
+<span class="font-label-md text-on-primary-container bg-primary-container/30 backdrop-blur-sm self-start px-3 py-1 rounded-full mb-4">Kyoto, Japan</span>
+<h1 class="font-display-lg-mobile text-white mb-2 leading-tight">Arashiyama Bamboo Grove</h1>
+<p class="font-body-md text-white/90 max-w-md">A soaring natural cathedral where the wind whispers through emerald stalks.</p>
+</div>
+</section>
+<main class="relative z-10 -mt-8 bg-background rounded-t-[32px] px-container-margin-mobile pt-10">
+<!-- 'Why it's for you' Section -->
+<section class="mb-stack-lg">
+<div class="bg-surface-container-low p-8 rounded-[24px] shadow-sm flex flex-col md:flex-row md:items-center gap-6">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">colors_spark</span>
+</div>
+<div>
+<h2 class="font-headline-md text-primary mb-2">Why it's for you</h2>
+<p class="font-body-md text-on-surface-variant leading-relaxed">Matches your interest in nature and quiet retreats. This UNESCO site offers a meditative escape from the city's pulse, aligning with your preference for slow-travel and botanical wonders.</p>
+</div>
+</div>
+</section>
+<!-- Top Experiences List -->
+<section class="mb-stack-lg">
+<div class="flex items-end justify-between mb-stack-sm">
+<h2 class="font-headline-lg-mobile text-on-surface">Top Experiences</h2>
+<span class="font-label-md text-primary cursor-pointer">View All</span>
+</div>
+<div class="flex flex-col gap-gutter">
+<!-- Experience 1 -->
+<div class="group flex flex-col md:flex-row gap-6 bg-surface-container-lowest rounded-xl overflow-hidden hover:shadow-md transition-shadow">
+<div class="w-full md:w-48 h-48 shrink-0">
+<img class="w-full h-full object-cover" data-alt="An intimate, editorial-style photograph of a traditional Japanese tea ceremony set in a quiet wooden pavilion overlooking the bamboo forest. Hand-crafted ceramic bowls, a bamboo whisk, and vibrant green matcha tea are arranged on a minimalist woven mat. The lighting is soft and natural, emphasizing textures and the serene, high-end aesthetic of the travel experience. The atmosphere is calm, authentic, and deeply rooted in Japanese heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHtIxbcvbPuadtMgAYN3kV60_krfLNaVlkKJcuAYxMkR_aiyRwrtAGa2bOdjbssqD38R7x-_2ECvjzu7bij_wh02w6-3Ht1kki1rnT76lYqb_o7dQCeYOrTkdsOfNqQf7uW96G_OQ9BZ-Dg4A1lkbZ4q34ox_gR9uDZ2yCFiuiSSGQLyTetfIt5lgawwLvAsxCqA_YGpL7aMsUy3hLERkvv4NJSgYFSuvOfG9Gxs3VnYu_ZZXCK2CHP3BvXQT0rNte5akcEssqwzc"/>
+</div>
+<div class="flex flex-col justify-center p-4 md:p-0">
+<h3 class="font-headline-md text-on-surface mb-2">Private Tea Ceremony</h3>
+<p class="font-body-md text-on-surface-variant mb-4">A meditative session in a hidden teahouse with a 15th-generation master.</p>
+<div class="flex gap-4">
+<span class="flex items-center gap-1 font-label-md text-primary">
+<span class="material-symbols-outlined text-[18px]">schedule</span> 90 min
+                            </span>
+<span class="flex items-center gap-1 font-label-md text-primary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span> 4.9
+                            </span>
+</div>
+</div>
+</div>
+<!-- Experience 2 -->
+<div class="group flex flex-col md:flex-row gap-6 bg-surface-container-lowest rounded-xl overflow-hidden hover:shadow-md transition-shadow">
+<div class="w-full md:w-48 h-48 shrink-0">
+<img class="w-full h-full object-cover" data-alt="A professional photographer's view of the Arashiyama path at dawn, devoid of crowds. The light is a soft, cool blue-gold as it filters through the dense bamboo canopy, creating dramatic rays of light. The composition is clean and focused on the geometric perfection of the nature cathedral. The editorial style is sophisticated and evocative, designed for a luxury travel audience seeking exclusivity and peace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUD7ybam9R7RxMtVG04ree4jZKPc8IraJg7avwrSFO0XSQCWxlb8iUSdz-QE6OVUlaqhZEQ2jvgBMh8t4VQUuK390W_bP5Vga210yFTKfcqru9OW1vCl6m6jVdbSKT2o0HBXnuLnwaBu_codIlgQkBqpaCwiDl5VemIl8_x9P4__GJAATxuj-m2-fXP1KY2mNWzPxDZ4dNRgtWNnwrIrbAildVzhXdyMI7rRjtjppqvBRlCcQiduVogOLAlQyfsn-EU5wwQrOP1Cs"/>
+</div>
+<div class="flex flex-col justify-center p-4 md:p-0">
+<h3 class="font-headline-md text-on-surface mb-2">Sunrise Photography Walk</h3>
+<p class="font-body-md text-on-surface-variant mb-4">Beat the crowds and capture the golden hour with a local professional guide.</p>
+<div class="flex gap-4">
+<span class="flex items-center gap-1 font-label-md text-primary">
+<span class="material-symbols-outlined text-[18px]">schedule</span> 2 hrs
+                            </span>
+<span class="flex items-center gap-1 font-label-md text-primary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span> 5.0
+                            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Map Snippet -->
+<section class="mb-stack-lg">
+<h2 class="font-headline-lg-mobile text-on-surface mb-stack-sm">Location</h2>
+<div class="relative w-full h-[300px] rounded-[24px] overflow-hidden shadow-sm group">
+<div class="absolute inset-0 bg-surface-dim">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all duration-700" data-location="Arashiyama, Kyoto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXH3ZToHEYprf_0Yrf6Xo8JAZf5N-DqSZKQaKsoVL8jcA1uFezwJ9IyQa_LX43dHv8tqSRl3zRMPxzA6RGrHg2obbEzyjIX1tC4nLN2zVhJckjHtrqV4R86fkopOWiUAu9KLsu1VbBGRzETZ5aGKWTboX0C-LRBDlTuZC0b1_5fFlmgeeR3u4kFfV6RASVUWzxqmHXKofbGTqjai5xsYUYab9IdBIreET5qPzk8sWWsnkJmo8s3CHxL3dsAfQQk8V0Hez8ZHQ7XuA"/>
+</div>
+<div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+<div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-xl flex items-center justify-between border border-outline-variant/30">
+<div>
+<p class="font-label-md text-primary">Arashiyama, Ukyo Ward</p>
+<p class="font-caption text-on-surface-variant">15 min from Kyoto Station</p>
+</div>
+<button class="bg-primary text-white p-3 rounded-full hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">directions_walk</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Book Now FAB -->
+<div class="fixed bottom-8 left-0 w-full flex justify-center px-container-margin-mobile z-50">
+<button class="bg-primary text-white h-16 px-10 rounded-full shadow-2xl flex items-center justify-center gap-3 hover:scale-105 active:scale-95 transition-all group">
+<span class="font-label-md tracking-widest">BOOK NOW</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<!-- Bottom Navigation Shell (Suppressed on Detail Screen per UX Goal, but included as per task request for a "Top Destination" context check) -->
+<!-- Suppressed for Focus: This is a sub-page/detail view with a back button -->
+<script>
+        // Subtle scroll effects
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-sm');
+            } else {
+                header.classList.remove('shadow-sm');
+            }
+        });
+
+        // Add micro-interactions for experience cards
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const img = card.querySelector('img');
+                if(img) img.style.transform = 'scale(1.05)';
+            });
+            card.addEventListener('mouseleave', () => {
+                const img = card.querySelector('img');
+                if(img) img.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>

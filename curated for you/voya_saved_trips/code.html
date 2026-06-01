@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Saved Gems - Editorial Travel</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#d9dadb",
+                    "primary-fixed": "#e1e0ff",
+                    "on-primary-fixed": "#04006d",
+                    "outline-variant": "#c7c5d4",
+                    "surface-bright": "#f8f9fa",
+                    "primary": "#15157d",
+                    "on-surface-variant": "#464652",
+                    "secondary-fixed-dim": "#ffb59e",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#ffdbd0",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#4f54b4",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#2e3192",
+                    "on-surface": "#191c1d",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#191c1d",
+                    "outline": "#777683",
+                    "on-error": "#ffffff",
+                    "secondary": "#ad3300",
+                    "on-tertiary-fixed": "#00201f",
+                    "surface-container-low": "#f3f4f5",
+                    "on-tertiary-container": "#59b8b5",
+                    "secondary-container": "#ff642d",
+                    "on-secondary-fixed": "#3a0b00",
+                    "on-secondary-container": "#5a1600",
+                    "tertiary-container": "#004645",
+                    "on-tertiary-fixed-variant": "#00504e",
+                    "on-primary-fixed-variant": "#373a9b",
+                    "tertiary": "#002e2d",
+                    "tertiary-fixed-dim": "#78d6d2",
+                    "inverse-surface": "#2e3132",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "surface": "#f8f9fa",
+                    "inverse-primary": "#c0c1ff",
+                    "background": "#f8f9fa",
+                    "surface-variant": "#e1e3e4",
+                    "on-primary-container": "#9da1ff",
+                    "surface-container-high": "#e7e8e9",
+                    "inverse-on-surface": "#f0f1f2",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e1e3e4",
+                    "surface-container": "#edeeef",
+                    "tertiary-fixed": "#94f2ef",
+                    "on-secondary-fixed-variant": "#842500"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "stack-lg": "48px",
+                    "stack-sm": "12px",
+                    "container-margin-mobile": "20px",
+                    "container-margin-desktop": "48px",
+                    "gutter": "24px",
+                    "stack-md": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Playfair Display"],
+                    "caption": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .editorial-shadow {
+            box-shadow: 0 4px 12px rgba(21, 21, 125, 0.04);
+        }
+        
+        .glass-header {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased mb-24">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-md flex justify-between items-center px-container-margin-mobile h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary hover:bg-surface-variant/50 transition-colors duration-200 p-2 rounded-full">menu</button>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-primary tracking-tight">Morning, Sarah</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="material-symbols-outlined text-primary hover:bg-surface-variant/50 transition-colors duration-200 p-2 rounded-full">notifications</button>
+</div>
+</header>
+<main class="pt-24 px-container-margin-mobile max-w-screen-xl mx-auto">
+<!-- Editorial Header -->
+<section class="mb-stack-lg">
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-on-surface mb-2">Saved Gems</h2>
+<p class="font-body-md text-on-surface-variant max-w-md">Your curated collection of escapes, retreats, and adventures waiting to happen.</p>
+</section>
+<!-- Search Bar -->
+<section class="mb-stack-md">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-outline">travel_explore</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 font-body-md text-on-surface transition-all placeholder:text-outline" placeholder="Search your saved gems" type="text"/>
+</div>
+</section>
+<!-- Categorized Folders (Horizontal Carousel) -->
+<section class="mb-stack-lg overflow-hidden">
+<div class="flex justify-between items-end mb-stack-sm">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Collections</h3>
+<button class="text-primary font-label-md hover:underline">New Folder</button>
+</div>
+<div class="flex gap-4 overflow-x-auto hide-scrollbar pb-4 -mx-container-margin-mobile px-container-margin-mobile">
+<!-- Folder 1 -->
+<div class="flex-shrink-0 w-48 group cursor-pointer">
+<div class="relative aspect-square rounded-2xl overflow-hidden mb-3 editorial-shadow">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A sun-drenched coastal town in southern Europe during the golden hour. The architecture features warm terracotta roofs and white-washed walls perched over a sparkling turquoise Mediterranean sea. The lighting is soft and cinematic, evoking a high-end luxury travel magazine aesthetic with rich contrast and a sophisticated, serene mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3DrWEPyxPDW41faN92w5_lb-NdicQzdT4xZew8YS1hdE25VKmFRF5ps1JGOs9HQtNJj7ViZK6-8cQmgtcpjmSf27KedAcOQyqdK9BD3SXFqHchHZA4gwEAdtVp-ezRh7GIhaS2lIsR8C_oIeVWFxWxXMPxnq_V1j-DCA331tE2an-wk9anq8XY5r3v8fjN4ZoYKK7U1scQK7RrGJ3Oax8pTWWr7-y0WhNtSO5qbtvweTmGIrG7n32tYpDsODktRdrlaqSm5TIQGQ"/>
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-primary/0 transition-colors"></div>
+<div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur px-2 py-1 rounded-lg">
+<span class="font-label-md text-xs text-primary">12 Items</span>
+</div>
+</div>
+<p class="font-headline-md text-body-lg text-on-surface">Summer in Europe 2025</p>
+</div>
+<!-- Folder 2 -->
+<div class="flex-shrink-0 w-48 group cursor-pointer">
+<div class="relative aspect-square rounded-2xl overflow-hidden mb-3 editorial-shadow">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A minimalist mountain retreat cabin nestled in a lush, foggy evergreen forest. The aesthetic is clean and architectural, utilizing natural wood and large glass panels that reflect the misty, cool-toned environment. The mood is quiet and adventurous, captured with the clarity of professional architectural photography in an editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVrp_ddZ3UvAyK06JQJf35HjJs8UFAWAd8dwIRWpeh1WZvalXOgAb8kRvrAf3rKlst_LdPpKv54syp7DZdOApd2o5F9N2HhX4hLBLIZoNSAPBeAFyu5xLpIj1Jkrk8pLQDeETHEvDzY_NGgGKqLZedRt6u4SNq-sMrn_OZXy01lzgMZr32rnHx8ocB2ECmR43UsyLMOl7W2FEvT1vS0vGX6DTvf50LkfGZqiVMugB3aHs5C3QMVEFmXk-ulaSo5OBcRUqm7gO_LH8"/>
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-primary/0 transition-colors"></div>
+<div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur px-2 py-1 rounded-lg">
+<span class="font-label-md text-xs text-primary">8 Items</span>
+</div>
+</div>
+<p class="font-headline-md text-body-lg text-on-surface">Weekend Getaways</p>
+</div>
+<!-- Folder 3 -->
+<div class="flex-shrink-0 w-48 group cursor-pointer">
+<div class="relative aspect-square rounded-2xl overflow-hidden mb-3 editorial-shadow">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A luxury hotel suite featuring an infinity pool that merges seamlessly with the horizon of a deep indigo ocean at dusk. The interior is decorated with sleek, modern furniture in a neutral palette of soft off-whites and warm grays. The scene is illuminated by subtle ambient lighting, creating a sophisticated and deeply elegant atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfVontaAmyQILk1Rg0uegJDV5goAYGK8ev_gREqWeHe3OFLBKr9h57IVCSuumo844aQD3tda7_Ue1w9w3WSlCgK6j0_h1P0vqQGmeNI3498en2m0Wz3BSjDN01kLStb9Lh_FXAPImo7wMbXN7kCtjOCA-xx0Uv8tRHq9HYeHJz-vUiwSrxbzRftHkOXmuNw9mVeIjDP3fk-9rQzihMNzwpR5lLKGbXO6QwiC2STZE6r1LQidcMKQqpfHySlZTlBBFLOdDrN2XkG8w"/>
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-primary/0 transition-colors"></div>
+<div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur px-2 py-1 rounded-lg">
+<span class="font-label-md text-xs text-primary">24 Items</span>
+</div>
+</div>
+<p class="font-headline-md text-body-lg text-on-surface">Dream Stays</p>
+</div>
+</div>
+</section>
+<!-- Saved Destinations List -->
+<section class="mb-stack-lg">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Recent Saves</h3>
+<span class="material-symbols-outlined text-outline">filter_list</span>
+</div>
+<div class="grid grid-cols-1 gap-6">
+<!-- Destination Item 1 -->
+<div class="flex gap-4 items-center group">
+<div class="relative w-32 h-40 flex-shrink-0 rounded-xl overflow-hidden editorial-shadow">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A vertical composition of a majestic, snow-capped mountain peak reflecting in a perfectly still, deep blue alpine lake. The lighting is crisp and clear, emphasizing the raw, visceral energy of nature. The visual style is inspired by minimalist travel editorials, focusing on vast white space and cinematic natural beauty." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWXy5Hl7GUCw6ksimXbWPwTGjHsNR_FhDbf17wWZkLH8LpTAbmFRvcIaAMu0W9zdnxScxmaWAWJehk9KJs2ry4yQs-1Gz4yUCaswsqr5pCelq7HUWia3QjhqeH4P5AGrs6wm5jaL5DLCK0U9kV2o-YlE_J4wT0tCHYbp5W4pfWowdEVCxSquu7xNr0hZfF0fsA_NLZKULiJAFVWKaQns1z7KVcALkKOw-IFo65FZueFruWuZoOW0OiuD6bzBYoq-OxGmDWlYh67MY"/>
+<div class="absolute top-2 left-2 bg-secondary-container text-on-secondary-container font-label-md text-[10px] px-2 py-0.5 rounded-full">
+                            98% MATCH
+                        </div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-1">Dolomites, Italy</h4>
+<p class="font-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> Alpine Adventure
+                                </p>
+</div>
+<button class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">favorite</button>
+</div>
+<div class="mt-4 flex gap-2">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-xs font-label-md rounded-full">Nature</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-label-md rounded-full">Luxury</span>
+</div>
+</div>
+</div>
+<!-- Destination Item 2 -->
+<div class="flex gap-4 items-center group">
+<div class="relative w-32 h-40 flex-shrink-0 rounded-xl overflow-hidden editorial-shadow">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A vintage, sun-bleached street in Lisbon featuring intricate yellow-tiled buildings and a historic tram. The atmosphere is nostalgic yet refined, with warm sunset orange highlights and long shadows. The shot follows an editorial exploration theme, balancing urban energy with sophisticated curation and high-quality detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3ZscMn9D31Ix5VK_VsqxI6pMgzB-EM-jbvc1OWFWjRPD2PkM8gp1ZDjUgpO2u3kIjQPCZ47BrqmWWmOIb7x4umw2S3_lgaKBnhENzcwXMbKPUd5UjNTJMKceB9E2htdlQ733XUkptkY9lJ69N0ckBLBXfc0xIf6dTZ2AGVDT2YHnyGnxFQg62aKJm86yVcLgPO-d-l0a5J8KFznzUJE7Z_QRxPA8-v82WLJpO8KXBnKlXpPxv2PiOCg2XkCJX1teqsQaYfT3mvVY"/>
+<div class="absolute top-2 left-2 bg-secondary-container text-on-secondary-container font-label-md text-[10px] px-2 py-0.5 rounded-full">
+                            92% MATCH
+                        </div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-1">Lisbon, Portugal</h4>
+<p class="font-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> Urban Culture
+                                </p>
+</div>
+<button class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">favorite</button>
+</div>
+<div class="mt-4 flex gap-2">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-xs font-label-md rounded-full">Culinary</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-label-md rounded-full">Historical</span>
+</div>
+</div>
+</div>
+<!-- Destination Item 3 -->
+<div class="flex gap-4 items-center group">
+<div class="relative w-32 h-40 flex-shrink-0 rounded-xl overflow-hidden editorial-shadow">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A serene white sand beach in the Maldives with crystal clear, pale aqua water gently lapping the shore. A single minimalist beach chair is positioned under a palm tree shadow, creating a sense of calm and exclusivity. The lighting is bright and high-key, maintaining a premium, unobtrusive aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNzai_DHEwTS_UFZd4OPsK3h-0Axrla8P9Wfg9sTZ8gCMDZizkfixAR0vWbKsxbms2kp8j5dghZ9-rYKhbd3jkJ6eshlHK1RrfL7x71gfYweXsRG-Q8lEVFjyyO1zUW465W111O0gteUDssVuIMxDHKMSSvVZYIKFl4oKXTfRZsP84NpNWO7t6Rbec2q5C6X1ufskJtbENGMFGtzOoqSPg0-HHLIMPaabv4PLAHvki_3OqDH2JYVNlzTDay3j37Ow_TpY0y3movv8"/>
+<div class="absolute top-2 left-2 bg-secondary-container text-on-secondary-container font-label-md text-[10px] px-2 py-0.5 rounded-full">
+                            88% MATCH
+                        </div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-1">Baa Atoll, Maldives</h4>
+<p class="font-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> Tropical Retreat
+                                </p>
+</div>
+<button class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">favorite</button>
+</div>
+<div class="mt-4 flex gap-2">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-xs font-label-md rounded-full">Relaxation</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-label-md rounded-full">Ocean</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-4px_12px_rgba(21,21,125,0.04)] flex justify-around items-center h-20 px-container-margin-mobile w-full">
+<button class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">explore</span>
+</button>
+<button class="flex items-center justify-center bg-secondary-container text-on-secondary-container rounded-full w-12 h-12 scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<button class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">travel_explore</span>
+</button>
+<button class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">person</span>
+</button>
+</nav>
+<script>
+        // Micro-interaction for search bar focus
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('scale-[1.01]');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('scale-[1.01]');
+        });
+
+        // Hover effect for collection items
+        document.querySelectorAll('.group').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateY(-2px)';
+                item.style.transition = 'transform 0.3s ease';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>

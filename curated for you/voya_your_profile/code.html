@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile - Editorial Exploration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#d9dadb",
+                    "primary-fixed": "#e1e0ff",
+                    "on-primary-fixed": "#04006d",
+                    "outline-variant": "#c7c5d4",
+                    "surface-bright": "#f8f9fa",
+                    "primary": "#15157d",
+                    "on-surface-variant": "#464652",
+                    "secondary-fixed-dim": "#ffb59e",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#ffdbd0",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#4f54b4",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#2e3192",
+                    "on-surface": "#191c1d",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#191c1d",
+                    "outline": "#777683",
+                    "on-error": "#ffffff",
+                    "secondary": "#ad3300",
+                    "on-tertiary-fixed": "#00201f",
+                    "surface-container-low": "#f3f4f5",
+                    "on-tertiary-container": "#59b8b5",
+                    "secondary-container": "#ff642d",
+                    "on-secondary-fixed": "#3a0b00",
+                    "on-secondary-container": "#5a1600",
+                    "tertiary-container": "#004645",
+                    "on-tertiary-fixed-variant": "#00504e",
+                    "on-primary-fixed-variant": "#373a9b",
+                    "tertiary": "#002e2d",
+                    "tertiary-fixed-dim": "#78d6d2",
+                    "inverse-surface": "#2e3132",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "surface": "#f8f9fa",
+                    "inverse-primary": "#c0c1ff",
+                    "background": "#f8f9fa",
+                    "surface-variant": "#e1e3e4",
+                    "on-primary-container": "#9da1ff",
+                    "surface-container-high": "#e7e8e9",
+                    "inverse-on-surface": "#f0f1f2",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e1e3e4",
+                    "surface-container": "#edeeef",
+                    "tertiary-fixed": "#94f2ef",
+                    "on-secondary-fixed-variant": "#842500"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "stack-lg": "48px",
+                    "stack-sm": "12px",
+                    "container-margin-mobile": "20px",
+                    "container-margin-desktop": "48px",
+                    "gutter": "24px",
+                    "stack-md": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Playfair Display"],
+                    "caption": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-fixed">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-md flex justify-between items-center px-container-margin-mobile h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-primary tracking-tight">Morning, Sarah</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="notifications">notifications</span>
+</div>
+</header>
+<main class="pt-24 pb-32 px-container-margin-mobile max-w-screen-xl mx-auto md:px-container-margin-desktop">
+<!-- Profile Header Section -->
+<section class="mb-stack-lg flex flex-col md:flex-row md:items-end gap-6">
+<div class="relative w-32 h-32 md:w-48 md:h-48 overflow-hidden rounded-full shadow-lg border-4 border-surface-container-lowest">
+<img alt="Sarah Miller Profile" class="w-full h-full object-cover" data-alt="A sophisticated close-up portrait of Sarah Miller, a refined traveler in her early 30s. She is outdoors during the golden hour, with soft, warm sunlight illuminating her face against a blurred backdrop of lush Mediterranean greenery. The aesthetic is elegant and editorial, mirroring a high-end travel magazine. The lighting is ethereal, creating a serene and adventurous mood with deep indigo and warm sunset orange tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgNK-YuELjIrdRt9Y_Na-9USQeDepP2MYlnlPEQqsA__cn1XSZN41f5WdT6NPnMPe_0amBA_n62Z4UgD7rXh6TquFxhCKJGRLtObLBHcp82W3sIypO4FaRgcT4ykw5Gbt5YiJg_cPARq7qBfVLC3uyvFi70gFUrc98kiR44Roua8ZXXL-UiDqlLwjdiz8HLk8NAEzRoL7wcrEBqAZcweDEZ5_hp6-reD6UPWRN8iF8_Vkhe1m-s0ZcBT4B1Qu08JLPl6tGdBrW3Go"/>
+</div>
+<div class="flex-1">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-2">Sarah Miller</h2>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="travel_explore">travel_explore</span>
+<p class="font-label-md text-label-md text-on-surface-variant">12 countries visited</p>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full text-caption font-label-md">Explorer</span>
+<span class="px-4 py-1 bg-primary-fixed text-on-primary-fixed-variant rounded-full text-caption font-label-md">Contributor</span>
+</div>
+</div>
+</section>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Travel Persona Card -->
+<div class="md:col-span-7 bg-surface-container-lowest rounded-xl p-stack-md shadow-sm border border-outline-variant/10 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-stack-md opacity-20 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-[120px] text-tertiary" data-icon="nature_people">nature_people</span>
+</div>
+<div class="relative z-10">
+<h3 class="font-label-md text-label-md uppercase tracking-widest text-secondary mb-2">Travel Persona</h3>
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-4">The Soul Seeker</h4>
+<p class="text-on-surface-variant max-w-md mb-6 font-body-md leading-relaxed">
+                        You move through the world with intention, seeking quiet moments of wellness and deep connection with the natural landscape. For you, the journey is not about the destination, but the rhythm of discovery.
+                    </p>
+<div class="flex gap-4">
+<div class="flex items-center gap-2 px-3 py-2 bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-tertiary" data-icon="spa">spa</span>
+<span class="font-label-md text-label-md">Wellness</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-2 bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-tertiary" data-icon="forest">forest</span>
+<span class="font-label-md text-label-md">Nature</span>
+</div>
+</div>
+</div>
+</div>
+<!-- History Timeline -->
+<div class="md:col-span-5 bg-surface-container-lowest rounded-xl p-stack-md shadow-sm border border-outline-variant/10">
+<h3 class="font-headline-md text-headline-md mb-stack-sm text-primary">Your History</h3>
+<div class="space-y-6 relative before:content-[''] before:absolute before:left-3 before:top-4 before:bottom-0 before:w-px before:bg-outline-variant/30">
+<div class="relative pl-10">
+<div class="absolute left-0 top-1.5 w-6 h-6 bg-primary-container rounded-full flex items-center justify-center">
+<span class="w-2 h-2 bg-white rounded-full"></span>
+</div>
+<span class="font-caption text-caption text-outline">Oct 2023</span>
+<h5 class="font-label-md text-label-md text-on-surface">Retreat in Ubud, Bali</h5>
+<p class="text-caption text-on-surface-variant">14 days of yoga and sustainable living.</p>
+</div>
+<div class="relative pl-10 opacity-70">
+<div class="absolute left-0 top-1.5 w-6 h-6 bg-surface-variant rounded-full flex items-center justify-center">
+<span class="w-2 h-2 bg-outline rounded-full"></span>
+</div>
+<span class="font-caption text-caption text-outline">July 2023</span>
+<h5 class="font-label-md text-label-md text-on-surface">Hiking the Dolomites, Italy</h5>
+<p class="text-caption text-on-surface-variant">Traversed 4 key peaks over 7 days.</p>
+</div>
+<div class="relative pl-10 opacity-70">
+<div class="absolute left-0 top-1.5 w-6 h-6 bg-surface-variant rounded-full flex items-center justify-center">
+<span class="w-2 h-2 bg-outline rounded-full"></span>
+</div>
+<span class="font-caption text-caption text-outline">May 2023</span>
+<h5 class="font-label-md text-label-md text-on-surface">Meditation in Kyoto</h5>
+<p class="text-caption text-on-surface-variant">Zen garden explorations and tea ritual.</p>
+</div>
+</div>
+</div>
+<!-- Preference Settings -->
+<div class="md:col-span-12 bg-white rounded-xl p-stack-md shadow-sm border border-outline-variant/10">
+<h3 class="font-headline-md text-headline-md mb-stack-md text-primary">Preference Settings</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Toggle 1 -->
+<div class="flex items-center justify-between p-4 bg-surface rounded-xl">
+<div>
+<p class="font-label-md text-label-md text-on-surface">Nature vs. City</p>
+<p class="font-caption text-caption text-on-surface-variant">Currently: Deep Nature</p>
+</div>
+<button aria-label="Toggle Nature" class="relative w-12 h-6 bg-tertiary-fixed rounded-full flex items-center transition-all px-1 focus:outline-none">
+<div class="w-4 h-4 bg-tertiary rounded-full transform translate-x-6"></div>
+</button>
+</div>
+<!-- Toggle 2 -->
+<div class="flex items-center justify-between p-4 bg-surface rounded-xl">
+<div>
+<p class="font-label-md text-label-md text-on-surface">Adventure vs. Luxury</p>
+<p class="font-caption text-caption text-on-surface-variant">Currently: Balanced</p>
+</div>
+<button aria-label="Toggle Luxury" class="relative w-12 h-6 bg-surface-variant rounded-full flex items-center transition-all px-1 focus:outline-none">
+<div class="w-4 h-4 bg-outline rounded-full transform translate-x-3"></div>
+</button>
+</div>
+<!-- Budget Slider Simulation -->
+<div class="p-4 bg-surface rounded-xl">
+<div class="flex justify-between mb-2">
+<p class="font-label-md text-label-md text-on-surface">Budget Range</p>
+<p class="font-caption text-caption text-secondary font-bold">Premium</p>
+</div>
+<div class="relative h-1.5 w-full bg-outline-variant rounded-full overflow-hidden">
+<div class="absolute left-0 top-0 h-full w-3/4 bg-primary"></div>
+<div class="absolute left-3/4 top-1/2 -translate-y-1/2 -ml-2 w-4 h-4 bg-white border-2 border-primary rounded-full shadow-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-4px_12px_rgba(21,21,125,0.04)] flex justify-around items-center h-20 px-container-margin-mobile w-full">
+<a aria-label="Explore" class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+</a>
+<a aria-label="Favorites" class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</a>
+<a aria-label="Trips" class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="travel_explore">travel_explore</span>
+</a>
+<!-- Active Tab: Profile -->
+<a aria-label="Profile" class="flex items-center justify-center bg-secondary-container text-on-secondary-container rounded-full w-12 h-12 scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+</a>
+</nav>
+<script>
+        // Micro-interactions for toggles and sliders
+        document.querySelectorAll('button[aria-label^="Toggle"]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const thumb = btn.querySelector('div');
+                const isOff = thumb.classList.contains('translate-x-0') || thumb.classList.contains('translate-x-3');
+                
+                if(btn.ariaLabel.includes('Nature')) {
+                    thumb.classList.toggle('translate-x-6');
+                    thumb.classList.toggle('translate-x-0');
+                    btn.classList.toggle('bg-tertiary-fixed');
+                    btn.classList.toggle('bg-surface-variant');
+                    thumb.classList.toggle('bg-tertiary');
+                    thumb.classList.toggle('bg-outline');
+                } else {
+                    // Logic for other toggle states
+                    thumb.classList.toggle('translate-x-0');
+                    thumb.classList.toggle('translate-x-6');
+                    btn.classList.toggle('bg-primary-fixed');
+                    btn.classList.toggle('bg-surface-variant');
+                }
+            });
+        });
+    </script>
+</body></html>
