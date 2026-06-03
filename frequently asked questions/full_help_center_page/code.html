@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Help Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#c3c0ff",
+                        "surface-variant": "#e1e3e4",
+                        "inverse-surface": "#2e3132",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#ffdbcc",
+                        "tertiary-container": "#a44100",
+                        "surface-tint": "#4d44e3",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-secondary-container": "#fffbff",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#712ae2",
+                        "on-primary-fixed": "#0f0069",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "surface-dim": "#d9dadb",
+                        "surface": "#f8f9fa",
+                        "outline-variant": "#c7c4d8",
+                        "on-secondary-fixed": "#25005a",
+                        "background": "#f8f9fa",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "on-background": "#191c1d",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e7e8e9",
+                        "on-secondary": "#ffffff",
+                        "outline": "#777587",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "primary": "#3525cd",
+                        "on-primary-container": "#dad7ff",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#351000",
+                        "surface-bright": "#f8f9fa",
+                        "on-tertiary-container": "#ffd2be",
+                        "secondary-container": "#8a4cfc",
+                        "primary-fixed": "#e2dfff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "primary-container": "#4f46e5",
+                        "surface-container": "#edeeef",
+                        "on-surface": "#191c1d",
+                        "surface-container-highest": "#e1e3e4",
+                        "tertiary": "#7e3000",
+                        "on-surface-variant": "#464555",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f0f1f2",
+                        "secondary-fixed": "#eaddff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "2.5rem",
+                        "base": "8px",
+                        "gutter": "1.5rem",
+                        "margin-mobile": "1.25rem",
+                        "max-width": "1200px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-xl-mobile": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-xl-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 h-16 bg-surface shadow-sm transition-colors">
+<div class="flex items-center gap-4">
+<button class="p-2 active:scale-95 transition-transform duration-150 hover:bg-surface-variant rounded-full">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Help Center</h1>
+</div>
+<button class="p-2 active:scale-95 transition-transform duration-150 hover:bg-surface-variant rounded-full">
+<span class="material-symbols-outlined text-primary">search</span>
+</button>
+</header>
+<main class="pt-20 px-5 space-y-8">
+<!-- Hero Search Section -->
+<section class="mt-4">
+<div class="space-y-2 mb-6">
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile text-on-surface">How can we help?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Search our knowledge base or browse categories below.</p>
+</div>
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">search</span>
+</div>
+<input class="w-full h-14 pl-12 pr-4 bg-surface-container-lowest border border-outline-variant rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all font-body-md text-body-md" placeholder="Search for articles, guides, or keywords..." type="text"/>
+</div>
+</section>
+<!-- Category Bento Grid -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Categories</h3>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Large Feature Category -->
+<div class="col-span-2 bg-surface-container-low p-6 rounded-xl border border-outline-variant/30 flex items-center gap-6 active:scale-[0.98] transition-transform">
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container shadow-sm">
+<span class="material-symbols-outlined text-[32px]">rocket_launch</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Getting Started</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">The essentials for new users.</p>
+</div>
+</div>
+<!-- Standard Categories -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/30 shadow-[0px_4px_20px_rgba(0,0,0,0.05)] text-center space-y-3 hover:shadow-lg transition-shadow active:scale-95">
+<span class="material-symbols-outlined text-primary text-[32px]">manage_accounts</span>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Account</h4>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/30 shadow-[0px_4px_20px_rgba(0,0,0,0.05)] text-center space-y-3 hover:shadow-lg transition-shadow active:scale-95">
+<span class="material-symbols-outlined text-primary text-[32px]">payments</span>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Billing</h4>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/30 shadow-[0px_4px_20px_rgba(0,0,0,0.05)] text-center space-y-3 hover:shadow-lg transition-shadow active:scale-95">
+<span class="material-symbols-outlined text-primary text-[32px]">security</span>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Privacy</h4>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/30 shadow-[0px_4px_20px_rgba(0,0,0,0.05)] text-center space-y-3 hover:shadow-lg transition-shadow active:scale-95">
+<span class="material-symbols-outlined text-primary text-[32px]">build</span>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Technical</h4>
+</div>
+</div>
+</section>
+<!-- Featured Articles -->
+<section class="space-y-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Featured Articles</h3>
+<div class="space-y-3">
+<!-- Article Card 1 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant shadow-sm flex items-start gap-4 active:bg-surface-variant transition-colors">
+<div class="w-12 h-12 shrink-0 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A clean, professional close-up of a person using a sleek modern laptop in a bright, sunlit office environment. The atmosphere is productive and organized, with a soft-focus background of minimalist office decor. The lighting is high-key and airy, emphasizing a helpful and efficient modern corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4yJtROP_-F0ssoS36djPYntJ0lhlGQox01EWM5W0OwqJ1m-_taYeaebWdiH6d0QMZhNsicswKqyqij7sIhtlJ_RunoqZaHvYa7x017NJjnI01mItQ9RgksoSLaFPznGFKms59K32oboVYlOm9c1Hu4UVWllJShG2elTKEVLw6uypIJjClpo5KUMNZ88hwcTB6bMvcr6UQEkGRG50TJsKEPNJltLOOOMijz2kg5FE-Tf93CFpT1aA9qpQni9nc7xLLVdobKl9xDwA"/>
+</div>
+<div class="flex-1">
+<h5 class="font-label-md text-label-md font-bold text-on-surface mb-1">Optimizing your workspace settings</h5>
+<p class="font-body-md text-[14px] leading-tight text-on-surface-variant line-clamp-2">Learn how to customize your dashboard layout for maximum daily efficiency.</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+<!-- Article Card 2 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant shadow-sm flex items-start gap-4 active:bg-surface-variant transition-colors">
+<div class="w-12 h-12 shrink-0 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A sophisticated data visualization dashboard showing clean lines and blue-toned graphs on a screen. The setting is a modern tech company office with soft, professional ambient lighting. The scene conveys reliability and clarity, focused on providing clear information and analytics in a trustworthy digital environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuJF1debVXroCxwOtjmkM6DUgEXlxQ6BVa-DHU3sCcKWi3-TlWO_zK_9MSsf0Bu5yLBar9iPlk6US6J1aY8XwFmB2QY6uz5c2OmHFuuhQWkKPoJK8vGK9oozN8_rLswIQw_6kWTwKjs12zv3R4elmtnV_n0ktXo-pf-d6wiDF4inJcOX9OXwceQqn2VkRHQxkUAIvAU8G7pUeCDKaKYvwJAP3FGXDk8Jyrw9Z3ZDddCj5B3m6XCp6g3p8Fma4m1IgO40xpP9-eOGc"/>
+</div>
+<div class="flex-1">
+<h5 class="font-label-md text-label-md font-bold text-on-surface mb-1">Understanding your monthly billing</h5>
+<p class="font-body-md text-[14px] leading-tight text-on-surface-variant line-clamp-2">A comprehensive breakdown of all line items and tax calculations for your region.</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Contact Support Call to Action -->
+<section class="bg-primary text-on-primary p-8 rounded-2xl text-center space-y-6 shadow-lg mb-8">
+<div class="space-y-2">
+<h3 class="font-headline-md text-headline-md">Still need help?</h3>
+<p class="font-body-md text-body-md text-on-primary-container/80">Our support team is available 24/7 to assist you with any questions or issues.</p>
+</div>
+<button class="w-full py-4 bg-on-primary text-primary font-bold rounded-xl active:scale-95 transition-all shadow-md">
+                Contact Support
+            </button>
+<p class="font-label-md text-[12px] uppercase tracking-widest opacity-70">Average response time: 5 minutes</p>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-6 bg-surface-container-lowest border-t border-outline-variant shadow-lg">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-md text-label-md">Search</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-5 py-1 transition-all active:scale-90">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">help_center</span>
+<span class="font-label-md text-label-md">Support</span>
+</button>
+</nav>
+<script>
+        // Simple micro-interaction for the search bar
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('scale-[1.02]');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('scale-[1.02]');
+        });
+
+        // Simple active state feedback for cards
+        const cards = document.querySelectorAll('.active\\:scale-95, .active\\:scale-\\[0\\.98\\]');
+        cards.forEach(card => {
+            card.addEventListener('touchstart', () => {}, {passive: true});
+        });
+    </script>
+</body></html>
