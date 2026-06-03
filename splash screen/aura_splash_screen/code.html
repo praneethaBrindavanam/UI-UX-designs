@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#3525cd",
+                        "surface-container-low": "#f2f4f6",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "background": "#f7f9fb",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#4d44e3",
+                        "primary-container": "#4f46e5",
+                        "outline": "#777587",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e6e8ea",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "tertiary-fixed": "#89f5e7",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#dad7ff",
+                        "tertiary": "#00524b",
+                        "on-tertiary-fixed": "#00201d",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-background": "#191c1e",
+                        "surface-container": "#eceef0",
+                        "on-tertiary-container": "#81eddf",
+                        "surface-bright": "#f7f9fb",
+                        "on-surface-variant": "#464555",
+                        "inverse-surface": "#2d3133",
+                        "error": "#ba1a1a",
+                        "secondary": "#565e74",
+                        "primary-fixed": "#e2dfff",
+                        "outline-variant": "#c7c4d8",
+                        "surface-dim": "#d8dadc",
+                        "on-secondary-fixed": "#131b2e",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "secondary-container": "#dae2fd",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#5c647a",
+                        "on-surface": "#191c1e",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "surface": "#f7f9fb",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#dae2fd",
+                        "inverse-on-surface": "#eff1f3",
+                        "tertiary-container": "#006c63",
+                        "on-primary-fixed": "#0f0069",
+                        "inverse-primary": "#c3c0ff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#005049"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "stack-sm": "8px",
+                        "unit": "4px",
+                        "gutter": "16px",
+                        "margin-desktop": "40px",
+                        "stack-lg": "48px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Manrope"],
+                        "label-md": ["Geist"],
+                        "headline-lg": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "label-sm": ["Geist"],
+                        "body-lg": ["Manrope"],
+                        "body-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        @keyframes fadeInScale {
+            0% { opacity: 0; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes progress {
+            0% { width: 0%; left: 0; }
+            50% { width: 25%; left: 75%; }
+            100% { width: 0%; left: 100%; }
+        }
+
+        .animate-splash {
+            animation: fadeInScale 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        .loading-line {
+            height: 2px;
+            background: #3525cd;
+            position: relative;
+            overflow: hidden;
+            width: 80px;
+            border-radius: 999px;
+        }
+
+        .loading-line-inner {
+            content: '';
+            position: absolute;
+            height: 100%;
+            background: #4d44e3;
+            animation: progress 2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md flex flex-col items-center justify-center min-h-screen overflow-hidden">
+<!-- Splash Screen Container -->
+<main class="flex flex-col items-center justify-between h-full py-24 w-full max-w-[430px] animate-splash px-margin-mobile">
+<!-- Top Spacer for centering logo -->
+<div class="h-16"></div>
+<!-- Center Branding Section -->
+<section class="flex flex-col items-center gap-stack-md">
+<!-- Brand Logo -->
+<div class="w-40 h-40 md:w-48 md:h-48 relative mb-stack-sm flex items-center justify-center">
+<img alt="AURA" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0rhc-FDPsmGiMqSSYLaD1GXM8edujuehZkD0IvTwqr7fyuirwNJzWmVdepVONCmVJAi_dhxSdepPHgUH2gFQ7neCmcyXoL7tzv3skWai-poc2kpL9CfG-phzORgk7z39vTUCRt2fkluAahw0bjy3QAqH92q3CM8RVH0bxiywxkphPh4rVCobN5jXDSOkfZ-hlsX2pAMpOfK3JxPg9vsWj37roGSX1szUIL9nJHVdEShjCgYpfOCj0YziFxuM5IkyXUagWbicijxk"/>
+</div>
+<!-- App Name -->
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile tracking-[0.4em] text-primary uppercase md:font-headline-lg md:text-headline-lg">
+                AURA
+            </h1>
+<!-- Value Prop / Subtitle (Subtle) -->
+<p class="font-label-sm text-label-sm text-secondary tracking-widest uppercase opacity-60">
+                Effortless Control
+            </p>
+</section>
+<!-- Bottom Loading Section -->
+<footer class="flex flex-col items-center gap-stack-sm">
+<div class="loading-line bg-surface-container-high">
+<div class="loading-line-inner"></div>
+</div>
+<p class="font-label-sm text-label-sm text-outline tracking-wider uppercase opacity-40">
+                Initializing
+            </p>
+</footer>
+</main>
+<!-- Micro-interaction Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Subtle parallax or glow effect based on mouse movement (for desktop view)
+            if (window.innerWidth > 768) {
+                document.addEventListener('mousemove', (e) => {
+                    const x = (e.clientX / window.innerWidth - 0.5) * 10;
+                    const y = (e.clientY / window.innerHeight - 0.5) * 10;
+                    const logo = document.querySelector('img');
+                    if (logo) {
+                        logo.style.transform = `translate(${x}px, ${y}px)`;
+                        logo.style.transition = 'transform 0.2s ease-out';
+                    }
+                });
+            }
+
+            // Simulate loading completion for visual feedback (though it's a splash, we stay here)
+            const loadingText = document.querySelector('footer p');
+            const states = ['Connecting', 'Syncing', 'Ready'];
+            let i = 0;
+            
+            setInterval(() => {
+                if (i < states.length) {
+                    loadingText.style.opacity = '0';
+                    setTimeout(() => {
+                        loadingText.textContent = states[i];
+                        loadingText.style.opacity = '0.4';
+                        i++;
+                    }, 300);
+                }
+            }, 2500);
+        });
+    </script>
+</body></html>
