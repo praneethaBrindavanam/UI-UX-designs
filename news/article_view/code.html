@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>THE DISPATCH | Article</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Source+Sans+3:wght@400;600&amp;family=Archivo+Narrow:wght@700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@100..900&amp;family=Playfair+Display:wght@100..900&amp;family=Source+Sans+3:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#3f465c",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#410002",
+                    "on-surface-variant": "#45464d",
+                    "secondary-fixed-dim": "#ffb4ab",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#131b2e",
+                    "background": "#f7f9fb",
+                    "on-secondary-container": "#fffbff",
+                    "on-secondary-fixed-variant": "#93000b",
+                    "tertiary-fixed": "#d5e3fc",
+                    "primary-fixed": "#dae2fd",
+                    "tertiary-fixed-dim": "#b9c7df",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#131b2e",
+                    "on-tertiary-container": "#77859a",
+                    "primary": "#000000",
+                    "surface-variant": "#e0e3e5",
+                    "on-background": "#191c1e",
+                    "surface-container-highest": "#e0e3e5",
+                    "inverse-on-surface": "#eff1f3",
+                    "inverse-primary": "#bec6e0",
+                    "surface-container-low": "#f2f4f6",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2d3133",
+                    "on-tertiary-fixed-variant": "#3a485b",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#565e74",
+                    "secondary": "#b6191a",
+                    "on-surface": "#191c1e",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-bright": "#f7f9fb",
+                    "tertiary-container": "#0d1c2e",
+                    "on-tertiary-fixed": "#0d1c2e",
+                    "tertiary": "#000000",
+                    "surface-dim": "#d8dadc",
+                    "surface-container": "#eceef0",
+                    "error": "#ba1a1a",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#d9352f",
+                    "on-primary-container": "#7c839b",
+                    "primary-fixed-dim": "#bec6e0",
+                    "secondary-fixed": "#ffdad6",
+                    "outline": "#76777d",
+                    "surface": "#f7f9fb",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#c6c6cd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "stack-xs": "8px",
+                    "container-margin": "20px",
+                    "stack-lg": "40px",
+                    "base": "4px",
+                    "stack-md": "24px",
+                    "stack-sm": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Playfair Display"],
+                    "caption": ["Source Sans 3"],
+                    "body-md": ["Source Sans 3"],
+                    "display-lg": ["Playfair Display"],
+                    "body-lg": ["Source Sans 3"],
+                    "headline-lg": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "label-caps": ["Archivo Narrow"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "caption": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f7f9fb;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface">
+<!-- Top Navigation Bar (Article Variant) -->
+<header class="fixed top-0 w-full z-50 bg-surface flex justify-between items-center px-container-margin h-16 border-b border-outline-variant">
+<button class="hover:opacity-80 transition-opacity flex items-center gap-1 text-primary" onclick="window.history.back()">
+<span class="material-symbols-outlined">arrow_back</span>
+<span class="font-label-caps text-label-caps">BACK</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-primary">THE DISPATCH</h1>
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 transition-opacity text-on-surface-variant">
+<span class="material-symbols-outlined">text_fields</span>
+</button>
+<button class="hover:opacity-80 transition-opacity text-on-surface-variant">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</header>
+<main class="pt-16 pb-20">
+<!-- Immersive Hero Image -->
+<section class="relative w-full h-[397px] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A sprawling urban landscape at dusk with modern high-rise buildings featuring integrated solar panels and rooftop wind turbines. The lighting is dramatic, with the orange glow of a setting sun reflecting off glass surfaces, creating a high-contrast and authoritative journalistic feel. The composition is wide and cinematic, emphasizing the scale of renewable energy infrastructure within a dense metropolitan hub. Soft hazy atmospheres blend with sharp architectural details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS1427nr-KN8aSCA4Nw7MGegEQri7_fwCIszyquJuth3nlRvV_9XkDJMX61gMUiO6ml5lJXYXtZmWZVJAu17Q92GqdyAHRPXmRzDjc3ZdSihAlEaAxqc0IjC5Swilz159pFHzfd4ARRYbyF9qqJUGN6gLWt4dkFqazywatXsZYg6St6qwjcDEhF4fmpNZ-JHhyEZPuzC6lbNkfbJFHbxoCAvBoS8euUgCZCVqQ2xUWUtqXqPV4I6VTXFVZaobOYk_zDYCnPGzU5Lw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</section>
+<!-- Article Container -->
+<article class="px-container-margin -mt-12 relative z-10">
+<!-- Header Card -->
+<div class="bg-surface p-6 border border-outline-variant shadow-sm mb-stack-md">
+<div class="mb-stack-xs">
+<span class="font-label-caps text-label-caps text-secondary border border-secondary px-2 py-1">SUSTAINABILITY</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-stack-sm leading-tight">
+                    The Future of Renewable Energy in Urban Hubs
+                </h2>
+<div class="flex items-center justify-between border-t border-outline-variant pt-stack-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-high border border-outline-variant overflow-hidden">
+<img class="w-full h-full object-cover grayscale" data-alt="A professional headshot of a senior editorial writer in a minimalist studio setting. The lighting is soft and directional, highlighting textures of a dark charcoal blazer. The image has a high-contrast, premium look suitable for a high-end journalism publication, emphasizing authority and sophistication in a black and white aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_YrveA_40tQVTjOyOCAFWrlcEXAbiRntVP0aY0Qo9DUDmcb5_Dr6UF8KaO_Z9TO-Q4YajKk582ijO4i_4tlW1pI1-BLMHUyhuDo1qWcwxzsOW3q8VUVOVEQZhE2mtYwiMuALAbiW60tS44EhKTDZENpfu7tAsnWqAigo0oyIPp3MhLZsWwRB9iz7VBxjo8DtzLwXThT-HxeomDhLIYABUioSV1XQheQq1k-FH2BPRAgVpnEftNxhCV074fOHJaf8ue6Rj-Ur31ZY"/>
+</div>
+<div>
+<p class="font-label-caps text-[11px] leading-none text-primary">BY JULIAN VANCE</p>
+<p class="font-caption text-caption text-on-surface-variant">Oct 24, 2023 • 8 min read</p>
+</div>
+</div>
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-secondary transition-colors" id="save-btn" onclick="toggleSave()">
+<span class="material-symbols-outlined" id="save-icon">bookmark</span>
+<span class="font-label-caps text-label-caps">SAVE</span>
+</button>
+</div>
+</div>
+<!-- Body Text -->
+<div class="article-content font-body-lg text-body-lg text-on-surface leading-relaxed max-w-2xl mx-auto">
+<p>
+                    As the world’s population continues to gravitate toward metropolitan centers, the challenge of powering these concrete monoliths sustainably has moved from theoretical debate to urgent engineering necessity. The traditional model—remote power plants piping energy across vast distances—is being disrupted by the rise of localized, integrated urban grids.
+                </p>
+<aside class="my-stack-md pl-6 border-l-2 border-secondary italic font-headline-md text-headline-md text-primary">
+                    "The city of the future is not just a consumer of energy, but a living, breathing generator of its own survival."
+                </aside>
+<p>
+                    From the transparent solar windows of Tokyo's new business districts to the kinetic sidewalks of London, the infrastructure of the modern city is becoming a collection of micro-generators. This decentralized approach offers not only a path to carbon neutrality but also a resilient shield against the systemic failures that plague centralized grids.
+                </p>
+<p>
+                    However, the transition is fraught with regulatory hurdles and architectural legacies. Retrofitting a 19th-century brownstone with 21st-century geothermal heating requires more than just capital; it requires a radical reimagining of urban space and shared resources.
+                </p>
+</div>
+<!-- Interactions & Metadata -->
+<div class="mt-stack-lg border-t border-b border-outline-variant py-stack-sm flex items-center justify-between">
+<div class="flex gap-4">
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">thumb_up</span>
+<span class="font-label-caps text-label-caps">1.2K</span>
+</button>
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chat_bubble_outline</span>
+<span class="font-label-caps text-label-caps">84</span>
+</button>
+</div>
+<div class="flex gap-2">
+<span class="bg-surface-container-low px-2 py-1 font-label-caps text-[10px] text-on-surface-variant">#RENEWABLES</span>
+<span class="bg-surface-container-low px-2 py-1 font-label-caps text-[10px] text-on-surface-variant">#URBANISM</span>
+</div>
+</div>
+</article>
+<!-- Related Stories -->
+<section class="mt-stack-lg px-container-margin">
+<h3 class="font-label-caps text-label-caps text-primary mb-stack-sm tracking-widest border-b border-primary inline-block pb-1">RELATED STORIES</h3>
+<div class="grid grid-cols-1 gap-6 mt-4">
+<!-- Related Item 1 -->
+<div class="flex gap-4 items-start group">
+<div class="w-24 h-24 flex-shrink-0 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A minimalist architectural shot of a modern building facade with clean lines and sharp shadows. The aesthetic is monochromatic and high-contrast, echoing a premium editorial style. The image highlights geometric patterns and the play of light on concrete surfaces, creating a sophisticated and intellectual mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeAIM5STepw1hi1fYrMsUeciKraUhhgO0TEIuhSxKbBBY69j_RIlhj4wqD63N1VglQqXFFGxSJUaF8AMmilh-scmNphsSKfna9RhJ_MKDcHeBNMZlXKTqe1RZG6cTJsRSpKt5VTsaYAI9EJamQ75A_9urP_sY4R28qv62eVFnAh6foAAJtBVPiQhpx19uL9SpobOvWL75uxHTcpDB4oCAJw0RJ8HdCKVBCA0-k14nySgEOT538Gv4sQavvFVX3VHp7Th1Q78u59yE"/>
+</div>
+<div class="flex-grow">
+<span class="font-label-caps text-[10px] text-secondary">ARCHITECTURE</span>
+<h4 class="font-headline-md text-[18px] leading-tight text-primary mt-1 group-hover:underline decoration-1 underline-offset-4">The Brutalist Revival in Modular Social Housing</h4>
+<p class="font-caption text-caption text-on-surface-variant mt-1">4 min read</p>
+</div>
+</div>
+<!-- Related Item 2 -->
+<div class="flex gap-4 items-start group">
+<div class="w-24 h-24 flex-shrink-0 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A close-up shot of complex electronic circuitry and high-tech components. The lighting is cool-toned with sharp highlights on metallic surfaces, creating a technical and authoritative look. The style is clean and clinical, reflecting a high-end journalism focus on technology and innovation, using a high-contrast black and silver palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaqv6EKXu8coDqYy-oEwZaVKHaqZTo7mpvdOmRsG6eGOU48yxJm92MSwjk6W5NkIt7ruy1VF8T6oM91_lv4Y0uCkq9gbPExOZVZoh0R111Y0attZyZPvRGtiegK347QPnxjRYmGJJkQuvpAJbsu8Y6E5GjCKpxQYc3pbjyRG6WXv8n33xrFWRntfkK5sRqns13OrIl15aSmjv-B79Bb_t1b1Sa48Z0IZ2moAyRejBaf1plBgSxlyMfZWwRK3RVT4hpIOy2BB882T4"/>
+</div>
+<div class="flex-grow">
+<span class="font-label-caps text-[10px] text-secondary">TECHNOLOGY</span>
+<h4 class="font-headline-md text-[18px] leading-tight text-primary mt-1 group-hover:underline decoration-1 underline-offset-4">Next-Gen Semiconductors and the Water Crisis</h4>
+<p class="font-caption text-caption text-on-surface-variant mt-1">6 min read</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Home, Discover, etc.) -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface flex justify-around items-center h-16 w-full px-4 pb-safe border-t border-outline-variant">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-95 duration-200 cursor-pointer">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps text-label-caps">HOME</span>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary font-bold active:scale-95 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-caps text-label-caps">DISCOVER</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-95 duration-200 cursor-pointer">
+<span class="material-symbols-outlined">bookmark</span>
+<span class="font-label-caps text-label-caps">SAVED</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-95 duration-200 cursor-pointer">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-caps text-label-caps">PROFILE</span>
+</div>
+</nav>
+<script>
+        function toggleSave() {
+            const icon = document.getElementById('save-icon');
+            const btn = document.getElementById('save-btn');
+            const isFilled = icon.style.fontVariationSettings.includes("'FILL' 1");
+            
+            if (isFilled) {
+                icon.style.fontVariationSettings = "'FILL' 0, 'wght' 300";
+                btn.classList.remove('text-secondary');
+                btn.classList.add('text-on-surface-variant');
+            } else {
+                icon.style.fontVariationSettings = "'FILL' 1, 'wght' 300";
+                btn.classList.remove('text-on-surface-variant');
+                btn.classList.add('text-secondary');
+            }
+        }
+
+        // Simple scroll interaction for header
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll <= 0) {
+                header.classList.remove('shadow-sm');
+                return;
+            }
+            if (currentScroll > lastScroll) {
+                // Scroll Down
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                // Scroll Up
+                header.style.transform = 'translateY(0)';
+                header.classList.add('shadow-sm');
+            }
+            lastScroll = currentScroll;
+            header.style.transition = 'transform 0.3s ease-in-out';
+        });
+    </script>
+</body></html>

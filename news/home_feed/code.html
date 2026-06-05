@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Source+Sans+3:ital,wght@0,200..900;1,200..900&amp;family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#3f465c",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#410002",
+                    "on-surface-variant": "#45464d",
+                    "secondary-fixed-dim": "#ffb4ab",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#131b2e",
+                    "background": "#f7f9fb",
+                    "on-secondary-container": "#fffbff",
+                    "on-secondary-fixed-variant": "#93000b",
+                    "tertiary-fixed": "#d5e3fc",
+                    "primary-fixed": "#dae2fd",
+                    "tertiary-fixed-dim": "#b9c7df",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#131b2e",
+                    "on-tertiary-container": "#77859a",
+                    "primary": "#000000",
+                    "surface-variant": "#e0e3e5",
+                    "on-background": "#191c1e",
+                    "surface-container-highest": "#e0e3e5",
+                    "inverse-on-surface": "#eff1f3",
+                    "inverse-primary": "#bec6e0",
+                    "surface-container-low": "#f2f4f6",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2d3133",
+                    "on-tertiary-fixed-variant": "#3a485b",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#565e74",
+                    "secondary": "#b6191a",
+                    "on-surface": "#191c1e",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-bright": "#f7f9fb",
+                    "tertiary-container": "#0d1c2e",
+                    "on-tertiary-fixed": "#0d1c2e",
+                    "tertiary": "#000000",
+                    "surface-dim": "#d8dadc",
+                    "surface-container": "#eceef0",
+                    "error": "#ba1a1a",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#d9352f",
+                    "on-primary-container": "#7c839b",
+                    "primary-fixed-dim": "#bec6e0",
+                    "secondary-fixed": "#ffdad6",
+                    "outline": "#76777d",
+                    "surface": "#f7f9fb",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#c6c6cd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "stack-xs": "8px",
+                    "container-margin": "20px",
+                    "stack-lg": "40px",
+                    "base": "4px",
+                    "stack-md": "24px",
+                    "stack-sm": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Playfair Display"],
+                    "caption": ["Source Sans 3"],
+                    "body-md": ["Source Sans 3"],
+                    "display-lg": ["Playfair Display"],
+                    "body-lg": ["Source Sans 3"],
+                    "headline-lg": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "label-caps": ["Archivo Narrow"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "caption": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ticker-scroll {
+            display: flex;
+            white-space: nowrap;
+            animation: scroll 25s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-secondary selection:text-white">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant flex justify-between items-center px-container-margin h-16 w-full">
+<button aria-label="Menu" class="hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-primary">THE DISPATCH</h1>
+<button aria-label="Search" class="hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-primary" data-icon="search">search</span>
+</button>
+</header>
+<main class="pt-16 pb-24">
+<!-- Breaking News Ticker -->
+<div class="bg-primary text-on-primary py-2 overflow-hidden relative border-b border-outline">
+<div class="ticker-scroll flex items-center">
+<div class="flex items-center space-x-8 px-4">
+<span class="font-label-caps text-label-caps bg-secondary text-white px-2 py-0.5">BREAKING</span>
+<span class="font-body-md text-sm font-bold uppercase tracking-wider">Global markets reach record highs amid technological breakthrough in fusion energy</span>
+<span class="font-label-caps text-label-caps text-outline-variant">•</span>
+<span class="font-body-md text-sm font-bold uppercase tracking-wider">Diplomatic summit concludes with historic climate accord in Brussels</span>
+<span class="font-label-caps text-label-caps text-outline-variant">•</span>
+</div>
+<!-- Duplicate for seamless scroll -->
+<div class="flex items-center space-x-8 px-4">
+<span class="font-label-caps text-label-caps bg-secondary text-white px-2 py-0.5">BREAKING</span>
+<span class="font-body-md text-sm font-bold uppercase tracking-wider">Global markets reach record highs amid technological breakthrough in fusion energy</span>
+<span class="font-label-caps text-label-caps text-outline-variant">•</span>
+<span class="font-body-md text-sm font-bold uppercase tracking-wider">Diplomatic summit concludes with historic climate accord in Brussels</span>
+<span class="font-label-caps text-label-caps text-outline-variant">•</span>
+</div>
+</div>
+</div>
+<!-- Hero Section -->
+<section class="mt-stack-sm px-container-margin">
+<div class="group relative overflow-hidden">
+<div class="aspect-[4/5] w-full relative mb-stack-sm">
+<img alt="Global Event" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A wide-angle, cinematic photograph of a contemporary international assembly hall filled with world leaders. The lighting is dramatic, coming from large overhead architectural structures, casting a professional and serious atmosphere. The color palette is dominated by deep grays, whites, and charcoal tones with subtle red accents in the seating. The overall aesthetic is high-end, authoritative photojournalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6fjlEvVAZouGx_Tj94l1ML27pzx5Kb1Bta6i_g2A0vRpsDXbH1XRboU--at1sOPsv7UapbQCtHly4K-d8iVt6zWigkX4kz5J2Oi_aWBPXlmqf8lN5UoUjbq1nmbhY8BcassPGoPPxHqtufuz-sn5lN8StcYsojWl17omuom20AwCE_vCiiyeZldlzHKlTx5FiMOvmb0Gatrq1TASDwqpKHPBCFXiRnkwGnIjFWe_pkYhXsd9J3UqP3pxCJbx4EoJY-ynh_A6CbTM"/>
+<div class="absolute top-4 left-4">
+<span class="bg-white text-primary font-label-caps text-label-caps px-3 py-1 border border-primary">POLITICS</span>
+</div>
+</div>
+<div class="border-t border-primary pt-stack-sm">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-stack-xs leading-tight">
+                        The Shift: How Modern Governance Faces the Age of Autonomous Intelligence
+                    </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-4">
+                        As policy makers converge in Geneva, the conversation has moved from regulation to integration. The stakes for global infrastructure have never been higher.
+                    </p>
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-[10px] text-outline">BY ELIZA VANCE</span>
+<span class="font-label-caps text-[10px] text-outline">•</span>
+<span class="font-label-caps text-[10px] text-outline">12 MIN READ</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Grid -->
+<section class="mt-stack-lg border-t border-outline-variant pt-stack-sm">
+<div class="px-container-margin flex justify-between items-end mb-stack-sm">
+<h3 class="font-label-caps text-label-caps text-secondary tracking-[0.2em]">TECHNOLOGY</h3>
+<span class="material-symbols-outlined text-outline" data-icon="arrow_forward">arrow_forward</span>
+</div>
+<!-- Bento-ish layout for secondary news -->
+<div class="px-container-margin grid grid-cols-1 gap-stack-md">
+<div class="flex gap-4 items-start pb-stack-sm border-b border-outline-variant">
+<div class="flex-1">
+<h4 class="font-headline-md text-lg leading-tight mb-2">The Silicon Renaissance: Why Hardware is the New Software</h4>
+<span class="font-label-caps text-[10px] text-outline">4 HOURS AGO</span>
+</div>
+<div class="w-24 h-24 shrink-0">
+<img alt="Tech Story" class="w-full h-full object-cover" data-alt="A close-up, high-detail macro shot of a complex semiconductor circuit board with glowing golden and copper pathways. The background is a stark, clean white, reflecting a high-tech minimalist design. Soft, neutral lighting highlights the intricate textures of the components. The overall vibe is premium, clean, and forward-looking." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD81j6UhyMZV_zVntlM9hMu9SAYScU1b0qWZQ1Z4Jpi7hbhPPyq8FoWeCDa4gCN_c0KZvcYAD6oZWjNMy2OttWVctccEf_OwBmvx5yCcZgbCkCjxzXyyLlVMC2Ydh3AHy5-Uy5B2EbqOehMKwsaxOGZq1iGs1TOSu_ibyLIPE989Vs3f2mMBKYMRi45nC007iLnbwTv57wHlWkQzkQC8GMGCLdB200yST32u3uPtpDCFYohOCu_hPhoNBCf8TbSAj-qTQMQLSB6oZQ"/>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="flex-1">
+<h4 class="font-headline-md text-lg leading-tight mb-2">Satellite Networks Promise High-Speed Connectivity to the Great Wilderness</h4>
+<span class="font-label-caps text-[10px] text-outline">6 HOURS AGO</span>
+</div>
+<div class="w-24 h-24 shrink-0">
+<img alt="Space Tech" class="w-full h-full object-cover" data-alt="An artistic view of Earth from space, with a thin blue atmosphere line separating the dark void from the sun-lit planet surface. A sleek, modern satellite is partially visible in the foreground, catching the golden light of the sun. The scene is majestic and high-contrast, emphasizing the scale of human achievement against the cosmos." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBXoFfUDV8KzY6BZxvpJxG-gekaz3RB4UdgW_qOOfX5qqCzQaQwCWO3mBBr0AGiY4fy6dHfixeiyGhkEvaHP7DTcnip1yZ0XaT7UgXGjRgYwifBHshpE3yoH84ZjvKYaGXBtzNje_feQetVWnDaUC37IC5YTdebm52j536Rkc1vqwPm2rKBBMCtHxHVt0iwnG9XWfARX6LuvFQ0kJTjxsiLmw9eNKxKDmKHZzHvPVRDhtKCpqvY15ktlvueuAdJ7_KKBBXHM7KTEw"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Pull Quote Section -->
+<section class="mt-stack-lg py-stack-lg bg-surface-container-low border-y border-outline-variant">
+<div class="px-container-margin">
+<div class="border-l-4 border-secondary pl-6">
+<blockquote class="font-headline-md italic text-headline-md text-primary leading-snug">
+                        "Real journalism is the art of asking the questions that power would rather leave unanswered in the name of progress."
+                    </blockquote>
+<cite class="block mt-4 font-label-caps text-label-caps text-on-surface-variant">— Julian Thorne, Editor-in-Chief</cite>
+</div>
+</div>
+</section>
+<!-- Culture & Lifestyle -->
+<section class="mt-stack-lg">
+<div class="px-container-margin flex justify-between items-end mb-stack-sm">
+<h3 class="font-label-caps text-label-caps text-secondary tracking-[0.2em]">CULTURE</h3>
+<span class="material-symbols-outlined text-outline" data-icon="arrow_forward">arrow_forward</span>
+</div>
+<div class="overflow-x-auto hide-scrollbar flex gap-gutter px-container-margin pb-4">
+<div class="min-w-[280px] w-[280px] shrink-0">
+<div class="aspect-square bg-surface-container mb-stack-xs overflow-hidden">
+<img alt="Art" class="w-full h-full object-cover" data-alt="A modern art gallery scene with a lone viewer standing before a large, abstract canvas featuring bold strokes of black and crimson. The gallery is white and minimalist, with clean lines and soft architectural lighting. The composition is asymmetrical and sophisticated, evoking a sense of quiet contemplation and high-culture intellectualism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj1uehi7GkBO1w3ugE_4UpCJgL3kToOmj8Dsy_LzPTXvFZuANF9RBHgIKc0CpqPf6mOTibRTu3Izn4TrZMnWExAMLy1rQ0V1sv4HY34ogEMaud-Q-gDL_nH3Tba8sPXtWnjU6jbMBJLqi8oZW0Dz6aToizVkmz5iWJrkFCuVs7Lyfsypig6yss07uYync7ELTxONFBjBDlQQKEwc19Zq54KqQjnwNdqaF2q-srrIaQBk7xmZb5IXSGeyQkCn2FEUw6-qSJN-0TM-A"/>
+</div>
+<h4 class="font-headline-md text-base leading-tight">The Brutalist Revival: Why Architecture is Looking Back to Go Forward</h4>
+</div>
+<div class="min-w-[280px] w-[280px] shrink-0">
+<div class="aspect-square bg-surface-container mb-stack-xs overflow-hidden">
+<img alt="Music" class="w-full h-full object-cover" data-alt="A high-contrast photograph of a classic jazz performance in a dim, moody lounge. A saxophonist is silhouetted against a warm spotlight, with wisps of smoke catching the light. The palette is rich with shadows and deep ambers, creating an intimate, timeless atmosphere characteristic of high-end lifestyle photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMUclgW0Qa-mWQq49VCLFUDSUM5vMwWES5AHqIP6yokmB5zPXfusxJZq0Bvzbci6suJbW7vt9DhArCzEW7SI01b8QO9I0UYC-Jonw8ho31dL8LiudQkpNEvHdKdu6uWlTlY20BoKGzpxOSuylBxy_b1aogVCt32XHeYQFMC0HB11p7Ukoru5eFjrH6R_97a3wcU00BZacc0THwENGts5Tw0QjBENq6VzEpVdy2FQISFAjRpZIbiw5pGhI_kD9lFaEnoKszuz0wWGM"/>
+</div>
+<h4 class="font-headline-md text-base leading-tight">The Nocturnal Cities: Reimagining the Urban Landscape after Dark</h4>
+</div>
+</div>
+</section>
+<!-- Newsletter Sign-up -->
+<section class="mx-container-margin mt-stack-lg mb-8 border border-primary p-6">
+<h5 class="font-headline-md text-xl mb-2">The Morning Brief</h5>
+<p class="font-body-md text-on-surface-variant mb-6">Deep analysis of the day's essential stories, delivered to your inbox every dawn.</p>
+<div class="relative">
+<input class="w-full border-0 border-b border-outline-variant bg-transparent py-2 px-0 focus:ring-0 focus:border-secondary font-label-caps text-label-caps placeholder:text-outline/50 uppercase" placeholder="YOUR EMAIL ADDRESS" type="email"/>
+<button class="absolute right-0 bottom-2 font-label-caps text-label-caps text-secondary font-bold">JOIN</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface border-t border-outline-variant flex justify-around items-center h-16 w-full px-4 pb-safe">
+<button aria-label="Home" class="flex flex-col items-center justify-center text-secondary font-bold scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-caps text-label-caps">HOME</span>
+</button>
+<button aria-label="Discover" class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-opacity">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-caps text-label-caps">DISCOVER</span>
+</button>
+<button aria-label="Saved" class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-opacity">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="font-label-caps text-label-caps">SAVED</span>
+</button>
+<button aria-label="Profile" class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-opacity">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-caps text-label-caps">PROFILE</span>
+</button>
+</nav>
+<script>
+        // Micro-interactions for news items
+        document.querySelectorAll('section').forEach(section => {
+            section.addEventListener('mouseenter', () => {
+                section.style.transition = 'opacity 0.3s';
+            });
+        });
+
+        // Simple ticker speed adjustment or pause on touch
+        const ticker = document.querySelector('.ticker-scroll');
+        ticker.addEventListener('touchstart', () => {
+            ticker.style.animationPlayState = 'paused';
+        });
+        ticker.addEventListener('touchend', () => {
+            ticker.style.animationPlayState = 'running';
+        });
+    </script>
+</body></html>

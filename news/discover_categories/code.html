@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>The Dispatch - Discover</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Source+Sans+3:ital,wght@0,200..900;1,200..900&amp;family=Archivo+Narrow:wght@400..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#3f465c",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#410002",
+                    "on-surface-variant": "#45464d",
+                    "secondary-fixed-dim": "#ffb4ab",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#131b2e",
+                    "background": "#f7f9fb",
+                    "on-secondary-container": "#fffbff",
+                    "on-secondary-fixed-variant": "#93000b",
+                    "tertiary-fixed": "#d5e3fc",
+                    "primary-fixed": "#dae2fd",
+                    "tertiary-fixed-dim": "#b9c7df",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#131b2e",
+                    "on-tertiary-container": "#77859a",
+                    "primary": "#000000",
+                    "surface-variant": "#e0e3e5",
+                    "on-background": "#191c1e",
+                    "surface-container-highest": "#e0e3e5",
+                    "inverse-on-surface": "#eff1f3",
+                    "inverse-primary": "#bec6e0",
+                    "surface-container-low": "#f2f4f6",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2d3133",
+                    "on-tertiary-fixed-variant": "#3a485b",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#565e74",
+                    "secondary": "#b6191a",
+                    "on-surface": "#191c1e",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-bright": "#f7f9fb",
+                    "tertiary-container": "#0d1c2e",
+                    "on-tertiary-fixed": "#0d1c2e",
+                    "tertiary": "#000000",
+                    "surface-dim": "#d8dadc",
+                    "surface-container": "#eceef0",
+                    "error": "#ba1a1a",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#d9352f",
+                    "on-primary-container": "#7c839b",
+                    "primary-fixed-dim": "#bec6e0",
+                    "secondary-fixed": "#ffdad6",
+                    "outline": "#76777d",
+                    "surface": "#f7f9fb",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#c6c6cd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "stack-xs": "8px",
+                    "container-margin": "20px",
+                    "stack-lg": "40px",
+                    "base": "4px",
+                    "stack-md": "24px",
+                    "stack-sm": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Playfair Display"],
+                    "caption": ["Source Sans 3"],
+                    "body-md": ["Source Sans 3"],
+                    "display-lg": ["Playfair Display"],
+                    "body-lg": ["Source Sans 3"],
+                    "headline-lg": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "label-caps": ["Archivo Narrow"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "caption": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface-container-lowest border-b border-outline-variant dark:border-on-surface-variant flex justify-between items-center px-container-margin h-16">
+<button class="hover:opacity-80 transition-opacity active:opacity-70 duration-150 text-primary dark:text-on-primary-fixed">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-primary dark:text-on-primary-fixed">THE DISPATCH</h1>
+<button class="hover:opacity-80 transition-opacity active:opacity-70 duration-150 text-primary dark:text-on-primary-fixed">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<main class="flex-grow pt-16 pb-20">
+<!-- Search Section -->
+<section class="px-container-margin pt-stack-md pb-stack-sm">
+<div class="relative group">
+<input class="w-full bg-transparent border-b border-outline-variant focus:border-secondary outline-none py-2 px-1 text-body-md placeholder-outline transition-colors duration-300" placeholder="Search topics, authors, or keywords" type="text"/>
+<span class="absolute right-1 bottom-2 material-symbols-outlined text-outline group-focus-within:text-secondary transition-colors" data-icon="search">search</span>
+</div>
+</section>
+<!-- Categories Grid -->
+<section class="px-container-margin py-stack-sm">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant mb-stack-sm tracking-[0.1em]">BROWSE CATEGORIES</h2>
+<div class="grid grid-cols-2 gap-stack-sm">
+<!-- Politics -->
+<div class="group relative aspect-[4/3] bg-surface-container-low overflow-hidden cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 grayscale hover:grayscale-0" data-alt="A cinematic, low-angle shot of a majestic neoclassical government building with grand columns, bathed in dramatic sunset lighting. The image captures a sense of authority and historical weight, using a high-contrast palette of deep shadows and golden highlights. The style is sophisticated and journalistic, echoing a high-end editorial news aesthetic with sharp details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcTDcDpHraydRREpxdiO6dDF9GWZK5MOsH7F58U2LerIrnbIh5zmZ92PVzIljUzV2THmr5QCcqW8rwXfa8Iimbx_VIvzSGkREtF7uLD3gXF5UieTL6GtiOb0i7n7W0CWWSJJTSg01737JpOZxm7Nj5dn47tAfzCj7-SQNOdMoxteBrTJlvx3yqD-HEAeJCdrdHs-E4f0fPjoD7nD6CmYi-dIEao96k_fEm9kLfz2jR2lmoAQ-7LSkOi0qgiWwsGC36UKT5SrXsXlI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 text-white">
+<span class="font-label-caps text-label-caps block opacity-70">01</span>
+<span class="font-headline-md text-headline-md tracking-tight">Politics</span>
+</div>
+</div>
+<!-- Business -->
+<div class="group relative aspect-[4/3] bg-surface-container-low overflow-hidden cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 grayscale hover:grayscale-0" data-alt="A minimalist architectural shot of a sleek glass skyscraper reflecting a clear blue sky. The composition is sharp and modern, emphasizing clean lines and geometric shapes. The color palette is dominated by cool blues and crisp whites, conveying a sense of corporate power and global commerce. High-end editorial photography style with clear lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAjdB0iRDEt8N0LfQSYKoZfbVTkOPOgsJRyP5__WRIqV5IBWvuTDpiJrhKpYZxN0hUhUg3_FMJ8sApL6Jd40x-InPomraS8FPtQ2MS-Wfz9EGgtx8tpaKhXdpsnDLu8KYjMWVO49XJKpO8do49sZR2gCZ7LWHvXcoDlfhb0Zpak7KwoVZngR06XaMTnILixfJRDq_vDvmM127eXUtsI-h1BkPILE48GEh_D8tDLWwF8qiy1FqC0wX3q_s6T70MBrD1bzNP2JPnZt8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 text-white">
+<span class="font-label-caps text-label-caps block opacity-70">02</span>
+<span class="font-headline-md text-headline-md tracking-tight">Business</span>
+</div>
+</div>
+<!-- Technology -->
+<div class="group relative aspect-[4/3] bg-surface-container-low overflow-hidden cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 grayscale hover:grayscale-0" data-alt="A macro shot of intricate gold and black circuitry on a motherboard, illuminated by a focused, clinical light. The aesthetic is tech-noir, with sharp focus on the metallic components and soft bokeh in the background. The mood is precise and futuristic, utilizing a sophisticated palette of deep blacks and radiant gold accents typical of premium science reporting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzmrPyXmhyqRMF4v5ySGJci2t1HiNCJOnsxcoal-bsLp1rJ3mBrJP_rPQ5k_nMbyop8oJQAk8G3wBxlHnVe8xc4FtEjD94MRs64qeZogwqfwZUYvNYqOnAWS_WT9LpYgG3oIHv_LIs4QHBcNk3F8VH72Zik1VjGrbcHt1wpdw4XMG0DuobIoUXdLNmZulRVjStm7wBffHyy_3MMTGnqB6hRz6XEHCQu2Hz24o7Iffsfcd5rhqYGzTuYVlnt1E3I5Uxc3FAREC2w8w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 text-white">
+<span class="font-label-caps text-label-caps block opacity-70">03</span>
+<span class="font-headline-md text-headline-md tracking-tight">Technology</span>
+</div>
+</div>
+<!-- Science -->
+<div class="group relative aspect-[4/3] bg-surface-container-low overflow-hidden cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 grayscale hover:grayscale-0" data-alt="A high-key laboratory setting with minimalist scientific equipment like a microscope and glass vials. The lighting is bright and ethereal, creating a clean, sterile environment. The image emphasizes clarity and discovery, with a palette of soft whites and light grays. A professional, intellectual atmosphere that feels modern and authoritative." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnnzM4Z2XZlTyLUKphuzStmuP_NMRH1ASCbiy-I16v8RT1QmiynPoQTNj3Dn8-Iz-JXsxRpKwYUeSjsMD_7r8rBMk4GNgo1zbknXLmBcjFD55mosGu_Hxi49xhZllASmxOScXEPGmrvKkQBCZDXrOYtIpmMh6mM-uy6xNACUNyzysSj4r1VQHINawFOVertyfC7eimA67leMLbBtNa8g4yTm_2cNu24OgJwXa5zxrhb3_r7Mpp5uniY_uiEU2_WIDe484PGR8ddb4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 text-white">
+<span class="font-label-caps text-label-caps block opacity-70">04</span>
+<span class="font-headline-md text-headline-md tracking-tight">Science</span>
+</div>
+</div>
+<!-- Health -->
+<div class="group relative aspect-[4/3] bg-surface-container-low overflow-hidden cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 grayscale hover:grayscale-0" data-alt="A serene, soft-focus image of a leaf with morning dew, representing wellness and biology. The lighting is gentle and natural, creating a peaceful, restorative mood. The color palette is dominated by lush greens and soft whites. This editorial shot focuses on the intersection of nature and health with a clean, minimalist photographic approach." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCer8Fjmwl6xdI2oJJYpr_IjA1uHQbD6Ba6bRow5KMmKDNuXMMkfaipIjHN2idcVLF7cnyvxNWz2O4iP5v9OI8HnFvsEnzNHyTV0lvK-6uUspJ3mpx1mun6ywp3clfdPQA1CEgcGN95y7_cPfbnVvwxWBBwMwzGXHtyf7-UNbFse2CR6rJ5Rd6SzxmjyJOXI-RI5TDsKNZVNcFqTyQ68hU4ib_fHf6noIomGwPkBsbDL3A2S_ekf_z0cDTFTFMEWmXRUz1RWumm3yc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 text-white">
+<span class="font-label-caps text-label-caps block opacity-70">05</span>
+<span class="font-headline-md text-headline-md tracking-tight">Health</span>
+</div>
+</div>
+<!-- Opinion -->
+<div class="group relative aspect-[4/3] bg-surface-container-low overflow-hidden cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 grayscale hover:grayscale-0" data-alt="A close-up of a vintage fountain pen resting on a blank sheet of heavy textured paper. The lighting is warm and directional, highlighting the pen's craftsmanship and the paper's texture. This shot evokes the classic tradition of journalism and personal perspective. The palette is muted with rich blacks and ivory tones, creating a timeless, authoritative feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmXTnjAS94qqR3QID8eVUMyL-2ra_Dqd-79LFcegP6qOvGPcVmp693EUv95V4UtmpHAI7Brku-FH3QIAdZNfaQJCdx_WAnY1dvJLqGyCVHmVUNvSCHu2uFyCx3Q-keYiNRXuIjZaZNbQP87aRT02IQXidMiu2Ue6eD_j2ef2TlUatEwkJN-GXgSkeRuUyVlB8MN12Ga8V862vqTw2CyuoZ7GB1L1KpMZZwuLyKQWTJiZhg1YqIATTXxlVM_28kKu1GN9e4lsB0SVM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 text-white">
+<span class="font-label-caps text-label-caps block opacity-70">06</span>
+<span class="font-headline-md text-headline-md tracking-tight">Opinion</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Topics -->
+<section class="px-container-margin py-stack-md">
+<div class="flex items-center justify-between mb-stack-sm">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant tracking-[0.1em]">TRENDING TOPICS</h2>
+<div class="h-[1px] flex-grow ml-4 bg-outline-variant"></div>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 border border-outline-variant bg-surface hover:bg-surface-container-high transition-colors text-label-caps font-label-caps text-on-surface flex items-center gap-1.5 active:scale-95 transition-transform">
+<span class="text-secondary">#</span>CLIMATEACTION
+                </button>
+<button class="px-3 py-1.5 border border-outline-variant bg-surface hover:bg-surface-container-high transition-colors text-label-caps font-label-caps text-on-surface flex items-center gap-1.5 active:scale-95 transition-transform">
+<span class="text-secondary">#</span>ELECTIONS2024
+                </button>
+<button class="px-3 py-1.5 border border-outline-variant bg-surface hover:bg-surface-container-high transition-colors text-label-caps font-label-caps text-on-surface flex items-center gap-1.5 active:scale-95 transition-transform">
+<span class="text-secondary">#</span>AIREVOLUTION
+                </button>
+<button class="px-3 py-1.5 border border-outline-variant bg-surface hover:bg-surface-container-high transition-colors text-label-caps font-label-caps text-on-surface flex items-center gap-1.5 active:scale-95 transition-transform">
+<span class="text-secondary">#</span>SPACEEXPLORATION
+                </button>
+<button class="px-3 py-1.5 border border-outline-variant bg-surface hover:bg-surface-container-high transition-colors text-label-caps font-label-caps text-on-surface flex items-center gap-1.5 active:scale-95 transition-transform">
+<span class="text-secondary">#</span>ECONOMYWATCH
+                </button>
+<button class="px-3 py-1.5 border border-outline-variant bg-surface hover:bg-surface-container-high transition-colors text-label-caps font-label-caps text-on-surface flex items-center gap-1.5 active:scale-95 transition-transform">
+<span class="text-secondary">#</span>GLOBALHEALTH
+                </button>
+</div>
+</section>
+<!-- Editorial Curated (Extra Section for depth) -->
+<section class="px-container-margin py-stack-sm mb-stack-lg">
+<div class="border-t-2 border-primary pt-4">
+<span class="font-label-caps text-label-caps text-secondary mb-1 block">DAILY BRIEF</span>
+<h3 class="font-headline-md text-headline-md mb-2">The Weekend Dispatch: 5 stories you missed while away.</h3>
+<p class="text-on-surface-variant text-body-md mb-4 leading-snug">Our editors curate the most impactful long-form reporting from across our global bureaus.</p>
+<a class="inline-flex items-center text-label-caps font-label-caps text-primary border-b border-primary pb-0.5 hover:opacity-70 transition-opacity" href="#">
+                     READ COLLECTION <span class="material-symbols-outlined text-[14px] ml-1" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface dark:bg-surface-container-lowest border-t border-outline-variant dark:border-on-surface-variant flex justify-around items-center h-16 w-full px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed active:scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-caps text-label-caps">HOME</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim font-bold hover:text-primary dark:hover:text-primary-fixed active:scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="explore" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-caps text-label-caps">DISCOVER</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed active:scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="font-label-caps text-label-caps">SAVED</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed active:scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-caps text-label-caps">PROFILE</span>
+</a>
+</nav>
+<script>
+        // Simple search focus effect
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('scale-[1.01]');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('scale-[1.01]');
+        });
+
+        // Add a micro-interaction to category cards
+        document.querySelectorAll('.aspect-\\[4\\/3\\]').forEach(card => {
+            card.addEventListener('touchstart', () => {
+                card.style.transform = 'scale(0.98)';
+                card.style.transition = 'transform 0.1s ease';
+            });
+            card.addEventListener('touchend', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>
