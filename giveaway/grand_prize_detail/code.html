@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LuxeWin | Grand Prize Electric Hypercar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Geist:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@100..900&amp;family=Geist:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .primary-glow {
+            box-shadow: 0 0 20px rgba(183, 247, 0, 0.3);
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        @keyframes pulse-soft {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .animate-pulse-soft {
+            animation: pulse-soft 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e5e2e1",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-secondary-fixed-variant": "#6700b5",
+                        "primary-fixed": "#b7f700",
+                        "on-tertiary": "#313030",
+                        "on-primary-fixed": "#141f00",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "tertiary": "#ffffff",
+                        "on-secondary-container": "#dcb7ff",
+                        "surface-dim": "#131313",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "surface": "#131313",
+                        "inverse-primary": "#4b6700",
+                        "secondary": "#dcb8ff",
+                        "surface-variant": "#353534",
+                        "outline": "#8c9479",
+                        "secondary-fixed": "#efdbff",
+                        "outline-variant": "#434933",
+                        "on-secondary-fixed": "#2c0051",
+                        "on-tertiary-container": "#656464",
+                        "primary": "#ffffff",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e5e2e1",
+                        "secondary-container": "#7701d0",
+                        "secondary-fixed-dim": "#dcb8ff",
+                        "background": "#131313",
+                        "on-surface-variant": "#c2caad",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#374e00",
+                        "primary-fixed-dim": "#a0d800",
+                        "on-secondary": "#480081",
+                        "surface-container": "#201f1f",
+                        "primary-container": "#b7f700",
+                        "tertiary-container": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-tint": "#a0d800",
+                        "on-primary-container": "#506e00",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-highest": "#353534",
+                        "on-primary": "#253600",
+                        "surface-bright": "#3a3939"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Anybody"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Anybody"],
+                        "headline-lg-mobile": ["Anybody"],
+                        "label-sm": ["Geist"],
+                        "headline-md": ["Anybody"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm flex justify-between items-center px-margin-mobile h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="text-primary dark:text-primary active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-black tracking-tighter text-primary dark:text-primary uppercase">LuxeWin</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex gap-6 items-center mr-6">
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant dark:text-on-surface-variant hover:opacity-100 transition-opacity" href="#">Home</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-primary dark:text-primary font-bold" href="#">Prizes</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant dark:text-on-surface-variant hover:opacity-100 transition-opacity" href="#">Entries</a>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20">
+<img alt="User profile avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnqHV8y9sjIjQB76_9YImh3v6bz9FNYLVmnKyc0bATWEqLIgZw5ZSH3AfRbU4vyQbEno3zbp4Ed6MAsW2nPu9H7LueLc7PRhqjPhoCHvFozH4NOJKCWVVcdVTL4P5H4tIw-cDG9v737vqilbGP6Pmx12l-NIvPw9JKE1cR-6xGeDGmL9509whuL_YVawmhd-feqwIegoZ6fuPJ10kEwAOcDXAIwZe0_1kJ5fq0Yoc6PPgJK2-8erLJUn9xdR4fkgxbaefGgAIM4Iie"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-16">
+<!-- Immersive Hero Gallery -->
+<section class="relative h-[70vh] md:h-[85vh] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDAASjZKeLPziyGJZ8h6F87E2lT1IUOMSiNEWiOf6mKRb6CWcKknEPR_3R4maqQF9-t6-AOeOdUe0HWzYKg8FeRXqBMDfrNCsbGylUCbeOCSZ0WDp-67JLmdY3VskUFly9wG6r5PxE9enYEnqjeOfd6iQpXyRIDNk_I_49BaTXdERlA7vCDJ3M5aHe2KaVESv7jwafgGgy7-i-tHdFXdU95JjXPSJ817MRP6J2kmJ-NbZ7MqjFPoRnFRyljDr6befDOq4yb7OZjL1K0');">
+</div>
+<!-- Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/20"></div>
+<!-- Hero Content -->
+<div class="absolute bottom-0 left-0 w-full p-margin-mobile md:p-margin-desktop space-y-4">
+<div class="flex gap-2">
+<span class="bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm px-3 py-1 rounded-full uppercase tracking-widest">Grand Prize</span>
+<span class="bg-error text-on-error font-label-sm text-label-sm px-3 py-1 rounded-full uppercase tracking-widest flex items-center gap-1">
+<span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                        Ending Soon
+                    </span>
+</div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg max-w-2xl leading-tight">
+                    EV-X SUPERSONIC HYPERCAR
+                </h1>
+<div class="flex items-center gap-8 py-4 overflow-x-auto scrollbar-hide">
+<div class="flex-shrink-0">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-tighter">0-60 MPH</p>
+<p class="font-headline-md text-headline-md text-primary-fixed">2.1s</p>
+</div>
+<div class="flex-shrink-0">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-tighter">MAX RANGE</p>
+<p class="font-headline-md text-headline-md text-primary-fixed">520mi</p>
+</div>
+<div class="flex-shrink-0">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-tighter">TOP SPEED</p>
+<p class="font-headline-md text-headline-md text-primary-fixed">217mph</p>
+</div>
+<div class="flex-shrink-0">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-tighter">EST. VALUE</p>
+<p class="font-headline-md text-headline-md text-primary-fixed">$2.4M</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Details Grid -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Description & Specs (Bento) -->
+<div class="lg:col-span-8 space-y-gutter">
+<!-- About Card -->
+<div class="glass-card p-8 rounded-xl border border-outline-variant/20">
+<h2 class="font-headline-md text-headline-md mb-6">Masterpiece of Engineering</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-6">
+                            Experience the pinnacle of electric performance. The EV-X Supersonic isn't just a car; it's a testament to the future of high-velocity transit. Featuring a triple-motor setup and a revolutionary solid-state battery architecture, it redefines the boundaries of physics and luxury.
+                        </p>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-6 pt-6 border-t border-outline-variant/10">
+<div>
+<h4 class="font-label-sm text-label-sm text-primary-fixed uppercase mb-1">Drivetrain</h4>
+<p class="font-body-md text-body-md">Triple Motor AWD</p>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-primary-fixed uppercase mb-1">Horsepower</h4>
+<p class="font-body-md text-body-md">1,800 HP</p>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-primary-fixed uppercase mb-1">Charge Speed</h4>
+<p class="font-body-md text-body-md">200mi in 10min</p>
+</div>
+</div>
+</div>
+<!-- Visual Highlight Card -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="h-64 rounded-xl overflow-hidden relative group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Close up high-detail shot of a high-end luxury electric car interior with carbon fiber accents and neon violet ambient lighting. The atmosphere is tech-focused and premium with minimalist digital displays. The colors are deep blacks and vibrant purple glow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTKDtBDYpm6ueI5EakRfGXbsw56R2XdYuLgUNbtkttFnezucy8Q7teruQAhMX8UQSvWk33LpieAC3yGKt7u2gGHOB7FdbL4cm8ydaDeVj4Ya_nWC3-ZzS9jiLISJKpFXX6q2DeV2z4KZWdpQ6nhAS7JRbz_-aNeZEi-6wDjhenbpbWVzbcGzWW6ohJ5HQL5DZx5cYcgeLVwwgnqNJAz9WNwh0eEGXtzmkClWYBF8p0rt5KXCfVt_1wbIbvzz7vXAoJr8nNaANv5rfN"/>
+<div class="absolute inset-0 bg-black/40 flex items-end p-4">
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Bespoke Interior</span>
+</div>
+</div>
+<div class="h-64 rounded-xl overflow-hidden relative group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Macro photography of sleek aerodynamic carbon fiber wing of a high-performance electric sports car. Sharp focus on the weave pattern with neon lime highlights along the edges. The lighting is cinematic and high-contrast. Deep shadows and vibrant accents create a high-energy mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArqiN2Y_JpdtclwehLz2xDvrPtLVSvdtslVy8wsCuyPuKpWr30YJmcqInnpv15HBb0h9pa86F9-5voqdJUmkmn7rRtazJlkTGLUBjrQXpqu-Pr4RmVamK5_xMRCm9fsoGTxy_qfmpDuWnBjDy--RNPpC9ZyALUfKy8rX732Ca3SsyF083ok9w0ZwGPonzf1BVDf_c15fqpl83vUn0_U2V9OVLFnrxg_awkePdmUc7Xy3nokUhTAF-Sn1kc_ZUHKWVP6OGn70uldhHz"/>
+<div class="absolute inset-0 bg-black/40 flex items-end p-4">
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Aero-Dynamic Form</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Entry Selector (Sticky) -->
+<div class="lg:col-span-4 lg:sticky lg:top-24 h-fit space-y-6">
+<div class="bg-surface-container rounded-xl p-8 border border-primary-fixed/30 primary-glow">
+<h3 class="font-headline-md text-headline-md mb-2">Claim Your Spot</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Choose your entry tier to win this $2.4M masterpiece.</p>
+<div class="space-y-4">
+<!-- Tier 1 -->
+<label class="block relative cursor-pointer group">
+<input checked="" class="peer sr-only" name="entry_tier" type="radio"/>
+<div class="p-4 rounded-lg border border-outline-variant/30 peer-checked:border-primary-fixed peer-checked:bg-primary-fixed/5 transition-all flex justify-between items-center">
+<div>
+<p class="font-headline-md text-headline-md leading-none mb-1">10 <span class="text-sm font-normal">Entries</span></p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">$1.00 per entry</p>
+</div>
+<div class="text-right">
+<p class="font-headline-md text-headline-md">$10</p>
+</div>
+</div>
+</label>
+<!-- Tier 2 - Popular -->
+<label class="block relative cursor-pointer group">
+<input class="peer sr-only" name="entry_tier" type="radio"/>
+<div class="p-4 rounded-lg border border-outline-variant/30 peer-checked:border-primary-fixed peer-checked:bg-primary-fixed/5 transition-all flex justify-between items-center">
+<div class="absolute -top-3 left-4 bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-widest">Best Value</div>
+<div>
+<p class="font-headline-md text-headline-md leading-none mb-1 text-primary-fixed">50 <span class="text-sm font-normal text-on-surface">Entries</span></p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">$0.50 per entry</p>
+</div>
+<div class="text-right">
+<p class="font-headline-md text-headline-md">$25</p>
+</div>
+</div>
+</label>
+<!-- Tier 3 -->
+<label class="block relative cursor-pointer group">
+<input class="peer sr-only" name="entry_tier" type="radio"/>
+<div class="p-4 rounded-lg border border-outline-variant/30 peer-checked:border-primary-fixed peer-checked:bg-primary-fixed/5 transition-all flex justify-between items-center">
+<div>
+<p class="font-headline-md text-headline-md leading-none mb-1">200 <span class="text-sm font-normal">Entries</span></p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">$0.40 per entry</p>
+</div>
+<div class="text-right">
+<p class="font-headline-md text-headline-md">$80</p>
+</div>
+</div>
+</label>
+</div>
+<div class="mt-8 space-y-4">
+<div class="flex justify-between items-center font-label-sm text-label-sm uppercase text-on-surface-variant tracking-widest">
+<span>Total Contribution</span>
+<span class="text-primary font-bold" id="display-price">$10.00</span>
+</div>
+<p class="text-[10px] text-center text-on-surface-variant/60 leading-tight italic">
+                                10% of proceeds support the Clean Energy Foundation. 
+                                <br/>No purchase necessary. See terms for details.
+                            </p>
+</div>
+</div>
+<!-- Trust Signals -->
+<div class="grid grid-cols-2 gap-4">
+<div class="glass-card p-4 rounded-xl text-center">
+<span class="material-symbols-outlined text-primary-fixed mb-2" data-icon="verified_user">verified_user</span>
+<p class="font-label-sm text-label-sm uppercase">Secure Entry</p>
+</div>
+<div class="glass-card p-4 rounded-xl text-center">
+<span class="material-symbols-outlined text-primary-fixed mb-2" data-icon="gavel">gavel</span>
+<p class="font-label-sm text-label-sm uppercase">Legal &amp; Fair</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Fixed Bottom Action Bar -->
+<div class="fixed bottom-0 w-full z-50 bg-surface-container dark:bg-surface-container rounded-t-xl border-t border-outline-variant/20 shadow-[0_-4px_20px_rgba(183,247,0,0.1)] h-24 px-4 flex items-center md:hidden">
+<div class="flex items-center justify-between w-full max-w-lg mx-auto gap-4">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Total</span>
+<span class="font-headline-md text-headline-md text-primary-fixed">$25.00</span>
+</div>
+<button class="flex-1 bg-primary-fixed text-on-primary-fixed font-headline-md text-headline-md py-4 rounded-xl font-black uppercase tracking-tighter hover:scale-105 active:scale-95 transition-all primary-glow">
+                GET ENTRIES
+            </button>
+</div>
+</div>
+<!-- Web Navigation Anchors (BottomNavBar logic mapping) -->
+<nav class="fixed bottom-0 left-0 right-0 hidden md:flex items-center justify-center pointer-events-none mb-8 z-[60]">
+<div class="bg-surface-container/90 backdrop-blur-md rounded-full px-8 py-3 flex gap-12 border border-outline-variant/20 pointer-events-auto shadow-2xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary-fixed dark:text-primary-fixed bg-secondary-container/20 rounded-full px-4 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest mt-1">Prizes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest mt-1">Entries</span>
+</a>
+</div>
+</nav>
+<script>
+        // Micro-interaction for Tier Selector
+        const tiers = document.querySelectorAll('input[name="entry_tier"]');
+        const displayPrice = document.getElementById('display-price');
+        
+        const prices = {
+            '0': '$10.00',
+            '1': '$25.00',
+            '2': '$80.00'
+        };
+
+        tiers.forEach((tier, index) => {
+            tier.addEventListener('change', () => {
+                if(displayPrice) {
+                    displayPrice.innerText = prices[index];
+                    // Add subtle pop effect
+                    displayPrice.classList.add('scale-110', 'text-primary-fixed');
+                    setTimeout(() => {
+                        displayPrice.classList.remove('scale-110', 'text-primary-fixed');
+                    }, 200);
+                }
+            });
+        });
+
+        // Simple atmospheric parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scroll = window.pageYOffset;
+            const heroBg = document.querySelector('[style*="IMAGE_5"]');
+            if(heroBg) {
+                heroBg.style.transform = `translateY(${scroll * 0.4}px) scale(${1 + scroll * 0.0002})`;
+            }
+        });
+    </script>
+</body></html>

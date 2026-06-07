@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LuxeWin | Win The Future</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@100..900&amp;family=Geist:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://cdn.jsdelivr.net/gh/phuocng/geist-font@v1.3.0/geist.css');
+        
+        body {
+            background-color: #0F0F0F;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(42, 42, 42, 0.5);
+        }
+
+        .primary-glow {
+            box-shadow: 0 0 20px rgba(183, 247, 0, 0.3);
+        }
+
+        .primary-glow:hover {
+            box-shadow: 0 0 30px rgba(183, 247, 0, 0.5);
+        }
+
+        .violet-glow {
+            box-shadow: 0 0 20px rgba(119, 1, 208, 0.3);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .timer-animate {
+            animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .7; }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e5e2e1",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-secondary-fixed-variant": "#6700b5",
+                        "primary-fixed": "#b7f700",
+                        "on-tertiary": "#313030",
+                        "on-primary-fixed": "#141f00",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "tertiary": "#ffffff",
+                        "on-secondary-container": "#dcb7ff",
+                        "surface-dim": "#131313",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "surface": "#131313",
+                        "inverse-primary": "#4b6700",
+                        "secondary": "#dcb8ff",
+                        "surface-variant": "#353534",
+                        "outline": "#8c9479",
+                        "secondary-fixed": "#efdbff",
+                        "outline-variant": "#434933",
+                        "on-secondary-fixed": "#2c0051",
+                        "on-tertiary-container": "#656464",
+                        "primary": "#ffffff",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e5e2e1",
+                        "secondary-container": "#7701d0",
+                        "secondary-fixed-dim": "#dcb8ff",
+                        "background": "#131313",
+                        "on-surface-variant": "#c2caad",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#374e00",
+                        "primary-fixed-dim": "#a0d800",
+                        "on-secondary": "#480081",
+                        "surface-container": "#201f1f",
+                        "primary-container": "#b7f700",
+                        "tertiary-container": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-tint": "#a0d800",
+                        "on-primary-container": "#506e00",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-highest": "#353534",
+                        "on-primary": "#253600",
+                        "surface-bright": "#3a3939"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Anybody"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Anybody"],
+                        "headline-lg-mobile": ["Anybody"],
+                        "label-sm": ["Geist"],
+                        "headline-md": ["Anybody"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary dark:text-primary active:scale-95 transition-all">menu</button>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-black tracking-tighter text-primary dark:text-primary uppercase">LuxeWin</span>
+</div>
+<!-- Desktop Nav Items -->
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-primary dark:text-primary font-bold hover:scale-105 transition-transform duration-200" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:scale-105 transition-transform duration-200" href="#">Prizes</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:scale-105 transition-transform duration-200" href="#">Entries</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center border-2 border-primary-fixed hover:scale-105 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-16 pb-24 md:pb-0">
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<img alt="Grand Prize Electric Vehicle" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAASjZKeLPziyGJZ8h6F87E2lT1IUOMSiNEWiOf6mKRb6CWcKknEPR_3R4maqQF9-t6-AOeOdUe0HWzYKg8FeRXqBMDfrNCsbGylUCbeOCSZ0WDp-67JLmdY3VskUFly9wG6r5PxE9enYEnqjeOfd6iQpXyRIDNk_I_49BaTXdERlA7vCDJ3M5aHe2KaVESv7jwafgGgy7-i-tHdFXdU95JjXPSJ817MRP6J2kmJ-NbZ7MqjFPoRnFRyljDr6befDOq4yb7OZjL1K0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+</div>
+<!-- Content -->
+<div class="relative z-10 container mx-auto px-margin-mobile text-center">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary-container/30 backdrop-blur-md rounded-full border border-secondary-fixed/30 mb-8 animate-pulse">
+<span class="w-2 h-2 rounded-full bg-primary-fixed"></span>
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-widest">Live Giveaway</span>
+</div>
+<h1 class="font-display-lg text-4xl md:text-display-lg text-primary uppercase mb-4 drop-shadow-2xl">
+                    WIN THE <span class="text-primary-fixed">FUTURE</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
+                    The LuxeWin limited edition obsidian-matte electric supercar is waiting. Your journey to the elite circle starts with a single entry.
+                </p>
+<!-- Timer Bento -->
+<div class="glass-card max-w-xl mx-auto rounded-3xl p-8 mb-12 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-4xl md:text-5xl font-black text-primary-fixed tracking-tight" id="days">04</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mt-2">Days</span>
+</div>
+<div class="hidden md:block w-px h-12 bg-outline-variant/30"></div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-4xl md:text-5xl font-black text-primary-fixed tracking-tight" id="hours">12</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mt-2">Hours</span>
+</div>
+<div class="hidden md:block w-px h-12 bg-outline-variant/30"></div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-4xl md:text-5xl font-black text-primary-fixed tracking-tight" id="minutes">45</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mt-2">Mins</span>
+</div>
+<div class="hidden md:block w-px h-12 bg-outline-variant/30"></div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-4xl md:text-5xl font-black text-primary-fixed tracking-tight timer-animate" id="seconds">22</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mt-2">Secs</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="bg-primary-fixed text-on-primary-fixed px-10 py-5 rounded-full font-headline-md text-headline-md uppercase tracking-tighter primary-glow active:scale-95 transition-all">
+                        Enter Now
+                    </button>
+<button class="border-2 border-secondary text-secondary px-10 py-5 rounded-full font-headline-md text-headline-md uppercase tracking-tighter hover:bg-secondary/10 active:scale-95 transition-all">
+                        View Details
+                    </button>
+</div>
+</div>
+</section>
+<!-- How it Works Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="container mx-auto px-margin-mobile">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase mb-4">How It Works</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">Three simple steps to change your life forever. Join thousands of winners today.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Step 1 -->
+<div class="glass-card p-10 rounded-[40px] relative overflow-hidden group hover:bg-surface-container-high transition-colors">
+<div class="w-16 h-16 rounded-2xl bg-secondary-container/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl text-secondary" style="font-variation-settings: 'FILL' 1;">widgets</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Choose</h3>
+<p class="text-on-surface-variant">Browse our exclusive catalog of luxury rewards and high-tech future assets available for entry.</p>
+<span class="absolute top-8 right-8 text-6xl font-black text-outline-variant/10">01</span>
+</div>
+<!-- Step 2 -->
+<div class="glass-card p-10 rounded-[40px] relative overflow-hidden group hover:bg-surface-container-high transition-colors">
+<div class="w-16 h-16 rounded-2xl bg-primary-container/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl text-primary-fixed" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Enter</h3>
+<p class="text-on-surface-variant">Purchase entry bundles with our secure, lightning-fast checkout. Each entry increases your winning odds.</p>
+<span class="absolute top-8 right-8 text-6xl font-black text-outline-variant/10">02</span>
+</div>
+<!-- Step 3 -->
+<div class="glass-card p-10 rounded-[40px] relative overflow-hidden group hover:bg-surface-container-high transition-colors">
+<div class="w-16 h-16 rounded-2xl bg-secondary-container/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl text-secondary" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Win</h3>
+<p class="text-on-surface-variant">Winners are drawn live with full transparency. If you win, our white-glove team delivers the future to you.</p>
+<span class="absolute top-8 right-8 text-6xl font-black text-outline-variant/10">03</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-20 border-y border-outline-variant/20">
+<div class="container mx-auto px-margin-mobile">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="text-center">
+<div class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary-fixed">$2.4M</div>
+<div class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Prizes Won</div>
+</div>
+<div class="text-center">
+<div class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary-fixed">150+</div>
+<div class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Live Giveaways</div>
+</div>
+<div class="text-center">
+<div class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary-fixed">50K</div>
+<div class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Happy Users</div>
+</div>
+<div class="text-center">
+<div class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary-fixed">100%</div>
+<div class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Secure</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Collections (Bento) -->
+<section class="py-24">
+<div class="container mx-auto px-margin-mobile">
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+<div class="md:col-span-2 md:row-span-2 glass-card rounded-[40px] p-10 flex flex-col justify-end relative overflow-hidden group">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A sleek, futuristic workspace with high-end mechanical keyboards, ultra-wide monitors displaying glowing code, and ambient neon violet lighting in a minimalist dark room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa06KUC43PKlNUOnv1JmAkzqx33zv2M67BnsRxs7CoL9eB5IXE0JttqQFbRL1ZRWCIji7aWV7lAH2WSFI7GL0uwrazC4D3WWecTHTvBIkAn2nWMjHi9ziOJ2bvUU6YWXH2RDWZQ2pt6CkUdURC5xN0EV3oP0oIFucRoCvUC0M5x52hWU-MR7lUducuA-RmnnhBu-jPvrXpDaOL8CQqwAyVUzwvU6ttdNb6PKPxg4w-KHa2BajFDZwjNuuMXuagfWWalpFmt-H5_HRX"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline-lg text-headline-lg-mobile text-primary uppercase">Elite Tech Hub</h3>
+<p class="text-on-surface-variant mb-6">Complete minimalist setup for creators.</p>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-full font-label-sm uppercase">Explore Drop</button>
+</div>
+</div>
+<div class="md:col-span-2 glass-card rounded-[40px] p-8 relative overflow-hidden group">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A macro shot of a minimalist white luxury watch with a chrome finish, set against a dark architectural background with sharp angles and soft shadows, evoking a sense of high-end precision and modern style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC54POqnIyMW5XZBl1skFHvNddERvydcWpn9m0CIZsz3Cd-r1dMO5vw4V4bJgqIrAHI19TkWuxTBPo0iM1ycwB2UnVSBs7r4_IWhAdJGW0LQ1G4fmXYIOu1jcRPqZhX8XQN5Rg08QGL6zL76WKRO0vO8jPdl5CtvoYH1L5FXGGt80oKd6KtQ5OyhZBusP5rq7ls2FWY3NWdRyyYk6WtIrUPfeIAla8jn14wBBWvtT-FAeH-oaZQ156qgJsRW4AxJiI1Q_-hizfPEJsC"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-60"></div>
+</div>
+<div class="relative z-10 flex flex-col h-full justify-center">
+<h3 class="font-headline-md text-headline-md text-primary uppercase">Precision Timepieces</h3>
+<p class="text-on-surface-variant">Modern classics redefined.</p>
+</div>
+</div>
+<div class="glass-card rounded-[40px] p-8 relative overflow-hidden group">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A high-tech smartphone glowing in a dark room with reflected light on its glass surface, showcasing a vibrant edge-to-edge display with neon accents and a sleek metallic frame." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe49Z-2PGS-gtbwl773wNzjmUwysfDjNtpfpRVAhCEUcahURdxMqRsGCLkFXJs10t0dweZp_jN4xK0v0Gy_ZxCpdAIDeGtzUT16kZB0YcMK6cTnpdWss9kGKuGHUV3asE6JAa7iuCRlzsoJn5x5AvVJtICxSPYlkebMjM2GVW0hcJaDSQoiWweEQWDPdQP9wd8tfrO1Pt4sPlR3xYEb08Ka3hHBcyQGqreYRf45bU3lHSSxrFs3YJt2Y2cMbjOljp9rmwL8JWikZyt"/>
+<div class="absolute inset-0 bg-black/40"></div>
+</div>
+<div class="relative z-10">
+<h3 class="text-xl font-bold text-primary">Mobile Pro</h3>
+</div>
+</div>
+<div class="glass-card rounded-[40px] p-8 relative overflow-hidden group">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Close-up photography of professional black headphones with a metallic finish, lit with a single source of blue-violet light that highlights the sleek industrial design against a dark textured background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARsI5AvdGhVgfyG0kdYQL5S300R4ZEVkOiwiNKaVtSEV0LraGHGwiGhu7N7lyjxzcOd51GlDIwF8qKY5ZJVZbeNGJRDFTRYXV8H5EyZKIA1-MkL33zgV5fM-nZqzIIWRKSnyYrXYeysfAqdHZ4-DRVkVOAF9GDjAdKO9mBN6UQNTjM1cYmtAWT86g9HXTw0Esd1yscSGGTbH9HgPy-UlvZh9hEjDK60eB4RCDnJ89fcAu1fi-7LGoLA6G274RfaZZcUW3VKmRAlg2m"/>
+<div class="absolute inset-0 bg-black/40"></div>
+</div>
+<div class="relative z-10">
+<h3 class="text-xl font-bold text-primary">Audio Gear</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container dark:bg-surface-container border-t border-outline-variant/20 shadow-[0_-4px_20px_rgba(183,247,0,0.1)]">
+<div class="flex justify-around items-center h-20 px-4 pb-safe w-full">
+<a class="flex flex-col items-center justify-center text-primary-fixed dark:text-primary-fixed bg-secondary-container/20 rounded-full px-4 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">military_tech</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest mt-1">Prizes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest mt-1">Entries</span>
+</a>
+</div>
+</nav>
+<footer class="bg-surface-container-lowest pt-20 pb-32 md:pb-12 px-margin-mobile">
+<div class="container mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<div class="col-span-1 md:col-span-2">
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-black tracking-tighter text-primary uppercase">LuxeWin</span>
+<p class="text-on-surface-variant mt-6 max-w-sm">Premium rewards platform for the next generation of winners. Join our community and experience the thrill of the future.</p>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-6">Explore</h4>
+<ul class="space-y-4 text-on-surface-variant">
+<li><a class="hover:text-primary-fixed transition-colors" href="#">Giveaways</a></li>
+<li><a class="hover:text-primary-fixed transition-colors" href="#">Winners Circle</a></li>
+<li><a class="hover:text-primary-fixed transition-colors" href="#">How it Works</a></li>
+<li><a class="hover:text-primary-fixed transition-colors" href="#">VIP Program</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-6">Support</h4>
+<ul class="space-y-4 text-on-surface-variant">
+<li><a class="hover:text-primary-fixed transition-colors" href="#">Help Center</a></li>
+<li><a class="hover:text-primary-fixed transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary-fixed transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary-fixed transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-on-surface-variant font-label-sm text-label-sm">© 2024 LUXEWIN. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary-fixed cursor-pointer">public</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary-fixed cursor-pointer">chat</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary-fixed cursor-pointer">videocam</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for the countdown timer
+        function updateTimer() {
+            const secondsElem = document.getElementById('seconds');
+            const minsElem = document.getElementById('minutes');
+            let s = parseInt(secondsElem.innerText);
+            let m = parseInt(minsElem.innerText);
+
+            if (s > 0) {
+                s--;
+            } else {
+                s = 59;
+                if (m > 0) m--;
+            }
+
+            secondsElem.innerText = s.toString().padStart(2, '0');
+            minsElem.innerText = m.toString().padStart(2, '0');
+        }
+
+        setInterval(updateTimer, 1000);
+    </script>
+</body></html>

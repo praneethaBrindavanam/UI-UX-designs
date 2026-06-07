@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LuxeWin | Prize Gallery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Geist:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#e5e2e1",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "on-secondary-fixed-variant": "#6700b5",
+                    "primary-fixed": "#b7f700",
+                    "on-tertiary": "#313030",
+                    "on-primary-fixed": "#141f00",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "tertiary": "#ffffff",
+                    "on-secondary-container": "#dcb7ff",
+                    "surface-dim": "#131313",
+                    "on-error": "#690005",
+                    "tertiary-fixed": "#e5e2e1",
+                    "inverse-on-surface": "#313030",
+                    "surface": "#131313",
+                    "inverse-primary": "#4b6700",
+                    "secondary": "#dcb8ff",
+                    "surface-variant": "#353534",
+                    "outline": "#8c9479",
+                    "secondary-fixed": "#efdbff",
+                    "outline-variant": "#434933",
+                    "on-secondary-fixed": "#2c0051",
+                    "on-tertiary-container": "#656464",
+                    "primary": "#ffffff",
+                    "on-error-container": "#ffdad6",
+                    "on-background": "#e5e2e1",
+                    "secondary-container": "#7701d0",
+                    "secondary-fixed-dim": "#dcb8ff",
+                    "background": "#131313",
+                    "on-surface-variant": "#c2caad",
+                    "error": "#ffb4ab",
+                    "on-primary-fixed-variant": "#374e00",
+                    "primary-fixed-dim": "#a0d800",
+                    "on-secondary": "#480081",
+                    "surface-container": "#201f1f",
+                    "primary-container": "#b7f700",
+                    "tertiary-container": "#e5e2e1",
+                    "error-container": "#93000a",
+                    "surface-container-low": "#1c1b1b",
+                    "surface-tint": "#a0d800",
+                    "on-primary-container": "#506e00",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "surface-container-high": "#2a2a2a",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-container-highest": "#353534",
+                    "on-primary": "#253600",
+                    "surface-bright": "#3a3939"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Anybody"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "display-lg": ["Anybody"],
+                    "headline-lg-mobile": ["Anybody"],
+                    "label-sm": ["Geist"],
+                    "headline-md": ["Anybody"]
+            },
+            "fontSize": {
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(42, 42, 42, 0.5);
+        }
+        .primary-glow {
+            box-shadow: 0 0 20px rgba(183, 247, 0, 0.2);
+        }
+        .primary-glow-hover:hover {
+            box-shadow: 0 0 30px rgba(183, 247, 0, 0.4);
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0F0F0F;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #434933;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full max-w-[1440px] mx-auto">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary dark:text-primary hover:scale-105 transition-transform duration-200 active:scale-95">menu</button>
+<span class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-md md:text-headline-md font-black tracking-tighter text-primary dark:text-primary uppercase">LuxeWin</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-primary dark:text-primary font-bold font-label-sm text-label-sm uppercase tracking-widest" href="#">Prizes</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest hover:text-primary transition-colors" href="#">Entries</a>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-outline-variant/50 cursor-pointer active:scale-95 transition-transform">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="A professional studio portrait of a modern, stylish user in their late 20s. The lighting is dramatic and high-contrast, fitting the obsidian and neon giveaway platform aesthetic. The subject is wearing dark premium streetwear, and the background is a blurred high-tech environment with subtle violet and lime color casts." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEMkvAD3MfQ4XOaSeXbwmRQwDdNZ7scH5bMj9Kkay14itNbWccL9AMSJj3jvhfjIG_rHuOkEQ9FGvdRpdnpiaD4wfF-F-qsiQSBbN0icFFgmkcU2-kBtN9KvsrFzKzUo9EojSjSwjnkbkAnPeCUrE1jO5McCfTMv-6RWps07RiHZaLPHhl-L0A1mXgRMPCspRl6x1we-Hp00yzyYxhV4QwfGqCOBx32JUADoUeUnUCeNER3WlZv9_CXO-MdQCfm6uUj39A11UhFpdn"/>
+</div>
+</div>
+</nav>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
+<!-- Search & Filter Header -->
+<section class="mb-12 space-y-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-2">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary uppercase">Active Giveaways</h1>
+<p class="text-on-surface-variant max-w-xl font-body-md text-body-md">Exclusive opportunities to claim premium luxury assets. High stakes, higher rewards.</p>
+</div>
+<!-- Search Bar -->
+<div class="relative w-full md:w-96 group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary-fixed transition-colors">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl py-4 pl-12 pr-4 focus:ring-1 focus:ring-primary-fixed focus:border-primary-fixed transition-all outline-none text-on-surface" placeholder="Search prizes..." type="text"/>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex gap-3 overflow-x-auto pb-2 no-scrollbar">
+<button class="px-6 py-2 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm uppercase tracking-widest whitespace-nowrap active:scale-95 transition-transform">All Prizes</button>
+<button class="px-6 py-2 rounded-full bg-surface-container border border-outline-variant/30 text-on-surface-variant hover:border-primary-fixed hover:text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest whitespace-nowrap active:scale-95 transition-transform">Auto</button>
+<button class="px-6 py-2 rounded-full bg-surface-container border border-outline-variant/30 text-on-surface-variant hover:border-primary-fixed hover:text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest whitespace-nowrap active:scale-95 transition-transform">Tech</button>
+<button class="px-6 py-2 rounded-full bg-surface-container border border-outline-variant/30 text-on-surface-variant hover:border-primary-fixed hover:text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest whitespace-nowrap active:scale-95 transition-transform">Lifestyle</button>
+</div>
+</section>
+<!-- Prize Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Featured Prize 1: Luxury Watch -->
+<div class="group relative bg-surface-container-high rounded-xl overflow-hidden border border-outline-variant/20 hover:border-primary-fixed/50 transition-all duration-300">
+<div class="relative h-80 overflow-hidden">
+<img alt="Luxury Watch" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXYJL3Rrtw0_mKXCWhTJushys4Y6YSfsKDx_eTMYUORtrRzk7zXdhzyX6z_EKXAdvdzP3TquVXTx5HFhVGBquRNjYtHlNqmqCCSa49MOJxbDIMVmUcBvtXIytssMJpBhYGcSO4aHJwkxAksy4ICIqXC4jR7H8ugj4sMX97Nayth7eZmteGwzmuqo-j0sN9aH-yTDNlYbZxomw8hvs1-ixtAO2Pcoec2660knhkh09TQ9IQ68U6dX0VMz_kXwQ89NPq8bPLA6aZEmX0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-highest via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-error px-3 py-1 rounded-full text-on-error font-label-sm text-[10px] uppercase tracking-tighter flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] animate-pulse">timer</span> Ending Soon
+                        </span>
+<span class="bg-secondary-container/80 backdrop-blur-md px-3 py-1 rounded-full text-on-secondary-container font-label-sm text-[10px] uppercase tracking-tighter">Premium Entry</span>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary leading-tight">Carbon Phantom X1</h3>
+<p class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest">Chronograph Masterpiece</p>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary-fixed">€14.5k</span>
+<p class="text-on-surface-variant text-[10px] uppercase">Value</p>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">84% Entries filled</span>
+<span class="text-primary-fixed">1,240 / 1,500</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary-fixed primary-glow w-[84%] transition-all duration-1000 ease-out"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[10px] uppercase tracking-widest">Time Remaining</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">04:12:45:12</span>
+</div>
+<button class="bg-primary-fixed text-on-primary-fixed px-6 py-3 rounded-xl font-label-sm text-label-sm uppercase tracking-widest primary-glow-hover active:scale-95 transition-all">Enter Now</button>
+</div>
+</div>
+</div>
+<!-- Featured Prize 2: Premium Headphones -->
+<div class="group relative bg-surface-container-high rounded-xl overflow-hidden border border-outline-variant/20 hover:border-primary-fixed/50 transition-all duration-300">
+<div class="relative h-80 overflow-hidden">
+<img alt="Premium Headphones" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByK-P3ZZcbfJ-MVYanSbMfaKg26gIV-hrgYZs3ha_2W5g5jUUcqYu_ERq82Ux4eW_TiWOr8eBGPwtheIlYzIRF9FisdYlqTZQtp4lafxJP-GSPx1Dn5ViNz3uV0O5TMg0RZfEEjmavBs1IEK_Lzagho4Ef0f4g1Wy6ZJYi3Pj2hV0udbt7WrwCUYnt1pZKYuRReRVbz5j_xBQ8cTQcNSzZBl_i-QDbj0vTK0zp2qF1QWnrTjlXA-ihpEpEaMK9mfxudoo15owBaTzl"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-highest via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary-fixed px-3 py-1 rounded-full text-on-primary-fixed font-label-sm text-[10px] uppercase tracking-tighter">Live</span>
+<span class="bg-secondary-container/80 backdrop-blur-md px-3 py-1 rounded-full text-on-secondary-container font-label-sm text-[10px] uppercase tracking-tighter">Tech Drop</span>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary leading-tight">Neon Audio Pro</h3>
+<p class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest">Studio Fidelity</p>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary-fixed">€899</span>
+<p class="text-on-surface-variant text-[10px] uppercase">Value</p>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">12% Entries filled</span>
+<span class="text-primary-fixed">60 / 500</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary-fixed primary-glow w-[12%] transition-all duration-1000 ease-out"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[10px] uppercase tracking-widest">Time Remaining</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">12:18:00:00</span>
+</div>
+<button class="bg-primary-fixed text-on-primary-fixed px-6 py-3 rounded-xl font-label-sm text-label-sm uppercase tracking-widest primary-glow-hover active:scale-95 transition-all">Enter Now</button>
+</div>
+</div>
+</div>
+<!-- Additional Prize: Lifestyle / Car (Generic Placeholder Card) -->
+<div class="group relative bg-surface-container-high rounded-xl overflow-hidden border border-outline-variant/20 hover:border-primary-fixed/50 transition-all duration-300">
+<div class="relative h-80 overflow-hidden">
+<img alt="Luxury Car" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A sleek, futuristic black supercar parked in a modern architectural garage with neon lime light strips illuminating the sleek curves. The lighting is moody and cinematic, emphasizing the high-end luxury lifestyle. The overall tone is consistent with an obsidian and vibrant green palette, evoking high adrenaline and exclusivity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfGH_RvZa2XhJzMX-BkATYHoSdGcbG-x0db15Z_S_vCPel7kceLCzQr1ceRwBG8VJsiF--tUa6dq2o1dVHfwNwXWKzjaxsWe_hREHn0Z8cBHSbQC4GAPhwglbcIJcg-fJoRkZvezh-6TJ7QhgnvCxFqgHmpHjqHY5q3Wwpx3ziMnZfphxp-gaquM-ov1lnKn2hOsWYnU-tCwDojzNeuZ80WjxjDUFB28KzULHWS8QNt8Irs93uTzecpSAA6emo_FMIN1VZmCgGXu7T"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-highest via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-sm text-[10px] uppercase tracking-tighter">Grand Prize</span>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary leading-tight">Stealth GT-R</h3>
+<p class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest">Automotive Excellence</p>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary-fixed">€125k</span>
+<p class="text-on-surface-variant text-[10px] uppercase">Value</p>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">45% Entries filled</span>
+<span class="text-primary-fixed">4,500 / 10,000</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary-fixed primary-glow w-[45%] transition-all duration-1000 ease-out"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[10px] uppercase tracking-widest">Time Remaining</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">45:00:00:00</span>
+</div>
+<button class="bg-primary-fixed text-on-primary-fixed px-6 py-3 rounded-xl font-label-sm text-label-sm uppercase tracking-widest primary-glow-hover active:scale-95 transition-all">Enter Now</button>
+</div>
+</div>
+</div>
+<!-- More Prizes (Secondary Grid Style) -->
+<div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mt-8">
+<!-- Generic Tech Card -->
+<div class="bg-surface-container rounded-xl p-4 border border-outline-variant/10 hover:border-secondary transition-all group">
+<div class="h-40 rounded-lg overflow-hidden mb-4">
+<img alt="Tech Prize" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A premium, ultra-thin high-end laptop displayed on a dark glass desk. The scene is illuminated by cool violet and electric green ambient light from hidden LEDs. The aesthetic is clean, professional, and tech-focused, matching the high-contrast LuxeWin brand style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0CP5OAdYZAPNKglqM8tmCBS5-RXFGKNKs-dPSSZyaLSH-eAiVB3BjsVB0H_74H_sECKh_03fYatYKyg9iWnnWmlQVPNDxFWo4vqSkybhtc0AS8vIWxlTkj45x9B_WNNOHLIHEFWLXzaYTwoCV6G8YP2djIi1Z5sF6O-7FZ9cGXTkg_sug0FxCUKN7YjTHaN0tbiOoGUm3DBKHrvOrtajVDt_UCoGWve8aHVs8fZceGMoT1axydcQlDZDxZYN5gJp2cOu7LcA9bpoM"/>
+</div>
+<h4 class="font-headline-md text-body-lg text-primary">MacBook Pro Max</h4>
+<div class="flex justify-between items-center mt-2">
+<span class="text-primary-fixed font-label-sm">€3,499</span>
+<span class="text-on-surface-variant text-[10px] uppercase">80% Full</span>
+</div>
+</div>
+<!-- Generic Travel Card -->
+<div class="bg-surface-container rounded-xl p-4 border border-outline-variant/10 hover:border-secondary transition-all group">
+<div class="h-40 rounded-lg overflow-hidden mb-4">
+<img alt="Luxury Travel" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A luxury resort villa at night, illuminated with warm amber and modern purple exterior lighting. The pool reflects a deep indigo sky. The visual style is premium and aspirational, utilizing high-contrast shadows and vibrant color accents consistent with an exclusive giveaway platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYPHjtCEzwgqytw70GmQg_vQ-kSvTGUIAhmTSBbjvQvOffjPZfC6DUrUCxPpi-iVmQGmjNG_AD86ARe3-kZZN6Xi3-mXaImEJyID30PIZ4fgwjCpsu9hh5cLmuvnzfRsAvCIkgFO_HlWUCKfwnV476qPFr7KEQFsGs_Yf9v7lH0sDuucSuJwsY-qqrS602N_N2jW_B2muqFzh9zWpXzfBOM199ehKPYkdPsMS_z6qNOlSXCx8zUfySJswZKFzXqR6kK85lRFOo8t8P"/>
+</div>
+<h4 class="font-headline-md text-body-lg text-primary">Maldives Getaway</h4>
+<div class="flex justify-between items-center mt-2">
+<span class="text-primary-fixed font-label-sm">€8,000</span>
+<span class="text-on-surface-variant text-[10px] uppercase">15% Full</span>
+</div>
+</div>
+<!-- Generic Console Card -->
+<div class="bg-surface-container rounded-xl p-4 border border-outline-variant/10 hover:border-secondary transition-all group">
+<div class="h-40 rounded-lg overflow-hidden mb-4">
+<img alt="Gaming Bundle" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A next-generation gaming console with its wireless controller on a minimalist pedestal. Dark matte textures are contrasted by sharp neon green glowing lights and deep purple shadows. High-end product photography for a premium gaming experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfBEWFQQ1_6iPSAVQafVN_oyx95z5n-Yvpbr70FaQfXkXAMn0aiVPYVg_Wp_zPF03R9pXVdAs5f1D42opS5N2CtASdZeBmyWb66x58sX3jd5v6SUhhVm_BcB332LRMryiE8dOxLuJcvSvgQQwkvPiPVG-ZxiRP0A2COOAk2ZcvxPxmPDeXKnBZq5gxGgUXSLjNnqmGnvYpV6UM_BeEyvLpjGphhMOA7jq6fR4zxNIzitoD1R3WBOKKeJhr6O5ACS-_9Ods20Wk3Mgi"/>
+</div>
+<h4 class="font-headline-md text-body-lg text-primary">PS5 Pro Bundle</h4>
+<div class="flex justify-between items-center mt-2">
+<span class="text-primary-fixed font-label-sm">€749</span>
+<span class="text-on-surface-variant text-[10px] uppercase">New</span>
+</div>
+</div>
+<!-- Generic Sneaker Card -->
+<div class="bg-surface-container rounded-xl p-4 border border-outline-variant/10 hover:border-secondary transition-all group">
+<div class="h-40 rounded-lg overflow-hidden mb-4">
+<img alt="Limited Sneakers" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A pair of rare limited-edition high-top sneakers floating in a dark void. Dynamic lighting highlights the textures of the premium materials, with electric lime and ultraviolet light trails swirling around them. This high-energy, high-contrast imagery perfectly suits the LuxeWin premium aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd8wz49lJQeKC0rr4D9cNzm0KA1peU_sAqzeXpeaEZI8wcSfPuutJaVVrkPgGGZkaas5MYdgQdutef3eZGf0C_NbzLBBgh8weach99EwiOeK9q-CMioct4bFmWuHfvjpUWUiteXJs2Tj2sbfhpyDaJ8kknBWub9QoZW9E3TTJCQUfOTsAKJCDX7uKwqA3GoIOk6UphaIVekuXHwrH5avjfCpvcTmiBubV_4kBGreoFwiYED9vSkym1sZHsM14ZvuyiYd5XtY0a46oC"/>
+</div>
+<h4 class="font-headline-md text-body-lg text-primary">Rare AJ1 Collab</h4>
+<div class="flex justify-between items-center mt-2">
+<span class="text-primary-fixed font-label-sm">€1,200</span>
+<span class="text-on-surface-variant text-[10px] uppercase">End of Month</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface-container dark:bg-surface-container border-t border-outline-variant/20 shadow-[0_-4px_20px_rgba(183,247,0,0.1)] rounded-t-xl h-20 px-4 pb-safe w-full flex justify-around items-center">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary-fixed dark:text-primary-fixed bg-secondary-container/20 rounded-full px-6 py-2 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest mt-1">Prizes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest mt-1">Entries</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for entry bars
+        document.addEventListener('DOMContentLoaded', () => {
+            const bars = document.querySelectorAll('.bg-primary-fixed.primary-glow');
+            bars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 500);
+            });
+
+            // Tab switching simulation
+            const filterBtns = document.querySelectorAll('.px-6.py-2.rounded-full');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-primary-fixed', 'text-on-primary-fixed');
+                        b.classList.add('bg-surface-container', 'border', 'border-outline-variant/30', 'text-on-surface-variant');
+                    });
+                    btn.classList.add('bg-primary-fixed', 'text-on-primary-fixed');
+                    btn.classList.remove('bg-surface-container', 'border', 'border-outline-variant/30', 'text-on-surface-variant');
+                });
+            });
+        });
+    </script>
+</body></html>
