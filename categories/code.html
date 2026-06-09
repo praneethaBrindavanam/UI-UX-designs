@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Explore | Lumina Modern</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "surface-container": "#edeeef",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#e2dfff",
+                        "surface-dim": "#d9dadb",
+                        "tertiary-fixed": "#ffdbcc",
+                        "tertiary": "#7e3000",
+                        "inverse-primary": "#c3c0ff",
+                        "primary": "#3525cd",
+                        "secondary": "#006c49",
+                        "on-surface": "#191c1d",
+                        "primary-container": "#4f46e5",
+                        "on-tertiary-fixed": "#351000",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e1e3e4",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "surface-bright": "#f8f9fa",
+                        "background": "#f8f9fa",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#dad7ff",
+                        "surface-container-low": "#f3f4f5",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#ffd2be",
+                        "surface-tint": "#4d44e3",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "inverse-on-surface": "#f0f1f2",
+                        "secondary-container": "#6cf8bb",
+                        "outline-variant": "#c7c4d8",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-background": "#191c1d",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "surface": "#f8f9fa",
+                        "tertiary-container": "#a44100",
+                        "on-primary-fixed": "#0f0069",
+                        "secondary-fixed": "#6ffbbe",
+                        "outline": "#777587",
+                        "on-secondary-fixed": "#002113",
+                        "on-surface-variant": "#464555",
+                        "on-secondary-container": "#00714d",
+                        "inverse-surface": "#2e3132",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "32px",
+                        "container-margin": "20px",
+                        "xl": "48px",
+                        "xs": "8px",
+                        "md": "24px",
+                        "base": "4px",
+                        "gutter": "16px",
+                        "sm": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Manrope"],
+                        "display-lg-mobile": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "headline-sm": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "800"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass-dark { background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px); }
+        .masonry-grid { columns: 2; column-gap: 16px; }
+        .masonry-item { break-inside: avoid; margin-bottom: 16px; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-40 bg-surface/80 backdrop-blur-md">
+<div class="flex items-center justify-between px-container-margin py-sm w-full gap-4">
+<div class="flex items-center gap-3 shrink-0">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container active:scale-95 transition-transform cursor-pointer">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="A professional studio portrait of a woman with a confident expression, soft high-key lighting, against a clean light grey background. The image has a high-fashion, corporate modern aesthetic with sharp details and natural skin textures, reflecting a sophisticated user profile for a premium application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFkL9lSPLko0sX07XbQfkA659ihphqC61t8-jOqNB0Ii_JpO__9Iew3D5w38WREW0UE8rg_og6PyWiJpLPT-RbnXbiYkSRS1c3GkODOrhaLEjizhrvne1pBs56I2OX9EzRUPe91StsSxITY476zwYeHH922hMotgLpqcE3XpfuUmbxq3jP5nSpMTG1TrM716D3gdU1l6vj1OEcVCqPBtR7Ld5rLFYjzd8lTZvDzTx2Nwfz3uXtutP5_b6M4jAMVJx-Q0cnNLZyfQY"/>
+</div>
+<h1 class="font-headline-md text-headline-md-mobile text-primary dark:text-inverse-primary">Explore</h1>
+</div>
+<!-- Integrated Search Bar -->
+<div class="flex-grow max-w-md relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full h-11 pl-10 pr-4 bg-surface-container-low rounded-xl border-none focus:ring-2 focus:ring-primary/20 transition-all text-body-md" placeholder="Search categories..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-primary dark:text-inverse-primary hover:bg-surface-variant/50 transition-colors p-2 rounded-full active:scale-95">
+                tune
+            </button>
+</div>
+</header>
+<main class="max-w-screen-xl mx-auto">
+<!-- Quick Filters -->
+<section class="py-4">
+<div class="flex overflow-x-auto no-scrollbar gap-3 px-container-margin">
+<button class="px-5 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md whitespace-nowrap shadow-md shadow-primary/20 transition-all active:scale-95">All</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-highest text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-variant/50 transition-all active:scale-95">People</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-highest text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-variant/50 transition-all active:scale-95">Photos</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-highest text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-variant/50 transition-all active:scale-95">Plants</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-highest text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-variant/50 transition-all active:scale-95">Products</button>
+</div>
+</section>
+<!-- Featured Categories -->
+<section class="px-container-margin py-md">
+<h2 class="font-headline-sm text-headline-sm mb-sm text-on-surface">Featured Categories</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-sm">
+<!-- Card 1 -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg bg-white cursor-pointer transition-transform hover:-translate-y-1">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500" data-alt="A sophisticated close-up portrait of a creative professional with a thoughtful look, shot in a sun-drenched modern studio with warm, natural afternoon light. The aesthetic is clean and high-end, utilizing a palette of soft neutrals and warm skin tones, perfectly fitting a premium minimalist design language." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6whOoqjeZy2EG91eVCM2XvecKto5QBsTcBm3PAS6KA2k-7XnWjTPF4ntbWA_MNSx53dZKpUMTWHUBBJ_TsEJqbsUy2ekTrPmtu2AEhz7qG8PkV5J6EsxBA0yQ3YB9PfkbfbqNIBKz95tV15Wt_hJrTjfKWw-oa5XIQOstqVinu2j99uDEConptpl6OYHnxntofVWSwR0_22j7oqpnUfS3pS2lg3S_xApAMorNbTmR0KLR46Go49XMB8w-ZHrPN9mnbSoBXqRSwYk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+<span class="text-white font-label-md text-label-md">Creative People</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg bg-white cursor-pointer transition-transform hover:-translate-y-1">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500" data-alt="A vibrant, lush tropical monstera leaf glistening with fresh dew drops, illuminated by bright, diffused morning sunlight in a high-end botanical conservatory. The color story is dominated by deep forest greens and bright lime accents, creating a refreshing and immersive natural atmosphere that feels clean and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkn_Qn5S2mdOwQ5z1SPqST_oC0kxNdL963BSo9a_EZJL3kKMOvc2bshPYNEl_GXBS8xscLP8Ldu0V_KWteAP6JnOA3oVY3t_IIlE6iPH3I5qX8EgweqrydtmoV8p-_qflnx9D7Q3vz3rDF4-4Azfy9TzsUdhKqliVd7ntlR1DUU4uYKKbwjYxwkXISjE8zgi5gGE7RP1pmse2nGXi7sZ6w4fyv4eIP-2uObv-cMVx6Qb7oQtLKgGWoMmfxDeMAg8RnyCJNM3fYBVM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+<span class="text-white font-label-md text-label-md">Nature &amp; Plants</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg bg-white cursor-pointer transition-transform hover:-translate-y-1">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500" data-alt="A cinematic urban street photography shot during the blue hour, featuring neon lights reflecting on wet city pavement in a futuristic metropolis. The mood is sophisticated and moody, with deep indigo shadows contrasted by vibrant cyan and magenta light trails, capturing a professional, high-signal city vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ2-JQ1Zj9soY81Ajrv5EFwZz2R5Vzmtwqpo__U6R5bAJjgI_KojJZxQqXlGBvZ-3vnyD07zZDE-M1a4xgFRJFfRVxRnakPtS61rhfpxPBz5XkkPrrxGJRgKo_JwKHop8-t8cw3AZUz5cv8Ud2L3ukRA56xLQEPqjPmGWcWr_kv-NwEVj4BuJ890jIJJZWxD1pjQ9TyJzPd-3SHm91JluphkBuVlSchC5YabVg8Iia25-dck1msAUTZB_XBYA9WljxyT4C5_PR4oA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+<span class="text-white font-label-md text-label-md">Street Photography</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg bg-white cursor-pointer transition-transform hover:-translate-y-1">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500" data-alt="A sleek, minimalist digital timepiece or gadget presented on a smooth matte surface with soft, directional lighting that highlights its elegant industrial design. The scene is dominated by monochromatic tones of charcoal grey and silver, reflecting a high-end corporate modern aesthetic focused on clarity and precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoYEh105LnZemcw9DtKVDIunBNm040o4LJf7QOvO9LdV-HyAHlHJJ8lLfUprceosDXgDcVNwMpL5PVbcC_lOh968lmVUfB9N9cvJocSpO8S5dZilopaQoSErtWUD9dbS0WzHTH_Q2ymTcHDV9Dg7Dg4Q72nvWvhSsshr_TROyhKu5noiFU9n9x8k6GzEQIi4LblTSPiec19wn588XL_o4eyah1apnhJCyUX0S8LmT0Gw6_wCsO_DCLgYGlTnOvIapaa_y0ElOK4mo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+<span class="text-white font-label-md text-label-md">Minimal Products</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Section (Masonry) -->
+<section class="px-container-margin py-md">
+<div class="flex items-center justify-between mb-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Trending Now</h2>
+<button class="text-primary font-label-md text-label-md hover:underline">View All</button>
+</div>
+<div class="masonry-grid">
+<!-- Trending Item 1 -->
+<div class="masonry-item group cursor-pointer">
+<div class="rounded-xl overflow-hidden bg-white shadow-[0_4px_20px_0_rgba(0,0,0,0.08)] mb-2">
+<img class="w-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A high-fashion portrait of an artist in their bright, airy studio filled with canvases. The lighting is soft and natural, emphasizing a sophisticated lifestyle. The image follows a minimalist palette with pops of indigo and rich earth tones, perfectly aligning with a premium digital gallery experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOfqmv8Nlay8orn9CLLIhZecTlgxowFBQdZasF4RC-Tvm2k9aq-boQkoepOjAEGpoqbVaDpbc5I2VvFK7nRcqxgxtIPGvi_EDQ59NHu2Wq1SIzjEvyuwDlDLrrUI6cl-fGdbdDruXrxKJpNYNPeOzz98bXO4gE9o4Y7ZnMUJKmW9IlE1Do9lq5x55EA4AkAQNhzsfkNEmxl3l_F7r7MGebrzYgoSPjILCt4tv2Ec2wtoO-5WssYiY0UIUFLy8e56ZvF7uwkB-yi7o"/>
+</div>
+<div class="px-1">
+<p class="font-label-md text-label-md text-on-surface">Visual Arts Curator</p>
+<p class="text-on-surface-variant text-[11px] opacity-70">by Elena Rossi</p>
+</div>
+</div>
+<!-- Trending Item 2 -->
+<div class="masonry-item group cursor-pointer">
+<div class="rounded-xl overflow-hidden bg-white shadow-[0_4px_20px_0_rgba(0,0,0,0.08)] mb-2">
+<img class="w-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A stunning macro shot of a rare succulent plant with intricate fractal patterns on its leaves, captured in a bright minimalist setting. High-key lighting creates a clean light-mode aesthetic, focusing on the vibrant green textures and geometric beauty of the natural world." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXOGJjL4DWcYr4ZLzRVpIzHolq34LFXErGCpAa3oQRQ5SeylfJWB4KaZTGGdvPaXNW0CkeSNxxVnPMh8v2tcSkJtLa8KooibQPkhQLRQzz_EBIhA-B8r2Hy6CrQFJgDHBIBewtx-Ky6rSlIuCAKeO3ntWLjf0T7lrRPB_FJ1Cy60Niqpl79AcRH81YKwOAbbFdOLfGvnHSFxXsimFDpcsHnAImlBhtRl5vR24au6Z5DtdtiabzKBIx9UMNid2OkOKv3-ZhV7t4u1s"/>
+</div>
+<div class="px-1">
+<p class="font-label-md text-label-md text-on-surface">Geometric Flora</p>
+<p class="text-on-surface-variant text-[11px] opacity-70">Botanical Series</p>
+</div>
+</div>
+<!-- Trending Item 3 -->
+<div class="masonry-item group cursor-pointer">
+<div class="rounded-xl overflow-hidden bg-white shadow-[0_4px_20px_0_rgba(0,0,0,0.08)] mb-2">
+<img class="w-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A professional product shot of high-end minimalist home decor, featuring a sleek ceramic vase and a textured linen surface. The composition is clean and balanced, using a palette of off-whites and soft greys with a focused depth of field, embodying the effortless brand personality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs-kxElwvXyQ8wLVf7g9TNbTETEGRrAOl7PM6YCHzsUc_NRV2Wl2M2ftIoZi635nEvkBzzGmBxTawn7GYzLm62EDTj8oP7ojGDjTSzAhAaLQDYizsPqvq-YaZFhpihu7l05MoWxGbVWyEMZKkp9_cxyfEpPg1AgRe2eIrIdYclAcOSTLWAAp-b0JliJYFjUOBCm5Hj5NRxNCnQ7lnF8NWE2occqZ7ErIgY1E-aJEY6qJYRk622omWDH7QDQUTbw9-h327QLJPZryc"/>
+</div>
+<div class="px-1">
+<p class="font-label-md text-label-md text-on-surface">Artisan Homeware</p>
+<p class="text-on-surface-variant text-[11px] opacity-70">New Collection</p>
+</div>
+</div>
+<!-- Trending Item 4 -->
+<div class="masonry-item group cursor-pointer">
+<div class="rounded-xl overflow-hidden bg-white shadow-[0_4px_20px_0_rgba(0,0,0,0.08)] mb-2">
+<img class="w-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A dramatic black and white architectural photograph of a modern glass skyscraper reflecting a clear sky. The image emphasizes strong lines, high contrast, and a sophisticated minimalist aesthetic that suggests a high-signal, professional browsing experience for urban enthusiasts." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBzWXq_aHNanbWGi4oVUlVHjv25NKF6ou7yzdsLX6xnpeE17t45P5V0s0X-IC0TUz_HJRtT2nhT9IViwP9IgAOAnFd3hnbQ-NSjyuPP23ltF6wMtaNmPeutDeXzt-HdlLU1Mlrdxx-caIBgtdD6YJl_mKD-39j3-KNcPN2OBnyarFLZsOAVSksDvfJBSJSRdVXpiZjSFJwOiZo0U_kQk2K-RKL3LTCuyb96dhiRfxWXjdifZNK4oT5p0bnKhZ4eSohzCijNKvkKzI"/>
+</div>
+<div class="px-1">
+<p class="font-label-md text-label-md text-on-surface">Modernist Heights</p>
+<p class="text-on-surface-variant text-[11px] opacity-70">Urban Perspective</p>
+</div>
+</div>
+<!-- Trending Item 5 -->
+<div class="masonry-item group cursor-pointer">
+<div class="rounded-xl overflow-hidden bg-white shadow-[0_4px_20px_0_rgba(0,0,0,0.08)] mb-2">
+<img class="w-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A sleek close-up of high-tech circuitry glowing with a soft primary indigo pulse in a clean dark-grey environment. The aesthetic is technologically advanced and minimalist, highlighting fine details and sophisticated electronic design for a curated professional audience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzgtvorJp-DXdjyNlzG7jOgXrrzq-Tqy3aQ2IFUUjJhGq0I5My6IiJ1Js0ZzPbIeuORMwHLMNzhazA6fcl3pQtivM9EkzPUxSandmLZ_4Gt65EedoxR6OcnO8HqR6z9UqTuz4ThwocvWm1vnf_h25092LAotuVQKEVmh8xfx8ywe_zmGrl5o0pYEx_ADU79xoP4pjwbFkUZBwr3QSUqJja2cDyjVray0crz4PQZtNDDRlNORpaC1hl3UyDQbL6IINbW4adCIKWAy0"/>
+</div>
+<div class="px-1">
+<p class="font-label-md text-label-md text-on-surface">Next-Gen Core</p>
+<p class="text-on-surface-variant text-[11px] opacity-70">Tech Explorations</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-2 pb-safe bg-surface-container-lowest shadow-[0_-4px_20px_0_rgba(0,0,0,0.08)] rounded-t-xl">
+<!-- Explore (Active) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-inverse-primary bg-primary-fixed-dim/20 rounded-full px-4 py-1 transition-all duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-md text-label-md">Explore</span>
+</a>
+<!-- Search -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-all duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-md text-label-md">Search</span>
+</a>
+<!-- Saved -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-all duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined">bookmark</span>
+<span class="font-label-md text-label-md">Saved</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-70 hover:opacity-100 transition-all duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for filter chips
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if(this.classList.contains('bg-primary')) return;
+                
+                // Reset others in the same row
+                const container = this.closest('.flex');
+                if(container) {
+                    container.querySelectorAll('button').forEach(b => {
+                        b.classList.remove('bg-primary', 'text-on-primary', 'shadow-md', 'shadow-primary/20');
+                        b.classList.add('bg-surface-container-highest', 'text-on-surface-variant');
+                    });
+                }
+                
+                // Set active
+                this.classList.remove('bg-surface-container-highest', 'text-on-surface-variant');
+                this.classList.add('bg-primary', 'text-on-primary', 'shadow-md', 'shadow-primary/20');
+            });
+        });
+    </script>
+</body></html>
