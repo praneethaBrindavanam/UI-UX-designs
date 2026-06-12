@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CONQUER Energy Drink</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Geist:wght@400;700&family=Syne:wght@700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton:wght@100..900&family=Geist:wght@100..900&family=Syne:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "inverse-surface": "#e5e2e1",
+                  "on-primary-container": "#556d00",
+                  "surface-tint": "#abd600",
+                  "on-primary-fixed-variant": "#3c4d00",
+                  "background": "#131313",
+                  "on-tertiary": "#2f3131",
+                  "outline": "#8e9379",
+                  "inverse-primary": "#506600",
+                  "on-tertiary-fixed-variant": "#454747",
+                  "on-surface": "#e5e2e1",
+                  "on-secondary-fixed-variant": "#474746",
+                  "tertiary-fixed-dim": "#c6c6c7",
+                  "on-secondary-container": "#b7b5b4",
+                  "surface-container-high": "#2a2a2a",
+                  "surface-container-low": "#1c1b1b",
+                  "primary": "#ffffff",
+                  "on-background": "#e5e2e1",
+                  "primary-fixed": "#c3f400",
+                  "surface-bright": "#3a3939",
+                  "on-tertiary-container": "#636565",
+                  "on-surface-variant": "#c4c9ac",
+                  "tertiary-fixed": "#e2e2e2",
+                  "on-tertiary-fixed": "#1a1c1c",
+                  "outline-variant": "#444933",
+                  "tertiary": "#ffffff",
+                  "on-secondary-fixed": "#1c1b1b",
+                  "error-container": "#93000a",
+                  "surface-variant": "#353534",
+                  "on-primary": "#283500",
+                  "surface-dim": "#131313",
+                  "primary-container": "#c3f400",
+                  "surface-container-lowest": "#0e0e0e",
+                  "error": "#ffb4ab",
+                  "secondary": "#c8c6c5",
+                  "secondary-fixed": "#e5e2e1",
+                  "secondary-container": "#474746",
+                  "primary-fixed-dim": "#abd600",
+                  "secondary-fixed-dim": "#c8c6c5",
+                  "tertiary-container": "#e2e2e2",
+                  "surface-container-highest": "#353534",
+                  "surface": "#131313",
+                  "on-error-container": "#ffdad6",
+                  "inverse-on-surface": "#313030",
+                  "on-secondary": "#313030",
+                  "on-error": "#690005",
+                  "on-primary-fixed": "#161e00",
+                  "surface-container": "#201f1f"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "margin-mobile": "16px",
+                  "sm": "16px",
+                  "margin-desktop": "64px",
+                  "base": "4px",
+                  "md": "24px",
+                  "lg": "48px",
+                  "gutter": "20px",
+                  "xl": "80px",
+                  "xs": "8px"
+          },
+          "fontFamily": {
+                  "body-lg": ["Geist"],
+                  "subheader": ["Syne"],
+                  "headline-lg-mobile": ["Anton"],
+                  "label-caps": ["Syne"],
+                  "headline-lg": ["Anton"],
+                  "display-lg": ["Anton"],
+                  "body-sm": ["Geist"]
+          },
+          "fontSize": {
+                  "body-lg": ["18px", {"lineHeight": "160%", "fontWeight": "400"}],
+                  "subheader": ["24px", {"lineHeight": "120%", "fontWeight": "800"}],
+                  "headline-lg-mobile": ["48px", {"lineHeight": "110%", "fontWeight": "400"}],
+                  "label-caps": ["12px", {"lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                  "headline-lg": ["64px", {"lineHeight": "110%", "fontWeight": "400"}],
+                  "display-lg": ["96px", {"lineHeight": "100%", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                  "body-sm": ["14px", {"lineHeight": "150%", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+    }
+    @keyframes progress-loading {
+      0% { width: 0%; }
+      50% { width: 70%; }
+      100% { width: 100%; }
+    }
+    .loading-bar-fill {
+      animation: progress-loading 3s infinite ease-in-out;
+    }
+    .neo-brutal-shadow {
+      box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+    }
+    .neo-brutal-shadow-white {
+      box-shadow: 4px 4px 0px 0px #ffffff;
+    }
+    .sticker-rotate {
+      transform: rotate(-3deg);
+    }
+    .sticker-rotate-alt {
+      transform: rotate(5deg);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-lg overflow-x-hidden pb-24">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-surface border-b-2 border-primary shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-between px-margin-mobile h-16">
+<div class="flex items-center gap-xs active:scale-95 transition-all">
+<span class="material-symbols-outlined text-primary-fixed">menu</span>
+</div>
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-primary-fixed uppercase italic tracking-tighter">
+      CONQUER
+    </div>
+<div class="flex items-center gap-xs active:scale-95 transition-all">
+<span class="material-symbols-outlined text-primary-fixed">shopping_cart</span>
+</div>
+</header>
+<main class="relative w-full">
+<!-- Hero Section -->
+<section class="relative h-[85vh] w-full overflow-hidden border-b-4 border-primary">
+<img alt="A distressed person sitting on the floor surrounded by flat-pack furniture boxes, looking exhausted with a digital loading icon above their head" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgeaBPFpcuxdEVLypcjvPs9Ad_QtaAoncAjZFR2hyvTVvvjrNT2eZeMnp2y3FRzWNv3jlTOcO8_wcmj_KM8AeFd2FSoVLnvCpYRinvnftuRq9p0xLD9Xu_4CINb3TlYUyeOeo2BMdwCACzI3I1MNub0aAHXZ2qBQfygmnFdU2C0q-xdgcy4NBm39MbqrtIywtLtdaDd0_AzhYdcqV5WuHpjeylEnHPEkZbETIhqhjKEXSl64t2rVPziqoYyGizJtmZAYnL4d2DBeU"/>
+<!-- Overlay Content -->
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent flex flex-col justify-end p-margin-mobile pb-24">
+<div class="space-y-base mb-md">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary uppercase leading-none tracking-tight">
+            DON'T JUST SURVIVE THE NIGHT.
+          </h1>
+<h2 class="font-display-lg text-[64px] text-primary-fixed uppercase italic leading-none drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+            CONQUER IT.
+          </h2>
+</div>
+<!-- Status Indicator / Loading Bar Theme -->
+<div class="w-full border-2 border-primary p-base bg-background/80 backdrop-blur-sm mb-lg relative">
+<div class="flex justify-between items-end mb-xs">
+<span class="font-label-caps text-label-caps text-primary-fixed">ENERGY STATUS: DEPLETED</span>
+<span class="font-label-caps text-label-caps text-primary">REBOOTING...</span>
+</div>
+<div class="h-6 w-full bg-surface-container border-2 border-primary overflow-hidden">
+<div class="loading-bar-fill h-full bg-primary-fixed"></div>
+</div>
+<!-- Sticker Badge -->
+<div class="absolute -top-6 -right-2 bg-primary-fixed text-on-primary-fixed font-label-caps text-label-caps px-sm py-base border-2 border-black sticker-rotate-alt shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+            3:00 AM MODE
+          </div>
+</div>
+</div>
+</section>
+<!-- Product Bento Grid -->
+<section class="px-margin-mobile py-lg grid grid-cols-4 gap-gutter">
+<!-- Main Product Card -->
+<div class="col-span-4 md:col-span-2 bg-surface-container-high border-2 border-primary p-md relative shadow-[8px_8px_0px_0px_rgba(195,244,0,1)]">
+<div class="flex justify-between items-start mb-md">
+<div>
+<div class="font-label-caps text-label-caps bg-primary text-background inline-block px-xs py-base mb-xs">BEST SELLER</div>
+<h3 class="font-subheader text-subheader text-primary">THE MIDNIGHT STRIKE</h3>
+</div>
+<span class="material-symbols-outlined text-primary-fixed text-4xl">bolt</span>
+</div>
+<p class="font-body-sm text-on-surface-variant mb-md">Zero sugar. Pure electric neon green vibes. Formulated for the 1% who refuse to sleep until the job is done.</p>
+<button class="w-full bg-primary-fixed text-on-primary-fixed font-label-caps text-label-caps py-md border-2 border-black neo-brutal-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:scale-95">
+          STRIKE NOW
+        </button>
+</div>
+<!-- Sticker Decor -->
+<div class="col-span-2 md:col-span-1 bg-primary-container border-2 border-on-primary-container p-md flex flex-col items-center justify-center sticker-rotate text-center">
+<span class="material-symbols-outlined text-on-primary-container text-5xl mb-xs">verified</span>
+<p class="font-label-caps text-label-caps text-on-primary-container">OFFICIAL FUEL OF THE NIGHT OWL</p>
+</div>
+<!-- Feature Card -->
+<div class="col-span-2 md:col-span-1 bg-surface-container border-2 border-primary p-md flex flex-col justify-between">
+<h4 class="font-label-caps text-label-caps text-primary-fixed">LATENCY: 0MS</h4>
+<p class="font-body-sm text-primary">Ultra-fast cognitive response.</p>
+</div>
+</section>
+<!-- Interactive Loading Component -->
+<section class="px-margin-mobile pb-xl">
+<div class="border-2 border-primary-fixed p-lg bg-surface-container-lowest text-center relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-subheader text-subheader text-primary mb-sm">RECHARGING YOUR SYSTEM?</h3>
+<p class="font-body-lg text-on-surface-variant mb-lg max-w-md mx-auto">Click to initiate the Conquer protocol and banish the loading state forever.</p>
+<div class="flex flex-wrap justify-center gap-sm">
+<button class="bg-background text-primary border-2 border-primary px-lg py-sm font-label-caps text-label-caps hover:bg-primary hover:text-background transition-colors active:translate-y-1">
+                        VIEW FLAVORS
+                    </button>
+<button class="bg-primary-fixed text-on-primary-fixed border-2 border-black px-lg py-sm font-label-caps text-label-caps neo-brutal-shadow active:translate-y-1 active:shadow-none transition-all">
+                        SHOP BUNDLES
+                    </button>
+</div>
+</div>
+<!-- Background Noise/Texture -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#c3f400 1px, transparent 1px); background-size: 10px 10px;"></div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 border-t-2 border-primary bg-background flex justify-around items-center py-base">
+<!-- Home Active -->
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container p-xs border-2 border-on-primary-container shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-transform active:translate-y-1">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label-caps text-label-caps">HOME</span>
+</div>
+<!-- Shop -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:bg-surface-variant transition-all active:translate-y-1">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="font-label-caps text-label-caps">SHOP</span>
+</div>
+<!-- Strike -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:bg-surface-variant transition-all active:translate-y-1">
+<span class="material-symbols-outlined">ads_click</span>
+<span class="font-label-caps text-label-caps">STRIKE</span>
+</div>
+<!-- Gear -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant p-xs hover:bg-surface-variant transition-all active:translate-y-1">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-caps text-label-caps">GEAR</span>
+</div>
+</nav>
+<script>
+    // Micro-interactions for the "Loading" status
+    const loadingFills = document.querySelectorAll('.loading-bar-fill');
+    
+    // Add a randomized delay to each loading bar if there were more than one
+    loadingFills.forEach(fill => {
+      fill.addEventListener('animationiteration', () => {
+        const randomSpeed = (Math.random() * 2 + 1).toFixed(1);
+        fill.style.animationDuration = `${randomSpeed}s`;
+      });
+    });
+
+    // Button interactions
+    document.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('mousedown', () => {
+        btn.classList.add('scale-95');
+      });
+      btn.addEventListener('mouseup', () => {
+        btn.classList.remove('scale-95');
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.classList.remove('scale-95');
+      });
+    });
+  </script>
+</body></html>
