@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Day 42 - Spatial Navigation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&family=Geist:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Hanken+Grotesk:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #0A0A0A;
+            color: #E5E2E1;
+            font-family: 'Hanken Grotesk', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(23, 23, 23, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid #262626;
+        }
+        .logic-blue-glow {
+            border-top: 0.5px solid #adc6ff;
+        }
+        .grid-pattern {
+            background-image: radial-gradient(#262626 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        @keyframes pulse-logic {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.1); }
+        }
+        .status-pulse {
+            animation: pulse-logic 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#ca8100",
+                    "on-secondary-fixed": "#002113",
+                    "background": "#131313",
+                    "on-secondary-container": "#00311f",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "secondary": "#4edea3",
+                    "primary-fixed": "#d8e2ff",
+                    "surface-bright": "#3a3939",
+                    "on-primary": "#002e6a",
+                    "on-tertiary": "#472a00",
+                    "outline-variant": "#424754",
+                    "surface": "#131313",
+                    "on-background": "#e5e2e1",
+                    "error-container": "#93000a",
+                    "surface-container": "#201f1f",
+                    "on-error-container": "#ffdad6",
+                    "on-surface-variant": "#c2c6d6",
+                    "on-tertiary-fixed": "#2a1700",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-primary-container": "#00285d",
+                    "tertiary": "#ffb95f",
+                    "surface-container-high": "#2a2a2a",
+                    "primary-fixed-dim": "#adc6ff",
+                    "error": "#ffb4ab",
+                    "on-surface": "#e5e2e1",
+                    "secondary-fixed": "#6ffbbe",
+                    "outline": "#8c909f",
+                    "surface-container-low": "#1c1b1b",
+                    "on-primary-fixed-variant": "#004395",
+                    "tertiary-fixed": "#ffddb8",
+                    "surface-variant": "#353534",
+                    "on-secondary": "#003824",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-tertiary-container": "#3e2400",
+                    "inverse-surface": "#e5e2e1",
+                    "primary-container": "#4d8eff",
+                    "primary": "#adc6ff",
+                    "on-error": "#690005",
+                    "inverse-primary": "#005ac2",
+                    "surface-tint": "#adc6ff",
+                    "on-primary-fixed": "#001a42",
+                    "inverse-on-surface": "#313030",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "surface-dim": "#131313",
+                    "secondary-container": "#00a572",
+                    "surface-container-highest": "#353534",
+                    "on-secondary-fixed-variant": "#005236"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "margin-mobile": "16px",
+                    "gutter": "16px",
+                    "margin-desktop": "32px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Geist"],
+                    "body-base": ["Hanken Grotesk"],
+                    "data-mono": ["Geist"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "body-base": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "data-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 flex justify-between items-center px-margin-mobile h-16 shadow-sm dark:shadow-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="token">token</span>
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim tracking-tight">DAY 42</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-label-sm font-label-sm text-on-surface-variant">SECURE_LAB_MODE</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:bg-surface-variant/50 transition-colors p-2 rounded-full cursor-pointer" data-icon="notifications">notifications</span>
+</div>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<!-- Hero Section -->
+<div class="mb-12 relative overflow-hidden rounded-xl h-[300px] flex flex-col justify-end p-8 border border-outline-variant/20">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent z-10"></div>
+<img class="w-full h-full object-cover grayscale opacity-40" data-alt="A high-tech laboratory environment with holographic interfaces and volumetric lighting. The scene is dominated by deep obsidian tones and sharp architectural lines. Subtle blue light glows from recessed floor panels, casting long shadows. The atmosphere is clinical and focused, embodying a professional design lab aesthetic from 2026." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBknWMLlbW5pMPkr9wWDshSKmtlmLBngjaAeEfSAnEqE-W0xNFqPRJZKm4XiICJoQIy-p6QxWVMBOX0LoMvDgWIvgLEOIMB-o2I6gFR1sADD91aooAgSOSBumQI6Ma-xZ57bAQtI3fxK6oVtgcvjUS27IyP3iFKaG1ASpJZQ1Kp--VybmzTXT9haG45YodxaS5_VrdTigVGsTZrAl10uKrU5fm_nS90aAaFEcaBQ-mKT4Jhhpxm3bCtS1xiWk2HEjqrxlLTAjxxyUgt"/>
+</div>
+<div class="relative z-20">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 bg-secondary rounded-full status-pulse"></span>
+<span class="text-label-sm font-label-sm text-secondary tracking-widest uppercase">Active Protocol</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary mb-2">Spatial Navigation</h1>
+<p class="text-body-base text-on-surface-variant max-w-2xl">Refining volumetric gestural interactions for head-mounted displays in high-density data environments.</p>
+</div>
+</div>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- User Story (Large Left Column) -->
+<section class="md:col-span-8 glass-panel rounded-xl p-6 relative overflow-hidden group">
+<div class="grid-pattern absolute inset-0 opacity-[0.03] pointer-events-none"></div>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary-container" data-icon="psychology">psychology</span>
+<h2 class="text-headline-md font-headline-md text-on-surface">User Story</h2>
+</div>
+<div class="space-y-4">
+<p class="text-body-base text-on-surface-variant leading-relaxed">
+                        "As a <span class="text-primary font-semibold">Technical Architect</span>, I need to navigate multi-dimensional node clusters using only <span class="text-secondary">fine-motor hand tracking</span>, so that I can maintain spatial awareness without tethered controllers during long-duration immersion sessions."
+                    </p>
+<div class="flex flex-wrap gap-2 pt-4">
+<span class="px-3 py-1 rounded bg-primary-container/10 border border-primary-container/30 text-label-sm font-label-sm text-primary">PERSONA_04</span>
+<span class="px-3 py-1 rounded bg-primary-container/10 border border-primary-container/30 text-label-sm font-label-sm text-primary">UX_VOLUMETRIC</span>
+<span class="px-3 py-1 rounded bg-primary-container/10 border border-primary-container/30 text-label-sm font-label-sm text-primary">PRIORITY_CRITICAL</span>
+</div>
+</div>
+</section>
+<!-- Status Metrics (Right Side Top) -->
+<section class="md:col-span-4 glass-panel rounded-xl p-6 logic-blue-glow flex flex-col justify-between">
+<div>
+<h3 class="text-label-sm font-label-sm text-outline mb-4 flex justify-between">
+                        SYSTEM_HEALTH <span>98.4%</span>
+</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<span class="text-body-base font-data-mono">LATENCY</span>
+<span class="text-headline-md font-headline-md text-secondary">4ms</span>
+</div>
+<div class="w-full bg-surface-variant h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[90%]"></div>
+</div>
+</div>
+</div>
+<div class="pt-6">
+<button class="w-full py-3 bg-primary text-on-primary font-label-sm rounded transition-transform active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="play_arrow">play_arrow</span>
+                        EXECUTE TEST
+                    </button>
+</div>
+</section>
+<!-- Logic Constraints (Full width or split) -->
+<section class="md:col-span-7 glass-panel rounded-xl p-6">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-tertiary" data-icon="terminal">terminal</span>
+<h2 class="text-headline-md font-headline-md text-on-surface">Logic Constraints</h2>
+</div>
+<div class="grid grid-cols-1 gap-3">
+<div class="flex items-center gap-4 p-4 rounded bg-surface-container-low border border-outline-variant/10 hover:border-primary-container/50 transition-colors">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle">check_circle</span>
+<div>
+<p class="font-data-mono text-on-surface">Hand-tracking only</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Strict prohibition of external hardware controllers.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded bg-surface-container-low border border-outline-variant/10 hover:border-primary-container/50 transition-colors">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle">check_circle</span>
+<div>
+<p class="font-data-mono text-on-surface">Low-light optimization</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Sensor sensitivity calibration for < 5 lux environments.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded bg-surface-container-low border border-outline-variant/10 hover:border-primary-container/50 transition-colors">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle">check_circle</span>
+<div>
+<p class="font-data-mono text-on-surface">Collision Prediction</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Anticipatory mesh highlighting for near-touch events.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Motion Brief (Asymmetric Right) -->
+<section class="md:col-span-5 glass-panel rounded-xl p-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="animation">animation</span>
+</div>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-secondary" data-icon="waves">waves</span>
+<h2 class="text-headline-md font-headline-md text-on-surface">Motion Brief</h2>
+</div>
+<div class="space-y-4 relative z-10">
+<p class="text-body-base text-on-surface-variant italic">
+                        "The UI should feel liquid yet tactile. Interactive layers respond with a subtle parallax offset based on gaze depth."
+                    </p>
+<ul class="space-y-3">
+<li class="flex gap-3 text-label-sm font-label-sm text-on-surface-variant">
+<span class="text-secondary font-bold">01</span>
+<span>Global ease-in-out quintic for state transitions.</span>
+</li>
+<li class="flex gap-3 text-label-sm font-label-sm text-on-surface-variant">
+<span class="text-secondary font-bold">02</span>
+<span>Hover states trigger 0.5px Logic Blue glows.</span>
+</li>
+<li class="flex gap-3 text-label-sm font-label-sm text-on-surface-variant">
+<span class="text-secondary font-bold">03</span>
+<span>Elastic feedback on depth-scroll limits.</span>
+</li>
+</ul>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest/90 dark:bg-surface-container-lowest/90 backdrop-blur-2xl border-t border-outline-variant/20 flex justify-around items-center px-4 pb-4 pt-2 shadow-lg dark:shadow-none">
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary transition-all cursor-pointer group">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="text-label-sm font-label-sm mt-1">Dashboard</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary-container text-on-secondary-container dark:text-on-secondary-container rounded-full px-4 py-1 scale-95 duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="emoji_events">emoji_events</span>
+<span class="text-label-sm font-label-sm mt-1">Challenges</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary transition-all cursor-pointer group">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-label-sm font-label-sm mt-1">Community</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary transition-all cursor-pointer group">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-label-sm font-label-sm mt-1">Profile</span>
+</div>
+</nav>
+<script>
+        // Micro-interactions for technical feel
+        document.querySelectorAll('.glass-panel').forEach(panel => {
+            panel.addEventListener('mousemove', (e) => {
+                const rect = panel.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                panel.style.setProperty('--mouse-x', `${x}px`);
+                panel.style.setProperty('--mouse-y', `${y}px`);
+                
+                // Subtle tilt effect
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 25;
+                const rotateY = (centerX - x) / 25;
+                panel.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            panel.addEventListener('mouseleave', () => {
+                panel.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+                panel.style.transition = 'transform 0.5s ease';
+            });
+
+            panel.addEventListener('mouseenter', () => {
+                panel.style.transition = 'none';
+            });
+        });
+
+        // Simulating data updates
+        setInterval(() => {
+            const health = (98 + Math.random()).toFixed(1);
+            const latency = Math.floor(Math.random() * 3) + 3;
+            document.querySelector('h3.text-label-sm span').textContent = health + '%';
+            document.querySelector('.text-secondary.text-headline-md').textContent = latency + 'ms';
+        }, 3000);
+    </script>
+</body></html>

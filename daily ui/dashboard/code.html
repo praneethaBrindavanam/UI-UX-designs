@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Day 42 | Personal Design Lab</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&family=Geist:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Hanken+Grotesk:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #0A0A0A;
+            color: #e5e2e1;
+            font-family: 'Hanken Grotesk', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(23, 23, 23, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid #262626;
+        }
+        .logic-blue-glow {
+            box-shadow: 0 0 20px rgba(77, 142, 255, 0.15);
+        }
+        .grid-pattern {
+            background-image: radial-gradient(circle, #262626 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#ca8100",
+                        "on-secondary-fixed": "#002113",
+                        "background": "#131313",
+                        "on-secondary-container": "#00311f",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "secondary": "#4edea3",
+                        "primary-fixed": "#d8e2ff",
+                        "surface-bright": "#3a3939",
+                        "on-primary": "#002e6a",
+                        "on-tertiary": "#472a00",
+                        "outline-variant": "#424754",
+                        "surface": "#131313",
+                        "on-background": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "surface-container": "#201f1f",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#c2c6d6",
+                        "on-tertiary-fixed": "#2a1700",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-primary-container": "#00285d",
+                        "tertiary": "#ffb95f",
+                        "surface-container-high": "#2a2a2a",
+                        "primary-fixed-dim": "#adc6ff",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e5e2e1",
+                        "secondary-fixed": "#6ffbbe",
+                        "outline": "#8c909f",
+                        "surface-container-low": "#1c1b1b",
+                        "on-primary-fixed-variant": "#004395",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-variant": "#353534",
+                        "on-secondary": "#003824",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-container": "#3e2400",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-container": "#4d8eff",
+                        "primary": "#adc6ff",
+                        "on-error": "#690005",
+                        "inverse-primary": "#005ac2",
+                        "surface-tint": "#adc6ff",
+                        "on-primary-fixed": "#001a42",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "surface-dim": "#131313",
+                        "secondary-container": "#00a572",
+                        "surface-container-highest": "#353534",
+                        "on-secondary-fixed-variant": "#005236"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "margin-mobile": "16px",
+                        "gutter": "16px",
+                        "margin-desktop": "32px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Geist"],
+                        "body-base": ["Hanken Grotesk"],
+                        "data-mono": ["Geist"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "body-base": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "data-mono": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar from Shared Components -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm dark:shadow-none flex justify-between items-center px-margin-mobile h-16">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">token</span>
+<h1 class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim tracking-tight">DAY 42</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-variant/50 transition-colors p-2 rounded-full">notifications</button>
+<div class="w-8 h-8 rounded-full border border-outline-variant overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbx4Y0LOUw0xiTbMyq2gMDtP7rNQ1IHQfgUdEcabXRlqXYP19nv7G6-R38Abp7iDz94E1XoDmvSUl2RFhmHFNdm6Nq0lxmbSyvg-CubnVxSajsMr8y24NTZy9AOA4IWEl2MDZ_RkLDJ0Ie6luZXPqxntFtt6SrJMtRXNC2deoArhrcYUzdEbUM__Aah-LCY2x-mIJaF2_wf2vGJ7F5KpZ8UlknUJJsJabuMoJ0FKkhxAeKadG484zgNOE-esMkXnxWOCERCCe9uQtg"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-4 md:px-margin-desktop max-w-container-max mx-auto space-y-12">
+<!-- Hero Section: Today's Prompt -->
+<section class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary opacity-10 blur transition duration-1000 group-hover:opacity-20"></div>
+<div class="glass-panel relative rounded-xl p-8 overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-10 grid-pattern pointer-events-none"></div>
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+<div class="space-y-2">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Daily Lab Mission</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:text-display-lg md:font-display-lg text-white">Spatial Navigation</h2>
+<p class="text-on-surface-variant max-w-xl font-body-base text-body-base">Refine the 3D-axis interaction for immersive dashboard environments. Focus on Z-depth hierarchies and gestural physics.</p>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-label-sm text-label-sm flex items-center gap-2 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-primary/20">
+                        Launch Lab <span class="material-symbols-outlined">rocket_launch</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Motion Proofs: Horizontal Scroll -->
+<section class="space-y-6">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">movie_edit</span>
+                    Motion Proofs
+                </h3>
+<a class="font-label-sm text-label-sm text-primary hover:underline" href="#">View All Archive</a>
+</div>
+<div class="flex gap-6 overflow-x-auto no-scrollbar pb-4 -mx-4 px-4">
+<!-- Proof Card 1 -->
+<div class="min-w-[280px] md:min-w-[340px] glass-panel rounded-xl overflow-hidden group cursor-pointer border border-[#262626] hover:border-primary/50 transition-all">
+<div class="aspect-video w-full relative overflow-hidden bg-[#111]">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A sophisticated 3D abstract digital render showing flowing neon ribbons in deep obsidian and logic blue. The composition is sleek and professional, with sharp edges and a cinematic lighting that emphasizes depth and motion within a minimalist dark workspace. High-performance aesthetic with vibrant color transitions." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG4Dfg9Dm6abDlLRGYZMjKCwPzb5zkgxlUQsi7y9y487ZT1uejtr-9LgkuMIvvnxfzwQP1bNEe5TxPHffGAbrn3fg2kZubaCGHp0q_28r6VY41k1kBx1hG0HFjY6paGa7oqDJB76sTLgUKhkrr1uJ36OyAbCJwYjDDi7Sk-1Pm4WAalGm_a3mKAfd_iUGfXCbkLFxo0iZCtKnV0bMk3GiGgcTd5K8W8SYms9XdtJlDlMDmta3GJ07XoecRBTO2kLCw3ta-YhK2GGS9"/>
+<div class="absolute bottom-3 left-3 z-20 flex items-center gap-2">
+<span class="bg-black/50 backdrop-blur-md px-2 py-1 rounded font-data-mono text-[10px] text-primary border border-primary/20">4K RENDER</span>
+</div>
+</div>
+<div class="p-4 space-y-1">
+<p class="font-label-sm text-label-sm text-white">Fluid Transition v2</p>
+<p class="font-data-mono text-xs text-on-surface-variant">00:12:04 • 60 FPS</p>
+</div>
+</div>
+<!-- Proof Card 2 -->
+<div class="min-w-[280px] md:min-w-[340px] glass-panel rounded-xl overflow-hidden group cursor-pointer border border-[#262626] hover:border-primary/50 transition-all">
+<div class="aspect-video w-full relative overflow-hidden bg-[#111]">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Technical digital visualization of a complex neural network interface with intricate glowing nodes and lines in logic blue and white. The setting is a darkened laboratory workspace, presenting a high-tech atmosphere with surgical precision. The style is hyper-functional and futuristic, emphasizing data connectivity and technical clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVPjL4SfG3FRtaYamT1IOaphWLG8ARL_PDllFmksxj08Ti939xc-4zMPcWnET0bpdrY5RK8jKypdrMleQBz4zTVKzwOjbmnH5gRFixvvJRJGWoQq8qH5MAm5unBpw9Ify5jU8cQ_1TafQamfC2iYjBjYw3ikuSRHA3VepbIo0-8q-3mcNUAusZ7ISgYp9AzmGctdu1cLQlXkpZpp3v-sGL8x5WfHxC9tW5B65Y4Z2BGBIGoj2j6ThK0JnDWuLKjJnOeMihvSvMkpTx"/>
+<div class="absolute bottom-3 left-3 z-20 flex items-center gap-2">
+<span class="bg-black/50 backdrop-blur-md px-2 py-1 rounded font-data-mono text-[10px] text-secondary border border-secondary/20">ACTIVE</span>
+</div>
+</div>
+<div class="p-4 space-y-1">
+<p class="font-label-sm text-label-sm text-white">Neural Web Mapping</p>
+<p class="font-data-mono text-xs text-on-surface-variant">00:08:15 • 120 FPS</p>
+</div>
+</div>
+<!-- Proof Card 3 -->
+<div class="min-w-[280px] md:min-w-[340px] glass-panel rounded-xl overflow-hidden group cursor-pointer border border-[#262626] hover:border-primary/50 transition-all">
+<div class="aspect-video w-full relative overflow-hidden bg-[#111]">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Minimalist architectural visualization featuring clean geometric planes and sharp 1px light edges in an obsidian environment. Logic blue highlights create a subtle glow along the structural lines, evoking a sense of calm efficiency and technical mastery. The aesthetic is tailored for 2026 design standards, focusing on depth through tonal layers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD_CBlRRzq22IGa0Vb8v1LmKegpu52odF-3smWPXyOTNA36TSW5iTe26N-nFH-uagfrmxE_JSkSJC3z_U8hmlEwVCU92ClWPUHC_TVF_2U4IePbyfD8StBT1B-RYcyK64Wv5EGZIrjSnwCdb00xYZaHgm6ZYf2mX9cDo8p3wexdC_AfDZ7q_dlnWbYf7-P2qQ2LglwQi5n3XkEfLlkgipD8-w7Xjz__JYjJmfS3bAbIeFZ-RSrrkuDhxnqMpy6CYynnIo5gh41i5nb"/>
+<div class="absolute bottom-3 left-3 z-20 flex items-center gap-2">
+<span class="bg-black/50 backdrop-blur-md px-2 py-1 rounded font-data-mono text-[10px] text-white/40 border border-white/10">DRAFT</span>
+</div>
+</div>
+<div class="p-4 space-y-1">
+<p class="font-label-sm text-label-sm text-white">Isometric Grid Shell</p>
+<p class="font-data-mono text-xs text-on-surface-variant">00:04:42 • 30 FPS</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Logic Stats: Bento Grid Layout -->
+<section class="space-y-6">
+<h3 class="font-headline-md text-headline-md text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                Logic Stats
+            </h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Progress Card -->
+<div class="md:col-span-2 glass-panel rounded-xl p-6 flex flex-col justify-between relative overflow-hidden min-h-[220px]">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase tracking-wider">Overall Progress</p>
+<h4 class="font-display-lg text-display-lg text-white">42<span class="text-primary">/100</span></h4>
+</div>
+<div class="bg-primary/10 border border-primary/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="w-full bg-[#111] h-3 rounded-full overflow-hidden border border-[#262626]">
+<div class="h-full bg-gradient-to-r from-primary to-secondary transition-all duration-1000 ease-out" id="progress-bar" style="width: 42%;"></div>
+</div>
+<div class="flex justify-between font-data-mono text-xs text-on-surface-variant">
+<span>42 Days Completed</span>
+<span>Level: Prototypist</span>
+<span>58 Days Remaining</span>
+</div>
+</div>
+</div>
+<!-- Impact Score Card -->
+<div class="glass-panel rounded-xl p-6 flex flex-col justify-center items-center text-center space-y-4 border-l-2 border-l-secondary">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Impact Score</p>
+<div class="relative w-28 h-28 flex items-center justify-center">
+<svg class="w-full h-full rotate-[-90deg]">
+<circle cx="56" cy="56" fill="none" r="50" stroke="#262626" stroke-width="4"></circle>
+<circle cx="56" cy="56" fill="none" r="50" stroke="#4edea3" stroke-dasharray="314" stroke-dashoffset="62.8" stroke-linecap="round" stroke-width="4"></circle>
+</svg>
+<span class="absolute font-display-lg text-2xl text-white">88%</span>
+</div>
+<p class="font-body-base text-body-base text-secondary">Global Top 5%</p>
+</div>
+<!-- Small Technical Stats -->
+<div class="glass-panel rounded-xl p-4 flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-variant flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-primary">speed</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant font-label-sm">System Health</p>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<p class="font-data-mono text-white">Optimal</p>
+</div>
+</div>
+</div>
+<div class="glass-panel rounded-xl p-4 flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-variant flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-secondary">group</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant font-label-sm">Community Peers</p>
+<p class="font-data-mono text-white">1,204 Active</p>
+</div>
+</div>
+<div class="glass-panel rounded-xl p-4 flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-variant flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-tertiary">database</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant font-label-sm">Data Assets</p>
+<p class="font-data-mono text-white">4.2 TB Synced</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar from Shared Components -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container-lowest/90 dark:bg-surface-container-lowest/90 backdrop-blur-2xl border-t border-outline-variant/20 shadow-lg dark:shadow-none">
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary-container text-on-secondary-container dark:text-on-secondary-container rounded-full px-4 py-1 transition-all duration-200 scale-95" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="text-label-sm font-label-sm">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">emoji_events</span>
+<span class="text-label-sm font-label-sm">Challenges</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-label-sm font-label-sm">Community</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for Progress Bar
+        window.addEventListener('DOMContentLoaded', () => {
+            const bar = document.getElementById('progress-bar');
+            bar.style.width = '0%';
+            setTimeout(() => {
+                bar.style.width = '42%';
+            }, 300);
+        });
+
+        // Atmosphere micro-interactions
+        document.querySelectorAll('.glass-panel').forEach(panel => {
+            panel.addEventListener('mousemove', (e) => {
+                const rect = panel.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                panel.style.setProperty('--mouse-x', `${x}px`);
+                panel.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>
